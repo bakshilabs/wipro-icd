@@ -8,9 +8,10 @@ ORDER = ['research-wipro', 'research-uki-market', 'research-competitors', 'resea
          'page-portfolio-demand', 'page-buyers-accounts', 'page-competitors-deals', 'page-pursuits-workshops-ai',
          'page-role-months-about', 'page-index', 'page-method', 'review-1', 'review-2', 'review-3',
          # second round
-         'research-bfs-europe', 'research-wipro-sales', 'research-sales-scope', 'page-banking', 'page-banking-edits']
-ROUND2 = {'research-bfs-europe', 'research-wipro-sales', 'research-sales-scope', 'page-banking', 'page-banking-edits'}
-SHORT = {'research-wipro': 'Wipro', 'research-uki-market': 'UKI market', 'research-competitors': 'Competitors',
+         'research-bfs-europe', 'research-wipro-sales', 'research-sales-scope', 'page-banking', 'page-banking-edits',
+         'page-strategy-index-role', 'page-strategy-commercial', 'page-strategy-plan']
+ROUND2 = {'research-bfs-europe', 'research-wipro-sales', 'research-sales-scope', 'page-banking', 'page-banking-edits', 'page-strategy-index-role', 'page-strategy-commercial', 'page-strategy-plan'}
+SHORT = {'page-strategy-index-role': 'Strategy: index, Role', 'page-strategy-commercial': 'Strategy: commercial pages', 'page-strategy-plan': 'Strategy: Months, Banking', 'research-wipro': 'Wipro', 'research-uki-market': 'UKI market', 'research-competitors': 'Competitors',
          'research-deals': 'Deals and pursuits', 'page-portfolio-demand': 'Portfolio, Demand',
          'page-buyers-accounts': 'Buyers, Accounts', 'page-competitors-deals': 'Competitors, Deals',
          'page-pursuits-workshops-ai': 'Pursuits, Workshops, AI', 'page-role-months-about': 'Role, Months, About',
@@ -21,7 +22,7 @@ COL = {'research': 'res', 'review': 'rev'}
 
 agents = []
 files = sorted(p.stem for p in (ROOT / 'agents').glob('*.md'))
-extra = [f for f in files if f not in ORDER and f not in ('README', 'page-brief', 'review-brief')]
+extra = [f for f in files if f not in ORDER and f not in ('README', 'page-brief', 'review-brief', 'strategy-brief')]
 for name in ORDER + extra:
     p = ROOT / 'agents' / (name + '.md')
     if not p.exists():
