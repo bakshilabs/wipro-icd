@@ -149,7 +149,7 @@ function wrap(str,chars){var w=str.split(" "),L=[],c="";w.forEach(function(x){if
 
 /* clients above US$100m */
 var cb=document.getElementById("m1-band"),CV=[["FY24",22],["FY25",17],["FY26",16],["Q2 FY27",18]];
-CV.forEach(function(d,i){var x=6+i*80,h=d[1]*2.6,last=i===CV.length-1;
+CV.forEach(function(d,i){var x=6+i*80,h=d[1]*2.2,last=i===CV.length-1;
  VZ.el("rect",{x:x,y:70-h,width:40,height:h,rx:3,style:"fill:"+(last?"var(--accent)":"var(--ink3)")},cb);
  var t=VZ.el("text",{x:x+20,y:70-h-6,"text-anchor":"middle","class":"tv"},cb);t.textContent=d[1];
  var l=VZ.el("text",{x:x+20,y:88,"text-anchor":"middle"},cb);l.textContent=d[0]});
@@ -204,7 +204,7 @@ function draw(){dh.innerHTML="";var W=Math.max(280,dh.clientWidth),nar=W<640;
    wrap(a.r,Math.floor((p.w-36)/7)).slice(0,2).forEach(function(ln){var t=VZ.el("text",{x:p.x+18,y:y+2,style:"font-size:13px;fill:"+(on?"var(--on-accent)":"var(--ink2)")+(on?";opacity:.85":"")},g);t.textContent=ln;y+=16});
    key(g,function(){sel={k:"a",i:i};draw();var f2=dh.querySelector('[aria-pressed="true"]');if(f2)f2.focus()})});
  }else{
-  var cw=(W-3*8)/4,fh2=78,aw2=(W-2*8)/3,ah2=132,top2=22,mid=40;
+  var cw=(W-3*8)/4,fh2=84,aw2=(W-2*8)/3,ah2=132,top2=22,mid=40;
   var H2=top2+fh2+mid+ah2+28;
   var s2=VZ.svg(dh,W,H2,"Diagram linking four Wipro figures to three asks of the role.");s2.setAttribute("role","group");
   var FP2=F.map(function(f,i){return {x:i*(cw+8),y:top2,w:cw,h:fh2}}),AP2=A.map(function(a,i){return {x:i*(aw2+8),y:top2+fh2+mid,w:aw2,h:ah2}});
@@ -214,7 +214,7 @@ function draw(){dh.innerHTML="";var W=Math.max(280,dh.clientWidth),nar=W<640;
   F.forEach(function(f,i){var p=FP2[i],on=hiF(i),g=VZ.el("g",{"class":"nd",tabindex:0,role:"button","aria-pressed":sel.k==="f"&&sel.i===i,"aria-label":f.n+", "+f.l},s2);
    VZ.el("rect",{x:p.x,y:p.y,width:p.w,height:p.h,rx:6,style:"fill:"+(on?"var(--accent-soft)":"var(--panel)")+";stroke:"+(on?"var(--accent)":"var(--line)"),"stroke-width":on?2:1.5},g);
    var n=VZ.el("text",{x:p.x+p.w/2,y:p.y+34,"text-anchor":"middle",style:"font-size:"+(f.n.length>5?"17px":"22px")+";font-weight:600;letter-spacing:-.02em;fill:"+(on?"var(--accent)":"var(--ink1)")},g);n.textContent=f.n;
-   var l=VZ.el("text",{x:p.x+p.w/2,y:p.y+58,"text-anchor":"middle",style:"font-size:11px;fill:var(--ink2)"},g);l.textContent=["existing clients","US$100m clients","new clients","margin"][i];
+   [["existing","clients"],["US$100m","clients"],["new","clients"],["margin"]][i].forEach(function(wd,j){var l=VZ.el("text",{x:p.x+p.w/2,y:p.y+54+j*13,"text-anchor":"middle",style:"font-size:11px;fill:var(--ink2)"},g);l.textContent=wd});
    key(g,function(){sel={k:"f",i:i};draw()})});
   A.forEach(function(a,i){var p=AP2[i],on=hiA(i),g=VZ.el("g",{"class":"nd",tabindex:0,role:"button","aria-pressed":sel.k==="a"&&sel.i===i,"aria-label":"Ask "+(i+1)+": "+a.t},s2);
    VZ.el("rect",{x:p.x,y:p.y,width:p.w,height:p.h,rx:6,style:"fill:"+(on?"var(--accent)":"var(--panel)")+";stroke:"+(on?"var(--accent)":"var(--line)"),"stroke-width":1.5},g);
