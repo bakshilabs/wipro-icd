@@ -285,7 +285,7 @@ sortHost.innerHTML='<button type="button" data-k="-1" aria-pressed="true">Sort b
 function order(){return SEC.slice().sort(function(a,b){var d=sortBy<0?b.t-a.t:b.s[sortBy]-a.s[sortBy]||b.t-a.t;return d||a.i-b.i})}
 function hCard(){var s=SEC[hSel[0]],j=hSel[1],v=s.s[j];
  var li=s.c[j].map(function(k){var c=C[k];return '<li>'+esc(c[0])+'<span class="src">'+k+', '+esc(c[1])+' ('+esc(c[2])+')</span></li>'}).join("")||'<li>This score rests on my reading of the sector with no single dated source behind it.</li>';
- document.getElementById("dm-hcard").innerHTML='<h4>'+esc(s.n)+', '+esc(COLS[j].toLowerCase())+'</h4><div class="sc">'+v+' of 5</div><span class="src">My judgement</span><div class="k">Reasons</div><p>'+esc(s.r[j])+'</p><div class="k">Evidence</div><ul>'+li+'</ul>';
+ document.getElementById("dm-hcard").innerHTML='<h4>'+esc(s.n)+': '+esc(COLS[j])+'</h4><div class="sc">'+v+' of 5</div><span class="src">My judgement</span><div class="k">Reasons</div><p>'+esc(s.r[j])+'</p><div class="k">Evidence</div><ul>'+li+'</ul>';
  [].forEach.call(document.querySelectorAll("#dm-heat .dm-cell"),function(g){g.classList.toggle("sel",+g.dataset.r===hSel[0]&&+g.dataset.c===hSel[1])})}
 var heatHost=document.getElementById("dm-heat"),hw=0;
 function drawHeat(){var W=heatHost.clientWidth;if(!W)return;hw=W;heatHost.innerHTML="";var narrow=W<560,lw=narrow?112:180,tw=narrow?0:56,cw=(W-lw-tw)/4,hh=narrow?30:46,rh=narrow?46:52,H=hh+SEC.length*rh;
