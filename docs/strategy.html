@@ -188,7 +188,7 @@
       <b class="big">Signed TCV</b>
       <h3>IC&amp;D order book booked</h3>
       <p>Signed total contract value for the assigned portfolio, against Wipro's bookings definition. Phased first scopes land it early.</p>
-      <svg viewBox="0 0 200 48" aria-hidden="true"><rect class="bg" x="0" y="0" width="200" height="48" rx="4"/><path class="fg" d="M8 40h30v-6H8zM42 40h30v-14H42zM76 40h30v-20H76zM110 40h30v-28h-30zM144 40h30v-33h-30z"/><text x="8" y="12">Order book by quarter, illustrative</text></svg>
+      <svg viewBox="0 0 200 48" aria-hidden="true"><rect class="bg" x="0" y="0" width="200" height="48" rx="4"/><path class="fg" d="M8 42h30v-5H8zM42 42h30v-9H42zM76 42h30v-13H76zM110 42h30v-17h-30zM144 42h30v-22h-30z"/><text x="8" y="13">Order book by quarter, illustrative</text></svg>
     </div>
     <div class="m3-tile rv">
       <span class="n" aria-hidden="true">2</span>
@@ -204,7 +204,7 @@
       <b class="big">Per account</b>
       <h3>Share of wallet</h3>
       <p>Wipro's share of each client's addressable spend, tracked with the client partner as the lead measure for Move 1.</p>
-      <svg viewBox="0 0 200 48" aria-hidden="true"><rect class="bg" x="0" y="0" width="200" height="48" rx="4"/><rect class="fg" x="8" y="22" width="184" height="18" rx="3" opacity=".25"/><rect class="fg" x="8" y="22" width="70" height="18" rx="3"/><text x="8" y="14">Wipro share of client spend, illustrative</text></svg>
+      <svg viewBox="0 0 200 48" aria-hidden="true"><rect class="bg" x="0" y="0" width="200" height="48" rx="4"/><rect class="fg" x="8" y="22" width="184" height="18" rx="3" opacity=".25"/><rect class="fg" x="8" y="22" width="70" height="18" rx="3"/><text x="8" y="14">Share of client spend, illustrative</text></svg>
     </div>
     <div class="m3-tile rv">
       <span class="n" aria-hidden="true">4</span>
@@ -233,7 +233,7 @@ var F=[
  {fig:"98%",cap:["of Q2 FY27 revenue","from existing clients"],con:"Expand first",ord:"Move 1",m:"m1",
   read:"98.0% of Wipro's revenue in Q2 FY27 came from existing clients, with 33 new clients added in the quarter and 216 in FY26. Growth in the UK and Ireland has to come from inside the accounts Wipro already holds, so expansion is the first move and the fastest route to order book.",
   src:"Wipro, Datasheet Q2 FY27, October 2026 (primary)."},
- {fig:"22 to 18",cap:["clients above US$100m,","FY24 to Q2 FY27"],con:"Rebuild large accounts",ord:"Move 1, then Move 2",m:"m1",spark:[22,17,16,18],
+ {fig:"22 to 18",cap:["clients above US$100m","FY24 to Q2 FY27"],con:"Rebuild large accounts",ord:"Move 1, then Move 2",m:"m1",spark:[22,17,16,18],
   read:"Wipro had 22 clients above US$100m a year in FY24, 17 in FY25, 16 in FY26 and 18 in Q2 FY27. The large-account base eroded and is being rebuilt. Phased expansions that reach large-deal size (TCV of US$30m or more) rebuild it from inside, and each new logo starts the same climb.",
   src:"Wipro, Form 20-F FY2026 and Datasheet Q2 FY27 (primary)."},
  {fig:"“hunting remains a very, very key lever”",cap:["Wipro CFO Aparna Iyer,","17 January 2025"],con:"Hunt from the first quarter",ord:"Move 2",m:"m2",q:true,
@@ -252,12 +252,12 @@ function draw(){host.innerHTML="";var W=wOf(host),nar=W<760;
   var g=VZ.el("g",{"class":"hit",role:"button",tabindex:"0","aria-pressed":on,"aria-label":f.fig+", "+f.cap.join(" ")+": "+f.con},s);
   VZ.el("rect",{"class":"box "+f.m+(on?" on":""),x:x0+1,y:y0+1,width:cw-2,height:FH-2,rx:8},g);
   var cx=x0+cw/2;
-  if(f.q){var ql=wrapQ(f.fig,cw>330?34:26),qy=y0+44;lines(g,ql,cx,qy,"fig q",27,"middle");lines(g,f.cap,cx,y0+FH-36,"cap",18,"middle")}
+  if(f.q){var ql=wrapQ(f.fig,cw>330?28:22),qy=y0+44;lines(g,ql,cx,qy,"fig q",27,"middle");lines(g,f.cap,cx,y0+FH-36,"cap",18,"middle")}
   else{var t=VZ.el("text",{x:f.spark?x0+24:cx,y:y0+66,"class":"fig","text-anchor":f.spark?"start":"middle"},g);t.textContent=f.fig;
    lines(g,f.cap,f.spark?x0+24:cx,y0+FH-36,"cap",18,f.spark?"start":"middle");
-   if(f.spark){var sx=VZ.lin(0,3,x0+cw-150,x0+cw-30),sy=VZ.lin(14,24,y0+92,y0+24),d="";f.spark.forEach(function(v,k){d+=(k?"L":"M")+sx(k)+","+sy(v)});VZ.el("path",{"class":"spark",d:d},g);
-    f.spark.forEach(function(v,k){VZ.el("circle",{"class":"sdot",cx:sx(k),cy:sy(v),r:4},g);var lb=VZ.el("text",{x:sx(k),y:sy(v)-10,"class":"cap","text-anchor":"middle",style:"font-weight:600;fill:var(--ink1)"},g);lb.textContent=v});
-    ["FY24","FY25","FY26","Q2 FY27"].forEach(function(l,k){var lb=VZ.el("text",{x:sx(k),y:y0+112,"class":"cap","text-anchor":"middle",style:"font-size:11.5px"},g);lb.textContent=l})}}
+   if(f.spark){var sx=VZ.lin(0,3,x0+cw-118,x0+cw-30),sy=VZ.lin(14,24,y0+90,y0+36),d="";f.spark.forEach(function(v,k){d+=(k?"L":"M")+sx(k)+","+sy(v)});VZ.el("path",{"class":"spark",d:d},g);
+    f.spark.forEach(function(v,k){VZ.el("circle",{"class":"sdot",cx:sx(k),cy:sy(v),r:4},g);var lb=VZ.el("text",{x:sx(k),y:sy(v)-9,"class":"cap","text-anchor":"middle",style:"font-weight:600;fill:var(--ink1);font-size:12px"},g);lb.textContent=v});
+    ["FY24","FY25","FY26","Q2 FY27"].forEach(function(l,k){var lb=VZ.el("text",{x:sx(k),y:y0+108,"class":"cap","text-anchor":"middle",style:"font-size:10.5px"},g);lb.textContent=l})}}
   /* arrow down */
   var ay=y0+FH;VZ.el("path",{"class":"arrow",d:"M"+cx+","+(ay+6)+"V"+(ay+AH-12)},g);VZ.el("path",{"class":"ahead",d:"M"+(cx-7)+","+(ay+AH-14)+"L"+cx+","+(ay+AH-4)+"L"+(cx+7)+","+(ay+AH-14)+"z"},g);
   /* consequence */
