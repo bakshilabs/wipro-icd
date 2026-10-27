@@ -16,7 +16,7 @@ if (!pages.length) pages = fs.readdirSync('docs').filter(f => f.endsWith('.html'
       pg.on('console', m => { if (m.type() === 'error') errs.push(m.text()) });
       pg.on('pageerror', e => errs.push(e.message));
       await pg.goto('http://localhost:8765/' + p, { waitUntil: 'networkidle' });
-      await pg.evaluate(() => document.querySelectorAll('.reveal,[data-reveal]').forEach(e => e.classList.add('in', 'on', 'shown')));
+      await pg.evaluate(() => document.querySelectorAll('.rv,.reveal,[data-reveal]').forEach(e => e.classList.add('in', 'on', 'shown')));
       await pg.waitForTimeout(600);
       const sx = await pg.evaluate(() => document.documentElement.scrollWidth - innerWidth);
       let ax = '';
