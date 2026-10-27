@@ -1,0 +1,57 @@
+/* shared site navigation and pager, used by every page */
+.sitenav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--line)}
+@supports (background:color-mix(in srgb,red 50%,blue)){.sitenav{background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:saturate(180%) blur(18px);backdrop-filter:saturate(180%) blur(18px)}}
+.sitenav .in{max-width:1200px;margin:0 auto;padding:0 32px;height:58px;display:flex;align-items:center;gap:20px}
+.sitenav .brand{font:500 16px/1 var(--sans,"SuisseIntl","Helvetica Neue",Arial,sans-serif);letter-spacing:-.015em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.sitenav .brand span{color:var(--muted);font-weight:400;margin-left:8px}
+.sitenav .links{display:flex;gap:2px;margin-left:auto}
+.sitenav .links a{padding:8px 13px;border-radius:3px;color:var(--muted);text-decoration:none;font:400 14px/1 var(--sans,"SuisseIntl","Helvetica Neue",Arial,sans-serif);white-space:nowrap;transition:background .15s,color .15s}
+.sitenav .links a:hover{color:var(--ink);background:var(--panel)}
+.sitenav .links a[aria-current="page"]{color:var(--accent);background:var(--accent-soft);font-weight:500}
+.sitenav .menu{display:none;margin-left:auto;appearance:none;border:0;background:var(--panel);color:var(--ink);border-radius:3px;padding:9px 16px;font:500 14px/1 var(--sans,"SuisseIntl","Helvetica Neue",Arial,sans-serif);cursor:pointer}
+@media (max-width:1280px){
+  .sitenav .in{padding:0 20px}
+  .sitenav .menu{display:block}
+  .sitenav .links{display:none;position:absolute;top:58px;left:0;right:0;flex-direction:column;gap:2px;padding:10px 20px 18px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .sitenav .links.open{display:flex}
+  .sitenav .links a{padding:13px 14px;font-size:16px}
+}
+.pager{max-width:1200px;margin:96px auto 0;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pager a{display:block;background:var(--panel);border-radius:5px;padding:22px 24px;color:var(--ink);text-decoration:none;transition:background .15s}
+.pager a:hover{background:var(--accent-soft)}
+.pager small{display:block;font:500 11px/1 var(--sans,"SuisseIntl","Helvetica Neue",Arial,sans-serif);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.pager b{font:500 20px/1.2 var(--sans,"SuisseIntl","Helvetica Neue",Arial,sans-serif);letter-spacing:-.02em}
+.pager .next{text-align:right;grid-column:2}
+.pager .prev:only-child{grid-column:1}
+.site-foot{max-width:1200px;margin:40px auto 0;padding:24px 32px 56px;color:var(--muted);font:400 13px/1.5 var(--sans,"SuisseIntl","Helvetica Neue",Arial,sans-serif);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;border-top:1px solid var(--line)}
+@media (max-width:640px){.pager{padding:0 20px;grid-template-columns:1fr}.pager .next{grid-column:1;text-align:left}.site-foot{padding:24px 20px 48px}}
+@media print{.sitenav,.pager,.site-foot{display:none!important}}
+.sitenav .theme{appearance:none;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:3px;padding:7px 14px;min-height:30px;font:500 13px/1 var(--sans,"SuisseIntl","Helvetica Neue",Arial,sans-serif);cursor:pointer;margin-left:8px}
+.sitenav .theme:hover{background:var(--panel)}
+@media (max-width:1280px){.sitenav .theme{margin-left:auto}.sitenav .menu{margin-left:8px}}
+@media (max-width:560px){.sitenav .brand span{display:none}.sitenav .in{gap:10px}}
+
+/* meeting and appendix groups */
+.sitenav .links a.appx{margin-left:10px;border:1px solid var(--line)}
+.sitenav .links a.appx span{margin-left:6px;font-size:12px;color:var(--muted)}
+.appxbar{border-top:1px solid var(--line)}
+.appxbar .in{height:auto;padding-top:0;padding-bottom:0;gap:2px;overflow-x:auto;scrollbar-width:thin}
+.appxbar a{flex:none;padding:9px 10px;color:var(--muted);text-decoration:none;font:400 13px/1 var(--sans,"SuisseIntl","Helvetica Neue",Arial,sans-serif);white-space:nowrap;border-bottom:2px solid transparent}
+.appxbar a b{font-weight:600;margin-right:5px;color:var(--ink2,var(--muted))}
+.appxbar a:hover{color:var(--ink)}
+.appxbar a[aria-current="page"]{color:var(--accent);border-bottom-color:var(--accent)}
+.appxbar a[aria-current="page"] b{color:var(--accent)}
+.appxbar a.home{font-weight:500;color:var(--ink);padding-left:0;margin-right:8px}
+.eyebrow .acode{font-weight:600;color:var(--accent);margin-right:10px}
+@media (max-width:1280px){.sitenav .links a.appx{margin-left:0}}
+@media print{.appxbar{display:none!important}}
+body:has(.appxbar) .model .controls{top:112px}
+html:has(.appxbar){scroll-padding-top:112px}
+
+/* single analysis group: the code bar is the main navigation */
+.sitenav .links.about{display:flex;position:static;flex-direction:row;padding:0;border:0;background:none;margin-left:auto}
+.sitenav .links.about a{padding:8px 11px;font-size:14px}
+@media (max-width:1280px){.sitenav .theme{margin-left:8px}}
+@media (max-width:420px){.sitenav .links.about a{padding:8px 7px}}
+html:has(.appxbar){scroll-padding-top:112px}
+.appxbar a{padding:9px 8px}

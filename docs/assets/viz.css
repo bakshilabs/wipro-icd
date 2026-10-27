@@ -1,0 +1,132 @@
+/* Shared chart layer. Series colours are an earth palette (slate, terracotta, sage, ochre, clay, moss, heather, berry), used with the indigo accent.
+   Use roles, never raw hex: --s1..--s8 categorical in fixed order, --seq-* one-hue ramp, status --good/--warning/--serious/--critical. */
+:root{
+  --chart-bg:#fffefc;--ink1:#1c1e1b;--ink2:#4f514b;--ink3:#8b8c84;--grid:#e8e5dd;--axis:#cbc8be;--ring:#fffefc;
+  --s1:#33658a;--s2:#c2612f;--s3:#4fae86;--s4:#d9a63a;--s5:#d98fa3;--s6:#6d8c3c;--s7:#6a5878;--s8:#9c3550;
+  --seq-1:#ebebf8;--seq-2:#c9caee;--seq-3:#9698dc;--seq-4:#6466c4;--seq-5:#3a3aa8;
+  --good:#2e7a4d;--warning:#d9a63a;--serious:#c2612f;--critical:#b03a2e;
+}
+@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){
+  --chart-bg:#151714;--ink1:#ecebe5;--ink2:#c0c0b6;--ink3:#85867e;--grid:#262924;--axis:#353831;--ring:#151714;
+  --s1:#4f86b3;--s2:#cf6d3b;--s3:#4fb88c;--s4:#d9ab45;--s5:#d690a4;--s6:#85a64f;--s7:#a593b5;--s8:#c4526c;
+  --seq-1:#1a1b33;--seq-2:#2a2c58;--seq-3:#45478a;--seq-4:#7477c4;--seq-5:#a9abf2;}}
+:root[data-theme="dark"]{
+  --chart-bg:#151714;--ink1:#ecebe5;--ink2:#c0c0b6;--ink3:#85867e;--grid:#262924;--axis:#353831;--ring:#151714;
+  --s1:#4f86b3;--s2:#cf6d3b;--s3:#4fb88c;--s4:#d9ab45;--s5:#d690a4;--s6:#85a64f;--s7:#a593b5;--s8:#c4526c;
+  --seq-1:#1a1b33;--seq-2:#2a2c58;--seq-3:#45478a;--seq-4:#7477c4;--seq-5:#a9abf2;}
+
+/* chart frame */
+.viz{background:var(--chart-bg);border-radius:6px;padding:22px 22px 16px;margin-top:28px;border:1px solid var(--line)}
+.viz-h{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px;margin-bottom:14px}
+.viz-h h3{font-size:17px}
+.viz-h p{font-size:13px;color:var(--ink2)}
+.viz svg{display:block;width:100%;height:auto;overflow:visible}
+.viz svg text{font-family:var(--sans);fill:var(--ink2);font-size:12px}
+.viz svg .t-strong{fill:var(--ink1);font-weight:600}
+.viz svg .t-muted{fill:var(--ink3);font-size:11px}
+.viz svg .grid{stroke:var(--grid);stroke-width:1}
+.viz svg .axis{stroke:var(--axis);stroke-width:1}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:4px 0 10px;font-size:13px;color:var(--ink2)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.legend button{appearance:none;border:0;background:none;color:inherit;font:inherit;display:inline-flex;align-items:center;gap:6px;cursor:pointer;padding:4px 2px;border-radius:3px}
+.legend button[aria-pressed="false"]{opacity:.4}
+
+/* tooltip */
+.vz-tip{position:fixed;z-index:200;pointer-events:none;background:var(--chart-bg);color:var(--ink1);border:1px solid var(--line);border-radius:5px;padding:9px 12px;font:400 13px/1.4 var(--sans);box-shadow:0 6px 24px rgba(0,0,0,.14);max-width:300px;opacity:0;transform:translateY(4px);transition:opacity .12s,transform .12s}
+.vz-tip.on{opacity:1;transform:none}
+.vz-tip b{display:block;font-weight:600;margin-bottom:2px}
+.vz-tip .m{color:var(--ink2)}
+
+/* stat tiles */
+.stats4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.stat{background:var(--panel);border-radius:6px;padding:18px 20px}
+.stat b{display:block;font:600 clamp(28px,3.2vw,42px)/1 var(--sans);letter-spacing:-.03em;color:var(--ink1)}
+.stat span{display:block;font-size:13px;color:var(--ink2);margin-top:8px;line-height:1.35}
+.stat.hi{background:var(--accent);}.stat.hi b,.stat.hi span{color:var(--on-accent)}
+@media (max-width:900px){.stats4{grid-template-columns:1fr 1fr}}
+
+/* tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-top:24px}
+.tabs [role=tab]{appearance:none;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:3px;padding:9px 14px;font:500 14px/1 var(--sans);cursor:pointer}
+.tabs [role=tab][aria-selected="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+[role=tabpanel][hidden]{display:none}
+
+/* clickable chips and cards */
+.pick{cursor:pointer;transition:transform .15s,background .15s}
+.pick:hover{transform:translateY(-2px)}
+.pick[aria-pressed="true"],.pick.sel{outline:2px solid var(--accent);outline-offset:2px}
+
+/* entrance motion */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+.grow{transform-origin:left center;transform:scaleX(0);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.in .grow,.grow.in{transform:scaleX(1)}
+@media (prefers-reduced-motion:reduce){.rv,.grow{opacity:1!important;transform:none!important;transition:none!important}}
+
+/* short text blocks */
+.lead-viz{margin-top:36px}
+.kicker{font-size:15px;color:var(--ink2);max-width:62ch;margin-top:10px}
+.mini{font-size:13px;color:var(--ink2)}
+.icon{width:36px;height:36px;border-radius:6px;background:var(--accent-soft);color:var(--accent);display:inline-grid;place-items:center;margin-bottom:12px}
+.icon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+details.more{margin-top:14px;font-size:14px}
+details.more summary{cursor:pointer;color:var(--accent);font-weight:500}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* section stepper: fixed up and down buttons that jump between top-level sections */
+.secnav{position:fixed;right:20px;bottom:20px;z-index:150;display:flex;flex-direction:column;align-items:center;gap:6px;background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:8px;padding:6px;box-shadow:0 4px 18px rgba(0,0,0,.10)}
+.secnav button{appearance:none;width:44px;height:44px;border:0;border-radius:5px;background:var(--panel);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:background .15s,color .15s}
+.secnav button:hover:not(:disabled){background:var(--accent);color:var(--on-accent)}
+.secnav button:disabled{opacity:.35;cursor:default}
+.secnav svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.secnav output{font:600 12px/1 var(--sans);color:var(--ink2);font-variant-numeric:tabular-nums;padding:2px 0}
+@media (max-width:640px){.secnav{right:12px;bottom:12px;padding:4px;gap:4px}.secnav button{width:40px;height:40px}}
+@media print{.secnav{display:none!important}}
+@media (max-width:640px){.secnav{right:8px;bottom:10px;opacity:.92}.secnav button{width:36px;height:36px}.secnav output{font-size:11px}}
+body:has(.secnav){padding-bottom:72px}
+/* keep the stepper inside the right gutter at 1280 */
+.secnav{right:10px;padding:4px;gap:4px}
+.secnav button{width:36px;height:36px}
+.secnav output{font-size:11px}
+/* trim the gap before sources and the pager */
+.page{padding-bottom:0}
+.sources{margin-top:56px}
+.pager{margin-top:56px}
+/* phones: the stepper becomes a slim bottom bar the page scrolls past */
+@media (max-width:640px){
+ .secnav{left:0;right:0;bottom:0;border-radius:0;border-width:1px 0 0;flex-direction:row;justify-content:center;gap:18px;padding:5px 12px calc(5px + env(safe-area-inset-bottom));opacity:1;box-shadow:none;background:color-mix(in srgb,var(--bg) 94%,transparent)}
+ .secnav button{width:44px;height:34px}
+ body:has(.secnav){padding-bottom:64px}
+}
+/* callouts span the content column; sources is a slim disclosure */
+.callout{max-width:none}
+.sources{padding:12px 18px;margin-top:48px;background:transparent;border-top:1px solid var(--line);border-radius:0}
+.sources h2{font-size:15px;margin-bottom:4px}
+
+/* section navigation rail (replaces the earlier stepper layout) */
+.secnav{top:50%;bottom:auto;right:14px;transform:translateY(-50%);padding:6px 4px;gap:4px;border-radius:20px}
+.secnav .rail{list-style:none;margin:2px 0;padding:0;display:flex;flex-direction:column;align-items:center;gap:2px}
+.secnav .dot{width:28px;height:22px;background:none;position:relative;display:grid;place-items:center;border-radius:4px}
+.secnav .dot::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink3);transition:height .2s,background .2s}
+.secnav .dot:hover::before{background:var(--ink1)}
+.secnav .dot[aria-current]::before{height:18px;border-radius:4px;background:var(--accent)}
+.secnav .dot:hover,.secnav .dot:focus-visible{background:none}
+.secnav .dot .lab{position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);white-space:nowrap;background:var(--chart-bg);color:var(--ink1);border:1px solid var(--line);border-radius:4px;padding:5px 9px;font:500 12.5px/1.2 var(--sans);box-shadow:0 4px 14px rgba(0,0,0,.12);opacity:0;pointer-events:none;transition:opacity .12s}
+.secnav .dot:hover .lab,.secnav .dot:focus-visible .lab{opacity:1}
+.secnav .up,.secnav .dn,.secnav .pg{width:30px;height:30px;border-radius:15px}
+.secnav .pg{background:none;color:var(--ink3);margin-top:2px}
+.secnav .pg svg{width:16px;height:16px;stroke-width:1.8}
+.secnav .pg[aria-pressed="true"]{color:var(--accent);background:var(--accent-soft)}
+.secnav .pg:hover{background:var(--panel);color:var(--ink)}
+.secnav output{font-size:10.5px}
+@media (max-height:620px){.secnav .rail{display:none}}
+/* phones keep the bottom bar: buttons and counter only */
+@media (max-width:640px){
+ .secnav{top:auto;transform:none;right:0;border-radius:0;padding:5px 12px calc(5px + env(safe-area-inset-bottom))}
+ .secnav .rail,.secnav .pg{display:none}
+ .secnav .up,.secnav .dn{width:44px;height:34px;border-radius:5px}
+ .secnav output{font-size:11px}
+}
+.secnav button.dot:hover:not(:disabled),.secnav button.dot:focus-visible{background:none;color:inherit}.secnav button.pg:hover:not(:disabled){background:var(--panel);color:var(--ink)}
+@media (max-width:640px){.secnav{bottom:0}}

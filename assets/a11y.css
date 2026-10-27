@@ -1,0 +1,39 @@
+/* shared accessibility and chart-colour layer, loaded after each page's own styles */
+:root{color-scheme:light dark;scroll-padding-top:76px;
+  --muted:#636366;--ok:#1f7a35;
+  --c0:#1c19b5;--c1:#0077aa;--c2:#c25400;--c3:#00857a;--c4:#8a6d00;--c5:#8944ab;--c6:#6e6e73}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --muted:#a1a1a6;--ok:#30d158;
+  --c0:#8d8bff;--c1:#64d2ff;--c2:#ff9f0a;--c3:#2ec4b6;--c4:#e5c100;--c5:#bf5af2;--c6:#98989d}}
+:root[data-theme="dark"]{color-scheme:dark;
+  --muted:#a1a1a6;--ok:#30d158;
+  --c0:#8d8bff;--c1:#64d2ff;--c2:#ff9f0a;--c3:#2ec4b6;--c4:#e5c100;--c5:#bf5af2;--c6:#98989d}
+:root[data-theme="light"]{color-scheme:light}
+
+/* labels that sit on a series colour take white in light mode and black in dark mode */
+.seg.c0,.seg.c1,.seg.c2,.seg.c3,.seg.c4,.seg.c5,.seg.c6,.qb,.qb.a,.qb.g,.qb span{color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) :is(.seg.c0,.seg.c1,.seg.c2,.seg.c3,.seg.c4,.seg.c5,.seg.c6,.qb,.qb.a,.qb.g,.qb span){color:#000}}
+:root[data-theme="dark"] :is(.seg.c0,.seg.c1,.seg.c2,.seg.c3,.seg.c4,.seg.c5,.seg.c6,.qb,.qb.a,.qb.g,.qb span){color:#000}
+
+/* heat-map cell captions and bar values carry their own surface so contrast never depends on bar length */
+td.c .s,td.c .lp,td.t .s{color:var(--ink)}
+.pv{background:var(--surface);color:var(--ink)!important;padding:0 8px;border-radius:3px;left:4px;top:3px;bottom:3px;text-shadow:none}
+
+/* keyboard focus, visible on both surfaces */
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) :focus-visible{outline-color:#fff}}
+.skip{position:absolute;left:12px;top:-60px;z-index:200;background:var(--accent);color:#fff;padding:12px 18px;border-radius:4px;font:500 15px/1 var(--sans,"SuisseIntl","Helvetica Neue",Arial,sans-serif);text-decoration:none}
+.skip:focus{top:12px}
+main:focus{outline:none}
+
+/* small print inside charts stays legible */
+td.c .lp{font-size:.75rem}
+.mo{font-size:.75rem}
+
+/* pointer targets of at least 24px */
+.sitenav .links a,.pager a,.site-foot a{min-height:24px}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;scroll-behavior:auto!important}}
+@media (forced-colors:active){.seg,.bar .seg,.pv{border:1px solid CanvasText}}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) td.c.s2 .lp{color:#fff}}
+:root[data-theme="dark"] td.c.s2 .lp{color:#fff}
