@@ -10,9 +10,22 @@ ORDER = ['research-wipro', 'research-uki-market', 'research-competitors', 'resea
          # second round
          'research-bfs-europe', 'research-wipro-sales', 'research-sales-scope', 'page-banking', 'page-banking-edits',
          'page-strategy-index-role', 'page-strategy-commercial', 'page-strategy-plan',
-         'research-account-map', 'research-new-logos', 'page-account-map', 'page-new-logos']
+         'research-account-map', 'research-new-logos', 'page-account-map', 'page-new-logos',
+         # third round: review first, then fixes and the meeting pages
+         'review-wipro', 'review-market', 'review-accounts', 'review-pages', 'fix-chaps', 'fix-accounts',
+         'page-meeting-situation-fit', 'page-meeting-strategy-banking', 'page-meeting-plan-vision']
 ROUND2 = {'research-bfs-europe', 'research-wipro-sales', 'research-sales-scope', 'page-banking', 'page-banking-edits', 'page-strategy-index-role', 'page-strategy-commercial', 'page-strategy-plan', 'research-account-map', 'research-new-logos', 'page-account-map', 'page-new-logos'}
-SHORT = {'research-account-map': 'Account map', 'research-new-logos': 'New logos', 'page-account-map': 'Account Map page', 'page-new-logos': 'New Logos page', 'page-strategy-index-role': 'Strategy: index, Role', 'page-strategy-commercial': 'Strategy: commercial pages', 'page-strategy-plan': 'Strategy: Months, Banking', 'research-wipro': 'Wipro', 'research-uki-market': 'UKI market', 'research-competitors': 'Competitors',
+ROUND3 = {'review-wipro', 'review-market', 'review-accounts', 'review-pages', 'fix-chaps', 'fix-accounts',
+          'page-meeting-situation-fit', 'page-meeting-strategy-banking', 'page-meeting-plan-vision'}
+# Pages the second round added to the appendix; the first round wrote the rest.
+R2_PAGES = {'banking.html', 'account-map.html', 'new-logos.html'}
+# Phrases cut from a record before it goes on the public page: they refer to material kept out of the build.
+PUBLIC_CUT = {'review-pages': [('; list the five weakest study-page answers', ''), (', weakest study answers', '')]}
+SHORT = {'review-wipro': 'Review: Wipro files', 'review-market': 'Review: market files', 'review-accounts': 'Review: accounts files',
+         'review-pages': 'Review: pages', 'fix-chaps': 'Fix: CHAPS dates', 'fix-accounts': 'Fix: accounts, competitors',
+         'page-meeting-situation-fit': 'Meeting: Situation, Fit', 'page-meeting-strategy-banking': 'Meeting: Strategy, Banking',
+         'page-meeting-plan-vision': 'Meeting: Plan, Vision',
+         'research-account-map': 'Account map', 'research-new-logos': 'New logos', 'page-account-map': 'Account Map page', 'page-new-logos': 'New Logos page', 'page-strategy-index-role': 'Strategy: index, Role', 'page-strategy-commercial': 'Strategy: commercial pages', 'page-strategy-plan': 'Strategy: Months, Banking', 'research-wipro': 'Wipro', 'research-uki-market': 'UKI market', 'research-competitors': 'Competitors',
          'research-deals': 'Deals and pursuits', 'page-portfolio-demand': 'Portfolio, Demand',
          'page-buyers-accounts': 'Buyers, Accounts', 'page-competitors-deals': 'Competitors, Deals',
          'page-pursuits-workshops-ai': 'Pursuits, Workshops, AI', 'page-role-months-about': 'Role, Months, About',
@@ -36,9 +49,13 @@ for name in ORDER + extra:
     stats = {'calls': int(r.group(1).replace(',', '')), 'tokens': int(r.group(2).replace(',', '')),
              'min': float(r.group(3))} if r else None
     col = 'idx' if name in ('page-index', 'page-method') else COL.get(name.split('-')[0], 'pg')
-    agents.append({'id': fm['name'], 'short': SHORT.get(name, fm['name']), 'col': col, 'round': 2 if name in ROUND2 else 1, 'stage': fm.get('stage', ''),
-                   'job': fm.get('description', ''), 'inputs': fm.get('inputs', ''), 'outputs': fm.get('outputs', ''),
-                   'run': stats, 'body': m.group(2).strip()})
+    body, outputs = m.group(2).strip(), fm.get('outputs', '')
+    for old, new in PUBLIC_CUT.get(name, []):
+        body, outputs = body.replace(old, new), outputs.replace(old, new)
+    agents.append({'id': fm['name'], 'short': SHORT.get(name, fm['name']), 'col': col,
+                   'round': 3 if name in ROUND3 else 2 if name in ROUND2 else 1, 'stage': fm.get('stage', ''),
+                   'job': fm.get('description', ''), 'inputs': fm.get('inputs', ''), 'outputs': outputs,
+                   'run': stats, 'body': body})
 
 done = [a for a in agents if a['run']]
 tot = {'agents': len(agents), 'calls': sum(a['run']['calls'] for a in done),
@@ -102,12 +119,24 @@ def js(o):
     return json.dumps(o, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
 bp = (ROOT / 'build' / 'build.py').read_text()
-i0 = bp.index('PAGES = [')
-plist = bp[i0:bp.index(']', i0)]  # the public page list only
-pages = re.findall(r'^\s*\("([\w-]+\.html)", "[^"]*"\),', plist, re.M)
-analysis = [p for p in pages if p not in ('overview.html', 'ai.html', 'method.html')]
+
+
+def plist(var):
+    """The (file, label) tuples of one list in build.py, by its variable name."""
+    i0 = bp.index(var + ' = [')
+    return re.findall(r'\("([\w-]+\.html)", "[^"]*"\)', bp[i0:bp.index('\n', bp.index(']', i0))])
+
+
+meeting, appendix = plist('MEETING'), plist('APPENDIX')
+pages = plist('PAGES') + meeting + appendix  # overview, ai and method sit on the PAGES line itself
+analysis = appendix
 r1 = [a for a in agents if a['round'] == 1]
 r2 = [a for a in agents if a['round'] == 2]
+r3 = [a for a in agents if a['round'] == 3]
+# Claims the third-round review checked: the three file reviewers' records give their counts; the page reviewer's
+# share brings the total to 133 (session notes, 27 October 2026).
+CLAIMS_R3 = 133
+assert sum(int(m) for a in r3 for m in re.findall(r'(\d+) claims checked', a['outputs'])) <= CLAIMS_R3
 out = (HERE / 'template.html').read_text()
 rep = {'__AGENTS__': js(agents), '__FILES__': js(F), '__N_AGENTS__': str(tot['agents']),
        '__N_CALLS__': str(tot['calls']), '__N_TOK__': f"{tot['tokens'] / 1e6:.2f}", '__N_TOK_FULL__': f"{tot['tokens']:,}",
@@ -118,18 +147,26 @@ rep = {'__AGENTS__': js(agents), '__FILES__': js(F), '__N_AGENTS__': str(tot['ag
        '__N_RF__': str(len(F)), '__W_RF__': word(len(F)), '__W_RF1__': word(sum(1 for x in F if x['r'] == 1)),
        '__W_RF2__': word(sum(1 for x in F if x['r'] == 2)), '__N_RF1__': str(sum(1 for x in F if x['r'] == 1)),
        '__N_RF2__': str(sum(1 for x in F if x['r'] == 2)), '__N_R1__': str(len(r1)), '__N_R2__': str(len(r2)),
-       '__W_R1__': word(len(r1)), '__W_R2__': word(len(r2)),
+       '__N_R3__': str(len(r3)), '__N_CLAIMS_R3__': str(CLAIMS_R3), '__W_R1__': word(len(r1)), '__W_R2__': word(len(r2)), '__W_R3__': word(len(r3)),
+       '__W_REV3__': word(sum(1 for a in r3 if a['col'] == 'rev')),
+       '__CAP_REV3__': word(sum(1 for a in r3 if a['col'] == 'rev')).capitalize(),
+       '__W_FIX3__': word(sum(1 for a in r3 if a['id'].startswith('fix-'))),
+       '__W_MPG3__': word(sum(1 for a in r3 if a['id'].startswith('page-meeting-'))),
+       '__CAP_FIX3__': word(sum(1 for a in r3 if a['id'].startswith('fix-'))).capitalize(),
+       '__CAP_MPG3__': word(sum(1 for a in r3 if a['id'].startswith('page-meeting-'))).capitalize(),
+       '__W_MEETING__': word(len(meeting)), '__N_MEETING__': str(len(meeting)),
        '__CAP_RES1__': word(sum(1 for a in r1 if a['col'] == 'res')).capitalize(),
        '__W_RES1__': word(sum(1 for a in r1 if a['col'] == 'res')),
        '__W_PG1__': word(sum(1 for a in r1 if a['col'] == 'pg')),
        '__W_REV__': word(sum(1 for a in r1 if a['col'] == 'rev')),
-       '__W_ANALYSIS__': word(len(analysis)), '__W_ANALYSIS1__': word(len(analysis) - 1)}
+       '__W_ANALYSIS__': word(len(analysis)), '__N_ANALYSIS__': str(len(analysis)),
+       '__W_ANALYSIS1__': word(sum(1 for x in analysis if x not in R2_PAGES))}
 for k, v in rep.items():
     out = out.replace(k, v)
 left = sorted(set(re.findall(r'__[A-Z0-9_]+__', out)))
 assert not left, left
 assert not re.search(r'study-|private/|interviewer', out, re.I), 'private material on the public Method page'
 (ROOT / 'build' / 'pages' / 'method.html').write_text(out)
-print(json.dumps(tot), 'rounds', len(r1), len(r2), 'claims', claims, sum(claims), 'links', len(allu), 'pages', len(pages))
+print(json.dumps(tot), 'rounds', len(r1), len(r2), len(r3), 'claims', claims, sum(claims), 'links', len(allu), 'pages', len(pages))
 for x in F:
     print(f"  {x['f']:15} v={x['c'][0]:3} s={x['c'][1]:3} u={x['c'][2]:3} total={sum(x['c']):3} words={x['w']} links={x['u']}")
