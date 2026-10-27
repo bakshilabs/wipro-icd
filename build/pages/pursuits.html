@@ -1,0 +1,326 @@
+<!--meta title="Pursuits" desc="How I would qualify, shape and close IC&amp;D pursuits with account and pursuit teams: a bid/no-bid scorecard, a stage plan from signal to close, UK public-sector rules and a proposal structure."-->
+<style>
+.pu-stats .stat b{font-variant-numeric:tabular-nums}
+.pu-sc{margin-top:28px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:20px;align-items:start}
+.pu-ctl{background:var(--panel);border-radius:6px;padding:18px 20px 20px}
+.pu-ctl h3{font-size:16px}
+.pu-row{padding:10px 0;border-top:1px solid var(--line)}
+.pu-row:first-of-type{border-top:0}
+.pu-row label{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:14px;font-weight:500}
+.pu-row label span.l{display:flex;gap:8px;align-items:baseline}
+.pu-row label i{font-style:normal;font:600 11px/1 var(--sans);color:var(--accent);background:var(--accent-soft);border-radius:3px;padding:3px 5px;min-width:22px;text-align:center}
+.pu-row output{font-size:12.5px;color:var(--accent);font-weight:600;white-space:nowrap}
+.pu-row input{width:100%;accent-color:var(--accent);margin-top:4px}
+.pu-row .hint{display:block;font-size:12px;color:var(--muted);margin-top:1px}
+.pu-res{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px 22px;position:sticky;top:120px}
+.pu-verdict{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.pu-verdict div{border-radius:5px;padding:10px 12px;background:var(--panel);font-size:12.5px;color:var(--muted);border:1px solid transparent;transition:all .2s}
+.pu-verdict div b{display:block;font-size:15px;color:var(--ink);margin-bottom:2px}
+.pu-verdict div.on{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+.pu-why{margin:12px 0 0;padding-left:18px;font-size:14px}
+.pu-why li{margin-top:6px}
+.pu-k{font:500 12px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-top:16px}
+.pu-bars .row{cursor:pointer}
+.pu-bars .row:focus{outline:none}
+.pu-bars .row:focus-visible .hit,.pu-bars .row:hover .hit{fill:var(--accent-soft)}
+.pu-presets{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:20px}
+.pu-presets>span{font-size:13px;color:var(--muted)}
+.pu-lane .col{cursor:pointer}
+.pu-lane .col:focus{outline:none}
+.pu-lane .col .hit{fill:transparent}
+.pu-lane .col:hover .hit,.pu-lane .col:focus-visible .hit{fill:var(--grid)}
+.pu-lane .col.sel .hit{fill:var(--accent-soft)}
+.pu-det{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.pu-det>div{background:var(--panel);border-radius:6px;padding:14px 16px;font-size:14px}
+.pu-det h4{font:500 12px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.pu-det ul{margin:0;padding-left:16px}
+.pu-det li{margin-top:4px}
+.pu-gate{margin-top:12px;background:var(--accent-soft);border-radius:6px;padding:12px 16px;font-size:14px}
+.pu-law{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+.pu-law .panel b.s{display:inline-block;font:600 12px/1 var(--sans);color:var(--accent);background:var(--accent-soft);border-radius:3px;padding:4px 7px;margin-bottom:10px}
+.pu-prop .seg{cursor:pointer}
+.pu-prop .seg:focus{outline:none}
+.pu-prop .seg:focus-visible rect,.pu-prop .seg:hover rect{stroke:var(--ink1);stroke-width:2}
+.pu-prop .seg.sel rect{stroke:var(--ink1);stroke-width:2.5}
+.pu-pd{margin-top:14px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.pu-pd>div{background:var(--panel);border-radius:6px;padding:14px 16px;font-size:14px}
+.pu-pd h4{font:500 12px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.pu-pd ul{margin:0;padding-left:16px}.pu-pd li{margin-top:4px}
+.pu-rec{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
+.pu-rec .panel b.big{font-size:clamp(28px,3vw,38px)}
+main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;stroke-linejoin:round}
+@media (max-width:980px){.pu-sc{grid-template-columns:1fr}.pu-res{position:static}.pu-law{grid-template-columns:1fr 1fr}.pu-rec{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.pu-det,.pu-pd,.pu-law,.pu-rec{grid-template-columns:1fr}.pu-verdict{grid-template-columns:1fr}main .viz{padding:16px 12px 12px}}
+</style>
+
+<section class="phead">
+  <span class="eyebrow">Qualify and close</span>
+  <h1>Pursuits</h1>
+  <p class="lede">This page sets out how I would act as Practice Specialist on IC&amp;D pursuits with Account Managers, Client Partners and pursuit teams. It covers qualification, a stage plan from first signal to signature, the UK public-sector rules that shape a bid and a proposal structure for an IC&amp;D RFP.</p>
+  <p class="meta">Based on Shipley, the Loopio 2026 benchmark report (with APMP), MEDDPICC guides, the Procurement Act 2023 and PPN 017. Scoring thresholds and page weights are my judgement.</p>
+</section>
+
+<section class="sec" aria-labelledby="pu-h0">
+  <span class="eyebrow">Benchmarks</span>
+  <h2 id="pu-h0">Win rates and go/no-go</h2>
+  <p class="intro">The Loopio 2026 report surveyed 1,533 bid teams on their 2025 results. Average win rates fell, and fewer teams used a formal go/no-go decision, although most top performers still do.</p>
+  <div class="stats4 pu-stats">
+    <div class="stat rv"><b class="count" data-to="39" data-suffix="%">0%</b><span>Average RFP win rate in 2025, down from 45% in 2024</span></div>
+    <div class="stat rv hi"><b class="count" data-to="47" data-suffix="%">0%</b><span>UK win rate, the highest of any region</span></div>
+    <div class="stat rv"><b class="count" data-to="75" data-suffix="%">0%</b><span>Teams using a go/no-go process, down from 83%</span></div>
+    <div class="stat rv"><b class="count" data-to="81" data-suffix="%">0%</b><span>Top performers (50% or more won) using go/no-go</span></div>
+  </div>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Average RFP win rate, 2019 to 2025</h3><p>Win rates have drifted down from 53% to 39% in six years. Select a point for the figure.</p></div>
+    <div id="pu-wr"></div>
+    <p class="src" style="margin-top:8px">Loopio 2026 RFP Trends and Benchmarks report, with APMP. Reference lines: UK 47% and Technology (hardware and IT services) 42%, both for 2025. Price or pricing model has been the most-cited reason for losing bids every year since 2021.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="pu-h1">
+  <span class="eyebrow">Bid/no-bid</span>
+  <h2 id="pu-h1">Qualifying a pursuit</h2>
+  <p class="intro">The scorecard combines the eight MEDDPICC elements with Shipley's two further tests, capability and fit with business objectives. Move each slider to describe a real opportunity. The result shows whether I would pursue it, shape it first or walk away, and why.</p>
+  <div class="btnrow pu-presets" role="group" aria-label="Example opportunities"><span>Try an example</span></div>
+  <div class="pu-sc">
+    <div class="pu-ctl" id="pu-ctl"><h3>Describe the opportunity</h3><p class="mini">0 means unknown, 3 means strong and confirmed with the client.</p></div>
+    <div class="pu-res" aria-live="polite">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap"><span class="big" id="pu-v" style="margin:0">Pursue</span><span class="mini" id="pu-pct"></span></div>
+      <div class="pu-verdict" id="pu-lad"></div>
+      <div class="viz" style="margin-top:14px;padding:12px 12px 6px"><div id="pu-bars" class="pu-bars"></div></div>
+      <p class="pu-k">Reasoning</p>
+      <ul class="pu-why" id="pu-why"></ul>
+      <p class="src" style="margin-top:12px">Rules (my judgement): walk away below 40 or when two of the gate tests (economic buyer, capability, funding and margin) score 0. Shape first below 70 or when any gate test scores 1 or less. Pursue otherwise. Gate tests count one and a half times.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="pu-h2">
+  <span class="eyebrow">Stages</span>
+  <h2 id="pu-h2">From signal to close</h2>
+  <p class="intro">Seven stages with Shipley's three decision gates between them. The lanes show how much each party carries at each stage. Select a stage to see my role, the account team's role and the outputs.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Pursuit stages and who carries them</h3><p>My involvement peaks in shaping and solution design. Select a stage.</p></div>
+    <div class="tabs" role="tablist" aria-label="Client sector" id="pu-sect" style="margin:0 0 12px">
+      <button role="tab" aria-selected="true" aria-controls="pu-lanehost" data-s="pri">Private sector</button>
+      <button role="tab" aria-selected="false" aria-controls="pu-lanehost" data-s="pub">UK public sector</button>
+    </div>
+    <div id="pu-lanehost" role="tabpanel"><div id="pu-lane" class="pu-lane"></div></div>
+    <div id="pu-sd" aria-live="polite"></div>
+    <p class="src" style="margin-top:10px">Gates from Shipley (Pursuit, Bid and Bid validation). Colour reviews from Shipley practice guides. Involvement levels are my estimate.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="pu-h3">
+  <span class="eyebrow">UK public sector</span>
+  <h2 id="pu-h3">Procurement Act 2023</h2>
+  <p class="intro">The Act applies to procurements started on or after 24 February 2025. Six provisions change how I would shape and price a public-sector IC&amp;D bid.</p>
+  <div class="pu-law">
+    <div class="panel rv"><b class="s">Section 19</b><h3>Most advantageous tender</h3><p>Authorities award to the most advantageous tender, assessed against published criteria and weightings. The proposal outline follows those weightings section by section.</p></div>
+    <div class="panel rv"><b class="s">Section 20</b><h3>Two procedures</h3><p>The open procedure is a single stage. The competitive flexible procedure allows negotiation, several stages and down-selection, which gives room to refine scope and price.</p></div>
+    <div class="panel rv"><b class="s">Section 51</b><h3>Standstill</h3><p>A mandatory standstill of eight working days starts when the contract award notice is published. Mobilisation plans start after it ends.</p></div>
+    <div class="panel rv"><b class="s">Section 52</b><h3>Published KPIs</h3><p>Contracts above £5m need at least three KPIs set before signature. The three most material are published and assessed at least every 12 months. I would link AI-enabled service designs to KPIs we can measure and price against.</p></div>
+    <div class="panel rv"><b class="s">PPN 017</b><h3>AI in tenders</h3><p>Central-government buyers may ask whether AI helped write the tender and whether that content was checked, and whether AI is part of the service. The answers are for information and are unscored. Buyers can bar training AI on their confidential data.</p></div>
+    <div class="panel rv"><b class="s">Thresholds</b><h3>From 1 January 2026</h3><p>The central-government threshold for goods and services is £135,018 including VAT, and the sub-central threshold is £207,720 (law-firm summaries of SI 2025/1200).</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="pu-h4">
+  <span class="eyebrow">Proposal</span>
+  <h2 id="pu-h4">Proposal structure for an IC&amp;D RFP</h2>
+  <p class="intro">An outline for a proposal that combines modernisation, digital experience and AI. The bar shows the share of pages I would give each section. Switch between a private-sector RFP and a UK public tender, where the split follows the published weightings.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Share of proposal pages by section</h3><p>Solution and delivery take about half the pages in both cases. Select a section for its contents.</p></div>
+    <div class="tabs" role="tablist" aria-label="Proposal type" id="pu-ptype" style="margin:0 0 12px">
+      <button role="tab" aria-selected="true" aria-controls="pu-prophost" data-t="0">Private-sector RFP</button>
+      <button role="tab" aria-selected="false" aria-controls="pu-prophost" data-t="1">UK public tender</button>
+    </div>
+    <div id="pu-prophost" role="tabpanel"><div id="pu-prop" class="pu-prop"></div></div>
+    <div id="pu-pd" class="pu-pd" aria-live="polite"></div>
+    <p class="src" style="margin-top:10px">Page shares are my estimate for a 40 to 60 page response. In a public tender the real split comes from the published criteria and weightings (s.19).</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="pu-h5">
+  <span class="eyebrow">My record</span>
+  <h2 id="pu-h5">Pitches and bids I have led</h2>
+  <p class="intro">I have led business development, pitches and bids for 16 years, at Foster + Partners, SOM and WSP, and now run sales and commercial operations at Atlas Learn.</p>
+  <div class="pu-rec">
+    <div class="panel rv"><b class="big">£10m+</b><h3>Foster + Partners</h3><p>As Associate Partner I led pitches, bids and competition entries that won more than £10 million a year in fees. I co-created and launched a strategic advisory service line covering corporate environmental strategy, digital transformation and spatial consulting.</p></div>
+    <div class="panel rv"><b class="big">Multi-year</b><h3>Global pharma contract</h3><p>I pitched, negotiated and won a multi-year contract with a global pharmaceutical company. My presentations to Fortune 500 chief executives helped the design studios win contracts worth more than £10 million.</p></div>
+    <div class="panel rv"><b class="big">$3m+</b><h3>SOM, New York</h3><p>I led business development for my department, presented to executives at major Wall Street banks and won more than $3 million a year in fees.</p></div>
+    <div class="panel rv"><b class="big">$2m+</b><h3>WSP, New York</h3><p>I won more than $2 million a year in fees through cold and warm outreach, pitches and bids for public and private clients.</p></div>
+  </div>
+  <div class="callout rv"><p><b>How this carries over to IC&amp;D.</b> In each role I qualified hard, shaped the scope with the client before the formal request, and built the bid around the client's own measures. In IC&amp;D pursuits I would do the same with the account team, the Wipro practices and alliance partners such as Google Cloud and Anthropic.</p></div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li>Loopio, 2026 RFP Trends and Benchmarks Report (with APMP), 2026. link.loopio.com/hubfs/Content%20Pieces/FY26%20Trends%20Report/trends-report-2026-digital-Master.pdf. Primary.</li>
+    <li>Shipley Associates, Bid Decisions. shipleywins.com/blogs/bid-decisions. Primary.</li>
+    <li>GovEagle, Complete Shipley process guide (April 2026) and capture gates glossary. goveagle.com. Press.</li>
+    <li>Zapier, MEDDPICC guide; Outreach, What is MEDDPICC; exec.com, MEDDPICC complete guide. Press.</li>
+    <li>Procurement Act 2023, sections 19, 20, 51 and 52. legislation.gov.uk/ukpga/2023/54. Primary.</li>
+    <li>Cabinet Office, Guidance: key performance indicators (Procurement Act 2023). gov.uk. Primary.</li>
+    <li>Cabinet Office, PPN 017: Improving transparency of AI use in procurement, updated 17 February 2025. gov.uk. Primary.</li>
+    <li>Bradford Council, Procurement Act 2023 guidance for suppliers. bradford.gov.uk. Primary.</li>
+    <li>Bird &amp; Bird and Trowers &amp; Hamlins, new UK procurement thresholds from 1 January 2026, December 2025. Press.</li>
+    <li>Arpan Bakshi, CV (Foster + Partners, SOM, WSP and Atlas Learn roles). Primary.</li>
+  </ol>
+</section>
+
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+function wOf(h){return Math.max(290,h.clientWidth||700)}
+
+/* win-rate line */
+var WR=[[2019,53],[2020,47],[2021,44],[2022,44],[2023,43],[2024,45],[2025,39]];
+function drawWR(){var h=$("pu-wr");h.innerHTML="";var W=wOf(h),H=W<560?240:280,L=34,R=W<560?64:96,T=16,B=30;
+ var s=VZ.svg(h,W,H,"Line chart of average RFP win rate from 53% in 2019 to 39% in 2025");
+ var x=VZ.lin(2019,2025,L,W-R),y=VZ.lin(30,60,H-B,T);
+ [30,40,50,60].forEach(function(v){VZ.el("line",{x1:L,x2:W-R,y1:y(v),y2:y(v),"class":"grid"},s);VZ.el("text",{x:L-6,y:y(v)+4,"text-anchor":"end","class":"t-muted"},s).textContent=v+"%"});
+ WR.forEach(function(d){VZ.el("text",{x:x(d[0]),y:H-8,"text-anchor":"middle","class":"t-muted"},s).textContent=W<560?"'"+String(d[0]).slice(2):d[0]});
+ [[47,"UK 47%","var(--s2)"],[42,"Tech 42%","var(--s3)"]].forEach(function(r){VZ.el("line",{x1:L,x2:W-R,y1:y(r[0]),y2:y(r[0]),stroke:r[2],"stroke-width":1.5,"stroke-dasharray":"5 4"},s);VZ.el("text",{x:W-R+6,y:y(r[0])+4,fill:r[2],style:"fill:"+r[2]+";font-weight:600"},s).textContent=r[1]});
+ var d="M"+WR.map(function(p){return x(p[0])+","+y(p[1])}).join("L");
+ VZ.el("path",{d:d,fill:"none",stroke:"var(--accent)","stroke-width":2.5},s);
+ WR.forEach(function(p,i){var g=VZ.el("g",{},s);VZ.el("circle",{cx:x(p[0]),cy:y(p[1]),r:12,fill:"transparent"},g);VZ.el("circle",{cx:x(p[0]),cy:y(p[1]),r:i===6?6:4.5,fill:"var(--accent)",stroke:"var(--chart-bg)","stroke-width":2},g);
+  if(i===0||i===6){VZ.el("text",{x:x(p[0]),y:y(p[1])-12,"text-anchor":"middle","class":"t-strong"},s).textContent=p[1]+"%"}
+  g.setAttribute("role","button");g.setAttribute("aria-label",p[0]+": "+p[1]+"% average win rate");
+  VZ.tip(g,function(){return "<b>"+p[0]+": "+p[1]+"%</b><span class='m'>Average RFP win rate across respondents"+(i===6?". The UK was 47%, the highest region.":".")+"</span>"})});
+}
+
+/* scorecard */
+var C=[
+ {k:"M",n:"Metrics",d:"A quantified business case the client agrees with",a:"Agree two or three outcome measures with the sponsor. They become the KPIs and, where it fits, the basis for outcome pricing.",w:1},
+ {k:"E",n:"Economic buyer",d:"Access to the person who signs",a:"Ask the Client Partner to arrange a meeting with the budget holder before any proposal work starts.",w:1.5,g:1},
+ {k:"D",n:"Decision criteria",d:"We know the criteria and helped shape them",a:"Run a discovery workshop so the client's criteria reflect the outcomes we are best placed to deliver.",w:1},
+ {k:"D",n:"Decision process",d:"Steps, dates and approvers are known",a:"Map the approval steps and dates with the champion, including procurement and security reviews.",w:1},
+ {k:"P",n:"Paper process",d:"Procurement route, framework and contract terms",a:"Confirm the route (framework, open or competitive flexible procedure) and the liability terms with legal early.",w:1},
+ {k:"I",n:"Identified pain",d:"A pain with a cost of doing nothing",a:"Put a figure on the cost of the current state, for example contact volumes, handling time or run cost of legacy systems.",w:1},
+ {k:"C",n:"Champion",d:"Someone inside who sells for us",a:"Find and equip a champion with a one-page case they can take to their leadership.",w:1.5},
+ {k:"C",n:"Competition",d:"Our position against rivals, in-house builds and doing nothing",a:"Run a Black Hat review of the most likely competitor, including the client building it in-house.",w:1},
+ {k:"F",n:"Capability and fit",d:"Wipro offering, references and people available",a:"Line up the IC&D practice, delivery and alliance partners, and name the references and the team.",w:1.5,g:1},
+ {k:"$",n:"Funding and margin",d:"Budget confirmed and a margin-positive shape",a:"Test the price-to-win against cost with Finance, and change scope or commercial model before going further.",w:1.5,g:1}
+];
+var LV=["Unknown","Weak","Partial","Strong"];
+var PRE=[
+ {n:"Existing account, AI contact centre",a:[3,2,2,2,2,3,3,2,3,2]},
+ {n:"Public tender, no prior contact",a:[1,0,2,3,3,1,0,1,2,1]},
+ {n:"Unsolicited RFP from a new client",a:[1,0,1,1,1,1,0,0,2,1]},
+ {n:"Modernisation with a strong champion",a:[2,1,2,1,2,3,3,2,3,1]}
+];
+var ctl=$("pu-ctl");
+C.forEach(function(c,i){var r=document.createElement("div");r.className="pu-row";
+ r.innerHTML='<label for="pu-s'+i+'"><span class="l"><i>'+c.k+'</i>'+c.n+(c.g?' <span class="tag a" style="margin-left:2px;padding:1px 6px;font-size:11px">gate</span>':'')+'</span><output id="pu-o'+i+'"></output></label><input type="range" min="0" max="3" step="1" value="2" id="pu-s'+i+'" aria-describedby="pu-hh'+i+'"><span class="hint" id="pu-hh'+i+'">'+c.d+'</span>';
+ ctl.appendChild(r)});
+var pr=document.querySelector(".pu-presets"),pbs=[];
+PRE.forEach(function(p,i){var b=document.createElement("button");b.type="button";b.textContent=p.n;b.setAttribute("aria-pressed","false");b.addEventListener("click",function(){p.a.forEach(function(v,k){$("pu-s"+k).value=v});score(i)});pr.appendChild(b);pbs.push(b)});
+ctl.addEventListener("input",function(){score(-1)});
+var V=[["Pursue","Commit a pursuit team and start the capture plan."],["Shape first","Fix the weakest items with the account team before committing bid effort."],["Walk away","Decline or stay in touch. Put the effort into better-qualified deals."]];
+$("pu-lad").innerHTML=V.map(function(v,i){return '<div data-i="'+i+'"><b>'+v[0]+'</b>'+v[1]+'</div>'}).join("");
+var cur=[];
+function score(p){pbs.forEach(function(b,i){b.setAttribute("aria-pressed",i===p)});
+ cur=C.map(function(c,i){return +$("pu-s"+i).value});
+ cur.forEach(function(v,i){$("pu-o"+i).textContent=v+" · "+LV[v]});
+ var tot=0,max=0;C.forEach(function(c,i){tot+=cur[i]*c.w;max+=3*c.w});var pct=Math.round(tot/max*100);
+ var g0=C.filter(function(c,i){return c.g&&cur[i]===0}).length,g1=C.filter(function(c,i){return c.g&&cur[i]<=1}).length;
+ var v=(pct<40||g0>=2)?2:(pct<70||g1>0)?1:0;
+ $("pu-v").textContent=V[v][0];$("pu-pct").textContent="Score "+pct+" of 100";
+ [].forEach.call($("pu-lad").children,function(d,i){d.classList.toggle("on",i===v)});
+ var why=[];
+ if(v===2){why.push(pct<40?"The score of "+pct+" is too low to justify bid effort. With average win rates at 39%, effort spent here is taken from deals we can win.":"Two gate tests score 0. Without the buyer, the capability or a margin-positive shape, a win would cost more than it returns.")}
+ else if(v===1){why.push("The score of "+pct+" shows a real opportunity, but "+(g1?"a gate test is weak":"too many elements are only partly known")+". I would hold the pursuit gate until these improve.")}
+ else{why.push("The score of "+pct+" and strong gate tests justify a pursuit team. I would move to the Shipley pursuit gate and start the capture plan.")}
+ var idx=C.map(function(c,i){return i}).sort(function(a,b){return cur[a]-cur[b]||C[b].w-C[a].w});
+ var weak=idx.filter(function(i){return cur[i]<=1}).slice(0,3);
+ weak.forEach(function(i){why.push("<b>"+C[i].n+"</b> ("+LV[cur[i]].toLowerCase()+"): "+C[i].a)});
+ var strong=C.filter(function(c,i){return cur[i]===3}).map(function(c){return c.n.toLowerCase()});
+ if(strong.length)why.push("Strengths to build the win themes on: "+strong.join(", ")+".");
+ $("pu-why").innerHTML=why.map(function(t){return "<li>"+t+"</li>"}).join("");
+ drawBars()}
+function drawBars(){var h=$("pu-bars");h.innerHTML="";var W=wOf(h),nar=W<420,LW=nar?118:150,rh=24,H=C.length*rh+22;
+ var s=VZ.svg(h,W,H,"Bar chart of the ten criterion scores");var x=VZ.lin(0,3,LW,W-30);
+ [0,1,2,3].forEach(function(v){VZ.el("line",{x1:x(v),x2:x(v),y1:0,y2:H-18,"class":"grid"},s);VZ.el("text",{x:x(v),y:H-4,"text-anchor":"middle","class":"t-muted"},s).textContent=v});
+ var col=["var(--ink3)","var(--seq-3)","var(--seq-4)","var(--seq-5)"];
+ C.forEach(function(c,i){var g=VZ.el("g",{"class":"row",role:"button","aria-label":c.n+" "+cur[i]+" of 3"},s),y=i*rh;
+  VZ.el("rect",{x:0,y:y,width:W,height:rh,fill:"transparent","class":"hit"},g);
+  VZ.el("text",{x:LW-8,y:y+16,"text-anchor":"end",style:"font-size:"+(nar?11.5:12.5)+"px"},g).textContent=c.n;
+  if(cur[i]>0)VZ.bar(g,x(0),y+5,x(cur[i])-x(0),rh-10,col[cur[i]],"h");else VZ.el("circle",{cx:x(0)+4,cy:y+rh/2,r:4,fill:"none",stroke:"var(--ink3)","stroke-width":1.5},g);
+  if(c.g)VZ.el("text",{x:W-4,y:y+16,"text-anchor":"end","class":"t-muted"},g).textContent="gate";
+  VZ.tip(g,function(){return "<b>"+c.n+": "+LV[cur[i]]+"</b><span class='m'>"+(cur[i]<3?"Next step: "+c.a:"Confirmed. Use it in the win themes.")+"</span>"});
+  g.addEventListener("click",function(){$("pu-s"+i).focus()})});
+}
+
+/* stage lanes */
+var ST=[
+ {n:"Signal",me:1,ac:3,pt:0,my:["Read client results, regulation and news for transformation triggers","Test the signal against IC&D offerings and Wipro references"],at:["Account Manager shares the account plan and relationship map","Client Partner confirms whether the client is open to a conversation"],out:["One-page opportunity hypothesis","First contact plan"],pri:"Triggers include a new chief executive, a cost programme, a contact-centre contract ending or an AI strategy announcement.",pub:"Watch pipeline and planned procurement notices, and the authority's published strategy."},
+ {n:"Qualify",me:2,ac:3,pt:1,my:["Run the MEDDPICC scorecard with the account team","Size the opportunity and the likely commercial model"],at:["Confirm the economic buyer, budget cycle and decision process","Bring the history of past bids and relationships"],out:["Qualification sheet and score","Pursuit gate decision"],g:"Pursuit gate: fit, capability and resources. Starts the capture plan.",pri:"Most of the qualification can happen in conversation with the sponsor.",pub:"Check the threshold, the procedure (open or competitive flexible) and any framework route."},
+ {n:"Shape",me:3,ac:2,pt:2,my:["Lead discovery meetings and an executive workshop","Shape scope with IC&D practices and alliance partners","Draft win themes and the value case"],at:["Secure sponsor time and executive access","Client Partner holds the senior relationship"],out:["Capture plan and win themes","Solution hypothesis and value case"],g:"Bid gate: positioned to win. Starts the proposal plan.",pri:"This is the stage where we can influence the criteria before any RFP is issued.",pub:"Shaping happens through market engagement before the tender notice. After that the published criteria apply."},
+ {n:"Solution and price",me:3,ac:1,pt:3,my:["Design the solution with delivery and alliance architects","Choose the commercial model with Finance","Run the Black Hat review of the most likely competitor"],at:["Validate the price-to-win with client insight","Agree the relationship strategy for orals"],out:["Solution design and effort estimate","Price, margin and risk register","Blue Team annotated outline"],pri:"Fixed-price or outcome models protect margin where AI changes delivery effort.",pub:"Contracts above £5m need at least three KPIs. I would design them alongside the price (s.52)."},
+ {n:"Proposal",me:2,ac:1,pt:3,my:["Write the solution, value and AI sections","Lead the colour reviews at 60 to 70% completion"],at:["Review for client language and politics","Check the executive summary with the sponsor where allowed"],out:["Proposal and pricing schedules","Bid validation gate decision"],g:"Bid validation gate: show-stoppers resolved. Starts the final proposal.",pri:"Answer the client's own outcome measures in the executive summary.",pub:"Follow the published criteria and weightings (s.19). Prepare PPN 017 AI disclosure answers for central government."},
+ {n:"Orals and negotiation",me:3,ac:2,pt:2,my:["Present the solution to the client's executive panel","Negotiate scope, assumptions and KPIs with Finance and Legal"],at:["Lead the relationship and the close plan","Read the panel and the decision makers"],out:["Orals presentation","Best and final offer"],pri:"Negotiation covers scope, liability caps and productivity commitments.",pub:"Negotiation is only possible in a competitive flexible procedure (s.20)."},
+ {n:"Close and handover",me:1,ac:3,pt:1,my:["Hand over the solution, assumptions and KPIs to delivery","Run the win or loss review"],at:["Own the contract signature and account growth plan","Plan the next opportunity in the account"],out:["Handover pack and KPI baseline","Win or loss lessons"],pri:"Agree the first quarterly business review and the measures it will report.",pub:"An eight working day standstill follows the award notice (s.51). KPI performance is published at least every 12 months."}
+];
+var sector="pri",sel=2;
+function drawLane(){var h=$("pu-lane");h.innerHTML="";var W=wOf(h),nar=W<640,LW=nar?0:118,top=nar?40:34,rh=nar?34:38,H=top+3*rh+12;
+ var s=VZ.svg(h,W,H,"Seven pursuit stages with involvement of me, the account team and the pursuit team");s.setAttribute("role","group");
+ var cw=(W-LW)/ST.length;var lanes=[["Me","me","var(--accent)"],["Account team","ac","var(--s2)"],["Pursuit team","pt","var(--s3)"]];
+ if(!nar)lanes.forEach(function(l,j){VZ.el("text",{x:0,y:top+j*rh+rh/2+4,"class":"t-strong"},s).textContent=l[0]});
+ ST.forEach(function(st,i){var g=VZ.el("g",{"class":"col"+(i===sel?" sel":""),role:"button",tabindex:0,"aria-label":"Stage "+(i+1)+": "+st.n,"aria-pressed":i===sel},s),x0=LW+i*cw;
+  VZ.el("rect",{x:x0+2,y:0,width:cw-4,height:H,rx:5,"class":"hit"},g);
+  var lab=nar?String(i+1):st.n;var t=VZ.el("text",{x:x0+cw/2,y:nar?22:20,"text-anchor":"middle","class":i===sel?"t-strong":"",style:"font-size:"+(nar?13:12.5)+"px"},g);
+  if(!nar&&st.n.indexOf(" ")>0&&cw<120){var p=st.n.split(" ");t.setAttribute("y",12);var a=VZ.el("tspan",{x:x0+cw/2,dy:0},t);a.textContent=p[0];var b=VZ.el("tspan",{x:x0+cw/2,dy:13},t);b.textContent=p.slice(1).join(" ")}else t.textContent=lab;
+  lanes.forEach(function(l,j){var v=st[l[1]],cy=top+j*rh+rh/2;VZ.el("line",{x1:x0,x2:x0+cw,y1:cy,y2:cy,"class":"grid"},g);
+   if(v>0)VZ.el("circle",{cx:x0+cw/2,cy:cy,r:[0,5,9,13][v]*(nar?.85:1),fill:l[2],opacity:[0,.45,.75,1][v]},g);
+   if(nar&&i===0)VZ.el("text",{x:2,y:cy-rh/2+10,"class":"t-muted",style:"font-size:10px"},s).textContent=l[0]});
+  if(st.g){var gx=x0+cw,gy=top-12;VZ.el("path",{d:"M"+gx+","+(gy-6)+"l6,6l-6,6l-6,-6z",fill:"var(--accent)"},s)}
+  g.addEventListener("click",function(){sel=i;drawLane();showStage()});
+  g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();sel=i;drawLane();showStage();h.querySelectorAll(".col")[i].focus()}else if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();sel=(i+(e.key==="ArrowRight"?1:-1)+ST.length)%ST.length;drawLane();showStage();h.querySelectorAll(".col")[sel].focus()}})});
+}
+function li(a){return "<ul>"+a.map(function(t){return "<li>"+t+"</li>"}).join("")+"</ul>"}
+function showStage(){var st=ST[sel];
+ $("pu-sd").innerHTML='<h3 style="margin-top:14px">'+(sel+1)+'. '+st.n+'</h3><div class="pu-det"><div><h4>My role</h4>'+li(st.my)+'</div><div><h4>Account Manager and Client Partner</h4>'+li(st.at)+'</div><div><h4>Outputs</h4>'+li(st.out)+'</div></div><div class="pu-gate"><b>'+(sector==="pub"?"UK public sector":"Private sector")+':</b> '+st[sector]+(st.g?'<br><b>Gate after this stage.</b> '+st.g:'')+'</div>'}
+VZ.tabs($("pu-sect"),function(t){sector=t.dataset.s;if($("pu-lane").childNodes.length)showStage()});
+
+/* proposal structure */
+var PS=[
+ {n:"Executive summary",p:[6,5],c:["The client's outcomes in their own words","Our answer in three measures and one price line","Why Wipro, with one reference"],o:"Practice Specialist with the Client Partner",r:"Colour reviews on the draft themes and at 60 to 70% completion"},
+ {n:"Understanding of need",p:[8,8],c:["Current state, pain and cost of doing nothing","Customer journey and service blueprint findings","Constraints: regulation, data, legacy estate"],o:"Practice Specialist",r:"Checked with the champion where allowed"},
+ {n:"Solution",p:[22,22],c:["Target architecture across modernisation, digital experience and AI","Where Claude or Gemini fits, with guardrails","Integration with existing products and platforms","Quality engineering and DevOps approach"],o:"Solution architects with IC&D practices and alliance partners",r:"Blue Team on the annotated outline, then a colour review on the draft"},
+ {n:"Delivery approach",p:[16,16],c:["Phases, milestones and a mobilisation plan","Onshore and offshore model","Use of Wipro platforms such as WEGA for build and WINGS for run"],o:"Delivery lead",r:"Delivery assurance review"},
+ {n:"Team and governance",p:[8,8],c:["Named leaders and CVs","Governance forums and escalation","Change control"],o:"Delivery lead and Account Manager",r:"Colour review at 60 to 70% completion"},
+ {n:"AI use and responsible AI",p:[6,6],c:["AI in the service and the human oversight model","Data handling and model training limits","PPN 017 disclosure answers for central government"],o:"AI solution architect",r:"Legal and data protection review"},
+ {n:"Outcomes and KPIs",p:[8,10],c:["Baseline and target measures","Three or more KPIs for contracts above £5m (s.52)","Link between KPIs and price"],o:"Practice Specialist with Finance",r:"Finance review"},
+ {n:"Commercials",p:[12,10],c:["Commercial model and price","Productivity commitments and gain-share where used","Payment milestones"],o:"Finance and deal pricing",r:"Finance margin sign-off"},
+ {n:"Risks and assumptions",p:[6,7],c:["Assumptions and client dependencies","Risk register with owners","Exit and transition"],o:"Delivery lead with Legal",r:"Bid validation gate"},
+ {n:"Case studies",p:[8,8],c:["Two or three relevant references","Measured outcomes","Client contacts where permitted"],o:"Account Manager and marketing",r:"Colour review at 60 to 70% completion"}
+];
+var ptype=0,psel=2,pcol=["var(--s1)","var(--s2)","var(--s3)","var(--s4)","var(--s5)","var(--s6)","var(--s7)","var(--s8)","var(--seq-4)","var(--ink3)"];
+function drawProp(){var h=$("pu-prop");h.innerHTML="";var W=wOf(h),nar=W<640;var tot=PS.reduce(function(a,b){return a+b.p[ptype]},0);
+ if(nar){var rh=30,H=PS.length*rh+4,s=VZ.svg(h,W,H,"Bar chart of proposal page share by section"),LW=136,x=VZ.lin(0,24,LW,W-34);
+  PS.forEach(function(p,i){var v=Math.round(p.p[ptype]/tot*100),g=VZ.el("g",{"class":"seg"+(i===psel?" sel":""),role:"button",tabindex:0,"aria-label":p.n+" "+v+"%"},s),y=i*rh;
+   VZ.el("text",{x:LW-8,y:y+19,"text-anchor":"end",style:"font-size:11.5px"},g).textContent=p.n;
+   VZ.el("rect",{x:LW,y:y+5,width:Math.max(2,x(v)-LW),height:rh-10,rx:3,fill:pcol[i]},g);
+   VZ.el("text",{x:x(v)+6,y:y+19,"class":"t-strong"},g).textContent=v+"%";bind(g,i)});return}
+ var H=118,s=VZ.svg(h,W,H,"Stacked bar of proposal page share by section"),x0=0;
+ PS.forEach(function(p,i){var v=p.p[ptype]/tot,w=v*W,g=VZ.el("g",{"class":"seg"+(i===psel?" sel":""),role:"button",tabindex:0,"aria-label":p.n+" "+Math.round(v*100)+"%"},s);
+  VZ.el("rect",{x:x0+1,y:36,width:w-2,height:46,rx:3,fill:pcol[i]},g);
+  VZ.el("text",{x:x0+w/2,y:64,"text-anchor":"middle",style:"fill:var(--chart-bg);font-weight:600;font-size:13px"},g).textContent=Math.round(v*100)+"%";
+  var up=i%2===0;var t=VZ.el("text",{x:x0+w/2,y:up?26:100,"text-anchor":"middle",style:"font-size:11.5px"},g);t.textContent=w>70?p.n:(p.n.split(" ")[0]);
+  if(i===psel)t.setAttribute("class","t-strong");
+  x0+=w;bind(g,i)});
+}
+function bind(g,i){g.addEventListener("click",function(){psel=i;drawProp();showProp()});g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();psel=i;drawProp();showProp();$("pu-prop").querySelectorAll(".seg")[i].focus()}});
+ VZ.tip(g,function(){return "<b>"+PS[i].n+"</b><span class='m'>"+PS[i].c[0]+"</span>"})}
+function showProp(){var p=PS[psel],tot=PS.reduce(function(a,b){return a+b.p[ptype]},0);
+ $("pu-pd").innerHTML='<div><h4>'+p.n+' · '+Math.round(p.p[ptype]/tot*100)+'% of pages</h4>'+li(p.c)+'</div><div><h4>Who writes it</h4><p>'+p.o+'</p><h4 style="margin-top:12px">Review</h4><p>'+p.r+'</p></div>'}
+VZ.tabs($("pu-ptype"),function(t){ptype=+t.dataset.t;if($("pu-prop").childNodes.length){drawProp();showProp()}});
+
+function all(){drawWR();drawLane();showStage();drawBars();drawProp();showProp()}
+pbs[0].click();all();
+var rt;addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(all,150)});
+VZ.onTheme(all);
+})();
+</script>
