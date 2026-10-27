@@ -109,7 +109,7 @@
   <p class="intro">Move 1 maps IC&amp;D white space in the top accounts with the client partners, attaches QE, modernisation and AI to run contracts and renewals, and turns workshops on dated forcing events into phased first scopes. Wipro's own figures make the existing book the place to start.</p>
   <div class="kpis am-k">
     <div class="rv"><b class="count" data-to="18000">18,000</b><span>Wipro UK and Ireland employees, as told to analysts in October 2025 (NelsonHall; IDC).</span></div>
-    <div class="rv"><b class="count" data-to="50" data-suffix="+">50+</b><span>key UK clients, from the same analyst summit (NelsonHall; IDC).</span></div>
+    <div class="rv"><b class="count" data-to="50" data-suffix="+">50+</b><span>UK clients, described at the same analyst summit as &ldquo;key clients&rdquo; (NelsonHall; IDC).</span></div>
     <div class="rv"><b class="count" data-to="98" data-suffix="%">98%</b><span>of Wipro revenue from existing clients in Q2 FY27 (Wipro datasheet).</span></div>
     <div class="rv"><b class="count" data-to="18">18</b><span>clients above US$100m a year in Q2 FY27, up from 16 in FY26 and down from 22 in FY24 (Wipro datasheets).</span></div>
   </div>
@@ -142,6 +142,7 @@
     <div class="viz-h"><h3>Dated events for the six priority accounts, October 2026 to December 2027</h3><p>Four of the six accounts have a dated event before the end of February 2027, so the first workshops need to run this quarter.</p></div>
     <div class="legend"><span><i style="background:var(--accent)"></i>Dated event from a cited source</span><span><i style="background:var(--chart-bg);border:2px dashed var(--ink2)"></i>Date from my arithmetic</span><span><i style="background:var(--ink2);border-radius:1px;width:2px"></i>Today, 27 Oct 2026</span></div>
     <div id="am-tl"></div>
+    <p class="mini" id="am-tle" aria-live="polite" style="margin-top:8px"></p>
   </div>
 </section>
 
@@ -507,7 +508,9 @@ var mapHost=document.getElementById("am-map"),NODES={};
 function drawMap(W){NODES={};
  var cols=W>=1000?4:W>=600?2:1,gap=12,cw=(W-gap*(cols-1))/cols,nw=cols===1?88:86,ncol=Math.max(3,Math.floor((cw-12)/nw)),rh=74,head=34;
  var cells=SEC.map(function(s){var L=CL.filter(function(c){return c.s===s[0]});return {s:s,L:L,h:head+Math.ceil(L.length/ncol)*rh+6}});
- var rows=[],y=0,pos=[];for(var i=0;i<cells.length;i+=cols){var R=cells.slice(i,i+cols),mh=Math.max.apply(null,R.map(function(c){return c.h}));R.forEach(function(c,k){pos.push({c:c,x:k*(cw+gap),y:y,h:mh})});y+=mh+gap}
+ var ch=[],pos=[];for(var k=0;k<cols;k++)ch.push(0);
+ cells.forEach(function(c){var k=ch.indexOf(Math.min.apply(null,ch));pos.push({c:c,x:k*(cw+gap),y:ch[k],h:c.h});ch[k]+=c.h+gap});
+ var y=Math.max.apply(null,ch);
  var svg=svgEl(mapHost,W,y-gap,"Map of "+CL.length+" named UK and Irish clients grouped by sector. Each client is a button that opens its detail below.");
  pos.forEach(function(p){var g=VZ.el("g",{},svg);VZ.el("rect",{x:p.x,y:p.y,width:cw,height:p.h,rx:6,"class":"cell"},g);
   txt(g,p.x+12,p.y+21,p.c.s[1]+" ("+p.c.L.length+")",{"class":"ct"});
@@ -545,7 +548,8 @@ var PR=[
 var prHost=document.getElementById("am-pri"),psel="lbg";
 prHost.innerHTML=PR.map(function(p,i){return '<button type="button" class="am-pc" data-id="'+p.id+'" aria-pressed="'+(p.id===psel)+'"><span class="rk"><b>'+(i+1)+'</b><span>'+esc(p.n)+'</span></span><dl><dt>Reason</dt><dd>'+esc(p.r)+'</dd><dt>IC&amp;D entry</dt><dd>'+esc(p.e)+'</dd><dt>Timing</dt><dd>'+esc(p.tm)+'</dd><dt>Expected next scope</dt><dd>'+esc(p.nx)+'</dd><dt>Deal band</dt><dd><span class="am-ph">Placeholder</span> '+esc(p.band)+'</dd></dl></button>'}).join("");
 prHost.addEventListener("click",function(e){var b=e.target.closest(".am-pc");if(!b)return;setP(b.dataset.id)});
-function setP(id){psel=id;[].forEach.call(prHost.querySelectorAll(".am-pc"),function(x){x.setAttribute("aria-pressed",x.dataset.id===id)});[].forEach.call(document.querySelectorAll("#am-tl .rw"),function(r){r.classList.toggle("on",r.dataset.id===id)})}
+function setP(id){psel=id;[].forEach.call(prHost.querySelectorAll(".am-pc"),function(x){x.setAttribute("aria-pressed",x.dataset.id===id)});[].forEach.call(document.querySelectorAll("#am-tl .rw"),function(r){r.classList.toggle("on",r.dataset.id===id)});
+ var p=PR.filter(function(x){return x.id===id})[0],el=document.getElementById("am-tle");if(el)el.innerHTML="<b>"+esc(p.n)+".</b> "+esc(p.tm)}
 /* timeline events: [account id, date (months from 1 Oct 2026, fractional), short label, derived?] */
 var EV=[["rsa",2.5,"Contract term ends (about)",1],
  ["lbg",1.1,"CHAPS address rule",0],["lbg",3.65,"Committee full reply",0],["lbg",5.55,"PS26/2 applies",0],["lbg",13.1,"CHAPS purpose codes",0],
@@ -553,24 +557,25 @@ var EV=[["rsa",2.5,"Contract term ends (about)",1],
  ["jlp",13.9,"Term to about 2028",1],
  ["nwg",0.65,"Google Cloud outage",0],["nwg",1.1,"CHAPS address rule",0],["nwg",3.65,"Committee full reply",0],["nwg",13.1,"CHAPS purpose codes",0],
  ["hmt",0.9,"G-Cloud 14 closes",0],["hmt",4.45,"SIAM contract ends",0]];
-function drawTL(W){var host=document.getElementById("am-tl"),narrow=W<640,lw=narrow?96:190,rh=narrow?58:48,top=30,H=top+PR.length*rh+8,x0=lw,x1=W-12;
+function drawTL(W){var host=document.getElementById("am-tl"),narrow=W<640,lw=narrow?96:190,rh=narrow?58:52,top=36,H=top+PR.length*rh+8,x0=lw,x1=W-12;
  var sx=VZ.lin(0,15,x0,x1),svg=svgEl(host,W,H,"Timeline of dated events for the six priority accounts. Each row is a button that selects the account card.");
  var M=["Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
  M.forEach(function(m,i){var x=sx(i);VZ.el("line",{x1:x,x2:x,y1:top-6,y2:H-4,stroke:"var(--grid)"},svg);if(!narrow||i%3===0)txt(svg,x+3,top-12,m+(i===0||i===3||i===12?(i<3?" 26":" 27"):""),{"class":"t-muted"})});
  PR.forEach(function(p,r){var y=top+r*rh,g=VZ.el("g",{"class":"rw"+(p.id===psel?" on":""),"data-id":p.id,role:"button",tabindex:0,"aria-label":p.n+": "+EV.filter(function(e){return e[0]===p.id}).map(function(e){return e[2]}).join(", ")},svg);
   VZ.el("rect",{x:0,y:y,width:W,height:rh-4,rx:4,fill:"transparent","class":"bgr"},g);
   var L=wrap(p.n.replace("plc (Phoenix Group)","(Phoenix)").replace(", through Capco",""),narrow?13:26).slice(0,2);L.forEach(function(l,k){txt(g,6,y+(L.length>1?16:24)+k*14,l,{"class":"t-strong"})});
-  var ev=EV.filter(function(e){return e[0]===p.id}),cy=y+16,lastX=-999,alt=0;
-  ev.forEach(function(e){var x=sx(e[1]);
-   if(e[3]&&e[1]>13){VZ.el("line",{x1:sx(12.5),x2:x1-4,y1:cy,y2:cy,stroke:"var(--ink2)","stroke-width":2,"stroke-dasharray":"4 3"},g);VZ.el("path",{d:"M"+(x1-8)+","+(cy-4)+"L"+(x1-2)+","+cy+"L"+(x1-8)+","+(cy+4),fill:"none",stroke:"var(--ink2)","stroke-width":2},g);txt(g,x1-4,cy+18,e[2],{"text-anchor":"end","class":"t-muted"});return}
+  var ev=EV.filter(function(e){return e[0]===p.id}),cy=y+(narrow?16:26),lastX=-999,alt=0;
+  var inEnd=-999,upEnd=-999;ev.forEach(function(e,k){var x=sx(e[1]);
+   if(e[3]&&e[1]>13){VZ.el("line",{x1:sx(12.5),x2:x1-4,y1:cy,y2:cy,stroke:"var(--ink2)","stroke-width":2,"stroke-dasharray":"4 3"},g);VZ.el("path",{d:"M"+(x1-8)+","+(cy-4)+"L"+(x1-2)+","+cy+"L"+(x1-8)+","+(cy+4),fill:"none",stroke:"var(--ink2)","stroke-width":2},g);txt(g,x1-4,cy-9,e[2],{"text-anchor":"end","style":"font-size:11px"});return}
    if(e[3])VZ.el("circle",{cx:x,cy:cy,r:6,fill:"var(--chart-bg)",stroke:"var(--ink2)","stroke-width":2,"stroke-dasharray":"3 2"},g);
    else VZ.el("circle",{cx:x,cy:cy,r:6,fill:"var(--accent)"},g);
-   if(!narrow){alt=(x-lastX<110)?(alt?0:1):0;lastX=x;var anc=x>x1-90?"end":"start";txt(g,anc==="end"?x+6:x-4,cy+18+alt*11,e[2],{"text-anchor":anc,"class":"t-muted"})}});
-  if(narrow){txt(g,lw,y+rh-10,ev.length+" dated event"+(ev.length>1?"s":""),{"class":"t-muted"})}
+   if(!narrow){var lw2=e[2].length*5.9,nx=(ev[k+1]&&!ev[k+1][3])?sx(ev[k+1][1]):x1+200,st0=x+10;
+    if(st0>=inEnd+6&&st0+lw2<=Math.min(nx-10,x1+12)){txt(g,st0,cy+4,e[2],{"style":"font-size:11px"});inEnd=st0+lw2}
+    else{var s0=Math.max(x-6,upEnd+8);if(s0+lw2>x1+12)s0=x1+12-lw2;txt(g,s0,cy-11,e[2],{"style":"font-size:11px"});upEnd=s0+lw2;inEnd=Math.max(inEnd,x+8)}}});
   g.addEventListener("click",function(){setP(p.id)});g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();setP(p.id)}});
   VZ.tip(g,function(){return "<b>"+esc(p.n)+"</b><br>"+ev.map(function(e){return esc(e[2])+(e[3]?" (my arithmetic)":"")}).join("<br>")})});
  var tx=sx(26/31);VZ.el("line",{x1:tx,x2:tx,y1:top-6,y2:H-4,stroke:"var(--ink2)","stroke-width":2},svg)}
-responsive(document.getElementById("am-tl"),drawTL);
+responsive(document.getElementById("am-tl"),drawTL);setP(psel);
 
 /* ---------- who owns what ---------- */
 var R=[
@@ -590,36 +595,39 @@ var R=[
  {id:"des",g:3,t:"Designit London",nm:[["Nick Merritt","Executive Director, UK & Ire.","Designit London studio page, undated"]],ask:"Design research and service design to open digital experience scope."},
  {id:"srv",g:3,t:"Servaada",nm:[["David Power","CEO of Servaada","IDC note on wipro.com, Oct 2025"]],ask:"Access to the regulated operations where AI and modernisation pilots would run, and agreement on the service levels a pilot must meet."}
 ];
-var GC=["var(--ink1)","var(--s1)","var(--accent)","var(--s7)"],GL=["","Market and account","Practice and offer","Partners and alliances"],osel="ps";
+var GC=["var(--ink1)","var(--s1)","var(--accent)","var(--s7)"],GL=["","Market and account","Practice and offer","Partners and alliances"],osel="cp";
 function names(r){return r.nm.map(function(n){return n[0]}).join(", ")}
 function drawOrg(W){var host=document.getElementById("am-org"),narrow=W<560,P={},H;
- if(!narrow){var bw=Math.min(210,(W-40)/3.2),bh=52,cx=W/2;
+ var bh=54,bhB=70;
+ if(!narrow){var bw=Math.min(220,(W-40)/3.1),cx=W/2;
   var L=R.filter(function(r){return r.g===1}),Rt=R.filter(function(r){return r.g===2}),B=R.filter(function(r){return r.g===3});
-  var top=26,rs=64;H=top+Math.max(L.length,Rt.length)*rs+40+bh+20;
+  var top=26,rs=62;
   L.forEach(function(r,i){P[r.id]={x:4,y:top+i*rs+(Rt.length-L.length)*rs/2,w:bw,h:bh}});
   Rt.forEach(function(r,i){P[r.id]={x:W-bw-4,y:top+i*rs,w:bw,h:bh}});
-  var by=top+Rt.length*rs+30,bwB=(W-8-12*(B.length-1))/B.length;
-  B.forEach(function(r,i){P[r.id]={x:4+i*(bwB+12),y:by,w:bwB,h:bh}});
-  P.acct={x:cx-70,y:top+(Rt.length*rs)/2-36,w:140,h:56}}
+  var by=top+Rt.length*rs+34,bwB=(W-8-12*(B.length-1))/B.length;
+  B.forEach(function(r,i){P[r.id]={x:4+i*(bwB+12),y:by,w:bwB,h:bhB}});
+  var aw=Math.min(170,W-2*bw-48);P.acct={x:cx-aw/2,y:top+(Rt.length*rs)/2-34,w:aw,h:56};H=by+bhB+30}
  else{var y=8,bw2=W-30;P.acct={x:24,y:y,w:bw2,h:44};y+=62;
-  [1,2,3].forEach(function(g){y+=16;R.filter(function(r){return r.g===g}).forEach(function(r){var nl=r.nm.length?Math.min(2,wrap(names(r),40).length):0;var h=30+nl*14;P[r.id]={x:24,y:y,w:bw2,h:h};y+=h+8})});H=y+4}
+  [1,2,3].forEach(function(g){y+=16;R.filter(function(r){return r.g===g}).forEach(function(r){var nl=r.nm.length?Math.min(3,wrap(names(r),Math.floor((bw2-20)/6.3)).length):1;var h=26+nl*14;P[r.id]={x:24,y:y,w:bw2,h:h};y+=h+8})});H=y+4}
  var svg=svgEl(host,W,H,"Roles that work with an account, with the named public owners from published sources. Each role is a button.");
  var A=P.acct,ax=A.x+A.w/2,ay=A.y+A.h/2;
  if(narrow){VZ.el("line",{x1:12,x2:12,y1:ay,y2:H-20,stroke:"var(--axis)","stroke-width":1.5},svg);VZ.el("line",{x1:12,x2:24,y1:ay,y2:ay,stroke:"var(--axis)","stroke-width":1.5},svg)}
  var lines={};
  R.forEach(function(r){if(r.id==="acct")return;var p=P[r.id],x,y2=p.y+p.h/2;
   if(narrow){lines[r.id]=VZ.el("line",{x1:12,x2:p.x,y1:y2,y2:y2,stroke:"var(--axis)","stroke-width":1.5},svg)}
-  else{x=r.g===1?p.x+p.w:r.g===2?p.x:p.x+p.w/2;var yy=r.g===3?p.y:y2;var tx=r.g===1?A.x:r.g===2?A.x+A.w:ax,ty=r.g===3?A.y+A.h:ay;
-   lines[r.id]=VZ.el("path",{d:"M"+x+","+yy+" C"+((x+tx)/2)+","+yy+" "+((x+tx)/2)+","+ty+" "+tx+","+ty,fill:"none",stroke:"var(--axis)","stroke-width":1.5},svg)}});
- if(!narrow){txt(svg,4,14,GL[1],{"class":"gl"});txt(svg,W-4,14,GL[2],{"class":"gl","text-anchor":"end"});txt(svg,4,P.al.y-10,GL[3],{"class":"gl"})}
+  else if(r.g===3){var bus=p.y-16,pc=p.x+p.w/2;lines[r.id]=VZ.el("path",{d:"M"+ax+","+(A.y+A.h)+"V"+bus+"H"+pc+"V"+p.y,fill:"none",stroke:"var(--axis)","stroke-width":1.5},svg)}
+  else{x=r.g===1?p.x+p.w:p.x;var tx=r.g===1?A.x:A.x+A.w,ty=ay;
+   lines[r.id]=VZ.el("path",{d:"M"+x+","+y2+" C"+((x+tx)/2)+","+y2+" "+((x+tx)/2)+","+ty+" "+tx+","+ty,fill:"none",stroke:"var(--axis)","stroke-width":1.5},svg)}});
+ if(!narrow){txt(svg,4,14,GL[1],{"class":"gl"});txt(svg,W-4,14,GL[2],{"class":"gl","text-anchor":"end"});txt(svg,4,P.al.y+P.al.h+20,GL[3],{"class":"gl"})}
  else{[1,2,3].forEach(function(g){var f=R.filter(function(r){return r.g===g})[0];txt(svg,24,P[f.id].y-6,GL[g],{"class":"gl"})})}
  R.forEach(function(r){var p=P[r.id],g=VZ.el("g",{"class":"nd",role:"button",tabindex:0,"data-id":r.id,"aria-label":r.t+(r.nm.length?": "+names(r):"")},svg);
   var rect=VZ.el("rect",{x:p.x,y:p.y,width:p.w,height:p.h,rx:5,fill:"var(--panel)",stroke:GC[r.g],"stroke-width":1.5},g);
   VZ.el("rect",{x:p.x,y:p.y,width:5,height:p.h,rx:2,fill:GC[r.g]},g);
   txt(g,p.x+13,p.y+19,r.t,{"class":"nt"});
-  if(r.nm.length){var mx=Math.max(16,Math.floor((p.w-20)/6.3)),L=wrap(names(r),mx).slice(0,2);L.forEach(function(l,k){txt(g,p.x+13,p.y+35+k*13,l,{"class":"nn"})})}
+  if(r.nm.length){var mx=Math.max(16,Math.floor((p.w-20)/6.3)),L=wrap(names(r),mx).slice(0,3);L.forEach(function(l,k){txt(g,p.x+13,p.y+35+k*13,l,{"class":"nn"})})}
+  else if(r.id==="ps"){txt(g,p.x+13,p.y+35,"The role I am applying for",{"class":"nn"})}
   else if(r.id!=="acct"){txt(g,p.x+13,p.y+35,"No public name used",{"class":"nn"})}
-  else txt(g,p.x+13,p.y+37,"The account being farmed",{"class":"nn"});
+  else txt(g,p.x+13,p.y+37,"One account",{"class":"nn"});
   g._rect=rect;
   g.addEventListener("click",function(){setO(r.id)});g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();setO(r.id)}})});
  host._lines=lines;setO(osel)}
@@ -628,20 +636,20 @@ function setO(id){osel=id;var host=document.getElementById("am-org");
  var L=host._lines||{};Object.keys(L).forEach(function(k){L[k].setAttribute("stroke",k===id?"var(--accent)":"var(--axis)");L[k].setAttribute("stroke-width",k===id?3:1.5)});
  var r=R.filter(function(x){return x.id===id})[0];
  document.getElementById("am-od").innerHTML='<p class="nm">'+esc(r.t)+'</p><h4>What I would ask of this role <span class="am-my">My approach</span></h4><p>'+esc(r.ask)+'</p>'+
-  (r.nm.length?'<h4>Named public owners</h4><ul>'+r.nm.map(function(n){return '<li><b>'+esc(n[0])+'</b>, '+esc(n[1])+'<small>Source: '+esc(n[2])+'</small></li>'}).join("")+'</ul>':(id==="acct"?'':'<h4>Named public owners</h4><p>Public sources used for this page name no one in this role for UK and Ireland, so the role is shown without a name.</p>'))}
+  (r.nm.length?'<h4>Named public owners</h4><ul>'+r.nm.map(function(n){return '<li><b>'+esc(n[0])+'</b>, '+esc(n[1])+'<small>Source: '+esc(n[2])+'</small></li>'}).join("")+'</ul>':(id==="acct"||id==="ps"?'':'<h4>Named public owners</h4><p>Public sources used for this page name no one in this role for UK and Ireland, so the role is shown without a name.</p>'))}
 responsive(document.getElementById("am-org"),drawOrg);
 
 /* ---------- farming play at Lloyds ---------- */
 var STEPS=[
- {t:"Map white space with the client partner",b:"I would sit with the Lloyds client partner and delivery head to map what Wipro runs today: the Pega programmes, the QE work recognised at TESTA 2023, the Designit advice service and the 2,500-person delivery team. We would mark where IC&D work is not yet evidenced in public sources: payments QE, AI on Gemini, application rationalisation and DevOps.",o:"A one-page account map agreed with the client partner, with two white-space areas to test.",l:[["accounts.html","A7 Accounts"]]},
- {t:"Choose the forcing event",b:"The dated events point to change and release assurance in payments. CHAPS rejects unstructured addresses from November 2026 and needs purpose codes from November 2027. PS26/2 incident and third-party reporting applies from 18 March 2027. The group's 17 September 2026 letter to the Treasury Committee says it has strengthened how changes are categorised, reviewed, tested and released.",o:"One forcing event and one executive sponsor, agreed with the sector head and the client partner.",l:[["banking.html","A13 Banking Pursuit"]]},
- {t:"Run an executive workshop",b:"A half-day workshop with the payments change owner on release assurance for one value stream. The QE practice brings its assessment method and AI testing tools, Capco's UK banking and payments lead brings the business case view, and the alliance team brings Iliad's payment-testing teaming and Google Cloud.",o:"A shortlist of two or three use cases ranked on value and feasibility, and agreement to a proposal.",l:[["workshops.html","A10 Workshops"]]},
- {t:"Shape a phased first scope",b:"A fixed-price assessment of regression and environment testing for the chosen value stream, followed by an automation pilot on one release train. Phase one is small enough to approve inside the existing relationship, so order book lands this financial year.",o:"A proactive proposal with a phase one price and a phase two option.",l:[["deal-shaping.html","A12 Deals"],["pursuits.html","A11 Pursuits"]]},
- {t:"Expand",b:"With phase one results, the client partner and I would take the next scope to the sponsor: QE as a service across payments, AI test generation and DevOps. The result also becomes a reference for Move 2 at other UK banks.",o:"A second order and a named reference, tracked as share of wallet and attach rate.",l:[["accounts.html","A7 Accounts"],["banking.html","A13 Banking Pursuit"]]}
+ {t:"Map white space with the client partner",s:"Map white space",b:"I would sit with the Lloyds client partner and delivery head to map what Wipro runs today: the Pega programmes, the QE work recognised at TESTA 2023, the Designit advice service and the 2,500-person delivery team. We would mark where IC&D work is not yet evidenced in public sources: payments QE, AI on Gemini, application rationalisation and DevOps.",o:"A one-page account map agreed with the client partner, with two white-space areas to test.",l:[["accounts.html","A7 Accounts"]]},
+ {t:"Choose the forcing event",s:"Forcing event",b:"The dated events point to change and release assurance in payments. CHAPS rejects unstructured addresses from November 2026 and needs purpose codes from November 2027. PS26/2 incident and third-party reporting applies from 18 March 2027. The group's 17 September 2026 letter to the Treasury Committee says it has strengthened how changes are categorised, reviewed, tested and released.",o:"One forcing event and one executive sponsor, agreed with the sector head and the client partner.",l:[["banking.html","A13 Banking Pursuit"]]},
+ {t:"Run an executive workshop",s:"Workshop",b:"A half-day workshop with the payments change owner on release assurance for one value stream. The QE practice brings its assessment method and AI testing tools, Capco's UK banking and payments lead brings the business case view, and the alliance team brings Iliad's payment-testing teaming and Google Cloud.",o:"A shortlist of two or three use cases ranked on value and feasibility, and agreement to a proposal.",l:[["workshops.html","A10 Workshops"]]},
+ {t:"Shape a phased first scope",s:"First scope",b:"A fixed-price assessment of regression and environment testing for the chosen value stream, followed by an automation pilot on one release train. Phase one is small enough to approve inside the existing relationship, so order book lands this financial year.",o:"A proactive proposal with a phase one price and a phase two option.",l:[["deal-shaping.html","A12 Deals"],["pursuits.html","A11 Pursuits"]]},
+ {t:"Expand",s:"Expand",b:"With phase one results, the client partner and I would take the next scope to the sponsor: QE as a service across payments, AI test generation and DevOps. The result also becomes a reference for Move 2 at other UK banks.",o:"A second order and a named reference, tracked as share of wallet and attach rate.",l:[["accounts.html","A7 Accounts"],["banking.html","A13 Banking Pursuit"]]}
 ];
 var PR_ROLES=[["Client partner",["L","S","S","S","L"]],["Sector head",["S","L","","",""]],["Practice specialist (me)",["L","L","L","L","L"]],["QE and testing practice",["","","L","S","S"]],["Capco UK",["","S","S","","S"]],["Solution architect",["","","S","L",""]],["Delivery head",["S","","","S","L"]],["Pursuit lead",["","","","S","S"]],["Alliance manager",["","","S","","S"]]];
 var stp=document.getElementById("am-stp"),cur=0;
-stp.innerHTML=STEPS.map(function(s,i){return '<button type="button" role="tab" id="am-tab'+i+'" aria-controls="am-ps" aria-selected="'+(i===0)+'" tabindex="'+(i===0?0:-1)+'"><b>'+(i+1)+'</b>'+esc(s.t.split(" with ")[0].replace("Run an ","").replace("Shape a ",""))+'</button>'}).join("");
+stp.innerHTML=STEPS.map(function(s,i){return '<button type="button" role="tab" id="am-tab'+i+'" aria-controls="am-ps" aria-selected="'+(i===0)+'" tabindex="'+(i===0?0:-1)+'"><b>'+(i+1)+'</b>'+esc(s.s)+'</button>'}).join("");
 var tabs=[].slice.call(stp.querySelectorAll("[role=tab]"));
 tabs.forEach(function(t,i){t.addEventListener("click",function(){setS(i)});t.addEventListener("keydown",function(e){var k=e.key==="ArrowRight"?1:e.key==="ArrowLeft"?-1:0;if(k){var n=(i+k+tabs.length)%tabs.length;tabs[n].focus();setS(n)}})});
 function setS(i){cur=i;tabs.forEach(function(t,k){t.setAttribute("aria-selected",k===i);t.tabIndex=k===i?0:-1});
@@ -653,7 +661,7 @@ function drawPlay(W){var host=document.getElementById("am-play"),lw=Math.min(170
  var svg=svgEl(host,W,H,"Matrix of roles against the five steps. Column headers are buttons that select a step.");
  for(var i=0;i<5;i++){var g=VZ.el("g",{"class":"cl","data-i":i,role:"button",tabindex:0,"aria-label":"Step "+(i+1)+": "+STEPS[i].t},svg);
   VZ.el("rect",{x:lw+i*cw+2,y:2,width:cw-4,height:H-4,rx:4,fill:"transparent","class":"bg"},g);
-  txt(g,lw+i*cw+cw/2,18,"Step "+(i+1),{"text-anchor":"middle","class":"t-strong"});
+  txt(g,lw+i*cw+cw/2,18,(cw<60?"":"Step ")+(i+1),{"text-anchor":"middle","class":"t-strong"});
   (function(k){g.addEventListener("click",function(){setS(k)});g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();setS(k)}})})(i)}
  PR_ROLES.forEach(function(r,j){var y=top+j*rh+rh/2;VZ.el("line",{x1:0,x2:W,y1:y+rh/2,y2:y+rh/2,stroke:"var(--grid)"},svg);
   var L=wrap(r[0],Math.floor(lw/6.6));txt(svg,2,y+4-(L.length>1?6:0),L[0],{});if(L[1])txt(svg,2,y+10,L[1],{});
