@@ -96,6 +96,15 @@ table.t td.bk-r{text-align:center;font-variant-numeric:tabular-nums;font-weight:
 .bk-ag .blk:focus-visible rect,.bk-ag .blk:hover rect{stroke:var(--ink1);stroke-width:2}
 .bk-ag .blk.sel rect{stroke:var(--ink1);stroke-width:2.5}
 .viz .legend svg{width:auto;display:inline-block;flex:none}
+.bk-mode{background:var(--panel);border-radius:6px;padding:16px 18px;margin-top:22px}
+.bk-mbtn{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.bk-mbtn button{appearance:none;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:4px;padding:10px 14px;font:500 14px/1.2 var(--sans);cursor:pointer}
+.bk-mbtn button i{width:12px;height:12px;border-radius:2px;display:inline-block;flex:none;background:var(--mc)}
+.bk-mbtn button[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--mc);border-color:var(--mc);font-weight:600;background:var(--surface)}
+.bk-mode p.mini{margin-top:10px}
+.bk-mchip{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font:600 11px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--ink1);background:var(--bg);border:1px solid var(--line);border-radius:3px;padding:3px 7px;vertical-align:2px}
+.bk-mchip i{width:9px;height:9px;border-radius:2px;display:inline-block}
+.bk-mnote{border-left:4px solid var(--mc,var(--accent));background:var(--panel);border-radius:0 6px 6px 0;padding:10px 14px;margin-top:14px;font-size:14px}
 .bk-lab{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;stroke-linejoin:round}
 main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;stroke-linejoin:round}
 @media (max-width:980px){.bk-prof,.bk-offer,.bk-ob,.bk-md{grid-template-columns:1fr}.bk-proof,.bk-mg{grid-template-columns:1fr 1fr}.bk-det{grid-template-columns:1fr 1fr}}
@@ -105,8 +114,16 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
 <section class="phead">
   <span class="eyebrow"><b class="acode">A12</b>Worked example</span>
   <h1>Banking Pursuit</h1>
-  <p class="lede">This page works one IC&amp;D pursuit through from the first signal to the proposal, at an illustrative UK bank with an Irish subsidiary. It covers the dated forcing events, a quality engineering entry offer, the land and expand path, the buying committee, qualification, a margin sketch, competitors and the first executive workshop.</p>
+  <p class="lede">This page works one IC&amp;D pursuit through from the first signal to the proposal, at an illustrative UK bank with an Irish subsidiary. It covers the dated forcing events, a quality engineering entry offer, the land and expand path, the buying committee, qualification, a margin sketch, competitors and the first executive workshop. The toggle below switches the example between an existing Wipro account (Move 1: expand) and a new logo (Move 2: new logos).</p>
   <p class="meta">The bank is a composite and does not stand for any real firm. Facts come from regulators, Wipro releases, partner releases and the trade press. Deal sizes, durations, scores and margins are placeholders or my judgement and are labelled as such.</p>
+  <div class="bk-mode">
+    <p class="bk-k" id="bk-modeh">Pursuit type</p>
+    <div class="bk-mbtn" id="bk-mode" role="group" aria-labelledby="bk-modeh">
+      <button type="button" data-m="0" aria-pressed="true" style="--mc:var(--accent)"><i></i>Existing Wipro account (Move 1)</button>
+      <button type="button" data-m="1" aria-pressed="false" style="--mc:var(--s2)"><i></i>New logo (Move 2)</button>
+    </div>
+    <p class="mini" id="bk-moden" aria-live="polite"></p>
+  </div>
 </section>
 
 <section class="sec" aria-labelledby="bk-h0">
@@ -129,19 +146,14 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
         <dt>Core</dt><dd>Mainframe core with digital channels built over it</dd>
         <dt>Subsidiary</dt><dd>Irish banking subsidiary under DORA and Central Bank of Ireland supervision</dd>
         <dt>Contact</dt><dd>In-house contact centres handling fraud, complaints and servicing</dd>
-        <dt>Wipro today</dt><dd>No current relationship assumed. The pursuit is a hunting motion.</dd>
+        <dt>Wipro today</dt><dd id="bk-today"></dd>
       </dl>
     </div>
     <div class="panel rv">
       <h3>Pursuit path, first signal to proposal</h3>
+      <p style="margin-top:6px"><span class="bk-mchip"></span></p>
       <p class="mini">Week numbers are my estimate for a first contract of this size.</p>
-      <ol class="bk-path">
-        <li><b>Weeks 0 to 2</b><span>Signal. Rejected CHAPS payments after the November 2026 address change, or an incident report, reach the Head of Payments. I build an outside-in brief from the dates below.</span></li>
-        <li><b>Weeks 2 to 6</b><span>Qualify. First meetings with payments and engineering leads through the Client Partner. MEDDPICC at the signal stage.</span></li>
-        <li><b>Weeks 6 to 9</b><span>Executive workshop on payments resilience and quality, with the COO as sponsor.</span></li>
-        <li><b>Weeks 9 to 15</b><span>Shape. A six-week proof on one payment flow, the solution with Tricentis and Iliad Solutions, and a commercial model with Finance.</span></li>
-        <li><b>Weeks 15 to 22</b><span>Proposal, orals and contract for phase one, with phase two scoped as a named option.</span></li>
-      </ol>
+      <ol class="bk-path" id="bk-path"></ol>
     </div>
   </div>
 </section>
@@ -184,7 +196,7 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
       <p class="bk-k">Draft message to test</p>
       <p style="font-size:16px;line-height:1.5">"Your next two CHAPS changes and the March 2027 reporting rules all land on the same payment systems. We would put automated regression and release evidence around one payment flow in six weeks, show you the defect and cycle-time data, and then price the rest of the estate on that evidence."</p>
       <p class="bk-k" style="margin-top:16px">Who hears it first</p>
-      <p>The Head of Payments and the Head of Quality Engineering, introduced by the Client Partner. The COO hears it at the executive workshop.</p>
+      <p>The Head of Payments and the Head of Quality Engineering, <span id="bk-who1">introduced by the Client Partner</span>. The COO hears it at the executive workshop.</p>
     </div>
   </div>
   <div class="viz rv">
@@ -200,14 +212,15 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
   <h2 id="bk-h3">From testing to managed run</h2>
   <p class="intro">Each phase starts from a forcing event and from what the previous phase taught both sides. Select a phase to see the offering, the buyer, the partner, the proof and a placeholder size. The order book chart below adds the phases up. Enter your own values to test a plan.</p>
   <div class="viz rv">
-    <div class="viz-h"><h3>Four phases at the illustrative bank</h3><p>The first contract is the smallest. Phases two and four carry most of the value. Select a phase.</p></div>
+    <div class="viz-h"><h3>Four phases at the illustrative bank <span class="bk-mchip"></span></h3><p>The first contract is the smallest. Phases two and four carry most of the value. Select a phase.</p></div>
+    <p class="bk-mnote" id="bk-len"></p>
     <div id="bk-ph"></div>
     <div id="bk-phd" aria-live="polite"></div>
   </div>
   <div class="bk-ob">
     <div class="bk-obin rv">
       <h3>Order book inputs <span class="bk-ph">Placeholder figures</span></h3>
-      <p class="mini">Total contract value in £m and the half-year each phase signs. These are my placeholders. Enter your own.</p>
+      <p class="mini">Total contract value in £m and the half-year each phase signs. These are my placeholders and change with the pursuit type. Enter your own.</p>
       <div class="bk-obrow h"><span>Phase</span><span>TCV £m</span><span>Signs</span></div>
       <div id="bk-obin"></div>
       <div class="btnrow"><button type="button" id="bk-obrs">Reset placeholders</button></div>
@@ -226,7 +239,8 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
   <h2 id="bk-h4">Who buys at this bank</h2>
   <p class="intro">The committee for a payments testing contract is smaller than for the later phases, and its leader changes at each stage. The shading is my judgement of involvement. Select a stage heading to see who leads it, or a row to see what that buyer needs. The general model is on the <a href="buyers.html">Buyers</a> page.</p>
   <div class="viz rv">
-    <div class="viz-h"><h3>Involvement by stage, first contract</h3><p>Payments and engineering lead early. Finance and procurement take over at price and contract.</p></div>
+    <p class="bk-mnote" id="bk-hmn"></p>
+    <div class="viz-h" style="margin-top:14px"><h3>Involvement by stage, first contract <span class="bk-mchip"></span></h3><p>Payments and engineering lead early. Finance and procurement take over at price and contract.</p></div>
     <div class="legend"><span><i style="background:var(--seq-2)"></i>Informed</span><span><i style="background:var(--seq-3)"></i>Involved</span><span><i style="background:var(--seq-4)"></i>Decides on part</span><span><i style="background:var(--seq-5)"></i>Leads the stage</span></div>
     <div id="bk-hm" class="bk-hm"></div>
     <p class="mini" id="bk-hmk" hidden>Stages: 1 Signal, 2 Qualify, 3 Workshop and shape, 4 Solution and price, 5 Proposal and contract.</p>
@@ -238,6 +252,7 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
   <span class="eyebrow">Qualification</span>
   <h2 id="bk-h5">MEDDPICC for this pursuit</h2>
   <p class="intro">Each letter shows what I would need to find out at this bank and how. The levels are illustrative readings at three points in the pursuit, plus a case where the sponsor moves on. Choose a point, or change any level, and the verdict updates. The scoring rules match the scorecard on the <a href="pursuits.html">Pursuits</a> page.</p>
+  <p class="bk-mnote" id="bk-mdn"></p>
   <div class="btnrow" id="bk-mps" role="group" aria-label="Point in the pursuit"></div>
   <div class="bk-md">
     <div>
@@ -465,7 +480,7 @@ var PH=[
   pr:"TESTA 2023 award for Lloyds Banking Group's Payment Services Platform with Wipro. Swift validation provider (2022 guide, to confirm).",
   ev:"CHAPS addresses (Nov 2026), PS26/2 (Mar 2027), CHAPS purpose codes (Nov 2027).",
   band:"£2m to £5m",dur:"12 to 18 months"},
- {n:"Core and payments modernisation",sh:"Core and payments",c:"var(--s2)",
+ {n:"Core and payments modernisation",sh:"Core and payments",c:"var(--s6)",
   off:"Extend the Core first: digital and API layers over the existing core with minimal disruption. Payment hub modernisation for ISO 20022. Enable the Core where the bank has chosen a platform, with Wipro's Core Processing Transformation team giving an independent view of platform choice.",
   buy:"CIO or CTO and COO, with the CFO on the business case. A core decision goes to the board, so the CEO joins here.",
   par:"Finastra (Wipro is a Global Premier Elite Partner, with a Fusion Global PayPlus practice that has delivered for major banks in Europe), Temenos (global strategic partnership from 2022, with the UK as a target market), Intellect eMACH.ai (global strategic partnership from August 2024). Capco for strategy.",
@@ -487,18 +502,18 @@ var PH=[
   ev:"PS26/2 annual register, DORA exit plans, productivity step-downs at renewal.",
   band:"£20m to £50m",dur:"5 years"}
 ];
-var phSel=0;
+var phSel=0,PHL=["Land","Expand to the core","Expand to customers","Expand to run"];
 function drawPH(){var h=$("bk-ph");h.innerHTML="";var W=wOf(h),nar=W<640,H=nar?4*48+4:92,s=VZ.svg(h,W,H,"Four phases from QE to managed run");s.setAttribute("role","group");
  PH.forEach(function(p,i){var sel=i===phSel,g=VZ.el("g",{"class":"bk-hit","aria-label":"Phase "+(i+1)+": "+p.n,"aria-pressed":sel},s);
   if(nar){var y=i*48+2;VZ.el("rect",{x:0,y:y,width:W,height:42,rx:5,fill:sel?p.c:"var(--panel)","class":"ring",stroke:sel?"var(--ink1)":"var(--line)"},g);
-   VZ.el("text",{x:14,y:y+26,style:"font-weight:600;font-size:13px;fill:"+(sel?"var(--chart-bg)":"var(--ink1)")},g).textContent=(i+1)+". "+p.n;
+   VZ.el("text",{x:14,y:y+26,style:"font-weight:600;font-size:13px;fill:"+(sel?"var(--chart-bg)":"var(--ink1)")},g).textContent=(i+1)+". "+(W<460?p.sh:p.n);
    VZ.el("text",{x:W-12,y:y+26,"text-anchor":"end",style:"font-size:11.5px;fill:"+(sel?"var(--chart-bg)":"var(--ink2)")},g).textContent=p.band}
   else{var cw=W/4,x0=i*cw,a=16,y=10,hh=60,d="M"+x0+","+y+"h"+(cw-a)+"l"+a+","+hh/2+"l-"+a+","+hh/2+"h-"+(cw-a)+(i?"l"+a+",-"+hh/2+"z":"z");
    VZ.el("path",{d:d,fill:sel?p.c:"var(--panel)",stroke:sel?"var(--ink1)":"var(--line)","stroke-width":sel?2:1,"class":"ring"},g);
    var tc=sel?"var(--chart-bg)":"var(--ink1)";
    VZ.el("text",{x:x0+(i?a+12:12),y:y+25,style:"font-weight:600;font-size:13px;fill:"+tc},g).textContent=(i+1)+". "+(cw>250?p.n:p.sh);
    VZ.el("text",{x:x0+(i?a+12:12),y:y+44,style:"font-size:11.5px;fill:"+(sel?"var(--chart-bg)":"var(--ink2)")},g).textContent=p.band+" · "+p.dur;
-   VZ.el("text",{x:x0+cw/2,y:88,"text-anchor":"middle","class":"t-muted"},s).textContent=["Land","Expand to the core","Expand to customers","Expand to run"][i]}
+   VZ.el("text",{x:x0+cw/2,y:88,"text-anchor":"middle","class":"t-muted"},s).textContent=PHL[i]}
   act(g,function(){phSel=i;drawPH();showPH();drawOB()})});
 }
 function showPH(){var p=PH[phSel];
@@ -509,7 +524,7 @@ var obin=$("bk-obin");
 function buildOBin(){obin.innerHTML=PH.map(function(p,i){return '<div class="bk-obrow"><label for="bk-tcv'+i+'"><i style="background:'+p.c+'"></i>'+(i+1)+". "+p.sh+'</label><input type="number" min="0" max="500" step="1" id="bk-tcv'+i+'" value="'+OB[i][0]+'"><select id="bk-hy'+i+'" aria-label="Phase '+(i+1)+' signs in">'+HY.map(function(y,k){return '<option value="'+k+'"'+(k===OB[i][1]?" selected":"")+'>'+y+'</option>'}).join("")+'</select></div>'}).join("");
  PH.forEach(function(p,i){$("bk-tcv"+i).addEventListener("input",function(){var v=parseFloat(this.value);OB[i][0]=isFinite(v)&&v>=0?v:0;drawOB();calcMG()});$("bk-hy"+i).addEventListener("change",function(){OB[i][1]=+this.value;drawOB()})})}
 $("bk-obrs").addEventListener("click",function(){OB=OBD.map(function(r){return r.slice()});buildOBin();drawOB();calcMG()});
-$("bk-obl").innerHTML=PH.map(function(p){return '<span><i style="background:'+p.c+'"></i>'+p.sh+'</span>'}).join("");
+function obLegend(){$("bk-obl").innerHTML=PH.map(function(p){return '<span><i style="background:'+p.c+'"></i>'+p.sh+'</span>'}).join("")}
 function fm(v){return "£"+(v>=10||v===0?v.toFixed(0):v.toFixed(1))+"m"}
 function drawOB(){var h=$("bk-obc");h.innerHTML="";var W=wOf(h),nar=W<520,H=nar?240:280,L=42,R=8,T=18,B=nar?40:28;
  var tot=OB.reduce(function(a,b){return a+b[0]},0),mx=Math.max(10,Math.ceil(tot/10)*10);
@@ -576,7 +591,7 @@ var MD=[
 var LV=["Unknown","Weak","Partial","Strong"];
 var MP=[["At first signal",[2,1,1,1,1,2,1,2]],["After the workshop",[2,2,2,1,1,3,2,2]],["Before the proposal",[3,3,3,2,2,3,3,2]],["If the sponsor moves on",[1,0,1,1,1,2,0,1]]];
 var MV=MP[1][1].slice(),mSel=1,mpSel=1;
-var mpb=$("bk-mps");MP.forEach(function(p,i){var b=document.createElement("button");b.type="button";b.textContent=p[0];b.setAttribute("aria-pressed",i===mpSel);b.addEventListener("click",function(){mpSel=i;MV=p[1].slice();paintMD()});mpb.appendChild(b)});
+var mpb=$("bk-mps");MP.forEach(function(p,i){var b=document.createElement("button");b.type="button";b.textContent=p[0];b.setAttribute("aria-pressed",i===mpSel);b.addEventListener("click",function(){mpSel=i;MV=MP[i][1].slice();paintMD()});mpb.appendChild(b)});
 $("bk-let").innerHTML=MD.map(function(m,i){return '<button type="button" data-i="'+i+'" aria-pressed="false"><b>'+m.k+'</b><span>'+m.n+'</span><i></i></button>'}).join("");
 [].forEach.call($("bk-let").children,function(b,i){b.addEventListener("click",function(){mSel=i;paintMD()})});
 var LVC=["var(--grid)","var(--seq-2)","var(--seq-3)","var(--seq-5)"];
@@ -692,8 +707,62 @@ function drawAG(){var h=$("bk-ag");h.innerHTML="";var W=wOf(h),nar=W<640,tot=AG.
 }
 function showAG(){var a=AG[agSel];$("bk-agd").innerHTML='<div><h4>'+a.n+' · '+a.m+' minutes</h4><p>'+a.p+'</p></div><div><h4>Who leads</h4><p>'+a.who+'</p></div><div><h4>Output</h4><p>'+a.o+'</p></div>'}
 
+/* ---------- pursuit type: Move 1 (existing account) or Move 2 (new logo) ---------- */
+var BASE={ph0:JSON.parse(JSON.stringify(PH[0])),ph3:JSON.parse(JSON.stringify(PH[3])),stn:STN.slice(),ro:RO.map(function(r){return r.v.slice()})};
+var MODE=[
+ {n:"Move 1: expand",c:"var(--accent)",
+  note:"Move 1: Wipro already runs part of this bank's estate. The client partner opens the door and the first scope attaches to the run contract.",
+  today:"Wipro runs applications or infrastructure for the bank under a multi-year contract (assumed for this example). The pursuit is a Move 1 expansion.",
+  path:[["Weeks 0 to 2","Account review. With the client partner I map the white space around Wipro's run contract, the renewal date and the CHAPS and PS26/2 dates that fall inside it."],
+   ["Weeks 2 to 4","Qualify. The client partner introduces me to the Head of Payments and the Head of QE. Existing relationships and contract data make qualification faster."],
+   ["Weeks 4 to 6","Executive workshop on payments resilience and quality, with the COO as sponsor, held inside the account's regular governance."],
+   ["Weeks 6 to 10","Shape a phased first scope: QE and payments resilience attached to the run contract, with Tricentis and Iliad Solutions, and phase two named."],
+   ["Weeks 10 to 14","Proposal and a contract change under the existing master agreement, with phase two scoped as an option at renewal."]],
+  ph0:{n:"QE attached to the run contract",off:"Quality engineering and payments resilience added to Wipro's existing run contract as a phased first scope: ISO 20022 regression, impact tolerance tests, release evidence, and test automation with Tosca and IntelliAssure.",buy:"Head of Payments with the Head of Quality Engineering, introduced by the client partner. The CIO who owns the run contract signs and the COO sponsors.",band:"£2m to £5m",dur:"12 to 18 months"},
+  ph3:{n:"Run contract renewal on WINGS",off:"At renewal of the existing run contract, application management and payment operations move onto WINGS, Wipro's AI-powered delivery platform for IT and business operations, with SRE and AIOps on the payment estate."},
+  lab:["Attach","Expand to the core","Expand to customers","Renew and extend the run"],
+  len:"Starting point in Move 1: Wipro already runs part of the estate. The first contract attaches QE to that run contract through the client partner, and phase four is the renewal of the run contract itself.",
+  ob:[[4,0],[20,1],[8,2],[30,3]],
+  mp:[["At first signal",[2,2,1,2,3,2,2,2]],["After the workshop",[3,3,2,2,3,3,3,2]],["Before the proposal",[3,3,3,3,3,3,3,3]],["If the sponsor moves on",[2,1,2,2,3,2,0,2]]],
+  mdn:"Move 1 preset: the client partner already knows the economic buyer and a likely champion, and the existing master agreement covers most of the paper process. Readings start higher, so qualification is faster.",
+  hmn:"Move 1: the client partner already holds the CIO and procurement relationships. Third-party risk and procurement have assessed Wipro before, so their involvement is lighter and the contract is a change under the existing agreement.",
+  stn0:"The client partner sees the renewal date and the white space first, and the Head of Payments confirms the pain. I bring the white space map and the outside-in brief.",
+  stn4:"Procurement processes a change under the existing master agreement, checking DORA terms for the Irish subsidiary and the material outsourcing classification.",
+  rov:{proc:[0,0,0,1,2],risk:[1,1,1,1,2]}},
+ {n:"Move 2: new logos",c:"var(--s2)",
+  note:"Move 2: the bank is new to Wipro. The pursuit opens on a forcing event, with a partner introduction and an executive workshop that leads to a fixed-price entry scope.",
+  today:"No current relationship assumed. The pursuit is a Move 2 new logo, with references from Move 1 expansions and Wipro's QE awards.",
+  path:[["Weeks 0 to 2","Signal. Rejected CHAPS payments after the November 2026 address change, or an incident report, reach the Head of Payments. I build an outside-in brief from the dates below."],
+   ["Weeks 2 to 6","Introduce and qualify. A partner introduction through Tricentis, Iliad Solutions or the bank's cloud provider, then first meetings with payments and engineering leads. MEDDPICC at the signal stage."],
+   ["Weeks 6 to 9","Executive workshop on payments resilience and quality, with the COO as sponsor."],
+   ["Weeks 9 to 15","Shape a fixed-price entry scope: a six-week proof on one payment flow, the solution with Tricentis and Iliad Solutions, and a commercial model with Finance."],
+   ["Weeks 15 to 22","Supplier onboarding, proposal, orals and contract for the entry scope, with phase two scoped as a named option."]],
+  ph0:{n:"Fixed-price entry scope",off:"A fixed-price assessment and six-week proof on one payment flow, then managed quality engineering for payments: ISO 20022 regression, impact tolerance tests, release evidence, and test automation with Tosca and IntelliAssure.",buy:"Head of Payments with the Head of Quality Engineering, met through a partner introduction. The CIO signs and the COO sponsors.",band:"£1m to £3m",dur:"6 to 12 months"},
+  ph3:{},
+  lab:["Land","Expand to the core","Expand to customers","Expand to run"],
+  len:"Starting point in Move 2: a fixed-price entry scope at a bank where Wipro is new. Each later phase is earned on the evidence from the one before.",
+  ob:[[2,0],[25,2],[8,3],[30,4]],
+  mp:[["At first signal",[2,1,1,1,1,2,1,2]],["After the workshop",[2,2,2,1,1,3,2,2]],["Before the proposal",[3,3,3,2,2,3,3,2]],["If the sponsor moves on",[1,0,1,1,1,2,0,1]]],
+  mdn:"Move 2 preset: the bank is new to Wipro, so the economic buyer, champion and paper process start weak, and the executive workshop does most of the qualifying.",
+  hmn:"Move 2: Wipro is a new supplier here. Third-party risk and procurement run a full supplier assessment, so they come in earlier and weigh more in the decision.",
+  stn0:BASE.stn[0].replace("through the Client Partner","through a partner introduction"),stn4:BASE.stn[4],rov:{}}
+];
+var mode=0;
+function setMode(i,init){mode=i;var M=MODE[i];
+ PH[0]=Object.assign({},BASE.ph0,M.ph0);PH[3]=Object.assign({},BASE.ph3,M.ph3);PHL=M.lab;
+ OBD=M.ob;OB=OBD.map(function(r){return r.slice()});
+ STN[0]=M.stn0;STN[4]=M.stn4;RO.forEach(function(r,k){r.v=(M.rov[r.k]||BASE.ro[k]).slice()});
+ MP=M.mp;mpSel=1;MV=MP[1][1].slice();
+ [].forEach.call($("bk-mode").children,function(b){b.setAttribute("aria-pressed",+b.dataset.m===i)});
+ $("bk-moden").textContent=M.note;$("bk-who1").textContent=i?"introduced through a partner such as Tricentis or Iliad Solutions":"introduced by the client partner";$("bk-today").textContent=M.today;
+ $("bk-path").innerHTML=M.path.map(function(p){return "<li><b>"+p[0]+"</b><span>"+p[1]+"</span></li>"}).join("");
+ [["bk-len",M.len],["bk-mdn",M.mdn],["bk-hmn",M.hmn]].forEach(function(x){var e=$(x[0]);e.textContent=x[1];e.style.setProperty("--mc",M.c)});
+ [].forEach.call(document.querySelectorAll(".bk-mchip"),function(e){e.innerHTML='<i style="background:'+M.c+'"></i>'+M.n});
+ obLegend();buildOBin();if(!init)all()}
+[].forEach.call($("bk-mode").children,function(b){b.addEventListener("click",function(){setMode(+b.dataset.m)})});
+
 function all(){drawTL();showEv();drawPH();showPH();drawOB();drawHM();showHM();paintMD();calcMG();drawCT();drawAG();showAG()}
-buildOBin();all();
+setMode(0,true);all();
 var rt,lw=innerWidth;addEventListener("resize",function(){if(innerWidth===lw)return;lw=innerWidth;clearTimeout(rt);rt=setTimeout(all,150)});
 VZ.onTheme(all);
 })();

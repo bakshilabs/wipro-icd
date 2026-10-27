@@ -174,7 +174,7 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
       <p class="bk-k">Draft message to test</p>
       <p style="font-size:16px;line-height:1.5">"Your next two CHAPS changes and the March 2027 reporting rules all land on the same payment systems. We would put automated regression and release evidence around one payment flow in six weeks, show you the defect and cycle-time data, and then price the rest of the estate on that evidence."</p>
       <p class="bk-k" style="margin-top:16px">Who hears it first</p>
-      <p>The Head of Payments and the Head of Quality Engineering, introduced by the Client Partner. The COO hears it at the executive workshop.</p>
+      <p>The Head of Payments and the Head of Quality Engineering, <span id="bk-who1">introduced by the Client Partner</span>. The COO hears it at the executive workshop.</p>
     </div>
   </div>
   <div class="viz rv">
@@ -484,7 +484,7 @@ var phSel=0,PHL=["Land","Expand to the core","Expand to customers","Expand to ru
 function drawPH(){var h=$("bk-ph");h.innerHTML="";var W=wOf(h),nar=W<640,H=nar?4*48+4:92,s=VZ.svg(h,W,H,"Four phases from QE to managed run");s.setAttribute("role","group");
  PH.forEach(function(p,i){var sel=i===phSel,g=VZ.el("g",{"class":"bk-hit","aria-label":"Phase "+(i+1)+": "+p.n,"aria-pressed":sel},s);
   if(nar){var y=i*48+2;VZ.el("rect",{x:0,y:y,width:W,height:42,rx:5,fill:sel?p.c:"var(--panel)","class":"ring",stroke:sel?"var(--ink1)":"var(--line)"},g);
-   VZ.el("text",{x:14,y:y+26,style:"font-weight:600;font-size:13px;fill:"+(sel?"var(--chart-bg)":"var(--ink1)")},g).textContent=(i+1)+". "+p.n;
+   VZ.el("text",{x:14,y:y+26,style:"font-weight:600;font-size:13px;fill:"+(sel?"var(--chart-bg)":"var(--ink1)")},g).textContent=(i+1)+". "+(W<460?p.sh:p.n);
    VZ.el("text",{x:W-12,y:y+26,"text-anchor":"end",style:"font-size:11.5px;fill:"+(sel?"var(--chart-bg)":"var(--ink2)")},g).textContent=p.band}
   else{var cw=W/4,x0=i*cw,a=16,y=10,hh=60,d="M"+x0+","+y+"h"+(cw-a)+"l"+a+","+hh/2+"l-"+a+","+hh/2+"h-"+(cw-a)+(i?"l"+a+",-"+hh/2+"z":"z");
    VZ.el("path",{d:d,fill:sel?p.c:"var(--panel)",stroke:sel?"var(--ink1)":"var(--line)","stroke-width":sel?2:1,"class":"ring"},g);
@@ -732,7 +732,7 @@ function setMode(i,init){mode=i;var M=MODE[i];
  STN[0]=M.stn0;STN[4]=M.stn4;RO.forEach(function(r,k){r.v=(M.rov[r.k]||BASE.ro[k]).slice()});
  MP=M.mp;mpSel=1;MV=MP[1][1].slice();
  [].forEach.call($("bk-mode").children,function(b){b.setAttribute("aria-pressed",+b.dataset.m===i)});
- $("bk-moden").textContent=M.note;$("bk-today").textContent=M.today;
+ $("bk-moden").textContent=M.note;$("bk-who1").textContent=i?"introduced through a partner such as Tricentis or Iliad Solutions":"introduced by the client partner";$("bk-today").textContent=M.today;
  $("bk-path").innerHTML=M.path.map(function(p){return "<li><b>"+p[0]+"</b><span>"+p[1]+"</span></li>"}).join("");
  [["bk-len",M.len],["bk-mdn",M.mdn],["bk-hmn",M.hmn]].forEach(function(x){var e=$(x[0]);e.textContent=x[1];e.style.setProperty("--mc",M.c)});
  [].forEach.call(document.querySelectorAll(".bk-mchip"),function(e){e.innerHTML='<i style="background:'+M.c+'"></i>'+M.n});
