@@ -26,7 +26,7 @@ The site is shown on Arpan's screen in a panel interview for the ICD Practitione
 - Hype or filler: powerful, seamless, unlock, game-changing, crucial, key (as an adjective), robust, leverage, journey (except "customer journey" as a CX term), landscape, ecosystem, deep dive, cutting-edge, best-in-class, world-class, synergy.
 - Lists of three for rhythm. Use as many items as there are.
 - Absolute claims about Wipro's internals, people, revenue or strategy beyond what a cited source says.
-- Information about named individuals other than chief executives, or anything taken from personal LinkedIn profiles.
+- Information about named individuals other than chief executives, or anything taken from personal LinkedIn profiles. Exception: the Account Map may name Wipro leaders by name and published title where Wipro, a Wipro partner or reputable press names them publicly, with the source and its date. Never personal details or contact information.
 
 ## Presenting my experience
 - Never show gaps, weaknesses or missing experience, on any page. No "gap", "where I am lighter", "to build" or "what I would learn" sections about me.

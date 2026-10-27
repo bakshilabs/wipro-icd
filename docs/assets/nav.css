@@ -59,3 +59,4 @@ html:has(.appxbar){scroll-padding-top:112px}
 @media (max-width:360px){.sitenav .brand{display:none}.sitenav .links.about{margin-left:0}.sitenav .theme{margin-left:auto}}
 .appxbar a{padding:9px 6px;font-size:12.5px}.appxbar a b{margin-right:4px}
 .appxbar .in{gap:0}.appxbar a.home{margin-right:4px}@media (min-width:1300px){.appxbar .in{max-width:1240px;padding:0 20px}}
+@media (min-width:900px){.appxbar .in{flex-wrap:wrap;overflow-x:visible;row-gap:0}html:has(.appxbar){scroll-padding-top:140px}body:has(.appxbar) .model .controls{top:140px}}
