@@ -87,7 +87,7 @@
 .am-at th{font-weight:600;color:var(--ink2);font-size:11.5px}
 .am-at td button{appearance:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--ink3);background:transparent;cursor:pointer;color:var(--ink1);font:600 12px/1 var(--sans)}
 .am-at td button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
-.am-at td button.ev[aria-pressed="true"]{background:var(--s1);border-color:var(--s1);color:#fff}
+.am-at td button.ev[aria-pressed="true"]{background:var(--s1);border-color:var(--s1);color:var(--chart-bg)}
 .am-ar{background:var(--panel);border-radius:6px;padding:18px 20px}
 .am-ar .big{font:600 44px/1 var(--sans);letter-spacing:-.03em;color:var(--accent)}
 .am-ar p{font-size:13.5px;margin-top:8px}
@@ -639,7 +639,7 @@ var STEPS=[
  {t:"Shape a phased first scope",b:"A fixed-price assessment of regression and environment testing for the chosen value stream, followed by an automation pilot on one release train. Phase one is small enough to approve inside the existing relationship, so order book lands this financial year.",o:"A proactive proposal with a phase one price and a phase two option.",l:[["deal-shaping.html","A12 Deals"],["pursuits.html","A11 Pursuits"]]},
  {t:"Expand",b:"With phase one results, the client partner and I would take the next scope to the sponsor: QE as a service across payments, AI test generation and DevOps. The result also becomes a reference for Move 2 at other UK banks.",o:"A second order and a named reference, tracked as share of wallet and attach rate.",l:[["accounts.html","A7 Accounts"],["banking.html","A13 Banking Pursuit"]]}
 ];
-var PR_ROLES=[["Client partner",["L","S","S","S","L"]],["Sector head",["S","L","",""," "]],["Practice specialist (me)",["L","L","L","L","L"]],["QE and testing practice",["","","L","S","S"]],["Capco UK",["","S","S","","S"]],["Solution architect",["","","S","L",""]],["Delivery head",["S","","","S","L"]],["Pursuit lead",["","","","S","S"]],["Alliance manager",["","","S","","S"]]];
+var PR_ROLES=[["Client partner",["L","S","S","S","L"]],["Sector head",["S","L","","",""]],["Practice specialist (me)",["L","L","L","L","L"]],["QE and testing practice",["","","L","S","S"]],["Capco UK",["","S","S","","S"]],["Solution architect",["","","S","L",""]],["Delivery head",["S","","","S","L"]],["Pursuit lead",["","","","S","S"]],["Alliance manager",["","","S","","S"]]];
 var stp=document.getElementById("am-stp"),cur=0;
 stp.innerHTML=STEPS.map(function(s,i){return '<button type="button" role="tab" id="am-tab'+i+'" aria-controls="am-ps" aria-selected="'+(i===0)+'" tabindex="'+(i===0?0:-1)+'"><b>'+(i+1)+'</b>'+esc(s.t.split(" with ")[0].replace("Run an ","").replace("Shape a ",""))+'</button>'}).join("");
 var tabs=[].slice.call(stp.querySelectorAll("[role=tab]"));

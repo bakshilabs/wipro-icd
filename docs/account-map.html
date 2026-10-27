@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Account Map</title>
-<meta name="description" content="Stub.">
+<meta name="description" content="A map of Wipro&#x27;s publicly named UK and Irish clients by sector, evidence and delivering business, with IC&amp;D white space, forcing events, six farming priorities, the Wipro roles and published owners behind an account, and a farming play at Lloyds Banking Group.">
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/nav.css">
@@ -21,7 +21,685 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="sitenav"><div class="in"><a class="brand" href="overview.html">Arpan Bakshi<span>Wipro ICD Practitioner, UKI</span></a><nav class="links about" aria-label="About me"><a href="ai.html">AI Workflow</a><a href="method.html">Method</a></nav><button class="theme" type="button" aria-label="Switch to dark mode">Dark</button></div><nav class="appxbar" aria-label="Analysis pages"><div class="in"><a class="home" href="overview.html">Analysis</a><div class="dd"><button type="button" aria-expanded="false" aria-controls="dd0">Context<small>A1&ndash;A5</small></button><ul id="dd0" hidden><li><a href="role.html"><b>A1</b>The Role</a></li><li><a href="portfolio.html"><b>A2</b>Portfolio</a></li><li><a href="ai-engagement.html"><b>A3</b>AI Engagement</a></li><li><a href="demand.html"><b>A4</b>Demand</a></li><li><a href="alternatives.html"><b>A5</b>Competitors</a></li></ul></div><div class="dd here"><button type="button" aria-expanded="false" aria-controls="dd1">Clients<small>A6&ndash;A9</small></button><ul id="dd1" hidden><li><a href="buyers.html"><b>A6</b>Buyers</a></li><li><a href="accounts.html"><b>A7</b>Accounts</a></li><li><a href="account-map.html" aria-current="page"><b>A8</b>Account Map</a></li><li><a href="new-logos.html"><b>A9</b>New Logos</a></li></ul></div><div class="dd"><button type="button" aria-expanded="false" aria-controls="dd2">Winning work<small>A10&ndash;A13</small></button><ul id="dd2" hidden><li><a href="workshops.html"><b>A10</b>Workshops</a></li><li><a href="pursuits.html"><b>A11</b>Pursuits</a></li><li><a href="deal-shaping.html"><b>A12</b>Deals</a></li><li><a href="banking.html"><b>A13</b>Banking</a></li></ul></div><div class="dd"><button type="button" aria-expanded="false" aria-controls="dd3">Plan<small>A14</small></button><ul id="dd3" hidden><li><a href="first-months.html"><b>A14</b>First Months</a></li></ul></div></div></nav></header><script>(function(){var r=document.documentElement,t=document.querySelector('.sitenav .theme');function cur(){return r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}function show(){var d=cur()==='dark';t.textContent=d?'Light':'Dark';t.setAttribute('aria-label','Switch to '+(d?'light':'dark')+' mode')}if(t){t.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}show()});show()}var B=[].slice.call(document.querySelectorAll('.appxbar .dd>button'));function shut(x){B.forEach(function(b){if(b!==x){b.setAttribute('aria-expanded','false');document.getElementById(b.getAttribute('aria-controls')).hidden=true}})}B.forEach(function(b){var m=document.getElementById(b.getAttribute('aria-controls'));b.addEventListener('click',function(e){e.stopPropagation();var o=b.getAttribute('aria-expanded')!=='true';shut(b);b.setAttribute('aria-expanded',o);m.hidden=!o;if(o){var a=m.querySelector('a');if(a&&e.detail===0)a.focus()}})});document.addEventListener('click',function(e){if(!e.target.closest('.appxbar .dd'))shut()});document.addEventListener('keydown',function(e){if(e.key==='Escape'){var o=B.filter(function(b){return b.getAttribute('aria-expanded')==='true'})[0];shut();if(o)o.focus()}});})();</script>
 <main class="wrap page" id="main" tabindex="-1">
-<section class="phead"><span class="eyebrow"><b class="acode">A8</b>Stub</span><h1>Account Map</h1></section>
+<style>
+.am-k{grid-template-columns:repeat(4,1fr)}
+.am-k b{font-size:28px}
+.am-flt{display:grid;gap:10px;margin:6px 0 12px}
+.am-flt .row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.am-flt .lab{font:600 11px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);min-width:118px}
+.am-flt .btnrow{margin-top:0;gap:6px}
+.am-flt .btnrow button{padding:7px 10px;font-size:12.5px}
+.am-flt .btnrow button i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:0}
+.am-cnt{font-size:13px;color:var(--ink2);margin:4px 0 8px}
+#am-map svg{display:block;width:100%;height:auto}
+#am-map .nd{cursor:pointer;transition:opacity .2s}
+#am-map .nd:focus{outline:none}
+#am-map .nd:focus-visible .hl{stroke:var(--ink1);stroke-width:2;stroke-dasharray:3 2}
+#am-map .nd.dim{opacity:.16}
+#am-map .cell{fill:var(--panel)}
+#am-map .ct{font:600 11.5px/1 var(--sans);fill:var(--ink1);text-transform:uppercase;letter-spacing:.05em}
+#am-map .nl{font-size:11px;fill:var(--ink1)}
+.am-leg{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12.5px;color:var(--ink2);margin:4px 0 6px}
+.am-leg span{display:inline-flex;align-items:center;gap:6px}
+.am-leg svg{width:22px;height:22px}
+.am-det{margin-top:14px;background:var(--panel);border-radius:6px;padding:20px 22px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+.am-det h4{font:600 12px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);margin:14px 0 6px}
+.am-det h4:first-child{margin-top:0}
+.am-det .nm{font:600 20px/1.25 var(--sans);letter-spacing:-.01em;margin:0}
+.am-det p,.am-det li{font-size:14px}
+.am-det ul{margin:4px 0 0;padding-left:18px}
+.am-det li{margin-top:5px}
+.am-det .sm{font-size:12.5px;color:var(--ink2);margin-top:6px}
+.am-det .mv{background:var(--bg);border-left:3px solid var(--accent);border-radius:4px;padding:10px 12px;margin-top:8px;font-size:14px}
+.am-det .tags{margin-top:8px}
+.am-fl{display:inline-block;font:600 10.5px/1.2 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--ink2);border:1px solid var(--line);border-radius:3px;padding:2px 6px;margin-left:4px;vertical-align:1px}
+.am-ph{display:inline-block;font:600 11px/1.3 var(--sans);text-transform:uppercase;letter-spacing:.05em;background:var(--warn-soft);color:var(--warn);border-radius:3px;padding:3px 8px}
+.am-my{display:inline-block;font:600 11px/1.3 var(--sans);text-transform:uppercase;letter-spacing:.05em;background:var(--accent-soft);color:var(--accent);border-radius:3px;padding:3px 8px}
+.am-pri{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.am-pc{appearance:none;text-align:left;font:inherit;color:var(--ink);background:var(--panel);border:2px solid transparent;border-radius:6px;padding:18px 18px 16px;cursor:pointer;display:flex;flex-direction:column;gap:8px;transition:border-color .15s,background .15s}
+.am-pc:hover{background:var(--accent-soft)}
+.am-pc[aria-pressed="true"]{border-color:var(--accent)}
+.am-pc .rk{display:flex;align-items:center;gap:10px}
+.am-pc .rk b{width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--on-accent);font:600 14px/28px var(--sans);text-align:center;flex:none}
+.am-pc .rk span{font:600 17px/1.25 var(--sans)}
+.am-pc dl{margin:0;display:grid;gap:6px}
+.am-pc dt{font:600 11px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--ink2)}
+.am-pc dd{margin:0;font-size:13.5px;line-height:1.45}
+#am-tl svg,#am-org svg,#am-play svg{display:block;width:100%;height:auto}
+#am-tl .rw{cursor:pointer}
+#am-tl .rw.on .bgr{fill:var(--accent-soft)}
+#am-tl .ev text{font-size:10.5px}
+.am-orgl{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:20px;align-items:start}
+#am-org .nd{cursor:pointer}
+#am-org .nd:focus{outline:none}
+#am-org .nd:focus-visible rect{stroke:var(--ink1);stroke-width:2.5}
+#am-org .nd rect{transition:fill .15s}
+#am-org .nt{font:600 12.5px/1 var(--sans);fill:var(--ink1)}
+#am-org .nn{font-size:11.5px;fill:var(--ink2)}
+#am-org .gl{font:600 11px/1 var(--sans);fill:var(--ink2);text-transform:uppercase;letter-spacing:.05em}
+.am-od{background:var(--panel);border-radius:6px;padding:18px 20px}
+.am-od h4{font:600 12px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);margin:14px 0 6px}
+.am-od .nm{font:600 18px/1.25 var(--sans);color:var(--accent);margin:0}
+.am-od p,.am-od li{font-size:14px}
+.am-od ul{margin:4px 0 0;padding-left:18px}
+.am-od li{margin-top:7px}
+.am-od li small{display:block;color:var(--ink2);font-size:12.5px;margin-top:2px}
+.am-stp{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.am-stp button{appearance:none;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:20px;padding:8px 14px 8px 8px;font:500 13.5px/1 var(--sans);cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.am-stp button b{width:22px;height:22px;border-radius:50%;background:var(--panel);font:600 12px/22px var(--sans);text-align:center}
+.am-stp button[aria-selected="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.am-stp button[aria-selected="true"] b{background:var(--on-accent);color:var(--accent)}
+.am-pl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:16px;align-items:start}
+.am-ps{background:var(--panel);border-radius:6px;padding:20px 22px}
+.am-ps h3{font-size:18px;margin:0 0 8px}
+.am-ps p,.am-ps li{font-size:14.5px}
+.am-ps ul{margin:6px 0 0;padding-left:18px}
+.am-ps li{margin-top:5px}
+.am-ps .lk{margin-top:12px;font-size:14px}
+#am-play .cl{cursor:pointer}
+#am-play .cl.on rect.bg{fill:var(--accent-soft)}
+.am-ms{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px}
+.am-ms div{background:var(--panel);border-radius:6px;padding:16px 18px;border-top:3px solid var(--accent)}
+.am-ms b{display:block;font:600 15.5px/1.3 var(--sans);margin:8px 0 6px}
+.am-ms p{font-size:13.5px;color:var(--ink2)}
+.am-at{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:22px;align-items:start;margin-top:8px}
+.am-at table{width:100%;border-collapse:collapse;font-size:13px}
+.am-at th,.am-at td{padding:5px 3px;border-bottom:1px solid var(--line);text-align:center}
+.am-at th:first-child,.am-at td:first-child{text-align:left}
+.am-at th{font-weight:600;color:var(--ink2);font-size:11.5px}
+.am-at td button{appearance:none;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--ink3);background:transparent;cursor:pointer;color:var(--ink1);font:600 12px/1 var(--sans)}
+.am-at td button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.am-at td button.ev[aria-pressed="true"]{background:var(--s1);border-color:var(--s1);color:var(--chart-bg)}
+.am-ar{background:var(--panel);border-radius:6px;padding:18px 20px}
+.am-ar .big{font:600 44px/1 var(--sans);letter-spacing:-.03em;color:var(--accent)}
+.am-ar p{font-size:13.5px;margin-top:8px}
+@media (max-width:980px){.am-pri{grid-template-columns:1fr 1fr}.am-orgl{grid-template-columns:minmax(0,1fr)}.am-ms{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.am-det,.am-pl,.am-at{grid-template-columns:minmax(0,1fr)}.am-k{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.am-pri,.am-ms{grid-template-columns:minmax(0,1fr)}.am-flt .lab{min-width:0;width:100%}.am-at td button{width:26px;height:26px}}
+</style>
+
+<section class="phead">
+  <span class="eyebrow"><b class="acode">A8</b>Move 1: expand</span>
+  <h1>Account Map</h1>
+  <p class="lede">This page maps Wipro's publicly named UK and Irish clients, the IC&amp;D work each could add, and the Wipro people and teams behind each account. It is the working view behind Move 1: grow share of wallet in the accounts Wipro already serves, through the client partners who hold them.</p>
+  <p class="meta">Built from public sources read on 27 October 2026: Wipro releases and case studies, partner pages, contract notices and press. White space, priorities and first moves are my reading. Deal bands and measures are placeholders. People are named only with the title their source gives, its date and its source.</p>
+</section>
+
+<section class="sec" aria-labelledby="am-h0">
+  <span class="eyebrow">The book</span>
+  <h2 id="am-h0">Wipro in the UK and Ireland</h2>
+  <p class="intro">Move 1 maps IC&amp;D white space in the top accounts with the client partners, attaches QE, modernisation and AI to run contracts and renewals, and turns workshops on dated forcing events into phased first scopes. Wipro's own figures make the existing book the place to start.</p>
+  <div class="kpis am-k">
+    <div class="rv"><b class="count" data-to="18000">18,000</b><span>Wipro UK and Ireland employees, as told to analysts in October 2025 (NelsonHall; IDC).</span></div>
+    <div class="rv"><b class="count" data-to="50" data-suffix="+">50+</b><span>key UK clients, from the same analyst summit (NelsonHall; IDC).</span></div>
+    <div class="rv"><b class="count" data-to="98" data-suffix="%">98%</b><span>of Wipro revenue from existing clients in Q2 FY27 (Wipro datasheet).</span></div>
+    <div class="rv"><b class="count" data-to="18">18</b><span>clients above US$100m a year in Q2 FY27, up from 16 in FY26 and down from 22 in FY24 (Wipro datasheets).</span></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="am-h1">
+  <span class="eyebrow">Client map</span>
+  <h2 id="am-h1">Named clients by sector</h2>
+  <p class="intro">Each circle is a UK or Irish organisation that a public source names as a Wipro client, a Capco or Designit client, or a framework where Wipro holds a place. Size shows how current the evidence is and colour shows the Wipro business that delivers the work today, mapped by me onto Wipro's April 2025 structure. Wipro does not publish client revenue, so nothing here shows account size.</p>
+  <div class="viz">
+    <div class="viz-h"><h3>Wipro's publicly named UK and Irish clients</h3><p>Banking, insurance and utilities hold most of the current, dated work, and IC&amp;D sits beside infrastructure or business process contracts in most of them. Select a client for its detail.</p></div>
+    <div class="am-flt">
+      <div class="row"><span class="lab" id="am-fs-l">Sector</span><div class="btnrow" id="am-fs" role="group" aria-labelledby="am-fs-l"></div></div>
+      <div class="row"><span class="lab" id="am-fb-l">Delivering business</span><div class="btnrow" id="am-fb" role="group" aria-labelledby="am-fb-l"></div></div>
+      <div class="row"><span class="lab" id="am-fe-l">Evidence</span><div class="btnrow" id="am-fe" role="group" aria-labelledby="am-fe-l"></div></div>
+    </div>
+    <div class="am-leg" id="am-leg"></div>
+    <p class="am-cnt" id="am-cnt" aria-live="polite"></p>
+    <div id="am-map"></div>
+    <div class="am-det" id="am-det" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="am-h2">
+  <span class="eyebrow">Priorities</span>
+  <h2 id="am-h2">Farming priorities</h2>
+  <p class="intro">These are the six accounts I would work first, ranked by how close a dated event is and how much IC&amp;D work is not yet evidenced in public sources. The ranking is my reading. Deal bands are placeholders to replace with Wipro's account data. Select a card to see its dates on the timeline.</p>
+  <div class="am-pri" id="am-pri"></div>
+  <div class="viz">
+    <div class="viz-h"><h3>Dated events for the six priority accounts, October 2026 to December 2027</h3><p>Four of the six accounts have a dated event before the end of February 2027, so the first workshops need to run this quarter.</p></div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Dated event from a cited source</span><span><i style="background:var(--chart-bg);border:2px dashed var(--ink2)"></i>Date from my arithmetic</span><span><i style="background:var(--ink2);border-radius:1px;width:2px"></i>Today, 27 Oct 2026</span></div>
+    <div id="am-tl"></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="am-h3">
+  <span class="eyebrow">People and roles</span>
+  <h2 id="am-h3">Who owns what</h2>
+  <p class="intro">A practice specialist expands an account by working with the people who own the client, the offer and the partners. The diagram places the roles around one account and adds the Wipro, Capco, Designit and Servaada leaders that public sources name for each part of the business, with the title the source gives and its date. They are shown as the published owners of those parts of Wipro, and nothing here suggests they have seen or endorsed this plan.</p>
+  <div class="viz">
+    <div class="viz-h"><h3>The roles around an account</h3><p>Every line means "works with on an account"; the sources give no reporting lines, so none are drawn. Select a role to see what I would ask of it on a farming play.</p></div>
+    <div class="legend"><span><i style="background:var(--s1)"></i>Market and account side</span><span><i style="background:var(--accent)"></i>Practice and offer side</span><span><i style="background:var(--s7)"></i>Wipro group partners and alliances</span></div>
+    <div class="am-orgl">
+      <div id="am-org"></div>
+      <div class="am-od" id="am-od" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="am-h4">
+  <span class="eyebrow">Worked example</span>
+  <h2 id="am-h4">A farming play at Lloyds Banking Group</h2>
+  <p class="intro">Lloyds Banking Group is the largest named UK estate on the map and has the most dated forcing events. The play below runs in five steps, from mapping white space with the client partner to expanding after the first scope. The step content is my approach, built on the cited facts. Choose a step to see who leads it.</p>
+  <div class="am-stp" role="tablist" aria-label="Steps of the farming play" id="am-stp"></div>
+  <div class="am-pl">
+    <div class="am-ps" id="am-ps" role="tabpanel" aria-live="polite"></div>
+    <div class="viz" style="margin-top:0">
+      <div class="viz-h"><h3>Who leads each step</h3><p>The client partner and I lead the first and last steps; the QE practice and Capco carry the workshop in the middle.</p></div>
+      <div class="legend"><span><i style="background:var(--accent)"></i>Leads</span><span><i style="background:var(--chart-bg);border:2px solid var(--accent)"></i>Supports</span></div>
+      <div id="am-play"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="am-h5">
+  <span class="eyebrow">Measures</span>
+  <h2 id="am-h5">Measuring the farming plan</h2>
+  <p class="intro">I would report four numbers for Move 1 each month. The values are placeholders until I have Wipro's account data. The attach grid starts from the offerings that public sources already show in each priority account; select a cell to model a new attach.</p>
+  <div class="am-ms">
+    <div><span class="am-ph">Placeholder</span><b>Share of wallet per account</b><p>Wipro revenue in the account divided by the client's addressable IT services spend, tracked per quarter for the top accounts.</p></div>
+    <div><span class="am-ph">Placeholder</span><b>IC&amp;D attach rate</b><p>Share of offering slots across the top accounts where IC&amp;D work is signed. Modelled in the grid below.</p></div>
+    <div><span class="am-ph">Placeholder</span><b>Pipeline created per account</b><p>New qualified IC&amp;D pipeline each quarter, by account, with coverage against the order book target.</p></div>
+    <div><span class="am-ph">Placeholder</span><b>Order book booked</b><p>Signed total contract value from expansions, reported against Wipro's bookings definition.</p></div>
+  </div>
+  <div class="viz">
+    <div class="viz-h"><h3>IC&amp;D attach grid for the six priority accounts</h3><p>Public sources show IC&amp;D-type work in 6 of the 30 slots, so most of the grid is white space to test with the client partners.</p></div>
+    <div class="legend"><span><i style="background:var(--s1)"></i>Evidenced in public sources</span><span><i style="background:var(--accent)"></i>Modelled attach (placeholder)</span><span><i style="background:var(--chart-bg);border:1.5px solid var(--ink3)"></i>Not yet evidenced in public sources</span></div>
+    <div class="am-at">
+      <div class="tw" tabindex="0" role="region" aria-label="Attach grid"><table><caption class="sr">IC&amp;D offerings evidenced or modelled in the six priority accounts</caption><thead><tr><th scope="col">Account</th><th scope="col">QE</th><th scope="col">Modern&shy;isation</th><th scope="col">Digital</th><th scope="col">AI</th><th scope="col">Integr&shy;ation</th></tr></thead><tbody id="am-atb"></tbody></table></div>
+      <div class="am-ar"><span class="am-ph">Placeholder model</span><div class="big" id="am-arv" style="margin-top:12px">20%</div><p id="am-art"></p><div class="btnrow"><button type="button" id="am-arr">Reset to public evidence</button></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sources"><details class="more"><summary>Sources</summary><ul>
+<li>NelsonHall, Wipro vendor articles on the London Analyst and Advisor Summit, 17 Oct 2025 (press, analyst)</li>
+<li>IDC, Market Note on the Wipro European Analyst and Advisor Summits, hosted on wipro.com, Oct 2025 (primary)</li>
+<li>Wipro, Q2 FY27 datasheet (revenue from existing clients, clients above US$100m), Oct 2026; Q4 FY25 datasheet; Q1 FY27 and Q2 FY27 earnings call transcripts, wipro.com (primary)</li>
+<li>Wipro UKI landing page, wipro.com/en-UKI; Servaada page, wipro.com/servaada (primary)</li>
+<li>Pega, PegaWorld 2025 session "Eliminating friction: how Wipro helped Lloyds Banking Group", Jun 2025, pega.com (primary, partner)</li>
+<li>Designit, "Lloyds Banking Group" case study; St Mungo's; Counterweight; London studio page, designit.com (primary)</li>
+<li>Wipro, TESTA 2023 awards page, wipro.com (primary); Finastra, Wipro partner page, finastra.com (primary, partner)</li>
+<li>Wipro & Capco, "Solving problems that matter", wipro.com (primary)</li>
+<li>Wipro, Close Brothers release, 28 May 2024; Close Brothers Annual Report 2024 (primary)</li>
+<li>Wipro, Metro Bank release, 30 Jul 2020; Finextra (primary and press)</li>
+<li>Times of India, 26 Jan 2015; RTÉ, 13 Jan 2015; TechMeetups, Nov 2018, on AIB (press)</li>
+<li>Capco, Mettle case study and NatWest Bankline Direct Digital release, 6 Nov 2024; Capco release on the UK Banking &amp; Payments Lead, 22 Apr 2026, capco.com (primary); FinTech Magazine, 1 Oct 2026 (press)</li>
+<li>Business Standard, LSEG partnership, 9 Jul 2014 (press); declared.ie eTenders aggregator for Central Bank of Ireland and ESB (press, aggregator)</li>
+<li>Wipro, Phoenix Group release, 26 Mar 2025; Standard Life plc release (primary)</li>
+<li>GBST, TPT Retirement Solutions release, 6 Aug 2024; Corporate Adviser (primary and press); Wipro and Wealthtime releases, 23 Oct 2024 (primary)</li>
+<li>Wipro, RSA releases, 4 Feb 2016 and 12 Dec 2023 (primary)</li>
+<li>Wipro, Aviva machine-learning case study (primary); Wipro TESTA award pages for Zurich (primary)</li>
+<li>Insurance Times, MIB partnership, 17 Mar 2022 (press); Wipro MuleSoft UKI partner award 2025 (primary)</li>
+<li>Wipro, John Lewis Partnership release, 22 Aug 2024 (primary); Retail Systems on the 2020 deal (press)</li>
+<li>Wipro, Hachette UK release, 14 May 2025; BAT case study (primary); ISG Paragon Awards EMEA release, 23 Nov 2022 (press); CaseStudies.com and Retail Technology on Morrisons and Premier Foods (press)</li>
+<li>Wipro, National Grid release, Oct 2021; Thames Water release, 5 May 2016; Bristol Water filing, 26 Apr 2021; Xoserve release, 14 May 2014 (primary)</li>
+<li>Tender Radar, Tender Roster and BidFinder aggregators of Find a Tender notices for Energia, Yorkshire Water, Scottish Water, Thames Water and National Grid (press, aggregator); The Register, 14 Jun and 13 Sep 2021 (press)</li>
+<li>Wipro 6-K exhibit (2009) and Business Insider India (2015) on BP (primary and press)</li>
+<li>AWS, BT Group and Wipro partner success story; Wipro BPS case study for BT (primary, partner)</li>
+<li>Contracts Finder notices: BBC frameworks, HM Treasury CON137 TrIS SIAM, Money and Pensions Service, Post Office, National Highways, Liverpool City Council, CHIC, Crown Prosecution Service (primary); Highland Council contract schedule (primary)</li>
+<li>Wipro, HM Treasury SIAM release (2022) and success story (primary)</li>
+<li>HFS Research on Mitie; Wipro Mitie case study, Jun 2020; IDC customer spotlight (press and primary)</li>
+<li>Wipro, Menzies Aviation release, 9 Mar 2023; ISPreview on TalkTalk, 3 Aug 2011; Wipro Chaucer release, 2011 (primary and press)</li>
+<li>Treasury Committee, LBG correspondence, 27 Mar 2026, and LBG letter, 17 Sep 2026 (primary)</li>
+<li>Treasury Committee, letter to the Bank of England and FCA on the Google Cloud outage, 20 Oct 2026 (primary); Computer Weekly, Guardian and Telegraph on the outage, 20 Oct 2026 (press)</li>
+<li>Bank of England, CHAPS ISO 20022 enhanced data policy statement (primary); FCA PS26/2, 18 Mar 2026; FCA operational resilience pages (primary)</li>
+<li>FCA PS26/3 motor finance redress, via Slaughter and May and Freeths (press); UK Finance Annual Fraud Report 2026 (primary)</li>
+<li>The Pensions Regulator, dashboards connection guidance (primary); Covington on Consumer Duty closed products (press)</li>
+<li>Central Bank of Ireland, Consumer Protection Code (primary); EBA/ESAs on DORA registers of information (primary)</li>
+<li>NatWest Group annual results 2025, 13 Feb 2026 (primary); AIB annual financial report 2025 and MarketBeat call summary (primary and press)</li>
+<li>Aviva half-year 2026 results and Group CIO release, 24 Feb 2026 (primary)</li>
+<li>BT Group FY26 results via TechMarketView and RNS, 21 May 2026 (press and primary); ISPreview on PSTN switch-off, Jul 2026 (press)</li>
+<li>CMS on the DMCC Act; Retail Times on UKCSI Jul 2026; Computing on the 2025 retail cyber attacks (press)</li>
+<li>Energy Ombudsman H1 2026 data (primary); The Water Report on UKCSI (press); written statement on the Independent Water Commission, Jul 2025 (primary)</li>
+<li>GOV.UK, State of Digital Government Review (primary); TechMarketView, G-Cloud 15 launches, 11 Aug 2026 (press)</li>
+<li>People: Wipro leadership and Executive Leadership Team pages; Kanwar Singh profile and AI-Native unit release, 1 Apr 2026; Wipro State of Quality Edition 4, Dec 2025; Wipro NVIDIA GTC 2026 event page; Wipro Hachette UK release, 14 May 2025; Wipro Whitelane analyst page; Iliad Solutions release, 10 Mar 2026; High Growth Scotland, 14 Nov 2025; IDC note, Oct 2025 (primary and press). No LinkedIn or broker profile was used.</li>
+<li>Wipro careers postings for the Practice Specialist, Client Partner, Pursuit Leader and alliance roles, careers.wipro.com, 2026 (primary)</li>
+</ul></details></section>
+
+<script>
+(function(){
+var VZ=window.VZ,NS="http://www.w3.org/2000/svg";
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function responsive(host,draw){var w=-1;function go(){var n=host.clientWidth;if(n&&n!==w){w=n;host.innerHTML="";draw(n)}}go();var t;addEventListener("resize",function(){clearTimeout(t);t=setTimeout(go,120)})}
+function wrap(s,max){var w=String(s).split(" "),L=[],c="";w.forEach(function(x){if(c&&(c+" "+x).length>max){L.push(c);c=x}else c=c?c+" "+x:x});if(c)L.push(c);return L}
+function svgEl(host,w,h,label){var s=document.createElementNS(NS,"svg");s.setAttribute("viewBox","0 0 "+w+" "+h);s.setAttribute("role","group");s.setAttribute("aria-label",label);host.appendChild(s);return s}
+function txt(p,x,y,s,a){var t=VZ.el("text",Object.assign({x:x,y:y},a||{}),p);t.textContent=s;return t}
+
+/* ---------- client data (account-map.md Part A and B; forcing events from uki-market.md, bfs-europe.md, new-logos.md) ---------- */
+var SEC=[["bank","Banking"],["ins","Insurance and pensions"],["ret","Retail and consumer"],["utl","Utilities and energy"],["tel","Telecoms and media"],["pub","Public sector"],["oth","Other"]];
+var BUS=[["ICD","IC&D","var(--accent)"],["CISS","CISS","var(--s1)"],["EA","Enterprise Applications","var(--s4)"],["DAAI","Data, Analytics and AI","var(--s3)"],["BPS","BPS and Servaada","var(--s7)"],["CAP","Capco","var(--s8)"],["DES","Designit","var(--s5)"],["OTH","Other Wipro units","var(--s6)"]];
+var BC={},BN={};BUS.forEach(function(b){BC[b[0]]=b[2];BN[b[0]]=b[1]});
+var ST=[["cur","Current work",14],["prob","Probably current",11],["fw","Framework place",9],["hist","Historical or to confirm",7]];
+var SR={},SN={};ST.forEach(function(s){SR[s[0]]=s[2];SN[s[0]]=s[1]});
+/* forcing events reused across clients */
+var FE={
+ chaps:["Nov 2026 and Nov 2027","CHAPS rejects unstructured addresses from Nov 2026; purpose codes become mandatory for all CHAPS payments from Nov 2027.","Bank of England policy statement"],
+ ps262:["18 Mar 2027","FCA PS26/2 creates one FCA, PRA and Bank of England regime for operational incident and material third-party reporting.","FCA PS26/2, 18 Mar 2026"],
+ gcp:["20 Oct 2026","A Google Cloud power event in its London region disrupted several UK banks. The Treasury Committee wrote to the Bank of England and the FCA the same day, asking for an initial reply by 4 Nov 2026 and a full reply by 20 Jan 2027.","Treasury Committee; Computer Weekly, 20 Oct 2026"],
+ opres:["Since 31 Mar 2025","Firms must stay within impact tolerances for important business services, including where third parties deliver them.","FCA operational resilience"],
+ dash:["31 Oct 2026","Legal backstop for pension schemes to connect to pensions dashboards.","The Pensions Regulator"],
+ duty:["Since 31 Jul 2024","Consumer Duty applies to closed books as well as open products.","Covington on FCA Dear CEO letters"],
+ motor:["30 Jun 2026 to Jan 2028","FCA motor finance redress schemes (PS26/3): customer contact from 30 Jun and 31 Aug 2026, payments to Nov 2027 and Jan 2028, about £9.1bn across the industry.","Slaughter and May; Freeths"],
+ app:["2025 data, published 2026","APP fraud losses were £576.4m in 2025, up 19%.","UK Finance Annual Fraud Report 2026"],
+ dora:["31 Mar each year from 2026","DORA registers of information on ICT third-party contracts are due each year.","EBA and ESAs"],
+ cpc:["24 Mar 2026","Ireland's revised Consumer Protection Code applies, covering digitalisation, vulnerable customers, fraud and mortgage switching.","Central Bank of Ireland"],
+ water:["Jul 2025 onward","The government accepted the Independent Water Commission's proposal to replace Ofwat with a single water regulator, subject to consultation. Water scored 70.2 in the Jul 2026 UKCSI, the lowest sub-sector.","Written statement, Jul 2025; The Water Report"],
+ nrg:["H1 2026","The Energy Ombudsman accepted 46,532 cases in H1 2026 (40,068 in H1 2025); billing was 58% of cases.","Energy Ombudsman"],
+ legacy:["2024 data","An estimated 28% of central government systems were legacy in 2024, and 22% of those were red-rated.","GOV.UK State of Digital Government Review"],
+ gcloud:["28 Oct 2026","G-Cloud 14 closes; G-Cloud 15 launched in Aug 2026.","TechMarketView, 11 Aug 2026"]
+};
+function F(k){return FE[k]}
+var HIST_WS="Current scope to confirm with the client partner before any approach. My reading.";
+var HIST_MV="Confirm the status of the relationship with the client partner before planning an approach.";
+var CL=[
+ {id:"lbg",n:"Lloyds Banking Group",s:"bank",st:"cur",pn:"Pega, Finastra",b:["EA","ICD","DES"],
+  w:"Pega programmes across retail, corporate onboarding, security and lending: end-to-end simplification, general insurance home-claims transformation, economic crime prevention, and term lending and overdraft. A Wipro speaker at PegaWorld 2025 said Wipro has worked with the group for 18 plus years and that 2,500 Wipro employees work with it. Designit, Wipro and the group built Investment Match, a guided digital advice service for Halifax savers. Lloyds Banking Group with Wipro won two TESTA 2023 awards (Consumer Servicing and Engagement Platform; Payment Services Platform). Finastra names Lloyds Bank among Wipro's clients.",
+  v:"No value disclosed. PegaWorld session June 2025; TESTA awards 2023.",
+  src:[["Pega, PegaWorld 2025 session","https://www.pega.com/insights/resources/pegaworld-2025-eliminating-friction-how-wipro-helped-lloyds-banking-groups","verified, partner page"],["Designit case study","https://www.designit.com/work/lloyds-banking-group","verified"],["Wipro, TESTA 2023 awards","https://www.wipro.com/about-us/awards-and-recognitions/2023/wipro-wins-4-awards-at-the-european-software-testing-awards-testa-2023/","verified"],["Finastra, Wipro partner page","https://www.finastra.com/partners/wipro","verified"]],
+  ws:"Payments QE for ISO 20022 enhanced data and CHAPS changes; change and release assurance; AI solutions on Gemini for complaints and vulnerable-customer triage; application portfolio rationalisation across the group's brands; DevOps for release speed.",
+  fe:[["17 Sep 2026","The group's final letter to the Treasury Committee on its 12 Mar 2026 app incident says the root cause was a software defect introduced in an overnight change that “was not identified through the review and testing processes we had in place”, and that it has since strengthened how changes are categorised, reviewed, tested and released.","LBG letter to the Treasury Committee, 17 Sep 2026"],F("gcp"),F("chaps"),F("ps262")],
+  t:"Client partner for the group; UK&I banking and capital markets; IC&D Quality Engineering and Testing; Iliad payment-testing teaming through Wipro Engineering; Google Cloud alliance; Designit; Capco UK banking and payments for the business case.",
+  m:"A change and release assurance workshop for one payments value stream, then a fixed-scope assessment of regression and environment testing ahead of the CHAPS dates. The worked example below sets out each step."},
+ {id:"cbg",n:"Close Brothers",s:"bank",st:"cur",b:["CISS","ICD"],
+  w:"Multi-year deal covering service desk, end-user computing, application development and maintenance, cloud operations and infrastructure under a new operating model. Close Brothers' 2024 annual report says the partnership helped remove more than 115 IT applications.",
+  v:"First selected Jul 2023; announced 28 May 2024; no value disclosed.",
+  src:[["Wipro release, 28 May 2024","https://www.wipro.com/newsroom/press-releases/2024/wipro-to-help-drive-close-brothers-technology-delivery-and-transformation/","verified"]],
+  ws:"Application portfolio rationalisation that continues from the 115+ applications already removed; cloud-native modernisation of lending platforms; QE and DevOps.",
+  fe:[F("motor"),F("opres")],
+  t:"Client partner; IC&D modernisation and QE; Capco for the redress operating model.",
+  m:"Add an application rationalisation and modernisation assessment to the ADM scope, using the run data the service teams already hold."},
+ {id:"metro",n:"Metro Bank",s:"bank",st:"hist",b:["ICD"],
+  w:"Multi-year contract to deliver and transform testing and environment management with Wipro's QE capabilities (automation, service virtualisation, DevSecOps). Wipro was also named a preferred partner for business IT services.",
+  v:"Announced 30 Jul 2020; no value; no later source.",
+  src:[["Wipro release, 30 Jul 2020","https://www.wipro.com/newsroom/press-releases/2020/wipro-selected-as-strategic-partner-by-metro-bank-to-drive-it-transformation/","verified"]],
+  ws:"QE as a service with DevOps and AI test generation; core and digital modernisation. Current status to confirm first. My reading.",
+  fe:[F("app"),F("chaps")],t:"IC&D QE; Iliad; Harness.",
+  m:"Confirm the status of the 2020 testing contract with the client partner, then offer an AI test generation pilot on one release train."},
+ {id:"aib",n:"Allied Irish Banks",s:"bank",st:"hist",b:["CISS","ICD"],
+  w:"Infrastructure contract from 2015, reported at about US$150m over five years with a Dublin mainframe centre. Wipro Digital redesigned the mortgage customer experience in 2016 to 2018.",
+  v:"About US$150m, 2015 to 2020 (press); mortgage work 2016 to 2018.",
+  src:[["RTÉ, 13 Jan 2015","https://www.rte.ie/news/2015/0113/672137-aib-jobs/","secondary"],["Times of India, 26 Jan 2015","https://timesofindia.indiatimes.com/business/india-business/wipro-wins-rs-900-crore-irish-contract/articleshow/46021189.cms","secondary"]],
+  ws:"Re-entry through QE and resilience testing, AI adoption and digital experience. My reading.",
+  fe:[F("dora"),F("cpc"),["2025 to 2026","A results call summary puts AIB's technology investment at about €350m in 2025, rising to about €400m a year from 2026 (to confirm).","MarketBeat call summary, 4 Mar 2026"]],
+  t:"UK&I banking; IC&D QE; Designit (Dublin design pod).",
+  m:"Confirm status first, then offer a DORA resilience testing briefing to the Dublin technology team."},
+ {id:"nwg",n:"NatWest",s:"bank",st:"cur",b:["CAP"],
+  w:"Capco built Mettle, NatWest's SME digital bank (proof of concept in three months, to market in 12). From Nov 2024 Capco has supported Bankline Direct Digital, NatWest's ISO 20022-compliant cloud architecture behind Bankline Direct for 500+ corporate and institutional clients. Capco has worked with NatWest Boxed since 2017 and supports its next phase, embedded lending.",
+  v:"No value; Capco release 6 Nov 2024; FinTech Magazine 1 Oct 2026.",
+  src:[["Capco release, 6 Nov 2024","https://www.capco.com/about-us/newsroom-and-media/natwest-and-capco-partner-on-the-future-of-payments","verified"],["Capco, Mettle","https://www.capco.com/about-us/expertise-in-action/how-capco-launched-a-new-business-for-natwest","verified"],["FinTech Magazine, 1 Oct 2026","https://fintechmagazine.com/articles/capco-building-a-banking-partnership-that-lasts","secondary"]],
+  ws:"Wipro technology delivery beside Capco is not yet evidenced in public sources. Pull-through: payments QE, integration and cloud engineering behind Capco's architecture work.",
+  fe:[F("gcp"),F("chaps"),["13 Feb 2026","NatWest's 2028 targets include a cost:income ratio below 45%, with continued investment in simplification “in particular in AI”.","NatWest Group annual results 2025"]],
+  t:"Capco UK partners originate; IC&D delivers. This is the clearest Capco-to-Wipro pull-through case.",
+  m:"Agree with Capco UK's banking and payments lead a joint QE and integration offer for the Bankline Direct Digital migration."},
+ {id:"lseg",n:"London Stock Exchange Group",sn:"LSEG",s:"bank",st:"hist",b:["OTH"],
+  w:"Strategic partnership to offer a hosted reconciliation utility on LSEG's UnaVista platform.",v:"9 Jul 2014.",
+  src:[["Business Standard, 9 Jul 2014","https://www.business-standard.com/article/technology/wipro-london-stock-exchange-in-strategic-pact-114070901240_1.html","secondary"]],ws:HIST_WS,fe:[],t:"Client partner.",m:HIST_MV},
+ {id:"cbi",n:"Central Bank of Ireland",s:"bank",st:"fw",b:["ICD"],
+  w:"Named supplier on the Central Bank's Software Development Lifecycle Services framework.",v:"€25m shared across suppliers; award 2 Feb 2020.",
+  src:[["declared.ie (eTenders aggregator)","https://declared.ie/companies/wipro-limited-905828","secondary"]],
+  ws:"Call-offs for QE and DevOps under the framework. My reading.",fe:[F("dora")],t:"UK&I banking; IC&D.",
+  m:"Check the framework term and call-off history on eTenders before planning."},
+ {id:"phx",n:"Standard Life plc (Phoenix Group)",sn:"Standard Life (Phoenix)",s:"ins",st:"cur",b:["BPS","ICD"],
+  w:"A £500m, ten-year deal from March 2025, delivered by Servaada, Wipro's FCA-regulated UK subsidiary. Phoenix said it accelerates and simplifies the ReAssure transformation programme, with TCS Diligenta remaining a partner. Phoenix Group plc was renamed Standard Life plc on 2 Mar 2026. Wipro management said in July 2026 the deal was “fully ramped up to plan”.",
+  v:"£500m over ten years from 26 Mar 2025.",
+  src:[["Wipro release, 26 Mar 2025","https://www.wipro.com/newsroom/press-releases/2025/wipro-wins-a-pound500m-strategic-deal-with-uk-insurance-giant-phoenix-group/","verified"],["Standard Life plc release","https://www.standardlifeplc.com/news-and-views/press-releases/article-page/phoenix-group-announces-new-strategic-partner","verified"],["wipro.com/servaada","https://www.wipro.com/servaada/","verified"]],
+  ws:"AI solutions with Claude for policy servicing and letters; legacy code modernisation of the ALPHA platform; QE for data migration; digital experience for ReAssure customers.",
+  fe:[F("dash"),F("duty")],t:"Servaada; IC&D modernisation; AI-Native unit forward-deployed engineers; Anthropic alliance; Capco UK insurance and wealth.",
+  m:"A Claude pilot on policy letters inside the Servaada operation, measured against the same service levels, as an add-on to the run contract."},
+ {id:"tpt",n:"TPT Retirement Solutions",sn:"TPT Retirement",s:"ins",st:"cur",pn:"GBST",b:["BPS","ICD"],
+  w:"Outsourced administration and transformation partner: 400,000 members move to GBST Composer, Wipro's FCA-regulated subsidiary administers the scheme, and Wipro builds a digital service layer with self-service. GBST called TPT its second joint client with Wipro.",
+  v:"Multi-year; announced 6 Aug 2024.",
+  src:[["GBST release, 6 Aug 2024","https://gbst.com/news/tpt-retirement-solutions-selects-gbsts-composer-platform-and-wipro-to-power-its-master-trust-pension/","verified"]],
+  ws:"Integration with employers, dashboards and advisers; QE automation for GBST releases; AI adoption in member servicing.",
+  fe:[F("dash"),F("duty")],t:"Servaada; GBST; IC&D integration and QE.",
+  m:"A QE automation pack for GBST release cycles, priced per release."},
+ {id:"wtm",n:"Wealthtime (Quanta Group)",sn:"Wealthtime",s:"ins",st:"cur",pn:"GBST",b:["BPS","ICD"],
+  w:"Wipro and GBST deliver end-to-end platform services under a co-delivery model. Wealthtime's operations and technology change teams move to Wipro's new UK business-processing centre in the South West, and two platforms merge onto GBST.",
+  v:"Announced 23 Oct 2024; no value.",
+  src:[["Wipro release, Oct 2024","https://www.wipro.com/newsroom/press-releases/2024/wealthtime-pioneers-innovative-business-transformation-through-agreement-with-wipro-and-gbst/","verified"]],
+  ws:"Adviser-facing integration and APIs; QE automation for GBST releases; AI adoption in servicing.",
+  fe:[F("duty")],t:"Servaada; GBST; IC&D integration and QE.",
+  m:"An adviser integration and API layer as the next scope after the platform merge."},
+ {id:"rsa",n:"RSA (part of Intact)",sn:"RSA",s:"ins",st:"cur",b:["CISS","ICD"],
+  w:"A seven-year infrastructure partnership from Feb 2016, won after a 20-bidder process. On 12 Dec 2023 a new three-year contract to speed RSA's move to cloud and run operational services. RSA with Wipro won TESTA 2023 Best Overall Testing Project in Finance.",
+  v:"Three years from 12 Dec 2023, so the term runs to about December 2026 (my arithmetic).",
+  src:[["Wipro release, 12 Dec 2023","https://www.wipro.com/newsroom/press-releases/2023/wipro-and-rsa-sign-a-new-multi-year-contract-to-accelerate-rsas-cloud-migration/","verified"],["Wipro release, 4 Feb 2016","https://www.wipro.com/newsroom/press-releases/2016/wipro-awarded-it-infrastructure-contract-by-rsa/","verified"]],
+  ws:"Application modernisation to follow the infrastructure move to cloud; AI solutions for claims and broker servicing; DevOps.",
+  fe:[["About Dec 2026","The three-year contract announced on 12 Dec 2023 runs to about December 2026 (my arithmetic; renewal status is not public).","Wipro release, 12 Dec 2023"],F("opres")],
+  t:"UK&I insurance and wealth; CISS (incumbent); IC&D; a Guidewire or Duck Creek centre of excellence if the core is in scope; Capco UK insurance and wealth.",
+  m:"Bring an application modernisation assessment into the renewal, so the next term covers the applications that run on the migrated cloud estate."},
+ {id:"aviva",n:"Aviva",s:"ins",st:"prob",pn:"Dataiku",b:["DAAI","CISS"],
+  w:"A machine-learning log analytics solution on Dataiku for Aviva's IT operations (root-cause prediction and unreported-incident detection), which won a Dataiku partner award in 2022, and an NLP solution for the Voice of Customer team (award 2023). The Wipro page says Wipro “is partnering with Aviva”.",
+  v:"No value; awards 2022 and 2023.",
+  src:[["Wipro case study","https://www.wipro.com/ai/revolutionizing-it-operations-how-avivas-machine-learning-initiative-boosted-operational-efficiency/","verified"]],
+  ws:"Mainframe and legacy modernisation; AI solutions in customer servicing; QE.",
+  fe:[["1 Jul 2025 onward","Aviva completed the Direct Line acquisition on 1 Jul 2025 and had delivered £100m of run-rate cost synergies by HY 2026 against a £225m ambition.","Aviva HY 2026 results"],["Summer 2026","A new Group Chief Information Officer took up the role (announced 24 Feb 2026).","Aviva release, 24 Feb 2026"],F("duty")],
+  t:"DAAI (incumbent); IC&D; Capco UK insurance and wealth.",
+  m:"A session with the IT operations sponsor on extending the AI operations work to integration testing for the Direct Line systems."},
+ {id:"zur",n:"Zurich UK",s:"ins",st:"prob",b:["ICD"],
+  w:"TESTA 2021 Best Use of AI in Testing (Zurich with Wipro) and a 2024 Testing Leader of the Year award to Zurich's testing leader, entered with Wipro.",v:"Awards 2021 and 2024.",
+  src:[["bfs-europe.md claims 27 to 28 (Wipro award pages)","https://www.wipro.com/about-us/awards-and-recognitions/","secondary"]],
+  ws:"AI test generation and QE as a service; DevOps. My reading.",fe:[F("duty"),F("opres")],t:"IC&D QE.",
+  m:"Build on the testing relationship with an AI-in-testing roadmap session."},
+ {id:"mib",n:"Motor Insurers' Bureau",sn:"MIB",s:"ins",st:"prob",b:["ICD","EA"],
+  w:"Strategic partnership from 14 Mar 2022 to move the Motor Insurance Database and MIAFTR onto a new cloud platform with self-service and real-time data. Wipro's 2025 MuleSoft UKI award cites an open data platform for “the UK insurance bureau”, which I read as the same client.",
+  v:"2022; no value.",
+  src:[["Insurance Times, 17 Mar 2022","https://www.insurancetimes.co.uk/news/mib-and-wipro-partnership-set-to-overhaul-industrys-data-services/1440606.article","secondary"],["Wipro MuleSoft UKI award 2025","https://www.wipro.com/about-us/awards-and-recognitions/2025/wipro-wins-mulesofts-top-partner-of-the-year-2025-award-for-uki/","verified"]],
+  ws:"API and data-quality testing for the platform's consumers; AI for data quality. My reading.",fe:[],t:"IC&D; EA (MuleSoft).",
+  m:"Offer API and data-quality testing to the teams that consume the new platform."},
+ {id:"chau",n:"Chaucer Syndicates",sn:"Chaucer",s:"ins",st:"hist",b:["OTH"],
+  w:"Wipro release on an engagement with London-headquartered Chaucer.",v:"2011.",
+  src:[["Wipro release archive","https://www.wipro.com/newsroom/press-releases/archives/wipro-technologies-wins-engagement-with-chaucer-syndicates--spec/","verified, title only"]],ws:HIST_WS,fe:[],t:"Client partner.",m:HIST_MV},
+ {id:"jlp",n:"John Lewis Partnership",s:"ret",st:"cur",pn:"Google Cloud",b:["CISS","ICD"],
+  w:"Selected in Q4 FY24 to transform IT infrastructure. Wipro FullStride Cloud extends JLP's cloud infrastructure, network and end-user services for another four years and, with Google Cloud, moves the x86 platform to the cloud. Both sides will “investigate” retail technology and store modernisation. The 2020 deal covered about 80,000 Partners.",
+  v:"Signed Jan to Mar 2024 for four years, to about 2028; announced 22 Aug 2024.",
+  src:[["Wipro release, 22 Aug 2024","https://www.wipro.com/newsroom/press-releases/2024/wipro-extends-relationship-with-the-john-lewis-partnership-to-complete-cloud-transformation-project/","verified"]],
+  ws:"Digital commerce and experience; AI solutions with Gemini for agentic commerce and the contact centre; application modernisation on the new cloud platform; QE for peak trading.",
+  fe:[["6 Apr 2025 onward","Under the DMCC Act the CMA enforces consumer law directly, with fines up to 10% of global turnover; subscription rules follow in 2026.","CMS; KPMG"],["Jul 2026","In the UKCSI, retail lost the top sector spot for the first time since 2008, while John Lewis scored 87.1, second overall.","Retail Times"]],
+  t:"CISS (incumbent); IC&D; Google Cloud alliance for Gemini; Designit.",
+  m:"A Gemini customer service workshop with the Google Cloud team, scoped to run on the platform Wipro is already moving to Google Cloud."},
+ {id:"hach",n:"Hachette UK",s:"ret",st:"cur",b:["EA","OTH"],
+  w:"Consulting-led SAP S/4HANA on RISE with SAP to transform finance, procurement, sales and source-to-pay.",v:"Announced 14 May 2025.",
+  src:[["Wipro release, 14 May 2025","https://www.wipro.com/newsroom/press-releases/2025/hachette-uk-selects-wipro-to-drive-its-digital-transformation-with-sap-s4hana/","verified"]],
+  ws:"Integration with MuleSoft; QE for SAP with Tricentis; digital commerce for direct-to-consumer sales.",fe:[["To confirm","S/4HANA programme milestones.","account-map.md Part B"]],
+  t:"EA (incumbent); IC&D integration and QE; Tricentis.",m:"Tricentis-based SAP test automation alongside the S/4HANA release plan."},
+ {id:"bat",n:"British American Tobacco",sn:"BAT",s:"ret",st:"hist",b:["ICD"],
+  w:"An industrialised QA and testing model with a reported 30% cut in QA and testing cost.",v:"Undated case study.",
+  src:[["Wipro case study","https://www.wipro.com/consumer-packaged-goods/tobacco-major-hits-testing-turf-to-improve-time-to-market/","verified, undated"]],ws:HIST_WS,fe:[],t:"Consumer business; Designit.",m:HIST_MV},
+ {id:"dia",n:"Diageo",s:"ret",st:"hist",b:["ICD","DAAI"],
+  w:"ISG Paragon Awards EMEA 2022 Innovation winner, “Wipro with Diageo”, for a consumer digital and technology transformation.",v:"Award 22 Nov 2022; status since then to confirm.",
+  src:[["ISG release, 23 Nov 2022","https://www.businesswire.com/news/home/20221123005121/en/ISG-Announces-2022-ISG-Paragon-Awards%E2%84%A2-EMEA-Winners","secondary"]],ws:HIST_WS,fe:[],t:"Consumer business; Designit.",m:HIST_MV},
+ {id:"morr",n:"Morrisons",s:"ret",st:"hist",b:["EA"],w:"Supported Morrisons' £310m Oracle-based IT transformation (third-party listing).",v:"About 2008 to 2013.",
+  src:[["CaseStudies.com listing","https://www.casestudies.com/company/wipro/case-study/morrisons-customer-case-study","secondary"]],ws:HIST_WS,fe:[],t:"Client partner.",m:HIST_MV},
+ {id:"prem",n:"Premier Foods",s:"ret",st:"hist",b:["EA"],w:"Five-year supply chain engagement (SAP, cloud).",v:"2011.",
+  src:[["Retail Technology","https://retailtechnology.co.uk/news/3039/premier-foods-signs-up-systems-integrator/","secondary"]],ws:HIST_WS,fe:[],t:"Client partner.",m:HIST_MV},
+ {id:"ng",n:"National Grid",s:"utl",st:"cur",b:["CISS","BPS"],
+  w:"A multi-year IT and digital deal building on a two-decade partnership: data centre consolidation across the UK and US, mainframe migration, managed services and an eventual hybrid cloud. National Grid also put Wipro on its 2025 dynamic market for outsourced functional services.",
+  v:"US$44.5m over five years plus two optional years from Sep 2021; release Oct 2021; dynamic market May 2025.",
+  src:[["Wipro release, Oct 2021","https://www.wipro.com/newsroom/press-releases/2021/wipro-partners-with-national-grid-to-drive-data-center-consolidation-and-implement-next-generation-hybrid-cloud-architecture/","verified"],["Tender Roster (Find a Tender aggregator)","https://tenderroster.com/en/suppliers/wipro-limited-2w100bzv/","secondary"]],
+  ws:"Application modernisation for workloads leaving the data centres; mainframe code modernisation; AI for asset and grid operations.",
+  fe:[["2026 to 2028","The five-year term from Sep 2021 reaches its extension point in 2026, with two optional years to 2028 (my arithmetic).","Wipro release; contract notice"]],
+  t:"CISS (incumbent); IC&D; Microsoft or Google alliance.",m:"A mainframe code modernisation assessment for the workloads in the migration plan."},
+ {id:"thw",n:"Thames Water",s:"utl",st:"fw",b:["EA","ICD","OTH"],
+  w:"A 2016 multi-year customer service and retail billing transformation (SAP utilities billing and CRM) with a Wipro-built online account portal. Since 31 May 2023 Wipro has held a place on Thames Water's consultancy framework.",
+  v:"Billing programme from 2016; framework award 31 May 2023.",
+  src:[["Wipro release, 5 May 2016","https://www.wipro.com/newsroom/press-releases/2016/thames-water-selects-wipro-as-a-partner-for-retail-billing-and-c/","verified"],["Tender Radar (aggregator)","https://tender-radar.co.uk/suppliers/wipro-limited","secondary"]],
+  ws:"Integration and QE around SAP; digital self-service.",fe:[F("water")],t:"EA (SAP lead); IC&D; Consulting.",
+  m:"Digital self-service and SAP integration testing, offered through the consultancy framework."},
+ {id:"brw",n:"Bristol Water",s:"utl",st:"hist",b:["ICD","CISS"],w:"Wipro filing on new digital experiences to modernise critical infrastructure (2021); earlier managed IT services.",v:"2014 IT services; 2021 digital experience; status since then to confirm.",
+  src:[["Wipro filing, 26 Apr 2021","https://microsite.wipro.com/content/dam/nexus/en/investor/corporate-governance/stock-exchange-filing/wipro-innovates-new-digital-experiences-at-bristol-water-to-modernise-critical-infrastructure-26042021.pdf","verified, title"]],ws:HIST_WS,fe:[F("water")],t:"UK&I energy and utilities.",m:HIST_MV},
+ {id:"xos",n:"Xoserve",s:"utl",st:"hist",b:["ICD","EA"],w:"Seven-year engagement on the UK Link Programme, replacing a two-decade-old legacy suite.",v:"May 2014, seven years.",
+  src:[["Wipro release, 14 May 2014","https://www.wipro.com/newsroom/press-releases/2014/uk-based-xoserve-awards-contract-to-wipro","verified"]],ws:HIST_WS,fe:[],t:"UK&I energy and utilities.",m:HIST_MV},
+ {id:"scw",n:"Scottish Water",s:"utl",st:"prob",b:["EA","ICD"],w:"Sole supplier for Scottish Water's Business Management System.",v:"Award Mar to Apr 2022; no value.",
+  src:[["BidFinder (aggregator)","https://bidfinder.uk/awards/6851c293-c574-4dfe-adb4-0d180e0c4783","secondary"]],ws:"Integration and QE around the business management system; digital self-service. My reading.",fe:[F("water")],t:"EA; IC&D.",m:"Confirm the scope with the client partner, then offer integration testing for the next release."},
+ {id:"enr",n:"Energia Group",s:"utl",st:"cur",b:["ICD","EA","OTH"],
+  w:"Sole supplier for billing system level 3 support and upgrades (2023). On 3 Sep 2026 one of eight or nine suppliers on Energia's Strategic Consultancy and Technology Services framework: Lot 1 Transformation Programme Services (£40m shared), Lot 2 Project and BAU Change Resourcing (£8m shared) and Lot 4 Specialist Utilities Services (£12m shared).",
+  v:"2023 (no value); framework 3 Sep 2026.",
+  src:[["Tender Radar (aggregator)","https://tender-radar.co.uk/suppliers/wipro-limited","secondary"]],
+  ws:"Billing modernisation; digital customer experience; AI agent assist.",fe:[F("nrg")],t:"UK&I energy; IC&D; Consulting.",
+  m:"A billing modernisation discovery under Lot 1 of the new framework."},
+ {id:"ykw",n:"Yorkshire Water",s:"utl",st:"fw",b:["EA"],w:"One of four suppliers on Yorkshire Water's SAP SI framework.",v:"£80m shared; award 1 Apr 2026.",
+  src:[["Tender Radar (aggregator)","https://tender-radar.co.uk/suppliers/wipro-limited","secondary"]],ws:"QE for SAP releases and integration under the framework. My reading.",fe:[F("water")],t:"EA (SAP lead); IC&D QE.",m:"Offer SAP test automation as part of the first framework call-off."},
+ {id:"sse",n:"SSE",s:"utl",st:"hist",b:["ICD","EA"],w:"Place on SSE IT consultancy frameworks.",v:"Jun 2021; current status to confirm.",src:[["Tender Roster (aggregator)","https://tenderroster.com/en/suppliers/wipro-limited-2w100bzv/","secondary"]],ws:HIST_WS,fe:[],t:"UK&I energy.",m:HIST_MV},
+ {id:"sow",n:"Southern Water",s:"utl",st:"hist",b:["ICD","EA"],w:"One of 13 winners of a £50m application build-operate-transfer pool.",v:"Jun 2021; current status to confirm.",src:[["The Register, 14 Jun 2021","https://www.theregister.com/off-prem/2021/06/14/flush-with-cash-uk-utility-southern-water-names-13-winners-wholl-drink-up-50m-application-deal/767440","secondary"]],ws:HIST_WS,fe:[],t:"UK&I utilities.",m:HIST_MV},
+ {id:"svt",n:"Severn Trent",s:"utl",st:"hist",b:["ICD"],w:"Award for waste-water data loggers.",v:"Dec 2021.",src:[["Tender Roster (aggregator)","https://tenderroster.com/en/suppliers/wipro-limited-2w100bzv/","secondary"]],ws:HIST_WS,fe:[],t:"UK&I utilities.",m:HIST_MV},
+ {id:"ngn",n:"Northern Gas Networks",sn:"Northern Gas",s:"utl",st:"hist",b:["ICD"],w:"Framework place reported by The Register.",v:"2021.",src:[["The Register, 13 Sep 2021","https://www.theregister.com/2021/09/13/wipro_national_grid_deal","secondary"]],ws:HIST_WS,fe:[],t:"UK&I energy.",m:HIST_MV},
+ {id:"esb",n:"ESB",s:"utl",st:"fw",b:["ICD","CISS"],w:"Named supplier on ESB's Provision of IT Services Panel Framework.",v:"€240m shared; award 21 Feb 2021; term to confirm.",src:[["declared.ie (eTenders aggregator)","https://declared.ie/companies/wipro-limited-905828","secondary"]],ws:"Call-offs for digital and QE under the panel. My reading.",fe:[],t:"UK&I energy; IC&D.",m:"Check the panel term on eTenders before planning."},
+ {id:"bp",n:"BP",s:"utl",st:"hist",b:["ICD"],w:"One of five ADM suppliers from 2009; reported in 2015 as one of five strategic suppliers.",v:"2009 and 2015.",src:[["Wipro 6-K exhibit, 2009","https://www.sec.gov/Archives/edgar/data/1123799/000095012309056551/f53916exv99w2.htm","verified"]],ws:HIST_WS,fe:[],t:"Client partner.",m:HIST_MV},
+ {id:"bt",n:"BT Group",s:"tel",st:"prob",pn:"AWS",b:["DAAI","BPS"],
+  w:"An AWS partner case study: Wipro built a generative AI document processing solution on AWS for BT Group, cutting processing from weeks to minutes with a 25% overall cost saving. Wipro BPS runs billing and collections contact centres for BT, and a 2012 award recognised Wipro's provisioning work.",
+  v:"GenAI case undated; BPS undated; award 2012.",
+  src:[["AWS partner success story","https://aws.amazon.com/partners/success/bt-group-wipro/","verified, partner page"],["Wipro BPS case study","https://www.wipro.com/business-process/outsourcing-brings-benefit-to-bt/","verified"]],
+  ws:"AI adoption at scale (agent assist, code modernisation with Claude); QE for the PSTN migration.",
+  fe:[["31 Jan 2027","PSTN switch-off date; Openreach still had about 1.5m copper lines in Jul 2026.","ISPreview, Jul 2026"],["21 May 2026","BT raised its transformation savings target to £3.7bn and extended it to FY30, with legacy billing, security and network applications being shut down.","BT FY26 results; TechMarketView"]],
+  t:"DAAI and BPS (incumbents); IC&D; AWS; Anthropic.",m:"Legacy application decommissioning and code modernisation with Claude, priced against the savings target."},
+ {id:"bbc",n:"BBC",s:"tel",st:"fw",b:["DES","ICD"],
+  w:"Wipro was one of 18 suppliers on the Systems Delivery and Integration Services framework (up to £40m, Apr 2022 to Apr 2026, now ended). Designit is one of 13 suppliers on the Design Research framework.",
+  v:"Design Research framework up to £5m, 1 Feb 2024 to 31 Dec 2028.",
+  src:[["Contracts Finder, Design Research","https://www.contractsfinder.service.gov.uk/Notice/c25f0714-b28c-40a3-b0ed-657b0263884f","verified"],["Contracts Finder, SDIS","https://www.contractsfinder.service.gov.uk/Notice/bf792dea-589c-40b3-9346-699b82694628","verified"]],
+  ws:"Digital build to follow Designit's research work. My reading.",fe:[],t:"Designit London; IC&D.",m:"Use Designit's current framework place for design research, with IC&D build as the follow-on."},
+ {id:"tt",n:"TalkTalk",s:"tel",st:"hist",b:["BPS","ICD"],w:"Service support centre in India and CRM work.",v:"Aug 2011.",src:[["ISPreview, 3 Aug 2011","https://www.ispreview.co.uk/story/2011/08/03/uk-isp-talktalk-signs-wipro-deal-to-create-new-service-support-centre-in-india.html","secondary"]],ws:HIST_WS,fe:[],t:"Client partner.",m:HIST_MV},
+ {id:"hmt",n:"HM Treasury",s:"pub",st:"cur",b:["CISS"],
+  w:"Service integration and management (SIAM) of all ICT services through HM Treasury's TrIS2022 suppliers, under contract CON137. Wipro manages 27 SIAM processes and has also done AI-in-policy and HR operating model work.",
+  v:"£8.98m; 15 Feb 2022 to 14 Feb 2027.",
+  src:[["Contracts Finder notice","https://www.contractsfinder.service.gov.uk/Notice/3839ad13-53d7-4665-bde4-1f06952ebfb6","verified"],["Wipro HM Treasury success story","https://www.wipro.com/public-sector/success-stories/wipro-delivers-siam-and-ai-powered-digital-transformation-for-his-majestys-treasury-/","verified"]],
+  ws:"AI in policy is already evidenced. Application modernisation and QE if HM Treasury re-lets services.",
+  fe:[["14 Feb 2027","The SIAM contract ends.","Contracts Finder"],F("legacy"),F("gcloud")],
+  t:"CISS (incumbent); UK public sector team; IC&D.",m:"Check Find a Tender for the TrIS SIAM successor and offer an AI and modernisation option alongside the SIAM rebid."},
+ {id:"maps",n:"Money and Pensions Service",sn:"MaPS",s:"pub",st:"hist",b:["ICD"],
+  w:"Three G-Cloud call-offs: AEM platform support, the Pensions Dashboard log-in and registration build, and an API gateway.",v:"£0.9m in total, 2021 to 2023.",
+  src:[["Contracts Finder, dashboard build","https://www.contractsfinder.service.gov.uk/Notice/0cb5a306-af63-435e-b4e1-308771e4564b","verified"]],ws:HIST_WS,fe:[F("dash")],t:"UK public sector; IC&D.",m:HIST_MV},
+ {id:"po",n:"Post Office",s:"pub",st:"fw",b:["ICD","CISS"],w:"One of 12 suppliers on Post Office's IT Capabilities Framework (five lots).",v:"£40m; 20 Jan 2025 to 19 Jan 2029.",
+  src:[["Contracts Finder notice","https://www.contractsfinder.service.gov.uk/Notice/3f7c765b-6558-47bb-ab68-ba9011b11532","verified"]],ws:"Call-offs for application and QE work under the framework. My reading.",fe:[],t:"UK public sector; IC&D.",m:"Ask the public sector team which lots have live call-offs."},
+ {id:"nh",n:"National Highways",s:"pub",st:"hist",b:["ICD"],w:"One of about 118 suppliers on the Information Technology Commercial Framework.",v:"£1bn shared; 13 Sep 2022 to 12 Sep 2026 (ended).",
+  src:[["Contracts Finder notice","https://www.contractsfinder.service.gov.uk/Notice/6af7a4b5-489d-4e39-8ee0-bc7969ea995c","verified"]],ws:HIST_WS,fe:[],t:"UK public sector.",m:HIST_MV},
+ {id:"lcc",n:"Liverpool City Council",sn:"Liverpool Council",s:"pub",st:"hist",b:["EA"],w:"SAP SuccessFactors, SAP and Oracle professional services, and RE-FX consultancy.",v:"About £1.2m, 2016 to 2020.",
+  src:[["Contracts Finder, SuccessFactors","https://www.contractsfinder.service.gov.uk/Notice/85bc0743-96f3-4775-987d-f494960e2b66","verified"]],ws:HIST_WS,fe:[],t:"UK public sector; EA.",m:HIST_MV},
+ {id:"chic",n:"Communities & Housing Investment Consortium",sn:"CHIC",s:"pub",st:"fw",b:["OTH","ICD"],w:"One of nine suppliers on the Digital Asset Delivery Framework for housing providers.",v:"£500m shared; 7 Oct 2021 to 5 Oct 2029.",
+  src:[["Contracts Finder notice","https://www.contractsfinder.service.gov.uk/Notice/c3dd894b-80fb-4683-a376-5b5de4086a48","verified"]],ws:"Digital applications for housing providers under the framework. My reading.",fe:[],t:"Engineering; IC&D.",m:"Ask which housing providers have called off the framework."},
+ {id:"cps",n:"Crown Prosecution Service",sn:"CPS",s:"pub",st:"hist",b:["CISS"],w:"End-user computing services under framework RM3804.",v:"£4.65m; 13 Apr 2018 to 12 Apr 2021.",
+  src:[["Contracts Finder notice","https://www.contractsfinder.service.gov.uk/Notice/a7976342-0461-46d7-b014-d308dff9ea0c","verified"]],ws:HIST_WS,fe:[],t:"UK public sector.",m:HIST_MV},
+ {id:"hc",n:"Highland Council",s:"pub",st:"prob",b:["CISS"],w:"The council publishes its Wipro contract schedules, including a data centre managed service schedule.",v:"Schedule dated 12 Dec 2022.",
+  src:[["Highland Council schedule","https://www.highland.gov.uk/downloads/file/19782/schedule_21_-_data_centre_managed_service_12_december_2022","verified"]],ws:"Application modernisation for workloads in the managed data centre. My reading.",fe:[F("legacy")],t:"CISS (incumbent); IC&D.",m:"Ask the client partner whether an application review is planned within the managed service."},
+ {id:"mitie",n:"Mitie",s:"oth",st:"cur",pn:"IBM",b:["CISS","EA","DAAI"],
+  w:"Wipro began as Mitie's IT outsourcer (infrastructure, applications, data centre, network, helpdesk), grew into a CEO-level partnership and handled the technology integration of Interserve (HFS Research). Wipro also built AI anomaly detection in finance and upgraded IBM Maximo with IBM.",
+  v:"No value; Wipro case study Jun 2020; IDC spotlight Jan 2021.",
+  src:[["Wipro Mitie case study","https://www.wipro.com/engineering-construction-operations/wipro-elevates-service-performance-and-operational-efficiency-for-mitie/","verified"],["HFS Research","https://www.hfsresearch.com/?p=160402","secondary"]],
+  ws:"Digital applications for front-line facilities teams; AI solutions for work-order triage; application rationalisation after the integration.",
+  fe:[["Jan 2026","Wipro's Q3 FY26 release reports an unnamed UK facilities management company extending a multi-year transformation; this may be Mitie (to confirm).","Wipro Q3 FY26 release"]],
+  t:"Client partner; IC&D; IBM.",m:"An agentic work-order triage pilot on the Maximo estate with IBM."},
+ {id:"menz",n:"Menzies Aviation",sn:"Menzies",s:"oth",st:"prob",b:["OTH","ICD"],
+  w:"Selected Wipro's new cloud-native air cargo handling product, which I read as today's CROAMIS, owned by the AI-Native unit. Rollout was planned to five locations by end-2023 and the global network by end-2024.",
+  v:"Announced 9 Mar 2023.",src:[["Wipro release, 9 Mar 2023","https://www.wipro.com/newsroom/press-releases/2023/menzies-aviation-selects-wipro-to-transform-its-air-cargo-services/","verified"]],
+  ws:"Integration with airline and ground systems; QE for the rollout.",fe:[],t:"AI-Native unit (product owner); IC&D.",m:"Integration testing for new stations on the rollout plan."},
+ {id:"stm",n:"St Mungo's",s:"oth",st:"hist",b:["DES"],w:"Designit London mapped services and built tools for Routes Home, commissioned by the GLA.",v:"Undated.",
+  src:[["Designit: St Mungo's","https://www.designit.com/work/st-mungos","verified"]],ws:HIST_WS,fe:[],t:"Designit London.",m:HIST_MV},
+ {id:"cw",n:"Counterweight",s:"oth",st:"hist",b:["DES"],w:"Designit London did research, brand, service blueprint and app for a type 2 diabetes remission programme now used across NHS Scotland.",v:"Undated.",
+  src:[["Designit: Counterweight","https://www.designit.com/work/counterweight","verified"]],ws:HIST_WS,fe:[],t:"Designit London.",m:HIST_MV}
+];
+var BYID={};CL.forEach(function(c){BYID[c.id]=c});
+
+/* ---------- filters ---------- */
+var flt={s:"all",b:"all",e:"all"},sel="lbg";
+function mk(host,key,opts){host.innerHTML=opts.map(function(o){return '<button type="button" data-v="'+o[0]+'" aria-pressed="'+(flt[key]===o[0])+'">'+(o[2]?'<i style="background:'+o[2]+'"></i>':'')+esc(o[1])+'</button>'}).join("");
+ host.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;flt[key]=b.dataset.v;[].forEach.call(host.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b)});applyF()})}
+mk(document.getElementById("am-fs"),"s",[["all","All"]].concat(SEC));
+mk(document.getElementById("am-fb"),"b",[["all","All"]].concat(BUS.map(function(b){return [b[0],b[1],b[2]]})));
+mk(document.getElementById("am-fe"),"e",[["all","All"]].concat(ST.map(function(s){return [s[0],s[1]]})).concat([["pn","Named by a partner"]]));
+function match(c){return (flt.s==="all"||c.s===flt.s)&&(flt.b==="all"||c.b.indexOf(flt.b)>=0)&&(flt.e==="all"||(flt.e==="pn"?!!c.pn:c.st===flt.e))}
+
+/* legend */
+(function(){var h="";ST.forEach(function(s){var r=s[2];h+='<span><svg viewBox="0 0 22 22" aria-hidden="true">'+node(11,11,r,s[0],"var(--ink2)",false)+'</svg>'+s[1]+'</span>'});
+ h+='<span><svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="6" fill="var(--ink2)"/><circle cx="11" cy="11" r="9.5" fill="none" stroke="var(--ink2)" stroke-width="1.2" stroke-dasharray="2 2"/></svg>Named by a partner (Pega, GBST, AWS and others)</span>';
+ document.getElementById("am-leg").innerHTML=h})();
+function node(x,y,r,st,col,pn){var s="";
+ if(st==="hist")s+='<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="var(--chart-bg)" stroke="'+col+'" stroke-width="2"/>';
+ else if(st==="fw")s+='<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="var(--chart-bg)" stroke="'+col+'" stroke-width="3"/><circle cx="'+x+'" cy="'+y+'" r="'+(r-5)+'" fill="'+col+'"/>';
+ else s+='<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+col+'"/>';
+ if(pn)s+='<circle cx="'+x+'" cy="'+y+'" r="'+(r+3.5)+'" fill="none" stroke="var(--ink2)" stroke-width="1.2" stroke-dasharray="2 2"/>';
+ return s}
+
+/* ---------- map ---------- */
+var mapHost=document.getElementById("am-map"),NODES={};
+function drawMap(W){NODES={};
+ var cols=W>=1000?4:W>=600?2:1,gap=12,cw=(W-gap*(cols-1))/cols,nw=cols===1?88:86,ncol=Math.max(3,Math.floor((cw-12)/nw)),rh=74,head=34;
+ var cells=SEC.map(function(s){var L=CL.filter(function(c){return c.s===s[0]});return {s:s,L:L,h:head+Math.ceil(L.length/ncol)*rh+6}});
+ var rows=[],y=0,pos=[];for(var i=0;i<cells.length;i+=cols){var R=cells.slice(i,i+cols),mh=Math.max.apply(null,R.map(function(c){return c.h}));R.forEach(function(c,k){pos.push({c:c,x:k*(cw+gap),y:y,h:mh})});y+=mh+gap}
+ var svg=svgEl(mapHost,W,y-gap,"Map of "+CL.length+" named UK and Irish clients grouped by sector. Each client is a button that opens its detail below.");
+ pos.forEach(function(p){var g=VZ.el("g",{},svg);VZ.el("rect",{x:p.x,y:p.y,width:cw,height:p.h,rx:6,"class":"cell"},g);
+  txt(g,p.x+12,p.y+21,p.c.s[1]+" ("+p.c.L.length+")",{"class":"ct"});
+  var sp=(cw-12)/ncol;
+  p.c.L.forEach(function(c,i){var cx=p.x+6+sp*(i%ncol)+sp/2,cy=p.y+head+Math.floor(i/ncol)*rh+18,col=BC[c.b[0]],r=SR[c.st];
+   var n=VZ.el("g",{"class":"nd",role:"button",tabindex:0,"aria-label":c.n+", "+SN[c.st]+", "+c.b.map(function(b){return BN[b]}).join(", ")},svg);
+   n.innerHTML=node(cx,cy,r,c.st,col,!!c.pn);
+   VZ.el("circle",{cx:cx,cy:cy,r:r+(c.pn?7:4),fill:"none",stroke:"none","class":"hl"},n);
+   var ring=VZ.el("circle",{cx:cx,cy:cy,r:r+(c.pn?7:4),fill:"none",stroke:"var(--ink1)","stroke-width":2.5,opacity:0,"class":"sr-ring"},n);
+   var L=wrap(c.sn||c.n,13).slice(0,2);L.forEach(function(l,k){txt(n,cx,cy+31+k*13,l,{"text-anchor":"middle","class":"nl"})});
+   n.addEventListener("click",function(){select(c.id)});
+   n.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();select(c.id)}});
+   NODES[c.id]={g:n,ring:ring}})});
+ applyF(true)}
+function applyF(quiet){var k=0;CL.forEach(function(c){var on=match(c);if(on)k++;var N=NODES[c.id];if(N){N.g.classList.toggle("dim",!on);N.ring.setAttribute("opacity",c.id===sel?1:0);N.g.setAttribute("aria-pressed",c.id===sel)}});
+ document.getElementById("am-cnt").textContent="Showing "+k+" of "+CL.length+" clients. Dimmed clients stay selectable."}
+function select(id){sel=id;applyF();renderDet()}
+function renderDet(){var c=BYID[sel],d=document.getElementById("am-det");
+ var tg='<div class="tags"><span class="tag">'+esc(SEC.filter(function(s){return s[0]===c.s})[0][1])+'</span><span class="tag a">'+esc(SN[c.st])+'</span>'+c.b.map(function(b){return '<span class="tag">'+esc(BN[b])+'</span>'}).join("")+(c.pn?'<span class="tag">Named by '+esc(c.pn)+'</span>':'')+'</div>';
+ var src='<ul>'+c.src.map(function(s){return '<li><a href="'+s[1]+'" rel="noopener" target="_blank">'+esc(s[0])+'</a><span class="am-fl">'+esc(s[2])+'</span></li>'}).join("")+'</ul>';
+ var fe=c.fe.length?'<ul>'+c.fe.map(function(f){return '<li><b>'+esc(f[0])+'.</b> '+esc(f[1])+' <span class="sm">('+esc(f[2])+')</span></li>'}).join("")+'</ul>':'<p>No dated forcing event for this client in the research.</p>';
+ d.innerHTML='<div><p class="nm">'+esc(c.n)+'</p>'+tg+'<h4 style="margin-top:16px">What Wipro does</h4><p>'+esc(c.w)+'</p><p class="sm">'+esc(c.v)+'</p><h4>Sources</h4>'+src+'</div>'+
+  '<div><h4>IC&amp;D white space <span class="am-my">My reading</span></h4><p>'+esc(c.ws)+'</p><h4>Forcing events</h4>'+fe+'<h4>Teams and partners to bring</h4><p>'+esc(c.t)+'</p><h4>Suggested first move <span class="am-my">My approach</span></h4><div class="mv">'+esc(c.m)+'</div></div>'}
+responsive(mapHost,drawMap);renderDet();
+
+/* ---------- priorities ---------- */
+var PR=[
+ {id:"rsa",n:"RSA",r:"The three-year contract announced on 12 Dec 2023 runs to about December 2026, and public sources show infrastructure, cloud migration and a 2023 testing award.",e:"An application modernisation assessment brought into the renewal.",tm:"Now to about Dec 2026. The end date is my arithmetic from a three-year term; renewal status is not public.",nx:"Modernisation of the applications on the migrated cloud estate, then AI for claims and broker servicing.",band:"£1m to £3m first scope"},
+ {id:"lbg",n:"Lloyds Banking Group",r:"The largest named UK estate (2,500 Wipro staff, per a Wipro speaker at PegaWorld 2025), a dated payments calendar, and a 17 Sep 2026 letter in which the group set out how it has strengthened change testing.",e:"Change and release assurance for one payments value stream, from the QE practice.",tm:"CHAPS changes Nov 2026; Treasury Committee full reply due 20 Jan 2027; PS26/2 from 18 Mar 2027; CHAPS purpose codes Nov 2027.",nx:"QE as a service across payments, AI test generation and DevOps.",band:"£2m to £5m first scope"},
+ {id:"phx",n:"Standard Life plc (Phoenix Group)",r:"A new £500m, ten-year deal through Servaada with an open path to modernise the ALPHA platform.",e:"A Claude pilot on policy letters inside the Servaada operation.",tm:"Pensions dashboards backstop 31 Oct 2026; the TCS BaNCS migration runs in parallel.",nx:"Legacy code modernisation of ALPHA and QE for data migration.",band:"£1m to £4m first scope"},
+ {id:"jlp",n:"John Lewis Partnership",r:"Cloud, network and end-user work is evidenced to about 2028; digital work is not yet evidenced in public sources.",e:"A Gemini customer service workshop with the Google Cloud team.",tm:"Four-year term from early 2024, to about 2028 (my arithmetic); DMCC subscription rules in 2026.",nx:"Digital commerce and experience with Designit, and application modernisation on the new cloud platform.",band:"£1m to £3m first scope"},
+ {id:"nwg",n:"NatWest, through Capco",r:"Capco holds the advisory relationship (Mettle, Bankline Direct Digital, NatWest Boxed); Wipro technology delivery is not yet evidenced in public sources.",e:"A joint Capco and IC&D payments QE and integration offer.",tm:"CHAPS changes Nov 2026 and Nov 2027; Treasury Committee follow-up to the 20 Oct 2026 outage.",nx:"Integration and cloud engineering behind Capco's architecture work.",band:"£1m to £3m first scope"},
+ {id:"hmt",n:"HM Treasury",r:"The SIAM contract ends on 14 Feb 2027, and AI-in-policy work is already evidenced.",e:"An AI and modernisation option offered alongside the SIAM rebid.",tm:"G-Cloud 14 closes 28 Oct 2026; SIAM ends 14 Feb 2027.",nx:"Application modernisation and QE if HM Treasury re-lets services.",band:"£0.5m to £2m first scope"}
+];
+var prHost=document.getElementById("am-pri"),psel="lbg";
+prHost.innerHTML=PR.map(function(p,i){return '<button type="button" class="am-pc" data-id="'+p.id+'" aria-pressed="'+(p.id===psel)+'"><span class="rk"><b>'+(i+1)+'</b><span>'+esc(p.n)+'</span></span><dl><dt>Reason</dt><dd>'+esc(p.r)+'</dd><dt>IC&amp;D entry</dt><dd>'+esc(p.e)+'</dd><dt>Timing</dt><dd>'+esc(p.tm)+'</dd><dt>Expected next scope</dt><dd>'+esc(p.nx)+'</dd><dt>Deal band</dt><dd><span class="am-ph">Placeholder</span> '+esc(p.band)+'</dd></dl></button>'}).join("");
+prHost.addEventListener("click",function(e){var b=e.target.closest(".am-pc");if(!b)return;setP(b.dataset.id)});
+function setP(id){psel=id;[].forEach.call(prHost.querySelectorAll(".am-pc"),function(x){x.setAttribute("aria-pressed",x.dataset.id===id)});[].forEach.call(document.querySelectorAll("#am-tl .rw"),function(r){r.classList.toggle("on",r.dataset.id===id)})}
+/* timeline events: [account id, date (months from 1 Oct 2026, fractional), short label, derived?] */
+var EV=[["rsa",2.5,"Contract term ends (about)",1],
+ ["lbg",1.1,"CHAPS address rule",0],["lbg",3.65,"Committee full reply",0],["lbg",5.55,"PS26/2 applies",0],["lbg",13.1,"CHAPS purpose codes",0],
+ ["phx",0.97,"Dashboards backstop",0],
+ ["jlp",13.9,"Term to about 2028",1],
+ ["nwg",0.65,"Google Cloud outage",0],["nwg",1.1,"CHAPS address rule",0],["nwg",3.65,"Committee full reply",0],["nwg",13.1,"CHAPS purpose codes",0],
+ ["hmt",0.9,"G-Cloud 14 closes",0],["hmt",4.45,"SIAM contract ends",0]];
+function drawTL(W){var host=document.getElementById("am-tl"),narrow=W<640,lw=narrow?96:190,rh=narrow?58:48,top=30,H=top+PR.length*rh+8,x0=lw,x1=W-12;
+ var sx=VZ.lin(0,15,x0,x1),svg=svgEl(host,W,H,"Timeline of dated events for the six priority accounts. Each row is a button that selects the account card.");
+ var M=["Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+ M.forEach(function(m,i){var x=sx(i);VZ.el("line",{x1:x,x2:x,y1:top-6,y2:H-4,stroke:"var(--grid)"},svg);if(!narrow||i%3===0)txt(svg,x+3,top-12,m+(i===0||i===3||i===12?(i<3?" 26":" 27"):""),{"class":"t-muted"})});
+ PR.forEach(function(p,r){var y=top+r*rh,g=VZ.el("g",{"class":"rw"+(p.id===psel?" on":""),"data-id":p.id,role:"button",tabindex:0,"aria-label":p.n+": "+EV.filter(function(e){return e[0]===p.id}).map(function(e){return e[2]}).join(", ")},svg);
+  VZ.el("rect",{x:0,y:y,width:W,height:rh-4,rx:4,fill:"transparent","class":"bgr"},g);
+  var L=wrap(p.n.replace("plc (Phoenix Group)","(Phoenix)").replace(", through Capco",""),narrow?13:26).slice(0,2);L.forEach(function(l,k){txt(g,6,y+(L.length>1?16:24)+k*14,l,{"class":"t-strong"})});
+  var ev=EV.filter(function(e){return e[0]===p.id}),cy=y+16,lastX=-999,alt=0;
+  ev.forEach(function(e){var x=sx(e[1]);
+   if(e[3]&&e[1]>13){VZ.el("line",{x1:sx(12.5),x2:x1-4,y1:cy,y2:cy,stroke:"var(--ink2)","stroke-width":2,"stroke-dasharray":"4 3"},g);VZ.el("path",{d:"M"+(x1-8)+","+(cy-4)+"L"+(x1-2)+","+cy+"L"+(x1-8)+","+(cy+4),fill:"none",stroke:"var(--ink2)","stroke-width":2},g);txt(g,x1-4,cy+18,e[2],{"text-anchor":"end","class":"t-muted"});return}
+   if(e[3])VZ.el("circle",{cx:x,cy:cy,r:6,fill:"var(--chart-bg)",stroke:"var(--ink2)","stroke-width":2,"stroke-dasharray":"3 2"},g);
+   else VZ.el("circle",{cx:x,cy:cy,r:6,fill:"var(--accent)"},g);
+   if(!narrow){alt=(x-lastX<110)?(alt?0:1):0;lastX=x;var anc=x>x1-90?"end":"start";txt(g,anc==="end"?x+6:x-4,cy+18+alt*11,e[2],{"text-anchor":anc,"class":"t-muted"})}});
+  if(narrow){txt(g,lw,y+rh-10,ev.length+" dated event"+(ev.length>1?"s":""),{"class":"t-muted"})}
+  g.addEventListener("click",function(){setP(p.id)});g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();setP(p.id)}});
+  VZ.tip(g,function(){return "<b>"+esc(p.n)+"</b><br>"+ev.map(function(e){return esc(e[2])+(e[3]?" (my arithmetic)":"")}).join("<br>")})});
+ var tx=sx(26/31);VZ.el("line",{x1:tx,x2:tx,y1:top-6,y2:H-4,stroke:"var(--ink2)","stroke-width":2},svg)}
+responsive(document.getElementById("am-tl"),drawTL);
+
+/* ---------- who owns what ---------- */
+var R=[
+ {id:"acct",g:0,t:"Client account",nm:[],ask:"The account is the unit of the plan: one map of what Wipro runs, who sponsors it, what is up for renewal and where IC&D could add work."},
+ {id:"uki",g:1,t:"UK&I leadership",nm:[["Sarat Chand","Managing Director and Country Head – UK&I","wipro.com UKI page and Whitelane analyst page, 2025 to 2026; “Managing Director United Kingdom & Ireland” in the Hachette UK release, 14 May 2025"],["Omkar Nisal","CEO – Europe","Wipro Executive Leadership Team page, current"]],ask:"Agreement on the short list of UK&I accounts where IC&D expansion is a priority this year, and on how expansion counts in account targets."},
+ {id:"sec",g:1,t:"UK&I sector head",nm:[["Avtar Sangha","Vice President – Head of Banking and Capital Markets UK&I","Wipro and Capco article on wipro.com, undated (title date not stated)"]],ask:"The sector's forcing-event calendar and which accounts in the sector should hear an IC&D proposal first."},
+ {id:"cp",g:1,t:"Client partner or GAE",nm:[],ask:"The account plan, the renewal dates and the sponsors; a shared map of white space; and an introduction to the executive who owns the forcing event."},
+ {id:"dh",g:1,t:"Delivery head",nm:[],ask:"Run data from the live service to use as the business case, and delivery capacity for a phased first scope."},
+ {id:"ts",g:2,t:"Technology Services",nm:[["Kanwar Singh","Managing Partner and Global Head of Technology Services","Wipro profile and AI-Native unit release, in role from 1 Apr 2026"]],ask:"Sponsorship for an offer that combines IC&D, CISS and DAAI on one account, in line with the integrated, service-line-led go-to-market his profile describes."},
+ {id:"icd",g:2,t:"IC&D practice",nm:[["Sorabh Singhal","Senior Vice President & Global Head, Industry Cloud and Digital","Wipro State of Quality Edition 4, Dec 2025"],["Shivakumar Krishnan","General Manager, Industry Cloud & Digital","Wipro NVIDIA GTC 2026 event page, 19 Mar 2026"]],ask:"Offer assets, reference cases and pricing guidance for attaching modernisation and AI to a run contract."},
+ {id:"qe",g:2,t:"QE and payment testing",nm:[["Bhushan Bagi","General Manager and Global Head, Quality Engineering and Testing","Wipro State of Quality Edition 4, Dec 2025"],["Srikumar Rao","Managing Partner and Global Head of Engineering (quoted on the Iliad payment-testing teaming)","Iliad Solutions release, 10 Mar 2026"]],ask:"A QE assessment method, AI testing tools and a UK banking reference for the first workshop."},
+ {id:"ps",g:2,t:"Practice specialist",nm:[],ask:"This is the role I am applying for: it shapes the IC&D scope, runs the workshop, builds the business case and the price, and keeps the expansion pipeline."},
+ {id:"sa",g:2,t:"Solution architect",nm:[],ask:"Solution design and an effort estimate for the phased first scope, in time for the proposal."},
+ {id:"pl",g:2,t:"Pursuit lead",nm:[],ask:"Bid management when the client asks for a formal proposal or the renewal goes to tender."},
+ {id:"al",g:3,t:"Alliance manager",nm:[],ask:"Partner funding, co-sell and partner specialists for the play: Google Cloud, AWS, Tricentis, Anthropic, Pega or GBST."},
+ {id:"cap",g:3,t:"Capco UK",nm:[["Richard Lewis","UK Co-Managing Partner, Capco","Capco release, 22 Apr 2026; High Growth Scotland, 14 Nov 2025"],["Matt Hutchins","UK Co-Managing Partner, Capco","High Growth Scotland, 14 Nov 2025"],["Daniel Meere","Partner and UK Banking & Payments Lead, Capco","Capco release, 22 Apr 2026"],["Zoe Hodge","Partner, Insurance and Wealth & Asset Management (UK), Capco","High Growth Scotland, 14 Nov 2025"]],ask:"The business case and C-suite access, and a joint offer where Capco already holds the advisory relationship."},
+ {id:"des",g:3,t:"Designit London",nm:[["Nick Merritt","Executive Director, UK & Ire.","Designit London studio page, undated"]],ask:"Design research and service design to open digital experience scope."},
+ {id:"srv",g:3,t:"Servaada",nm:[["David Power","CEO of Servaada","IDC note on wipro.com, Oct 2025"]],ask:"Access to the regulated operations where AI and modernisation pilots would run, and agreement on the service levels a pilot must meet."}
+];
+var GC=["var(--ink1)","var(--s1)","var(--accent)","var(--s7)"],GL=["","Market and account","Practice and offer","Partners and alliances"],osel="ps";
+function names(r){return r.nm.map(function(n){return n[0]}).join(", ")}
+function drawOrg(W){var host=document.getElementById("am-org"),narrow=W<560,P={},H;
+ if(!narrow){var bw=Math.min(210,(W-40)/3.2),bh=52,cx=W/2;
+  var L=R.filter(function(r){return r.g===1}),Rt=R.filter(function(r){return r.g===2}),B=R.filter(function(r){return r.g===3});
+  var top=26,rs=64;H=top+Math.max(L.length,Rt.length)*rs+40+bh+20;
+  L.forEach(function(r,i){P[r.id]={x:4,y:top+i*rs+(Rt.length-L.length)*rs/2,w:bw,h:bh}});
+  Rt.forEach(function(r,i){P[r.id]={x:W-bw-4,y:top+i*rs,w:bw,h:bh}});
+  var by=top+Rt.length*rs+30,bwB=(W-8-12*(B.length-1))/B.length;
+  B.forEach(function(r,i){P[r.id]={x:4+i*(bwB+12),y:by,w:bwB,h:bh}});
+  P.acct={x:cx-70,y:top+(Rt.length*rs)/2-36,w:140,h:56}}
+ else{var y=8,bw2=W-30;P.acct={x:24,y:y,w:bw2,h:44};y+=62;
+  [1,2,3].forEach(function(g){y+=16;R.filter(function(r){return r.g===g}).forEach(function(r){var nl=r.nm.length?Math.min(2,wrap(names(r),40).length):0;var h=30+nl*14;P[r.id]={x:24,y:y,w:bw2,h:h};y+=h+8})});H=y+4}
+ var svg=svgEl(host,W,H,"Roles that work with an account, with the named public owners from published sources. Each role is a button.");
+ var A=P.acct,ax=A.x+A.w/2,ay=A.y+A.h/2;
+ if(narrow){VZ.el("line",{x1:12,x2:12,y1:ay,y2:H-20,stroke:"var(--axis)","stroke-width":1.5},svg);VZ.el("line",{x1:12,x2:24,y1:ay,y2:ay,stroke:"var(--axis)","stroke-width":1.5},svg)}
+ var lines={};
+ R.forEach(function(r){if(r.id==="acct")return;var p=P[r.id],x,y2=p.y+p.h/2;
+  if(narrow){lines[r.id]=VZ.el("line",{x1:12,x2:p.x,y1:y2,y2:y2,stroke:"var(--axis)","stroke-width":1.5},svg)}
+  else{x=r.g===1?p.x+p.w:r.g===2?p.x:p.x+p.w/2;var yy=r.g===3?p.y:y2;var tx=r.g===1?A.x:r.g===2?A.x+A.w:ax,ty=r.g===3?A.y+A.h:ay;
+   lines[r.id]=VZ.el("path",{d:"M"+x+","+yy+" C"+((x+tx)/2)+","+yy+" "+((x+tx)/2)+","+ty+" "+tx+","+ty,fill:"none",stroke:"var(--axis)","stroke-width":1.5},svg)}});
+ if(!narrow){txt(svg,4,14,GL[1],{"class":"gl"});txt(svg,W-4,14,GL[2],{"class":"gl","text-anchor":"end"});txt(svg,4,P.al.y-10,GL[3],{"class":"gl"})}
+ else{[1,2,3].forEach(function(g){var f=R.filter(function(r){return r.g===g})[0];txt(svg,24,P[f.id].y-6,GL[g],{"class":"gl"})})}
+ R.forEach(function(r){var p=P[r.id],g=VZ.el("g",{"class":"nd",role:"button",tabindex:0,"data-id":r.id,"aria-label":r.t+(r.nm.length?": "+names(r):"")},svg);
+  var rect=VZ.el("rect",{x:p.x,y:p.y,width:p.w,height:p.h,rx:5,fill:"var(--panel)",stroke:GC[r.g],"stroke-width":1.5},g);
+  VZ.el("rect",{x:p.x,y:p.y,width:5,height:p.h,rx:2,fill:GC[r.g]},g);
+  txt(g,p.x+13,p.y+19,r.t,{"class":"nt"});
+  if(r.nm.length){var mx=Math.max(16,Math.floor((p.w-20)/6.3)),L=wrap(names(r),mx).slice(0,2);L.forEach(function(l,k){txt(g,p.x+13,p.y+35+k*13,l,{"class":"nn"})})}
+  else if(r.id!=="acct"){txt(g,p.x+13,p.y+35,"No public name used",{"class":"nn"})}
+  else txt(g,p.x+13,p.y+37,"The account being farmed",{"class":"nn"});
+  g._rect=rect;
+  g.addEventListener("click",function(){setO(r.id)});g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();setO(r.id)}})});
+ host._lines=lines;setO(osel)}
+function setO(id){osel=id;var host=document.getElementById("am-org");
+ [].forEach.call(host.querySelectorAll(".nd"),function(g){var on=g.dataset.id===id;g.setAttribute("aria-pressed",on);g._rect&&g._rect.setAttribute("fill",on?"var(--accent-soft)":"var(--panel)")});
+ var L=host._lines||{};Object.keys(L).forEach(function(k){L[k].setAttribute("stroke",k===id?"var(--accent)":"var(--axis)");L[k].setAttribute("stroke-width",k===id?3:1.5)});
+ var r=R.filter(function(x){return x.id===id})[0];
+ document.getElementById("am-od").innerHTML='<p class="nm">'+esc(r.t)+'</p><h4>What I would ask of this role <span class="am-my">My approach</span></h4><p>'+esc(r.ask)+'</p>'+
+  (r.nm.length?'<h4>Named public owners</h4><ul>'+r.nm.map(function(n){return '<li><b>'+esc(n[0])+'</b>, '+esc(n[1])+'<small>Source: '+esc(n[2])+'</small></li>'}).join("")+'</ul>':(id==="acct"?'':'<h4>Named public owners</h4><p>Public sources used for this page name no one in this role for UK and Ireland, so the role is shown without a name.</p>'))}
+responsive(document.getElementById("am-org"),drawOrg);
+
+/* ---------- farming play at Lloyds ---------- */
+var STEPS=[
+ {t:"Map white space with the client partner",b:"I would sit with the Lloyds client partner and delivery head to map what Wipro runs today: the Pega programmes, the QE work recognised at TESTA 2023, the Designit advice service and the 2,500-person delivery team. We would mark where IC&D work is not yet evidenced in public sources: payments QE, AI on Gemini, application rationalisation and DevOps.",o:"A one-page account map agreed with the client partner, with two white-space areas to test.",l:[["accounts.html","A7 Accounts"]]},
+ {t:"Choose the forcing event",b:"The dated events point to change and release assurance in payments. CHAPS rejects unstructured addresses from November 2026 and needs purpose codes from November 2027. PS26/2 incident and third-party reporting applies from 18 March 2027. The group's 17 September 2026 letter to the Treasury Committee says it has strengthened how changes are categorised, reviewed, tested and released.",o:"One forcing event and one executive sponsor, agreed with the sector head and the client partner.",l:[["banking.html","A13 Banking Pursuit"]]},
+ {t:"Run an executive workshop",b:"A half-day workshop with the payments change owner on release assurance for one value stream. The QE practice brings its assessment method and AI testing tools, Capco's UK banking and payments lead brings the business case view, and the alliance team brings Iliad's payment-testing teaming and Google Cloud.",o:"A shortlist of two or three use cases ranked on value and feasibility, and agreement to a proposal.",l:[["workshops.html","A10 Workshops"]]},
+ {t:"Shape a phased first scope",b:"A fixed-price assessment of regression and environment testing for the chosen value stream, followed by an automation pilot on one release train. Phase one is small enough to approve inside the existing relationship, so order book lands this financial year.",o:"A proactive proposal with a phase one price and a phase two option.",l:[["deal-shaping.html","A12 Deals"],["pursuits.html","A11 Pursuits"]]},
+ {t:"Expand",b:"With phase one results, the client partner and I would take the next scope to the sponsor: QE as a service across payments, AI test generation and DevOps. The result also becomes a reference for Move 2 at other UK banks.",o:"A second order and a named reference, tracked as share of wallet and attach rate.",l:[["accounts.html","A7 Accounts"],["banking.html","A13 Banking Pursuit"]]}
+];
+var PR_ROLES=[["Client partner",["L","S","S","S","L"]],["Sector head",["S","L","","",""]],["Practice specialist (me)",["L","L","L","L","L"]],["QE and testing practice",["","","L","S","S"]],["Capco UK",["","S","S","","S"]],["Solution architect",["","","S","L",""]],["Delivery head",["S","","","S","L"]],["Pursuit lead",["","","","S","S"]],["Alliance manager",["","","S","","S"]]];
+var stp=document.getElementById("am-stp"),cur=0;
+stp.innerHTML=STEPS.map(function(s,i){return '<button type="button" role="tab" id="am-tab'+i+'" aria-controls="am-ps" aria-selected="'+(i===0)+'" tabindex="'+(i===0?0:-1)+'"><b>'+(i+1)+'</b>'+esc(s.t.split(" with ")[0].replace("Run an ","").replace("Shape a ",""))+'</button>'}).join("");
+var tabs=[].slice.call(stp.querySelectorAll("[role=tab]"));
+tabs.forEach(function(t,i){t.addEventListener("click",function(){setS(i)});t.addEventListener("keydown",function(e){var k=e.key==="ArrowRight"?1:e.key==="ArrowLeft"?-1:0;if(k){var n=(i+k+tabs.length)%tabs.length;tabs[n].focus();setS(n)}})});
+function setS(i){cur=i;tabs.forEach(function(t,k){t.setAttribute("aria-selected",k===i);t.tabIndex=k===i?0:-1});
+ var s=STEPS[i],ps=document.getElementById("am-ps");ps.setAttribute("aria-labelledby","am-tab"+i);
+ var who=PR_ROLES.filter(function(r){return r[1][i]==="L"}).map(function(r){return r[0]}),sup=PR_ROLES.filter(function(r){return r[1][i]==="S"}).map(function(r){return r[0]});
+ ps.innerHTML='<span class="am-my">My approach</span><h3 style="margin-top:10px">'+(i+1)+'. '+esc(s.t)+'</h3><p>'+esc(s.b)+'</p><ul><li><b>Output:</b> '+esc(s.o)+'</li><li><b>Leads:</b> '+esc(who.join(", "))+'</li>'+(sup.length?'<li><b>Supports:</b> '+esc(sup.join(", "))+'</li>':'')+'</ul><p class="lk">Related: '+s.l.map(function(l){return '<a href="'+l[0]+'">'+esc(l[1])+'</a>'}).join(", ")+'</p>';
+ [].forEach.call(document.querySelectorAll("#am-play .cl"),function(c){c.classList.toggle("on",+c.dataset.i===i)})}
+function drawPlay(W){var host=document.getElementById("am-play"),lw=Math.min(170,W*0.42),top=28,rh=30,H=top+PR_ROLES.length*rh+6,cw=(W-lw-4)/5;
+ var svg=svgEl(host,W,H,"Matrix of roles against the five steps. Column headers are buttons that select a step.");
+ for(var i=0;i<5;i++){var g=VZ.el("g",{"class":"cl","data-i":i,role:"button",tabindex:0,"aria-label":"Step "+(i+1)+": "+STEPS[i].t},svg);
+  VZ.el("rect",{x:lw+i*cw+2,y:2,width:cw-4,height:H-4,rx:4,fill:"transparent","class":"bg"},g);
+  txt(g,lw+i*cw+cw/2,18,"Step "+(i+1),{"text-anchor":"middle","class":"t-strong"});
+  (function(k){g.addEventListener("click",function(){setS(k)});g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();setS(k)}})})(i)}
+ PR_ROLES.forEach(function(r,j){var y=top+j*rh+rh/2;VZ.el("line",{x1:0,x2:W,y1:y+rh/2,y2:y+rh/2,stroke:"var(--grid)"},svg);
+  var L=wrap(r[0],Math.floor(lw/6.6));txt(svg,2,y+4-(L.length>1?6:0),L[0],{});if(L[1])txt(svg,2,y+10,L[1],{});
+  r[1].forEach(function(v,i){var x=lw+i*cw+cw/2;if(v==="L")VZ.el("circle",{cx:x,cy:y,r:8,fill:"var(--accent)"},svg);else if(v==="S")VZ.el("circle",{cx:x,cy:y,r:7,fill:"var(--chart-bg)",stroke:"var(--accent)","stroke-width":2},svg)})});
+ setS(cur)}
+responsive(document.getElementById("am-play"),drawPlay);
+
+/* ---------- attach grid ---------- */
+var OFF=["QE","Modernisation","Digital","AI","Integration"];
+var EVD={rsa:[1,0,0,0,0],lbg:[1,0,1,0,0],phx:[0,1,0,0,0],jlp:[0,1,0,0,0],nwg:[0,0,0,0,0],hmt:[0,0,0,1,0]};
+var EVW={rsa:["TESTA 2023 award with RSA"],lbg:["TESTA 2023 awards; Pega and Designit digital work"],phx:["ALPHA platform modernisation"],jlp:["x86 move to Google Cloud"],nwg:[],hmt:["AI-in-policy work"]};
+var AT={};function resetAT(){PR.forEach(function(p){AT[p.id]=EVD[p.id].map(function(v){return v?2:0})})}resetAT();
+var tb=document.getElementById("am-atb");
+function drawAT(){tb.innerHTML=PR.map(function(p){var nm=p.n.replace("Standard Life plc (Phoenix Group)","Standard Life").replace(", through Capco","").replace("Lloyds Banking Group","Lloyds").replace("John Lewis Partnership","John Lewis");
+ return '<tr><td>'+esc(nm)+'</td>'+AT[p.id].map(function(v,i){var lab=nm+", "+OFF[i]+": "+(v===2?"evidenced in public sources":v===1?"modelled attach":"not yet evidenced");return '<td><button type="button" data-id="'+p.id+'" data-i="'+i+'" class="'+(v===2?"ev":"")+'" aria-pressed="'+(v>0)+'" aria-label="'+esc(lab)+'"'+(v===2?' disabled':'')+'>'+(v===2?"E":v===1?"+":"")+'</button></td>'}).join("")+'</tr>'}).join("");
+ var tot=0,ev=0,md=0;PR.forEach(function(p){AT[p.id].forEach(function(v){tot++;if(v===2)ev++;if(v===1)md++})});
+ var rate=Math.round((ev+md)/tot*100);document.getElementById("am-arv").textContent=rate+"%";
+ document.getElementById("am-art").textContent="Attach rate across the six accounts and five offerings: "+ev+" slots evidenced in public sources"+(md?" plus "+md+" modelled":"")+", out of "+tot+". E marks public evidence; + marks a modelled attach.";}
+tb.addEventListener("click",function(e){var b=e.target.closest("button");if(!b||b.disabled)return;var a=AT[b.dataset.id],i=+b.dataset.i;a[i]=a[i]===1?0:1;drawAT()});
+document.getElementById("am-arr").addEventListener("click",function(){resetAT();drawAT()});
+drawAT();
+VZ.onTheme(function(){});
+})();
+</script>
 
 </main>
 <nav class="pager" aria-label="Page navigation"><a class="prev" href="accounts.html"><small>Previous</small><b>Accounts</b></a><a class="next" href="new-logos.html"><small>Next</small><b>New Logos</b></a></nav><footer class="site-foot"><span>Prepared by Arpan Bakshi for the ICD Practitioner role in Wipro's Industry Cloud &amp; Digital portfolio, UK and Ireland. It is based on public sources. Wipro did not produce or review it.</span></footer>
