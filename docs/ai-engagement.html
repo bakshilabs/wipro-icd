@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<script>try{if(sessionStorage.getItem("pw")!=="ok"){document.documentElement.style.visibility="hidden";location.replace("index.html?next="+encodeURIComponent(location.pathname.split("/").pop()))}}catch(e){location.replace("index.html")}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Engagement</title>
+<meta name="description" content="Evidence on AI in customer service, an engagement model across channels with where Claude and Gemini fit, use-case priorities, human oversight rules, regulation dates and an adoption programme with measures.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/nav.css">
+<link rel="stylesheet" href="assets/a11y.css">
+<link rel="stylesheet" href="assets/pages.css">
+<link rel="stylesheet" href="assets/viz.css">
+<script src="assets/viz.js"></script>
+<script>try{var s=localStorage.getItem("theme");if(s==="light"||s==="dark")document.documentElement.setAttribute("data-theme",s)}catch(e){}</script>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%233a3aa8%27/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="sitenav"><div class="in"><a class="brand" href="overview.html">Arpan Bakshi<span>Wipro ICD Practitioner, UKI</span></a><nav class="links about" aria-label="About me"><a href="ai.html">AI Workflow</a><a href="cv.html">CV</a></nav><button class="theme" type="button" aria-label="Switch to dark mode">Dark</button></div><nav class="appxbar" aria-label="Analysis pages"><div class="in"><a class="home" href="overview.html">Analysis</a><a href="role.html"><b>A1</b>The Role</a><a href="portfolio.html"><b>A2</b>Portfolio</a><a href="demand.html"><b>A3</b>Demand</a><a href="buyers.html"><b>A4</b>Buyers</a><a href="accounts.html"><b>A5</b>Accounts</a><a href="alternatives.html"><b>A6</b>Competitors</a><a href="deal-shaping.html"><b>A7</b>Deals</a><a href="pursuits.html"><b>A8</b>Pursuits</a><a href="workshops.html"><b>A9</b>Workshops</a><a href="ai-engagement.html" aria-current="page"><b>A10</b>AI Engagement</a><a href="first-months.html"><b>A11</b>First Months</a></div></nav></header><script>(function(){var r=document.documentElement,t=document.querySelector('.sitenav .theme');function cur(){return r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}function show(){var d=cur()==='dark';t.textContent=d?'Light':'Dark';t.setAttribute('aria-label','Switch to '+(d?'light':'dark')+' mode')}if(t){t.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}show()});show()}var c=document.querySelector('.appxbar [aria-current]');if(c&&c.scrollIntoView)c.scrollIntoView({block:'nearest',inline:'center'});})();</script>
+<main class="wrap page" id="main" tabindex="-1">
+<style>
+.ae-ev{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:16px;align-items:start}
+.ae-kl{margin-top:28px}
+.ae-kl ol{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:10px}
+.ae-kl li{display:grid;grid-template-columns:78px 1fr;gap:10px;font-size:14px}
+.ae-kl li b{font:600 13px/1.3 var(--sans);color:var(--accent)}
+.ae-em .nd{cursor:pointer}
+.ae-em .nd:focus{outline:none}
+.ae-em .nd rect{transition:fill .2s,stroke .2s}
+.ae-em .nd:hover rect,.ae-em .nd:focus-visible rect{stroke:var(--ink1);stroke-width:1.5}
+.ae-em .nd.sel rect{stroke:var(--accent);stroke-width:2.5}
+.ae-em .ln{transition:stroke .2s,opacity .2s}
+.ae-dt{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:14px}
+.ae-dt>div{background:var(--panel);border-radius:6px;padding:14px 16px;font-size:14px}
+.ae-dt h4,.ae-k{font:500 12px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.ae-dt ul{margin:0;padding-left:16px}.ae-dt li{margin-top:4px}
+.ae-ev2{margin-top:10px;background:var(--accent-soft);border-radius:6px;padding:12px 16px;font-size:14px}
+.ae-uc .b{cursor:pointer}
+.ae-uc .b:focus{outline:none}
+.ae-uc .b:focus-visible circle.c,.ae-uc .b:hover circle.c{stroke:var(--ink1);stroke-width:2}
+.ae-uc .b.sel circle.c{stroke:var(--ink1);stroke-width:3}
+.ae-ucd{margin-top:12px;background:var(--panel);border-radius:6px;padding:14px 16px;font-size:14px;min-height:60px}
+.ae-hl{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start;margin-top:28px}
+.ae-lv{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-top:10px}
+.ae-lv button{appearance:none;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:4px;padding:8px 6px;font:500 12.5px/1.25 var(--sans);cursor:pointer;text-align:left}
+.ae-lv button b{display:block;font-size:16px}
+.ae-lv button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.ae-hl input[type=range]{width:100%;accent-color:var(--accent);margin-top:14px}
+.ae-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ae-cols>div{background:var(--panel);border-radius:6px;padding:14px 16px}
+.ae-cols ul{list-style:none;margin:6px 0 0;padding:0}
+.ae-cols li{font-size:13.5px;padding:6px 0;border-top:1px solid var(--line)}
+.ae-cols li span{display:block;font-size:12px;color:var(--muted)}
+.ae-tl .ev{cursor:pointer}
+.ae-tl .ev:focus{outline:none}
+.ae-tl .ev:hover circle,.ae-tl .ev:focus-visible circle{stroke:var(--ink1);stroke-width:2}
+.ae-tl .ev.sel circle{stroke:var(--ink1);stroke-width:3}
+.ae-tld{margin-top:12px;background:var(--panel);border-radius:6px;padding:14px 16px;font-size:14px}
+.ae-reg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
+.ae-pt{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+.ae-pl .ph{cursor:pointer}
+.ae-pl .ph:focus{outline:none}
+.ae-pl .ph:hover path,.ae-pl .ph:focus-visible path{stroke:var(--ink1);stroke-width:1.5}
+.ae-pl .ph.sel path{stroke:var(--ink1);stroke-width:2.5}
+.ae-pd{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+.ae-pd>div{background:var(--panel);border-radius:6px;padding:14px 16px;font-size:14px}
+.ae-pd ul{margin:0;padding-left:16px}.ae-pd li{margin-top:4px}
+.ae-ms{display:grid;grid-template-columns:280px minmax(0,1fr);gap:16px;margin-top:20px;align-items:start}
+.ae-in{background:var(--panel);border-radius:6px;padding:16px 18px}
+.ae-in .r{display:grid;grid-template-columns:1fr 70px 70px;gap:6px;align-items:center;font-size:13.5px;padding:6px 0;border-top:1px solid var(--line)}
+.ae-in .r:first-of-type{border-top:0}
+.ae-in .r.h{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;border-top:0}
+.ae-in input{width:100%;padding:6px 6px;border-radius:4px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:400 14px/1.2 var(--sans)}
+main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;stroke-linejoin:round}
+@media (max-width:980px){.ae-ev,.ae-hl,.ae-ms{grid-template-columns:1fr}.ae-dt,.ae-reg{grid-template-columns:1fr 1fr}.ae-pt{grid-template-columns:1fr}}
+@media (max-width:640px){.ae-dt,.ae-reg,.ae-pd,.ae-cols{grid-template-columns:1fr}.ae-lv{grid-template-columns:repeat(5,minmax(0,1fr))}.ae-lv button{font-size:10.5px;padding:6px 4px}main .viz{padding:16px 12px 12px}}
+</style>
+
+<section class="phead">
+  <span class="eyebrow"><b class="acode">A10</b>Customer engagement</span>
+  <h1>AI Engagement</h1>
+  <p class="lede">This page sets out how I would design AI-enabled customer engagement and lead the programmes that deliver it. It covers the published evidence, an engagement model across channels with where Claude and Gemini fit, use-case priorities, rules for human oversight, the regulation timeline and an adoption plan with measures.</p>
+  <p class="meta">Based on NBER research, company and vendor case studies, Gartner releases, Wipro press releases, the FCA, the ICO and law-firm summaries of the EU AI Act. Use-case placements, oversight levels and programme figures are my judgement or placeholders.</p>
+</section>
+
+<section class="sec" aria-labelledby="ae-h1">
+  <span class="eyebrow">Evidence</span>
+  <h2 id="ae-h1">What AI does in customer service</h2>
+  <p class="intro">The strongest evidence is for helping human agents, especially new ones. Automated resolution rates are high in vendor case studies. Gartner's surveys and Klarna's reversal show that cutting people too fast hurts quality.</p>
+  <div class="stats4">
+    <div class="stat rv"><b class="count" data-to="14" data-prefix="+" data-suffix="%">+14%</b><span>Issues resolved per hour with AI assistance, 5,179 support agents (NBER)</span></div>
+    <div class="stat rv hi"><b class="count" data-to="34" data-prefix="+" data-suffix="%">+34%</b><span>The same measure for novice and low-skilled agents</span></div>
+    <div class="stat rv"><b class="count" data-to="12.9" data-suffix="m">12.9m</b><span>Retail customer conversations handled by NatWest's Cora in 2025</span></div>
+    <div class="stat rv"><b class="count" data-to="51" data-suffix="%">51%</b><span>Average resolution by Intercom Fin, powered by Claude (vendor figure)</span></div>
+  </div>
+  <div class="ae-ev">
+    <div class="viz rv">
+      <div class="viz-h"><h3 id="ae-evt">Reported automated resolution rates</h3><p id="ae-evp"></p></div>
+      <div class="tabs" role="tablist" aria-label="Evidence view" id="ae-evtabs" style="margin:0 0 12px">
+        <button role="tab" aria-selected="true" data-v="0">Resolution rates</button>
+        <button role="tab" aria-selected="false" data-v="1">Workforce surveys</button>
+      </div>
+      <div id="ae-evc"></div>
+      <p class="src" id="ae-evs" style="margin-top:8px"></p>
+    </div>
+    <div class="panel rv ae-kl" style="margin-top:28px">
+      <h3>Klarna and Lloyds</h3>
+      <ol>
+        <li><b>Feb 2024</b><span>Klarna's assistant handled 2.3m conversations in its first month, two-thirds of service chats, equal to 700 agents. Resolution time fell from 11 to under 2 minutes.</span></li>
+        <li><b>May 2025</b><span>Klarna's chief executive said the cost cutting had gone too far and output was lower quality. Klarna restarted hiring human agents.</span></li>
+        <li><b>Lloyds</b><span>Athena, an internal knowledge hub for colleagues, cut average search time by 66%, from 59 to 20 seconds. Lloyds runs its AI platform on Google Cloud Vertex AI with access to Gemini.</span></li>
+      </ol>
+      <p class="src" style="margin-top:10px">FStech, Bloomberg, Fintech Futures (press).</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="ae-h2">
+  <span class="eyebrow">Engagement model</span>
+  <h2 id="ae-h2">Engagement model across channels</h2>
+  <p class="intro">Five customer and colleague channels share one orchestration layer, a choice of models, a knowledge base and a guardrail layer. Select a channel to see the AI pattern, where Claude or Gemini fits, the guardrails and the measures. The shared layers can be selected too.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>AI-enabled engagement model</h3><p>Every channel draws on the same knowledge and guardrails, so answers stay consistent. Select a box.</p></div>
+    <div id="ae-em" class="ae-em"></div>
+    <div id="ae-emd" aria-live="polite"></div>
+    <p class="src" style="margin-top:10px">Model choices are my judgement. Platform facts: Google Cloud Customer Engagement Suite (CX Today), Intercom Fin on Claude (Claude customer story), Wipro press releases of 16 June and 27 August 2026.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="ae-h3">
+  <span class="eyebrow">Use cases</span>
+  <h2 id="ae-h3">Customer experience use cases</h2>
+  <p class="intro">Fourteen use cases placed by business value and feasibility, sized by regulatory risk. This is my judgement from the evidence above. Use the legend to filter by channel and select a bubble for the reasoning.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Value against feasibility, my judgement</h3><p>Agent assist and knowledge search are the safest starting points. Automated decisions carry the most risk.</p></div>
+    <div class="legend" id="ae-ucl"></div>
+    <div id="ae-uc" class="ae-uc"></div>
+    <div id="ae-ucd" class="ae-ucd" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="ae-h4">
+  <span class="eyebrow">Human oversight</span>
+  <h2 id="ae-h4">Human in the loop</h2>
+  <p class="intro">Move the slider to grant AI more autonomy. Tasks that can safely run at that level move to the AI column. The rest stay with people, with AI assisting at a lower level. The cut-offs are my judgement, informed by the FCA's Consumer Duty approach and the UK automated decision rules.</p>
+  <div class="ae-hl">
+    <div class="viz" style="margin-top:0">
+      <div class="viz-h"><h3>Highest safe autonomy by task</h3><p id="ae-hlp"></p></div>
+      <div class="ae-lv" id="ae-lv" role="group" aria-label="Autonomy level"></div>
+      <label for="ae-hs" class="sr">Autonomy level</label>
+      <input type="range" id="ae-hs" min="1" max="5" step="1" value="3">
+      <div id="ae-hm"></div>
+    </div>
+    <div class="ae-cols" aria-live="polite"><div><p class="ae-k">AI handles</p><ul id="ae-ai"></ul></div><div><p class="ae-k">Stays with people</p><ul id="ae-hu"></ul></div></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="ae-h5">
+  <span class="eyebrow">Regulation</span>
+  <h2 id="ae-h5">Rules and dates</h2>
+  <p class="intro">UK firms face existing FCA rules, a new automated decision regime and, where they serve EU customers, the EU AI Act. The timeline runs from February 2026 to August 2028. Select a date for detail.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Regulation timeline, 2026 to 2028</h3><p>Three dates fall within the next 14 months: chatbot content marking, the FCA evaluation and EU high-risk duties.</p></div>
+    <div id="ae-tl" class="ae-tl"></div>
+    <div id="ae-tld" class="ae-tld" aria-live="polite"></div>
+  </div>
+  <div class="ae-reg">
+    <div class="panel rv"><h3>FCA</h3><p>The FCA relies on existing frameworks: Consumer Duty, SM&amp;CR and operational resilience. Its second AI Live Testing cohort includes Barclays, Experian, Lloyds Banking Group and UBS.</p></div>
+    <div class="panel rv"><h3>Automated decisions</h3><p>From 5 February 2026 the Data (Use and Access) Act replaced Article 22 with a right of challenge and safeguards. Token human review falls short of meaningful involvement.</p></div>
+    <div class="panel rv"><h3>EU AI Act</h3><p>Chatbot transparency duties applied from 2 August 2026. Credit scoring and insurance pricing are high-risk, with duties from 2 December 2027. Irish clients and UK firms serving EU customers are in scope.</p></div>
+    <div class="panel rv"><h3>ICO</h3><p>The ICO consulted on draft automated decision guidance from 31 March to 29 May 2026. The final guidance is to confirm.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="ae-h6">
+  <span class="eyebrow">Claude and Gemini</span>
+  <h2 id="ae-h6">Wipro's AI partners</h2>
+  <p class="intro">Wipro has public programmes with both model providers named in the role. I have used both tools in my own work and hold four Anthropic credentials.</p>
+  <div class="ae-pt">
+    <div class="panel rv"><b class="big">Claude</b><h3>Applied AI Centre of Excellence</h3><p>Opened on 16 June 2026 at the Bengaluru innovation hub under the AI-Native unit. Wipro plans to certify 10,000 front-line delivery experts on Claude within 18 months. Claude-trained forward-deployed engineers work inside client environments, with a focus on mortgage, healthcare, airlines, manufacturing and consumer.</p></div>
+    <div class="panel rv"><b class="big">Gemini</b><h3>Gemini Enterprise and LIFT</h3><p>On 27 August 2026 Wipro expanded its Google Cloud partnership. More than 10,000 AI-certified staff use Gemini Enterprise, including 1,500 forward-deployed engineers. The LIFT framework (Launch, Ignite, Flywheel, Transform) links Gemini Enterprise to WINGS and WEGA.</p></div>
+    <div class="panel accent rv"><b class="big">My work</b><h3>Credentials and practice</h3><p>I hold Anthropic credentials in AI Fluency, Claude Code in Action, Claude Cowork and the Claude Platform, plus Microsoft Copilot Studio. I use Claude Code, Gemini and NotebookLM daily, and I have trained more than 250 senior professionals on Claude Code and Cowork at Atlas Learn.</p></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="ae-h7">
+  <span class="eyebrow">Programme</span>
+  <h2 id="ae-h7">Adoption programme</h2>
+  <p class="intro">A twelve-month programme in four phases, following the pattern of DSIT's Scan, Pilot, Scale approach. It starts with agent assist, where the evidence is strongest, and widens self-service once measures hold. Select a phase for its work and the gate to the next one.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Programme phases, months 0 to 12</h3><p>Automation for customers starts only after the agent assist pilot passes its gate. Select a phase.</p></div>
+    <div id="ae-pl" class="ae-pl"></div>
+    <div id="ae-pd" class="ae-pd" aria-live="polite"></div>
+  </div>
+  <div class="ae-ms">
+    <div class="ae-in" id="ae-in"><h3 style="font-size:16px">Measures</h3><p class="mini">Placeholder figures. Enter your own baseline and target.</p><div class="r h"><span>Measure</span><span>Baseline</span><span>Target</span></div></div>
+    <div class="viz" style="margin-top:0">
+      <div class="viz-h"><h3 id="ae-mt">Glide path</h3><p>Most of the gain comes in phases three and four, once self-service scales.</p></div>
+      <div class="tabs" role="tablist" aria-label="Measure" id="ae-mtabs" style="margin:0 0 10px"></div>
+      <div id="ae-gp"></div>
+      <p class="src" style="margin-top:8px">The shape of the curve is my estimate. Placeholder baselines and targets are for illustration.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li>Brynjolfsson, Li and Raymond, Generative AI at Work, NBER working paper 31161, April 2023 (revised November 2023). nber.org/papers/w31161. Primary.</li>
+    <li>FStech, Klarna says GenAI assistant doing work of 700 agents, February 2024; Pragmatic Engineer, Klarna's AI chatbot. Press.</li>
+    <li>Bloomberg, Klarna turns from AI to real person customer service, 8 May 2025; Entrepreneur. Press.</li>
+    <li>Gartner press releases, 5 March 2025, 2 December 2025, 23 and 28 April 2026. gartner.com/en/newsroom. Primary. Gartner on agentic project cancellations (June 2025) via Outlook Business and New Electronics. Press.</li>
+    <li>FStech, NatWest agentic financial assistant; ResultSense, NatWest deploys AI, 17 February 2026. Press.</li>
+    <li>Fintech Futures and Retail Banker International on Lloyds Athena and Google Cloud. Press.</li>
+    <li>CX Today, Google Customer Engagement Suite; IT Brief UK, Five9 and Google Cloud, January 2026. Press.</li>
+    <li>Claude customer story: Intercom. claude.com/customers/intercom. Primary (vendor-authored). Intercom, Anthropic customer story. Press (via search index).</li>
+    <li>Anthropic, GOV.UK partnership, 27 January 2026; UK government memorandum of understanding, February 2025. anthropic.com/news. Primary.</li>
+    <li>Wipro, Applied AI Centre of Excellence for Claude models, press release, 16 June 2026. wipro.com/newsroom. Primary.</li>
+    <li>Wipro, Wipro and Google Cloud expand partnership, press release, 27 August 2026; Wipro and Google Cloud agentic AI solutions, 13 August 2025. wipro.com/newsroom. Primary.</li>
+    <li>FCA, FCA announces second cohort of AI Live Testing, 21 April 2026. fca.org.uk. Primary.</li>
+    <li>ICO, Consultation on draft guidance about automated decision-making, March 2026. ico.org.uk. Primary. Burges Salmon commentary. Press.</li>
+    <li>Future of Privacy Forum, DLA Piper and Gibson Dunn on the EU AI Omnibus, Regulation (EU) 2026/1744, 2026. Press (to confirm on EUR-Lex).</li>
+  </ol>
+</section>
+
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+function wOf(h){return Math.max(290,h.clientWidth||700)}
+function li(a){return "<ul>"+a.map(function(t){return "<li>"+t+"</li>"}).join("")+"</ul>"}
+function act(g,fn){g.addEventListener("click",fn);g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();fn()}})}
+
+/* evidence bars */
+var EV=[
+ {t:"Reported automated resolution rates",p:"Vendor-reported rates range from 36% at launch to 86% for the best cases.",s:"Claude customer story (Intercom), Intercom on Anthropic, CX Today on Commerzbank. Vendor figures, unaudited.",d:[["Fin for Anthropic support, at launch",36],["Fin for Anthropic support, now",50.8],["Intercom Fin, average",51],["Lightspeed with Fin, up to",65],["Commerzbank chatbot (Gemini)",70],["Intercom Fin, best customers",86]]},
+ {t:"Service leaders on AI and staffing",p:"Most service leaders keep or widen human roles. Few have cut headcount because of AI.",s:"Gartner press releases, 2 December 2025 and 23 and 28 April 2026; Gartner June 2025 via press.",d:[["Reduced agent headcount because of AI",20],["Planned or made AI-driven frontline layoffs",31],["Agentic AI projects Gartner expects cancelled by 2027",40],["Kept staffing stable while handling more volume",55],["Cutting frontline headcount through attrition",63],["Widening human agents' responsibilities",85]]}
+];
+var ev=0;
+function drawEv(){var e=EV[ev],h=$("ae-evc");h.innerHTML="";$("ae-evt").textContent=e.t;$("ae-evp").textContent=e.p;$("ae-evs").textContent=e.s;
+ var W=wOf(h),nar=W<560,LW=nar?0:250,rh=nar?46:34,H=e.d.length*rh+22,s=VZ.svg(h,W,H,e.t),x=VZ.lin(0,100,LW,W-46);
+ [0,25,50,75,100].forEach(function(v){VZ.el("line",{x1:x(v),x2:x(v),y1:0,y2:H-18,"class":"grid"},s);VZ.el("text",{x:x(v),y:H-4,"text-anchor":"middle","class":"t-muted"},s).textContent=v+"%"});
+ e.d.forEach(function(d,i){var y=i*rh,g=VZ.el("g",{role:"img","aria-label":d[0]+" "+d[1]+"%"},s);
+  VZ.el("text",{x:nar?0:LW-8,y:nar?y+13:y+rh/2+4,"text-anchor":nar?"start":"end",style:"font-size:12px"},g).textContent=d[0];
+  var by=nar?y+19:y+7,bh=nar?18:rh-14;VZ.bar(g,x(0),by,x(d[1])-x(0),bh,ev?"var(--s2)":"var(--s1)","h");
+  VZ.el("text",{x:x(d[1])+6,y:by+bh/2+4,"class":"t-strong"},g).textContent=d[1]+"%";
+  VZ.tip(g,function(){return "<b>"+d[0]+"</b><span class='m'>"+d[1]+"%</span>"})});
+}
+VZ.tabs($("ae-evtabs"),function(t){ev=+t.dataset.v;if($("ae-evc"))drawEv()});
+
+/* engagement model */
+var N={
+ app:{n:"Mobile app",row:0,p:["In-app assistant for account questions and spending insights","Proactive alerts with a route to a person"],m:["Claude for multi-turn conversation with tools and memory the customer controls, as in Anthropic's GOV.UK assistant","Gemini through Google's Conversational Agents where the client runs on Google Cloud"],g:["Clear notice that the customer is talking to AI","No credit or claims decision without meaningful human involvement","Consumer Duty outcome testing"],k:["Containment","CSAT","Digital adoption","Repeat contact"],e:"NatWest's Cora handled 12.9m retail conversations in 2025, and a fraud-triage agent about 19,000. Lloyds planned a customer-facing AI financial assistant for 2026.",l:["orc","cl","ge","kn","gr"]},
+ web:{n:"Web and chat",row:0,p:["Grounded answers from approved content","Order, claim and account status","Warm hand-off to a person with the conversation attached"],m:["Claude behind platforms such as Intercom Fin","Gemini through Google's Customer Engagement Suite"],g:["Answers only from approved sources","Hand-off when confidence is low or the customer asks","Disclosure for EU users (Article 50)"],k:["Containment","Resolution rate","CSAT","Cost per contact"],e:"Intercom Fin, powered by Claude, resolves 51% on average and up to 86%. Commerzbank's Gemini-based chatbot resolves 70% of enquiries.",l:["orc","cl","ge","kn","gr"]},
+ cc:{n:"Contact centre",row:0,p:["Voice agent for routine calls","Intent routing and authentication","Conversation insights for quality review"],m:["Gemini where the contact centre platform is Google's (Conversational Agents, Insights, CCaaS) or Five9 with Google","Claude for summaries and complex written follow-up"],g:["Detect vulnerability and route to a person","Complaints and disputes stay with people","Call recording and data retention rules"],k:["Average handling time","First contact resolution","Transfer rate","CSAT"],e:"Google's Customer Engagement Suite bundles Conversational Agents, Agent Assist, Conversational Insights and CCaaS on Gemini. Five9 and Google launched a joint Gemini offer in January 2026.",l:["orc","ge","cl","kn","gr"]},
+ br:{n:"Branch and in person",row:0,p:["Colleague assistant for product and policy questions","Appointment preparation from the customer record"],m:["Gemini through Vertex AI where the bank already runs it","Claude for long policy documents and drafting"],g:["Colleague stays accountable for advice","Access limited by role"],k:["Search time","Appointment outcome","Colleague satisfaction"],e:"Lloyds' Athena cut colleague search time by 66%, from 59 to 20 seconds, on a Vertex AI platform with Gemini access.",l:["orc","ge","cl","kn","gr"]},
+ ag:{n:"Agent assist",row:0,p:["Real-time suggested replies and knowledge","Automatic call and chat summaries","Coaching for new agents"],m:["Claude or Gemini, chosen by the client's platform and data location","Google Agent Assist where the contact centre runs on Google"],g:["Agent approves every customer-facing message","Suggestions cite their source"],k:["Resolutions per hour","Handling time","Time for new agents to reach target","Quality scores"],e:"In the NBER study, AI assistance raised resolutions per hour by 14% on average and 34% for novice agents, and improved customer sentiment and agent retention.",l:["orc","cl","ge","kn","gr"]},
+ orc:{n:"Orchestration",row:1,p:["Routes each request to the right agent, model and tool","Keeps context across channels"],m:["Wipro positions Gemini Enterprise as its central agentic orchestration platform, linked to WINGS and WEGA through LIFT","Claude is integrated across the Wipro Intelligence stack"],g:["Logging of every agent action","Limits on what each agent can do"],k:["Hand-off success","Latency","Cost per conversation"],e:"Wipro press releases, 16 June and 27 August 2026.",l:["app","web","cc","br","ag","cl","ge"]},
+ cl:{n:"Claude",row:2,p:["Long, multi-turn conversations","Drafting and summarising","Tool use for account actions"],m:["Wipro's Applied AI Centre of Excellence for Claude and Claude-trained forward-deployed engineers"],g:["System rules and tool permissions set per use case","Tested on a set of real conversations before launch"],k:["Resolution quality","Escalation accuracy"],e:"Intercom Fin and Anthropic's GOV.UK assistant pilot both run on Claude.",l:["orc"]},
+ ge:{n:"Gemini",row:2,p:["Native to Google Cloud contact-centre products","Multimodal and voice"],m:["Gemini Enterprise rolled out to more than 10,000 AI-certified Wipro staff, including 1,500 forward-deployed engineers"],g:["Deployment region agreed with the client's data team","Tested on the same conversation set for comparison"],k:["Containment","Latency"],e:"Google Customer Engagement Suite; Lloyds' Vertex AI platform; Commerzbank's chatbot.",l:["orc"]},
+ kn:{n:"Knowledge and data",row:3,p:["Approved content, product rules and policies","Customer record and interaction history"],m:["Shared by every channel and both models"],g:["Content owners and review dates","Personal data minimised"],k:["Content freshness","Answer accuracy"],e:"Lloyds' Athena shows the value of a single knowledge hub for colleagues.",l:["app","web","cc","br","ag"]},
+ gr:{n:"Guardrails and oversight",row:3,p:["Policy checks on inputs and outputs","Human review rules by task","Monitoring and incident response"],m:["Applies to every model and channel"],g:["FCA Consumer Duty and SM&CR","UK automated decision safeguards from 5 February 2026","EU AI Act Article 50 for EU users"],k:["Policy breaches","Complaints linked to AI","Review sample pass rate"],e:"Gartner expects more than 40% of agentic AI projects to be cancelled by the end of 2027, partly because of weak risk controls.",l:["app","web","cc","br","ag"]}
+};
+var esel="ag";
+function drawEm(){var h=$("ae-em");h.innerHTML="";var W=wOf(h),nar=W<640;
+ var ch=["app","web","cc","br","ag"],pos={};
+ var H=nar?470:330;var s=VZ.svg(h,W,H,"Engagement model with five channels, an orchestration layer, two models, knowledge and guardrails");s.setAttribute("role","group");
+ if(nar){var cw=(W-8)/2;ch.forEach(function(k,i){var c=i%2,r=Math.floor(i/2);pos[k]=[c*cw+(i===4?cw/2:0),r*54,cw-8,44]});
+  pos.orc=[0,176,W,44];pos.cl=[0,250,W/2-6,44];pos.ge=[W/2+6,250,W/2-6,44];pos.kn=[0,330,W/2-6,44];pos.gr=[W/2+6,330,W/2-6,44];H=380;s.setAttribute("viewBox","0 0 "+W+" "+H)}
+ else{var cw2=W/5;ch.forEach(function(k,i){pos[k]=[i*cw2+4,10,cw2-8,54]});pos.orc=[4,112,W-8,46];pos.cl=[W*.18,196,W*.3,46];pos.ge=[W*.52,196,W*.3,46];pos.kn=[4,272,W*.5-10,46];pos.gr=[W*.5+6,272,W*.5-10,46]}
+ var on=N[esel].l.concat([esel]);
+ /* lines */
+ function mid(k,b){var p=pos[k];return [p[0]+p[2]/2,b?p[1]+p[3]:p[1]]}
+ var lines=[];ch.forEach(function(k){lines.push([k,"orc"])});lines.push(["orc","cl"],["orc","ge"],["cl","kn"],["ge","gr"]);
+ lines.forEach(function(L){var a=mid(L[0],1),b=mid(L[1],0);var hot=(on.indexOf(L[0])>=0&&on.indexOf(L[1])>=0)&&(L[0]===esel||L[1]===esel||N[esel].row===0);
+  VZ.el("path",{"class":"ln",d:"M"+a[0]+","+a[1]+"C"+a[0]+","+(a[1]+b[1])/2+" "+b[0]+","+(a[1]+b[1])/2+" "+b[0]+","+b[1],fill:"none",stroke:hot?"var(--accent)":"var(--grid)","stroke-width":hot?2.5:1.5},s)});
+ var fills={0:"var(--seq-1)",1:"var(--seq-2)",2:"var(--seq-2)",3:"var(--grid)"};
+ Object.keys(pos).forEach(function(k){var p=pos[k],n=N[k],hot=on.indexOf(k)>=0;var g=VZ.el("g",{"class":"nd"+(k===esel?" sel":""),role:"button",tabindex:0,"aria-pressed":k===esel,"aria-label":n.n},s);
+  VZ.el("rect",{x:p[0],y:p[1],width:p[2],height:p[3],rx:6,fill:k===esel?"var(--accent)":fills[n.row],stroke:hot?"var(--accent)":"var(--axis)","stroke-width":1,opacity:hot?1:.75},g);
+  var t=VZ.el("text",{x:p[0]+p[2]/2,y:p[1]+p[3]/2+(n.row===0&&!nar?-2:4),"text-anchor":"middle",style:"font-weight:600;font-size:"+(nar?12.5:13.5)+"px;fill:"+(k===esel?"var(--on-accent)":"var(--ink1)")},g);t.textContent=n.n;
+  if(n.row===0&&!nar){VZ.el("text",{x:p[0]+p[2]/2,y:p[1]+p[3]/2+14,"text-anchor":"middle",style:"font-size:11px;fill:"+(k===esel?"var(--on-accent)":"var(--ink2)")},g).textContent=k==="ag"||k==="br"?"Colleague":"Customer"}
+  act(g,function(){esel=k;drawEm();showEm();var f=$("ae-em").querySelector('[aria-label="'+n.n+'"]');if(f)f.focus({preventScroll:true})})});
+}
+function showEm(){var n=N[esel];$("ae-emd").innerHTML='<h3 style="margin-top:14px">'+n.n+'</h3><div class="ae-dt"><div><h4>AI pattern</h4>'+li(n.p)+'</div><div><h4>Where Claude or Gemini fits</h4>'+li(n.m)+'</div><div><h4>Guardrails</h4>'+li(n.g)+'</div><div><h4>Measures</h4>'+li(n.k)+'</div></div><div class="ae-ev2"><b>Evidence:</b> '+n.e+'</div>'}
+
+/* use cases */
+var CH={app:["App","var(--s1)"],web:["Web","var(--s2)"],cc:["Contact centre","var(--s3)"],br:["Branch","var(--s4)"],ag:["Agent assist","var(--s7)"]};
+var UC=[
+ ["Knowledge search for colleagues",8,9,1,"ag","Lloyds' Athena cut search time by 66%. Low risk because a colleague checks every answer.","l"],
+ ["Call and chat summaries",6.5,8.6,1,"cc","Saves wrap-up time with little customer risk. A good first measure of handling time.","l"],
+ ["Real-time reply suggestions",8.3,7.4,2,"ag","The NBER study found 14% more resolutions per hour and 34% for novices.","r"],
+ ["FAQ and status chat",7.1,8.4,1,"web","Fin resolves 51% on average. Grounding in approved content keeps risk low.","l"],
+ ["In-app account assistant",8.7,6.0,2,"app","NatWest's Cora handled 12.9m conversations in 2025. Needs account integration and strong authentication.","r"],
+ ["Complaint triage and routing",6.8,6.2,2,"cc","Faster routing helps, but the complaint outcome stays with people.","r"],
+ ["Fraud triage conversations",8.4,4.6,3,"app","NatWest's fraud-triage agent has handled about 19,000 conversations. High value and high risk.","l"],
+ ["Voice agent for routine calls",7.4,4.4,2,"cc","Google's suite and Five9 offer it on Gemini. Voice quality and authentication limit feasibility.","r"],
+ ["Vulnerability detection",7.2,3.6,3,"cc","Supports Consumer Duty, but a person must handle the customer once a flag is raised.","l"],
+ ["Personalised offers",5.6,5.2,2,"app","Value depends on data quality and consent. Consumer Duty outcomes apply.","r"],
+ ["Automated credit or claims decisions",9.3,2.2,3,"web","Credit scoring is high-risk under the EU AI Act, and UK safeguards require meaningful human involvement.","r"],
+ ["Multilingual support",5,7.6,1,"web","Fin works in 45+ languages and Klarna's assistant ran in 35+. Useful for Irish and UK multilingual customers.","r"],
+ ["Branch appointment preparation",4.6,7,1,"br","Saves colleague time before meetings. Modest value on its own.","l"],
+ ["Quality and insight analytics",5.4,8.2,1,"cc","Google includes Conversational Insights in its engagement suite. Reviewing every contact gives a fuller quality picture than manual samples.","l"]
+];
+var ucOff={},ucsel=2;
+var lg=$("ae-ucl");lg.innerHTML=Object.keys(CH).map(function(k){return '<button type="button" aria-pressed="true" data-k="'+k+'"><i style="background:'+CH[k][1]+'"></i>'+CH[k][0]+'</button>'}).join("")+'<span style="margin-left:8px"><i style="background:none;border:1.5px solid var(--ink3)"></i>Size shows regulatory risk</span>';
+lg.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var k=b.dataset.k;ucOff[k]=!ucOff[k];b.setAttribute("aria-pressed",!ucOff[k]);drawUc()});
+function drawUc(){var h=$("ae-uc");h.innerHTML="";var selLab=null;var W=wOf(h),nar=W<640,H=nar?420:480,L=40,R=10,T=10,B=36;
+ var s=VZ.svg(h,W,H,"Bubble chart of fourteen customer experience use cases by value and feasibility");s.setAttribute("role","group");
+ var x=VZ.lin(1.2,10,L,W-R),y=VZ.lin(4,10,H-B,T);
+ VZ.el("rect",{x:x(5.5),y:y(10),width:x(10)-x(5.5),height:y(5.5)-y(10),fill:"var(--accent-soft)"},s);
+ [2,4,6,8,10].forEach(function(v){VZ.el("line",{x1:x(v),x2:x(v),y1:T,y2:H-B,"class":"grid"},s)});[4,6,8,10].forEach(function(v){VZ.el("line",{x1:L,x2:W-R,y1:y(v),y2:y(v),"class":"grid"},s)});
+ VZ.el("text",{x:x(9.9),y:y(9.9)+12,"text-anchor":"end","class":"t-muted",style:"text-transform:uppercase;letter-spacing:.05em"},s).textContent="Start here";
+ VZ.el("text",{x:(L+W-R)/2,y:H-8,"text-anchor":"middle"},s).textContent="Feasibility →";
+ VZ.el("text",{x:12,y:(T+H-B)/2,"text-anchor":"middle",transform:"rotate(-90 12 "+(T+H-B)/2+")"},s).textContent="Business value →";
+ UC.forEach(function(u,i){if(ucOff[u[4]])return;var cx=x(u[2]),cy=y(u[1]),r=[0,8,12,17][u[3]]*(nar?.8:1);
+  var g=VZ.el("g",{"class":"b"+(i===ucsel?" sel":""),role:"button",tabindex:0,"aria-label":u[0]+", value "+u[1]+", feasibility "+u[2]},s);
+  VZ.el("circle",{"class":"c",cx:cx,cy:cy,r:r,fill:CH[u[4]][1],"fill-opacity":.85,stroke:"var(--chart-bg)","stroke-width":1.5},g);
+  if(!nar){var right=u[6]==="r";VZ.el("text",{x:cx+(right?r+5:-r-5),y:cy+4,"text-anchor":right?"start":"end","class":"t-strong",style:"font-size:12px"},g).textContent=u[0]}
+  else if(i===ucsel){selLab=[cx,cy-r-8,cx<W/3?"start":cx>W*2/3?"end":"middle",u[0]];VZ.el("text",{x:cx,y:cy+4,"text-anchor":"middle",style:"font-size:10px;font-weight:600;fill:var(--chart-bg)"},g).textContent=i+1}
+  else VZ.el("text",{x:cx,y:cy+4,"text-anchor":"middle",style:"font-size:10px;font-weight:600;fill:var(--chart-bg)"},g).textContent=i+1;
+  VZ.tip(g,function(){return "<b>"+u[0]+"</b><span class='m'>"+CH[u[4]][0]+". Value "+u[1]+", feasibility "+u[2]+".</span>"});
+  act(g,function(){ucsel=i;drawUc();showUc()})});
+ if(selLab)VZ.el("text",{x:selLab[0],y:selLab[1],"text-anchor":selLab[2],"class":"t-strong",style:"font-size:11.5px"},s).textContent=selLab[3];
+}
+function showUc(){var u=UC[ucsel];$("ae-ucd").innerHTML="<b>"+u[0]+"</b> <span class='tag'>"+CH[u[4]][0]+"</span> <span class='tag "+(u[3]===3?"b":u[3]===2?"w":"a")+"'>"+["","Low","Medium","High"][u[3]]+" regulatory risk</span><p style='margin-top:6px'>"+u[5]+"</p>"}
+
+/* human in the loop */
+var LV=[["Suggest","AI suggests, a person acts"],["Draft","AI drafts, a person approves"],["Act, sampled","AI acts, people review a sample"],["Act, exceptions","AI acts and hands off exceptions"],["Act alone","AI acts with monitoring only"]];
+var TK=[["Answer product and policy questions",5,"Grounded in approved content"],["Give order or claim status",5,"Read-only data"],["Summarise calls and chats",4,"Agent can correct the summary"],["Update contact details",4,"After strong authentication"],["Reset access and passwords",4,"Standard security checks"],["Refund within a set limit",3,"Sampled review against policy"],["First questions in fraud triage",3,"Hands off once fraud is likely"],["Draft replies to written complaints",2,"A person signs off every reply"],["Flag signs of vulnerability",2,"A person takes over the customer"],["Make a credit or claims decision",1,"Meaningful human involvement required"],["Decide a complaint outcome",1,"Accountable person decides"],["Support bereaved or vulnerable customers",1,"Human contact by design"]];
+var lvl=3;
+$("ae-lv").innerHTML=LV.map(function(l,i){return '<button type="button" data-l="'+(i+1)+'" aria-pressed="'+(i+1===lvl)+'"><b>'+(i+1)+'</b>'+l[0]+'</button>'}).join("");
+$("ae-lv").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;lvl=+b.dataset.l;$("ae-hs").value=lvl;hitl()});
+$("ae-hs").addEventListener("input",function(){lvl=+this.value;hitl()});
+function hitl(){[].forEach.call($("ae-lv").children,function(b){b.setAttribute("aria-pressed",+b.dataset.l===lvl)});
+ var ai=TK.filter(function(t){return t[1]>=lvl}),hu=TK.filter(function(t){return t[1]<lvl});
+ $("ae-hlp").textContent="Level "+lvl+". "+LV[lvl-1][1]+". "+ai.length+" of 12 tasks can run at this level.";
+ $("ae-ai").innerHTML=ai.map(function(t){return "<li>"+t[0]+"<span>"+t[2]+"</span></li>"}).join("")||"<li>None at this level</li>";
+ $("ae-hu").innerHTML=hu.map(function(t){return "<li>"+t[0]+"<span>AI up to level "+t[1]+" ("+LV[t[1]-1][0].toLowerCase()+"). "+t[2]+"</span></li>"}).join("")||"<li>None. At level 1 people act on every task, with AI suggesting.</li>";
+ drawHm()}
+function drawHm(){var h=$("ae-hm");h.innerHTML="";var W=wOf(h),nar=W<520,LW=nar?150:230,rh=24,top=22,H=top+TK.length*rh+4;
+ var s=VZ.svg(h,W,H,"Matrix of twelve tasks by five autonomy levels"),cw=(W-LW)/5;
+ for(var j=0;j<5;j++){VZ.el("text",{x:LW+j*cw+cw/2,y:14,"text-anchor":"middle","class":j+1===lvl?"t-strong":"t-muted"},s).textContent=j+1;
+  if(j+1===lvl)VZ.el("rect",{x:LW+j*cw,y:top-2,width:cw,height:TK.length*rh+4,rx:4,fill:"none",stroke:"var(--accent)","stroke-width":2},s)}
+ TK.forEach(function(t,i){var y=top+i*rh;var lab=VZ.el("text",{x:LW-8,y:y+16,"text-anchor":"end",style:"font-size:"+(nar?10.5:12)+"px"+(t[1]<lvl?";fill:var(--ink3)":"")},s);lab.textContent=nar&&t[0].length>24?t[0].slice(0,23)+"…":t[0];
+  for(var j=0;j<5;j++){var ok=j+1<=t[1];VZ.el("rect",{x:LW+j*cw+2,y:y+3,width:cw-4,height:rh-6,rx:3,fill:ok?(j+1>=lvl?"var(--seq-4)":"var(--seq-2)"):"var(--grid)",opacity:ok?1:.6},s)}});
+}
+
+/* timeline */
+var TL=[
+ ["2026-02-05","UK automated decision regime","The Data (Use and Access) Act 2025, s.80, replaced UK GDPR Article 22. The rule moved from prohibition with exceptions to a right of challenge with safeguards.","uk"],
+ ["2026-03-31","ICO consultation opens","Draft guidance on automated decision-making, open to 29 May 2026. Token human review falls short of meaningful involvement.","uk"],
+ ["2026-04-21","FCA AI Live Testing, cohort two","Barclays, Experian, Lloyds Banking Group (Scottish Widows), UBS, GoCardless, Coadjute, Palindrom and Aereve. Use cases include investment support, credit insights, agentic payments, AML and KYC.","uk"],
+ ["2026-07-27","EU AI Omnibus in force","Regulation (EU) 2026/1744, published 24 July 2026, moved the high-risk dates (law-firm summaries; to confirm on EUR-Lex).","eu"],
+ ["2026-08-02","EU chatbot transparency","Article 50 duties apply, for example telling users they are talking to a chatbot.","eu"],
+ ["2026-12-02","EU synthetic content marking","Article 50(2) machine-readable marking of AI-generated content.","eu"],
+ ["2027-02-15","FCA evaluation","FCA testing ends late 2026, with a good and poor practice report, and an evaluation in Q1 2027.","uk"],
+ ["2027-12-02","EU Annex III high-risk duties","Covers credit scoring and insurance pricing AI.","eu"],
+ ["2028-08-02","EU Annex I product duties","High-risk AI embedded in regulated products.","eu"]
+];
+var tsel=4,TODAY=new Date("2026-10-27");
+function drawTl(){var h=$("ae-tl");h.innerHTML="";var W=wOf(h),nar=W<640;var t0=new Date("2026-01-01"),t1=new Date("2028-10-01");
+ var H=nar?150:140,s=VZ.svg(h,W,H,"Timeline of nine regulation dates from February 2026 to August 2028"),x=VZ.lin(+t0,+t1,10,W-10),ay=nar?70:70;
+ VZ.el("line",{x1:10,x2:W-10,y1:ay,y2:ay,"class":"axis","stroke-width":2},s);
+ [2026,2027,2028].forEach(function(yr){var xx=x(+new Date(yr+"-01-01"));VZ.el("line",{x1:xx,x2:xx,y1:ay-6,y2:ay+6,"class":"axis"},s);VZ.el("text",{x:xx+4,y:H-6,"class":"t-muted"},s).textContent=yr});
+ var tx=x(+TODAY);VZ.el("line",{x1:tx,x2:tx,y1:14,y2:ay+20,stroke:"var(--ink2)","stroke-dasharray":"3 3"},s);VZ.el("text",{x:tx,y:10,"text-anchor":"middle","class":"t-muted"},s).textContent="Today";
+ TL.forEach(function(e,i){var d=new Date(e[0]),xx=x(+d),up=i%2===0;var g=VZ.el("g",{"class":"ev"+(i===tsel?" sel":""),role:"button",tabindex:0,"aria-label":e[1]},s);
+  VZ.el("circle",{cx:xx,cy:ay,r:i===tsel?9:7,fill:e[3]==="uk"?"var(--s1)":"var(--s2)",stroke:"var(--chart-bg)","stroke-width":2,opacity:d<TODAY?.6:1},g);
+  if(!nar){var lb=VZ.el("text",{x:xx,y:up?ay-18:ay+28,"text-anchor":i===TL.length-1?"end":"middle",style:"font-size:11px","class":i===tsel?"t-strong":""},g);lb.textContent=d.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"2-digit"})}
+  VZ.tip(g,function(){return "<b>"+e[1]+"</b><span class='m'>"+d.toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"})+"</span>"});
+  act(g,function(){tsel=i;drawTl();showTl()})});
+ VZ.el("circle",{cx:W-70,cy:12,r:5,fill:"var(--s1)"},s);VZ.el("text",{x:W-60,y:16,"class":"t-muted"},s).textContent="UK";
+ VZ.el("circle",{cx:W-30,cy:12,r:5,fill:"var(--s2)"},s);VZ.el("text",{x:W-20,y:16,"class":"t-muted"},s).textContent="EU";
+}
+function showTl(){var e=TL[tsel],d=new Date(e[0]);$("ae-tld").innerHTML="<b>"+(tsel===6?"Q1 2027":d.toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"}))+": "+e[1]+"</b> <span class='tag'>"+e[3].toUpperCase()+"</span><p style='margin-top:6px'>"+e[2]+"</p>"}
+
+/* programme */
+var PH=[
+ {n:"Baseline and design",a:0,b:2,w:["Measure current containment, CSAT, handling time and digital adoption","Customer journey maps and service blueprints for two priority customer journeys","Choose models and platforms, and set guardrails"],o:["Baseline report","Target engagement model","Risk and oversight rules"],g:"Sponsor signs off the baseline, targets and guardrails."},
+ {n:"Pilot agent assist",a:2,b:5,w:["Knowledge search and reply suggestions for one agent team","Call and chat summaries","Train agents and team leaders"],o:["Pilot results against baseline","Agent feedback","Content fixes"],g:"Resolutions per hour up and quality scores stable for eight weeks."},
+ {n:"Scale self-service",a:5,b:9,w:["Launch web and app assistants on likely-win use cases","Warm hand-off to agents with context","Extend agent assist to all teams"],o:["Containment and CSAT by use case","Hand-off quality report"],g:"Containment rising with CSAT and complaints within agreed limits."},
+ {n:"Extend and optimise",a:9,b:12,w:["Voice agent for routine calls","Proactive notifications","Monthly review of oversight levels by task"],o:["Annual benefits case","Next-year backlog"],g:"Benefits confirmed by Finance. Plan for year two agreed."}
+];
+var psel=1;
+function drawPl(){var h=$("ae-pl");h.innerHTML="";var W=wOf(h),nar=W<640,rh=nar?40:44,top=22,H=top+PH.length*rh+6,LW=nar?0:170;
+ var s=VZ.svg(h,W,H,"Gantt chart of four programme phases over twelve months"),x=VZ.lin(0,12,LW,W-6);
+ for(var m=0;m<=12;m+=3){VZ.el("line",{x1:x(m),x2:x(m),y1:top-4,y2:H,"class":"grid"},s);VZ.el("text",{x:x(m),y:12,"text-anchor":m===12?"end":"middle","class":"t-muted"},s).textContent="M"+m}
+ PH.forEach(function(p,i){var y=top+i*rh,g=VZ.el("g",{"class":"ph"+(i===psel?" sel":""),role:"button",tabindex:0,"aria-label":"Phase "+(i+1)+": "+p.n+", months "+p.a+" to "+p.b},s);
+  if(!nar)VZ.el("text",{x:LW-10,y:y+rh/2+4,"text-anchor":"end","class":i===psel?"t-strong":""},g).textContent=(i+1)+". "+p.n;
+  VZ.bar(g,x(p.a),y+6,x(p.b)-x(p.a),rh-12,"var(--s"+(i+1)+")","h");
+  VZ.el("text",{x:x(p.a)+8,y:y+rh/2+4,style:"font-size:12px;font-weight:600;fill:var(--chart-bg)"},g).textContent=nar?(i+1)+". "+p.n:"M"+p.a+" to M"+p.b;
+  act(g,function(){psel=i;drawPl();showPl()})});
+}
+function showPl(){var p=PH[psel];$("ae-pd").innerHTML='<div><h4 class="ae-k">'+(psel+1)+'. '+p.n+': work</h4>'+li(p.w)+'</div><div><h4 class="ae-k">Outputs</h4>'+li(p.o)+'</div><div><h4 class="ae-k">Gate to next phase</h4><p>'+p.g+'</p></div>'}
+var MS=[["Containment","%",20,45],["CSAT","",72,78],["Average handling time","min",7.5,6.2],["Digital adoption","%",35,55]],msel=0,CURVE=[0,.08,.3,.62,.88,1];
+var inp=$("ae-in");MS.forEach(function(m,i){var r=document.createElement("div");r.className="r";r.innerHTML='<label for="ae-b'+i+'">'+m[0]+(m[1]?" ("+m[1]+")":"")+'</label><input id="ae-b'+i+'" type="number" step="0.1" value="'+m[2]+'" aria-label="'+m[0]+' baseline"><input id="ae-t'+i+'" type="number" step="0.1" value="'+m[3]+'" aria-label="'+m[0]+' target">';inp.appendChild(r)});
+inp.addEventListener("input",function(e){var id=e.target.id;if(!id)return;var i=+id.slice(4),v=parseFloat(e.target.value);if(isNaN(v))return;MS[i][id[3]==="b"?2:3]=v;drawGp()});
+$("ae-mtabs").innerHTML=MS.map(function(m,i){return '<button role="tab" aria-selected="'+(i===0)+'" data-i="'+i+'">'+m[0]+'</button>'}).join("");
+VZ.tabs($("ae-mtabs"),function(t){msel=+t.dataset.i;if($("ae-gp"))drawGp()});
+function drawGp(){var h=$("ae-gp");h.innerHTML="";var m=MS[msel],W=wOf(h),H=240,L=44,R=16,T=14,B=28;$("ae-mt").textContent="Glide path: "+m[0];
+ var lo=Math.min(m[2],m[3]),hi=Math.max(m[2],m[3]),pad=(hi-lo)*.25||1;var s=VZ.svg(h,W,H,"Line chart of "+m[0]+" from baseline to target over twelve months"),x=VZ.lin(0,12,L,W-R),y=VZ.lin(lo-pad,hi+pad,H-B,T);
+ PH.forEach(function(p,i){VZ.el("rect",{x:x(p.a),y:T,width:x(p.b)-x(p.a),height:H-B-T,fill:i%2?"var(--panel)":"transparent",opacity:.7},s)});
+ [lo,hi].forEach(function(v){VZ.el("line",{x1:L,x2:W-R,y1:y(v),y2:y(v),"class":"grid"},s);VZ.el("text",{x:L-6,y:y(v)+4,"text-anchor":"end","class":"t-muted"},s).textContent=+v.toFixed(1)});
+ var mo=[0,2,5,7,9,12];var pts=mo.map(function(mm,k){return [x(mm),y(m[2]+(m[3]-m[2])*CURVE[k])]});
+ VZ.el("path",{d:"M"+pts.map(function(p){return p.join(",")}).join("L"),fill:"none",stroke:"var(--accent)","stroke-width":2.5},s);
+ mo.forEach(function(mm,k){var v=m[2]+(m[3]-m[2])*CURVE[k],g=VZ.el("g",{},s);VZ.el("circle",{cx:pts[k][0],cy:pts[k][1],r:4.5,fill:"var(--accent)",stroke:"var(--chart-bg)","stroke-width":2},g);
+  if(k===0||k===5)VZ.el("text",{x:pts[k][0]+(k?-6:6),y:pts[k][1]-10,"text-anchor":k?"end":"start","class":"t-strong"},s).textContent=(+v.toFixed(1))+(m[1]==="%"?"%":m[1]?" "+m[1]:"");
+  VZ.tip(g,function(){return "<b>Month "+mm+"</b><span class='m'>"+m[0]+": "+(+v.toFixed(1))+(m[1]?" "+m[1]:"")+" (placeholder)</span>"})});
+ [0,3,6,9,12].forEach(function(mm){VZ.el("text",{x:x(mm),y:H-8,"text-anchor":"middle","class":"t-muted"},s).textContent="M"+mm});
+}
+
+function all(){drawEv();drawEm();showEm();drawUc();showUc();drawHm();drawTl();showTl();drawPl();showPl();drawGp()}
+hitl();all();
+var rt;addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(all,150)});
+VZ.onTheme(all);
+})();
+</script>
+
+</main>
+<nav class="pager" aria-label="Page navigation"><a class="prev" href="workshops.html"><small>Previous</small><b>Workshops</b></a><a class="next" href="first-months.html"><small>Next</small><b>First Months</b></a></nav><footer class="site-foot"><span>Prepared by Arpan Bakshi for the ICD Practitioner role in Wipro's Industry Cloud &amp; Digital portfolio, UK and Ireland. It is based on public sources. Wipro did not produce or review it.</span></footer>
+</body>
+</html>
