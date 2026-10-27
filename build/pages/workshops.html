@@ -77,7 +77,7 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
 <section class="sec" aria-labelledby="ws-h1">
   <span class="eyebrow">Formats</span>
   <h2 id="ws-h1">Workshop formats</h2>
-  <p class="intro">Five published formats cover most executive sessions on AI and customer experience. They range from a half-day prioritisation to a five-day design sprint. Select a format for its steps and outputs.</p>
+  <p class="intro">I draw on five published formats for executive sessions on AI and customer experience. They range from a half-day prioritisation to a five-day design sprint. Select a format for its steps and outputs.</p>
   <div class="viz rv">
     <div class="viz-h"><h3>Typical length of each format, in days</h3><p>Only the design sprint needs a full week. The other four fit in one or two days.</p></div>
     <div id="ws-fmt" class="ws-fmt"></div>
@@ -142,7 +142,7 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
     <div class="panel rv"><b class="big"><b class="count" data-to="250" data-suffix="+">250+</b></b><h3>Senior professionals trained</h3><p>I have trained more than 250 senior professionals to use Claude Code, Cowork and other AI tools in workshops in Central London.</p></div>
     <div class="panel rv"><b class="big">Board</b><h3>FinTech board training</h3><p>I designed and delivered AI training for the board of directors of a FinTech company, and for another client's chief executive and its heads of HR, marketing and IT.</p></div>
     <div class="panel rv"><b class="big">CEO</b><h3>Fortune 500 presentations</h3><p>My presentations to Fortune 500 chief executives helped the Foster + Partners design studios win contracts worth more than £10 million. Clients included Roche, Genentech, Apple, Oracle and JPMorgan Chase.</p></div>
-    <div class="panel rv"><b class="big">Teaching</b><h3>Imperial College London</h3><p>I teach as an Industry Partner Instructor in Civil and Environmental Engineering, and I hold Anthropic credentials in AI Fluency, Claude Code, Cowork and the Claude Platform.</p></div>
+    <div class="panel rv"><b class="big">Teaching</b><h3>Imperial College London</h3><p>I teach as an Industry Partner Instructor in Civil and Environmental Engineering, and I hold Anthropic credentials in AI Fluency, Claude Code in Action, Claude Cowork and Claude Platform.</p></div>
   </div>
 </section>
 
@@ -155,6 +155,8 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
     <li>Nielsen Norman Group, Journey Mapping 101 (Gibbons, December 2018, reviewed July 2026). nngroup.com/articles/journey-mapping-101. Primary.</li>
     <li>Nielsen Norman Group, Service Blueprints: Definition (Gibbons, August 2017, reviewed July 2026). nngroup.com/articles/service-blueprints-definition. Primary.</li>
     <li>WardleyMaps, What is Wardley mapping (FAQ); Cynefin wiki, Wardley mapping. wardleymaps.com; cynefin.io. Press.</li>
+    <li>MEDDPICC qualification elements: Zapier and Outreach guides. zapier.com/blog/meddpicc. Press.</li>
+    <li>Evidence pack and regulation notes in the builder: NBER working paper 31161 (primary), Klarna press coverage (press), Gartner press releases (primary), FCA, ICO and EU AI Act sources as listed on the AI Engagement page.</li>
     <li>Arpan Bakshi, CV (Atlas Learn, Foster + Partners and teaching roles). Primary.</li>
   </ol>
 </section>
@@ -175,7 +177,7 @@ var F=[
 ];
 var fsel=1;
 function drawF(){var h=$("ws-fmt");h.innerHTML="";var W=wOf(h),nar=W<560,LW=nar?0:190,rh=nar?50:36,top=4,H=top+F.length*rh+24;
- var s=VZ.svg(h,W,H,"Range bars of typical workshop length in days for five formats");var x=VZ.lin(0,5,LW+4,W-16);
+ var s=VZ.svg(h,W,H,"Range bars of typical workshop length in days for five formats");s.setAttribute("role","group");var x=VZ.lin(0,5,LW+4,W-16);
  for(var d=0;d<=5;d++){VZ.el("line",{x1:x(d),x2:x(d),y1:top,y2:H-20,"class":"grid"},s);VZ.el("text",{x:x(d),y:H-4,"text-anchor":"middle","class":"t-muted"},s).textContent=d+(d===1?" day":d?" days":"")}
  F.forEach(function(f,i){var y=top+i*rh,g=VZ.el("g",{"class":"row"+(i===fsel?" sel":""),role:"button",tabindex:0,"aria-pressed":i===fsel,"aria-label":f.n+", "+f.a+" to "+f.b+" days"},s);
   VZ.el("rect",{x:0,y:y,width:W,height:rh,rx:4,"class":"hit"},g);
@@ -239,13 +241,13 @@ function build(){var g=G[ctl.querySelector('[name=ws-g]:checked').value],a=A[ctl
  $("ws-mat").innerHTML=li(real.map(function(z){return z.mat}));$("ws-outl").innerHTML=li(real.map(function(z){return z.o}));
  drawAg();showAg()}
 function drawAg(){var h=$("ws-ag");h.innerHTML="";var W=wOf(h),nar=W<560;var tot=agenda.reduce(function(a,b){return a+b.m},0);
- if(nar){var rh=34,H=agenda.length*rh+4,s=VZ.svg(h,W,H,"Agenda as a list of session blocks");var x=VZ.lin(0,80,92,W-8);
+ if(nar){var rh=34,H=agenda.length*rh+4,s=VZ.svg(h,W,H,"Agenda as a list of session blocks");s.setAttribute("role","group");var x=VZ.lin(0,80,92,W-8);
   agenda.forEach(function(z,i){var y=i*rh,g=VZ.el("g",{"class":"blk"+(i===asel?" sel":""),role:"button",tabindex:0,"aria-label":fmt(z.t)+" "+z.n+", "+z.m+" minutes"},s);
    VZ.el("text",{x:0,y:y+21,"class":"t-muted"},g).textContent=fmt(z.t);
    VZ.el("rect",{x:44,y:y+4,width:44,height:rh-8,rx:3,fill:TY[z.ty][1],"class":"b"},g);
    VZ.el("text",{x:66,y:y+21,"text-anchor":"middle",style:"font-size:11px;font-weight:600;fill:"+(z.ty==="b"?"var(--ink2)":"var(--chart-bg)")},g).textContent=z.m+"m";
    VZ.el("text",{x:96,y:y+21,"class":i===asel?"t-strong":""},g).textContent=(z.no?z.no+". ":"")+z.n;bindAg(g,i)});return}
- var H=112,s=VZ.svg(h,W,H,"Agenda as a timeline of session blocks"),x=VZ.lin(0,tot,0,W),c=0;
+ var H=112,s=VZ.svg(h,W,H,"Agenda as a timeline of session blocks"),x=VZ.lin(0,tot,0,W),c=0;s.setAttribute("role","group");
  agenda.forEach(function(z,i){var x0=x(c),w=x(c+z.m)-x0,g=VZ.el("g",{"class":"blk"+(i===asel?" sel":""),role:"button",tabindex:0,"aria-label":fmt(z.t)+" "+z.n+", "+z.m+" minutes"},s);
   VZ.el("rect",{x:x0+1,y:34,width:Math.max(2,w-2),height:50,rx:3,fill:TY[z.ty][1],"class":"b"},g);
   if(w>30)VZ.el("text",{x:x0+w/2,y:63,"text-anchor":"middle",style:"font-size:11.5px;font-weight:600;fill:"+(z.ty==="b"?"var(--ink2)":"var(--chart-bg)")},g).textContent=z.m+(w>46?" min":"");

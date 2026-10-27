@@ -22,6 +22,10 @@
 <header class="sitenav"><div class="in"><a class="brand" href="overview.html">Arpan Bakshi<span>Wipro ICD Practitioner, UKI</span></a><nav class="links about" aria-label="About me"><a href="ai.html">AI Workflow</a><a href="method.html">Method</a><a href="cv.html">CV</a></nav><button class="theme" type="button" aria-label="Switch to dark mode">Dark</button></div><nav class="appxbar" aria-label="Analysis pages"><div class="in"><a class="home" href="overview.html">Analysis</a><a href="role.html"><b>A1</b>The Role</a><a href="portfolio.html"><b>A2</b>Portfolio</a><a href="demand.html"><b>A3</b>Demand</a><a href="buyers.html" aria-current="page"><b>A4</b>Buyers</a><a href="accounts.html"><b>A5</b>Accounts</a><a href="alternatives.html"><b>A6</b>Competitors</a><a href="deal-shaping.html"><b>A7</b>Deals</a><a href="pursuits.html"><b>A8</b>Pursuits</a><a href="workshops.html"><b>A9</b>Workshops</a><a href="ai-engagement.html"><b>A10</b>AI Engagement</a><a href="first-months.html"><b>A11</b>First Months</a></div></nav></header><script>(function(){var r=document.documentElement,t=document.querySelector('.sitenav .theme');function cur(){return r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}function show(){var d=cur()==='dark';t.textContent=d?'Light':'Dark';t.setAttribute('aria-label','Switch to '+(d?'light':'dark')+' mode')}if(t){t.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}show()});show()}var c=document.querySelector('.appxbar [aria-current]');if(c&&c.scrollIntoView)c.scrollIntoView({block:'nearest',inline:'center'});})();</script>
 <main class="wrap page" id="main" tabindex="-1">
 <style>
+.by-vh{font-size:17px}
+.by-tld{display:grid;grid-template-columns:110px 1fr;gap:4px 16px;background:var(--panel);border-radius:6px;padding:12px 16px;margin-top:10px;font-size:14px}
+.by-tld b{font-weight:600}
+@media (max-width:600px){.by-tld{grid-template-columns:1fr}}
 .by-pg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
 .by-card{background:var(--panel);border-radius:6px;padding:18px 20px}
 .by-card h4{font:600 12px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);margin:0 0 10px}
@@ -107,14 +111,15 @@
 </section>
 
 <section class="viz lead-viz" aria-labelledby="by-h1">
-  <div class="viz-h"><h3 id="by-h1">Committee members</h3><p>Choose an executive to see what makes them act, what they measure and how they choose.</p></div>
+  <div class="viz-h"><h2 id="by-h1" class="by-vh">Committee members</h2><p>Choose an executive to see what makes them act, what they measure and how they choose.</p></div>
   <div class="tabs" role="tablist" aria-label="Executive" id="by-tabs" style="margin-top:0"></div>
   <div role="tabpanel" id="by-pp" aria-live="polite"></div>
   <div class="by-tl-h">
     <h4>Dated forces, January 2025 to March 2028</h4>
-    <p>The highlighted dots are the events that tend to move the selected executive; the line marks today, 27 October 2026. Select a dot for its detail.</p>
+    <p>The highlighted dots are the events that tend to move the selected executive; the line marks today, 27 October 2026. Select a dot to pin its detail below.</p>
   </div>
   <div id="by-tl"></div>
+  <div class="by-tld" id="by-tld" aria-live="polite"></div>
   <ul class="by-evl" id="by-evl"></ul>
 </section>
 
@@ -135,7 +140,7 @@
 <section class="sec">
   <span class="eyebrow">Objections</span>
   <h2>Objections and replies</h2>
-  <p class="intro">These are the objections I expect to an Indian IT services firm and to AI, by executive. Each reply is a draft message to test with account teams, with the public evidence behind it.</p>
+  <p class="intro">These are the objections I expect to choosing Wipro as a supplier and to AI, by executive. Each reply is a draft message to test with account teams, with the public evidence behind it.</p>
   <div class="viz">
     <div class="viz-h"><h3>Objection explorer</h3><p>Filter by executive or by topic, then select an objection to read the reply and its evidence.</p></div>
     <div class="btnrow" id="by-of-r" role="group" aria-label="Filter by executive" style="margin-top:0"></div>
@@ -165,11 +170,11 @@
   <h2>My work with executive buyers</h2>
   <p class="intro">The plan rests on three parts of my work: presenting to chief executives, training boards to use AI and selling advisory services to senior clients.</p>
   <div class="grid3 by-xp">
-    <div class="panel"><span class="big">£10m+</span><h3>Chief executive presentations</h3><p>At Foster + Partners my presentations to Fortune 500 chief executives helped the design studios win contracts worth more than £10m. Clients included Roche, Genentech, Alibaba, Apple, Oracle, Hyundai and JPMorgan Chase.</p><p>At SOM in New York I presented to executives at major Wall Street banks and won more than $3m a year in fees.</p></div>
+    <div class="panel"><span class="big">Fortune 500</span><h3>Chief executive presentations</h3><p>At Foster + Partners my presentations to Fortune 500 chief executives helped the design studios win contracts worth more than £10m. Clients included Roche, Genentech, Alibaba, Apple, Oracle, Hyundai and JPMorgan Chase.</p><p>At SOM in New York I presented to executives at major Wall Street banks and won more than $3m a year in fees.</p></div>
     <div class="panel"><span class="big"><b class="count" data-to="250" data-suffix="+">250+</b></span><h3>Board-level AI training</h3><p>At Atlas Learn I designed and delivered AI training for the board of directors of a FinTech company, and for another client's chief executive and its heads of HR, marketing and IT.</p><p>I have trained more than 250 senior professionals to use Claude Code, Cowork and other AI tools.</p></div>
     <div class="panel"><span class="big">£10m+ a year</span><h3>Advisory selling</h3><p>At Foster + Partners I co-created and launched a strategic advisory service line covering corporate environmental strategy, digital transformation and spatial consulting.</p><p>I led pitches and bids that won more than £10m a year in fees, including a multi-year contract with a global pharmaceutical company.</p></div>
   </div>
-  <div class="callout"><p><b>How it carries over.</b> Each of these buyers wanted a clear view of their own business before any talk of services. I would open every first meeting in the plan above the same way, with a short brief on the dated pressures facing that client.</p></div>
+  <div class="callout"><p><b>How it carries over.</b> I would open every first meeting in the plan above with a short brief on the dated pressures facing that client, drawn from the evidence on the Demand page.</p></div>
 </section>
 
 <section class="sources"><details class="more"><summary>Sources</summary><ul>
@@ -209,6 +214,8 @@
 <li>Wipro Form 20-F FY2026, sec.gov, including Designit studios and Wipro Financial Outsourcing Services Limited; Capco, "About us", capco.com (primary)</li>
 <li>Wipro Q2 FY27 earnings call transcript, 15 Oct 2026, wipro.com (primary)</li>
 <li>Crown Commercial Service supplier page for Wipro IT Services UK Societas, crowncommercial.gov.uk (primary, seen in search)</li>
+<li>Pzena Investment Management, "Highlighted holding: IT services", 16 Jul 2026, pzena.com (press)</li>
+<li>DSP Mutual Fund, "The Transcript", March 2026, dspim.com (press)</li>
 <li>Arpan Bakshi, CV (Atlas Learn, Foster + Partners, SOM)</li>
 </ul></details></section>
 
@@ -224,44 +231,45 @@ var R=[
   act:["Regulatory deadlines that land on the board, such as Consumer Duty for closed books from 31 Jul 2024 and motor finance redress contact from 30 Jun 2026","A public failure at a peer, such as the M&amp;S cyber attack in April 2025, which hit operating profit by up to about £300m","Peers using AI to change cost, such as BT's plan to cut up to 55,000 roles by FY2030, about 10,000 through AI"],
   m:["Cost-income ratio","Operating profit","Complaints and uphold rates","Regulatory findings","Growth"],
   c:["A named outcome with a date","A UK reference in the same sector","Risk shared in the commercial model","One accountable partner"],
-  rel:"I meet them through the Wipro client partner with a two-page outside-in brief on their dated pressures. At Foster + Partners my presentations to Fortune 500 chief executives helped win contracts worth more than £10m, and I would bring the same discipline: their business first, a short story, numbers they recognise."},
+  rel:"I would meet them through the Wipro client partner with a two-page outside-in brief on their dated pressures. At Foster + Partners my presentations to Fortune 500 chief executives helped win contracts worth more than £10m, and I would bring the same discipline: their business first, a short story, numbers they recognise."},
  {k:"cio",s:"CIO or CTO",n:"Chief information or technology officer",
   role:"Owns the estate, the change calendar and delivery risk.",
   act:["Legacy risk ratings: 28% of central government systems were legacy in 2024, and 22% of those were red-rated","Hard migration dates: pensions dashboards by 31 Oct 2026, PSTN switch-off on 31 Jan 2027 and MHHS migration by 7 May 2027","Operational resilience impact tolerances from 31 Mar 2025 and DORA from 17 Jan 2025"],
   m:["Unplanned outage hours","Change failure rate","Release frequency","Run cost per application","Legacy retired"],
   c:["Engineering depth and tooling","Migration and test method","Team continuity","Alliance certifications","References"],
-  rel:"I bring Wipro architects, quality engineering and delivery leads to the first technical session and stay in the room. I use Claude Code, Python and C# myself, so I can hold the conversation on AI-assisted engineering and on what WEGA changes in a modernisation plan."},
+  rel:"I would bring Wipro architects, quality engineering and delivery leads to the first technical session and stay in the room. I use Claude Code, Python and C# myself, so I can hold the conversation on AI-assisted engineering and on what WEGA changes in a modernisation plan."},
  {k:"cdo",s:"Chief Digital Officer",n:"Chief digital officer",
   role:"Owns digital services, take-up and the product teams.",
   act:["Public digital targets: the Blueprint for Modern Digital Government (21 Jan 2025) and the finding that 47% of central government services still rely on phone or paper","The NHS App as the front door under the 10 Year Health Plan (3 Jul 2025), with the Single Patient Record viewable in the app by 2028","The FCA's Mills Review on AI in retail financial services (6 Jul 2026), which lays foundations for agentic finance"],
   m:["Digital take-up","Share of tasks self-served","App ratings","Time to first release","Customer effort"],
   c:["Design and engineering in one team","Speed to a working prototype","A product operating model","Data and integration"],
-  rel:"I run working sessions on their live services with Designit, Wipro's design business, which has a London studio. I teach executives to use AI tools hands-on at Atlas Learn, so the session produces a prototype they have used themselves."},
+  rel:"I would run working sessions on their live services with Designit, Wipro's design business, which has a London studio. I teach executives to use AI tools hands-on at Atlas Learn, so the session produces a prototype they have used themselves."},
  {k:"cx",s:"Chief Customer or CX Officer",n:"Chief customer or customer experience officer",
   role:"Owns satisfaction, complaints and the customer outcomes the regulator tests.",
   act:["Complaint data: the Financial Ombudsman Service received 214,600 new complaints in 2025/26 and upheld 30% of those it resolved","The July 2026 UKCSI, where utilities were the lowest sector at 73.7 and retail lost the top spot for the first time since 2008","Ireland's revised Consumer Protection Code, applying from 24 Mar 2026, and the DMCC Act enforcement regime from 6 Apr 2025"],
   m:["Customer satisfaction","Complaints per 100,000","First-contact resolution","Cost to serve","Vulnerable customer outcomes"],
   c:["A proven CX method","Evidence that AI helps agents","Human handover","Brand and conduct safety"],
-  rel:"I start with their own complaint and satisfaction data and a journey mapping session with front-line staff. The evidence I lead with is on assisting agents, where a study of 5,179 support agents found 14% more issues resolved per hour."},
+  rel:"I would start with their own complaint and satisfaction data and a journey mapping session with front-line staff. The evidence I lead with is on assisting agents, where a study of 5,179 support agents found 14% more issues resolved per hour."},
  {k:"cfo",s:"CFO",n:"Chief financial officer",
   role:"Approves the business case and the commercial model.",
   act:["AI-driven price deflation, which a March 2026 market summary puts at roughly 2 to 4% a year in traditional segments","Clients reopening IT services contracts within 24 months of signing (HFS Research, 30 Jun 2026)","Remediation costs such as the motor finance redress schemes, estimated at about £9.1bn across the industry"],
   m:["Total cost of ownership","Payback period","Benefits realised","Cash and capital profile","Price certainty"],
   c:["Commercial model and who carries risk","An agreed baseline","Exit and step-down terms","Gain-share mechanics"],
-  rel:"I agree with their team how the baseline is measured before any proposal, then build the business case with them. My Cambridge certificate in sustainable finance and years of fee negotiation help me speak their language on value and risk."},
+  rel:"I would agree with their team how the baseline is measured before any proposal, then build the business case with them. My Cambridge certificate in sustainable finance and years of fee negotiation help me speak their language on value and risk."},
  {k:"risk",s:"CISO or risk",n:"Chief information security officer, chief risk officer or compliance",
   role:"Can stop a deal late on third-party, data or AI risk.",
   act:["DORA from 17 Jan 2025, with Irish registers of ICT third parties due by 4 Apr 2025 and updated yearly","The Data (Use and Access) Act regime for automated decisions from 5 Feb 2026, where meaningful human involvement is required and token review falls short","EU AI Act duties: Article 50 transparency from 2 Aug 2026 and Annex III high-risk duties from 2 Dec 2027"],
   m:["Third-party risk ratings","Impact tolerance breaches","Audit findings","Model risk","Security incidents"],
   c:["Supplier controls and data location","AI governance and logging","Regulated status where needed","Incident response"],
-  rel:"I involve them in the first design session and share Wipro's security and AI governance approach early. A risk lead who helped shape the design is far more likely to support the case than one who meets it at contract."},
+  rel:"I would involve them in the first design session and share Wipro's security and AI governance approach early. In my judgement a risk lead who helped shape the design is more likely to support the case at contract."},
  {k:"proc",s:"Procurement",n:"Procurement, or the commercial function in the public sector",
   role:"Runs the process, the route to market and the contract terms.",
   act:["The Procurement Act 2023, in force since 24 Feb 2025, with award to the most advantageous tender against published criteria","G-Cloud 15, launched in August 2026, with G-Cloud 14 closing on 28 Oct 2026","Published KPIs: contracts above £5m need at least three KPIs set before signature, with performance published at least every 12 months"],
   m:["Savings against budget","Compliance with procedure","Supplier KPI performance","Competition"],
   c:["Approved route to market","Price and pricing model","Measurable KPIs","Clear answers on AI use (PPN 017)"],
-  rel:"I respect the process and engage early through market engagement where the buyer offers it. I shape the requirement so the KPIs they must publish are ones the price can link to, and I keep every contact within the procedure's rules."}
+  rel:"I would respect the process and engage early through market engagement where the buyer offers it. I would help shape the requirement so the KPIs they must publish are ones the price can link to, and keep every contact within the procedure's rules."}
 ];
+var SHORT={ceo:"CEO or COO",cio:"CIO or CTO",cdo:"CDO",cx:"CX officer",cfo:"CFO",risk:"CISO or risk",proc:"Procurement"};
 var RK={};R.forEach(function(r,i){RK[r.k]=i});
 
 var E=[
@@ -307,9 +315,9 @@ function drawPersona(){var r=R[cur],no=O.filter(function(o){return o.r===r.k}).l
 }
 
 /* dated forces timeline */
-var tlHost=document.getElementById("by-tl"),evl=document.getElementById("by-evl"),tlDots=[];
+var tlHost=document.getElementById("by-tl"),evl=document.getElementById("by-evl"),tlDots=[],tlSel=-1;
 function drawTL(W){var narrow=W<600,H=narrow?150:132,pl=10,pr=10,top=22;
- var s=VZ.svg(tlHost,W,H,"Timeline of dated forces from January 2025 to June 2028");
+ var s=VZ.svg(tlHost,W,H,"Timeline of dated forces from January 2025 to June 2028");s.setAttribute("role","group");
  var x=VZ.lin(T0,T1,pl,W-pr);
  var base=H-26;
  VZ.el("line",{x1:pl,x2:W-pr,y1:base,y2:base,"class":"axis"},s);
@@ -321,9 +329,13 @@ function drawTL(W){var narrow=W<600,H=narrow?150:132,pl=10,pr=10,top=22;
   var g=VZ.el("g",{"class":"ev",role:"button","aria-label":e[1]+": "+e[2].replace("&amp;","and")},s);
   var c=VZ.el("circle",{cx:xx,cy:base-10-l*step,r:6,fill:"var(--ink3)",stroke:"var(--chart-bg)","stroke-width":1.5},g);
   VZ.tip(g,function(){return"<b>"+e[1]+"</b>"+e[2]+'<div class="m">Source: '+e[3]+"</div>"});
-  tlDots.push([g,c,e])});
+  g.setAttribute("tabindex","0");var go=function(){tlSel=i;paintTL()};g.addEventListener("click",go);g.addEventListener("keydown",function(ev){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();go()}});
+  tlDots.push([g,c,e,i])});
  paintTL()}
-function paintTL(){var k=R[cur].k;tlDots.forEach(function(d){var on=d[2][4].indexOf(k)>=0;d[1].setAttribute("fill",on?"var(--accent)":"var(--ink3)");d[1].setAttribute("r",on?7:4.5);d[1].style.opacity=on?1:.45});
+function paintTL(){var k=R[cur].k;
+ if(tlSel<0||E[tlSel][4].indexOf(k)<0){tlSel=-1;for(var j=0;j<E.length;j++){if(E[j][4].indexOf(k)>=0&&new Date(E[j][0]).getTime()>NOW){tlSel=j;break}}if(tlSel<0)tlSel=E.map(function(e){return e[4].indexOf(k)>=0}).lastIndexOf(true)}
+ tlDots.forEach(function(d){var on=d[2][4].indexOf(k)>=0,sl=d[3]===tlSel;d[1].setAttribute("fill",on?"var(--accent)":"var(--ink3)");d[1].setAttribute("r",sl?9:on?7:4.5);d[1].setAttribute("stroke",sl?"var(--ink1)":"var(--chart-bg)");d[1].setAttribute("stroke-width",sl?2.5:1.5);d[1].style.opacity=on?1:.45;d[0].setAttribute("aria-pressed",sl)});
+ var se=E[tlSel];if(se){var who=se[4].map(function(x){return SHORT[x]}).join(", ");document.getElementById("by-tld").innerHTML='<div><b>'+se[1]+'</b></div><div>'+se[2]+'. Moves: '+esc(who)+'. <span class="src">Source: '+se[3]+'</span></div>'}
  var on=E.filter(function(e){return e[4].indexOf(k)>=0});
  evl.innerHTML=on.map(function(e){var fut=new Date(e[0]).getTime()>NOW;return'<li class="'+(fut?"fut":"")+'"><b>'+e[1]+'</b><span>'+e[2]+' <span class="src">('+e[3]+')</span></span></li>'}).join("")}
 responsive(tlHost,drawTL);
@@ -342,9 +354,8 @@ var SC={ceo:[[9,6],[7,3],[6,3],[8,3],[6,2]],cio:[[7,5],[8,8],[9,9],[6,6],[8,9]],
 var stg=0,stb=document.getElementById("by-stg");
 ST.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.textContent=(i+1)+". "+s;b.setAttribute("aria-pressed",i===0);b.onclick=function(){stg=i;[].forEach.call(stb.children,function(x,j){x.setAttribute("aria-pressed",j===i)});moveSC();drawLead()};stb.appendChild(b)});
 var scHost=document.getElementById("by-sc"),nodes={},scX,scY;
-var SHORT={ceo:"CEO or COO",cio:"CIO or CTO",cdo:"CDO",cx:"CX officer",cfo:"CFO",risk:"CISO or risk",proc:"Procurement"};
 function drawSC(W){var H=Math.min(420,Math.max(320,W*.72)),pl=40,pr=16,pt=14,pb=40;
- var s=VZ.svg(scHost,W,H,"Scatter of committee members by influence and involvement");
+ var s=VZ.svg(scHost,W,H,"Scatter of committee members by influence and involvement");s.setAttribute("role","group");
  scX=VZ.lin(0,10,pl,W-pr);scY=VZ.lin(0,10,H-pb,pt);
  for(var v=0;v<=10;v+=2){VZ.el("line",{x1:scX(v),x2:scX(v),y1:pt,y2:H-pb,"class":"grid"},s);VZ.el("line",{x1:pl,x2:W-pr,y1:scY(v),y2:scY(v),"class":"grid"},s);
   var a=VZ.el("text",{x:scX(v),y:H-pb+16,"text-anchor":"middle","class":"t-muted"},s);a.textContent=v;var b=VZ.el("text",{x:pl-8,y:scY(v)+4,"text-anchor":"end","class":"t-muted"},s);b.textContent=v}
@@ -358,7 +369,7 @@ function drawSC(W){var H=Math.min(420,Math.max(320,W*.72)),pl=40,pr=16,pt=14,pb=
   VZ.el("circle",{cx:0,cy:0,r:9,fill:VZ.s(i+1),stroke:"var(--chart-bg)","stroke-width":2},g);
   var t=VZ.el("text",{x:13,y:4,"class":"t-strong"},g);t.textContent=SHORT[r.k];
   VZ.tip(g,function(){var v=SC[r.k][stg];return"<b>"+r.s+"</b>"+ST[stg]+'<div class="m">Influence '+v[0]+", involvement "+v[1]+" (my judgement)</div>"});
-  g.addEventListener("click",function(){var b=document.getElementById("by-t"+i);if(b)b.click()});
+  g.setAttribute("tabindex","0");var gob=function(){var b=document.getElementById("by-t"+i);if(b){b.click();b.scrollIntoView({behavior:"smooth",block:"center"})}};g.addEventListener("click",gob);g.addEventListener("keydown",function(ev){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();gob()}});
   nodes[r.k]=g});
  moveSC()}
 function moveSC(){if(!scX)return;var used={};R.forEach(function(r,i){var v=SC[r.k][stg],key=v[0]+"_"+v[1],o=used[key]||0;used[key]=o+1;
@@ -393,13 +404,13 @@ var O=[
 var fR="all",fT="all",sel=0;
 var orb=document.getElementById("by-of-r"),otb=document.getElementById("by-of-t");
 [["all","All executives"]].concat(R.map(function(r){return[r.k,r.s]})).forEach(function(x){var b=document.createElement("button");b.type="button";b.dataset.k=x[0];b.textContent=x[1];b.onclick=function(){fR=x[0];syncF();drawOL(true)};orb.appendChild(b)});
-[["all","All topics"],["firm","Indian IT services firm"],["ai","AI"]].forEach(function(x){var b=document.createElement("button");b.type="button";b.dataset.k=x[0];b.textContent=x[1];b.onclick=function(){fT=x[0];syncF();drawOL(true)};otb.appendChild(b)});
+[["all","All topics"],["firm","Choosing a supplier"],["ai","AI"]].forEach(function(x){var b=document.createElement("button");b.type="button";b.dataset.k=x[0];b.textContent=x[1];b.onclick=function(){fT=x[0];syncF();drawOL(true)};otb.appendChild(b)});
 function syncF(){[].forEach.call(orb.children,function(b){b.setAttribute("aria-pressed",b.dataset.k===fR)});[].forEach.call(otb.children,function(b){b.setAttribute("aria-pressed",b.dataset.k===fT)})}
 syncF();
 function vis(){return O.map(function(o,i){return i}).filter(function(i){return(fR==="all"||O[i].r===fR)&&(fT==="all"||O[i].t===fT)})}
 function drawOL(reset){var v=vis(),ol=document.getElementById("by-ol");if(reset||v.indexOf(sel)<0)sel=v.length?v[0]:-1;
  document.getElementById("by-cnt").textContent=v.length+" of "+O.length+" objections shown.";
- ol.innerHTML=v.map(function(i){var o=O[i];return'<li><button type="button" data-i="'+i+'" aria-pressed="'+(i===sel)+'"><small><span>'+esc(R[RK[o.r]].s)+'</span><span class="t">'+(o.t==="ai"?"AI":"Indian IT services firm")+'</span></small>'+o.q+'</button></li>'}).join("")||'<li class="mini">No objections match this filter.</li>';
+ ol.innerHTML=v.map(function(i){var o=O[i];return'<li><button type="button" data-i="'+i+'" aria-pressed="'+(i===sel)+'"><small><span>'+esc(R[RK[o.r]].s)+'</span><span class="t">'+(o.t==="ai"?"AI":"Choosing a supplier")+'</span></small>'+o.q+'</button></li>'}).join("")||'<li class="mini">No objections match this filter.</li>';
  [].forEach.call(ol.querySelectorAll("button"),function(b){b.onclick=function(){sel=+b.dataset.i;[].forEach.call(ol.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b)});drawOD()}});
  drawOD()}
 function drawOD(){var od=document.getElementById("by-od");if(sel<0){od.innerHTML='<p>Choose another filter.</p>';return}var o=O[sel];

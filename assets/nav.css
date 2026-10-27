@@ -55,3 +55,5 @@ html:has(.appxbar){scroll-padding-top:112px}
 @media (max-width:420px){.sitenav .links.about a{padding:8px 7px}}
 html:has(.appxbar){scroll-padding-top:112px}
 .appxbar a{padding:9px 8px}
+@media (max-width:480px){.sitenav .in{padding:0 14px;gap:6px}.sitenav .brand{font-size:15px}.sitenav .links.about a{padding:8px 6px;font-size:13px}.sitenav .theme{padding:7px 10px;margin-left:4px}}
+@media (max-width:360px){.sitenav .brand{display:none}.sitenav .links.about{margin-left:0}.sitenav .theme{margin-left:auto}}

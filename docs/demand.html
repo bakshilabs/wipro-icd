@@ -24,7 +24,7 @@
 <style>
 .dm-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
 .dm-stats .stat span.r{color:var(--ink1);font-size:13.5px;margin-top:10px}
-.dm-stats .stat span.s{font-size:11.5px;color:var(--ink3);margin-top:6px}
+.dm-stats .stat span.s{font-size:12px;color:var(--ink2);margin-top:6px}
 .dm-hl{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:20px;align-items:start}
 .dm-cell{cursor:pointer}
 .dm-cell:focus-visible{outline:none}
@@ -95,7 +95,7 @@
     <div class="btnrow" role="group" aria-label="Sort sectors" id="dm-sort" style="margin-top:0"></div>
     <div class="dm-hl" style="margin-top:14px">
       <div id="dm-heat"></div>
-      <aside class="dm-card" id="dm-hcard" aria-live="polite"></aside>
+      <div class="dm-card" id="dm-hcard" aria-live="polite"></div>
     </div>
   </div>
 </section>
@@ -109,7 +109,7 @@
     <div class="btnrow" role="group" aria-label="Filter by sector" id="dm-filter" style="margin-top:0"></div>
     <div id="dm-tl" style="margin-top:14px"></div>
     <div class="dm-evd" id="dm-evd" aria-live="polite"></div>
-    <div class="dm-list"><table class="t"><thead><tr><th>Date</th><th>Event</th><th>Sectors</th></tr></thead><tbody id="dm-rows"></tbody></table></div>
+    <div class="dm-list" tabindex="0" role="region" aria-label="Forcing dates list"><table class="t"><thead><tr><th>Date</th><th>Event</th><th>Sectors</th></tr></thead><tbody id="dm-rows"></tbody></table></div>
   </div>
 </section>
 
@@ -146,7 +146,7 @@
   <p class="intro">The dates above give each account a timetable. My approach is to start from the client's dated obligations, size the work with the practices and bring a combined proposition to the client partner before an RFP exists.</p>
   <div class="grid3">
     <div class="panel"><h3>Start from a date</h3><p>For each target account I would list the forcing dates that apply to it and the internal programme that has to meet each one. That list becomes the first conversation with the client partner.</p></div>
-    <div class="panel"><h3>Shape before the RFP</h3><p>At Foster + Partners I led pitches and bids that won more than £10m a year in fees, and the strongest wins came from shaping the brief with the client early. I would use the same approach with executive workshops here.</p></div>
+    <div class="panel"><h3>Shape before the RFP</h3><p>At Foster + Partners I led pitches and bids that won more than £10m a year in fees and presented to Fortune 500 chief executives. Here I would use executive workshops to shape the brief with the client before a formal tender.</p></div>
     <div class="panel"><h3>Join the offerings up</h3><p>Most sectors score 4 or 5 in more than one column. I would combine offerings, for example CX with modernisation and QE, so one programme answers several dated pressures at once. The Portfolio page shows how.</p></div>
   </div>
 </section>
@@ -174,7 +174,7 @@
 <li>Bedford Borough Council and Waverley Borough Council, Procurement Act 2023 pages. (primary, public bodies)</li>
 <li>TechMarketView, "G-Cloud 15 launches", 11 August 2026; Open Access Government on G-Cloud 15 and the Government Commercial Agency. (press)</li>
 <li>Hunton and Kennedys on Data (Use and Access) Act 2025 commencement. (press)</li>
-<li>Gibson Dunn and Sidley on the EU AI Act Digital Omnibus agreement, May and June 2026. (press)</li>
+<li>Gibson Dunn and Sidley on the EU AI Act Digital Omnibus agreement, May and June 2026; Future of Privacy Forum and DLA Piper on Regulation (EU) 2026/1744, 2026. (press)</li>
 <li>RPC and William Fry on Ireland's Regulation of Artificial Intelligence Bill 2026. (press)</li>
 <li>gov.ie, Connecting Government 2030. (primary); CSO, Information Society Statistics: Enterprises 2025. cso.ie (primary)</li>
 <li>UKAuthority, HTN and Government Transformation on the 10 Year Health Plan, July 2025. (press)</li>
@@ -289,9 +289,9 @@ function hCard(){var s=SEC[hSel[0]],j=hSel[1],v=s.s[j];
  [].forEach.call(document.querySelectorAll("#dm-heat .dm-cell"),function(g){g.classList.toggle("sel",+g.dataset.r===hSel[0]&&+g.dataset.c===hSel[1])})}
 var heatHost=document.getElementById("dm-heat"),hw=0;
 function drawHeat(){var W=heatHost.clientWidth;if(!W)return;hw=W;heatHost.innerHTML="";var narrow=W<560,lw=narrow?112:180,tw=narrow?0:56,cw=(W-lw-tw)/4,hh=narrow?30:46,rh=narrow?46:52,H=hh+SEC.length*rh;
- var s=VZ.svg(heatHost,W,H,"Sector by offering demand matrix");
+ var s=VZ.svg(heatHost,W,H,"Sector by offering demand matrix");s.setAttribute("role","group");
  var lvl=["","var(--seq-1)","var(--seq-2)","var(--seq-3)","var(--seq-4)","var(--seq-5)"];
- COLS.forEach(function(c,j){var cx=lw+cw*j+cw/2;if(narrow)txt(s,cx,hh-10,COLS_S[j],"t-strong","middle");else{var w=c.split(" "),h=Math.ceil(w.length/2);txt(s,cx,hh-24,w.slice(0,h).join(" "),"t-strong","middle");txt(s,cx,hh-9,w.slice(h).join(" "),"t-strong","middle")}});
+ COLS.forEach(function(c,j){var cx=lw+cw*j+cw/2;if(narrow)txt(s,cx,hh-10,COLS_S[j],"t-strong","middle");else{var L=[["AI","solutions"],["CX and","digital"],["App and legacy","modernisation"],["Quality","engineering"]][j];txt(s,cx,hh-24,L[0],"t-strong","middle");txt(s,cx,hh-9,L[1],"t-strong","middle")}});
  if(!narrow)txt(s,lw+cw*4+tw/2,hh-9,"Total","t-strong","middle");
  order().forEach(function(sec,k){var y=hh+k*rh;var nm=narrow?sec.n.replace(" and consumer","").replace(" and energy","").replace(" and media","").replace(" and transport","").replace("Financial services","Financial svcs"):sec.n;
   txt(s,0,y+rh/2+4,nm,"t-strong").setAttribute("style","font-size:"+(narrow?12:13)+"px");
@@ -331,17 +331,17 @@ var EV=[
  ["2027-01-31","PSTN switch-off","tel","The copper phone network closes; about 1.5m lines remained in July 2026.","Migration factories and customer communication automation.","C86"],
  ["2027-04-01","New DHSC after NHS England merger","hea","NHS England folds into the Department of Health and Social Care.","System consolidation and rationalisation.","C64"],
  ["2027-05-07","Half-hourly settlement migration complete","utl","Suppliers must complete meter migration; dual running continues to July 2027.","Settlement integration and testing.","C79"],
- ["2027-12-02","EU AI Act high-risk duties (Annex III)","ie","Moved to this date by the provisional Digital Omnibus deal (to confirm in the Official Journal).","AI governance, testing and documentation for Irish and EU operations.","C18"],
+ ["2027-12-02","EU AI Act high-risk duties (Annex III)","ie","Moved to this date by the EU AI Act Digital Omnibus. Law-firm summaries report publication in the Official Journal on 24 July 2026 (to confirm on EUR-Lex).","AI governance, testing and documentation for Irish and EU operations.","C18"],
  ["2027-12-31","BBC Charter expires","tel","The Charter review consulted on iPlayer advertising and subscription options.","Digital product and subscription platforms.","C93"],
  ["2028-01-31","Motor finance redress payments end","fs","Redress payments under the FCA schemes run to January 2028.","Case handling and complaint journeys.","C23"],
  ["2028-03-31","Telecoms Security Code measures due","tel","Many measures fall due by March 2028, with later ones to 2029.","Security assurance and testing.","C90"],
- ["2028-06-30","Single Patient Record in the NHS App","hea","A national record designated as critical national infrastructure, viewable in the app by 2028.","Integration (FHIR and APIs), app QE and data work.","C61"],
+ ["2028-12-31","Single Patient Record in the NHS App (by 2028)","hea","A national record designated as critical national infrastructure, viewable in the app by 2028. The month is unstated, so the marker sits at the end of 2028.","Integration (FHIR and APIs), app QE and data work.","C61"],
  ["2028-08-02","EU AI Act Annex I duties","ie","High-risk duties for products under EU safety law, moved to this date (to confirm).","AI assurance for product companies.","C18"]
 ];
 EV.forEach(function(e,i){e.i=i;e.ss=e[2].split(" ")});
 EV.sort(function(a,b){return a[0]<b[0]?-1:a[0]>b[0]?1:0});EV.forEach(function(e,i){e.i=i});
 /* the Ireland claims and EU AI Act rows have their own sources */
-EV.forEach(function(e){if(e[1].indexOf("Consumer Protection Code")>=0)e[5]="Central Bank of Ireland";if(e[1].indexOf("EU AI Act")>=0)e[5]="Gibson Dunn; Sidley";if(e[1].indexOf("Ireland AI Bill")>=0)e[5]="RPC; William Fry";if(e[1].indexOf("BBC")>=0)e[5]="Broadband TV News";});
+EV.forEach(function(e){if(e[1].indexOf("Consumer Protection Code")>=0)e[5]="Central Bank of Ireland";if(e[1].indexOf("EU AI Act")>=0)e[5]="Gibson Dunn; Sidley; FPF; DLA Piper (press)";if(e[1].indexOf("Ireland AI Bill")>=0)e[5]="RPC; William Fry";if(e[1].indexOf("BBC")>=0)e[5]="Broadband TV News";});
 var fSel="all",eSel=EV.filter(function(e){return e[0]==="2026-10-31"})[0].i;
 var SN={};SECT.forEach(function(s){SN[s[0]]=s});
 function fmt(d){var t=new Date(d+"T00:00:00Z");return t.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"})}
@@ -357,14 +357,14 @@ function apply(){[].forEach.call(document.querySelectorAll("#dm-tl .dm-ev"),func
  evCard()}
 function tm(s){return new Date(s+"T00:00:00Z").getTime()}
 responsive(document.getElementById("dm-tl"),function(W){var host=document.getElementById("dm-tl"),narrow=W<640,lw=narrow?78:150,rh=narrow?34:38,H=SECT.length*rh+44,t0=tm("2024-01-01"),t1=tm("2028-12-31"),X=VZ.lin(t0,t1,lw,W-8);
- var s=VZ.svg(host,W,H,"Forcing dates timeline 2024 to 2028");
+ var s=VZ.svg(host,W,H,"Forcing dates timeline 2024 to 2028");s.setAttribute("role","group");
  for(var y=2024;y<=2028;y++){var x=X(tm(y+"-01-01"));VZ.el("line",{x1:x,x2:x,y1:0,y2:SECT.length*rh,"class":"grid"},s);txt(s,x+(narrow?2:4),SECT.length*rh+18,String(y),"t-strong",narrow?"start":"start")}
  SECT.forEach(function(sc,i){var yy=i*rh+rh/2;txt(s,0,yy+4,narrow?sc[1].replace(" and media","").replace("Financial services","Financial").replace("Public sector","Public"):sc[1],"t-strong").setAttribute("style","font-size:"+(narrow?11.5:12.5)+"px");VZ.el("line",{x1:lw,x2:W-8,y1:yy,y2:yy,"class":"axis"},s)});
  var tx=X(tm("2026-10-27"));VZ.el("line",{x1:tx,x2:tx,y1:-4,y2:SECT.length*rh+24,stroke:"var(--ink1)","stroke-dasharray":"3 3"},s);txt(s,tx+4,SECT.length*rh+36,"Today","t-muted");
  EV.forEach(function(e){e.ss.forEach(function(k){var li=SECT.map(function(x){return x[0]}).indexOf(k),yy=li*rh+rh/2,g=VZ.el("g",{"class":"dm-ev","data-i":e.i,"aria-label":fmt(e[0])+": "+e[1]},s);
   VZ.el("circle",{cx:X(tm(e[0])),cy:yy,r:narrow?6:7.5,fill:"var(--s"+SN[k][2]+")",stroke:"var(--chart-bg)","stroke-width":1.5},g);
   VZ.tip(g,function(){return "<b>"+esc(e[1])+"</b><span class='m'>"+esc(fmt(e[0]))+"</span>"});
-  g.addEventListener("click",function(){eSel=e.i;apply()})})});
+  key(g,function(){eSel=e.i;apply()})})});
  apply()});
 
 /* ---------- evidence bars ---------- */
@@ -391,7 +391,7 @@ addEventListener("resize",function(){if(document.getElementById("dm-bars").clien
 var PP=[
  {n:"Financial services",h:0,buy:"COO, CIO, chief customer officer and operational resilience lead at banks, insurers, pension administrators and building societies.",dr:"Consumer Duty on closed books since July 2024; operational resilience since March 2025; pensions dashboards by 31 October 2026; motor finance redress to January 2028; FOS complaints at 214,600 a year.",off:"AI-led complaint and service handling, closed-book platform modernisation, and QE for resilience, with Capco on the business case.",ref:"Phoenix Group, £500m over 10 years with ALPHA platform modernisation (March 2025); an agentic AI payments-data deal for a leading UK financial services group (Q2 FY26).",q:"Which of your important business services would breach its impact tolerance first if a core platform change went wrong?",m:"Your closed books and complaint volumes carry the same conduct duty as your new products. We would modernise the platforms behind them and put AI into complaint handling with human review, so outcomes improve and resilience evidence comes as part of the work."},
  {n:"Public sector",h:1,buy:"Chief digital and information officer, service owners and commercial leads in departments and arm's-length bodies.",dr:"28% of systems legacy with 22% of those red-rated; 47% of services non-digital; Procurement Act since February 2025; G-Cloud 15 from August 2026.",off:"Legacy and mainframe modernisation with data migration assurance, service digitisation and AI tools bought through G-Cloud 15.",ref:"HM Treasury service integration across 27 processes, plus AI-in-policy and HR operating model work (from 2022); Crown Commercial Service supplier listings.",q:"Which red-rated system carries the most policy risk in the next spending period, and what would replacing it make possible?",m:"Your department runs services that still depend on systems the government's own review rates as high risk. We would start with the red-rated system that blocks the most digital service and modernise it in stages, with assurance at each step."},
- {n:"Health",h:2,buy:"Chief clinical information officer, director of digital, and programme leads for the NHS App, records and workforce systems.",dr:"10 Year Health Plan (July 2025); NHS England merging into DHSC from April 2027; Single Patient Record in the app by 2028; HSE One Health Record tender in Ireland.",off:"Integration through FHIR and APIs, digital applications and app QE, and AI triage with safety guardrails.",ref:"Agentforce healthcare agents (March 2025) and healthcare as a focus industry of the Claude Applied AI CoE (June 2026). I found no named UK NHS deal for Wipro, so I would lead with method and partners.",q:"Which records must be visible in the NHS App by 2028, and which systems hold them today?",m:"The plan makes the NHS App the front door and promises a single record by 2028. We would connect the systems that hold that record, test them to clinical safety standards and add AI guidance with clear human oversight."},
+ {n:"Health",h:2,buy:"Chief clinical information officer, director of digital, and programme leads for the NHS App, records and workforce systems.",dr:"10 Year Health Plan (July 2025); NHS England merging into DHSC from April 2027; Single Patient Record in the app by 2028; HSE One Health Record tender in Ireland.",off:"Integration through FHIR and APIs, digital applications and app QE, and AI triage with safety guardrails.",ref:"Agentforce healthcare agents (March 2025) and healthcare as a focus industry of the Claude Applied AI CoE (June 2026). I would confirm with the practice which UK health references Wipro can cite, and lead with method and partners.",q:"Which records must be visible in the NHS App by 2028, and which systems hold them today?",m:"The plan makes the NHS App the front door and promises a single record by 2028. We would connect the systems that hold that record, test them to clinical safety standards and add AI guidance with clear human oversight."},
  {n:"Retail and consumer",h:3,buy:"Chief digital officer, ecommerce director, CMO and chief customer officer.",dr:"About 27% of sales online; DMCC Act enforcement since April 2025; retail lost the top UKCSI spot in July 2026; cyber attacks on M&S and Co-op in 2025.",off:"Digital experience and commerce with Adobe or Salesforce, AI for service and personalisation, and recovery and peak-load testing.",ref:"Adobe practice with 860+ accredited consultants and 450+ engagements; Designit London studio; Salesforce Summit partner.",q:"Where in the online customer journey do you lose the most customers, and what does the contact centre hear about it?",m:"Retail has lost its lead in customer satisfaction for the first time since 2008. We would redesign the journeys where customers drop out, with AI service that hands over cleanly to staff and testing that holds up at peak."},
  {n:"Utilities and energy",h:4,buy:"CIO, customer operations director and settlement programme lead at suppliers; regulatory and transformation directors at water companies.",dr:"Half-hourly settlement: migration ready by 28 October 2026 and complete by 7 May 2027; lowest UKCSI sector at 73.7; Energy Ombudsman cases up in H1 2026; water regulator reform.",off:"Settlement integration and testing, billing modernisation and agent assist for customer service.",ref:"Uniper QE: 15% shorter test cycle, 68% regression automation and 28% cost reduction; Capco Capability-as-a-Service for a leading UK energy trading company (Q4 FY26); a Utilities CPQ win in Europe.",q:"How many of your meters are still to migrate, and what does a failed cut-over cost you in billing complaints?",m:"Settlement migration must finish by May 2027, while customers rate utilities lowest of any sector. We would test the cut-over end to end and give agents AI support on billing queries, so the migration and the complaint numbers move in the right direction together."},
  {n:"Telecoms and media",h:5,buy:"CIO, chief customer officer, and BSS and OSS transformation leads.",dr:"PSTN switch-off on 31 January 2027 with about 1.5m lines left in July 2026; VodafoneThree integration; mid-contract price rules; Telecoms Security Code to 2028.",off:"Migration support with customer communication automation, BSS and OSS consolidation, and security assurance testing.",ref:"Vodafone Qatar QE (25% cost reduction); Enterprise Telco AI in Wipro Intelligence; a GenAI digital experience win with a European telco.",q:"Which customer groups are hardest to move before the switch-off, and how are you reaching them now?",m:"The copper network closes on 31 January 2027 and the last customers are the hardest to move. We would automate the outreach and the ordering steps, and consolidate the systems behind them so the work also counts towards your integration savings."},

@@ -63,12 +63,12 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
 <section class="sec" aria-labelledby="pu-h0">
   <span class="eyebrow">Benchmarks</span>
   <h2 id="pu-h0">Win rates and go/no-go</h2>
-  <p class="intro">The Loopio 2026 report surveyed 1,533 bid teams on their 2025 results. Average win rates fell, and fewer teams used a formal go/no-go decision, although most top performers still do.</p>
+  <p class="intro">The Loopio 2026 report, with APMP, drew on 1,533 respondents and covers 2025. Average win rates fell, and fewer teams used a formal go/no-go decision, although most top performers still do.</p>
   <div class="stats4 pu-stats">
-    <div class="stat rv"><b class="count" data-to="39" data-suffix="%">0%</b><span>Average RFP win rate in 2025, down from 45% in 2024</span></div>
-    <div class="stat rv hi"><b class="count" data-to="47" data-suffix="%">0%</b><span>UK win rate, the highest of any region</span></div>
-    <div class="stat rv"><b class="count" data-to="75" data-suffix="%">0%</b><span>Teams using a go/no-go process, down from 83%</span></div>
-    <div class="stat rv"><b class="count" data-to="81" data-suffix="%">0%</b><span>Top performers (50% or more won) using go/no-go</span></div>
+    <div class="stat rv"><b class="count" data-to="39" data-suffix="%">39%</b><span>Average RFP win rate in 2025, down from 45% in 2024</span></div>
+    <div class="stat rv hi"><b class="count" data-to="47" data-suffix="%">47%</b><span>UK win rate, the highest of any region</span></div>
+    <div class="stat rv"><b class="count" data-to="75" data-suffix="%">75%</b><span>Teams using a go/no-go process, down from 83%</span></div>
+    <div class="stat rv"><b class="count" data-to="81" data-suffix="%">81%</b><span>Top performers (50% or more won) using go/no-go</span></div>
   </div>
   <div class="viz rv">
     <div class="viz-h"><h3>Average RFP win rate, 2019 to 2025</h3><p>Win rates have drifted down from 53% to 39% in six years. Select a point for the figure.</p></div>
@@ -80,7 +80,7 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
 <section class="sec" aria-labelledby="pu-h1">
   <span class="eyebrow">Bid/no-bid</span>
   <h2 id="pu-h1">Qualifying a pursuit</h2>
-  <p class="intro">The scorecard combines the eight MEDDPICC elements with Shipley's two further tests, capability and fit with business objectives. Move each slider to describe a real opportunity. The result shows whether I would pursue it, shape it first or walk away, and why.</p>
+  <p class="intro">The scorecard combines the eight MEDDPICC elements with two go/no-go tests drawn from Shipley and GovEagle: capability and fit, and funding and margin. Move each slider to describe a real opportunity. The result shows whether I would pursue it, shape it first or walk away, and why.</p>
   <div class="btnrow pu-presets" role="group" aria-label="Example opportunities"><span>Try an example</span></div>
   <div class="pu-sc">
     <div class="pu-ctl" id="pu-ctl"><h3>Describe the opportunity</h3><p class="mini">0 means unknown, 3 means strong and confirmed with the client.</p></div>
@@ -178,7 +178,7 @@ function wOf(h){return Math.max(290,h.clientWidth||700)}
 /* win-rate line */
 var WR=[[2019,53],[2020,47],[2021,44],[2022,44],[2023,43],[2024,45],[2025,39]];
 function drawWR(){var h=$("pu-wr");h.innerHTML="";var W=wOf(h),H=W<560?240:280,L=34,R=W<560?64:96,T=16,B=30;
- var s=VZ.svg(h,W,H,"Line chart of average RFP win rate from 53% in 2019 to 39% in 2025");
+ var s=VZ.svg(h,W,H,"Line chart of average RFP win rate from 53% in 2019 to 39% in 2025");s.setAttribute("role","group");
  var x=VZ.lin(2019,2025,L,W-R),y=VZ.lin(30,60,H-B,T);
  [30,40,50,60].forEach(function(v){VZ.el("line",{x1:L,x2:W-R,y1:y(v),y2:y(v),"class":"grid"},s);VZ.el("text",{x:L-6,y:y(v)+4,"text-anchor":"end","class":"t-muted"},s).textContent=v+"%"});
  WR.forEach(function(d){VZ.el("text",{x:x(d[0]),y:H-8,"text-anchor":"middle","class":"t-muted"},s).textContent=W<560?"'"+String(d[0]).slice(2):d[0]});
@@ -241,7 +241,7 @@ function score(p){pbs.forEach(function(b,i){b.setAttribute("aria-pressed",i===p)
  $("pu-why").innerHTML=why.map(function(t){return "<li>"+t+"</li>"}).join("");
  drawBars()}
 function drawBars(){var h=$("pu-bars");h.innerHTML="";var W=wOf(h),nar=W<420,LW=nar?118:150,rh=24,H=C.length*rh+22;
- var s=VZ.svg(h,W,H,"Bar chart of the ten criterion scores");var x=VZ.lin(0,3,LW,W-30);
+ var s=VZ.svg(h,W,H,"Bar chart of the ten criterion scores");s.setAttribute("role","group");var x=VZ.lin(0,3,LW,W-30);
  [0,1,2,3].forEach(function(v){VZ.el("line",{x1:x(v),x2:x(v),y1:0,y2:H-18,"class":"grid"},s);VZ.el("text",{x:x(v),y:H-4,"text-anchor":"middle","class":"t-muted"},s).textContent=v});
  var col=["var(--ink3)","var(--seq-3)","var(--seq-4)","var(--seq-5)"];
  C.forEach(function(c,i){var g=VZ.el("g",{"class":"row",role:"button","aria-label":c.n+" "+cur[i]+" of 3"},s),y=i*rh;
@@ -260,7 +260,7 @@ var ST=[
  {n:"Shape",me:3,ac:2,pt:2,my:["Lead discovery meetings and an executive workshop","Shape scope with IC&D practices and alliance partners","Draft win themes and the value case"],at:["Secure sponsor time and executive access","Client Partner holds the senior relationship"],out:["Capture plan and win themes","Solution hypothesis and value case"],g:"Bid gate: positioned to win. Starts the proposal plan.",pri:"This is the stage where we can influence the criteria before any RFP is issued.",pub:"Shaping happens through market engagement before the tender notice. After that the published criteria apply."},
  {n:"Solution and price",me:3,ac:1,pt:3,my:["Design the solution with delivery and alliance architects","Choose the commercial model with Finance","Run the Black Hat review of the most likely competitor"],at:["Validate the price-to-win with client insight","Agree the relationship strategy for orals"],out:["Solution design and effort estimate","Price, margin and risk register","Blue Team annotated outline"],pri:"Fixed-price or outcome models protect margin where AI changes delivery effort.",pub:"Contracts above £5m need at least three KPIs. I would design them alongside the price (s.52)."},
  {n:"Proposal",me:2,ac:1,pt:3,my:["Write the solution, value and AI sections","Lead the colour reviews at 60 to 70% completion"],at:["Review for client language and politics","Check the executive summary with the sponsor where allowed"],out:["Proposal and pricing schedules","Bid validation gate decision"],g:"Bid validation gate: show-stoppers resolved. Starts the final proposal.",pri:"Answer the client's own outcome measures in the executive summary.",pub:"Follow the published criteria and weightings (s.19). Prepare PPN 017 AI disclosure answers for central government."},
- {n:"Orals and negotiation",me:3,ac:2,pt:2,my:["Present the solution to the client's executive panel","Negotiate scope, assumptions and KPIs with Finance and Legal"],at:["Lead the relationship and the close plan","Read the panel and the decision makers"],out:["Orals presentation","Best and final offer"],pri:"Negotiation covers scope, liability caps and productivity commitments.",pub:"Negotiation is only possible in a competitive flexible procedure (s.20)."},
+ {n:"Orals and negotiation",me:3,ac:2,pt:2,my:["Present the solution to the client's executive panel","Negotiate scope, assumptions and KPIs with Finance and Legal"],at:["Lead the relationship and the close plan","Read the panel and the decision makers"],out:["Orals presentation","Best and final offer"],pri:"Negotiation covers scope, liability caps and productivity commitments.",pub:"Negotiation needs a competitive flexible procedure. The open procedure is a single stage (s.20)."},
  {n:"Close and handover",me:1,ac:3,pt:1,my:["Hand over the solution, assumptions and KPIs to delivery","Run the win or loss review"],at:["Own the contract signature and account growth plan","Plan the next opportunity in the account"],out:["Handover pack and KPI baseline","Win or loss lessons"],pri:"Agree the first quarterly business review and the measures it will report.",pub:"An eight working day standstill follows the award notice (s.51). KPI performance is published at least every 12 months."}
 ];
 var sector="pri",sel=2;
@@ -300,12 +300,12 @@ var PS=[
 ];
 var ptype=0,psel=2,pcol=["var(--s1)","var(--s2)","var(--s3)","var(--s4)","var(--s5)","var(--s6)","var(--s7)","var(--s8)","var(--seq-4)","var(--ink3)"];
 function drawProp(){var h=$("pu-prop");h.innerHTML="";var W=wOf(h),nar=W<640;var tot=PS.reduce(function(a,b){return a+b.p[ptype]},0);
- if(nar){var rh=30,H=PS.length*rh+4,s=VZ.svg(h,W,H,"Bar chart of proposal page share by section"),LW=136,x=VZ.lin(0,24,LW,W-34);
+ if(nar){var rh=30,H=PS.length*rh+4,s=VZ.svg(h,W,H,"Bar chart of proposal page share by section");s.setAttribute("role","group");var LW=136,x=VZ.lin(0,24,LW,W-34);
   PS.forEach(function(p,i){var v=Math.round(p.p[ptype]/tot*100),g=VZ.el("g",{"class":"seg"+(i===psel?" sel":""),role:"button",tabindex:0,"aria-label":p.n+" "+v+"%"},s),y=i*rh;
    VZ.el("text",{x:LW-8,y:y+19,"text-anchor":"end",style:"font-size:11.5px"},g).textContent=p.n;
    VZ.el("rect",{x:LW,y:y+5,width:Math.max(2,x(v)-LW),height:rh-10,rx:3,fill:pcol[i]},g);
    VZ.el("text",{x:x(v)+6,y:y+19,"class":"t-strong"},g).textContent=v+"%";bind(g,i)});return}
- var H=118,s=VZ.svg(h,W,H,"Stacked bar of proposal page share by section"),x0=0;
+ var H=118,s=VZ.svg(h,W,H,"Stacked bar of proposal page share by section"),x0=0;s.setAttribute("role","group");
  PS.forEach(function(p,i){var v=p.p[ptype]/tot,w=v*W,g=VZ.el("g",{"class":"seg"+(i===psel?" sel":""),role:"button",tabindex:0,"aria-label":p.n+" "+Math.round(v*100)+"%"},s);
   VZ.el("rect",{x:x0+1,y:36,width:w-2,height:46,rx:3,fill:pcol[i]},g);
   VZ.el("text",{x:x0+w/2,y:64,"text-anchor":"middle",style:"fill:var(--chart-bg);font-weight:600;font-size:13px"},g).textContent=Math.round(v*100)+"%";

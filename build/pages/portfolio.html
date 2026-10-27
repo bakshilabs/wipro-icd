@@ -2,12 +2,13 @@
 <style>
 .pf-lay{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;align-items:start}
 .pf-card{background:var(--panel);border-radius:6px;padding:18px 20px;font-size:14.5px;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
-.pf-card h4,.pf-card .src{grid-column:1/-1}
+.pf-card h3,.pf-card .src{grid-column:1/-1}
 @media (max-width:760px){.pf-card{grid-template-columns:1fr}}
-.pf-card h4{font:600 17px/1.25 var(--sans);margin:0 0 6px;color:var(--ink1)}
+.pf-card h3{font:600 17px/1.25 var(--sans);margin:0 0 6px;color:var(--ink1)}
 .pf-card .k{font:600 11px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);margin:12px 0 4px}
 .pf-card p{margin:0}
 .pf-card .src{margin-top:10px}
+.pf-vh{font-size:17px}
 .pf-node{cursor:pointer}
 .pf-node rect{transition:fill .2s,stroke .2s}
 .pf-node:focus-visible{outline:none}
@@ -61,11 +62,11 @@
 </section>
 
 <section class="viz lead-viz rv" aria-labelledby="pf-org-h">
-  <div class="viz-h"><h3 id="pf-org-h">Wipro's structure as the filings describe it</h3><p>IC&amp;D is one of five units in the Technology Services business line, and UK and Ireland clients sit in the Europe market unit. Select a box to read what the sources say and how I would work with it.</p></div>
+  <div class="viz-h"><h2 id="pf-org-h" class="pf-vh">Wipro's structure as the filings describe it</h2><p>IC&amp;D is one of five units in the Technology Services business line, and UK and Ireland clients sit in the Europe market unit. Select a box to read what the sources say and how I would work with it.</p></div>
   <div class="legend"><span><i style="background:var(--accent)"></i>Industry Cloud &amp; Digital</span><span><i style="background:var(--seq-2)"></i>Client-facing market units</span><span><i style="background:var(--panel);box-shadow:inset 0 0 0 1px var(--axis)"></i>Business lines and units</span><span><i style="background:transparent;box-shadow:inset 0 0 0 2px var(--accent)"></i>Units IC&amp;D works with on a pursuit (my reading)</span></div>
   <div class="pf-lay">
     <div id="pf-org"></div>
-    <aside class="pf-card" id="pf-orgcard" aria-live="polite"></aside>
+    <div class="pf-card" id="pf-orgcard" aria-live="polite"></div>
   </div>
 </section>
 
@@ -138,7 +139,7 @@
     <li><b>Shape scope and price with delivery and finance</b>Agree which platform gains, such as WEGA's lab-stated velocity figures, go into the estimate and how much of that benefit is shared with the client in price.</li>
   </ol>
   <div class="grid2">
-    <div class="panel"><h3>Building and selling a service line</h3><p>At Foster + Partners I co-created and launched a strategic advisory service line covering corporate environmental strategy, digital transformation and spatial consulting. I led pitches and bids that won more than £10m a year in fees, and presented to Fortune 500 chief executives.</p><p>Earlier, at SOM in New York and at WSP, I ran business development that brought in more than $3m and more than £2m a year through outreach, pitches and bids.</p></div>
+    <div class="panel"><h3>Building and selling a service line</h3><p>At Foster + Partners I co-created and launched a strategic advisory service line covering corporate environmental strategy, digital transformation and spatial consulting. I led pitches and bids that won more than £10m a year in fees, and presented to Fortune 500 chief executives.</p><p>Earlier I ran business development at SOM in New York, winning more than $3m a year in fees, and at WSP, winning more than $2m a year through outreach, pitches and bids.</p></div>
     <div class="panel"><h3>Selling Claude, Gemini and Copilot work</h3><p>As co-founder of Atlas Learn I train executive teams to use AI tools. I have trained more than 250 senior professionals on Claude Code, Cowork and other tools, and delivered board-level training for a FinTech.</p><p>I hold Anthropic credentials in AI Fluency, Claude Code in Action, Claude Cowork and the Claude Platform, and a Microsoft Copilot Studio credential. I use Claude Code, Gemini, NotebookLM, Python and C# in my own work.</p></div>
   </div>
 </section>
@@ -164,7 +165,17 @@
 <li>Bank of England and FCA, "Artificial intelligence in UK financial services 2024", 21 November 2024. bankofengland.co.uk (primary)</li>
 <li>Office for National Statistics, "Artificial intelligence in UK businesses: 2023 to 2026", June 2026. ons.gov.uk (primary)</li>
 <li>GOV.UK, State of Digital Government Review, 21 January 2025. gov.uk/government/publications/state-of-digital-government-review (primary)</li>
-<li>Account-type drivers in the builder are taken from the Demand page; see its sources.</li>
+<li>Kyndryl, 2025 State of Mainframe Modernization survey, September 2025. kyndryl.com (press, vendor survey)</li>
+<li>Payment Expert, Treasury Committee findings on bank IT failures, 6 March 2025. paymentexpert.com (press)</li>
+<li>FCA, Operational resilience insights and observations; Mills Review, July 2026. fca.org.uk (primary)</li>
+<li>Covington, FCA Dear CEO letters on Consumer Duty closed products, May 2024 (press); The Pensions Regulator, dashboards connection guidance (primary); Hogan Lovells, PSR APP reimbursement (press)</li>
+<li>Institute of Customer Service, UKCSI July 2026 (primary); Retail Times and The Water Report on sector scores (press)</li>
+<li>CMS, DMCC Act consumer enforcement from 6 April 2025 (press); Business Expert citing ONS series J4MC (press)</li>
+<li>NHS England, NHS App statistics, July 2026 (primary); Government Transformation on the Single Patient Record (press); Civil Service World on the NHS England and DHSC merger (press)</li>
+<li>Elexon, half-hourly settlement migration, 22 October 2025 (primary); Energy Live News, 15 May 2026 (press)</li>
+<li>Telecoms Tech News, VodafoneThree merger completion, 2025 (press); CILT, Great British Railways, 2026 (press)</li>
+<li>TechMarketView, "G-Cloud 15 launches", 11 August 2026 (press)</li>
+<li>Account-type drivers in the builder are also on the Demand page, with their sources.</li>
 </ul></details></section>
 
 <script>
@@ -178,10 +189,10 @@ function txt(p,x,y,s,cls,anchor){var t=VZ.el("text",{x:x,y:y,"text-anchor":ancho
 /* ---------- structure diagram ---------- */
 var N={
  root:{l:["Wipro IT Services"],k:"top",d:"The IT Services segment is organised two ways: four strategic market units that face clients and four global business lines that own offerings. Wipro reported more than 240,000 employees at 31 March 2026.",w:"I would expect every IC&D pursuit to involve both sides: the market unit that owns the client and the business line that owns the offering.",s:"Form 20-F FY2026"},
- smu:{l:["Strategic market units"],p:"root",k:"mkt",d:"The four SMUs are Wipro's primary go-to-market teams and aim to scale local strategic clients and win large deals. Revenue is attributed to the SMU of the client's primary buying centre.",w:"The SMU owns the client relationship, so IC&D growth in the UK depends on being useful to its account teams.",s:"Form 20-F FY2026"},
- am1:{l:["Americas 1"],p:"smu",k:"mkt",d:"Organised by industry sector. From 1 April 2026 Latin America and Canada clients are aligned to the sectors in Americas 1 and 2.",w:"Useful for reference cases in sectors where UK proof is thin.",s:"Q1 FY27 press release"},
+ smu:{l:["Strategic market units"],p:"root",k:"mkt",d:"The four SMUs are Wipro's primary go-to-market teams and aim to scale local strategic clients and win large deals. Revenue is attributed to the SMU of the client's primary buying centre.",w:"I would expect the market unit to own the client relationship, so my first job is to be useful to its account teams.",s:"Form 20-F FY2026"},
+ am1:{l:["Americas 1"],p:"smu",k:"mkt",d:"Organised by industry sector. From 1 April 2026 Latin America and Canada clients are aligned to the sectors in Americas 1 and 2.",w:"A source of sector reference cases for UK pursuits.",s:"Q1 FY27 press release"},
  am2:{l:["Americas 2"],p:"smu",k:"mkt",d:"Organised by industry sector, like Americas 1.",w:"A source of sector reference cases.",s:"Q1 FY27 press release"},
- eu:{l:["Europe"],p:"smu",k:"mkt",d:"Covers the UK and Ireland, Switzerland, Germany and Western Europe, organised by country and responsible for all sectors. Europe was 27.4% of IT Services revenue in Q2 FY27 and grew 0.6% quarter on quarter in constant currency (broker figure). Its segment margin was about 16.7%, up from about 11.7% a year earlier (my arithmetic on Wipro's segment table).",w:"A region with rising margin and modest growth needs large deals converted from pipeline. That is where a practitioner adds most.",s:"Q2 FY27 press release; PL Capital, 16 Oct 2026"},
+ eu:{l:["Europe"],p:"smu",k:"mkt",d:"Covers the UK and Ireland, Switzerland, Germany and Western Europe, organised by country and responsible for all sectors. Europe was 27.4% of IT Services revenue in Q2 FY27 and grew 0.6% quarter on quarter in constant currency (broker figure). Its segment margin was about 16.7%, up from about 11.7% a year earlier (my arithmetic on Wipro's segment table).",w:"My reading is that a region with rising margin and modest growth gains most from converting pipeline into large deals, which is the work this role supports.",s:"Q2 FY27 press release; PL Capital, 16 Oct 2026"},
  apmea:{l:["APMEA"],p:"smu",k:"mkt",d:"Organised by country, like Europe.",w:"Less relevant to UK pursuits.",s:"Form 20-F FY2026"},
  uki:{l:["UK and","Ireland"],p:"eu",k:"mkt",d:"A named sub-unit of Europe in every release I read. Offices include London, Reading and Dublin. Public UK work includes Phoenix Group (£500m over 10 years, March 2025) and HM Treasury service integration (from 2022).",w:"The account managers and client partners I would support sit here. I would agree with them which accounts each offering should be tested in first.",s:"Wipro UKI contact page; press releases 2022 and 2025"},
  gbl:{l:["Global business lines"],p:"root",k:"bl",d:"Realigned from 1 April 2025 into Technology Services, Business Process Services, Consulting Services and Engineering. Wipro says the model is meant to speed time to market, simplify decisions and channel investment under One Wipro.",w:"Offerings, practices and delivery capacity sit in the business lines.",s:"Form 20-F FY2026"},
@@ -208,7 +219,7 @@ var POS={root:[440,8,200,40],smu:[10,92,350,40],gbl:[380,92,420,40],ain:[820,92,
 var orgSel="icd";
 function fillFor(k){return k==="icd"?"var(--accent)":k==="mkt"?"var(--seq-2)":"var(--panel)"}
 function inkFor(k){return k==="icd"?"var(--on-accent)":"var(--ink1)"}
-function orgCard(){var n=N[orgSel];document.getElementById("pf-orgcard").innerHTML='<h4>'+esc(n.l.join(" "))+'</h4><div><div class="k">What the sources say</div><p>'+esc(n.d)+'</p></div><div><div class="k">How I would work with it</div><p>'+esc(n.w)+'</p></div><p class="src">Source: '+esc(n.s)+'</p>'}
+function orgCard(){var n=N[orgSel];document.getElementById("pf-orgcard").innerHTML='<h3>'+esc(n.l.join(" "))+'</h3><div><div class="k">What the sources say</div><p>'+esc(n.d)+'</p></div><div><div class="k">How I would work with it</div><p>'+esc(n.w)+'</p></div><p class="src">Source: '+esc(n.s)+'</p>'}
 function orgMark(){[].forEach.call(document.querySelectorAll("#pf-org .pf-node"),function(g){var id=g.getAttribute("data-id");g.classList.toggle("sel",id===orgSel);g.classList.toggle("rel",(N[orgSel].rel||[]).indexOf(id)>=0);g.setAttribute("aria-pressed",id===orgSel)})}
 function nodeG(s,id,x,y,w,h,fs){var n=N[id],g=VZ.el("g",{"class":"pf-node","data-id":id,"aria-label":n.l.join(" ")},s);
  VZ.el("rect",{x:x,y:y,width:w,height:h,rx:5,fill:fillFor(n.k),stroke:n.k==="bl"?"var(--axis)":"none","stroke-width":1},g);
@@ -216,13 +227,13 @@ function nodeG(s,id,x,y,w,h,fs){var n=N[id],g=VZ.el("g",{"class":"pf-node","data
  L.forEach(function(s2,i){var t=txt(g,x+w/2,y0+i*lh,s2,i===0?"t-strong":"","middle");t.setAttribute("style","fill:"+(i===0?inkFor(n.k):(n.k==="icd"?"var(--on-accent)":"var(--ink2)"))+";font-size:"+(i===0?fs:fs-1)+"px")});
  key(g,function(){orgSel=id;orgMark();orgCard()});return g}
 responsive(document.getElementById("pf-org"),function(W){var host=document.getElementById("pf-org");
- if(W>=640){var s=VZ.svg(host,1080,330,"Wipro structure diagram");
+ if(W>=640){var s=VZ.svg(host,1080,330,"Wipro structure diagram");s.setAttribute("role","group");
   Object.keys(POS).forEach(function(id){var n=N[id];if(!n.p)return;var a=POS[n.p],b=POS[id];var x1=a[0]+a[2]/2,y1=a[1]+a[3],x2=b[0]+b[2]/2,y2=b[1],my=(y1+y2)/2;
    VZ.el("path",{d:"M"+x1+","+y1+"V"+my+"H"+x2+"V"+y2,fill:"none","class":"axis"},s)});
   Object.keys(POS).forEach(function(id){var p=POS[id];nodeG(s,id,p[0],p[1],p[2],p[3],12.5)});
  }else{
   var order=[["root",0],["smu",1],["am1",2],["am2",2],["eu",2],["uki",3],["apmea",2],["gbl",1],["ts",2],["ciss",3],["icd",3],["ea",3],["daai",3],["dit",3],["bps",2],["cons",2],["eng",2],["ain",1],["wings",2],["wega",2],["ind",2]];
-  var rh=36,s2=VZ.svg(host,W,order.length*rh+4,"Wipro structure diagram");
+  var rh=36,s2=VZ.svg(host,W,order.length*rh+4,"Wipro structure diagram");s2.setAttribute("role","group");
   order.forEach(function(o,i){var id=o[0],lv=o[1],x=lv*18,y=i*rh+2;
    if(lv>0)VZ.el("path",{d:"M"+(x-10)+","+(y-6)+"V"+(y+15)+"H"+x,fill:"none","class":"axis"},s2);
    var n=N[id],save=n.l;n.l=[save.join(" ")];nodeG(s2,id,x,y,W-x-2,rh-6,13);n.l=save});
@@ -234,15 +245,15 @@ orgCard();
 var PROB=["Legacy cost and risk","Resilience and regulation","Customer experience","Speed of change","AI in production","Connected systems"];
 var O=[
  {id:"appmod",f:"mod",n:"Application and Cloud Modernisation",fit:[2,1,0,2,1,1],pr:"Ageing custom applications cost too much to run and are slow to change, and cloud moves stall after rehosting.",by:"CIO or CTO, with the head of applications.",pa:"AWS, Microsoft Azure and Google Cloud.",pp:"Modernize, Transform and Software Engineering Excellence offers; ModerniZ platform; Wipro cites 75,000+ application modernisation experts and 25,000+ cloud-certified staff; Leader in the Forrester Wave for Application Modernization and Migration Services, Q1 2024.",sg:"Banking clients are prioritising legacy modernisation (Q2 FY27 call notes, broker). 28% of central government systems were legacy in 2024.",me:"I would lead the business case and the executive conversation, with the modernisation practice setting the technical approach."},
- {id:"apr",f:"mod",n:"Application Portfolio Rationalisation (APR)",fit:[2,0,0,1,0,1],pr:"Years of tactical buying or a merger leave overlapping applications, with no agreed view of what to retire.",by:"CIO and enterprise architect, with the CFO for the run-cost case.",pa:"Partner-neutral; the result feeds AWS, Azure or Google Cloud migration cases.",pp:"I found no standalone APR page. The nearest public offers are the cloud Advisory and Consulting offering, the assessment stage of Modernize and Transform, and retiring within legacy modernisation.",sg:"The VodafoneThree merger completed on 31 May 2025 with £700m a year of synergies targeted by year five. NHS England folds into DHSC from April 2027.",me:"APR is a strong door-opener. I would run it as a short paid assessment that leads into modernisation scope."},
- {id:"mf",f:"mod",n:"Mainframe and legacy Java/.NET modernisation",fit:[2,2,0,1,1,0],pr:"Core systems on COBOL or older Java and .NET stacks hold business rules few people still understand, so every change carries risk.",by:"CIO and COO, with the chief risk officer for resilience.",pa:"Capco co-delivers. The offer is LLM-agnostic, so Claude or Gemini can support code and rule extraction.",pp:"GenAI: Powering Mainframe Modernization with Capco: COBOL knowledge portals, business-rule extraction, reverse engineering into user stories, synthetic test data. Phoenix Group ALPHA platform modernisation within a £500m, 10-year deal (March 2025).",sg:"HMRC and DWP still run Fujitsu VME mainframes. 94% of leaders in Kyndryl's 2025 global survey say regulation shapes their modernisation plans.",me:"I would frame the risk and value story for the COO and CFO, with Capco and the modernisation engineers presenting the method."},
+ {id:"apr",f:"mod",n:"Application Portfolio Rationalisation (APR)",fit:[2,0,0,1,0,1],pr:"Years of tactical buying or a merger leave overlapping applications, with no agreed view of what to retire.",by:"CIO and enterprise architect, with the CFO for the run-cost case.",pa:"Partner-neutral; the result feeds AWS, Azure or Google Cloud migration cases.",pp:"Wipro places portfolio assessment in its cloud Advisory and Consulting offering, in the assessment stage of Modernize and Transform, and in the retiring option within legacy modernisation. I would confirm with the practice how it scopes and prices APR as a standalone engagement.",sg:"The VodafoneThree merger completed on 31 May 2025 with £700m a year of synergies targeted by year five. NHS England is expected to fold into DHSC from April 2027.",me:"APR is a strong door-opener. I would run it as a short paid assessment that leads into modernisation scope."},
+ {id:"mf",f:"mod",n:"Mainframe and legacy Java/.NET modernisation",fit:[2,2,0,1,1,0],pr:"Core systems on COBOL or older Java and .NET stacks hold business rules few people still understand, so every change carries risk.",by:"CIO and COO, with the chief risk officer for resilience.",pa:"Capco co-delivers. The offer is LLM-agnostic, so Claude or Gemini can support code and rule extraction.",pp:"GenAI: Powering Mainframe Modernization with Capco: COBOL knowledge portals, business-rule extraction, reverse engineering into user stories, synthetic test data. I would confirm with the practice which Java and .NET modernisation references it prefers to cite. Phoenix Group ALPHA platform modernisation within a £500m, 10-year deal (March 2025).",sg:"HMRC and DWP still run Fujitsu VME mainframes. 94% of leaders in Kyndryl's 2025 global survey say regulation shapes their modernisation plans.",me:"I would frame the risk and value story for the COO and CFO, with Capco and the modernisation engineers presenting the method."},
  {id:"integ",f:"mod",n:"Integration across products and stacks",fit:[1,1,1,1,1,2],pr:"Point-to-point interfaces slow every change, and new channels and AI agents struggle to reach the data they need.",by:"Enterprise architect and CTO, with the head of integration.",pa:"iPaaS vendors, with ServiceNow, Salesforce and SAP for package integration.",pp:"Integration Modernization moves integration to modern architecture, open source and iPaaS.",sg:"The NHS Single Patient Record is due to be viewable in the NHS App by 2028. Energy suppliers must complete half-hourly settlement migration by 7 May 2027.",me:"I would position integration as the condition for AI agents to work, which brings it into AI conversations early."},
  {id:"qe",f:"eng",n:"Quality Engineering and Testing",fit:[1,2,1,2,1,0],pr:"Releases are slow and risky because testing is manual, and regulators expect firms to prove resilience.",by:"Head of quality engineering and CIO, with the operational resilience lead.",pa:"Works across partner platforms, including QE for AI applications.",pp:"Leader in Everest Group's Next-Gen QE PEAK Matrix 2023 and its QE Services for AI Applications and Systems PEAK Matrix 2026. Uniper: 15% shorter test cycle, 68% regression automation, 28% cost reduction. Vodafone Qatar: 25% cost reduction.",sg:"The FCA and PRA operational resilience transition ended on 31 March 2025. Nine major UK banks had 803 hours of unplanned outages from January 2023 to February 2025.",me:"I would sell QE through the resilience and release-speed case, with the QE practice lead owning the test strategy."},
  {id:"devops",f:"eng",n:"DevOps and CI/CD",fit:[1,1,0,2,1,0],pr:"Code takes weeks to reach production, environments drift and security checks come late.",by:"CTO and head of engineering, with the head of platform.",pa:"Google (Antigravity CLI, integrated August 2026), Microsoft (GitHub Copilot) and Harness (2026 collaboration).",pp:"DevSecOps within Application Modernisation; WEGA orchestrates the lifecycle from design to release and security; reliability and DevOps engineering in Wipro Engineering.",sg:"Banks told the Treasury Committee that system changes and software faults were among the causes of outages (2025).",me:"I would pair DevOps with QE in one release-speed proposition and bring the engineering lead to scope it."},
  {id:"digapps",f:"eng",n:"Digital Applications",fit:[0,0,2,2,1,1],pr:"New products and channels are needed quickly and must scale and be observable from day one.",by:"Chief digital officer and product director.",pa:"AWS, Microsoft Azure and Google Cloud.",pp:"Cloud Native offer: microservices, containers, serverless, observability and multi-cloud orchestration. Leader in the Gartner Magic Quadrant for Public Cloud IT Transformation Services, 2024.",sg:"The NHS App had about 80m logins in July 2026, up 42% on a year earlier. Great British Railways plans a single app with no booking fees.",me:"I would sell digital applications as the build stage of a CX proposition designed with Designit."},
  {id:"dxc",f:"cx",n:"Digital Experience and Commerce",fit:[0,1,2,1,1,1],pr:"Customer journeys break across channels, conversion is weak, and conduct rules ask firms to evidence good outcomes.",by:"Chief customer officer, chief marketing officer, chief digital officer or ecommerce director.",pa:"Adobe (Platinum Global SI partner) and Salesforce (Summit partner), with Designit for design.",pp:"Designit London studio; Adobe practice with 860+ accredited consultants, 2,000+ Adobe consultants and 450+ engagements; member of the Salesforce Agentforce Partner Network.",sg:"The UK Customer Satisfaction Index was 78.3 in July 2026, with growth slowing. Consumer Duty applies to all products, and the CMA can fine up to 10% of global turnover under the DMCC Act.",me:"This is closest to my advisory work. I would lead the executive workshop and the customer outcome case."},
  {id:"ai",f:"ai",n:"AI Solutions with Gemini and Claude",fit:[1,1,2,1,2,1],pr:"AI pilots work in a demo and then stall before production because of data, controls and integration.",by:"Chief data or AI officer and COO, with the chief customer officer for service use cases.",pa:"Google Cloud (Gemini Enterprise, LIFT), Anthropic (Claude), Microsoft (Azure AI Foundry), ServiceNow and Salesforce Agentforce.",pp:"Gemini Enterprise rolled out to 10,000+ AI-certified specialists, including 1,500 forward-deployed engineers, with the LIFT framework (27 August 2026). Applied AI Centre of Excellence for Claude, with 10,000 delivery experts to be certified within 18 months (16 June 2026). 200 Gemini and Vertex AI agents (August 2025).",sg:"75% of UK financial firms used AI in 2024, and the median number of use cases is expected to rise from 9 to 21. The FCA's Mills Review (July 2026) sets foundations for agentic finance.",me:"I train executives on Claude and other AI tools, so I can run the use-case workshop myself and bring forward-deployed engineers in to build."},
- {id:"adopt",f:"ai",n:"AI Adoption",fit:[0,0,1,1,2,0],pr:"Licences are bought but few staff use AI tools well, so the expected productivity does little to show up in results.",by:"COO and CHRO, with the CIO and transformation director.",pa:"Microsoft (Microsoft 365 Copilot, GitHub Copilot), Google (Gemini Enterprise) and Anthropic (Claude).",pp:"Microsoft partnership (12 December 2025) with 50,000+ Copilot licences deployed inside Wipro and 25,000+ staff upskilled. More than 212,663 associates completed GenAI training under ai360. Claude is used internally in Finance, HR and Sales.",sg:"35% of UK firms with 10 or more staff used an AI technology in June 2026, and only 10% of those used it extensively (ONS).",me:"This is the work I do at Atlas Learn: training senior teams and measuring whether they keep using the tools."}
+ {id:"adopt",f:"ai",n:"AI Adoption",fit:[0,0,1,1,2,0],pr:"Licences are bought but few staff use AI tools well, so the expected productivity gains do not show up in results.",by:"COO and CHRO, with the CIO and transformation director.",pa:"Microsoft (Microsoft 365 Copilot, GitHub Copilot), Google (Gemini Enterprise) and Anthropic (Claude).",pp:"Microsoft partnership (12 December 2025) with 50,000+ Copilot licences deployed inside Wipro and 25,000+ staff upskilled. More than 212,663 associates completed GenAI training under ai360. Claude is used internally in Finance, HR and Sales.",sg:"35% of UK firms with 10 or more staff used an AI technology in June 2026, and only 10% of those used it extensively (ONS).",me:"This is the work I do at Atlas Learn: training senior teams and measuring whether they keep using the tools."}
 ];
 var famOf={},offSel="appmod",tabSet;
 O.forEach(function(o){famOf[o.id]=o.f});
@@ -253,7 +264,7 @@ function mark(){[].forEach.call(document.querySelectorAll(".pf-off"),function(c)
 VZ.tabs(document.getElementById("pf-tabs"),function(t){var f=t.id.replace("pf-t-","");if(famOf[offSel]!==f){offSel=O.filter(function(o){return o.f===f})[0].id}mark()});
 responsive(document.getElementById("pf-mx"),function(W){var host=document.getElementById("pf-mx"),narrow=W<640;
  var lw=narrow?Math.min(170,W*.46):300,cw=(W-lw)/6,hh=narrow?34:52,rh=narrow?40:34,H=hh+O.length*rh+(narrow?96:4);
- var s=VZ.svg(host,W,H,"Fit matrix of offerings and buyer problems");
+ var s=VZ.svg(host,W,H,"Fit matrix of offerings and buyer problems");s.setAttribute("role","group");
  PROB.forEach(function(p,j){var cx=lw+cw*j+cw/2;
   if(narrow){txt(s,cx,hh-10,String(j+1),"t-strong","middle")}
   else{var words=p.split(" "),half=Math.ceil(words.length/2);txt(s,cx,hh-24,words.slice(0,half).join(" "),"t-strong","middle");txt(s,cx,hh-9,words.slice(half).join(" "),"t-strong","middle")}});
@@ -294,10 +305,10 @@ function tm(s){return new Date(s+"T00:00:00Z").getTime()}
 function evG(s,i,cx,cy,r){var e=EV[i],g=VZ.el("g",{"class":"pf-ev","data-i":i,"aria-label":e.ds+": "+LANES[e.l][0]+", "+e.t},s);
  VZ.el("circle",{cx:cx,cy:cy,r:r,fill:"var(--s"+LANES[e.l][1]+")",stroke:"var(--chart-bg)","stroke-width":2},g);
  VZ.tip(g,function(){return "<b>"+esc(e.t)+"</b><span class='m'>"+esc(LANES[e.l][0])+", "+esc(e.ds)+"</span>"});
- g.addEventListener("click",function(){evSel=i;evCard()});return g}
+ key(g,function(){evSel=i;evCard()});return g}
 responsive(document.getElementById("pf-tl"),function(W){var host=document.getElementById("pf-tl");
  if(W>=700){var lw=110,rw=W-lw-10,rh=44,H=LANES.length*rh+40,t0=tm("2025-01-01"),t1=tm("2026-12-31"),X=VZ.lin(t0,t1,lw,lw+rw);
-  var s=VZ.svg(host,W,H,"Alliances timeline 2025 to 2026");
+  var s=VZ.svg(host,W,H,"Alliances timeline 2025 to 2026");s.setAttribute("role","group");
   for(var m=0;m<=24;m+=3){var dt=new Date(Date.UTC(2025,m,1)),x=X(dt.getTime());VZ.el("line",{x1:x,x2:x,y1:0,y2:LANES.length*rh,"class":"grid"},s);
    txt(s,x,LANES.length*rh+18,dt.toLocaleString("en-GB",{month:"short",timeZone:"UTC"})+(m%12===0?" "+dt.getUTCFullYear():""),m%12===0?"t-strong":"t-muted","middle")}
   LANES.forEach(function(l,i){var y=i*rh+rh/2;txt(s,0,y+4,l[0],"t-strong");VZ.el("line",{x1:lw,x2:lw+rw,y1:y,y2:y,"class":"axis"},s)});
@@ -305,7 +316,7 @@ responsive(document.getElementById("pf-tl"),function(W){var host=document.getEle
   EV.forEach(function(e,i){var y=e.l*rh+rh/2,x=X(tm(e.d));
    if(e.span){VZ.el("rect",{x:X(tm(e.span[0])),y:y-5,width:X(tm(e.span[1]))-X(tm(e.span[0])),height:10,rx:5,fill:"var(--s"+LANES[e.l][1]+")",opacity:.28},s)}
    evG(s,i,x,y,8);var right=x>lw+rw*.78;var t=txt(s,right?x-13:x+13,right?y+20:y-9,e.t,"",right?"end":"start");t.setAttribute("style","fill:var(--ink1);font-size:12px")});
- }else{var rows=EV.map(function(e,i){return i}).sort(function(a,b){return tm(EV[a].d)-tm(EV[b].d)}),rh2=50,s2=VZ.svg(host,W,rows.length*rh2+6,"Alliances timeline 2025 to 2026");
+ }else{var rows=EV.map(function(e,i){return i}).sort(function(a,b){return tm(EV[a].d)-tm(EV[b].d)}),rh2=50,s2=VZ.svg(host,W,rows.length*rh2+6,"Alliances timeline 2025 to 2026");s2.setAttribute("role","group");
   VZ.el("line",{x1:14,x2:14,y1:8,y2:rows.length*rh2-14,"class":"axis"},s2);
   rows.forEach(function(i,k){var e=EV[i],y=k*rh2+18;evG(s2,i,14,y,7);
    var a=txt(s2,32,y-2,e.t,"t-strong");a.setAttribute("style","font-size:13px");txt(s2,32,y+15,LANES[e.l][0]+", "+e.ds,"t-muted")});
