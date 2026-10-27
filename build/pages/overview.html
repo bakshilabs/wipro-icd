@@ -189,15 +189,32 @@
     <li>Institute of Customer Service, UK Customer Satisfaction Index, July 2026. instituteofcustomerservice.com (primary); Retail Times, July 2026 (press).</li>
     <li>Bank of England and FCA, Artificial intelligence in UK financial services, 21 November 2024. bankofengland.co.uk/report/2024/artificial-intelligence-in-uk-financial-services-2024 (primary).</li>
     <li>Loopio with APMP, 2026 RFP Trends and Benchmarks Report, 2026. link.loopio.com (primary).</li>
-    <li>Forcing dates: FCA (Consumer Duty, operational resilience, motor finance redress, Mills Review), Central Bank of Ireland (DORA, Consumer Protection Code), The Pensions Regulator (dashboards), Elexon (half-hourly settlement), Ofcom and gov.uk (Telecoms Security Code), UK Parliament written statement (Entry/Exit System), gov.uk (AI Opportunities Action Plan, 10 Year Health Plan, Procurement Act 2023), all primary; Hogan Lovells (APP fraud), ISPreview (PSTN switch-off), Civil Service World (DHSC merger), Medical Independent (HSE One Health Record), CMS (DMCC Act), TechMarketView (G-Cloud 15), Gibson Dunn and Sidley (EU AI Act dates, to confirm), RPC and William Fry (Ireland AI Bill), Broadband TV News (BBC Charter), all press. Full references on <a href="demand.html">A3 Demand</a>.</li>
+    <li>Forcing dates: FCA (Consumer Duty, operational resilience, motor finance redress, Mills Review), Central Bank of Ireland (DORA, Consumer Protection Code, 2026 outlook), EBA, ESMA and EUR-Lex (DORA registers, critical ICT third-party providers, TLPT, EU AI Act), ECB (instant payments, supervisory priorities), Swift (ISO 20022), Bank of England (RTGS, CHAPS), HM Treasury (Payment Systems Regulator), FCA (PS26/2), The Pensions Regulator (dashboards), Elexon (half-hourly settlement), Ofcom and gov.uk (Telecoms Security Code), UK Parliament written statement (Entry/Exit System), gov.uk (AI Opportunities Action Plan, 10 Year Health Plan, Procurement Act 2023), all primary; Hogan Lovells (APP fraud), ISPreview (PSTN switch-off), Civil Service World (DHSC merger), Medical Independent (HSE One Health Record), CMS (DMCC Act), TechMarketView (G-Cloud 15), Council of the EU with Regulation Tomorrow and ClearingPost (PSD3 and PSR, indicative plenary date), RPC and William Fry (Ireland AI Bill), Broadband TV News (BBC Charter), all press. Full references on <a href="demand.html">A3 Demand</a>.</li>
   </ul>
 </section>
 
 <script>
 (function(){
-var SECT=[["fs","Financial services",1],["pub","Public sector",2],["hea","Health",3],["ret","Retail",4],["utl","Utilities",5],["tel","Telecoms and media",6],["trv","Travel",7],["ie","Ireland",8]];
+var SECT=[["fs","Financial services",1],["pub","Public sector",2],["hea","Health",3],["ret","Retail",4],["utl","Utilities",5],["tel","Telecoms and media",6],["trv","Travel",7],["ie","Ireland and EU",8]];
 var SN={};SECT.forEach(function(s){SN[s[0]]=s});
 var EV=[
+ ["2025-01-09","Euro instant payments: receive","ie","Euro-area payment providers must be able to receive instant euro payments.","Payment testing and real-time payment hub changes."],
+ ["2025-04-28","Bank of England RT2 settlement engine live","fs","The new RTGS core ledger went live, completing a nine-year, £431m renewal. Next come extended hours, synchronisation and APIs.","Payments integration and testing as banks adopt the new RTGS features."],
+ ["2025-04-30","First DORA registers reach the ESAs","ie","Supervisors sent firms' registers of ICT third-party contracts to the ESAs; from 2026 the deadline is 31 March each year.","Third-party data, contract registers and integration work."],
+ ["2025-06-18","DORA threat-led penetration testing standard","ie","Delegated Regulation (EU) 2025/1190 sets TLPT rules that mirror TIBER-EU for large banks.","Security and resilience testing."],
+ ["2025-10-09","Euro instant payments: send and Verification of Payee","ie","Euro-area providers must send instant euro payments and offer Verification of Payee.","Payment journey changes, fraud controls and QE."],
+ ["2025-11-18","ESAs designate critical ICT third-party providers","ie","Nineteen providers come under direct EU oversight, including Accenture, AWS, Capgemini, Google Cloud, IBM, Kyndryl, Microsoft, NTT DATA, Oracle, SAP and TCS.","DORA contract terms, exit plans and resilience evidence in every bank pursuit."],
+ ["2025-11-18","ECB supervisory priorities 2026 to 2028","ie","Priority 2 is operational resilience and ICT: full DORA compliance, risk-data aggregation and reporting, and closer engagement on banks' use of AI.","Resilience testing, data remediation and AI governance."],
+ ["2025-11-22","Swift CBPR+ coexistence ends","fs ie","Cross-border payment instructions move fully to ISO 20022; 97% were in ISO 20022 the day after cutover.","ISO 20022 data use, conversion and payments testing."],
+ ["2026-02-26","Central Bank of Ireland 2026 outlook","ie","Plans DORA inspections, TLPT, a review of ICT change management and a deep dive into cloud dependency at significant banks.","QE for change programmes, cloud resilience and exit planning."],
+ ["2026-03-31","Annual DORA register deadline","ie","From 2026 registers of information are due by 31 March each year.","Third-party data and register tooling."],
+ ["2026-04-30","PSR to move into the FCA","fs","The government confirmed the Payment Systems Regulator's functions will move entirely into the FCA. The month is stated and the day is not.","Payments regulation under one regulator; access regime changes.","Apr 2026"],
+ ["2026-11-30","CHAPS and Swift reject unstructured addresses","fs ie","Unstructured postal addresses are rejected in CHAPS and in Swift cross-border payments from November 2026. The marker sits at the end of the month.","Payment data remediation and regression testing.","Nov 2026"],
+ ["2026-12-14","PSD3 and PSR plenary vote (indicative)","ie","Parliament's second-reading vote is indicatively set for this date. The PSR would apply 18 months after entry into force, so about mid-2028 (derived).","Payee verification, fraud liability and open banking changes."],
+ ["2027-01-09","Non-euro states: receive instant euro payments","ie","Payment providers in non-euro member states must receive instant euro payments.","Payment testing for groups with EU entities."],
+ ["2027-03-18","FCA PS26/2 reporting applies","fs","A single FCA, PRA and Bank of England regime for operational incident reporting and material third-party arrangements, with an annual register.","Incident data, third-party registers and resilience evidence."],
+ ["2027-07-09","Non-euro states: send instant euro payments and VoP","ie","Payment providers in non-euro member states must send instant euro payments and offer Verification of Payee.","Payment journey changes and QE."],
+ ["2027-11-30","CHAPS purpose codes for all payments","fs","Purpose codes become mandatory for all CHAPS payments, and LEIs for pacs.004 and pacs.009 COV. The marker sits at the end of the month.","Payment data and testing for UK banks.","Nov 2027"],
  ["2024-07-31","Consumer Duty applies to closed books","fs","Firms must show good outcomes for customers on products sold before July 2023, including legacy life and pensions books.","CX redesign and closed-book platform modernisation."],
  ["2024-10-07","APP fraud reimbursement starts","fs","Payment firms reimburse authorised push payment scam victims up to £85,000 per claim.","AI fraud detection, case handling and QE for payment journeys."],
  ["2025-01-13","AI Opportunities Action Plan","pub","Fifty actions to adopt AI across government; 38 met by January 2026.","AI solutions bought through frameworks."],
@@ -223,12 +240,12 @@ var EV=[
  ["2027-01-31","PSTN switch-off","tel","The copper phone network closes; about 1.5m lines remained in July 2026.","Migration factories and customer communication automation."],
  ["2027-04-01","New DHSC after NHS England merger","hea","NHS England folds into the Department of Health and Social Care.","System consolidation and rationalisation."],
  ["2027-05-07","Half-hourly settlement migration complete","utl","Suppliers must complete meter migration; dual running continues to July 2027.","Settlement integration and testing."],
- ["2027-12-02","EU AI Act high-risk duties (Annex III)","ie","Moved to this date by the provisional Digital Omnibus deal (to confirm in the Official Journal).","AI governance, testing and documentation for Irish and EU operations."],
+ ["2027-12-02","EU AI Act high-risk duties (Annex III)","ie","Moved from 2 August 2026 by Regulation (EU) 2026/1744, published in the Official Journal on 24 July 2026. Credit scoring is a listed high-risk use.","AI governance, testing and documentation for Irish and EU operations."],
  ["2027-12-31","BBC Charter expires","tel","The Charter review consulted on iPlayer advertising and subscription options.","Digital product and subscription platforms."],
  ["2028-01-31","Motor finance redress payments end","fs","Redress payments under the FCA schemes run to January 2028.","Case handling and complaint journeys."],
  ["2028-03-31","Telecoms Security Code measures due","tel","Many measures fall due by March 2028, with later ones to 2029.","Security assurance and testing."],
  ["2028-06-30","Single Patient Record in the NHS App","hea","A national record designated as critical national infrastructure, viewable in the app by 2028.","Integration (FHIR and APIs), app QE and data work."],
- ["2028-08-02","EU AI Act Annex I duties","ie","High-risk duties for products under EU safety law, moved to this date (to confirm).","AI assurance for product companies."]
+ ["2028-08-02","EU AI Act Annex I duties","ie","High-risk duties for products under EU safety law, moved to this date by Regulation (EU) 2026/1744.","AI assurance for product companies."]
 ];
 EV.sort(function(a,b){return a[0]<b[0]?-1:a[0]>b[0]?1:0});
 EV.forEach(function(e,i){e.i=i;e.ss=e[2].split(" ")});
@@ -236,6 +253,7 @@ var TODAY="2026-10-27";
 function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function fmt(d){return new Date(d+"T00:00:00Z").toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"})}
 function half(d){var y=+d.slice(0,4),m=+d.slice(5,7);return (y-2024)*2+(m>6?1:0)}
+function dl(e){return e[5]||fmt(e[0])}
 function secNames(e){return e.ss.map(function(k){return SN[k][1]}).join(", ")}
 var sel="all",pin=EV.filter(function(e){return e[0]>TODAY})[0].i;
 function show(e){return sel==="all"||e.ss.indexOf(sel)>=0}
@@ -251,20 +269,20 @@ function caption(){
  var v=EV.filter(show),up=v.filter(function(e){return e[0]>TODAY}),nx=up[0],name=sel==="all"?"UK and Ireland":SN[sel][1];
  var h='<span class="yr">'+v.length+'</span><h2 style="font-size:18px;margin-top:6px">forcing dates for '+esc(name)+', '+fmt(v[0][0]).slice(-4)+' to '+fmt(v[v.length-1][0]).slice(-4)+'</h2>';
  h+='<p style="margin-top:8px">'+(up.length?up.length+(up.length===1?' of them falls':' of them fall')+' after today, 27 October 2026.':'All of them have already passed, so the work they force is under way now.')+'</p>';
- if(nx)h+='<p class="k">Next date</p><p><b>'+esc(fmt(nx[0]))+'.</b> '+esc(nx[1])+'. Points to: '+esc(nx[4])+'</p>';
+ if(nx)h+='<p class="k">Next date</p><p><b>'+esc(dl(nx))+'.</b> '+esc(nx[1])+'. Points to: '+esc(nx[4])+'</p>';
  h+='<p class="k">Where this goes</p><p>'+(sel==="all"?'A3 Demand scores each sector against four offering groups and turns these dates into an opening message per sector.':'A3 Demand sets out the buyers, offerings and a draft opening message for '+esc(name)+'.')+' <a href="demand.html">Open A3 Demand</a></p>';
  document.getElementById("ov-cap").innerHTML=h;
 }
 function showPin(){var e=EV[pin],el=document.getElementById("ov-pin");
- el.innerHTML='<div><b class="pd">'+esc(fmt(e[0]))+'</b><span class="mini">'+esc(secNames(e))+(e[0]>TODAY?'':' · passed')+'</span></div><p><b>'+esc(e[1])+'.</b> '+esc(e[3])+'</p><p class="mini"><b>Points to:</b> '+esc(e[4])+'</p>';}
-function table(){var tb=document.querySelector("#ov-table tbody");tb.innerHTML=EV.filter(show).map(function(e){return '<tr><td>'+esc(fmt(e[0]))+'</td><td>'+esc(e[1])+'</td><td>'+esc(secNames(e))+'</td></tr>'}).join("")}
+ el.innerHTML='<div><b class="pd">'+esc(dl(e))+'</b><span class="mini">'+esc(secNames(e))+(e[0]>TODAY?'':' · passed')+'</span></div><p><b>'+esc(e[1])+'.</b> '+esc(e[3])+'</p><p class="mini"><b>Points to:</b> '+esc(e[4])+'</p>';}
+function table(){var tb=document.querySelector("#ov-table tbody");tb.innerHTML=EV.filter(show).map(function(e){return '<tr><td>'+esc(dl(e))+'</td><td>'+esc(e[1])+'</td><td>'+esc(secNames(e))+'</td></tr>'}).join("")}
 
 var host=document.getElementById("ov-chart");
 function draw(){
  host.innerHTML="";var W=Math.max(300,host.clientWidth),nar=W<560,R=nar?6:9,gap=nar?15:23,m={l:2,r:2,b:44,t:20};
  var cnt={},maxK=0;EV.forEach(function(e){var h=half(e[0]);cnt[h]=(cnt[h]||0)+1;maxK=Math.max(maxK,cnt[h])});
  var H=m.t+maxK*gap+m.b+6,base=H-m.b;
- var s=VZ.svg(host,W,H,"Dot chart of "+EV.length+" forcing dates from July 2024 to August 2028, stacked by half year. The largest stack, eight dates, falls in the first half of 2025.");
+ var mk=Object.keys(cnt).filter(function(h){return cnt[h]===maxK})[0],s=VZ.svg(host,W,H,"Dot chart of "+EV.length+" forcing dates from July 2024 to 2028, stacked by half year. The largest stack, "+maxK+" dates, falls in "+(mk%2?"the second":"the first")+" half of "+(2024+Math.floor(mk/2))+".");
  s.setAttribute("role","group");
  var x=VZ.lin(0,10,m.l,W-m.r),cw=x(1)-x(0);
  for(var y=0;y<5;y++){VZ.el("line",{x1:x(y*2),x2:x(y*2),y1:m.t-10,y2:base+30,"class":"grid"},s);var t=VZ.el("text",{x:x(y*2)+cw,y:base+30,"text-anchor":"middle","class":"t-strong"},s);t.textContent=2024+y;
@@ -277,11 +295,11 @@ function draw(){
  EV.forEach(function(e){
   var h=half(e[0]),n=k[h]=(k[h]||0)+1,cx=x(h)+cw/2,cy=base-gap*(n-1)-R-5,on=show(e),pinned=pin===e.i;
   var col=on?(sel==="all"?"var(--s"+SN[e.ss[0]][2]+")":"var(--s"+SN[sel][2]+")"):"var(--ink3)";
-  var g=VZ.el("g",{"class":"dot"+(on?"":" dim"),tabindex:on?0:-1,role:"button","aria-pressed":pinned,"aria-label":fmt(e[0])+", "+e[1]+", "+secNames(e)},s);
+  var g=VZ.el("g",{"class":"dot"+(on?"":" dim"),tabindex:on?0:-1,role:"button","aria-pressed":pinned,"aria-label":dl(e)+", "+e[1]+", "+secNames(e)},s);
   VZ.el("circle",{cx:cx,cy:cy,r:Math.min(cw/2,12),fill:"transparent"},g);
   VZ.el("circle",{"class":"ring",cx:cx,cy:cy,r:pinned?R+2:R,style:"fill:"+col+";stroke:"+(pinned?"var(--ink1)":"var(--chart-bg)"),"stroke-width":pinned?2.5:1.5},g);
   if(e.ss.length>1&&on&&sel==="all")VZ.el("circle",{cx:cx,cy:cy,r:R*.42,style:"fill:var(--s"+SN[e.ss[1]][2]+")"},g);
-  VZ.tip(g,function(){return "<b>"+esc(e[1])+"</b>"+esc(fmt(e[0]))+'<div class="m">'+esc(secNames(e))+"</div>"});
+  VZ.tip(g,function(){return "<b>"+esc(e[1])+"</b>"+esc(dl(e))+'<div class="m">'+esc(secNames(e))+"</div>"});
   function p(){pin=e.i;draw();showPin();var f=host.querySelector('[aria-pressed="true"]');if(f)f.focus()}
   g.addEventListener("click",p);g.addEventListener("keydown",function(ev){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();p()}});
  });
@@ -322,7 +340,7 @@ var TH={
 var C=[
  ["role","A1","The Role","plan","Each of the 17 responsibility lines in the job description mapped to the page that answers it and to my experience, with where the role sits in Wipro.",["17 responsibilities","5 strands"],1],
  ["portfolio","A2","Portfolio","market","The ten offerings in the role mapped to buyer problems, buyers, partners and proof points, with the 2025 and 2026 alliances and an offering combiner.",["10 offerings","Alliances"]],
- ["demand","A3","Demand","market","UK and Ireland demand by sector, a sector by offering heat grid and the forcing dates from 2024 to 2028.",["8 sectors","31 dates"]],
+ ["demand","A3","Demand","market","UK and Ireland demand by sector, a sector by offering heat grid and the forcing dates from 2024 to 2028.",["8 sectors","48 dates"]],
  ["buyers","A4","Buyers","clients","The buying committee for an IC&D deal: what makes each executive act, their objections with draft replies, and a four-quarter relationship plan.",["Objection explorer","4 quarters"]],
  ["accounts","A5","Accounts","clients commercial","An account scoring model with editable weights, hunting and farming, offering adjacency and a placeholder order book build.",["Scoring model","Order book"]],
  ["alternatives","A6","Competitors","market","Thirteen competitors rated on six dimensions, their AI partnerships and UK contracts, and how I would position Wipro against each.",["13 firms","AI partnerships"]],

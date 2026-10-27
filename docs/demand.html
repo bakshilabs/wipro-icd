@@ -59,6 +59,18 @@
 .dm-mini .tr{height:10px;background:var(--chart-bg);border-radius:3px;overflow:hidden}
 .dm-mini .fl{height:100%;background:var(--accent);border-radius:3px}
 .dm-mini b{font-weight:600;text-align:right}
+.dm-eu{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.dm-eu article{background:var(--panel);border-radius:6px;padding:14px 16px;font-size:14px}
+.dm-eu .dt{font:600 12px/1.3 var(--sans);text-transform:uppercase;letter-spacing:.04em;color:var(--accent)}
+.dm-eu h4{font:600 15.5px/1.3 var(--sans);margin:4px 0 6px;color:var(--ink1)}
+.dm-eu p{margin:0 0 6px}
+.dm-ct{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:14px}
+.dm-ct div{border:1px solid var(--line);border-radius:4px;padding:10px 12px;font-size:14px;background:var(--surface);transition:opacity .2s}
+.dm-ct div small{display:block;font-size:11.5px;color:var(--ink2);margin-top:2px}
+.dm-ct div.dim{opacity:.3}
+.dm-ct div.oth{border-style:dashed;color:var(--ink2)}
+@media (max-width:980px){.dm-eu{grid-template-columns:1fr 1fr}.dm-ct{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:640px){.dm-eu{grid-template-columns:1fr}.dm-ct{grid-template-columns:1fr 1fr}}
 @media (max-width:980px){.dm-hl{grid-template-columns:minmax(0,1fr)}.dm-stats{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.dm-stats{grid-template-columns:1fr}.dm-list th:nth-child(3),.dm-list td:nth-child(3){display:none}.dm-pp{grid-template-columns:1fr}.dm-evd{grid-template-columns:1fr}.dm-stats .stat b{font-size:28px}.dm-mini{grid-template-columns:120px 1fr 20px}}
 </style>
@@ -103,13 +115,35 @@
 <section class="sec">
   <span class="eyebrow">Forcing dates</span>
   <h2>Regulatory and policy dates, 2024 to 2028</h2>
-  <p class="intro">Dated rules, deadlines and programmes that make clients spend on a fixed timetable. Filter by sector, then select a marker or a row to read what the date forces and the offering it points to.</p>
+  <p class="intro">Dated rules, deadlines and programmes that make clients spend on a fixed timetable. The Ireland and EU row carries the EU banking rules that apply to Irish firms and to UK groups with EU entities. Filter by sector, then select a marker or a row to read what the date forces and the offering it points to.</p>
   <div class="viz rv">
-    <div class="viz-h"><h3>Forcing dates by sector</h3><p>The dates bunch between late 2026 and mid 2027, when pensions dashboards, half-hourly settlement and the PSTN switch-off all fall due.</p></div>
+    <div class="viz-h"><h3>Forcing dates by sector</h3><p>The dates bunch between late 2026 and mid 2027, when pensions dashboards, the CHAPS address rules, the PSTN switch-off, FCA PS26/2 reporting and half-hourly settlement all fall due.</p></div>
     <div class="btnrow" role="group" aria-label="Filter by sector" id="dm-filter" style="margin-top:0"></div>
     <div id="dm-tl" style="margin-top:14px"></div>
     <div class="dm-evd" id="dm-evd" aria-live="polite"></div>
     <div class="dm-list" tabindex="0" role="region" aria-label="Forcing dates list"><table class="t"><thead><tr><th>Date</th><th>Event</th><th>Sectors</th></tr></thead><tbody id="dm-rows"></tbody></table></div>
+  </div>
+</section>
+
+
+<section class="sec">
+  <span class="eyebrow">Europe and UK banking</span>
+  <h2>Banking regulation in Europe and the UK</h2>
+  <p class="intro">Banks in the EU, Ireland and the UK face resilience, payments and AI rules on fixed dates from 2025 to 2028. Each item below is also on the timeline above. The dates and requirements come from the regulators; the work each one points to is my reading.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Banking rules by jurisdiction</h3><p>Payments carry the most dates, with euro instant payments, Swift and CHAPS ISO 20022 rules and the PSR all falling between 2025 and 2028.</p></div>
+    <div class="tabs" role="tablist" aria-label="Jurisdiction" id="dm-jtabs" style="margin-top:0">
+      <button role="tab" id="dm-j0" aria-controls="dm-jp" aria-selected="true">European Union</button>
+      <button role="tab" id="dm-j1" aria-controls="dm-jp" aria-selected="false">Ireland</button>
+      <button role="tab" id="dm-j2" aria-controls="dm-jp" aria-selected="false">United Kingdom</button>
+    </div>
+    <div role="tabpanel" id="dm-jp" aria-labelledby="dm-j0"><div class="dm-eu" id="dm-jcards"></div></div>
+  </div>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Critical ICT third-party providers designated on 18 November 2025</h3><p>The ESAs designated 19 providers for direct EU oversight, and six of the eleven named in the ESAs' release are IT services firms. The grouping is my judgement.</p></div>
+    <div class="btnrow" role="group" aria-label="Provider type" id="dm-ctf" style="margin-top:0"></div>
+    <div class="dm-ct" id="dm-ct"></div>
+    <p class="mini" style="margin-top:10px">Wipro is not among the designated providers. Its EU bank clients still keep DORA registers, exit plans and contract terms for every ICT provider, and in 2026 the ESAs are reviewing contracts and service levels between designated providers and EU financial entities. I would expect bank buyers to ask for DORA-ready contract terms and resilience test evidence in any pursuit (my reading). Source: ESMA and ESAs designation release and list, November 2025 (primary); EBA 2026 work programme (primary).</p>
   </div>
 </section>
 
@@ -174,7 +208,7 @@
 <li>Bedford Borough Council and Waverley Borough Council, Procurement Act 2023 pages. (primary, public bodies)</li>
 <li>TechMarketView, "G-Cloud 15 launches", 11 August 2026; Open Access Government on G-Cloud 15 and the Government Commercial Agency. (press)</li>
 <li>Hunton and Kennedys on Data (Use and Access) Act 2025 commencement. (press)</li>
-<li>Gibson Dunn and Sidley on the EU AI Act Digital Omnibus agreement, May and June 2026; Future of Privacy Forum and DLA Piper on Regulation (EU) 2026/1744, 2026. (press)</li>
+<li>Gibson Dunn and Sidley on the EU AI Act Digital Omnibus agreement, May and June 2026; Future of Privacy Forum and DLA Piper on Regulation (EU) 2026/1744, 2026 (press). EUR-Lex confirms the regulation (primary).</li>
 <li>RPC and William Fry on Ireland's Regulation of Artificial Intelligence Bill 2026. (press)</li>
 <li>gov.ie, Connecting Government 2030. (primary); CSO, Information Society Statistics: Enterprises 2025. cso.ie (primary)</li>
 <li>UKAuthority, HTN and Government Transformation on the 10 Year Health Plan, July 2025. (press)</li>
@@ -200,6 +234,19 @@
 <li>Office of Rail and Road, passenger rail service complaints 2025/26. dataportal.orr.gov.uk (primary)</li>
 <li>CILT on the Great British Railways brand. (press); Law360 on the TfL cyber attack. (press)</li>
 <li>Written ministerial statement on the EU Entry/Exit System. questions-statements.parliament.uk (primary)</li>
+<li>EBA and ESAs, timeline for registers of information and designation of critical ICT third-party providers; ESAs register of information FAQ, March 2025. eba.europa.eu (primary)</li>
+<li>ESMA, "European Supervisory Authorities designate critical ICT third-party providers", and list of designated CTPPs, November 2025. esma.europa.eu (primary)</li>
+<li>EUR-Lex, Commission Delegated Regulation (EU) 2025/1190 on threat-led penetration testing, 18 June 2025; Regulation (EU) 2026/1744 (Digital Omnibus on AI), 24 July 2026. eur-lex.europa.eu (primary); European Commission, AI Omnibus enters into force (primary)</li>
+<li>EBA, Work Programme 2026. eba.europa.eu (primary)</li>
+<li>Council of the EU, payment services agreement, 27 November 2025, and statement of reasons, 21 October 2026. consilium.europa.eu (primary); Regulation Tomorrow, 23 October 2026, and ClearingPost, 3 September 2026 (press)</li>
+<li>ECB, Instant Payments Regulation page. ecb.europa.eu (primary); European Commission, new EU rules on instant euro payments, 10 October 2025 (primary)</li>
+<li>Swift, "Global financial community completes switch to ISO 20022", 25 November 2025, and ISO 20022 FAQs. swift.com (primary)</li>
+<li>ECB Banking Supervision, supervisory priorities 2026 to 2028, 18 November 2025. bankingsupervision.europa.eu (primary)</li>
+<li>Central Bank of Ireland, Regulatory and Supervisory Outlook 2026, 26 February 2026. centralbank.ie (primary); William Fry summary (press)</li>
+<li>Bank of England, RTGS Renewal Programme and RTGS/CHAPS annual report 2024/25; policy statements on ISO 20022 enhanced data in CHAPS, 2024 and 2025. bankofengland.co.uk (primary); NAO report, December 2025 (primary)</li>
+<li>HM Treasury, streamlined approach to payment systems regulation: consultation response, April 2026; Payments Forward Plan. gov.uk (primary); PSR CP26/3, October 2026 (primary); Better Regulation on the Financial Services and Markets Bill (press)</li>
+<li>FCA, PS26/2 operational incident and third-party reporting, 18 March 2026. fca.org.uk (primary)</li>
+<li>Wipro, "Wipro wins 4 awards at the European Software Testing Awards (TESTA) 2023" (primary); Iliad Solutions, teaming agreement with Wipro, 10 March 2026 (primary, partner)</li>
 <li>Wipro, Phoenix Group press release, 26 March 2025; HM Treasury SIAM press release, 2022; Q2 FY26 and Q4 FY26 results releases; Anthropic CoE press release, 16 June 2026; Cloud Assurance page; Allied Irish Banks press release, 2015. wipro.com (primary); The Register on National Grid, 2021 (press)</li>
 </ul></details></section>
 
@@ -262,14 +309,27 @@ var C={
  C95:["Rail complaints ran at 19 per 100,000 journeys in 2025/26.","Office of Rail and Road","primary"],
  C96:["Great British Railways will replace 17 organisations with one and plans an app with no booking fees.","CILT","press"],
  C97:["The TfL cyber attack in 2024 cost about £39m.","Law360","press"],
- C98:["The EU Entry/Exit System was fully operational from 10 Apr 2026, with UK juxtaposed checks.","Parliament statement","primary"]
+ C98:["The EU Entry/Exit System was fully operational from 10 Apr 2026, with UK juxtaposed checks.","Parliament statement","primary"],
+ E49:["DORA applied from 17 Jan 2025. Registers of information reached the ESAs by 30 Apr 2025, and from 2026 the deadline is 31 Mar each year.","EBA and ESAs","primary"],
+ E50:["On 18 Nov 2025 the ESAs designated 19 critical ICT third-party providers, including Accenture, AWS, Capgemini, Google Cloud, IBM, Kyndryl, Microsoft, NTT DATA, Oracle, SAP and Tata Consultancy Services.","ESMA and ESAs","primary"],
+ E51:["The DORA standard on threat-led penetration testing is Delegated Regulation (EU) 2025/1190, published on 18 Jun 2025.","EUR-Lex","primary"],
+ E53:["Regulation (EU) 2026/1744 (OJ 24 Jul 2026) moved Annex III high-risk AI duties, including credit scoring, to 2 Dec 2027 and Annex I duties to 2 Aug 2028.","EUR-Lex; European Commission","primary"],
+ E55:["PSD3 and the PSR: provisional agreement 27 Nov 2025, Council first-reading position Oct 2026, Parliament plenary indicatively 14 Dec 2026. Not yet in force.","Council of the EU; Regulation Tomorrow; ClearingPost","primary and press"],
+ E57:["Instant Payments Regulation: euro-area PSPs receive from 9 Jan 2025 and send with Verification of Payee from 9 Oct 2025; non-euro states receive from 9 Jan 2027 and send from 9 Jul 2027.","ECB; European Commission","primary"],
+ E58:["Swift CBPR+ MT and MX coexistence ended on 22 Nov 2025, and fully unstructured addresses are rejected from Nov 2026.","Swift","primary"],
+ E59:["ECB supervisory priorities 2026 to 2028 (18 Nov 2025) include full DORA compliance, risk-data aggregation and reporting, and banks' use of AI.","ECB Banking Supervision","primary"],
+ E61:["The Central Bank of Ireland's 2026 outlook (26 Feb 2026) plans DORA inspections, TLPT, a review of ICT change management and a deep dive into cloud dependency at significant banks.","Central Bank of Ireland","primary"],
+ E63:["The Bank of England's RT2 settlement engine went live on 28 Apr 2025, completing the £431m RTGS renewal programme.","Bank of England; NAO","primary"],
+ E64:["CHAPS rejects unstructured addresses from Nov 2026. From Nov 2027 purpose codes are mandatory for all CHAPS payments.","Bank of England","primary"],
+ E65:["In Apr 2026 the government confirmed the Payment Systems Regulator's functions will move entirely into the FCA.","HM Treasury","primary"],
+ E67:["FCA PS26/2 (18 Mar 2026) sets one regime for operational incident and material third-party reporting, applying from 18 Mar 2027.","FCA","primary"]
 };
 
 /* ---------- heat matrix ---------- */
 var COLS=["AI solutions","CX and digital experience","App and legacy modernisation","Quality engineering"];
 var COLS_S=["AI","CX","Modernise","QE"];
 var SEC=[
- {n:"Financial services",s:[5,5,5,5],r:["75% of firms already use AI and the median number of use cases is expected to more than double. The FCA's Mills Review prepares for agentic finance.","Consumer Duty, 214,600 FOS complaints, APP fraud reimbursement and motor finance redress all need better customer journeys.","Closed-book life and pensions books, mainframes and the dashboards deadline.","Operational resilience from March 2025, DORA, 803 hours of bank outages and large migrations."],c:[["C28","C29","C25"],["C16","C34","C19","C23"],["C24","C33","C39"],["C17","C18","C30"]]},
+ {n:"Financial services",s:[5,5,5,5],r:["75% of firms already use AI and the median number of use cases is expected to more than double. The FCA's Mills Review prepares for agentic finance.","Consumer Duty, 214,600 FOS complaints, APP fraud reimbursement and motor finance redress all need better customer journeys.","Closed-book life and pensions books, mainframes and the dashboards deadline.","Operational resilience from March 2025, DORA, 803 hours of bank outages, CHAPS data rules in 2026 and 2027, and FCA PS26/2 reporting from March 2027."],c:[["C28","C29","C25"],["C16","C34","C19","C23"],["C24","C33","C39"],["C17","C18","C30","E64","E67"]]},
  {n:"Public sector",s:[4,4,5,4],r:["The AI Action Plan has 38 of 50 actions met and about £2bn is set for AI, but delivery is slow and buyers are cautious.","47% of central government services still rely on phone or paper, and the GOV.UK app is in development.","28% of systems are legacy and 22% of those are red-rated. HMRC and DWP still run mainframes. Savings are put at £45bn a year.","The Procurement Act and assurance needs, with the service standard for government digital services."],c:[["C49","C51"],["C45"],["C43","C47","C48","C44"],["C11","C13"]]},
  {n:"Health",s:[4,4,4,3],r:["AI already assists a third of NHS chest X-rays, and AI guidance is planned in the NHS App.","The NHS App is the front door with about 80m logins a month, while NHS satisfaction is 26%.","Single Patient Record, ESR replacement, the NHSE and DHSC merger and the Irish national health record tender.","Clinical safety testing matters, but budgets are tight and much of the work is product-led."],c:[["C49","C60"],["C60","C62","C67"],["C61","C66","C64","C69"],[]]},
  {n:"Retail and consumer",s:[4,5,3,3],r:["Personalisation, agentic commerce and contact centre work. Adoption is broad but shallow.","About 27% of sales are online, DMCC Act enforcement has begun and retail lost the top UKCSI spot.","Modernisation is selective, mostly ERP and commerce replatforming.","Cyber recovery testing after the M&S and Co-op attacks, plus peak-load testing."],c:[["C75"],["C70","C71","C74"],[],["C72"]]},
@@ -304,8 +364,25 @@ function drawHeat(){var W=heatHost.clientWidth;if(!W)return;hw=W;heatHost.innerH
 drawHeat();addEventListener("resize",function(){if(heatHost.clientWidth!==hw)drawHeat()});
 
 /* ---------- forcing dates ---------- */
-var SECT=[["fs","Financial services",1],["pub","Public sector",2],["hea","Health",3],["ret","Retail",4],["utl","Utilities",5],["tel","Telecoms and media",6],["trv","Travel",7],["ie","Ireland",8]];
+var SECT=[["fs","Financial services",1],["pub","Public sector",2],["hea","Health",3],["ret","Retail",4],["utl","Utilities",5],["tel","Telecoms and media",6],["trv","Travel",7],["ie","Ireland and EU",8]];
 var EV=[
+ ["2025-01-09","Euro instant payments: receive","ie","Euro-area payment providers must be able to receive instant euro payments.","Payment testing and real-time payment hub changes.","E57"],
+ ["2025-04-28","Bank of England RT2 settlement engine live","fs","The new RTGS core ledger went live, completing a nine-year, £431m renewal. Next come extended hours, synchronisation and APIs.","Payments integration and testing as banks adopt the new RTGS features.","E63"],
+ ["2025-04-30","First DORA registers reach the ESAs","ie","Supervisors sent firms' registers of ICT third-party contracts to the ESAs; from 2026 the deadline is 31 March each year.","Third-party data, contract registers and integration work.","E49"],
+ ["2025-06-18","DORA threat-led penetration testing standard","ie","Delegated Regulation (EU) 2025/1190 sets TLPT rules that mirror TIBER-EU for large banks.","Security and resilience testing.","E51"],
+ ["2025-10-09","Euro instant payments: send and Verification of Payee","ie","Euro-area providers must send instant euro payments and offer Verification of Payee.","Payment journey changes, fraud controls and QE.","E57"],
+ ["2025-11-18","ESAs designate critical ICT third-party providers","ie","Nineteen providers come under direct EU oversight, including Accenture, AWS, Capgemini, Google Cloud, IBM, Kyndryl, Microsoft, NTT DATA, Oracle, SAP and TCS.","DORA contract terms, exit plans and resilience evidence in every bank pursuit.","E50"],
+ ["2025-11-18","ECB supervisory priorities 2026 to 2028","ie","Priority 2 is operational resilience and ICT: full DORA compliance, risk-data aggregation and reporting, and closer engagement on banks' use of AI.","Resilience testing, data remediation and AI governance.","E59"],
+ ["2025-11-22","Swift CBPR+ coexistence ends","fs ie","Cross-border payment instructions move fully to ISO 20022; 97% were in ISO 20022 the day after cutover.","ISO 20022 data use, conversion and payments testing.","E58"],
+ ["2026-02-26","Central Bank of Ireland 2026 outlook","ie","Plans DORA inspections, TLPT, a review of ICT change management and a deep dive into cloud dependency at significant banks.","QE for change programmes, cloud resilience and exit planning.","E61"],
+ ["2026-03-31","Annual DORA register deadline","ie","From 2026 registers of information are due by 31 March each year.","Third-party data and register tooling.","E49"],
+ ["2026-04-30","PSR to move into the FCA","fs","The government confirmed the Payment Systems Regulator's functions will move entirely into the FCA. The month is stated and the day is not.","Payments regulation under one regulator; access regime changes.","E65","Apr 2026"],
+ ["2026-11-30","CHAPS and Swift reject unstructured addresses","fs ie","Unstructured postal addresses are rejected in CHAPS and in Swift cross-border payments from November 2026. The marker sits at the end of the month.","Payment data remediation and regression testing.","E64","Nov 2026"],
+ ["2026-12-14","PSD3 and PSR plenary vote (indicative)","ie","Parliament's second-reading vote is indicatively set for this date. The PSR would apply 18 months after entry into force, so about mid-2028 (derived).","Payee verification, fraud liability and open banking changes.","E55"],
+ ["2027-01-09","Non-euro states: receive instant euro payments","ie","Payment providers in non-euro member states must receive instant euro payments.","Payment testing for groups with EU entities.","E57"],
+ ["2027-03-18","FCA PS26/2 reporting applies","fs","A single FCA, PRA and Bank of England regime for operational incident reporting and material third-party arrangements, with an annual register.","Incident data, third-party registers and resilience evidence.","E67"],
+ ["2027-07-09","Non-euro states: send instant euro payments and VoP","ie","Payment providers in non-euro member states must send instant euro payments and offer Verification of Payee.","Payment journey changes and QE.","E57"],
+ ["2027-11-30","CHAPS purpose codes for all payments","fs","Purpose codes become mandatory for all CHAPS payments, and LEIs for pacs.004 and pacs.009 COV. The marker sits at the end of the month.","Payment data and testing for UK banks.","E64","Nov 2027"],
  ["2024-07-31","Consumer Duty applies to closed books","fs","Firms must show good outcomes for customers on products sold before July 2023, including legacy life and pensions books.","CX redesign and closed-book platform modernisation.","C16"],
  ["2024-10-07","APP fraud reimbursement starts","fs","Payment firms reimburse authorised push payment scam victims up to £85,000 per claim.","AI fraud detection, case handling and QE for payment journeys.","C19"],
  ["2025-01-13","AI Opportunities Action Plan","pub","Fifty actions to adopt AI across government; 38 met by January 2026.","AI solutions bought through frameworks.","C49"],
@@ -331,42 +408,71 @@ var EV=[
  ["2027-01-31","PSTN switch-off","tel","The copper phone network closes; about 1.5m lines remained in July 2026.","Migration factories and customer communication automation.","C86"],
  ["2027-04-01","New DHSC after NHS England merger","hea","NHS England folds into the Department of Health and Social Care.","System consolidation and rationalisation.","C64"],
  ["2027-05-07","Half-hourly settlement migration complete","utl","Suppliers must complete meter migration; dual running continues to July 2027.","Settlement integration and testing.","C79"],
- ["2027-12-02","EU AI Act high-risk duties (Annex III)","ie","Moved to this date by the EU AI Act Digital Omnibus. Law-firm summaries report publication in the Official Journal on 24 July 2026 (to confirm on EUR-Lex).","AI governance, testing and documentation for Irish and EU operations.","C18"],
+ ["2027-12-02","EU AI Act high-risk duties (Annex III)","ie","Moved from 2 August 2026 by Regulation (EU) 2026/1744, published in the Official Journal on 24 July 2026. Credit scoring is a listed high-risk use.","AI governance, testing and documentation for Irish and EU operations.","E53"],
  ["2027-12-31","BBC Charter expires","tel","The Charter review consulted on iPlayer advertising and subscription options.","Digital product and subscription platforms.","C93"],
  ["2028-01-31","Motor finance redress payments end","fs","Redress payments under the FCA schemes run to January 2028.","Case handling and complaint journeys.","C23"],
  ["2028-03-31","Telecoms Security Code measures due","tel","Many measures fall due by March 2028, with later ones to 2029.","Security assurance and testing.","C90"],
  ["2028-12-31","Single Patient Record in the NHS App (by 2028)","hea","A national record designated as critical national infrastructure, viewable in the app by 2028. The month is unstated, so the marker sits at the end of 2028.","Integration (FHIR and APIs), app QE and data work.","C61"],
- ["2028-08-02","EU AI Act Annex I duties","ie","High-risk duties for products under EU safety law, moved to this date (to confirm).","AI assurance for product companies.","C18"]
+ ["2028-08-02","EU AI Act Annex I duties","ie","High-risk duties for products under EU safety law, moved to this date by Regulation (EU) 2026/1744.","AI assurance for product companies.","E53"]
 ];
 EV.forEach(function(e,i){e.i=i;e.ss=e[2].split(" ")});
 EV.sort(function(a,b){return a[0]<b[0]?-1:a[0]>b[0]?1:0});EV.forEach(function(e,i){e.i=i});
 /* the Ireland claims and EU AI Act rows have their own sources */
-EV.forEach(function(e){if(e[1].indexOf("Consumer Protection Code")>=0)e[5]="Central Bank of Ireland";if(e[1].indexOf("EU AI Act")>=0)e[5]="Gibson Dunn; Sidley; FPF; DLA Piper (press)";if(e[1].indexOf("Ireland AI Bill")>=0)e[5]="RPC; William Fry";if(e[1].indexOf("BBC")>=0)e[5]="Broadband TV News";});
+EV.forEach(function(e){if(e[1].indexOf("Consumer Protection Code")>=0)e[5]="Central Bank of Ireland";if(e[1].indexOf("Ireland AI Bill")>=0)e[5]="RPC; William Fry";if(e[1].indexOf("BBC")>=0)e[5]="Broadband TV News";});
 var fSel="all",eSel=EV.filter(function(e){return e[0]==="2026-10-31"})[0].i;
 var SN={};SECT.forEach(function(s){SN[s[0]]=s});
 function fmt(d){var t=new Date(d+"T00:00:00Z");return t.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"})}
+function dl(e){return e[6]||fmt(e[0])}
 function srcOf(e){var k=e[5];return C[k]?k+", "+C[k][1]+" ("+C[k][2]+")":k}
 var fHost=document.getElementById("dm-filter");
 fHost.innerHTML='<button type="button" data-k="all" aria-pressed="true">All sectors</button>'+SECT.map(function(s){return '<button type="button" data-k="'+s[0]+'" aria-pressed="false"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--s'+s[2]+');margin-right:6px"></span>'+esc(s[1])+'</button>'}).join("");
 [].forEach.call(fHost.querySelectorAll("button"),function(b){b.addEventListener("click",function(){fSel=b.dataset.k;[].forEach.call(fHost.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b)});var vis=EV.filter(show);if(vis.length&&!show(EV[eSel]))eSel=vis[0].i;apply()})});
 function show(e){return fSel==="all"||e.ss.indexOf(fSel)>=0}
-function evCard(){var e=EV[eSel];document.getElementById("dm-evd").innerHTML='<div><div class="d">'+esc(fmt(e[0]))+'</div><div class="p">'+esc(e.ss.map(function(k){return SN[k][1]}).join(", "))+'</div></div><div><b>'+esc(e[1])+'.</b> '+esc(e[3])+'<p class="w"><b>Points to:</b> '+esc(e[4])+'</p><p class="src">Source: '+esc(srcOf(e))+'</p></div>'}
+function evCard(){var e=EV[eSel];document.getElementById("dm-evd").innerHTML='<div><div class="d">'+esc(dl(e))+'</div><div class="p">'+esc(e.ss.map(function(k){return SN[k][1]}).join(", "))+'</div></div><div><b>'+esc(e[1])+'.</b> '+esc(e[3])+'<p class="w"><b>Points to:</b> '+esc(e[4])+'</p><p class="src">Source: '+esc(srcOf(e))+'</p></div>'}
 function apply(){[].forEach.call(document.querySelectorAll("#dm-tl .dm-ev"),function(g){var e=EV[+g.dataset.i];g.classList.toggle("dim",!show(e));g.classList.toggle("sel",+g.dataset.i===eSel)});
- document.getElementById("dm-rows").innerHTML=EV.filter(show).map(function(e){return '<tr data-i="'+e.i+'" tabindex="0"'+(e.i===eSel?' class="sel"':'')+'><td>'+esc(fmt(e[0]))+'</td><td>'+esc(e[1])+'</td><td>'+esc(e.ss.map(function(k){return SN[k][1]}).join(", "))+'</td></tr>'}).join("");
+ document.getElementById("dm-rows").innerHTML=EV.filter(show).map(function(e){return '<tr data-i="'+e.i+'" tabindex="0"'+(e.i===eSel?' class="sel"':'')+'><td>'+esc(dl(e))+'</td><td>'+esc(e[1])+'</td><td>'+esc(e.ss.map(function(k){return SN[k][1]}).join(", "))+'</td></tr>'}).join("");
  [].forEach.call(document.querySelectorAll("#dm-rows tr"),function(r){function go(){eSel=+r.dataset.i;apply()}r.addEventListener("click",go);r.addEventListener("keydown",function(ev){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();go()}})});
  evCard()}
 function tm(s){return new Date(s+"T00:00:00Z").getTime()}
 responsive(document.getElementById("dm-tl"),function(W){var host=document.getElementById("dm-tl"),narrow=W<640,lw=narrow?78:150,rh=narrow?34:38,H=SECT.length*rh+44,t0=tm("2024-01-01"),t1=tm("2028-12-31"),X=VZ.lin(t0,t1,lw,W-8);
  var s=VZ.svg(host,W,H,"Forcing dates timeline 2024 to 2028");s.setAttribute("role","group");
  for(var y=2024;y<=2028;y++){var x=X(tm(y+"-01-01"));VZ.el("line",{x1:x,x2:x,y1:0,y2:SECT.length*rh,"class":"grid"},s);txt(s,x+(narrow?2:4),SECT.length*rh+18,String(y),"t-strong",narrow?"start":"start")}
- SECT.forEach(function(sc,i){var yy=i*rh+rh/2;txt(s,0,yy+4,narrow?sc[1].replace(" and media","").replace("Financial services","Financial").replace("Public sector","Public"):sc[1],"t-strong").setAttribute("style","font-size:"+(narrow?11.5:12.5)+"px");VZ.el("line",{x1:lw,x2:W-8,y1:yy,y2:yy,"class":"axis"},s)});
+ SECT.forEach(function(sc,i){var yy=i*rh+rh/2;txt(s,0,yy+4,narrow?sc[1].replace(" and media","").replace("Financial services","Financial").replace("Public sector","Public").replace(" and EU",", EU"):sc[1],"t-strong").setAttribute("style","font-size:"+(narrow?11.5:12.5)+"px");VZ.el("line",{x1:lw,x2:W-8,y1:yy,y2:yy,"class":"axis"},s)});
  var tx=X(tm("2026-10-27"));VZ.el("line",{x1:tx,x2:tx,y1:-4,y2:SECT.length*rh+24,stroke:"var(--ink1)","stroke-dasharray":"3 3"},s);txt(s,tx+4,SECT.length*rh+36,"Today","t-muted");
- EV.forEach(function(e){e.ss.forEach(function(k){var li=SECT.map(function(x){return x[0]}).indexOf(k),yy=li*rh+rh/2,g=VZ.el("g",{"class":"dm-ev","data-i":e.i,"aria-label":fmt(e[0])+": "+e[1]},s);
-  VZ.el("circle",{cx:X(tm(e[0])),cy:yy,r:narrow?6:7.5,fill:"var(--s"+SN[k][2]+")",stroke:"var(--chart-bg)","stroke-width":1.5},g);
-  VZ.tip(g,function(){return "<b>"+esc(e[1])+"</b><span class='m'>"+esc(fmt(e[0]))+"</span>"});
+ var placed={},rr=narrow?6:7.5;
+ EV.forEach(function(e){e.ss.forEach(function(k){var li=SECT.map(function(x){return x[0]}).indexOf(k),cx0=X(tm(e[0])),pl=placed[k]=placed[k]||[],near=pl.filter(function(px){return Math.abs(px-cx0)<rr*2}).length,yy=li*rh+rh/2+[0,-rr,rr,-rr*1.6,rr*1.6][Math.min(near,4)];pl.push(cx0);var g=VZ.el("g",{"class":"dm-ev","data-i":e.i,"aria-label":dl(e)+": "+e[1]},s);
+  VZ.el("circle",{cx:cx0,cy:yy,r:rr,fill:"var(--s"+SN[k][2]+")",stroke:"var(--chart-bg)","stroke-width":1.5},g);
+  VZ.tip(g,function(){return "<b>"+esc(e[1])+"</b><span class='m'>"+esc(dl(e))+"</span>"});
   key(g,function(){eSel=e.i;apply()})})});
  apply()});
 
+
+/* ---------- Europe and UK banking ---------- */
+var JR=[
+ [["17 Jan 2025 and each 31 Mar","DORA","DORA has applied since 17 January 2025. Registers of ICT third-party contracts reached the ESAs by 30 April 2025, and from 2026 they are due by 31 March each year. The TLPT standard, Regulation (EU) 2025/1190, followed on 18 June 2025.","Resilience and penetration testing, third-party registers and exit plans.","EBA and ESAs; EUR-Lex (primary)"],
+  ["18 Nov 2025","Critical ICT third-party providers","The ESAs designated 19 providers for direct oversight. In 2026 they are reviewing contracts and service levels between those providers and EU financial entities.","DORA-ready contract terms and resilience evidence in every bank pursuit.","ESMA and ESAs; EBA 2026 work programme (primary)"],
+  ["9 Jan 2025 to 9 Jul 2027","Euro instant payments","Euro-area banks had to receive instant euro payments by 9 January 2025, and send them with Verification of Payee by 9 October 2025. Non-euro member states follow on 9 January 2027 and 9 July 2027.","Payment-hub changes, fraud controls and payments QE.","ECB; European Commission (primary)"],
+  ["22 Nov 2025 and Nov 2026","Swift ISO 20022","MT and MX coexistence for cross-border payments ended on 22 November 2025, with 97% of instructions in ISO 20022 the next day. Fully unstructured addresses are rejected from November 2026.","Payment data remediation, conversion and regression testing.","Swift (primary)"],
+  ["2 Dec 2027","EU AI Act high-risk duties","Regulation (EU) 2026/1744 moved the Annex III high-risk duties, which cover credit scoring, from 2 August 2026 to 2 December 2027. They include risk management, data quality, logging, documentation and human oversight.","QE for AI: bias testing, logging and evidence for oversight.","EUR-Lex; European Commission (primary)"],
+  ["Plenary 14 Dec 2026 (indicative)","PSD3 and the Payment Services Regulation","Provisional agreement came on 27 November 2025 and the Council adopted its first-reading position in October 2026. The PSR adds payee verification, liability for impersonation fraud and fraud-data sharing. It is not yet in force; if adopted at the end of 2026 it would apply around mid-2028 (derived).","Fraud controls, payee verification and open banking access.","Council of the EU (primary); Regulation Tomorrow; ClearingPost (press)"],
+  ["2026 to 2028","ECB supervisory priorities","Priority 2 is operational resilience and ICT: full DORA compliance, remediation of cyber, third-party and risk-data aggregation shortcomings, and closer engagement on banks' use of AI.","Data remediation, resilience testing and AI governance for significant banks.","ECB Banking Supervision, 18 Nov 2025 (primary)"]],
+ [["26 Feb 2026","Central Bank of Ireland outlook for 2026","The Central Bank puts significant focus on operational resilience again. For significant banks it plans DORA cyber and third-party inspections, TLPT, a targeted review of ICT change management and a deep dive into cloud dependency.","QE for change programmes and cloud resilience assessments.","Central Bank of Ireland (primary); William Fry (press)"],
+  ["2026","Payments and IT change","The Central Bank reports more bank-related DDoS attacks than in 2024. It says growing reliance on digital channels strains banks' capacity to manage large IT change programmes, and plans collective action on payments resilience.","Release quality, performance testing and resilience engineering.","Central Bank of Ireland (primary)"],
+  ["9 Oct 2025","Instant payments in Ireland","As a euro-area state, Irish banks were due to send instant euro payments and offer Verification of Payee by 9 October 2025.","Payments QE and fraud controls.","ECB (primary)"]],
+ [["28 Apr 2025","Bank of England RTGS","The RT2 core ledger and settlement engine went live after a nine-year, £431m programme. The roadmap adds extended settlement hours, synchronisation, APIs and wider direct access.","Integration and testing as banks adopt new RTGS features.","Bank of England; NAO (primary)"],
+  ["Nov 2026 and Nov 2027","CHAPS ISO 20022 data","CHAPS rejects unstructured addresses from November 2026. From November 2027 purpose codes are mandatory for all CHAPS payments, and LEIs for pacs.004 and pacs.009 COV. The structured-remittance mandate was rescinded in summer 2026.","Payment data remediation and regression testing.","Bank of England (primary)"],
+  ["Apr 2026","Payment Systems Regulator into the FCA","The government confirmed that the PSR's functions move entirely into the FCA, through the Financial Services and Markets Bill 2026 to 2027. The PSR consulted on a single access regime in October 2026.","One payments regulator to engage on resilience and access.","HM Treasury (primary); Better Regulation (press)"],
+  ["18 Mar 2027","FCA PS26/2","A single FCA, PRA and Bank of England regime for operational incident reporting and material third-party arrangements, with an annual register, applies from 18 March 2027.","Incident data, third-party registers and resilience test evidence.","FCA (primary)"],
+  ["End 2026","Payments Forward Plan","HM Treasury plans data and operational enhancements to Faster Payments and Bacs by the end of 2026, design work on next-generation retail payments infrastructure and Bank of England rules for systemic stablecoins.","Faster Payments and Bacs change and testing.","HM Treasury (primary)"]]
+];
+function jPanel(i){document.getElementById("dm-jcards").innerHTML=JR[i].map(function(r){return '<article><div class="dt">'+esc(r[0])+'</div><h4>'+esc(r[1])+'</h4><p>'+esc(r[2])+'</p><p><b>Points to (my reading):</b> '+esc(r[3])+'</p><p class="src">Source: '+esc(r[4])+'</p></article>'}).join("")}
+VZ.tabs(document.getElementById("dm-jtabs"),function(t){var i=+t.id.slice(4);var p=document.getElementById("dm-jp");p.setAttribute("aria-labelledby",t.id);p.hidden=false;jPanel(i)});
+var CT=[["Accenture","svc"],["Capgemini","svc"],["IBM","svc"],["Kyndryl","svc"],["NTT DATA","svc"],["Tata Consultancy Services","svc"],["AWS","cld"],["Google Cloud","cld"],["Microsoft","cld"],["Oracle","cld"],["SAP","cld"]];
+var CTN={svc:"IT services",cld:"Cloud and software"};
+var ctf=document.getElementById("dm-ctf"),ctg=document.getElementById("dm-ct");
+ctg.innerHTML=CT.map(function(c){return '<div data-g="'+c[1]+'">'+esc(c[0])+'<small>'+CTN[c[1]]+'</small></div>'}).join("")+'<div class="oth" data-g="oth">Eight other providers<small>on the ESAs\' published list</small></div>';
+ctf.innerHTML=[["all","All 19"],["svc","IT services firms"],["cld","Cloud and software providers"]].map(function(b,i){return '<button type="button" data-g="'+b[0]+'" aria-pressed="'+(i===0)+'">'+esc(b[1])+'</button>'}).join("");
+[].forEach.call(ctf.querySelectorAll("button"),function(b){b.addEventListener("click",function(){var g=b.dataset.g;[].forEach.call(ctf.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b)});[].forEach.call(ctg.querySelectorAll("div"),function(d){d.classList.toggle("dim",g!=="all"&&d.dataset.g!==g)})})});
 /* ---------- evidence bars ---------- */
 var EVD=[
  {h:"UK Customer Satisfaction Index by sector, July 2026",r:"Banks now lead the index, while utilities and especially water trail the all-sector score of 78.3.",u:"",max:100,min:60,ref:78.3,dec:1,d:[["Banks and building societies",82.0],["Retail (food)",80.6],["All sectors",78.3],["Energy",77.2],["Utilities",73.7],["Water",70.2]],s:"Institute of Customer Service, UKCSI July 2026 (primary); sector figures via Retail Times and The Water Report (press). Axis starts at 60."},
@@ -389,14 +495,14 @@ addEventListener("resize",function(){if(document.getElementById("dm-bars").clien
 
 /* ---------- pursuit panels ---------- */
 var PP=[
- {n:"Financial services",h:0,buy:"COO, CIO, chief customer officer and operational resilience lead at banks, insurers, pension administrators and building societies.",dr:"Consumer Duty on closed books since July 2024; operational resilience since March 2025; pensions dashboards by 31 October 2026; motor finance redress to January 2028; FOS complaints at 214,600 a year.",off:"AI-led complaint and service handling, closed-book platform modernisation, and QE for resilience, with Capco on the business case.",ref:"Phoenix Group, £500m over 10 years with ALPHA platform modernisation (March 2025); an agentic AI payments-data deal for a leading UK financial services group (Q2 FY26).",q:"Which of your important business services would breach its impact tolerance first if a core platform change went wrong?",m:"Your closed books and complaint volumes carry the same conduct duty as your new products. We would modernise the platforms behind them and put AI into complaint handling with human review, so outcomes improve and resilience evidence comes as part of the work."},
+ {n:"Financial services",h:0,buy:"COO, CIO, chief customer officer and operational resilience lead at banks, insurers, pension administrators and building societies.",dr:"Consumer Duty on closed books since July 2024; operational resilience since March 2025; pensions dashboards by 31 October 2026; CHAPS rejects unstructured addresses from November 2026 and needs purpose codes on all payments from November 2027; FCA PS26/2 incident and third-party reporting from 18 March 2027; motor finance redress to January 2028; FOS complaints at 214,600 a year. Banks with EU entities also face DORA, the critical third-party regime, euro instant payments with Verification of Payee, and the PSR from about mid-2028 if adopted.",off:"QE and payments resilience testing as the entry offer in banks, then AI-led complaint and service handling and core or closed-book platform modernisation, with Capco on the business case.",ref:"Lloyds Banking Group Payment Services Platform test automation with Wipro (European Software Testing Awards 2023); teaming with Iliad Solutions for payment testing (March 2026); Phoenix Group, £500m over 10 years with ALPHA platform modernisation (March 2025); an agentic AI payments-data deal for a leading UK financial services group (Q2 FY26). The banking offers and partners are on the Portfolio page.",q:"Which of your important business services would breach its impact tolerance first if a core platform change went wrong?",m:"Your closed books and complaint volumes carry the same conduct duty as your new products. We would modernise the platforms behind them and put AI into complaint handling with human review, so outcomes improve and resilience evidence comes as part of the work."},
  {n:"Public sector",h:1,buy:"Chief digital and information officer, service owners and commercial leads in departments and arm's-length bodies.",dr:"28% of systems legacy with 22% of those red-rated; 47% of services non-digital; Procurement Act since February 2025; G-Cloud 15 from August 2026.",off:"Legacy and mainframe modernisation with data migration assurance, service digitisation and AI tools bought through G-Cloud 15.",ref:"HM Treasury service integration across 27 processes, plus AI-in-policy and HR operating model work (from 2022); Crown Commercial Service supplier listings.",q:"Which red-rated system carries the most policy risk in the next spending period, and what would replacing it make possible?",m:"Your department runs services that still depend on systems the government's own review rates as high risk. We would start with the red-rated system that blocks the most digital service and modernise it in stages, with assurance at each step."},
  {n:"Health",h:2,buy:"Chief clinical information officer, director of digital, and programme leads for the NHS App, records and workforce systems.",dr:"10 Year Health Plan (July 2025); NHS England merging into DHSC from April 2027; Single Patient Record in the app by 2028; HSE One Health Record tender in Ireland.",off:"Integration through FHIR and APIs, digital applications and app QE, and AI triage with safety guardrails.",ref:"Agentforce healthcare agents (March 2025) and healthcare as a focus industry of the Claude Applied AI CoE (June 2026). I would confirm with the practice which UK health references Wipro can cite, and lead with method and partners.",q:"Which records must be visible in the NHS App by 2028, and which systems hold them today?",m:"The plan makes the NHS App the front door and promises a single record by 2028. We would connect the systems that hold that record, test them to clinical safety standards and add AI guidance with clear human oversight."},
  {n:"Retail and consumer",h:3,buy:"Chief digital officer, ecommerce director, CMO and chief customer officer.",dr:"About 27% of sales online; DMCC Act enforcement since April 2025; retail lost the top UKCSI spot in July 2026; cyber attacks on M&S and Co-op in 2025.",off:"Digital experience and commerce with Adobe or Salesforce, AI for service and personalisation, and recovery and peak-load testing.",ref:"Adobe practice with 860+ accredited consultants and 450+ engagements; Designit London studio; Salesforce Summit partner.",q:"Where in the online customer journey do you lose the most customers, and what does the contact centre hear about it?",m:"Retail has lost its lead in customer satisfaction for the first time since 2008. We would redesign the journeys where customers drop out, with AI service that hands over cleanly to staff and testing that holds up at peak."},
  {n:"Utilities and energy",h:4,buy:"CIO, customer operations director and settlement programme lead at suppliers; regulatory and transformation directors at water companies.",dr:"Half-hourly settlement: migration ready by 28 October 2026 and complete by 7 May 2027; lowest UKCSI sector at 73.7; Energy Ombudsman cases up in H1 2026; water regulator reform.",off:"Settlement integration and testing, billing modernisation and agent assist for customer service.",ref:"Uniper QE: 15% shorter test cycle, 68% regression automation and 28% cost reduction; Capco Capability-as-a-Service for a leading UK energy trading company (Q4 FY26); a Utilities CPQ win in Europe.",q:"How many of your meters are still to migrate, and what does a failed cut-over cost you in billing complaints?",m:"Settlement migration must finish by May 2027, while customers rate utilities lowest of any sector. We would test the cut-over end to end and give agents AI support on billing queries, so the migration and the complaint numbers move in the right direction together."},
  {n:"Telecoms and media",h:5,buy:"CIO, chief customer officer, and BSS and OSS transformation leads.",dr:"PSTN switch-off on 31 January 2027 with about 1.5m lines left in July 2026; VodafoneThree integration; mid-contract price rules; Telecoms Security Code to 2028.",off:"Migration support with customer communication automation, BSS and OSS consolidation, and security assurance testing.",ref:"Vodafone Qatar QE (25% cost reduction); Enterprise Telco AI in Wipro Intelligence; a GenAI digital experience win with a European telco.",q:"Which customer groups are hardest to move before the switch-off, and how are you reaching them now?",m:"The copper network closes on 31 January 2027 and the last customers are the hardest to move. We would automate the outreach and the ordering steps, and consolidate the systems behind them so the work also counts towards your integration savings."},
  {n:"Travel and transport",h:6,buy:"Chief digital officer, customer experience director and operations technology leads.",dr:"Great British Railways replacing 17 organisations; rail complaints at 19 per 100,000 journeys; EES fully operational from April 2026; TfL cyber recovery.",off:"Digital applications for ticketing and passenger information, integration across merged organisations, and border and ticketing testing.",ref:"Airlines are a focus industry for the Claude Applied AI CoE (June 2026). I would add sector references from other regions after checking with the practice.",q:"Which passenger complaint category would you most like to halve, and which systems drive it?",m:"Merging 17 organisations into one is a chance to give passengers one app and one service. We would build on the systems you keep, connect the ones you merge and test each release against the services passengers complain about most."},
- {n:"Ireland",h:-1,buy:"CIO, chief risk officer and chief customer officer in Irish banks, insurers and funds; HSE digital leads.",dr:"DORA since January 2025 with registers by April 2025; revised Consumer Protection Code from 24 March 2026; HSE One Health Record dialogue from February 2026; Ireland's AI Bill (June 2026); EU AI Act high-risk duties moved to December 2027 (to confirm).",off:"Resilience testing and third-party tooling for DORA, CX redesign for the Consumer Protection Code, and AI governance for the AI Act.",ref:"Dublin office at Sir John Rogerson's Quay; Allied Irish Banks infrastructure contract and Dublin mainframe centre (2015, current status to confirm).",q:"Which AI use cases would count as high risk under the EU AI Act, and who signs them off today?",m:"Irish firms now face DORA, a revised Consumer Protection Code and the EU AI Act in quick succession. We would build the testing, controls and customer journeys once, so one programme meets all three."}
+ {n:"Ireland",h:-1,buy:"CIO, chief risk officer and chief customer officer in Irish banks, insurers and funds; HSE digital leads.",dr:"DORA since January 2025 with registers by April 2025; revised Consumer Protection Code from 24 March 2026; HSE One Health Record dialogue from February 2026; Ireland's AI Bill (June 2026); the Central Bank's 2026 reviews of ICT change management and cloud dependency at significant banks; euro instant payments with Verification of Payee since October 2025; EU AI Act high-risk duties from 2 December 2027.",off:"Resilience testing and third-party tooling for DORA, CX redesign for the Consumer Protection Code, and AI governance for the AI Act.",ref:"Dublin office at Sir John Rogerson's Quay; Allied Irish Banks infrastructure contract and Dublin mainframe centre (2015, current status to confirm).",q:"Which AI use cases would count as high risk under the EU AI Act, and who signs them off today?",m:"Irish firms now face DORA, a revised Consumer Protection Code and the EU AI Act in quick succession. We would build the testing, controls and customer journeys once, so one programme meets all three."}
 ];
 var ptabs=document.getElementById("dm-ptabs");
 ptabs.innerHTML=PP.map(function(p,i){return '<button role="tab" id="dm-pt'+i+'" aria-controls="dm-pp" aria-selected="'+(i===0)+'">'+esc(p.n)+'</button>'}).join("");
