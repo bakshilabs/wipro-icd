@@ -32,6 +32,8 @@ PAGES = [
     ("ai.html", "AI Workflow"),
     ("method.html", "Method"),
 ]
+# unlisted pages: built with the same head, gate and header, but not in the navigation, pager or index
+HIDDEN = [("study-33a04957.html", "Interview Study")]
 INDEX = PAGES[0][0]
 ABOUT = ["ai.html", "method.html"]
 APPX = [f for f, _ in PAGES[1:] if f not in ABOUT]
@@ -101,6 +103,18 @@ FOOT = ('<footer class="site-foot"><span>Prepared by Arpan Bakshi for the ICD Pr
         'It is based on public sources. Wipro did not produce or review it.</span></footer>')
 
 
+def build_hidden(fname):
+    src = (PAGES_DIR / fname).read_text()
+    m = re.match(r'\s*<!--meta title="([^"]*)" desc="([^"]*)"-->\s*', src)
+    if not m:
+        raise SystemExit(f"{fname}: missing meta comment")
+    body = src[m.end():].replace('<div class="tw">', '<div class="tw" tabindex="0" role="region" aria-label="Scrollable table">')
+    out = (HEAD.format(guard=GUARD, title=html.escape(m.group(1)), desc=html.escape(m.group(2)))
+           + '<a class="skip" href="#main">Skip to content</a>\n' + nav(fname)
+           + f'\n<main class="wrap page" id="main" tabindex="-1">\n{body}\n</main>\n' + FOOT + "\n</body>\n</html>\n")
+    (OUT / fname).write_text(out)
+
+
 def build_page(i, fname):
     src = (PAGES_DIR / fname).read_text()
     m = re.match(r'\s*<!--meta title="([^"]*)" desc="([^"]*)"-->\s*', src)
@@ -141,5 +155,9 @@ if __name__ == "__main__":
             print("wrote", f)
         else:
             print("missing", f)
+    for f, _ in HIDDEN:
+        if (PAGES_DIR / f).exists():
+            build_hidden(f)
+            print("wrote", f, "(unlisted)")
     build_gate()
     print("wrote index.html")
