@@ -210,14 +210,15 @@ function drawTL(){th.innerHTML="";var W=wOf(th),nar=W<760;
    var t1=VZ.el("text",{x:x+28,y:y-6,"class":"dt"},g);t1.textContent=e.dl;var t2=VZ.el("text",{x:x+28,y:y+14,"class":"ev"},g);t2.textContent=e.t;
    g.addEventListener("click",function(){tsel=i;drawTL()});g.addEventListener("keydown",function(k){if(k.key==="Enter"||k.key===" "){k.preventDefault();tsel=i;drawTL()}})});
   pin();return}
- var H=300,L=150,R=16,AY=168,s=VZ.svg(th,W,H,"Timeline of six dated triggers, October 2026 to December 2027");s.setAttribute("role","group");
+ var H=324,L=150,R=16,AY=168,s=VZ.svg(th,W,H,"Timeline of six dated triggers, October 2026 to December 2027");s.setAttribute("role","group");
  var x=VZ.lin(T0.getTime(),T1.getTime(),L,W-R);
  for(var k=0;k<15;k++){var m=new Date(2026,9+k,1),xx=x(m.getTime());VZ.el("line",{"class":"tk",x1:xx,y1:AY-6,x2:xx,y2:AY+6},s);
-  if(W>900||k%2===0){var tl=VZ.el("text",{x:xx+4,y:AY+22,"class":"mo"},s);tl.textContent=MN[k]+(k===0||k===3?(k===0?" 2026":" 2027"):"")}}
+  if(W>900||k%2===0){var tl=VZ.el("text",{x:xx+4,y:AY+30,"class":"mo"},s);tl.textContent=MN[k]}
+  if(k===0||k===3){var yl=VZ.el("text",{x:xx+4,y:AY+46,"class":"mo",style:"font-weight:600"},s);yl.textContent=k===0?"2026":"2027"}}
  VZ.el("line",{"class":"ax",x1:L,y1:AY,x2:W-R,y2:AY},s);
  var tx=x(TODAY.getTime());VZ.el("line",{"class":"today",x1:tx,y1:30,x2:tx,y2:AY+8},s);var tt=VZ.el("text",{x:tx-8,y:24,"class":"tdl","text-anchor":"end"},s);tt.textContent="Today, 27 Oct 2026";
  EV.forEach(function(e,i){var cx=x(e.d.getTime()),up=i%2===0,on=i===tsel,g=VZ.el("g",{"class":"hit",role:"button",tabindex:"0","aria-pressed":on,"aria-label":e.dl+": "+e.t},s);
-  var ly=up?AY-70:AY+70;VZ.el("line",{"class":"stem",x1:cx,y1:AY,x2:cx,y2:up?ly+30:ly-42},g);
+  var ly=up?AY-70:AY+92;VZ.el("line",{"class":"stem",x1:cx,y1:AY,x2:cx,y2:up?ly+30:ly-42},g);
   var anchor=cx>W-170?"end":i===0?"end":cx<L+90?"start":"middle",ax=anchor==="end"?cx+8:anchor==="start"?cx-8:cx;
   var t1=VZ.el("text",{x:ax,y:up?ly:ly-20,"class":"dt","text-anchor":anchor},g);t1.textContent=e.dl;
   var words=e.t.split(" "),l1=[],l2=[];words.forEach(function(w){if(l1.join(" ").length+w.length<20&&!l2.length)l1.push(w);else l2.push(w)});
