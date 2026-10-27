@@ -4,8 +4,8 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Analysis</title>
-<meta name="description" content="An index to the analysis behind my application for the ICD Practitioner role in Wipro&#x27;s Industry Cloud &amp; Digital portfolio, UK and Ireland, with headline findings and every page by theme.">
+<title>Overview</title>
+<meta name="description" content="The case behind my application for the ICD Practitioner role in Wipro&#x27;s Industry Cloud &amp; Digital portfolio, UK and Ireland: the situation in Wipro&#x27;s own figures, the argument, the strategy, the twelve-month plan and the pages behind each.">
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/nav.css">
@@ -22,80 +22,44 @@
 <header class="sitenav"><div class="in"><a class="brand" href="overview.html">Arpan Bakshi<span>Wipro ICD Practitioner, UKI</span></a><nav class="links about" aria-label="About me"><a href="ai.html">AI Workflow</a><a href="method.html">Method</a></nav><button class="theme" type="button" aria-label="Switch to dark mode">Dark</button></div><nav class="appxbar" aria-label="Analysis pages"><div class="in"><a class="home" href="overview.html" aria-current="page">Analysis</a><div class="dd"><button type="button" aria-expanded="false" aria-controls="dd0">Context<small>A1&ndash;A5</small></button><ul id="dd0" hidden><li><a href="role.html"><b>A1</b>The Role</a></li><li><a href="portfolio.html"><b>A2</b>Portfolio</a></li><li><a href="ai-engagement.html"><b>A3</b>AI Engagement</a></li><li><a href="demand.html"><b>A4</b>Demand</a></li><li><a href="alternatives.html"><b>A5</b>Competitors</a></li></ul></div><div class="dd"><button type="button" aria-expanded="false" aria-controls="dd1">Clients<small>A6&ndash;A9</small></button><ul id="dd1" hidden><li><a href="buyers.html"><b>A6</b>Buyers</a></li><li><a href="accounts.html"><b>A7</b>Accounts</a></li><li><a href="account-map.html"><b>A8</b>Account Map</a></li><li><a href="new-logos.html"><b>A9</b>New Logos</a></li></ul></div><div class="dd"><button type="button" aria-expanded="false" aria-controls="dd2">Winning work<small>A10&ndash;A13</small></button><ul id="dd2" hidden><li><a href="workshops.html"><b>A10</b>Workshops</a></li><li><a href="pursuits.html"><b>A11</b>Pursuits</a></li><li><a href="deal-shaping.html"><b>A12</b>Deals</a></li><li><a href="banking.html"><b>A13</b>Banking</a></li></ul></div><div class="dd"><button type="button" aria-expanded="false" aria-controls="dd3">Plan<small>A14</small></button><ul id="dd3" hidden><li><a href="first-months.html"><b>A14</b>First Months</a></li></ul></div></div></nav></header><script>(function(){var r=document.documentElement,t=document.querySelector('.sitenav .theme');function cur(){return r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}function show(){var d=cur()==='dark';t.textContent=d?'Light':'Dark';t.setAttribute('aria-label','Switch to '+(d?'light':'dark')+' mode')}if(t){t.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}show()});show()}var B=[].slice.call(document.querySelectorAll('.appxbar .dd>button'));function shut(x){B.forEach(function(b){if(b!==x){b.setAttribute('aria-expanded','false');document.getElementById(b.getAttribute('aria-controls')).hidden=true}})}B.forEach(function(b){var m=document.getElementById(b.getAttribute('aria-controls'));b.addEventListener('click',function(e){e.stopPropagation();var o=b.getAttribute('aria-expanded')!=='true';shut(b);b.setAttribute('aria-expanded',o);m.hidden=!o;if(o){var a=m.querySelector('a');if(a&&e.detail===0)a.focus()}})});document.addEventListener('click',function(e){if(!e.target.closest('.appxbar .dd'))shut()});document.addEventListener('keydown',function(e){if(e.key==='Escape'){var o=B.filter(function(b){return b.getAttribute('aria-expanded')==='true'})[0];shut();if(o)o.focus()}});})();</script>
 <main class="wrap page" id="main" tabindex="-1">
 <style>
-.ov-hero{padding:56px 0 0;display:grid;grid-template-columns:5fr 7fr;gap:32px;align-items:start}
+.ov-hero{padding:56px 0 0;display:grid;grid-template-columns:6fr 6fr;gap:32px;align-items:start}
 .ov-hero h1{font-size:clamp(40px,4.8vw,66px);max-width:14ch}
 .ov-hero .lede{font-size:clamp(17px,1.6vw,21px);line-height:1.45;color:var(--muted);max-width:56ch;margin-top:20px}
 .ov-hero .meta{font-size:13px;color:var(--muted);margin-top:14px}
-.ov-hv{margin-top:0;min-width:0}
-.ov-hv .btnrow{margin:0 0 12px}
-.ov-hv .btnrow button{padding:7px 10px;font-size:12.5px}
-.ov-hv .btnrow i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:0}
-.ov-cap{background:var(--panel);border-radius:6px;padding:18px 20px;margin-top:24px}
-.ov-cap .k{font:500 12px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:14px 0 4px}
-.ov-cap h3{font-size:18px;margin-top:6px}
-.ov-cap p{font-size:14px}
-.ov-cap .yr{font:600 34px/1 var(--sans);letter-spacing:-.03em;color:var(--accent)}
-.ov-pin{background:var(--panel);border-radius:5px;padding:12px 14px;margin-top:10px;min-height:96px;font-size:14px;display:grid;gap:4px}
-.ov-pin .pd{font-weight:600;margin-right:8px}
-.ov-pin a{font-size:13px}
-#ov-chart .dot{cursor:pointer;transition:opacity .2s}
-#ov-chart .dim{opacity:.28}
-#ov-chart .dot:focus{outline:none}
-#ov-chart .dot:focus .ring{stroke:var(--ink1);stroke-width:2.5}
-@media (max-width:980px){.ov-hero{grid-template-columns:1fr}.ov-hl{display:contents}.ov-hv{order:5}.ov-hl .ov-cap{order:6;margin-top:0}}
+.ov-stats{display:grid;grid-template-columns:1fr;gap:12px;margin-top:0}
+.ov-stat{background:var(--panel);border-radius:6px;padding:14px 16px;display:grid;grid-template-columns:150px 1fr;gap:4px 16px;align-items:center}
+.ov-stat b{font:600 30px/1 var(--sans);letter-spacing:-.02em;font-variant-numeric:tabular-nums;grid-row:1/3}
+.ov-stat p{font-size:13.5px;line-height:1.4}
+.ov-stat .src{font-size:12px;color:var(--muted)}
+.ov-stat svg{display:block;width:100%;height:auto;grid-column:1/-1;margin-top:6px}
+.ov-stat svg text{font-family:var(--sans);font-size:11px;fill:var(--ink2)}
+.ov-stat svg .tv{fill:var(--ink1);font-weight:600}
+@media (max-width:980px){.ov-hero{grid-template-columns:1fr}}
+@media (max-width:520px){.ov-stat{grid-template-columns:1fr}.ov-stat b{grid-row:auto}}
 
-.ov-find{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
-.ov-f{background:var(--panel);border-radius:6px;padding:20px 22px 18px;color:var(--ink);text-decoration:none;display:flex;flex-direction:column;transition:transform .18s,background .18s}
-.ov-f:hover,.ov-f:focus-visible{transform:translateY(-3px);background:var(--accent-soft)}
-.ov-f b.n{font:600 clamp(30px,3.2vw,42px)/1 var(--sans);letter-spacing:-.03em;color:var(--ink)}
-.ov-f p{font-size:14px;color:var(--muted);margin-top:8px}
-.ov-f .src{font-size:12px;color:var(--muted);margin-top:10px}
-.ov-f small{margin-top:auto;padding-top:12px;font:500 13px/1 var(--sans);color:var(--accent)}
-.ov-f svg{display:block;width:100%;height:auto;margin-top:14px}
-.ov-f svg text{font-family:var(--sans);font-size:12px;fill:var(--ink2)}
-.ov-f svg .tv{fill:var(--ink1);font-weight:600}
-@media (max-width:900px){.ov-find{grid-template-columns:1fr 1fr}}
-@media (max-width:600px){.ov-find{grid-template-columns:1fr}}
+.ov-sit{display:grid;grid-template-columns:7fr 5fr;gap:28px;margin-top:28px;align-items:start}
+.ov-sit .panel{padding:20px 22px}
+.ov-sit .panel h3{font-size:16px}
+.ov-sit .panel p{font-size:14px;margin-top:6px}
+#ov-marg{margin-top:12px}
+#ov-marg text{font-family:var(--sans);font-size:12px;fill:var(--ink2)}
+#ov-marg .tv{fill:var(--ink1);font-weight:600}
+.ov-asks{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.ov-asks li{display:grid;grid-template-columns:28px 1fr;gap:10px;font-size:15.5px;line-height:1.45}
+.ov-asks li i{display:block;width:20px;height:20px;border-radius:50%;background:var(--accent);margin-top:3px}
+@media (max-width:900px){.ov-sit{grid-template-columns:1fr}}
 
-.ov-filter{margin-top:22px}
-.ov-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:20px}
-.ov-c{background:var(--panel);border-radius:6px;padding:12px;color:var(--ink);text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:transform .18s,background .18s}
-.ov-c:hover,.ov-c:focus-visible{transform:translateY(-3px);background:var(--accent-soft)}
-.ov-c[hidden]{display:none}
-.ov-c .th{display:block;width:100%;height:auto;background:var(--chart-bg);border-radius:4px;padding:8px}
-.ov-c .th *{fill:var(--ink3)}
-.ov-c .th .a{fill:var(--accent)}
-.ov-c .th .l{fill:none;stroke:var(--ink3);stroke-width:1.5}
-.ov-c .th .l2{fill:none;stroke:var(--ink2);stroke-width:2}
-.ov-c .cd{font:600 12px/1 var(--sans);color:var(--accent);letter-spacing:.02em}
-.ov-c h3{font-size:15px;line-height:1.2}
-.ov-c .sm{font-size:12.5px;line-height:1.4;color:var(--muted)}
-.ov-c .chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:auto;padding-top:4px}
-.ov-c .chip{font-size:11.5px;padding:2px 7px}
-.ov-c.feat{outline:2px solid var(--accent);outline-offset:-2px}
-.ov-count{font-size:13px;color:var(--muted);margin-top:12px}
-@media (max-width:1100px){.ov-cards{grid-template-columns:repeat(4,1fr)}}
-@media (max-width:820px){.ov-cards{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:560px){.ov-cards{grid-template-columns:1fr 1fr}}
+.ov-args{counter-reset:a;list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ov-args li{counter-increment:a;background:var(--panel);border-radius:6px;padding:22px 24px 20px 70px;position:relative;display:flex;flex-direction:column}
+.ov-args li::before{content:counter(a);position:absolute;left:22px;top:20px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--on-accent);font:600 16px/32px var(--sans);text-align:center}
+.ov-args h3{font-size:17px;line-height:1.3}
+.ov-args p{font-size:14.5px;margin-top:8px;color:var(--ink)}
+.ov-args .lk{margin-top:auto;padding-top:12px;font:500 13px/1 var(--sans)}
+@media (max-width:820px){.ov-args{grid-template-columns:1fr}}
 
-.ov-read{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
-.ov-read .panel h3{font-size:16px}
-.ov-read .panel p{font-size:14px;margin-top:6px}
-.ov-read .ic{display:block;width:26px;height:26px;margin-bottom:10px;fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-@media (max-width:900px){.ov-read{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.ov-read{grid-template-columns:1fr}}
-.ov-st{margin-top:56px}
 .ov-st .sline{font:600 clamp(20px,2.2vw,28px)/1.3 var(--sans);letter-spacing:-.01em;max-width:46ch;margin-top:10px}
 .ov-st .sline .m1{box-shadow:inset 0 -4px 0 var(--accent)}
 .ov-st .sline .m2{box-shadow:inset 0 -4px 0 var(--s2)}
-.ov-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
-.ov-stat{background:var(--panel);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
-.ov-stat b{font:600 28px/1 var(--sans);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-.ov-stat p{font-size:13.5px;line-height:1.4}
-.ov-stat .src{font-size:12px;color:var(--muted);margin-top:auto}
-.ov-stat svg{display:block;width:100%;height:auto}
-.ov-stat svg text{font-family:var(--sans);font-size:11px;fill:var(--ink2)}
-.ov-stat svg .tv{fill:var(--ink1);font-weight:600}
 .ov-mv .btnrow{margin-top:22px}
 .ov-mv .btnrow i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
 .ov-dia{display:grid;grid-template-columns:1fr 56px 1fr;gap:0;margin-top:14px;align-items:stretch}
@@ -119,64 +83,141 @@
 .ov-arr svg{width:56px;height:120px}
 .ov-arr .v{display:none;width:160px;height:48px}
 .ov-arr svg text{font-family:var(--sans);font-size:11px;fill:var(--ink2)}
-.ov-en{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;align-items:center;background:var(--panel);border-radius:6px;padding:14px 18px;margin-top:12px;border-top:5px solid var(--ink3)}
-.ov-en h3{font-size:16px}
-.ov-en .ov-pl{grid-template-columns:repeat(3,1fr)}
-.ov-en .ov-pl a{border-left-color:var(--ink3)}
-.ov-meas{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;font-size:13.5px}
-.ov-meas b{font-weight:600}
-.ov-note{font-size:13px;color:var(--muted);margin-top:10px}
 .ov-q{margin-top:14px;font-size:14px;border-left:3px solid var(--s2);padding:4px 0 4px 12px}
-.ov-c.hm1{outline:2px solid var(--accent);outline-offset:-2px}
-.ov-c.hm2{outline:2px solid var(--s2);outline-offset:-2px}
-.ov-c .mv{display:flex;gap:4px}
+.ov-note{font-size:13px;color:var(--muted);margin-top:10px}
+.ov-where{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.ov-where .panel{padding:20px 22px}
+.ov-where .panel h3{font-size:16px}
+.ov-where .panel p{font-size:14.5px;margin-top:8px}
+@media (max-width:900px){.ov-dia{grid-template-columns:1fr;grid-template-rows:auto 48px auto}.ov-arr .h{display:none}.ov-arr .v{display:block}.ov-where{grid-template-columns:1fr}}
+
+.ov-hv{margin-top:28px}
+.ov-hv .btnrow{margin:0 0 12px}
+.ov-hv .btnrow button{padding:7px 10px;font-size:12.5px}
+.ov-hv .btnrow i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:0}
+.ov-pin{background:var(--panel);border-radius:5px;padding:12px 14px;margin-top:10px;min-height:96px;font-size:14px;display:grid;gap:4px}
+.ov-pin .pd{font-weight:600;margin-right:8px}
+#ov-chart .dot{cursor:pointer;transition:opacity .2s}
+#ov-chart .dim{opacity:.28}
+#ov-chart .dot:focus{outline:none}
+#ov-chart .dot:focus .ring{stroke:var(--ink1);stroke-width:2.5}
+
+.ov-plan td:first-child{font-weight:600;white-space:nowrap}
+.ov-plan td{font-size:14px;vertical-align:top}
+.ov-plan .m1{border-left:3px solid var(--accent);padding-left:10px}
+.ov-plan .m2{border-left:3px solid var(--s2);padding-left:10px}
+.ov-meas{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+.ov-meas div{background:var(--panel);border-radius:6px;padding:14px 16px}
+.ov-meas b{display:block;font:600 15px/1.3 var(--sans)}
+.ov-meas span{display:block;font-size:13px;color:var(--muted);margin-top:4px}
+@media (max-width:820px){.ov-meas{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.ov-meas{grid-template-columns:1fr}}
+
+.ov-vision{margin-top:28px;background:var(--accent-soft);border-radius:6px;padding:26px 30px;max-width:880px}
+.ov-vision p{font-size:clamp(16px,1.4vw,18.5px);line-height:1.55}
+
+.ov-grp{margin-top:26px}
+.ov-grp h3{font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:10px}
+.ov-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.ov-c{background:var(--panel);border-radius:6px;padding:12px;color:var(--ink);text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:transform .18s,background .18s}
+.ov-c:hover,.ov-c:focus-visible{transform:translateY(-3px);background:var(--accent-soft)}
+.ov-c .th{display:block;width:100%;height:auto;background:var(--chart-bg);border-radius:4px;padding:8px}
+.ov-c .th *{fill:var(--ink3)}
+.ov-c .th .a{fill:var(--accent)}
+.ov-c .th .l{fill:none;stroke:var(--ink3);stroke-width:1.5}
+.ov-c .cd{font:600 12px/1 var(--sans);color:var(--accent);letter-spacing:.02em}
+.ov-c h3{font-size:15px;line-height:1.2;text-transform:none;letter-spacing:0;color:var(--ink);font-weight:600;margin:0}
+.ov-c .sm{font-size:12.5px;line-height:1.4;color:var(--muted)}
+.ov-c .mv{display:flex;gap:4px;margin-top:auto;padding-top:4px}
 .ov-c .mv i{font:600 10.5px/1 var(--sans);font-style:normal;padding:3px 6px;border-radius:3px;background:var(--bg);color:var(--ink);border-left:3px solid var(--accent)}
 .ov-c .mv i.b{border-left-color:var(--s2)}
 .ov-c .mv i.e{border-left-color:var(--ink3)}
-@media (max-width:900px){.ov-stats{grid-template-columns:1fr}.ov-dia{grid-template-columns:1fr;grid-template-rows:auto 48px auto}.ov-arr .h{display:none}.ov-arr .v{display:block}.ov-en{grid-template-columns:1fr}.ov-en .ov-pl{grid-template-columns:1fr}}
+@media (max-width:1100px){.ov-cards{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:820px){.ov-cards{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.ov-cards{grid-template-columns:1fr 1fr}}
+.ov-read{font-size:14.5px;color:var(--muted);max-width:72ch;margin-top:14px}
 </style>
 
 <section class="ov-hero">
-  <div class="ov-hl">
-    <h1>Analysis</h1>
-    <p class="lede">My plan for the ICD Practitioner role is to grow share of wallet in Wipro's existing UK and Ireland accounts first, and use that proof to open new ones. Fourteen pages of research, models and plans from public sources show how I would run both moves, and each page lists its own sources.</p>
+  <div>
+    <h1>Overview</h1>
+    <p class="lede">Wipro's own figures set the brief for the ICD Practitioner role in the UK and Ireland: almost all revenue sits in existing accounts, the large-account base is being rebuilt, and Europe is growing with banking among the leaders. This page sets out the situation, the argument for my candidacy, the strategy, the twelve-month plan and the pages behind each.</p>
     <p class="meta">Arpan Bakshi, London. Research date 27 October 2026. Independent work from public sources.</p>
-    <div class="ov-cap" id="ov-cap" aria-live="polite"></div>
   </div>
-  <div class="viz ov-hv">
-    <div class="viz-h"><h2 style="font-size:17px">Forcing dates for UK and Ireland demand, 2024 to 2028</h2><p>Each dot is a dated rule, deadline or programme that makes clients spend; the largest cluster fell in early 2025, and the dates stay dense to the end of 2026.</p></div>
-    <div class="btnrow" id="ov-sect" role="group" aria-label="Filter by sector"></div>
-    <div id="ov-chart"></div>
-    <div class="ov-pin" id="ov-pin" aria-live="polite"></div>
-    <details class="more"><summary>All dates in the chart</summary><div class="tw" tabindex="0" role="region" aria-label="Scrollable table"><table class="t" id="ov-table"><thead><tr><th>Date</th><th>Event</th><th>Sectors</th></tr></thead><tbody></tbody></table></div></details>
-  </div>
-</section>
-
-<section class="block ov-st" id="strategy">
-  <span class="eyebrow">My strategy</span>
-  <h2>Strategy</h2>
-  <p class="sline">Grow share of wallet in Wipro's existing UK and Ireland accounts first <span class="m1">(Move 1: expand)</span>, and use that proof to open new ones <span class="m2">(Move 2: new logos)</span>.</p>
-  <p class="kicker">Three of Wipro's own figures set the order. The two moves run together from the first quarter, and proof from Move 1 feeds Move 2.</p>
   <div class="ov-stats">
     <div class="ov-stat rv">
       <b><span class="count" data-to="98" data-suffix="%">98%</span></b>
-      <svg viewBox="0 0 260 22" role="img" aria-label="98 percent of revenue from existing clients, 2 percent from new clients"><rect x="0" y="2" width="255" height="12" rx="3" style="fill:var(--accent)"/><rect x="255" y="2" width="5" height="12" rx="1" style="fill:var(--s2)"/></svg>
-      <p>of Wipro's revenue came from existing clients in Q2 FY27. Wipro added 33 new clients in the quarter.</p>
+      <p>of Wipro's revenue came from existing clients in Q2 FY27. Wipro added 33 new clients in the quarter and 216 in FY26.</p>
       <span class="src">Wipro, Datasheet Q2 FY27, October 2026 (primary)</span>
     </div>
     <div class="ov-stat rv">
-      <b>22 to 16 to <span class="count" data-to="18">18</span></b>
-      <svg viewBox="0 0 260 40" role="img" aria-label="Clients above 100 million US dollars: 22 in FY24, 16 in FY26, 18 in Q2 FY27" id="ov-st100"></svg>
-      <p>clients above US$100m a year: 22 in FY24, 16 in FY26 and 18 in Q2 FY27. Rebuilding large accounts is the fastest order book lever.</p>
-      <span class="src">Wipro, Datasheets Q4 FY25 and Q2 FY27 (primary)</span>
+      <b>22 to <span class="count" data-to="18">18</span></b>
+      <p>clients above US$100m a year: 22 in FY24, 17 in FY25, 16 in FY26 and 18 in Q2 FY27. The large-account base eroded and is being rebuilt.</p>
+      <span class="src">Wipro, Form 20-F FY2026 and Datasheet Q2 FY27 (primary)</span>
+      <svg viewBox="0 0 280 44" role="img" aria-label="Clients above 100 million US dollars: 22 in FY24, 17 in FY25, 16 in FY26, 18 in Q2 FY27" id="ov-st100"></svg>
     </div>
     <div class="ov-stat rv">
       <b><span class="count" data-to="5.1" data-suffix="%">5.1%</span></b>
-      <p>year-on-year constant currency growth in Europe in Q2 FY27, "led by BFSI", where Wipro has long relationships, European testing awards and partners such as Tricentis.</p>
-      <span class="src">Wipro, Q2 FY27 earnings call, 15 October 2026 (primary)</span>
+      <p>year-on-year growth in Europe in constant currency in Q2 FY27, which Wipro's CFO called "broad-based growth led by BFSI, Consumer, and EMR". Europe is 27.4% of IT services revenue.</p>
+      <span class="src">Wipro, Q2 FY27 earnings call and datasheet, 15 October 2026 (primary)</span>
     </div>
   </div>
+</section>
 
+<section class="block" id="situation">
+  <span class="eyebrow">Situation</span>
+  <h2>What the figures ask of the role</h2>
+  <div class="ov-sit">
+    <div>
+      <p class="intro">Wipro describes its strategy as consulting-led and AI-powered. In the UK and Ireland that strategy meets a mature book: growth has to come from inside the accounts Wipro already holds, new logos have to be opened with a point of view, and every deal has to hold its margin. The job description asks for two things that rarely sit in one person, advising client leadership on AI-enabled transformation and shaping margin-positive deals with Sales, Delivery and Finance.</p>
+      <ul class="ov-asks">
+        <li><i aria-hidden="true"></i><span><b>Grow share of wallet in existing accounts.</b> With 98% of revenue from existing clients and the large-account count still below FY24, expansion is the fastest route to order book.</span></li>
+        <li><i aria-hidden="true"></i><span><b>Open new logos with insight.</b> The CFO has said "hunting remains a very, very key lever". New accounts open on a dated reason and a reference, through the partners who already hold trust.</span></li>
+        <li><i aria-hidden="true"></i><span><b>Hold the margin at the first scope.</b> At 16.5%, Wipro's operating margin sits below its closest peers, so scope, pyramid and pricing model are set before a proposal goes in.</span></li>
+      </ul>
+    </div>
+    <div class="panel rv">
+      <h3>Operating margin, Q2 FY27</h3>
+      <p>Wipro reports 16.5%, about seven and a half points below TCS. Each firm defines margin in its own way.</p>
+      <svg id="ov-marg" viewBox="0 0 340 120" role="img" aria-label="Operating margin in Q2 FY27: TCS 24.0 percent, Infosys 21.0 percent, HCLTech 18.2 percent, Wipro 16.5 percent"></svg>
+      <p class="mini">TCS, Infosys, HCLTech and Wipro Q2 FY27 results, October 2026 (primary). Detail on <a href="deal-shaping.html">A12 Deals</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="argument">
+  <span class="eyebrow">Argument</span>
+  <h2>Four reasons I fit the role</h2>
+  <p class="kicker">Each reason links to the page that carries the evidence. The full map of the 17 responsibility lines is on A1 The Role.</p>
+  <ol class="ov-args">
+    <li class="rv">
+      <h3>I create demand at the top of the client, which is what a consulting-led motion needs.</h3>
+      <p>For eighteen years in New York and London I have sold advisory and engineering services to executives. At WSP I won more than $2m a year from outreach, pitches and bids. At SOM I led business development for my department, more than $3m a year, presenting to executives at Wall Street banks. At Foster + Partners the pitches, bids and competition entries I led as Associate Partner were behind more than £10m a year in fees, with presentations to Fortune 500 chief executives.</p>
+      <a class="lk" href="role.html">A1 The Role</a>
+    </li>
+    <li class="rv">
+      <h3>I have expanded accounts through the partner who held the relationship, which is the practitioner's motion.</h3>
+      <p>At Foster + Partners I co-created and launched a strategic advisory service line covering environmental strategy, digital transformation and spatial consulting, and sold it into clients the design studios already served, including Roche, Genentech, Apple, Oracle and JPMorgan Chase. The studios owned the relationships; I brought the specialist case. One outcome was a multi-year contract with a global pharmaceutical company that I pitched, negotiated and signed. An IC&amp;D practitioner working an account owned by a Wipro client partner has the same shape.</p>
+      <a class="lk" href="account-map.html">A8 Account Map</a>
+    </li>
+    <li class="rv">
+      <h3>I already sell and teach the AI tools Wipro is building its offer on.</h3>
+      <p>At Atlas Learn I train executive teams to use Claude, Gemini and Copilot in their work: more than 250 senior professionals so far, including a FinTech board and a chief executive with heads of HR, marketing and IT, and I run the company's sales, marketing and commercial operations. I hold four Anthropic credentials and Microsoft's Copilot Studio credential. Wipro opened its Applied AI Centre of Excellence for Claude in June 2026 with a target of 10,000 certified delivery experts, and made Gemini Enterprise its agentic orchestration platform in August. I sell what those people will deliver.</p>
+      <a class="lk" href="ai-engagement.html">A3 AI Engagement</a>
+    </li>
+    <li class="rv">
+      <h3>The plan is built around Wipro's practices, and I lead AI solutions hands-on.</h3>
+      <p>Technical design sits with the Application Modernisation practice, the Quality Engineering practice, Capco and the alliance partners. I sit where those practices are least present in a UK client: getting the chief operating officer into the room, framing the business case, and holding the deal shape with Finance while the practices price it. AI solutions on Claude and Gemini are the offering I use every day.</p>
+      <a class="lk" href="portfolio.html">A2 Portfolio</a>
+    </li>
+  </ol>
+</section>
+
+<section class="block ov-st" id="strategy">
+  <span class="eyebrow">Strategy</span>
+  <h2>Strategy</h2>
+  <p class="sline">Grow share of wallet in Wipro's existing UK and Ireland accounts first <span class="m1">(Move 1: expand)</span>, and use that proof to open new ones <span class="m2">(Move 2: new logos)</span>.</p>
+  <p class="kicker">Existing accounts qualify faster, convert at a higher rate and book order book sooner, and the references they produce make hunting credible. Both moves run from the first quarter.</p>
   <div class="ov-mv">
     <div class="btnrow" id="ov-mvsel" role="group" aria-label="Select a move">
       <button type="button" data-m="all" aria-pressed="true">Both moves</button>
@@ -188,19 +229,17 @@
         <h3>Move 1: expand</h3>
         <p class="when">Existing accounts, from the first quarter</p>
         <ol>
-          <li>Map IC&amp;D white space in the top UK and Ireland accounts with the client partners.</li>
-          <li>Attach QE, modernisation and AI to run contracts and renewals.</li>
-          <li>Run executive workshops on dated forcing events that produce proactive proposals.</li>
-          <li>Phase first scopes so order book lands early.</li>
+          <li>Map IC&amp;D white space in the top UK and Ireland accounts with the client partners, banking first.</li>
+          <li>Attach QE, modernisation and AI to run contracts and renewals, where added scope offsets step-downs of 6% to 7% a year.</li>
+          <li>Run executive workshops on dated forcing events that end in a proactive proposal.</li>
+          <li>Phase first scopes so order book lands early and the next phase is already named.</li>
         </ol>
         <p class="k">Pages behind it</p>
         <div class="ov-pl">
-          <a href="accounts.html"><b>A7</b><span><b>Accounts.</b> Scoring model, white space and order book build.</span></a>
           <a href="account-map.html"><b>A8</b><span><b>Account Map.</b> Named UK and Irish clients, white space and the people behind each account.</span></a>
+          <a href="accounts.html"><b>A7</b><span><b>Accounts.</b> Scoring model, offering adjacency and order book build.</span></a>
           <a href="workshops.html"><b>A10</b><span><b>Workshops.</b> Executive formats that end in a proposal.</span></a>
-          <a href="pursuits.html"><b>A11</b><span><b>Pursuits.</b> Scorecard and stage plan for proactive bids.</span></a>
-          <a href="deal-shaping.html"><b>A12</b><span><b>Deals.</b> Pricing and renewal step-downs to fund new scope.</span></a>
-          <a href="portfolio.html"><b>A2</b><span><b>Portfolio.</b> Offerings to attach to a run contract.</span></a>
+          <a href="deal-shaping.html"><b>A12</b><span><b>Deals.</b> Pricing, renewal step-downs and the margin calculator.</span></a>
           <a href="banking.html"><b>A13</b><span><b>Banking Pursuit.</b> Land and expand at an illustrative bank.</span></a>
         </div>
       </div>
@@ -212,148 +251,96 @@
         <h3>Move 2: new logos</h3>
         <p class="when">New accounts, hunting from the first quarter</p>
         <ol>
-          <li>Use references from the expansions in Move 1.</li>
-          <li>Hunt on forcing events, banking first: operational resilience, ISO 20022 and DORA.</li>
-          <li>Build partner-sourced pipeline with Tricentis, AWS, Google and Anthropic.</li>
+          <li>Take references from Move 1 to targets with a dated trigger: bank integrations, resilience, DORA and PS26/2.</li>
+          <li>Build partner-sourced pipeline with Google, Anthropic, AWS, Microsoft and Tricentis.</li>
+          <li>Open with a fixed-price diagnostic, then expand.</li>
           <li>Run hunting as a standing motion from the first quarter.</li>
         </ol>
         <p class="k">Pages behind it</p>
         <div class="ov-pl">
+          <a href="new-logos.html"><b>A9</b><span><b>New Logos.</b> Targets, dated triggers and routes in.</span></a>
           <a href="demand.html"><b>A4</b><span><b>Demand.</b> Forcing events that give a reason to call.</span></a>
           <a href="buyers.html"><b>A6</b><span><b>Buyers.</b> The buying committee and its objections.</span></a>
-          <a href="new-logos.html"><b>A9</b><span><b>New Logos.</b> Targets, dated triggers and routes in.</span></a>
           <a href="alternatives.html"><b>A5</b><span><b>Competitors.</b> Positioning against the incumbent.</span></a>
-          <a href="banking.html"><b>A13</b><span><b>Banking Pursuit.</b> An entry offer for a bank.</span></a>
-          <a href="portfolio.html"><b>A2</b><span><b>Portfolio.</b> Entry offers for a new logo.</span></a>
+          <a href="pursuits.html"><b>A11</b><span><b>Pursuits.</b> Scorecard and stage plan for proactive bids.</span></a>
         </div>
         <p class="ov-q">Wipro's CFO, Aparna Iyer, said in January 2025 that "hunting remains a very, very key lever" (Q3 FY25 earnings call).</p>
       </div>
     </div>
-    <div class="ov-en">
-      <h3>Enablers for both moves</h3>
-      <div class="ov-pl">
-        <a href="role.html"><b>A1</b><span><b>The Role.</b> The 17 responsibilities by move.</span></a>
-        <a href="ai-engagement.html"><b>A3</b><span><b>AI Engagement.</b> The AI offer in both moves.</span></a>
-        <a href="first-months.html"><b>A14</b><span><b>First Months.</b> The first year in phases.</span></a>
-      </div>
-    </div>
-    <p class="ov-meas"><b>Measures</b><span>Share of wallet per account</span><span>Pipeline created and coverage</span><span>Win rate</span><span>Order book booked</span></p>
     <p class="ov-note" id="ov-mvnote" aria-live="polite"></p>
   </div>
-</section>
 
-<section class="block">
-  <span class="eyebrow">Headline findings</span>
-  <h2>What the research shows</h2>
-  <p class="kicker">Six sourced facts from across the pages. Select a card to open the page behind it.</p>
-  <div class="ov-find">
-    <a class="ov-f rv" href="role.html">
-      <b class="n"><span class="count" data-to="27.4" data-suffix="%">27.4%</span></b>
-      <p>of Wipro's IT Services revenue came from the Europe market unit in Q2 FY27, which includes the UK and Ireland. Its segment margin rose to about 16.7% from about 11.7% a year earlier.</p>
-      <svg viewBox="0 0 260 46" role="img" aria-label="Europe segment margin about 11.7 percent in Q2 FY26 and about 16.7 percent in Q2 FY27">
-        <text x="0" y="14">Q2 FY26</text>
-        <path d="M58 4h90a4 4 0 0 1 4 4v4a4 4 0 0 1-4 4H58z" style="fill:var(--ink3)"/><text class="tv" x="160" y="14">11.7%</text>
-        <text x="0" y="38">Q2 FY27</text>
-        <path d="M58 28h130a4 4 0 0 1 4 4v4a4 4 0 0 1-4 4H58z" style="fill:var(--ink2)"/><text class="tv" x="200" y="38">16.7%</text>
-      </svg>
-      <span class="src">Segment margin shown. Share: PL Capital, 16 Oct 2026 (broker). Margin: my arithmetic on Wipro's Q2 FY27 segment table.</span>
-      <small>A1 The Role</small>
-    </a>
-    <a class="ov-f rv" href="demand.html">
-      <b class="n"><span class="count" data-to="28" data-suffix="%">28%</span></b>
-      <p>of central government systems were legacy in 2024, up from 26% in 2023. 22% of those legacy systems were red-rated.</p>
-      <svg viewBox="0 0 260 58" role="img" aria-label="Legacy share of central government systems: 26 percent in 2023, 28 percent in 2024">
-        <text x="0" y="12">2023</text>
-        <path d="M40 4h104a4 4 0 0 1 4 4v4a4 4 0 0 1-4 4H40z" style="fill:var(--ink3)"/><text class="tv" x="156" y="14">26%</text>
-        <text x="0" y="36">2024</text>
-        <path d="M40 28h112a4 4 0 0 1 4 4v4a4 4 0 0 1-4 4H40z" style="fill:var(--ink2)"/><text class="tv" x="164" y="38">28%</text>
-        <path d="M40 50h220" style="stroke:var(--grid)" stroke-width="1"/>
-      </svg>
-      <span class="src">State of Digital Government Review, DSIT, January 2025 (primary)</span>
-      <small>A4 Demand</small>
-    </a>
-    <a class="ov-f rv" href="demand.html">
-      <b class="n"><span class="count" data-to="78.3">78.3</span></b>
-      <p>was the UK Customer Satisfaction Index in July 2026. It was up 1.0 on a year earlier but only 0.1 on January 2026, and utilities trail at 73.7.</p>
-      <svg viewBox="0 0 260 58" role="img" aria-label="UKCSI July 2026: banks 82.0, all sectors 78.3, utilities 73.7, on an axis from 60 to 100">
-        <text x="0" y="12">Banks</text><path d="M78 3h110a4 4 0 0 1 4 4v3a4 4 0 0 1-4 4H78z" style="fill:var(--ink3)"/><text class="tv" x="200" y="13">82.0</text>
-        <text x="0" y="31">All sectors</text><path d="M78 22h90a4 4 0 0 1 4 4v3a4 4 0 0 1-4 4H78z" style="fill:var(--ink2)"/><text class="tv" x="180" y="32">78.3</text>
-        <text x="0" y="50">Utilities</text><path d="M78 41h68a4 4 0 0 1 4 4v3a4 4 0 0 1-4 4H78z" style="fill:var(--ink3)"/><text class="tv" x="158" y="51">73.7</text>
-      </svg>
-      <span class="src">Institute of Customer Service, UKCSI July 2026 (primary); sector figures via Retail Times (press). Axis starts at 60.</span>
-      <small>A4 Demand</small>
-    </a>
-    <a class="ov-f rv" href="demand.html">
-      <b class="n"><span class="count" data-to="75" data-suffix="%">75%</span></b>
-      <p>of UK financial firms were already using AI in 2024. The median firm expects its use cases to rise from 9 to 21 within three years.</p>
-      <svg viewBox="0 0 260 44" role="img" aria-label="Median AI use cases per firm rising from 9 now to 21 in three years" id="ov-uses"></svg>
-      <span class="src">Bank of England and FCA, AI in UK financial services, November 2024 (primary)</span>
-      <small>A4 Demand</small>
-    </a>
-    <a class="ov-f rv" href="ai-engagement.html">
-      <b class="n"><span class="count" data-to="10000">10,000</span></b>
-      <p>front-line delivery experts Wipro plans to certify on Claude within 18 months, through its Applied AI Centre of Excellence for Claude opened in June 2026.</p>
-      <svg viewBox="0 0 260 40" role="img" aria-label="Wipro AI programmes in 2026: Claude Centre of Excellence in June, expanded Google Cloud partnership with Gemini Enterprise in August">
-        <path d="M6 20H254" style="stroke:var(--grid)" stroke-width="2"/>
-        <circle cx="60" cy="20" r="6" style="fill:var(--ink2)"/><text class="tv" x="60" y="9" text-anchor="middle">Claude CoE</text><text x="60" y="38" text-anchor="middle">16 Jun 2026</text>
-        <circle cx="190" cy="20" r="6" style="fill:var(--ink3)"/><text class="tv" x="190" y="9" text-anchor="middle">Gemini Enterprise</text><text x="190" y="38" text-anchor="middle">27 Aug 2026</text>
-      </svg>
-      <span class="src">Wipro press releases, 16 June and 27 August 2026 (primary)</span>
-      <small>A3 AI Engagement</small>
-    </a>
-    <a class="ov-f rv" href="pursuits.html">
-      <b class="n"><span class="count" data-to="47" data-suffix="%">47%</span></b>
-      <p>was the UK's average RFP win rate in 2025, the highest of any region. The global average fell to 39% from 45% in 2024.</p>
-      <svg viewBox="0 0 260 46" role="img" aria-label="Average RFP win rate from 2019 to 2025: 53, 47, 44, 44, 43, 45 and 39 percent, with the UK at 47 percent in 2025" id="ov-win"></svg>
-      <span class="src">Loopio, 2026 RFP Trends and Benchmarks, 1,533 respondents (primary)</span>
-      <small>A11 Pursuits</small>
-    </a>
+  <div class="ov-where">
+    <div class="panel rv">
+      <h3>Why banking leads</h3>
+      <p>The evidence is strongest there. Lloyds Banking Group is the largest named UK estate on the public record: a relationship of more than fifteen years, around 2,500 Wipro people, and two European Software Testing Awards in Lloyds' name, including the Payment Services Platform. UK banks also face fixed dates. FCA PS26/2 incident and third-party reporting applies from 18 March 2027, purpose codes become mandatory on every CHAPS payment in November 2027, and Parliament has been writing to banks and regulators about outages since 2025.</p>
+      <p>On the new-logo side the triggers are in the calendar. Coventry Building Society absorbs The Co-operative Bank on 1 January 2027, Santander and Nationwide have acquisitions to integrate, and the Google Cloud region failure of 20 October 2026 put cloud resilience on every bank board's agenda, with the regulators' full reply to the Treasury Committee due by 20 January 2027.</p>
+    </div>
+    <div class="panel rv">
+      <h3>If the portfolio is another sector</h3>
+      <p>The method holds and the dates change. Energy suppliers must complete migration to market-wide half-hourly settlement by 7 May 2027. The PSTN switch-off falls on 31 January 2027. Insurers and pension providers face Consumer Duty on closed books and the dashboards connection backstop. Public bodies publish pipeline notices under the Procurement Act each May, and Wipro is listed on G-Cloud 15. The chart below holds every dated event the research found, by sector.</p>
+    </div>
+  </div>
+
+  <div class="viz ov-hv">
+    <div class="viz-h"><h3 style="font-size:17px">Forcing dates for UK and Ireland demand, 2024 to 2028</h3><p>Each dot is a dated rule, deadline or programme that makes clients spend; the largest cluster fell in early 2025, and the dates stay dense into 2027.</p></div>
+    <div class="btnrow" id="ov-sect" role="group" aria-label="Filter by sector"></div>
+    <div id="ov-chart"></div>
+    <div class="ov-pin" id="ov-pin" aria-live="polite"></div>
+    <details class="more"><summary>All dates in the chart</summary><div class="tw" tabindex="0" role="region" aria-label="Scrollable table"><table class="t" id="ov-table"><thead><tr><th>Date</th><th>Event</th><th>Sectors</th></tr></thead><tbody></tbody></table></div></details>
   </div>
 </section>
 
-<section class="block">
-  <span class="eyebrow">Explore</span>
-  <h2>Pages</h2>
-  <p class="kicker">Each code matches the bar at the top of every analysis page. Filter by move or theme, then select a card to open the page.</p>
-  <div class="btnrow ov-filter" id="ov-filter" role="group" aria-label="Filter pages by theme">
-    <button type="button" data-f="all" aria-pressed="true">All</button>
-    <button type="button" data-f="m1" aria-pressed="false">Move 1</button>
-    <button type="button" data-f="m2" aria-pressed="false">Move 2</button>
-    <button type="button" data-f="market" aria-pressed="false">Market</button>
-    <button type="button" data-f="clients" aria-pressed="false">Clients</button>
-    <button type="button" data-f="commercial" aria-pressed="false">Commercial</button>
-    <button type="button" data-f="ai" aria-pressed="false">AI</button>
-    <button type="button" data-f="plan" aria-pressed="false">Plan</button>
-    <button type="button" data-f="about" aria-pressed="false">About me</button>
+<section class="block" id="plan">
+  <span class="eyebrow">Plan</span>
+  <h2>Twelve months in three phases</h2>
+  <p class="kicker">Both moves run as swim lanes across listen, decide and deliver. Timings and targets are my estimate, to set with my manager. The full plan, with the people I would meet first and a pipeline model, is on <a href="first-months.html">A14 First Months</a>.</p>
+  <div class="tw ov-plan"><table class="t">
+    <thead><tr><th>Phase</th><th>Move 1: expand</th><th>Move 2: new logos</th><th>Output</th></tr></thead>
+    <tbody>
+      <tr><td>Listen<br><span class="mini">months 1 to 3</span></td><td class="m1">Meet every client partner on the portfolio; map footprint, sponsors and white space; agree rules of engagement and credit. Sit with India presales and delivery to learn the cost model.</td><td class="m2">Build the target list on dated triggers; agree partner plans with the alliance teams.</td><td>Three to five account plans with IC&amp;D plays; one proactive proposition per top account.</td></tr>
+      <tr><td>Decide<br><span class="mini">months 4 to 6</span></td><td class="m1">Run the first executive workshops; shape phased first scopes with Delivery and Finance.</td><td class="m2">First reference-led meetings; first fixed-price diagnostics proposed.</td><td>Qualified pipeline at three to four times target; first phased scope signed in a banking account.</td></tr>
+      <tr><td>Deliver<br><span class="mini">months 7 to 12</span></td><td class="m1">Book phase ones; qualify the phase twos that reach large-deal size; bring renewals forward with added scope.</td><td class="m2">Convert diagnostics into first contracts; each new logo becomes a Move 1 account.</td><td>Order book from expansions; large deals qualified for year two; pipeline carried forward.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ov-meas">
+    <div class="rv"><b>IC&amp;D order book booked</b><span>Signed total contract value for the assigned portfolio, against Wipro's bookings definition. My own number.</span></div>
+    <div class="rv"><b>Pipeline created and coverage</b><span>New qualified pipeline each quarter, and coverage against target. My own number.</span></div>
+    <div class="rv"><b>Share of wallet per account</b><span>The shared lead measure, tracked with each client partner.</span></div>
+    <div class="rv"><b>Win rate</b><span>Loopio's 2026 benchmark puts the UK RFP average at 47%. Proactive expansion work should sit above it.</span></div>
   </div>
-  <p class="ov-count" id="ov-count" aria-live="polite"></p>
-  <div class="ov-cards" id="ov-cards"></div>
 </section>
 
-<section class="block">
-  <span class="eyebrow">Reading notes</span>
-  <h2>How to read this site</h2>
-  <div class="ov-read">
-    <div class="panel rv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></svg><h3>Sources on every page</h3><p>Each page ends with a Sources panel. Every entry gives the publisher and date and is marked primary or press. Claims from a single secondary source say so.</p></div>
-    <div class="panel rv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.5"/></svg><h3>Judgement is labelled</h3><p>Scores, ratings and plans that are my view carry a label such as "My estimate" or "my judgement". Example messages are marked as drafts to test.</p></div>
-    <div class="panel rv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="16" r="3"/></svg><h3>Placeholders are labelled</h3><p>Figures in the commercial models are placeholders, marked as such. Wipro's own rate cards, pipeline and deal data would replace them.</p></div>
-    <div class="panel rv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18h16M7 18V9M12 18V5M17 18v-6"/></svg><h3>Models are editable</h3><p>Sliders, weights and inputs change the scorecards, calculators and order book builds as you use them. Charts respond to selection, and their main reading is written under each title.</p></div>
+<section class="block" id="vision">
+  <span class="eyebrow">Vision</span>
+  <h2>What the practice looks like when this works</h2>
+  <div class="ov-vision rv">
+    <p>The IC&amp;D practice in the UK and Ireland becomes the part of Wipro that client executives call before they write a tender. Each top account carries a standing IC&amp;D point of view, refreshed against the client's regulatory calendar and strategy, and each dated event becomes a workshop that ends in a proposal. Quality engineering and modernisation enter through run contracts and renewals, AI enters through the data and adoption work those programmes expose, and the references compound into a new-logo motion that opens banks, insurers and utilities with proof. Order book arrives in phases, margin is set at the first scope, and the practice specialist is measured on both.</p>
   </div>
+</section>
+
+<section class="block" id="pages">
+  <span class="eyebrow">Pages</span>
+  <h2>The pages behind the case</h2>
+  <p class="kicker">Grouped by the section they support. Each code matches the bar at the top of every analysis page.</p>
+  <div id="ov-groups"></div>
+  <p class="ov-read">Every page ends with a Sources panel marked primary or press. Scores, plans and ratings that are my view are labelled "my estimate" or "my judgement", figures in the commercial models are placeholders for Wipro's own data, and the models respond to the sliders and inputs on each page.</p>
 </section>
 
 <section class="sources">
   <h2>Sources</h2>
-  <p>The headline findings and forcing dates on this page come from the pages they link to, where each is sourced in full.</p>
+  <p>The figures on this page come from the pages they link to, where each is sourced in full.</p>
   <ul>
-    <li>Wipro, Q2 FY27 results press release and segment table, October 2026. wipro.com/investors (primary).</li>
-    <li>PL Capital, Wipro Q2 FY27 results report, 16 October 2026. plindia.com/ResReport/WPRO-16-10-26-PL.pdf (press, broker).</li>
-    <li>Wipro, Applied AI Center of Excellence for Claude models powered by Anthropic, 16 June 2026. wipro.com/newsroom/press-releases/2026 (primary).</li>
-    <li>Wipro, Wipro and Google Cloud expand partnership to scale AI into core enterprise operations, 27 August 2026. wipro.com/newsroom/press-releases/2026 (primary).</li>
-    <li>DSIT, State of Digital Government Review, January 2025. gov.uk/government/publications/state-of-digital-government-review (primary).</li>
-    <li>Institute of Customer Service, UK Customer Satisfaction Index, July 2026. instituteofcustomerservice.com (primary); Retail Times, July 2026 (press).</li>
-    <li>Bank of England and FCA, Artificial intelligence in UK financial services, 21 November 2024. bankofengland.co.uk/report/2024/artificial-intelligence-in-uk-financial-services-2024 (primary).</li>
+    <li>Wipro, Q2 FY27 results press release, datasheet and earnings call transcript, 15 October 2026. wipro.com/investors (primary).</li>
+    <li>Wipro Limited, Form 20-F for the year to 31 March 2026 (client counts by revenue band; IC&amp;D definition). sec.gov (primary).</li>
+    <li>Wipro, Q3 FY25 earnings call transcript, 17 January 2025 (CFO on hunting). wipro.com (primary).</li>
+    <li>TCS Q2 FY27 fact sheet; Infosys Q2 FY27 results; HCLTech Q2 FY27 investor release, October 2026 (primary).</li>
+    <li>Wipro, Applied AI Center of Excellence for Claude models powered by Anthropic, 16 June 2026; Wipro and Google Cloud expand partnership, 27 August 2026. wipro.com (primary).</li>
+    <li>Wipro, TESTA 2023 awards page; Wipro, "Solving problems that matter" (Lloyds Banking Group partnership); Pega, PegaWorld 2025 session on Lloyds Banking Group with Wipro (primary and partner).</li>
+    <li>FCA PS26/2, 18 March 2026; Bank of England, expanding mandatory ISO 20022 enhanced data in CHAPS from 2027, and delay to the November 2026 RTGS standards release, 27 August 2026 (primary).</li>
+    <li>Treasury Committee, letter to the Bank of England and FCA on the Google Cloud outage, 20 October 2026; Coventry Building Society and The Co-operative Bank transfer scheme pages (primary).</li>
     <li>Loopio with APMP, 2026 RFP Trends and Benchmarks Report, 2026. link.loopio.com (primary).</li>
-    <li>Forcing dates: FCA (Consumer Duty, operational resilience, motor finance redress, Mills Review), Central Bank of Ireland (DORA, Consumer Protection Code, 2026 outlook), EBA, ESMA and EUR-Lex (DORA registers, critical ICT third-party providers, TLPT, EU AI Act), ECB (instant payments, supervisory priorities), Swift (ISO 20022), Bank of England (RTGS, CHAPS), HM Treasury (Payment Systems Regulator), FCA (PS26/2), The Pensions Regulator (dashboards), Elexon (half-hourly settlement), Ofcom and gov.uk (Telecoms Security Code), UK Parliament written statement (Entry/Exit System), gov.uk (AI Opportunities Action Plan, 10 Year Health Plan, Procurement Act 2023), all primary; Hogan Lovells (APP fraud), ISPreview (PSTN switch-off), Civil Service World (DHSC merger), Medical Independent (HSE One Health Record), CMS (DMCC Act), TechMarketView (G-Cloud 15), Council of the EU with Regulation Tomorrow and ClearingPost (PSD3 and PSR, indicative plenary date), RPC and William Fry (Ireland AI Bill), Broadband TV News (BBC Charter), all press. Full references on <a href="demand.html">A4 Demand</a>.</li>
+    <li>Forcing dates: FCA, Central Bank of Ireland, EBA, ESMA and EUR-Lex, ECB, Swift, Bank of England, HM Treasury, The Pensions Regulator, Elexon, Ofcom, gov.uk and UK Parliament, all primary; Hogan Lovells, ISPreview, Civil Service World, Medical Independent, CMS, TechMarketView, Regulation Tomorrow, RPC, William Fry and Broadband TV News, all press. Full references on <a href="demand.html">A4 Demand</a>.</li>
   </ul>
 </section>
 
@@ -373,12 +360,14 @@ var EV=[
  ["2026-02-26","Central Bank of Ireland 2026 outlook","ie","Plans DORA inspections, TLPT, a review of ICT change management and a detailed review of cloud dependency at significant banks.","QE for change programmes, cloud resilience and exit planning."],
  ["2026-03-31","Annual DORA register deadline","ie","From 2026 registers of information are due by 31 March each year.","Third-party data and register tooling."],
  ["2026-04-30","PSR to move into the FCA","fs","The government confirmed the Payment Systems Regulator's functions will move entirely into the FCA. The month is stated and the day is not.","Payments regulation under one regulator; access regime changes.","Apr 2026"],
- ["2026-11-30","CHAPS and Swift reject unstructured addresses","fs ie","Unstructured postal addresses are rejected in CHAPS and in Swift cross-border payments from November 2026. The marker sits at the end of the month.","Payment data remediation and regression testing.","Nov 2026"],
+ ["2026-07-13","Critical Third Parties designated by HM Treasury","fs","Microsoft, Google Cloud, AWS and Oracle UK come under the Bank of England and FCA critical third parties regime. Firms keep accountability for their outsourcing risk.","Cloud resilience evidence, exit planning and third-party testing."],
+ ["2026-10-20","Google Cloud region failure disrupts UK banks","fs pub","A power event in the europe-west2 region disrupted several banks, HMCTS, NHS England systems and parcel carriers. The Treasury Committee wrote to the regulators the same day; replies are due by 4 November 2026 and 20 January 2027.","Resilience diagnostics, change assurance and exit planning."],
  ["2026-12-14","PSD3 and PSR plenary vote (indicative)","ie","Parliament's second-reading vote is indicatively set for this date. The PSR would apply 18 months after entry into force, so about mid-2028 (derived).","Payee verification, fraud liability and open banking changes."],
+ ["2027-01-01","Coventry Building Society and The Co-operative Bank transfer","fs","The banking business transfer scheme takes effect, subject to the court hearing on 2 December 2026.","Integration, migration assurance and testing."],
  ["2027-01-09","Non-euro states: receive instant euro payments","ie","Payment providers in non-euro member states must receive instant euro payments.","Payment testing for groups with EU entities."],
  ["2027-03-18","FCA PS26/2 reporting applies","fs","A single FCA, PRA and Bank of England regime for operational incident reporting and material third-party arrangements, with an annual register.","Incident data, third-party registers and resilience evidence."],
  ["2027-07-09","Non-euro states: send instant euro payments and VoP","ie","Payment providers in non-euro member states must send instant euro payments and offer Verification of Payee.","Payment flow changes and QE."],
- ["2027-11-30","CHAPS purpose codes for all payments","fs","Purpose codes become mandatory for all CHAPS payments, and LEIs for pacs.004 and pacs.009 COV. The marker sits at the end of the month.","Payment data and testing for UK banks.","Nov 2027"],
+ ["2027-11-30","CHAPS purpose codes for all payments","fs","Purpose codes become mandatory for all CHAPS payments, and LEIs for pacs.004 and pacs.009 COV. The November 2026 release that would have ended unstructured addresses was deferred by the Bank on 27 August 2026 with no new date. The marker sits at the end of the month.","Payment data and testing for UK banks.","Nov 2027"],
  ["2024-07-31","Consumer Duty applies to closed books","fs","Firms must show good outcomes for customers on products sold before July 2023, including legacy life and pensions books.","CX redesign and closed-book platform modernisation."],
  ["2024-10-07","APP fraud reimbursement starts","fs","Payment firms reimburse authorised push payment scam victims up to £85,000 per claim.","AI fraud detection, case handling and QE for payment journeys."],
  ["2025-01-13","AI Opportunities Action Plan","pub","Fifty actions to adopt AI across government; 38 met by January 2026.","AI solutions bought through frameworks."],
@@ -394,16 +383,18 @@ var EV=[
  ["2025-10-22","Half-hourly settlement migration starts","utl","Suppliers begin moving meters to market-wide half-hourly settlement.","Settlement integration, billing modernisation and testing."],
  ["2026-02-10","HSE One Health Record dialogue","hea ie","Competitive dialogue for a national electronic health record across six health regions.","Integration and implementation partnering."],
  ["2026-03-24","Ireland's revised Consumer Protection Code applies","ie fs","Covers digitalisation, vulnerable customers, fraud and scams, and mortgage switching.","CX redesign for Irish financial firms."],
+ ["2026-04-01","Government Commercial Agency replaces Crown Commercial Service","pub","The GCA took over CCS frameworks and agreements; existing frameworks remain valid.","Framework routes to market for public pursuits."],
  ["2026-04-10","EES fully operational","trv","The Entry/Exit System runs in full.","Operations and customer journey changes at ports and stations."],
  ["2026-06-17","Ireland AI Bill published","ie","Creates the AI Office of Ireland, with sector regulators enforcing.","AI governance and assurance."],
  ["2026-07-06","FCA Mills Review published","fs","Seven recommendations for AI in retail financial services, including foundations for agentic finance.","AI solutions with controls for regulated firms."],
+ ["2026-07-27","EU AI Act Omnibus in force","ie","Regulation (EU) 2026/1744 moves the high-risk duties to 2 December 2027 (Annex III) and 2 August 2028 (Annex I).","AI governance timelines for Irish and EU operations."],
  ["2026-08-31","Motor finance redress contact (Scheme 1)","fs","Firms contact customers about redress on about 12.1m agreements; Scheme 2 started on 30 June 2026.","Case handling automation and complaint journeys."],
- ["2026-08-11","G-Cloud 15 launches","pub","About £14bn over four years; G-Cloud 14 closes on 28 October 2026.","Framework listings for cloud and digital services."],
- ["2026-10-28","Suppliers ready to migrate (MHHS M14)","utl","All suppliers must be able to migrate meters to half-hourly settlement.","Testing and cut-over support."],
+ ["2026-08-06","G-Cloud 15 starts","pub","About £14bn over four years; G-Cloud 14 closes on 28 October 2026. Wipro IT Services UK Societas is listed.","Framework listings for cloud and digital services."],
+ ["2026-10-28","Suppliers qualified for half-hourly settlement (MHHS M14)","utl","All suppliers must be qualified to migrate meters to half-hourly settlement.","Testing and cut-over support."],
  ["2026-10-31","Pensions dashboards connection backstop","fs","The legal deadline for pension schemes to connect to dashboards.","Data quality, integration and platform work for administrators."],
  ["2027-01-31","PSTN switch-off","tel","The copper phone network closes; about 1.5m lines remained in July 2026.","Migration factories and customer communication automation."],
  ["2027-04-01","New DHSC after NHS England merger","hea","NHS England folds into the Department of Health and Social Care.","System consolidation and rationalisation."],
- ["2027-05-07","Half-hourly settlement migration complete","utl","Suppliers must complete meter migration; dual running continues to July 2027.","Settlement integration and testing."],
+ ["2027-05-07","Half-hourly settlement migration complete (MHHS M15)","utl","Suppliers must complete meter migration; dual running continues to July 2027.","Settlement integration and testing."],
  ["2027-12-02","EU AI Act high-risk duties (Annex III)","ie","Moved from 2 August 2026 by Regulation (EU) 2026/1744, published in the Official Journal on 24 July 2026. Credit scoring is a listed high-risk use.","AI governance, testing and documentation for Irish and EU operations."],
  ["2027-12-31","BBC Charter expires","tel","The Charter review consulted on iPlayer advertising and subscription options.","Digital product and subscription platforms."],
  ["2028-01-31","Motor finance redress payments end","fs","Redress payments under the FCA schemes run to January 2028.","Case handling and complaint journeys."],
@@ -427,18 +418,10 @@ bh.innerHTML='<button type="button" data-k="all" aria-pressed="true">All sectors
 [].forEach.call(bh.querySelectorAll("button"),function(b){b.addEventListener("click",function(){
  sel=b.dataset.k;[].forEach.call(bh.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b)});
  if(!show(EV[pin])){var v=EV.filter(show),u=v.filter(function(e){return e[0]>TODAY});pin=(u[0]||v[v.length-1]).i}
- VZ.hideTip();draw();caption();showPin();table()})});
+ VZ.hideTip();draw();showPin();table()})});
 
-function caption(){
- var v=EV.filter(show),up=v.filter(function(e){return e[0]>TODAY}),nx=up[0],name=sel==="all"?"UK and Ireland":SN[sel][1];
- var h='<span class="yr">'+v.length+'</span><h2 style="font-size:18px;margin-top:6px">forcing dates for '+esc(name)+', '+fmt(v[0][0]).slice(-4)+' to '+fmt(v[v.length-1][0]).slice(-4)+'</h2>';
- h+='<p style="margin-top:8px">'+(up.length?up.length+(up.length===1?' of them falls':' of them fall')+' after today, 27 October 2026.':'All of them have already passed, so the work they force is under way now.')+'</p>';
- if(nx)h+='<p class="k">Next date</p><p><b>'+esc(dl(nx))+'.</b> '+esc(nx[1])+'. Points to: '+esc(nx[4])+'</p>';
- h+='<p class="k">Where this goes</p><p>'+(sel==="all"?'A4 Demand scores each sector against four offering groups and turns these dates into an opening message per sector.':'A4 Demand sets out the buyers, offerings and a draft opening message for '+esc(name)+'.')+' <a href="demand.html">Open A4 Demand</a></p>';
- document.getElementById("ov-cap").innerHTML=h;
-}
 function showPin(){var e=EV[pin],el=document.getElementById("ov-pin");
- el.innerHTML='<div><b class="pd">'+esc(dl(e))+'</b><span class="mini">'+esc(secNames(e))+(e[0]>TODAY?'':' · passed')+'</span></div><p><b>'+esc(e[1])+'.</b> '+esc(e[3])+'</p><p class="mini"><b>Points to:</b> '+esc(e[4])+'</p>';}
+ el.innerHTML='<div><b class="pd">'+esc(dl(e))+'</b><span class="mini">'+esc(secNames(e))+(e[0]>TODAY?'':' · passed')+'</span></div><p><b>'+esc(e[1])+'.</b> '+esc(e[3])+'</p><p class="mini"><b>Points to:</b> '+esc(e[4])+' <a href="demand.html">A4 Demand</a></p>';}
 function table(){var tb=document.querySelector("#ov-table tbody");tb.innerHTML=EV.filter(show).map(function(e){return '<tr><td>'+esc(dl(e))+'</td><td>'+esc(e[1])+'</td><td>'+esc(secNames(e))+'</td></tr>'}).join("")}
 
 var host=document.getElementById("ov-chart");
@@ -468,24 +451,32 @@ function draw(){
   g.addEventListener("click",p);g.addEventListener("keydown",function(ev){if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();p()}});
  });
 }
-draw();caption();showPin();table();
-var rt;addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(draw,120)});
-VZ.onTheme(draw);
+draw();showPin();table();
+var rt;addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){draw();drawMarg()},120)});
+VZ.onTheme(function(){draw();drawMarg()});
 
-/* mini: AI use cases */
-var u=document.getElementById("ov-uses");
-for(var i=0;i<21;i++){VZ.el("rect",{x:i*12.2,y:6,width:9,height:16,rx:2,style:i<9?"fill:var(--ink2)":"fill:none;stroke:var(--ink3)"},u)}
-[["Use cases now: 9",0,"start"],["In three years: 21",258,"end"]].forEach(function(a){var t=VZ.el("text",{x:a[1],y:40,"text-anchor":a[2],"class":"tv"},u);t.textContent=a[0]});
-/* mini: win rate series */
-var w=document.getElementById("ov-win"),WR=[53,47,44,44,43,45,39],wx=function(i){return 14+i*30},wy=function(v){return 34-(v-36)*1.4};
-VZ.el("path",{d:WR.map(function(v,i){return (i?"L":"M")+wx(i)+","+wy(v)}).join(""),fill:"none",style:"stroke:var(--ink3)","stroke-width":2},w);
-WR.forEach(function(v,i){VZ.el("circle",{cx:wx(i),cy:wy(v),r:2.5,style:"fill:var(--ink3)"},w)});
-VZ.el("circle",{cx:wx(6),cy:wy(47),r:5,style:"fill:var(--ink2)"},w);
-[["2019",wx(0),"middle"],["2025",wx(6),"middle"]].forEach(function(a){var t=VZ.el("text",{x:a[1],y:45,"text-anchor":a[2]},w);t.textContent=a[0]});
-var t1=VZ.el("text",{x:wx(6)+12,y:wy(47)+4,"class":"tv"},w);t1.textContent="UK 47%";
-var t2=VZ.el("text",{x:wx(6)+12,y:wy(39)+4},w);t2.textContent="All 39%";
+/* mini: clients above US$100m */
+var cs=document.getElementById("ov-st100"),CV=[["FY24",22],["FY25",17],["FY26",16],["Q2 FY27",18]];
+CV.forEach(function(d,i){var x=4+i*70,h=d[1]*1.2,last=i===CV.length-1;VZ.el("rect",{x:x,y:30-h,width:30,height:h,rx:2,style:"fill:"+(last?"var(--accent)":"var(--ink3)")},cs);
+ var t=VZ.el("text",{x:x+36,y:28,"class":"tv"},cs);t.textContent=d[1];var l=VZ.el("text",{x:x,y:42},cs);l.textContent=d[0]});
 
-/* page cards */
+/* margin chart */
+var MG=[["TCS",24.0],["Infosys",21.0],["HCLTech",18.2],["Wipro",16.5]];
+function drawMarg(){var s=document.getElementById("ov-marg");s.innerHTML="";var x=VZ.lin(0,26,72,282);
+ MG.forEach(function(d,i){var y=8+i*28,w=d[1]===16.5;var t=VZ.el("text",{x:0,y:y+14,"class":w?"tv":""},s);t.textContent=d[0];
+  VZ.bar(s,72,y,x(d[1])-72,18,w?"var(--accent)":"var(--ink3)","h");
+  var v=VZ.el("text",{x:x(d[1])+6,y:y+14,"class":"tv"},s);v.textContent=d[1].toFixed(1)+"%"})}
+drawMarg();
+
+/* move selector */
+var MVN={m1:"Move 1: expand",m2:"Move 2: new logos"};
+function setM(m){[].forEach.call(document.querySelectorAll("#ov-mvsel button"),function(x){x.setAttribute("aria-pressed",x.dataset.m===m)});
+ document.getElementById("ov-col-m1").classList.toggle("off",m==="m2");document.getElementById("ov-col-m2").classList.toggle("off",m==="m1");
+ document.getElementById("ov-mvnote").textContent=MVN[m]?'Showing '+MVN[m]+'. The pages listed under it carry the detail.':'Select a move to bring it forward.'}
+[].forEach.call(document.querySelectorAll("#ov-mvsel button"),function(b){b.addEventListener("click",function(){setM(b.dataset.m)})});
+setM("all");
+
+/* page cards, grouped by section */
 var TH={
  role:'<circle cx="32" cy="18" r="6" class="a"/><circle cx="12" cy="8" r="4"/><circle cx="52" cy="8" r="4"/><circle cx="12" cy="28" r="4"/><circle cx="52" cy="28" r="4"/><path d="M16 9l11 6M48 9l-11 6M16 27l11-6M48 27l-11-6" class="l"/>',
  portfolio:'<rect x="4" y="4" width="16" height="12" rx="2"/><rect x="24" y="4" width="16" height="12" rx="2" class="a"/><rect x="44" y="4" width="16" height="12" rx="2"/><rect x="4" y="20" width="16" height="12" rx="2"/><rect x="24" y="20" width="16" height="12" rx="2"/><rect x="44" y="20" width="16" height="12" rx="2"/>',
@@ -502,50 +493,43 @@ var TH={
  banking:'<rect x="4" y="26" width="10" height="6" rx="1" class="a"/><rect x="18" y="20" width="10" height="12" rx="1"/><rect x="32" y="12" width="10" height="20" rx="1"/><rect x="46" y="4" width="12" height="28" rx="1" class="a"/>',
  "first-months":'<rect x="4" y="4" width="20" height="5" rx="2"/><rect x="14" y="11" width="22" height="5" rx="2"/><rect x="26" y="18" width="20" height="5" rx="2" class="a"/><rect x="38" y="25" width="22" height="5" rx="2"/>',
  ai:'<rect x="2" y="13" width="12" height="10" rx="2"/><rect x="24" y="3" width="14" height="8" rx="2"/><rect x="24" y="14" width="14" height="8" rx="2"/><rect x="24" y="25" width="14" height="8" rx="2"/><rect x="50" y="13" width="12" height="10" rx="2" class="a"/><path d="M14 18l10-11M14 18h10M14 18l10 11M38 7l12 11M38 18h12M38 29l12-11" class="l"/>',
- method:'<circle cx="8" cy="18" r="5" class="a"/><circle cx="26" cy="8" r="4"/><circle cx="26" cy="18" r="4"/><circle cx="26" cy="28" r="4"/><circle cx="44" cy="18" r="4"/><circle cx="58" cy="18" r="4" class="a"/><path class="l" d="M13 18L22 8M13 18H22M13 18L22 28M30 8L40 18M30 18H40M30 28L40 18M48 18H54"/>',
+ method:'<circle cx="8" cy="18" r="5" class="a"/><circle cx="26" cy="8" r="4"/><circle cx="26" cy="18" r="4"/><circle cx="26" cy="28" r="4"/><circle cx="44" cy="18" r="4"/><circle cx="58" cy="18" r="4" class="a"/><path class="l" d="M13 18L22 8M13 18H22M13 18L22 28M30 8L40 18M30 18H40M30 28L40 18M48 18H54"/>'
 };
-var C=[
- ["role","A1","The Role","plan en","Each of the 17 responsibility lines in the job description mapped to the page that answers it and to my experience, with where the role sits in Wipro.",["17 responsibilities","5 strands"],1],
- ["portfolio","A2","Portfolio","market m1 m2","The ten offerings in the role mapped to buyer problems, buyers, partners and proof points, with the 2025 and 2026 alliances and an offering combiner.",["10 offerings","Alliances"]],
- ["demand","A4","Demand","market m2","UK and Ireland demand by sector, a sector by offering heat grid and the forcing dates from 2024 to 2028.",["8 sectors","48 dates"]],
- ["buyers","A6","Buyers","clients m2","The buying committee for an IC&D deal: what makes each executive act, their objections with draft replies, and a four-quarter relationship plan.",["Objection explorer","4 quarters"]],
- ["account-map","A8","Account Map","clients m1","About 50 publicly named UK and Irish clients by sector and evidence, with IC&D white space, forcing events, six farming priorities and the Wipro roles behind an account.",["49 clients","6 priorities"]],
- ["accounts","A7","Accounts","clients commercial m1","An account scoring model with editable weights, hunting and farming, offering adjacency and a placeholder order book build.",["Scoring model","Order book"]],
- ["new-logos","A9","New Logos","clients m2","Move 2 hunting: 30 new-logo targets by sector with a weighted scorer, a dated trigger watchlist to 2027, the public sector pipeline, partner routes in and fixed-price entry offers.",["30 targets","53 triggers"]],
- ["alternatives","A5","Competitors","market m2","Thirteen competitors rated on six dimensions, their AI partnerships and UK contracts, and how I would position Wipro against each.",["13 firms","AI partnerships"]],
- ["deal-shaping","A12","Deals","commercial m1","Pricing models, UK and offshore rates, AI productivity evidence, renewal step-downs and a deal margin calculator with placeholder figures.",["5 pricing models","Margin calculator"]],
- ["pursuits","A11","Pursuits","commercial clients m1","A bid or no-bid scorecard on MEDDPICC, a seven-stage plan with Shipley gates, Procurement Act rules and a proposal structure.",["Scorecard","7 stages"]],
- ["workshops","A10","Workshops","clients ai m1","Executive workshop formats, a builder that returns an agenda, a value against feasibility grid and a checklist to a qualified opportunity.",["5 formats","Workshop builder"]],
- ["ai-engagement","A3","AI Engagement","ai clients en","An AI customer engagement model with Claude and Gemini, a value against feasibility chart of 14 CX use cases and a human oversight slider.",["Claude and Gemini","14 use cases"]],
- ["first-months","A14","First Months","plan en","My first year in three phases, listen, decide and deliver: who I meet, how I review accounts and how pipeline builds into order book.",["3 phases","12 months"]],
- ["banking","A13","Banking Pursuit","clients commercial m1 m2","A worked pursuit at an illustrative UK bank: forcing events, quality engineering and payments resilience as the entry offer, land and expand, MEDDPICC and a margin sketch.",["22 dates","4 phases"]],
- ["ai","","AI Workflow","ai about","The AI routines I would bring to a pursuit team: account research, RFP drafting, competitor watch and workshop preparation.",["Claude","Gemini"]],
- ["method","","Method","ai about","How this analysis was made: the research, page and review agents, what each was given and produced, and the checks every page passed.",["Agents","391 claims"]],
+var GROUPS=[
+ ["Situation",[
+  ["portfolio","A2","Portfolio","The ten offerings in the role mapped to buyer problems, buyers, partners and proof points, with the 2025 and 2026 alliances.","m1 m2"],
+  ["demand","A4","Demand","UK and Ireland demand by sector, a sector by offering heat grid and the forcing dates from 2024 to 2028.","m2"],
+  ["alternatives","A5","Competitors","Thirteen competitors rated on six dimensions, their AI partnerships and UK contracts, and how I would position Wipro against each.","m2"]]],
+ ["Argument",[
+  ["role","A1","The Role","Each of the 17 responsibility lines in the job description mapped to the page that answers it and to my experience, with where the role sits in Wipro.","en"],
+  ["ai-engagement","A3","AI Engagement","An AI customer engagement model with Claude and Gemini, a value against feasibility chart of 14 CX use cases and a human oversight slider.","en"]]],
+ ["Strategy",[
+  ["account-map","A8","Account Map","Publicly named UK and Irish clients by sector and evidence, with IC&D white space, forcing events, farming priorities and the Wipro roles behind an account.","m1"],
+  ["accounts","A7","Accounts","An account scoring model with editable weights, hunting and farming, offering adjacency and a placeholder order book build.","m1"],
+  ["new-logos","A9","New Logos","New-logo targets by sector with a weighted scorer, a dated trigger watchlist to 2027, the public sector pipeline, partner routes in and entry offers.","m2"],
+  ["buyers","A6","Buyers","The buying committee for an IC&D deal: what makes each executive act, their objections with draft replies, and a four-quarter relationship plan.","m2"],
+  ["banking","A13","Banking Pursuit","A worked pursuit at an illustrative UK bank: forcing events, quality engineering and payments resilience as the entry offer, land and expand, MEDDPICC and a margin sketch.","m1 m2"]]],
+ ["Winning work",[
+  ["workshops","A10","Workshops","Executive workshop formats, a builder that returns an agenda, a value against feasibility grid and a checklist to a qualified opportunity.","m1"],
+  ["pursuits","A11","Pursuits","A bid or no-bid scorecard on MEDDPICC, a seven-stage plan with Shipley gates, Procurement Act rules and a proposal structure.","m1 m2"],
+  ["deal-shaping","A12","Deals","Pricing models, UK and offshore rates, AI productivity evidence, renewal step-downs and a deal margin calculator with placeholder figures.","m1"]]],
+ ["Plan",[
+  ["first-months","A14","First Months","My first year in three phases, listen, decide and deliver: who I meet, how I review accounts and how pipeline builds into order book.","en"]]],
+ ["About me",[
+  ["ai","","AI Workflow","The AI routines I would bring to a pursuit team: account research, RFP drafting, competitor watch and workshop preparation.",""],
+  ["method","","Method","How this analysis was made: the research, page and review agents, what each was given and produced, and the checks every page passed.",""]]]
 ];
-C.sort(function(a,b){function k(c){return c[1]?parseInt(c[1].slice(1),10):99}return k(a)-k(b)});
-var ch=document.getElementById("ov-cards");
-C.forEach(function(c){
- var a=document.createElement("a");a.className="ov-c rv"+(c[6]?" feat":"");a.href=c[0]+".html";a.dataset.g=c[3];
- var gs=c[3].split(" "),mv=(gs.indexOf("m1")>=0?'<i>Move 1</i>':'')+(gs.indexOf("m2")>=0?'<i class="b">Move 2</i>':'')+(gs.indexOf("en")>=0?'<i class="e">Enabler</i>':'');
- a.innerHTML='<svg class="th" viewBox="0 0 64 36" aria-hidden="true">'+TH[c[0]]+'</svg>'+(c[1]?'<span class="cd">'+c[1]+'</span>':'<span class="cd">About me</span>')+'<h3></h3><p class="sm"></p>'+(mv?'<span class="mv">'+mv+'</span>':'')+'<div class="chips"></div>';
- a.querySelector("h3").textContent=c[2];a.querySelector(".sm").textContent=c[4];a.setAttribute("aria-label",(c[1]?c[1]+" ":"")+c[2]+": "+c[4]);
- c[5].forEach(function(t){var s=document.createElement("span");s.className="chip";s.textContent=t;a.querySelector(".chips").appendChild(s)});
- ch.appendChild(a);
-});
-var cn=document.getElementById("ov-count");
-var MVN={m1:"Move 1: expand",m2:"Move 2: new logos"};
-function filt(f){var n=0;[].forEach.call(ch.children,function(a){var on=f==="all"||a.dataset.g.split(" ").indexOf(f)>=0;a.hidden=!on;a.classList.toggle("hm1",f==="m1");a.classList.toggle("hm2",f==="m2");if(on)n++});cn.textContent="Showing "+n+" of "+C.length+" pages"+(MVN[f]?" that support "+MVN[f]:"")+"."}
-function setF(f){[].forEach.call(document.querySelectorAll("#ov-filter button"),function(x){x.setAttribute("aria-pressed",x.dataset.f===f)});filt(f)}
-function setM(m){[].forEach.call(document.querySelectorAll("#ov-mvsel button"),function(x){x.setAttribute("aria-pressed",x.dataset.m===m)});
- document.getElementById("ov-col-m1").classList.toggle("off",m==="m2");document.getElementById("ov-col-m2").classList.toggle("off",m==="m1");
- document.getElementById("ov-mvnote").innerHTML=MVN[m]?'The page grid below now shows the pages behind '+MVN[m]+'. <a href="#ov-filter">Go to the pages</a>':'Select a move to highlight its pages in the page grid below.'}
-[].forEach.call(document.querySelectorAll("#ov-filter button"),function(b){b.addEventListener("click",function(){var f=b.dataset.f;setF(f);setM(MVN[f]?f:"all")})});
-[].forEach.call(document.querySelectorAll("#ov-mvsel button"),function(b){b.addEventListener("click",function(){setM(b.dataset.m);setF(b.dataset.m)})});
-setF("all");setM("all");
-/* mini: clients above US$100m */
-var cs=document.getElementById("ov-st100"),CV=[["FY24",22],["FY25",17],["FY26",16],["Q2 FY27",18]];
-CV.forEach(function(d,i){var x=4+i*66,h=d[1]*1.1,last=i===CV.length-1;VZ.el("rect",{x:x,y:28-h,width:30,height:h,rx:2,style:"fill:"+(last?"var(--accent)":"var(--ink3)")},cs);
- var t=VZ.el("text",{x:x+36,y:26,"class":"tv"},cs);t.textContent=d[1];var l=VZ.el("text",{x:x,y:39},cs);l.textContent=d[0]});
+var gh=document.getElementById("ov-groups");
+GROUPS.forEach(function(g){
+ var sec=document.createElement("div");sec.className="ov-grp";var h=document.createElement("h3");h.textContent=g[0];sec.appendChild(h);
+ var grid=document.createElement("div");grid.className="ov-cards";
+ g[1].forEach(function(c){
+  var a=document.createElement("a");a.className="ov-c rv";a.href=c[0]+".html";
+  var gs=c[4].split(" "),mv=(gs.indexOf("m1")>=0?'<i>Move 1</i>':'')+(gs.indexOf("m2")>=0?'<i class="b">Move 2</i>':'')+(gs.indexOf("en")>=0?'<i class="e">Enabler</i>':'');
+  a.innerHTML='<svg class="th" viewBox="0 0 64 36" aria-hidden="true">'+TH[c[0]]+'</svg><span class="cd">'+(c[1]||"About me")+'</span><h3></h3><p class="sm"></p>'+(mv?'<span class="mv">'+mv+'</span>':'');
+  a.querySelector("h3").textContent=c[2];a.querySelector(".sm").textContent=c[3];a.setAttribute("aria-label",(c[1]?c[1]+" ":"")+c[2]+": "+c[3]);
+  grid.appendChild(a)});
+ sec.appendChild(grid);gh.appendChild(sec)});
 })();
 </script>
 
