@@ -9,9 +9,10 @@ ORDER = ['research-wipro', 'research-uki-market', 'research-competitors', 'resea
          'page-role-months-about', 'page-index', 'page-method', 'review-1', 'review-2', 'review-3',
          # second round
          'research-bfs-europe', 'research-wipro-sales', 'research-sales-scope', 'page-banking', 'page-banking-edits',
-         'page-strategy-index-role', 'page-strategy-commercial', 'page-strategy-plan']
-ROUND2 = {'research-bfs-europe', 'research-wipro-sales', 'research-sales-scope', 'page-banking', 'page-banking-edits', 'page-strategy-index-role', 'page-strategy-commercial', 'page-strategy-plan'}
-SHORT = {'page-strategy-index-role': 'Strategy: index, Role', 'page-strategy-commercial': 'Strategy: commercial pages', 'page-strategy-plan': 'Strategy: Months, Banking', 'research-wipro': 'Wipro', 'research-uki-market': 'UKI market', 'research-competitors': 'Competitors',
+         'page-strategy-index-role', 'page-strategy-commercial', 'page-strategy-plan',
+         'research-account-map', 'research-new-logos', 'page-account-map', 'page-new-logos']
+ROUND2 = {'research-bfs-europe', 'research-wipro-sales', 'research-sales-scope', 'page-banking', 'page-banking-edits', 'page-strategy-index-role', 'page-strategy-commercial', 'page-strategy-plan', 'research-account-map', 'research-new-logos', 'page-account-map', 'page-new-logos'}
+SHORT = {'research-account-map': 'Account map', 'research-new-logos': 'New logos', 'page-account-map': 'Account Map page', 'page-new-logos': 'New Logos page', 'page-strategy-index-role': 'Strategy: index, Role', 'page-strategy-commercial': 'Strategy: commercial pages', 'page-strategy-plan': 'Strategy: Months, Banking', 'research-wipro': 'Wipro', 'research-uki-market': 'UKI market', 'research-competitors': 'Competitors',
          'research-deals': 'Deals and pursuits', 'page-portfolio-demand': 'Portfolio, Demand',
          'page-buyers-accounts': 'Buyers, Accounts', 'page-competitors-deals': 'Competitors, Deals',
          'page-pursuits-workshops-ai': 'Pursuits, Workshops, AI', 'page-role-months-about': 'Role, Months, About',
@@ -46,7 +47,8 @@ tot = {'agents': len(agents), 'calls': sum(a['run']['calls'] for a in done),
 
 RF = [('wipro.md', 'Wipro', 1), ('uki-market.md', 'UK and Ireland market', 1), ('competitors.md', 'Competitors', 1),
       ('deals.md', 'Deals, pursuits and workshops', 1), ('bfs-europe.md', 'Banking and Europe', 2),
-      ('wipro-sales.md', 'How Wipro sells', 2), ('sales-scope.md', 'Sales scope', 2)]
+      ('wipro-sales.md', 'How Wipro sells', 2), ('sales-scope.md', 'Sales scope', 2),
+      ('account-map.md', 'Account map', 2), ('new-logos.md', 'New logos', 2)]
 FLAG = re.compile(r'(verified|secondary|unverified)\b')
 
 
