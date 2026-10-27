@@ -227,7 +227,7 @@
       <div id="dl-cdt" class="mini" aria-live="polite" style="margin-top:10px"></div>
     </div>
     <div>
-      <div class="tw dl-mx"><table class="t" id="dl-mx"><thead><tr><th>Decision</th><th data-c="0">Sales</th><th data-c="1">Practice</th><th data-c="2">Delivery</th><th data-c="3">Finance</th></tr></thead><tbody></tbody></table></div>
+      <div class="tw dl-mx"><table class="t" id="dl-mx" style="min-width:420px"><thead><tr><th>Decision</th><th data-c="0">Sales</th><th data-c="1">Practice</th><th data-c="2">Delivery</th><th data-c="3">Finance</th></tr></thead><tbody></tbody></table></div>
       <p class="src" style="margin-top:8px">D decides, S shapes, C is consulted. Practice is the IC&amp;D practice specialist role, with alliance partners brought in by the practice.</p>
     </div>
   </div>
@@ -340,7 +340,7 @@ function sd(){var acv=+$("dl-acv").value,s=+$("dl-sd").value/100;$("dl-acvo").te
  $("dl-sdk").innerHTML='<div><b>£'+T.toFixed(1)+'m</b><span>Five-year value at your step-down, against £'+base.toFixed(0)+'m flat</span></div><div><b>£'+(acv*Math.pow(1-s,4)).toFixed(1)+'m</b><span>Year 5 contract value</span></div><div><b>£'+(tot(.035)-tot(.065)).toFixed(1)+'m</b><span>Five-year difference between 3.5% and 6.5% step-downs</span></div>';
  $("dl-sdr").textContent="At "+(s*100).toFixed(1)+"% a year, a £"+acv+"m annuity falls to £"+(acv*Math.pow(1-s,4)).toFixed(1)+"m by year 5, and the five-year total is £"+(base-T).toFixed(1)+"m below a flat contract.";
  var host=$("dl-sdc");host.innerHTML="";var w=Math.max(300,host.clientWidth),m=w<560,h=m?220:260,l=m?40:48,r=m?14:20,t=10,b=28;
- var svg=VZ.svg(host,w,h,"Line chart of contract value over five years under three step-downs");var lo=acv*Math.pow(1-.12,4)*.95,X=VZ.lin(1,5,l,w-r),Y=VZ.lin(Math.floor(lo),acv*1.02,h-b,t);
+ var svg=VZ.svg(host,w,h,"Line chart of contract value over five years under three step-downs");var lo=Math.floor(acv*Math.pow(1-.12,4)*.95),X=VZ.lin(1,5,l,w-r),Y=VZ.lin(lo,acv*1.02,h-b,t);
  for(var k=0;k<=4;k++){var v=lo+(acv*1.02-lo)*k/4,yy=Y(v);VZ.el("line",{x1:l,x2:w-r,y1:yy,y2:yy,class:"grid"},svg);VZ.el("text",{x:l-6,y:yy+4,"text-anchor":"end"},svg).textContent="£"+v.toFixed(acv<10?1:0)+"m"}
  for(var yr=1;yr<=5;yr++)VZ.el("text",{x:X(yr),y:h-8,"text-anchor":"middle"},svg).textContent="Year "+yr;
  L.forEach(function(q,j){var d="";for(var y=0;y<5;y++){d+=(y?"L":"M")+X(y+1)+","+Y(acv*Math.pow(1-q[0],y))}VZ.el("path",{d:d,fill:"none",stroke:q[1],"stroke-width":j===2?3:2,"stroke-dasharray":j===0?"4 4":""},svg);
