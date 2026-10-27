@@ -39,7 +39,7 @@
 <script>
 (function(){
 var HASH="faf127f0b58513f76accc3da735ac518afe7f9b8d0d4e703c395b1c769240cf1",SALT="wipro-icd-2026:";
-var OK=["overview.html","role.html","portfolio.html","demand.html","buyers.html","accounts.html","alternatives.html","deal-shaping.html","pursuits.html","workshops.html","ai-engagement.html","first-months.html","ai.html","cv.html"];
+var OK=["overview.html","role.html","portfolio.html","demand.html","buyers.html","accounts.html","alternatives.html","deal-shaping.html","pursuits.html","workshops.html","ai-engagement.html","first-months.html","ai.html","method.html","cv.html"];
 function hex(b){return Array.prototype.map.call(new Uint8Array(b),function(x){return ("0"+x.toString(16)).slice(-2)}).join("")}
 function dest(){var n=new URLSearchParams(location.search).get("next");return OK.indexOf(n)>-1?n:"overview.html"}
 try{if(sessionStorage.getItem("pw")==="ok"){location.replace(dest());return}}catch(e){}
