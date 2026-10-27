@@ -1,4 +1,4 @@
-<!--meta title="Accounts" desc="An account scoring model with editable weights, the hunting and farming motions, an offering adjacency map and a placeholder order-book build for IC&D in the UK and Ireland."-->
+<!--meta title="Accounts" desc="An account scoring model led by share of wallet, the two moves (expand existing accounts, then new logos), an offering adjacency map and a placeholder order-book build for IC&D in the UK and Ireland."-->
 <style>
 .ac-flt{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:10px}
 .ac-flt .btnrow{margin-top:0}
@@ -56,16 +56,17 @@
 </style>
 
 <section class="phead">
-  <span class="eyebrow">Hunting and farming</span>
+  <span class="eyebrow">Expansion and new logos</span>
   <h1>Accounts</h1>
-  <p class="lede">This page sets out how I would choose which UK and Ireland accounts to hunt and which to grow, and how pipeline turns into IC&amp;D order book and revenue. The accounts are illustrative archetypes built from public facts about each sector.</p>
+  <p class="lede">This page sets out how I would choose which existing UK and Ireland accounts to grow first (Move 1) and which new logos to hunt (Move 2), and how pipeline turns into IC&amp;D order book and revenue. The accounts are illustrative archetypes built from public facts about each sector.</p>
   <p class="meta">Archetype scores, weights and the offering adjacencies are my judgement. Pipeline figures and conversion rates are placeholders for Wipro's own data. Where a real company is named, the fact comes from a cited public source.</p>
 </section>
 
 <section class="sec" aria-labelledby="ac-h0">
   <span class="eyebrow">Account scoring</span>
   <h2 id="ac-h0">Scoring accounts</h2>
-  <p class="intro">Nine account archetypes are scored from 1 to 5 on eight criteria. Set the weight on each criterion and the ranking, the leaders in each motion and the evidence panel update together.</p>
+  <p class="intro">Nine account archetypes are scored from 1 to 5 on nine criteria. Share of wallet comes first because it is the lead measure of my plan: how much more IC&amp;D work Wipro could win where it already works. The model opens on the "Expand first" preset. Set the weight on each criterion and the ranking, the leaders in each move and the evidence panel update together.</p>
+  <p class="mini">Measures I would report: share of wallet per account (lead measure), pipeline created and coverage, win rate and order book booked.</p>
 </section>
 
 <section class="model" aria-labelledby="ac-h1" style="margin-top:20px">
@@ -77,7 +78,7 @@
   </div>
   <div>
     <div class="viz" style="margin-top:0">
-      <div class="viz-h"><h3>Account ranking</h3><p>With balanced weights the life and pensions consolidator ranks first and the energy supplier leads the hunting accounts. Select an account for its evidence.</p></div>
+      <div class="viz-h"><h3>Account ranking</h3><p>With the "Expand first" weights the three Move 1 accounts take the top three places, led by the life and pensions consolidator, and the energy supplier leads the Move 2 accounts. Select an account for its evidence.</p></div>
       <div class="ac-flt"><div class="btnrow" id="ac-mf" role="group" aria-label="Motion"></div><span class="mini">Score out of 100. Illustrative archetypes.</span></div>
       <ul class="bars ac-bars" id="ac-bars"></ul>
       <div class="ac-det" id="ac-det" aria-live="polite"></div>
@@ -86,27 +87,30 @@
 </section>
 
 <section class="sec">
-  <span class="eyebrow">Two motions</span>
-  <h2>Hunting and farming</h2>
-  <p class="intro">Hunting wins a first IC&amp;D scope at a new logo. Farming grows an existing account from one offering to the next, through the Wipro client partner who owns it. The ranked leaders below follow the weights set above.</p>
+  <span class="eyebrow">Two moves</span>
+  <h2>Expansion and new logos</h2>
+  <p class="intro">Move 1 is farming: it grows an existing account from one offering to the next, through the Wipro client partner who owns it. Move 2 is hunting: it wins a first IC&amp;D scope at a new logo. Wipro reported 98% of Q2 FY27 revenue from existing clients, and its CFO has said "hunting remains a very, very key lever". The ranked leaders below follow the weights set above.</p>
   <div class="callout"><p><b>My order.</b> I would grow share of wallet in Wipro's existing UKI accounts first and use that proof to open new ones. An existing account qualifies faster, converts at a higher rate and books order book sooner, and the references it produces make hunting credible. Hunting runs from the first quarter, aimed at accounts with a dated forcing event and brought in with partners. This is the motion I ran at Foster + Partners, adding consulting and engineering scope to design clients through the partner who held the relationship.</p></div>
   <div class="ac-mot">
-    <div class="panel"><h3><i style="background:var(--s2)"></i>Hunting new logos</h3>
-      <ol>
-        <li>Pick accounts with a dated forcing event inside 18 months, so the first meeting has a reason.</li>
-        <li>Open with an outside-in brief and an executive workshop on one problem, with Wipro's industry and alliance teams.</li>
-        <li>Land a bounded first scope: an assessment, a test automation pack or one AI use case at a fixed price.</li>
-        <li>Prove it in production within two quarters and agree the next scope at the review.</li>
-      </ol>
-      <div class="ac-top" id="ac-th"></div></div>
-    <div class="panel"><h3><i style="background:var(--accent)"></i>Farming existing accounts</h3>
+    <div class="panel"><h3><i style="background:var(--accent)"></i>Move 1: expand existing accounts</h3>
+      <p class="mini">Farming, through the client partner.</p>
       <ol>
         <li>Map what Wipro already runs in the account and who sponsors it, with the client partner.</li>
         <li>Find the next offering using the adjacency map below, starting from the one already delivered.</li>
         <li>Use the live service's own data as the business case for the next scope.</li>
         <li>Bring renewals forward into a wider deal where AI productivity can be shared through the price.</li>
+        <li>Shape a phased first scope so order book lands early, and turn each result into a reference for Move 2.</li>
       </ol>
       <div class="ac-top" id="ac-tf"></div></div>
+    <div class="panel"><h3><i style="background:var(--s2)"></i>Move 2: new logos</h3>
+      <p class="mini">Hunting, from the first quarter.</p>
+      <ol>
+        <li>Pick accounts with a dated forcing event inside 18 months, so the first meeting has a reason. Banking comes first: operational resilience, ISO 20022 and DORA.</li>
+        <li>Open with an outside-in brief, a reference from a Move 1 expansion and an executive workshop on one problem, with Wipro's industry and alliance teams (Tricentis, AWS, Google, Anthropic).</li>
+        <li>Land a bounded first scope: an assessment, a test automation pack or one AI use case at a fixed price.</li>
+        <li>Prove it in production within two quarters and agree the next scope at the review.</li>
+      </ol>
+      <div class="ac-top" id="ac-th"></div></div>
   </div>
 </section>
 
@@ -127,21 +131,21 @@
 <section class="sec">
   <span class="eyebrow">Order book</span>
   <h2>From pipeline to order book and revenue</h2>
-  <p class="intro">Pipeline passes through stages to become signed order book, which then turns into revenue over the contract term. Every figure below is a placeholder. Enter your own pipeline and conversion rates to test a plan.</p>
+  <p class="intro">Pipeline passes through stages to become signed order book, which then turns into revenue over the contract term. The two series are Move 1 (expansion in existing accounts) and Move 2 (new logos). By default Move 1 carries more pipeline and converts at higher rates, which is my judgement of the order. Every figure below is a placeholder. Enter your own pipeline and conversion rates to test a plan.</p>
   <div class="model">
     <div class="controls ac-ob">
       <h3>Inputs</h3>
       <p><span class="ac-ph">Placeholder figures</span></p>
-      <div class="ctl"><label for="ac-pf">Farming pipeline identified (£m)</label><input type="number" id="ac-pf" min="0" step="5" value="40"></div>
-      <div class="ctl"><label for="ac-ph">Hunting pipeline identified (£m)</label><input type="number" id="ac-ph" min="0" step="5" value="60"></div>
-      <table><caption class="sr">Stage conversion rates, placeholder</caption><thead><tr><th>Stage to next</th><th>Farming %</th><th>Hunting %</th></tr></thead><tbody id="ac-cv"></tbody></table>
+      <div class="ctl"><label for="ac-pf">Move 1: expansion pipeline identified (£m)</label><input type="number" id="ac-pf" min="0" step="5" value="60"></div>
+      <div class="ctl"><label for="ac-ph">Move 2: new-logo pipeline identified (£m)</label><input type="number" id="ac-ph" min="0" step="5" value="30"></div>
+      <table><caption class="sr">Stage conversion rates, placeholder</caption><thead><tr><th>Stage to next</th><th>Move 1 %</th><th>Move 2 %</th></tr></thead><tbody id="ac-cv"></tbody></table>
       <div class="ctl"><label for="ac-term">Average contract term <output id="ac-term-o">3 years</output></label><input type="range" id="ac-term" min="1" max="7" step="1" value="3"></div>
-      <div class="ctl"><label for="ac-tgt">Order book target (£m)</label><input type="number" id="ac-tgt" min="0" step="1" value="25"></div>
+      <div class="ctl"><label for="ac-tgt">Order book target (£m)</label><input type="number" id="ac-tgt" min="0" step="1" value="15"></div>
       <div class="btnrow"><button type="button" id="ac-reset">Reset placeholders</button></div>
     </div>
     <div class="viz ac-out" style="margin-top:0">
-      <div class="viz-h"><h3>Pipeline by stage</h3><p id="ac-fr">With the placeholder rates, about a quarter of identified pipeline becomes order book.</p></div>
-      <div class="legend"><span><i style="background:var(--accent)"></i>Farming</span><span><i style="background:var(--s2)"></i>Hunting</span></div>
+      <div class="viz-h"><h3>Pipeline by stage</h3><p id="ac-fr">With the placeholder rates, about a fifth of identified pipeline becomes order book, most of it from Move 1.</p></div>
+      <div class="legend"><span><i style="background:var(--accent)"></i>Move 1: expand (placeholder)</span><span><i style="background:var(--s2)"></i>Move 2: new logos (placeholder)</span></div>
       <div id="ac-fun"></div>
       <div class="kpis" id="ac-k"></div>
       <h4>Revenue from this year's order book</h4>
@@ -177,6 +181,8 @@
 <li>UKAuthority and HTN on the 10 Year Health Plan; NHS App statistics July 2026; Digital Health on EPR coverage (press and primary)</li>
 <li>ISPreview, PSTN switch-off and Openreach lines, Jul 2026; Telecoms Tech News on VodafoneThree; ISPreview on Virgin Media O2 outsourcing, Jan 2026; The Register on BT (press)</li>
 <li>Loopio, 2026 RFP Trends and Benchmarks report (primary)</li>
+<li>Wipro, Q2 FY27 datasheet (revenue from existing clients, 98.0%), Oct 2026, wipro.com (primary)</li>
+<li>Wipro, Q3 FY25 earnings call transcript, 17 Jan 2025 (CFO: "hunting remains a very, very key lever"), wipro.com (primary)</li>
 <li>Anthropic, TCS partnership, 12 Jun 2026, anthropic.com (primary)</li>
 <li>FCA, second cohort of AI Live Testing, 21 Apr 2026, fca.org.uk (primary)</li>
 <li>FPF, DLA Piper and Gibson Dunn on the EU AI Act Omnibus timeline, 2026 (press)</li>
@@ -189,35 +195,35 @@ var VZ=window.VZ;
 function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
 function responsive(host,draw){var w=-1;function go(){var n=host.clientWidth;if(n&&n!==w){w=n;host.innerHTML="";draw(n)}}go();var t;addEventListener("resize",function(){clearTimeout(t);t=setTimeout(go,120)})}
 
-var CR=[["Forcing event proximity","A dated deadline inside 18 months"],["Legacy estate","Size and risk of systems to modernise"],["CX pressure","Complaints, satisfaction and conduct pressure"],["AI readiness","Data, sponsorship and regulatory clarity for AI"],["Wipro relationship depth","Existing work and sponsors"],["Alliance fit","Fit with Google, Anthropic, Microsoft, Adobe and others"],["Room against incumbents","Higher means less locked in by a competitor"],["Deal size potential","Likely size of the full programme"]];
-var PRE=[["Balanced",[3,3,3,3,3,3,3,3]],["Hunting",[5,4,4,3,0,3,4,4]],["Farming",[3,3,3,3,5,4,2,3]],["Near-term order book",[5,2,3,3,4,2,3,5]]];
-/* scores 1 to 5, my judgement */
+var CR=[["Share of wallet headroom","Lead measure: IC&amp;D work Wipro could add where it already works"],["Forcing event proximity","A dated deadline inside 18 months"],["Legacy estate","Size and risk of systems to modernise"],["CX pressure","Complaints, satisfaction and conduct pressure"],["AI readiness","Data, sponsorship and regulatory clarity for AI"],["Wipro relationship depth","Existing work and sponsors"],["Alliance fit","Fit with Google, Anthropic, Microsoft, Adobe and others"],["Room against incumbents","Higher means less locked in by a competitor"],["Deal size potential","Likely size of the full programme"]];
+var PRE=[["Expand first",[5,3,2,3,3,5,3,2,4]],["Balanced",[3,3,3,3,3,3,3,3,3]],["Hunting",[0,5,4,4,3,0,3,4,4]],["Farming",[4,3,3,3,3,5,4,2,3]],["Near-term order book",[3,5,2,3,3,4,2,3,5]]];
+/* scores 1 to 5, my judgement; the first score is share of wallet headroom */
 var A=[
- {n:"UK life and pensions consolidator",m:"f",s:[5,5,4,3,5,4,3,5],
+ {n:"UK life and pensions consolidator",m:"f",s:[5,5,5,4,3,5,4,3,5],
   why:["The pensions dashboards connection backstop is 31 Oct 2026, and Consumer Duty has applied to closed books since 31 Jul 2024.","Closed books sit on ageing policy administration platforms.","Competitors are active: TCS's Diligenta arm will use Claude for more than 22 million policyholders."],
   real:"Public example: Phoenix Group is an existing Wipro client. Wipro's ten-year, £500m deal (26 Mar 2025) covers ReAssure administration and modernisation of the ALPHA platform. More than 8m Phoenix policies remain on TCS BaNCS (press).",rs:"Wipro press release, 26 Mar 2025; Entrepreneur India; Anthropic, 12 Jun 2026",lead:"Mainframe and legacy modernisation",next:"AI solutions, then digital experience for policyholders"},
- {n:"UK financial services group (payments)",m:"f",s:[4,4,4,4,4,4,3,4],
+ {n:"UK financial services group (payments)",m:"f",s:[4,4,4,4,4,4,4,3,4],
   why:["APP fraud losses were £576.4m in 2025, up 19%, with a record 4.06m fraud cases.","The FCA's second AI Live Testing cohort includes agentic payments use cases."],
   real:"Public example: in Q2 FY26 Wipro reported an agentic AI payments-data deal for a “leading UK-based financial services group” (unnamed).",rs:"UK Finance Fraud Report 2026; FCA, 21 Apr 2026; Wipro Q2 FY26 release",lead:"AI solutions",next:"Quality engineering for AI, then integration"},
- {n:"UK facilities services group",m:"f",s:[2,3,3,4,4,3,4,3],
+ {n:"UK facilities services group",m:"f",s:[4,2,3,3,4,4,3,4,3],
   why:["Fewer dated regulatory deadlines, so the case rests on cost and service quality.","A large field workforce gives AI scheduling and service desk use cases."],
   real:"Public example: Wipro publishes a case study on Mitie's AI-powered facilities management with IBM and Wipro. Its Q3 FY26 release reports an unnamed UK facilities management company extending a transformation; that this is Mitie is unconfirmed.",rs:"Wipro success story; Wipro Q3 FY26 release",lead:"AI adoption",next:"Digital applications for field teams"},
- {n:"Irish retail bank",m:"h",s:[4,4,4,3,2,3,3,4],
+ {n:"Irish retail bank",m:"h",s:[2,4,4,4,3,2,3,3,4],
   why:["The revised Consumer Protection Code applies from 24 Mar 2026, covering digitalisation, vulnerable customers and fraud.","DORA has applied since 17 Jan 2025, with yearly registers of ICT third parties.","EU AI Act high-risk duties for credit scoring apply from 2 Dec 2027."],
   real:"Wipro won a multi-year infrastructure contract with Allied Irish Banks in 2015 and set up a Dublin mainframe centre of excellence for it. The current scope is to confirm with the account team.",rs:"Central Bank of Ireland; law-firm summaries of the EU AI Act Omnibus; Wipro press release, 2015",lead:"Quality engineering and testing",next:"Application and cloud modernisation"},
- {n:"UK energy supplier",m:"h",s:[5,4,5,3,2,4,3,3],
+ {n:"UK energy supplier",m:"h",s:[2,5,4,5,3,2,4,3,3],
   why:["Suppliers must complete MHHS migration by 7 May 2027, with dual running to July 2027.","Utilities were the lowest UKCSI sector in July 2026 at 73.7.","Energy Ombudsman cases rose to 46,532 in H1 2026 from 40,068 a year earlier."],
   real:"Capco, a Wipro company, covers energy. In Q4 FY26 Wipro reported a Capco Capability-as-a-Service deal for an unnamed UK energy trading company.",rs:"Elexon; Institute of Customer Service; Energy Ombudsman; Capco About; Wipro Q4 FY26 release",lead:"Quality engineering and testing",next:"Digital experience and AI agent assist"},
- {n:"Central government department",m:"h",s:[3,5,4,2,2,3,2,5],
+ {n:"Central government department",m:"h",s:[2,3,5,4,2,2,3,2,5],
   why:["28% of central government systems were legacy in 2024, and 22% of those were red-rated.","HMRC and DWP still run Fujitsu VME mainframes.","Buying runs through frameworks such as G-Cloud 15, launched in August 2026."],
   real:"Wipro IT Services UK Societas is listed as a Crown Commercial Service supplier (RM6295 Lot 2). Its G-Cloud 15 listing, and the move from the Crown Commercial Service to the Government Commercial Agency, are to confirm.",rs:"GOV.UK State of Digital Government Review; The Register; TechMarketView; CCS supplier page",lead:"Mainframe and legacy modernisation",next:"Quality engineering, then digital applications"},
- {n:"UK grocer",m:"h",s:[3,3,5,3,1,4,2,3],
+ {n:"UK grocer",m:"h",s:[1,3,3,5,3,1,4,2,3],
   why:["About 27% of GB retail sales are online.","The DMCC Act lets the CMA fine up to 10% of global turnover from 6 Apr 2025.","Retail lost the top UKCSI spot in July 2026 for the first time since 2008."],
   real:"Incumbency is strong in the sector: TCS renewed its wider M&amp;S technology partnership on 9 Apr 2026.",rs:"ONS J4MC via Business Expert; CMS; Retail Times; TCS NSE filing",lead:"Digital experience and commerce",next:"AI solutions for personalisation and service"},
- {n:"NHS trust group",m:"h",s:[3,4,4,2,1,3,3,2],
+ {n:"NHS trust group",m:"h",s:[1,3,4,4,2,1,3,3,2],
   why:["The 10 Year Health Plan makes the NHS App the front door, with the Single Patient Record viewable by 2028.","The NHS App had about 80m logins in July 2026.","Budgets are tight and much work is product-led, which limits deal size."],
   real:"I would treat this as a new-logo pursuit and confirm any existing NHS relationships with Wipro's health practice.",rs:"UKAuthority; NHS App statistics, July 2026",lead:"Integration",next:"Quality engineering for clinical systems"},
- {n:"Telecoms operator",m:"h",s:[5,4,3,4,2,4,2,4],
+ {n:"Telecoms operator",m:"h",s:[1,5,4,3,4,2,4,2,4],
   why:["The PSTN switch-off on 31 Jan 2027 is fixed, with about 1.5m copper lines left in July 2026.","VodafoneThree targets £700m a year of synergies by year five.","Virgin Media O2 is moving about 700 IT roles to TCS and Tech Mahindra."],
   real:"Wipro's AI-native unit owns an Enterprise Telco AI platform.",rs:"ISPreview; Telecoms Tech News; Wipro press release, 1 Apr 2026",lead:"Application and cloud modernisation",next:"Integration, then AI solutions"}
 ];
@@ -227,13 +233,13 @@ CR.forEach(function(c,i){var d=document.createElement("div");d.className="ctl";d
  d.querySelector("input").addEventListener("input",function(e){W[i]=+e.target.value;document.getElementById("ac-o"+i).textContent=W[i];syncPre();rank()})});
 PRE.forEach(function(p,k){var b=document.createElement("button");b.type="button";b.textContent=p[0];b.onclick=function(){W=p[1].slice();W.forEach(function(v,i){document.getElementById("ac-w"+i).value=v;document.getElementById("ac-o"+i).textContent=v});syncPre();rank()};pre.appendChild(b)});
 function syncPre(){[].forEach.call(pre.children,function(b,k){b.setAttribute("aria-pressed",PRE[k][1].join()===W.join())})}
-[["all","All accounts"],["h","Hunting"],["f","Farming"]].forEach(function(x){var b=document.createElement("button");b.type="button";b.dataset.k=x[0];b.textContent=x[1];b.onclick=function(){mf=x[0];[].forEach.call(mfb.children,function(y){y.setAttribute("aria-pressed",y.dataset.k===mf)});rank()};b.setAttribute("aria-pressed",x[0]==="all");mfb.appendChild(b)});
+[["all","All accounts"],["f","Move 1: expand"],["h","Move 2: new logos"]].forEach(function(x){var b=document.createElement("button");b.type="button";b.dataset.k=x[0];b.textContent=x[1];b.onclick=function(){mf=x[0];[].forEach.call(mfb.children,function(y){y.setAttribute("aria-pressed",y.dataset.k===mf)});rank()};b.setAttribute("aria-pressed",x[0]==="all");mfb.appendChild(b)});
 function score(a){var t=0,m=0;W.forEach(function(w,i){t+=w*a.s[i];m+=w*5});return m?Math.round(t/m*100):0}
 function rank(){var L=A.map(function(a,i){return{i:i,v:score(a)}}).sort(function(x,y){return y.v-x.v});
  var V=L.filter(function(x){return mf==="all"||A[x.i].m===mf});
  if(!V.some(function(x){return x.i===sel})&&V.length)sel=V[0].i;
  var ul=document.getElementById("ac-bars");
- ul.innerHTML=V.map(function(x,k){var a=A[x.i];return'<li class="'+(k===0?"top ":"")+(x.i===sel?"sel":"")+'" data-i="'+x.i+'"><button type="button" class="lbl" aria-pressed="'+(x.i===sel)+'"><span class="tg'+(a.m==="f"?" f":"")+'">'+(k+1)+'. '+(a.m==="f"?"Farming":"Hunting")+'</span>'+esc(a.n)+'</button><div class="tr"><div class="fl '+a.m+'" style="width:'+x.v+'%"></div></div><span class="v">'+x.v+'</span></li>'}).join("");
+ ul.innerHTML=V.map(function(x,k){var a=A[x.i];return'<li class="'+(k===0?"top ":"")+(x.i===sel?"sel":"")+'" data-i="'+x.i+'"><button type="button" class="lbl" aria-pressed="'+(x.i===sel)+'"><span class="tg'+(a.m==="f"?" f":"")+'">'+(k+1)+'. '+(a.m==="f"?"Move 1: expand":"Move 2: new logos")+'</span>'+esc(a.n)+'</button><div class="tr"><div class="fl '+a.m+'" style="width:'+x.v+'%"></div></div><span class="v">'+x.v+'</span></li>'}).join("");
  [].forEach.call(ul.querySelectorAll("li"),function(li){li.onclick=function(){sel=+li.dataset.i;rank()}});
  detail();
  function top(m){var t=L.filter(function(x){return A[x.i].m===m}).slice(0,2);return t.map(function(x){return"<b>"+esc(A[x.i].n)+"</b> ("+x.v+")"}).join(" and ")}
@@ -241,11 +247,11 @@ function rank(){var L=A.map(function(a,i){return{i:i,v:score(a)}}).sort(function
  document.getElementById("ac-tf").innerHTML="Current leaders: "+top("f")+"."}
 var cxHost;
 function detail(){var a=A[sel],d=document.getElementById("ac-det");
- d.innerHTML='<div><h4>'+(a.m==="f"?"Farming":"Hunting")+' archetype, score '+score(a)+'</h4><div class="nm">'+esc(a.n)+'</div><ul>'+a.why.map(function(x){return"<li>"+x+"</li>"}).join("")+'</ul><div class="real">'+a.real+'<span class="src">Sources: '+a.rs+'</span></div><p style="margin-top:12px"><b>Lead offering:</b> '+a.lead+'. <b>Next:</b> '+a.next+'.</p></div><div><h4>Contribution by criterion</h4><p class="mini">Bar length is the score (1 to 5, my judgement); the dark part is weighted by the current slider.</p><div class="ac-cx" id="ac-cx"></div></div>';
+ d.innerHTML='<div><h4>'+(a.m==="f"?"Move 1, expand":"Move 2, new logo")+' archetype, score '+score(a)+'</h4><div class="nm">'+esc(a.n)+'</div><ul>'+a.why.map(function(x){return"<li>"+x+"</li>"}).join("")+'</ul><div class="real">'+a.real+'<span class="src">Sources: '+a.rs+'</span></div><p style="margin-top:12px"><b>Lead offering:</b> '+a.lead+'. <b>Next:</b> '+a.next+'.</p></div><div><h4>Contribution by criterion</h4><p class="mini">Bar length is the score (1 to 5, my judgement); the dark part is weighted by the current slider.</p><div class="ac-cx" id="ac-cx"></div></div>';
  cxHost=document.getElementById("ac-cx");var w=-1;drawCX(cxHost.clientWidth||300)}
 function drawCX(Wd){var a=A[sel],lw=Math.min(170,Wd*.46),rh=24,H=CR.length*rh+6;var s=VZ.svg(cxHost,Wd,H,"Criterion scores for "+a.n);s.setAttribute("role","group");
  var x=VZ.lin(0,5,lw,Wd-30);
- CR.forEach(function(c,i){var y=i*rh+4;var t=VZ.el("text",{x:0,y:y+12},s);t.textContent=Wd<420?["Forcing event","Legacy estate","CX pressure","AI readiness","Relationship","Alliance fit","Room to compete","Deal size"][i]:c[0];
+ CR.forEach(function(c,i){var y=i*rh+4;var t=VZ.el("text",{x:0,y:y+12},s);t.textContent=Wd<420?["Share of wallet","Forcing event","Legacy estate","CX pressure","AI readiness","Relationship","Alliance fit","Room to compete","Deal size"][i]:c[0];
   VZ.el("rect",{x:lw,y:y+2,width:x(5)-lw,height:12,fill:"var(--grid)",rx:3},s);
   VZ.bar(s,lw,y+2,x(a.s[i])-lw,12,"color-mix(in srgb,var(--accent) 30%,var(--chart-bg))","h");
   var g=VZ.bar(s,lw,y+2,(x(a.s[i])-lw)*W[i]/5,12,"var(--accent)","h");
@@ -307,9 +313,9 @@ responsive(adjHost,drawADJ);
 
 /* order book build */
 var STG=["Identified","Qualified","Proposal","Won"];
-var DEF={pf:40,ph:60,cf:[70,65,50],ch:[45,50,33],term:3,tgt:25};
+var DEF={pf:60,ph:30,cf:[70,65,50],ch:[45,50,33],term:3,tgt:15};
 var cv=document.getElementById("ac-cv");
-["Identified to qualified","Qualified to proposal","Proposal to won"].forEach(function(l,i){var tr=document.createElement("tr");tr.innerHTML='<td>'+l+'</td><td><input type="number" min="0" max="100" step="1" id="ac-cf'+i+'" value="'+DEF.cf[i]+'" aria-label="Farming, '+l+', percent"></td><td><input type="number" min="0" max="100" step="1" id="ac-ch'+i+'" value="'+DEF.ch[i]+'" aria-label="Hunting, '+l+', percent"></td>';cv.appendChild(tr)});
+["Identified to qualified","Qualified to proposal","Proposal to won"].forEach(function(l,i){var tr=document.createElement("tr");tr.innerHTML='<td>'+l+'</td><td><input type="number" min="0" max="100" step="1" id="ac-cf'+i+'" value="'+DEF.cf[i]+'" aria-label="Move 1, '+l+', percent"></td><td><input type="number" min="0" max="100" step="1" id="ac-ch'+i+'" value="'+DEF.ch[i]+'" aria-label="Move 2, '+l+', percent"></td>';cv.appendChild(tr)});
 function num(id,d){var v=parseFloat(document.getElementById(id).value);return isFinite(v)&&v>=0?v:d}
 function pct(id,d){return Math.min(100,num(id,d))/100}
 var funHost=document.getElementById("ac-fun"),revHost=document.getElementById("ac-rev"),M;
@@ -319,7 +325,7 @@ function calc(){var f=[num("ac-pf",0)],h=[num("ac-ph",0)];for(var i=0;i<3;i++){f
  var rev=[];for(var y=0;y<=term;y++)rev.push(ob/term*(y===0||y===term?.5:1));
  M={f:f,h:h,ob:ob,tot:tot,conv:conv,term:term,rev:rev,need:conv?tgt/conv:0,tgt:tgt}}
 function fm(v){return"£"+(v>=10?v.toFixed(0):v.toFixed(1))+"m"}
-function drawFun(Wd){var lw=Wd<420?78:100,rh=40,H=STG.length*rh+8,s=VZ.svg(funHost,Wd,H,"Pipeline by stage, farming and hunting, placeholder figures");s.setAttribute("role","group");
+function drawFun(Wd){var lw=Wd<420?78:100,rh=40,H=STG.length*rh+8,s=VZ.svg(funHost,Wd,H,"Pipeline by stage, Move 1 expansion and Move 2 new logos, placeholder figures");s.setAttribute("role","group");
  var mx=Math.max(1,M.f[0]+M.h[0]),x=VZ.lin(0,mx,0,Wd-lw-70);
  STG.forEach(function(st,i){var y=i*rh+6,a=M.f[i],b=M.h[i];
   var t=VZ.el("text",{x:0,y:y+19,"class":i===3?"t-strong":""},s);t.textContent=st;
@@ -327,7 +333,7 @@ function drawFun(Wd){var lw=Wd<420?78:100,rh=40,H=STG.length*rh+8,s=VZ.svg(funHo
   VZ.el("rect",{x:lw,y:y+4,width:Math.max(0,x(a)),height:22,fill:"var(--accent)"},g);
   VZ.bar(g,lw+x(a),y+4,Math.max(0,x(b)),22,"var(--s2)","h");
   var v=VZ.el("text",{x:lw+x(a+b)+8,y:y+19,"class":"t-strong"},s);v.textContent=fm(a+b);
-  VZ.tip(g,function(){return"<b>"+st+"</b>Farming "+fm(a)+", hunting "+fm(b)+'<div class="m">Placeholder figures</div>'})})}
+  VZ.tip(g,function(){return"<b>"+st+"</b>Move 1 "+fm(a)+", Move 2 "+fm(b)+'<div class="m">Placeholder figures</div>'})})}
 function drawRev(Wd){var H=170,pl=44,pb=26,pt=12,s=VZ.svg(revHost,Wd,H,"Revenue by year from this year's order book, placeholder");s.setAttribute("role","group");
  var n=M.rev.length,mx=Math.max(1,Math.max.apply(null,M.rev)),y=VZ.lin(0,mx,H-pb,pt),bw=Math.min(70,(Wd-pl)/n*.6),step=(Wd-pl)/n;
  [0,.5,1].forEach(function(f){var yy=y(mx*f);VZ.el("line",{x1:pl,x2:Wd,y1:yy,y2:yy,"class":"grid"},s);var t=VZ.el("text",{x:pl-6,y:yy+4,"text-anchor":"end","class":"t-muted"},s);t.textContent=fm(mx*f)});
@@ -337,7 +343,7 @@ function drawRev(Wd){var H=170,pl=44,pb=26,pt=12,s=VZ.svg(revHost,Wd,H,"Revenue 
   VZ.tip(g,function(){return"<b>Year "+(i+1)+"</b>"+fm(v)+' of revenue<div class="m">Placeholder figures</div>'})})}
 function update(){calc();
  document.getElementById("ac-k").innerHTML='<div><b>'+fm(M.ob)+'</b><span>Order book won (contract value)</span></div><div><b>'+fm(M.rev[0])+'</b><span>Revenue in the signing year</span></div><div><b>'+fm(M.rev[1]||0)+'</b><span>Revenue in the following year</span></div><div><b>'+fm(M.need)+'</b><span>Pipeline needed for a '+fm(M.tgt)+' target</span></div>';
- document.getElementById("ac-fr").textContent="With these rates, "+Math.round(M.conv*100)+"% of identified pipeline becomes order book: farming converts "+Math.round(M.f[0]?M.f[3]/M.f[0]*100:0)+"%, hunting "+Math.round(M.h[0]?M.h[3]/M.h[0]*100:0)+"%.";
+ document.getElementById("ac-fr").textContent="With these rates, "+Math.round(M.conv*100)+"% of identified pipeline becomes order book: Move 1 (expansion) converts "+Math.round(M.f[0]?M.f[3]/M.f[0]*100:0)+"%, Move 2 (new logos) "+Math.round(M.h[0]?M.h[3]/M.h[0]*100:0)+"%.";
  funHost.innerHTML="";drawFun(funHost.clientWidth||600);revHost.innerHTML="";drawRev(revHost.clientWidth||600)}
 [].forEach.call(document.querySelectorAll(".ac-ob input"),function(i){i.addEventListener("input",update)});
 document.getElementById("ac-reset").onclick=function(){document.getElementById("ac-pf").value=DEF.pf;document.getElementById("ac-ph").value=DEF.ph;document.getElementById("ac-term").value=DEF.term;document.getElementById("ac-tgt").value=DEF.tgt;for(var i=0;i<3;i++){document.getElementById("ac-cf"+i).value=DEF.cf[i];document.getElementById("ac-ch"+i).value=DEF.ch[i]}update()};

@@ -101,6 +101,9 @@
 @media (max-width:980px){.by-map,.by-ox{grid-template-columns:minmax(0,1fr)}.by-od{position:static}.by-ol{max-height:none}}
 @media (max-width:760px){.by-pg,.by-evl,.by-pd{grid-template-columns:minmax(0,1fr)}
  .by-plan{grid-template-columns:repeat(2,minmax(0,1fr))}.by-plan .hd{display:none}.by-plan .rl{grid-column:1/-1;margin-top:8px}.by-plan .cl{padding:8px 10px;font-size:13px;min-width:0}}
+.by-mvn{margin:14px 0 4px;background:var(--panel);border-radius:6px;padding:14px 16px;border-left:4px solid var(--mc,var(--accent));font-size:14.5px}
+.by-mvn b{font-weight:600}
+.by-mvb{margin-top:16px}
 </style>
 
 <section class="phead">
@@ -156,7 +159,9 @@
 <section class="sec">
   <span class="eyebrow">Relationships</span>
   <h2>Relationship plan</h2>
-  <p class="intro">Each executive gets a sequence across the first four quarters: a first meeting with something useful to them, a working session, evidence from a live pilot and a review. I would agree each step with the Wipro client partner who owns the account.</p>
+  <p class="intro">Each executive gets a sequence across the first four quarters: a first meeting with something useful to them, a working session, evidence from a live pilot and a review. I would agree each step with the Wipro client partner who owns the account. How I reach each executive depends on the move: expanding an existing account (Move 1) or opening a new logo (Move 2).</p>
+  <div class="btnrow by-mvb" role="group" aria-label="Move" id="by-mvb"><button type="button" data-m="0" aria-pressed="true">Move 1: expand</button><button type="button" data-m="1" aria-pressed="false">Move 2: new logos</button></div>
+  <div class="by-mvn" id="by-mvn" aria-live="polite"></div>
   <div class="viz">
     <div class="viz-h"><h3>First four quarters by executive</h3><p>Most executives move from a meeting to a workshop to proof within three quarters. Select a name to follow one row, or a cell for its detail.</p></div>
     <div class="legend" id="by-pl-lg"></div>
@@ -438,6 +443,12 @@ function drawPlan(){var h='<div class="hd r0">Executive</div>'+[1,2,3,4].map(fun
  [].forEach.call(plan.querySelectorAll(".cl"),function(b){b.onclick=function(){pC=[b.dataset.k,+b.dataset.q];if(pR&&pR!==pC[0])pR=pC[0];drawPlan();drawPD()}})}
 function drawPD(){var r=R[RK[pC[0]]],c=P[pC[0]][pC[1]];
  pd.innerHTML='<div><h4>'+esc(r.s)+', quarter '+(pC[1]+1)+' ('+TY[pC[1]][0].toLowerCase()+')</h4><div class="t">'+c[0]+'</div><p>'+c[1]+'</p></div><div><h4>Across the year</h4><p>'+P[pC[0]].map(function(x,i){return"<b>Q"+(i+1)+"</b> "+x[0]}).join(" &rarr; ")+'</p><p class="mini" style="margin-top:8px">'+r.rel+'</p></div>'}
+var MVR=[["Move 1: expand","var(--accent)","In an existing account I reach executives through the Wipro client partner who owns the account. The partner sets up the first meeting, knows the renewal calendar and the sponsors, and the live service gives us evidence to bring. The plan below then runs inside that relationship."],
+ ["Move 2: new logos","var(--s2)","For a new logo there is no client partner relationship yet. I reach executives through a dated forcing event (operational resilience, ISO 20022 or DORA in banking), through alliance partners who already work with the client (Tricentis, AWS, Google, Anthropic), and through executive workshops and briefings. A reference from a Move 1 expansion makes the first meeting credible."]],mvi=0;
+function drawMV(){var m=MVR[mvi],n=document.getElementById("by-mvn");n.style.setProperty("--mc",m[1]);n.innerHTML="<b>"+m[0]+".</b> "+m[2];
+ [].forEach.call(document.querySelectorAll("#by-mvb button"),function(b){b.setAttribute("aria-pressed",+b.dataset.m===mvi)})}
+[].forEach.call(document.querySelectorAll("#by-mvb button"),function(b){b.onclick=function(){mvi=+b.dataset.m;drawMV()}});
+drawMV();
 drawPlan();drawPD();
 VZ.tabs(tabs,function(t){pp.hidden=false;cur=+t.id.slice(4);drawPersona();if(tlSel>=0&&E[tlSel][4].indexOf(R[cur].k)<0)tlSel=-1;paintTL();VZ.hideTip()});
 })();

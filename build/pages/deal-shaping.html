@@ -47,6 +47,13 @@
 @media (max-width:1100px){#dl .dl-hero{grid-template-columns:1fr 1fr}}
 @media (max-width:980px){#dl .dl-calc{grid-template-columns:minmax(0,1fr)}#dl .dl-calc .controls{position:static;max-height:none}#dl .dl-mod,#dl .dl-col{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:640px){#dl .dl-rt .r{grid-template-columns:120px 1fr 24px;font-size:12.5px}#dl .dl-hero b{font-size:21px}}
+#dl .dl-why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+@media (max-width:980px){#dl .dl-why{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){#dl .dl-why{grid-template-columns:minmax(0,1fr)}}
+#dl .dl-why .panel{border-top:3px solid var(--accent);margin:0}
+#dl .dl-why .panel h3{font-size:16px;margin:0 0 6px}
+#dl .dl-why .panel p{font-size:14px;margin:0}
+#dl .dl-why .tags{margin-top:10px}
 </style>
 <div id="dl">
 <section class="phead">
@@ -147,6 +154,20 @@
   </div>
 </section>
 
+<section class="sec" aria-labelledby="dl-h5b">
+  <span class="eyebrow">Move 1: expand</span>
+  <h2 id="dl-h5b">Why expansion deals pay</h2>
+  <p class="intro">Move 1 of my plan grows IC&amp;D scope inside accounts where Wipro already runs work. These deals tend to cost less to win and sign sooner, and they can offset the renewal pressure shown above. Each point is marked as sourced or as my judgement.</p>
+  <div class="dl-why">
+    <div class="panel"><h3>Phased first scopes</h3><p>A fixed-price diagnostic or pilot on one domain inside a live estate can be signed quickly and books order book early. The next phase is priced on evidence from the first.</p><div class="tags"><span class="tag">My judgement</span></div></div>
+    <div class="panel"><h3>Add-ons to run contracts</h3><p>Renewal step-downs have moved from 3–4% a year to closer to 6–7% (Pzena). TCS offers early renewal "with greater AI infusion, greater productivity delivered, and at the same time, with expansion in scope". Adding QE, modernisation or AI scope at renewal offsets the step-down.</p><div class="tags"><span class="tag a">Sourced</span></div></div>
+    <div class="panel"><h3>Productivity shared through scope</h3><p>Analysts cite "pricing pressure in renewals due to client expectations of higher productivity pass-through" (Kotak, via ANI). Passing part of the AI gain to the client in exchange for added scope keeps the account's value growing. One research blog reports TCS passes 10–15% of savings at signing and recovers it with added scope (to confirm).</p><div class="tags"><span class="tag a">Sourced</span><span class="tag w">One figure to confirm</span></div></div>
+    <div class="panel"><h3>Lower cost of sale</h3><p>The client partner already holds the relationship, the delivery team knows the estate and the live service supplies the data for the business case. HBR summarises studies finding that a new customer costs 5 to 25 times more to acquire than an existing one costs to keep.</p><div class="tags"><span class="tag a">Sourced, general</span><span class="tag">My judgement for IC&amp;D</span></div></div>
+    <div class="panel"><h3>Faster signature</h3><p>A proposal raised through the client partner often avoids a full competitive tender. In 6sense's 2025 buyer survey the vendor contacted first won about 8 in 10 deals. Wipro's CFO said "a substantial portion of our large deals actually came from our top clients" (Q1 FY26).</p><div class="tags"><span class="tag a">Sourced</span></div></div>
+    <div class="panel"><h3>Better margin</h3><p>Fewer bidders, known delivery risk and a smaller contingency all support margin. Try the "Expansion add-on" preset in the calculator below to compare it with the standard placeholder deal.</p><div class="tags"><span class="tag">My judgement</span><span class="tag w">Placeholder figures</span></div></div>
+  </div>
+</section>
+
 <section class="sec" aria-labelledby="dl-h6">
   <span class="eyebrow">Model</span>
   <h2 id="dl-h6">Deal margin calculator</h2>
@@ -173,7 +194,8 @@
         <div class="dl-rg" id="dl-rg"></div>
         <p class="src" style="margin-top:8px">UK cost defaults for senior and mid grades follow ITJobsWatch medians for solutions architects (£625) and developers (£507). Offshore cost defaults sit inside vendor ranges that are unverified. Price rates are placeholders below the G-Cloud card maximums.</p>
       </details>
-      <div class="btnrow"><button type="button" id="dl-rs">Reset placeholders</button></div>
+      <div class="btnrow"><button type="button" id="dl-rs">Reset placeholders</button><button type="button" id="dl-xp" aria-pressed="false">Expansion add-on</button></div>
+      <span class="hint">Expansion add-on: a smaller team for six months in an estate Wipro already runs, fixed price, no competitive discount and a lower contingency. Placeholder figures, my judgement.</span>
     </div>
     <div>
       <div class="dl-hero" id="dl-hr" aria-live="polite"></div>
@@ -241,6 +263,12 @@
 <li>Infosys Form 20-F FY2026, sec.gov (fixed-price share). Primary.</li>
 <li>Pzena Investment Management, Highlighted Holding: IT Services, 16 Jul 2026, pzena.com. Press (investor commentary).</li>
 <li>HFS Research, AI drives IT contract renegotiations within 24 months, 30 Jun 2026, hfsresearch.com. Press (analyst).</li>
+<li>TCS, Q4 FY26 earnings call transcript, 9 Apr 2026, tcs.com (early renewal with expansion in scope). Primary.</li>
+<li>Punjab Kesari / ANI citing Kotak Institutional Equities on productivity pass-through in renewals, 2026. Press.</li>
+<li>Wright Research, What happens to Indian IT when AI reprices its core business, Aug 2026, wrightresearch.in. Press, to confirm.</li>
+<li>Harvard Business Review, The Value of Keeping the Right Customers, Oct 2014, hbr.org. Press.</li>
+<li>6sense 2025 buyer survey, via a sales.co compilation. Press.</li>
+<li>Wipro Q1 FY26 earnings call transcript, 17 Jul 2025, wipro.com (large deals from top clients). Primary.</li>
 <li>Finology Ticker and Free Press Journal on TCS, Infosys and Tech Mahindra Q2 FY27 (Oct 2026). Press.</li>
 <li>HCLTech Q2 FY27 investor release, hcltech.com. Primary, read through a search index.</li>
 <li>ITJobsWatch contract rates for solutions architect, data scientist, project manager, developer and business analyst, six months to 27 Oct 2026, itjobswatch.co.uk. Primary.</li>
@@ -358,6 +386,9 @@ function rg(){var h='<span></span><span class="h">Onshore</span><span class="h">
 var SL=["ns","nm","nj","on","du","ut","di","co","ai","sh","tl"];
 SL.forEach(function(k){$("dl-"+k).addEventListener("input",function(){S[k]=+this.value;calc()})});
 $("dl-rs").onclick=function(){S=JSON.parse(JSON.stringify(DEF));rg();calc()};
+/* Expansion add-on preset: placeholder figures, my judgement */
+var XP={ns:1,nm:4,nj:4,on:25,du:6,ut:85,pm:1,di:0,co:8,ai:15,sh:50,tl:50};
+$("dl-xp").onclick=function(){S=JSON.parse(JSON.stringify(DEF));for(var k in XP)S[k]=XP[k];rg();calc()};
 function model(s){var n=[s.ns,s.nm,s.nj],days=s.du*18,o=s.on/100,u=s.ut/100,d=s.di/100,c=s.co/100,p=s.ai/100,cm=CM[s.pm],sh=s.pm===0?1:s.sh/100;
  var L=0,Con=0,Coff=0,E=0;for(var i=0;i<3;i++){var e=n[i]*days;E+=e;L+=e*(o*s.p.on[i]+(1-o)*s.p.off[i]);Con+=e*(1-p)*o*s.c.on[i];Coff+=e*(1-p)*(1-o)*s.c.off[i]}
  var disc=L*d,LD=L-disc,G=LD*p,pass=sh*G,cont=cm.kc*c*LD,P=LD-pass+cont,bench=(Con+Coff)*(1/u-1),tool=s.tl*(n[0]+n[1]+n[2])*s.du,cost=Con+Coff+bench+tool,M=P-cost,risk=cm.rk*c*(Con+Coff+bench);
@@ -368,6 +399,7 @@ function calc(){SL.forEach(function(k){$("dl-"+k).value=S[k]});
  $("dl-sh").disabled=S.pm===0;$("dl-shh").textContent=S.pm===0?"Under T&M the whole gain reaches the client as fewer billed days":"The rest of the gain stays with Wipro as margin";
  $("dl-coh").textContent=["T&M: no contingency is priced","Fixed price: priced in full","Managed capacity: half is priced","Outcome: priced at 1.5 times","Gain-share: no contingency is priced"][S.pm];
  [].forEach.call(pmb.children,function(b,i){b.setAttribute("aria-pressed",i===S.pm)});
+ $("dl-xp").setAttribute("aria-pressed",Object.keys(XP).every(function(k){return S[k]===XP[k]}));
  var r=model(S);
  $("dl-hr").innerHTML='<div><b>'+gbp(r.P)+'</b><span>Deal price, '+CM[S.pm].n+'</span></div><div><b>'+gbp(r.cost)+'</b><span>Direct delivery cost</span></div><div class="hi"><b>'+r.mp.toFixed(1)+'%</b><span>Contribution margin, '+gbp(r.M)+'</span></div><div><b>'+r.mr.toFixed(1)+'%</b><span>Margin if the contingency is used up</span></div>';
  $("dl-wr").textContent="A rate-card value of "+gbp(r.L)+" becomes a price of "+gbp(r.P)+" and a contribution margin of "+gbp(r.M)+", or "+r.mp.toFixed(1)+"% of price, on "+Math.round(r.Eai).toLocaleString("en-GB")+" effort days.";

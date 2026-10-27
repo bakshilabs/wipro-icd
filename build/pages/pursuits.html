@@ -63,6 +63,18 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
 @media (max-width:640px){.pu-cd{grid-template-columns:1fr}}
 @media (max-width:980px){.pu-sc{grid-template-columns:1fr}.pu-res{position:static}.pu-law{grid-template-columns:1fr 1fr}.pu-rec{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.pu-det,.pu-pd,.pu-law,.pu-rec{grid-template-columns:1fr}.pu-verdict{grid-template-columns:1fr}main .viz{padding:16px 12px 12px}}
+.pu-mv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:20px}
+.pu-mv .panel{margin:0;border-top:3px solid var(--mc)}
+.pu-mv .panel h3{font-size:17px;margin:0 0 4px}
+.pu-mv .sb{display:flex;height:16px;border-radius:3px;overflow:hidden;margin:12px 0 10px;gap:2px}
+.pu-mv .sb span{display:block;height:100%;background:var(--mc)}
+.pu-mv ul{list-style:none;margin:0;padding:0;font-size:14px}
+.pu-mv li{display:grid;grid-template-columns:14px minmax(0,1fr) 44px;gap:8px;align-items:baseline;padding:6px 0;border-top:1px solid var(--line)}
+.pu-mv li i{width:10px;height:10px;border-radius:2px;background:var(--mc);display:inline-block}
+.pu-mv li b{font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.pu-mv .tie{margin-top:12px;font-size:14px}
+.pu-mv .btnrow{margin-top:10px}
+@media (max-width:760px){.pu-mv{grid-template-columns:minmax(0,1fr)}}
 </style>
 
 <section class="phead">
@@ -87,6 +99,25 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
     <div id="pu-wr"></div>
     <p class="src" style="margin-top:8px">Loopio 2026 RFP Trends and Benchmarks report, with APMP. Reference lines: UK 47% and Technology (hardware and IT services) 42%, both for 2025. Price or pricing model has been the most-cited reason for losing bids every year since 2021.</p>
   </div>
+</section>
+
+<section class="sec" aria-labelledby="pu-hm">
+  <span class="eyebrow">Deal origination</span>
+  <h2 id="pu-hm">How deals arise in each move</h2>
+  <p class="intro">My plan has two moves: expand Wipro's existing UKI accounts first (Move 1), then convert that proof into new logos (Move 2). Deals reach the pipeline by different routes in each, which changes how they score at bid/no-bid. The shares are my estimate, to test against Wipro's CRM data.</p>
+  <div class="pu-mv">
+    <div class="panel" style="--mc:var(--accent)"><h3>Move 1: expand</h3><p class="mini">Existing accounts, through the client partner who owns the account.</p>
+      <div class="sb" role="img" aria-label="Move 1: expand: share of deals by origin, my estimate"><span style="width:60%;opacity:1"></span><span style="width:30%;opacity:.65"></span><span style="width:10%;opacity:.35"></span></div>
+      <ul><li><i style="opacity:1"></i><span>Proactive proposals from white-space maps and executive workshops, raised with the client partner</span><b>60%</b></li><li><i style="opacity:.65"></i><span>Early renewal or add-on to a run contract, with QE, modernisation or AI scope</span><b>30%</b></li><li><i style="opacity:.35"></i><span>Reactive RFP or re-compete inside the account</span><b>10%</b></li></ul>
+      <p class="tie">In the scorecard these deals usually score higher on economic buyer and champion, because the client partner gives access and the live service gives a sponsor.</p>
+      <div class="btnrow"><button type="button" data-pre="0">Score a Move 1 example</button></div></div>
+    <div class="panel" style="--mc:var(--s2)"><h3>Move 2: new logos</h3><p class="mini">New clients, hunted from the first quarter.</p>
+      <div class="sb" role="img" aria-label="Move 2: new logos: share of deals by origin, my estimate"><span style="width:30%;opacity:1"></span><span style="width:20%;opacity:.75"></span><span style="width:30%;opacity:.5"></span><span style="width:20%;opacity:.3"></span></div>
+      <ul><li><i style="opacity:1"></i><span>Proactive, opened by a dated forcing event (operational resilience, ISO 20022, DORA)</span><b>30%</b></li><li><i style="opacity:.75"></i><span>Proactive, sourced with a partner (Tricentis, AWS, Google, Anthropic)</span><b>20%</b></li><li><i style="opacity:.5"></i><span>Reactive RFP from a new client or sourcing adviser</span><b>30%</b></li><li><i style="opacity:.3"></i><span>Public framework call-off or tender</span><b>20%</b></li></ul>
+      <p class="tie">These deals usually start lower on relationship and access. The forcing event, the partner and a Move 1 reference are what lift the score before bid effort is committed.</p>
+      <div class="btnrow"><button type="button" data-pre="1">Score a Move 2 example</button></div></div>
+  </div>
+  <p class="src" style="margin-top:10px">Wipro's CEO ties large-deal success to being "proactive with our clients" and to qualifying the pipeline (Q2 FY25 call). Under the Procurement Act 2023, framework call-offs generally require competition.</p>
 </section>
 
 <section class="sec" aria-labelledby="pu-h1">
@@ -202,6 +233,8 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
     <li>Wipro, Finastra Services and Fusion Global PayPlus implementation pages; Finastra, Wipro partner page. wipro.com/banking/; finastra.com/partners/wipro. Primary.</li>
     <li>Temenos, "Temenos and Wipro announce global strategic partnership to accelerate digital transformation in banking", 27 July 2022; Temenos partner page. temenos.com. Primary (partner).</li>
     <li>Wipro, "Wipro wins 4 awards at the European Software Testing Awards (TESTA) 2023". wipro.com/about-us/awards-and-recognitions/2023/. Primary.</li>
+    <li>Wipro, Q2 FY25 earnings call transcript, 17 Oct 2024 (CEO on proactive large deals and pipeline qualification). wipro.com. Primary.</li>
+    <li>GOV.UK, Procurement Act 2023 guidance: competitive tendering procedures (framework call-offs). gov.uk. Primary.</li>
     <li>Arpan Bakshi, CV (Foster + Partners, SOM, WSP and Atlas Learn roles). Primary.</li>
   </ol>
 </section>
@@ -242,9 +275,9 @@ var C=[
 ];
 var LV=["Unknown","Weak","Partial","Strong"];
 var PRE=[
- {n:"Existing account, AI contact centre",a:[3,2,2,2,2,3,3,2,3,2]},
- {n:"Public tender, no prior contact",a:[1,0,2,3,3,1,0,1,2,1]},
- {n:"Unsolicited RFP from a new client",a:[1,0,1,1,1,1,0,0,2,1]},
+ {n:"Move 1: existing account, AI contact centre",a:[3,2,2,2,2,3,3,2,3,2]},
+ {n:"Move 2: public tender, no prior contact",a:[1,0,2,3,3,1,0,1,2,1]},
+ {n:"Move 2: unsolicited RFP from a new client",a:[1,0,1,1,1,1,0,0,2,1]},
  {n:"Modernisation with a strong champion",a:[2,1,2,1,2,3,3,2,3,1]}
 ];
 var ctl=$("pu-ctl");
@@ -254,6 +287,7 @@ C.forEach(function(c,i){var r=document.createElement("div");r.className="pu-row"
 var pr=document.querySelector(".pu-presets"),pbs=[];
 PRE.forEach(function(p,i){var b=document.createElement("button");b.type="button";b.textContent=p.n;b.setAttribute("aria-pressed","false");b.addEventListener("click",function(){p.a.forEach(function(v,k){$("pu-s"+k).value=v});score(i)});pr.appendChild(b);pbs.push(b)});
 ctl.addEventListener("input",function(){score(-1)});
+[].forEach.call(document.querySelectorAll(".pu-mv button[data-pre]"),function(b){b.addEventListener("click",function(){pbs[+b.dataset.pre].click();$("pu-h1").scrollIntoView({behavior:"smooth",block:"start"})})});
 var V=[["Pursue","Commit a pursuit team and start the capture plan."],["Shape first","Fix the weakest items with the account team before committing bid effort."],["Walk away","Decline or stay in touch. Put the effort into better-qualified deals."]];
 $("pu-lad").innerHTML=V.map(function(v,i){return '<div data-i="'+i+'"><b>'+v[0]+'</b>'+v[1]+'</div>'}).join("");
 var cur=[];

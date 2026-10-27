@@ -87,12 +87,24 @@
 main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;stroke-linejoin:round}
 @media (max-width:980px){.ws-b{grid-template-columns:1fr}.ws-ctl{position:static}.ws-gr{grid-template-columns:1fr}.ws-cl{grid-template-columns:1fr}.ws-exp{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.ws-fd,.ws-mo,.ws-exp{grid-template-columns:1fr}.ws-meter{grid-template-columns:repeat(4,minmax(0,1fr))}main .viz{padding:16px 12px 12px}}
+.ws-mv{margin-top:14px;background:var(--panel);border-radius:6px;padding:14px 16px;font-size:14px;border-left:4px solid var(--mc,var(--accent))}
+.ws-mv .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ws-mv ul{margin:0;padding-left:18px}.ws-mv li{margin-top:3px}
+.ws-mv .ttl{font:600 15px/1.3 var(--sans);margin:0 0 10px}
+.ws-m1{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;align-items:start;margin-top:18px}
+.ws-m1 .steps{margin-top:0}
+.ws-m1 .panel{margin:0;border-top:3px solid var(--accent)}
+.ws-m1 .panel.m2{border-top-color:var(--s2)}
+.ws-m1 .panel h3{font-size:16px;margin:0 0 6px}
+.ws-m1 .panel p{font-size:14px}
+.ws-m1 .side{display:grid;gap:14px}
+@media (max-width:860px){.ws-m1,.ws-mv .cols{grid-template-columns:minmax(0,1fr)}}
 </style>
 
 <section class="phead">
   <span class="eyebrow"><b class="acode">A9</b>Executive alignment</span>
   <h1>Workshops</h1>
-  <p class="lede">This page shows how I would run executive workshops that align business, technology and customer experience priorities. It covers the formats I would draw on, a builder that returns an agenda for a client goal and audience, a sample output and the steps before and after that lead to a qualified opportunity.</p>
+  <p class="lede">This page shows how I would run executive workshops that align business, technology and customer experience priorities. It covers the formats I would draw on, a builder that returns an agenda for a client goal, audience and move, a sample output and the steps before and after that lead to a qualified opportunity. In my plan the executive workshop is the engine of Move 1, growing IC&amp;D scope in Wipro's existing UKI accounts.</p>
   <p class="meta">Formats from GV, Nielsen Norman Group, Gartner and Wardley mapping sources. Agendas, timings and use-case placements are my judgement, drawn from executive and board training I run at Atlas Learn.</p>
 </section>
 
@@ -109,10 +121,30 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
   <div class="ws-flow"><span>Customer journey map</span><i>&rarr;</i><span>Service blueprint</span><i>&rarr;</i><span>Use-case prioritisation</span><i>&rarr;</i><span>Wardley map</span><i>&rarr;</i><span>Design sprint on the top use case</span></div>
 </section>
 
+<section class="sec" aria-labelledby="ws-h0">
+  <span class="eyebrow">Move 1: expand</span>
+  <h2 id="ws-h0">Workshops in existing accounts</h2>
+  <p class="intro">Move 1 grows share of wallet in accounts where Wipro already runs work. The executive workshop is how white space in an account becomes a qualified opportunity, and I would run each one with the client partner who owns the relationship.</p>
+  <div class="ws-m1">
+    <ol class="steps">
+      <li><b>Map the white space</b>With the client partner, list what Wipro runs in the account, when contracts renew and which IC&amp;D offerings (QE, modernisation, digital experience, AI) are not yet in place.</li>
+      <li><b>Pick a dated forcing event</b>Choose one problem with a deadline the executive already owns, such as a regulatory date, a renewal or a cost target.</li>
+      <li><b>Invite through the client partner</b>The client partner asks the executive sponsor and agrees the goal with them, so the session sits inside the existing relationship.</li>
+      <li><b>Run the workshop on live data</b>Use the run contract's own service data as the baseline, then score use cases and agree one to take forward.</li>
+      <li><b>Turn the output into a proactive proposal</b>Send a phased first scope within two weeks, attached to the run contract or renewal where it fits, and take it through the bid/no-bid scorecard.</li>
+    </ol>
+    <div class="side">
+      <div class="panel"><h3>What the client partner brings</h3><p>Access to the sponsor, the account history and the renewal calendar. I bring the IC&amp;D offer, the workshop design, Wipro's practice experts and the alliance partners.</p></div>
+      <div class="panel m2"><h3>The same format in Move 2</h3><p>For new logos the workshop is opened by a forcing event or a partner, and a reference from a Move 1 expansion gives it credibility. Set the move in the builder below to see how pre-work and follow-up change.</p></div>
+    </div>
+  </div>
+  <p class="mini" style="margin-top:12px">Steps and roles are my approach, to agree with Wipro's client partners.</p>
+</section>
+
 <section class="sec" aria-labelledby="ws-h2">
   <span class="eyebrow">Builder</span>
   <h2 id="ws-h2">Workshop builder</h2>
-  <p class="intro">Choose the client goal and the audience. The builder returns an agenda with sessions, timings, materials and outputs. Board sessions are short and decision-led. Working sessions go further into mapping and scoring.</p>
+  <p class="intro">Choose the move, the client goal and the audience. The move changes the pre-work and follow-up. The builder returns an agenda with sessions, timings, materials and outputs. Board sessions are short and decision-led. Working sessions go further into mapping and scoring.</p>
   <div class="ws-b">
     <div class="ws-ctl" id="ws-ctl"></div>
     <div class="ws-out">
@@ -124,6 +156,7 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
       </div>
       <div class="tw" tabindex="0" role="region" aria-label="Scrollable table"><table class="t ws-tb"><thead><tr><th>Time</th><th>Session</th><th>Format</th><th>Output</th></tr></thead><tbody id="ws-tb"></tbody></table></div>
       <div class="ws-mo"><div><p class="ws-k">Materials to prepare</p><ul id="ws-mat"></ul></div><div><p class="ws-k">Outputs the client keeps</p><ul id="ws-outl"></ul></div></div>
+      <div class="ws-mv" id="ws-mv" aria-live="polite"></div>
     </div>
   </div>
 </section>
@@ -243,8 +276,11 @@ var G={
 };
 var A={board:{n:"Board or executive committee",d:"About two and a half hours",i:0,st:14*60},exec:{n:"Executive leadership team",d:"Half a day",i:1,st:9*60},work:{n:"Business and technology leads",d:"A full day",i:2,st:9*60}};
 var TY={f:["Framing","var(--s1)"],e:["Briefing","var(--s4)"],m:["Mapping","var(--s3)"],p:["Prioritising","var(--s2)"],d:["Decision","var(--s7)"],b:["Break","var(--grid)"]};
+/* move: changes pre-work and follow-up, my approach */
+var MV={m1:{n:"Move 1: existing account",d:"Run with the client partner",c:"var(--accent)",pre:["Map what Wipro already runs in the account, the contract dates and the sponsors, with the client partner","Pull service data from the live contract (incidents, run cost, release cadence) as the baseline","Mark the IC&amp;D white space and pick one dated forcing event","The client partner invites the executive sponsor and agrees the goal with them"],fol:["Proactive proposal within two weeks, with a phased first scope priced on the live data","Attach it to the run contract or renewal where it fits, agreed with the client partner","Take it through the bid/no-bid scorecard at the pursuit gate","Record share of wallet and pipeline created in the account plan"]},
+ m2:{n:"Move 2: new logo",d:"Opened by a forcing event or a partner",c:"var(--s2)",pre:["Outside-in brief from annual reports, regulator publications and the dated forcing event","A reference from a Move 1 expansion in the same sector","Agree co-hosting and funding with an alliance partner (Tricentis, AWS, Google or Anthropic)","Reach the sponsor through the forcing event, the partner or an industry briefing"],fol:["Propose a paid assessment or fixed-price first scope within two weeks","Log partner-sourced pipeline as its own field in the CRM","Take it through the bid/no-bid scorecard, where access and champion usually start lower","Offer a reference call with a Move 1 client where one is willing"]}};
 var ctl=$("ws-ctl");
-ctl.innerHTML='<h3 style="font-size:16px">Set up the workshop</h3><fieldset><legend>Client goal</legend><div class="ws-ch">'+Object.keys(G).map(function(k,i){return '<label><input type="radio" name="ws-g" value="'+k+'"'+(i===0?' checked':'')+'><span>'+G[k].n+'<em>'+G[k].d+'</em></span></label>'}).join("")+'</div></fieldset><fieldset><legend>Audience</legend><div class="ws-ch">'+Object.keys(A).map(function(k,i){return '<label><input type="radio" name="ws-a" value="'+k+'"'+(i===1?' checked':'')+'><span>'+A[k].n+'<em>'+A[k].d+'</em></span></label>'}).join("")+'</div></fieldset>';
+ctl.innerHTML='<h3 style="font-size:16px">Set up the workshop</h3><fieldset><legend>Move</legend><div class="ws-ch">'+Object.keys(MV).map(function(k,i){return '<label><input type="radio" name="ws-m" value="'+k+'"'+(i===0?' checked':'')+'><span>'+MV[k].n+'<em>'+MV[k].d+'</em></span></label>'}).join("")+'</div></fieldset><fieldset><legend>Client goal</legend><div class="ws-ch">'+Object.keys(G).map(function(k,i){return '<label><input type="radio" name="ws-g" value="'+k+'"'+(i===0?' checked':'')+'><span>'+G[k].n+'<em>'+G[k].d+'</em></span></label>'}).join("")+'</div></fieldset><fieldset><legend>Audience</legend><div class="ws-ch">'+Object.keys(A).map(function(k,i){return '<label><input type="radio" name="ws-a" value="'+k+'"'+(i===1?' checked':'')+'><span>'+A[k].n+'<em>'+A[k].d+'</em></span></label>'}).join("")+'</div></fieldset>';
 var agenda=[],asel=0;
 function fmt(m){var h=Math.floor(m/60),mm=m%60;return (h<10?"0":"")+h+":"+(mm<10?"0":"")+mm}
 function build(){var g=G[ctl.querySelector('[name=ws-g]:checked').value],a=A[ctl.querySelector('[name=ws-a]:checked').value];
@@ -260,6 +296,8 @@ function build(){var g=G[ctl.querySelector('[name=ws-g]:checked').value],a=A[ctl
  $("ws-agt").textContent="Agenda: "+g.n;
  $("ws-tb").innerHTML=list.map(function(z){return '<tr'+(z.ty==="b"?' style="color:var(--muted)"':'')+'><td class="n">'+fmt(z.t)+'</td><th>'+z.n+'<span class="sub">'+z.m+' min</span></th><td>'+(z.f||"")+'</td><td>'+(z.o||"")+'</td></tr>'}).join("");
  var real=list.filter(function(z){return z.ty!=="b"});
+ var mv=MV[ctl.querySelector('[name=ws-m]:checked').value],mb=$("ws-mv");mb.style.setProperty("--mc",mv.c);
+ mb.innerHTML='<p class="ttl">'+mv.n+'</p><div class="cols"><div><p class="ws-k">Pre-work</p><ul>'+li(mv.pre)+'</ul></div><div><p class="ws-k">Follow-up</p><ul>'+li(mv.fol)+'</ul></div></div>';
  $("ws-mat").innerHTML=li(real.map(function(z){return z.mat}));$("ws-outl").innerHTML=li(real.map(function(z){return z.o}));
  drawAg();showAg()}
 function drawAg(){var h=$("ws-ag");h.innerHTML="";var W=wOf(h),nar=W<560;var tot=agenda.reduce(function(a,b){return a+b.m},0);
