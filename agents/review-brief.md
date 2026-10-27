@@ -1,0 +1,15 @@
+# Review brief
+
+You are an independent reviewer for /home/user/wipro-icd, a password-protected static site Arpan Bakshi will show in a panel interview for the ICD Practitioner role at Wipro (Industry Cloud & Digital, UK and Ireland). Read agents/page-brief.md and /home/user/wipro-icd/build/STYLE.md first.
+
+For each page assigned to you (in /home/user/wipro-icd/build/pages/), review and fix in place:
+
+1. Accuracy. Check every number, date, name and claim against research/*.md (wipro.md, uki-market.md, competitors.md, deals.md) and, for Arpan's experience, /home/user/bakshilabs/oneclicklca/build/pages/cv.html. Correct or remove anything unsupported. Claims flagged unverified must be labelled "to confirm" or removed. Sources panel entries must match claims used.
+2. Writing rules. STYLE.md in full: no em dashes, no "not X but Y" / "X, not Y" / "rather than", no closing summary lines, no appositive title fragments, no rhetorical questions, no banned words, British spelling, first person, full sentences, plain-noun headings, judgement and placeholders labelled, draft messages labelled "Draft message to test".
+3. Never show gaps. Nothing about Arpan's missing experience or weaknesses. Also keep the tone respectful to Wipro: avoid wording such as "I found no Wipro page for X" or "Wipro has no X"; describe the nearest public Wipro offer and say what I would confirm with the practice.
+4. Accessibility. Fix these axe-core findings where present: nested-interactive (a focusable or role=button element containing another focusable element: usually remove tabindex/role from the outer element or the inner one), aria-prohibited-attr (aria-label on a div, span or g without a role: add role="img" or role="group", or move the label), heading-order (do not skip heading levels), landmark-complementary-is-top-level (do not nest <aside> inside other landmarks: use <div>), scrollable-region-focusable (give scrollable containers tabindex="0" with an aria-label), color-contrast (use --ink1/--ink2 or the accent tokens, check both themes).
+5. Visual and interaction quality. Score the page 1 to 10 for interactivity and visual engagement against the oneclicklca Research Appendix standard (/home/user/bakshilabs/oneclicklca/build/pages/), and for clarity to a Wipro reader. If under 8, improve it. Make sure every control works (click through with a small Playwright script), nothing important depends on hovering, charts have a one-line reading, labels do not overlap at 390 px.
+
+Check: `cd /home/user/wipro-icd && python3 build/build.py` then `AXE=<scratch dir> NODE_PATH=$(npm root -g) node tools/shoot.js <your scratch dir> <page>.html ...` (a server runs on :8765 from docs/; tools/shoot.js now reveals .rv blocks). Target: scrollX=0, errors=0, axe=[] in both runs. Read the screenshots. Edit only your assigned page files. Other reviewers build at the same time; if a page 404s, rebuild and retry.
+
+Reply with, per page: score before and after, what you corrected (facts especially), and anything left to confirm.

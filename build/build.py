@@ -14,7 +14,7 @@ PASSWORD_FILE = ROOT / "build" / ".password"  # not committed; see README
 OUT = ROOT / "docs"  # the published site: pages, index.html and assets only
 
 # nav order: (file, nav label). The first page is the analysis index; analysis pages get a code (A1, A2, ...);
-# the last two pages (about me) sit as plain links in the header.
+# the last three pages (about me) sit as plain links in the header.
 PAGES = [
     ("overview.html", "Analysis"),
     ("role.html", "The Role"),
@@ -29,10 +29,11 @@ PAGES = [
     ("ai-engagement.html", "AI Engagement"),
     ("first-months.html", "First Months"),
     ("ai.html", "AI Workflow"),
+    ("method.html", "Method"),
     ("cv.html", "CV"),
 ]
 INDEX = PAGES[0][0]
-ABOUT = ["ai.html", "cv.html"]
+ABOUT = ["ai.html", "method.html", "cv.html"]
 APPX = [f for f, _ in PAGES[1:] if f not in ABOUT]
 CODE = {f: f"A{i + 1}" for i, f in enumerate(APPX)}
 LABEL = dict(PAGES)
