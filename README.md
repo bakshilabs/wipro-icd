@@ -3,7 +3,7 @@
 A static site of research, decision models and plans for the ICD Practitioner role in Wipro's Industry Cloud & Digital portfolio, UK and Ireland. Built from October 2026.
 
 ## Site
-The published site is the `docs/` folder. Open `docs/index.html`, which forwards to `overview.html`, the analysis index. The site has no password; pages carry `noindex`.
+The published site is the `docs/` folder, live at https://bakshilabs.github.io/wipro-icd/ (GitHub Pages from `main`, `/docs`). Open `docs/index.html`, which forwards to `overview.html`, the analysis index. The site has no password; pages carry `noindex`.
 
 The pages are shown on screen in a panel interview and then shared with Wipro. Writing rules are in `build/STYLE.md`.
 
