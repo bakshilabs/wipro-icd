@@ -358,7 +358,7 @@ function showTl(){var e=TL[tsel],d=new Date(e[0]);$("ae-tld").innerHTML="<b>"+(t
 /* programme */
 var PH=[
  {n:"Baseline and design",a:0,b:2,w:["Measure current containment, CSAT, handling time and digital adoption","Customer journey maps and service blueprints for two priority customer journeys","Choose models and platforms, and set guardrails"],o:["Baseline report","Target engagement model","Risk and oversight rules"],g:"Sponsor signs off the baseline, targets and guardrails."},
- {n:"Data readiness",a:1,b:4,w:["Audit the knowledge base for owners, review dates and conflicting content","Map the customer data each use case needs, its quality and where it may be processed","Fix the gaps that would block the pilot and set data access rules by role"],o:["Data readiness score for each use case","Content clean-up plan","Data access and retention rules"],g:"Content for the pilot use cases is owned, current and approved, and the data owner has signed off access."},
+ {n:"Data readiness",a:1,b:4,w:["Audit the knowledge base for owners, review dates and conflicting content","Map the customer data each use case needs, its quality and where it may be processed","Fix the data problems that would block the pilot and set data access rules by role"],o:["Data readiness score for each use case","Content clean-up plan","Data access and retention rules"],g:"Content for the pilot use cases is owned, current and approved, and the data owner has signed off access."},
  {n:"Pilot agent assist",a:2,b:5,w:["Knowledge search and reply suggestions for one agent team","Call and chat summaries","Train agents and team leaders"],o:["Pilot results against baseline","Agent feedback","Content fixes"],g:"Resolutions per hour up and quality scores stable for eight weeks."},
  {n:"Scale self-service",a:5,b:9,w:["Launch web and app assistants on likely-win use cases","Warm hand-off to agents with context","Extend agent assist to all teams"],o:["Containment and CSAT by use case","Hand-off quality report"],g:"Containment rising with CSAT and complaints within agreed limits."},
  {n:"Extend and optimise",a:9,b:12,w:["Voice agent for routine calls","Proactive notifications","Monthly review of oversight levels by task"],o:["Annual benefits case","Next-year backlog"],g:"Benefits confirmed by Finance. Plan for year two agreed."}
@@ -370,7 +370,8 @@ function drawPl(){var h=$("ae-pl");h.innerHTML="";var W=wOf(h),nar=W<640,rh=nar?
  PH.forEach(function(p,i){var y=top+i*rh,g=VZ.el("g",{"class":"ph"+(i===psel?" sel":""),role:"button",tabindex:0,"aria-label":"Phase "+(i+1)+": "+p.n+", months "+p.a+" to "+p.b},s);
   if(!nar)VZ.el("text",{x:LW-10,y:y+rh/2+4,"text-anchor":"end","class":i===psel?"t-strong":""},g).textContent=(i+1)+". "+p.n;
   VZ.bar(g,x(p.a),y+6,x(p.b)-x(p.a),rh-12,"var(--s"+(i+1)+")","h");
-  VZ.el("text",{x:x(p.a)+8,y:y+rh/2+4,style:"font-size:12px;font-weight:600;fill:var(--chart-bg)"},g).textContent=nar?(i+1)+". "+p.n:"M"+p.a+" to M"+p.b;
+  if(nar){var lab=(i+1)+". "+p.n,tw=lab.length*6.6,rt=x(p.b)+6+tw<W-4;VZ.el("text",{x:rt?x(p.b)+6:x(p.a)-6,y:y+rh/2+4,"text-anchor":rt?"start":"end",style:"font-size:12px;font-weight:600;fill:var(--ink1)"},g).textContent=lab}
+  else VZ.el("text",{x:x(p.a)+8,y:y+rh/2+4,style:"font-size:12px;font-weight:600;fill:var(--chart-bg)"},g).textContent="M"+p.a+" to M"+p.b;
   act(g,function(){psel=i;drawPl();showPl()})});
 }
 function showPl(){var p=PH[psel];$("ae-pd").innerHTML='<div><h4 class="ae-k">'+(psel+1)+'. '+p.n+': work</h4>'+li(p.w)+'</div><div><h4 class="ae-k">Outputs</h4>'+li(p.o)+'</div><div><h4 class="ae-k">Gate to next phase</h4><p>'+p.g+'</p></div>'}

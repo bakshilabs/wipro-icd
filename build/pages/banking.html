@@ -1,2 +1,678 @@
-<!--meta title="Banking Pursuit" desc="Stub."-->
-<section class="phead"><span class="eyebrow">Stub</span><h1>Banking Pursuit</h1></section>
+<!--meta title="Banking Pursuit" desc="A worked example of an IC&amp;D pursuit at an illustrative UK bank, from first signal to proposal: forcing events, a quality engineering entry offer, a land and expand path with an order book build, the buying committee, MEDDPICC, a margin sketch, competitors and the first executive workshop."-->
+<style>
+.bk-prof{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:16px;margin-top:28px}
+.bk-prof dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:10px 0 0;font-size:14.5px}
+.bk-prof dt{color:var(--muted);font-size:13px;padding-top:1px}
+.bk-prof dd{margin:0}
+.bk-ill{display:inline-block;font:600 11px/1 var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--warn);background:var(--warn-soft);border-radius:3px;padding:4px 7px}
+.bk-ph{display:inline-block;font:600 11px/1 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--warn);background:var(--warn-soft);border-radius:3px;padding:3px 6px;vertical-align:1px}
+.bk-path{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}
+.bk-path li{display:grid;grid-template-columns:92px 1fr;gap:12px;font-size:14.5px;padding:8px 0;border-top:1px solid var(--line)}
+.bk-path li:first-child{border-top:0}
+.bk-path b{color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums}
+.bk-hit{cursor:pointer}
+.bk-hit:focus{outline:none}
+.bk-hit:focus-visible .ring,.bk-hit:hover .ring{stroke:var(--ink1);stroke-width:2}
+.bk-det{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.bk-det>div{background:var(--panel);border-radius:6px;padding:14px 16px;font-size:14px}
+.bk-det h4,.bk-k{font:500 12px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.bk-det ul{margin:0;padding-left:16px}.bk-det li{margin-top:4px}
+.bk-dh{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline;margin-top:16px}
+.bk-dh h3{font-size:18px}
+.bk-dh .d{font:600 13px/1 var(--sans);color:var(--accent)}
+.bk-foot{margin-top:10px;font-size:12.5px;color:var(--muted)}
+.bk-proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px}
+.bk-proof .panel{padding:18px 18px;transition:opacity .2s}
+.bk-proof .panel.dim{opacity:.32}
+.bk-proof .panel h3{font-size:15.5px}
+.bk-proof .panel p{font-size:13.5px}
+.bk-proof .yr{font:600 12px/1 var(--sans);color:var(--accent);display:block;margin-bottom:8px}
+.bk-offer{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:16px;margin-top:28px}
+.bk-ob{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:20px;margin-top:20px;align-items:start}
+.bk-obin{background:var(--panel);border-radius:6px;padding:18px 18px 14px}
+.bk-obin h3{font-size:16px}
+.bk-obrow{display:grid;grid-template-columns:minmax(0,1fr) 78px 104px;gap:8px;align-items:center;padding:8px 0;border-top:1px solid var(--line);font-size:13.5px}
+.bk-obrow.h{border-top:0;font-size:12px;color:var(--muted);padding-bottom:2px}
+.bk-obrow i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:0}
+.bk-obrow input,.bk-obrow select,.bk-mg select{width:100%;padding:6px 6px;border-radius:4px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:400 14px/1.2 var(--sans)}
+.bk-hm .cell{cursor:pointer}
+.bk-hm .cell:focus{outline:none}
+.bk-hm .cell:focus-visible rect,.bk-hm .cell:hover rect{stroke:var(--ink1);stroke-width:1.5}
+.bk-hm .colh{cursor:pointer}
+.bk-two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-top:14px}
+.bk-two>div{background:var(--panel);border-radius:6px;padding:16px 18px;font-size:14px}
+.bk-two ul{margin:4px 0 0;padding-left:16px}.bk-two li{margin-top:4px}
+.bk-md{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:20px;margin-top:20px;align-items:start}
+.bk-let{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
+.bk-let button{appearance:none;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:5px;padding:10px 4px 8px;cursor:pointer;text-align:center;font:inherit}
+.bk-let button b{display:block;font:600 22px/1 var(--sans);color:var(--accent)}
+.bk-let button span{display:block;font-size:11px;color:var(--muted);margin-top:4px;line-height:1.2}
+.bk-let button i{display:block;height:5px;border-radius:3px;margin:8px 6px 0;background:var(--grid)}
+.bk-let button[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:1px;background:var(--accent-soft)}
+.bk-lvl{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.bk-lvl button{appearance:none;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:3px;padding:7px 11px;font:500 13px/1 var(--sans);cursor:pointer}
+.bk-lvl button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.bk-ver{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 20px}
+.bk-ver ul{margin:8px 0 0;padding-left:18px;font-size:14px}.bk-ver li{margin-top:5px}
+.bk-mg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
+.bk-mg .panel{padding:16px 16px 10px}
+.bk-mg .panel h3{font-size:15px;display:flex;align-items:center;gap:8px}
+.bk-mg .panel h3 i{width:10px;height:10px;border-radius:2px;display:inline-block;flex:none}
+.bk-mg .ctl{margin-top:10px}
+.bk-mg .ctl label{font-size:13px}
+.bk-ct{cursor:pointer}
+.bk-ct:focus{outline:none}
+.bk-ct.sel td:not(.bk-r),.bk-ct.sel th{background:var(--accent-soft)}
+.bk-ct:hover td:not(.bk-r),.bk-ct:hover th,.bk-ct:focus-visible td:not(.bk-r),.bk-ct:focus-visible th{background:var(--panel)}
+.bk-ct.sel:hover td:not(.bk-r),.bk-ct.sel:hover th{background:var(--accent-soft)}
+.bk-ct.sel th{box-shadow:inset 4px 0 0 var(--accent)}
+table.t td.bk-r{text-align:center;font-variant-numeric:tabular-nums;font-weight:500}
+.bk-cp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin-top:14px}
+.bk-cp>div{background:var(--panel);border-radius:6px;padding:16px 18px;font-size:14px}
+.bk-ag .blk{cursor:pointer}
+.bk-ag .blk:focus{outline:none}
+.bk-ag .blk:focus-visible rect,.bk-ag .blk:hover rect{stroke:var(--ink1);stroke-width:2}
+.bk-ag .blk.sel rect{stroke:var(--ink1);stroke-width:2.5}
+.viz .legend svg{width:auto;display:inline-block;flex:none}
+.bk-lab{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;stroke-linejoin:round}
+main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;stroke-linejoin:round}
+@media (max-width:980px){.bk-prof,.bk-offer,.bk-ob,.bk-md{grid-template-columns:1fr}.bk-proof,.bk-mg{grid-template-columns:1fr 1fr}.bk-det{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.bk-proof,.bk-mg,.bk-det,.bk-two,.bk-cp{grid-template-columns:1fr}.bk-let{grid-template-columns:repeat(4,minmax(0,1fr))}.bk-path li{grid-template-columns:76px 1fr}main .viz{padding:16px 12px 12px}}
+</style>
+
+<section class="phead">
+  <span class="eyebrow">Worked example</span>
+  <h1>Banking Pursuit</h1>
+  <p class="lede">This page works one IC&amp;D pursuit through from the first signal to the proposal, at an illustrative UK bank with an Irish subsidiary. It covers the dated forcing events, a quality engineering entry offer, the land and expand path, the buying committee, qualification, a margin sketch, competitors and the first executive workshop.</p>
+  <p class="meta">The bank is a composite and does not stand for any real firm. Facts come from regulators, Wipro releases, partner releases and the trade press. Deal sizes, durations, scores and margins are placeholders or my judgement and are labelled as such.</p>
+</section>
+
+<section class="sec" aria-labelledby="bk-h0">
+  <span class="eyebrow">The example</span>
+  <h2 id="bk-h0">The bank and the pursuit path</h2>
+  <p class="intro">I use one illustrative bank so every section can refer to the same buyers, systems and dates. The pressures on it are real and sourced. Its size and systems are a typical shape for a UK retail and commercial bank.</p>
+  <div class="stats4">
+    <div class="stat rv"><b class="count" data-to="803">803</b><span>Hours of unplanned outages at nine UK banks and building societies, Jan 2023 to Feb 2025 (Treasury Committee)</span></div>
+    <div class="stat rv"><b class="count" data-to="576.4" data-prefix="£" data-suffix="m">£576.4m</b><span>APP scam losses in 2025, up 19% (UK Finance Annual Fraud Report 2026)</span></div>
+    <div class="stat rv hi"><b>18 Mar 2027</b><span>FCA PS26/2 incident and third-party reporting applies</span></div>
+    <div class="stat rv"><b class="count" data-to="19">19</b><span>Critical ICT third-party providers designated under DORA on 18 Nov 2025</span></div>
+  </div>
+  <div class="bk-prof">
+    <div class="panel rv">
+      <span class="bk-ill">Illustrative bank</span>
+      <h3 style="margin-top:12px">Profile used on this page</h3>
+      <dl>
+        <dt>Type</dt><dd>UK retail and commercial bank</dd>
+        <dt>Payments</dt><dd>Direct participant in CHAPS and Faster Payments, Bacs, Swift for cross-border</dd>
+        <dt>Core</dt><dd>Mainframe core with digital channels built over it</dd>
+        <dt>Subsidiary</dt><dd>Irish banking subsidiary under DORA and Central Bank of Ireland supervision</dd>
+        <dt>Contact</dt><dd>In-house contact centres handling fraud, complaints and servicing</dd>
+        <dt>Wipro today</dt><dd>No current relationship assumed. The pursuit is a hunting motion.</dd>
+      </dl>
+    </div>
+    <div class="panel rv">
+      <h3>Pursuit path, first signal to proposal</h3>
+      <p class="mini">Week numbers are my estimate for a first contract of this size.</p>
+      <ol class="bk-path">
+        <li><b>Weeks 0 to 2</b><span>Signal. Rejected CHAPS payments after the November 2026 address change, or an incident report, reach the Head of Payments. I build an outside-in brief from the dates below.</span></li>
+        <li><b>Weeks 2 to 6</b><span>Qualify. First meetings with payments and engineering leads through the Client Partner. MEDDPICC at the signal stage.</span></li>
+        <li><b>Weeks 6 to 9</b><span>Executive workshop on payments resilience and quality, with the COO as sponsor.</span></li>
+        <li><b>Weeks 9 to 15</b><span>Shape. A six-week proof on one payment flow, the solution with Tricentis and Iliad Solutions, and a commercial model with Finance.</span></li>
+        <li><b>Weeks 15 to 22</b><span>Proposal, orals and contract for phase one, with phase two scoped as a named option.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="bk-h1">
+  <span class="eyebrow">Forcing events</span>
+  <h2 id="bk-h1">Dated pressures on a UK bank, 2025 to 2028</h2>
+  <p class="intro">These are the dates that put payments, testing and resilience on the board agenda. Each one is a reason to talk to a different buyer. Items marked "to confirm" depend on legislation still in progress.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Forcing events by theme</h3><p>After this month's CHAPS address change, the next UK dates are March and November 2027. Select an event to pin its detail.</p></div>
+    <div class="btnrow" id="bk-jur" role="group" aria-label="Which entity" style="margin:0 0 6px">
+      <button type="button" data-j="all" aria-pressed="true">UK bank and Irish subsidiary</button>
+      <button type="button" data-j="uk" aria-pressed="false">UK bank only</button>
+      <button type="button" data-j="eu" aria-pressed="false">Irish or EU subsidiary only</button>
+    </div>
+    <div class="legend"><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="var(--ink2)"/></svg>UK rule or data</span><span><svg width="12" height="12" aria-hidden="true"><path d="M6 0.5L11.5 6L6 11.5L0.5 6Z" fill="var(--ink2)"/></svg>EU or Irish rule</span><span><svg width="12" height="12" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="var(--ink2)" stroke-width="1.5" stroke-dasharray="2 2"/></svg>To confirm</span><span><svg width="16" height="12" aria-hidden="true"><line x1="8" y1="0" x2="8" y2="12" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3 2"/></svg>Today, 27 Oct 2026</span></div>
+    <div id="bk-tl"></div>
+    <div id="bk-tld" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="bk-h2">
+  <span class="eyebrow">Entry offer</span>
+  <h2 id="bk-h2">Quality engineering and payments resilience</h2>
+  <p class="intro">I would open with payments testing because it meets the nearest dates, it is a contained first contract, and it puts Wipro inside the change process that every later phase runs through. The proof below is limited to public sources.</p>
+  <div class="bk-offer">
+    <div class="panel rv">
+      <h3>What the first contract covers</h3>
+      <ul>
+        <li>ISO 20022 regression packs for CHAPS and cross-border flows, covering structured addresses now and purpose codes for November 2027.</li>
+        <li>End-to-end payment testing across CHAPS, Faster Payments and Bacs, and euro instant payments with Verification of Payee for the Irish subsidiary.</li>
+        <li>Scenario tests against impact tolerances for the "make a payment" service, with chaos tests on its third-party dependencies.</li>
+        <li>Release evidence packs that feed PS26/2 incident reporting from March 2027 and the Irish DORA register.</li>
+        <li>GenAI test design with IntelliAssure Virtual Automation Engineer, with a tester reviewing every generated script.</li>
+      </ul>
+      <p class="bk-k" style="margin-top:14px">Commercial shape (my judgement)</p>
+      <p>A fixed-price assessment and proof on one payment flow, then a managed testing service priced per release or per test cycle.</p>
+    </div>
+    <div class="panel accent rv">
+      <p class="bk-k">Draft message to test</p>
+      <p style="font-size:16px;line-height:1.5">"Your next two CHAPS changes and the March 2027 reporting rules all land on the same payment systems. We would put automated regression and release evidence around one payment flow in six weeks, show you the defect and cycle-time data, and then price the rest of the estate on that evidence."</p>
+      <p class="bk-k" style="margin-top:16px">Who hears it first</p>
+      <p>The Head of Payments and the Head of Quality Engineering, introduced by the Client Partner. The COO hears it at the executive workshop.</p>
+    </div>
+  </div>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Wipro proof points for a UK bank</h3><p>Two of the eight items are payments-specific UK evidence. Filter by what each one proves.</p></div>
+    <div class="btnrow" id="bk-pf" role="group" aria-label="Filter proof by theme" style="margin:0"></div>
+    <div class="bk-proof" id="bk-proof"></div>
+    <p class="src" style="margin-top:12px">For CHAPS, Bacs and Faster Payments testing, I would cite the TESTA 2023 Payment Services Platform award and the Iliad teaming, and ask the QE practice for references the client can call.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="bk-h3">
+  <span class="eyebrow">Land and expand</span>
+  <h2 id="bk-h3">From testing to managed run</h2>
+  <p class="intro">Each phase starts from a forcing event and from what the previous phase taught both sides. Select a phase to see the offering, the buyer, the partner, the proof and a placeholder size. The order book chart below adds the phases up. Enter your own values to test a plan.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Four phases at the illustrative bank</h3><p>The first contract is the smallest. Phases two and four carry most of the value. Select a phase.</p></div>
+    <div id="bk-ph"></div>
+    <div id="bk-phd" aria-live="polite"></div>
+  </div>
+  <div class="bk-ob">
+    <div class="bk-obin rv">
+      <h3>Order book inputs <span class="bk-ph">Placeholder figures</span></h3>
+      <p class="mini">Total contract value in £m and the half-year each phase signs. These are my placeholders. Enter your own.</p>
+      <div class="bk-obrow h"><span>Phase</span><span>TCV £m</span><span>Signs</span></div>
+      <div id="bk-obin"></div>
+      <div class="btnrow"><button type="button" id="bk-obrs">Reset placeholders</button></div>
+    </div>
+    <div class="viz rv" style="margin-top:0">
+      <div class="viz-h"><h3>Cumulative order book by phase</h3><p id="bk-obr">Placeholder values.</p></div>
+      <div class="legend" id="bk-obl"></div>
+      <div id="bk-obc"></div>
+      <p class="src" style="margin-top:8px">Wipro reports large deals at a total contract value of US$30 million or more. In my estimate phases two and four at these placeholders would count as large deals, and phase one would not.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="bk-h4">
+  <span class="eyebrow">Buying committee</span>
+  <h2 id="bk-h4">Who buys at this bank</h2>
+  <p class="intro">The committee for a payments testing contract is smaller than for the later phases, and its leader changes at each stage. The shading is my judgement of involvement. Select a stage heading to see who leads it, or a row to see what that buyer needs. The general model is on the <a href="buyers.html">Buyers</a> page.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Involvement by stage, first contract</h3><p>Payments and engineering lead early. Finance and procurement take over at price and contract.</p></div>
+    <div class="legend"><span><i style="background:var(--seq-2)"></i>Informed</span><span><i style="background:var(--seq-3)"></i>Involved</span><span><i style="background:var(--seq-4)"></i>Decides on part</span><span><i style="background:var(--seq-5)"></i>Leads the stage</span></div>
+    <div id="bk-hm" class="bk-hm"></div>
+    <p class="mini" id="bk-hmk" hidden>Stages: 1 Signal, 2 Qualify, 3 Workshop and shape, 4 Solution and price, 5 Proposal and contract.</p>
+    <div id="bk-hmd" class="bk-two" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="bk-h5">
+  <span class="eyebrow">Qualification</span>
+  <h2 id="bk-h5">MEDDPICC for this pursuit</h2>
+  <p class="intro">Each letter shows what I would need to find out at this bank and how. The levels are illustrative readings at three points in the pursuit, plus a case where the sponsor moves on. Choose a point, or change any level, and the verdict updates. The scoring rules match the scorecard on the <a href="pursuits.html">Pursuits</a> page.</p>
+  <div class="btnrow" id="bk-mps" role="group" aria-label="Point in the pursuit"></div>
+  <div class="bk-md">
+    <div>
+      <div class="bk-let" id="bk-let"></div>
+      <div class="panel" id="bk-mdd" style="margin-top:12px" aria-live="polite"></div>
+    </div>
+    <div class="bk-ver" aria-live="polite">
+      <p class="bk-k">Verdict</p>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap"><span class="big" id="bk-v" style="margin:0">Shape</span><span class="mini" id="bk-vs"></span></div>
+      <div id="bk-gauge" style="margin-top:10px"></div>
+      <ul id="bk-vw"></ul>
+      <p class="src" style="margin-top:10px">Rules (my judgement): walk below 40, or when the economic buyer and the champion are both unknown. Shape below 70, or when the economic buyer is weak or unknown. Go otherwise. Economic buyer and champion count one and a half times.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="bk-h6">
+  <span class="eyebrow">Commercial sketch</span>
+  <h2 id="bk-h6">Margin by phase</h2>
+  <p class="intro">A compact version of the calculator on the <a href="deal-shaping.html">Deals</a> page. It uses the same placeholder rate card, a 2:6:8 team pyramid, 85% utilisation, a 5% discount and 10% contingency. Change the pricing model, onshore share and AI assumptions for each phase. The blended figure weights each phase by its order book value above.</p>
+  <div class="bk-mg" id="bk-mg"></div>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Contribution margin by phase <span class="bk-ph">Placeholder figures</span></h3><p id="bk-mgr">Placeholder values.</p></div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Contribution margin</span><span><i style="background:var(--seq-2)"></i>If the contingency is used up</span></div>
+    <div id="bk-mgc"></div>
+    <p class="src" style="margin-top:8px">Contribution margin is before sales, overhead and other costs. Wipro's IT Services operating margin was 16.5% in Q2 FY27, which is a different measure and is shown for scale only. Rate cards and pyramid follow the Deals page placeholders, based on ITJobsWatch and G-Cloud cards for UK rates and vendor benchmarks for offshore rates.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="bk-h7">
+  <span class="eyebrow">Competitors</span>
+  <h2 id="bk-h7">Who else is at the table</h2>
+  <p class="intro">The firms below have public UK banking, payments, testing or modernisation positions. Seven are named among the critical ICT third-party providers the ESAs designated under DORA. The ratings come from the <a href="alternatives.html">Competitors</a> page and are my judgement. Select a row for how I would position against that firm.</p>
+  <div class="btnrow" id="bk-cf" role="group" aria-label="Filter competitors" style="margin-top:20px">
+    <button type="button" data-f="all" aria-pressed="true">All</button>
+    <button type="button" data-f="ctpp" aria-pressed="false">Designated CTPPs</button>
+    <button type="button" data-f="qe" aria-pressed="false">Testing and payments credentials</button>
+  </div>
+  <div class="tw">
+    <table class="t">
+      <caption class="sr">Competitors at a UK bank, select a row for positioning</caption>
+      <thead><tr><th scope="col">Firm</th><th scope="col">DORA CTPP</th><th scope="col">Public banking or testing fact</th><th scope="col" class="n">Modernisation</th><th scope="col" class="n">AI partners</th><th scope="col" class="n">Price aggression</th></tr></thead>
+      <tbody id="bk-ctb"></tbody>
+    </table>
+  </div>
+  <div id="bk-cpd" class="bk-cp" aria-live="polite"></div>
+  <p class="src" style="margin-top:10px">Ratings run from 1 to 5. For price aggression, 5 means most likely to undercut. NTT DATA is unrated in my competitor research. Firms not named in the CTPP summary I used should be checked against the full ESAs list of 19.</p>
+</section>
+
+<section class="sec" aria-labelledby="bk-h8">
+  <span class="eyebrow">Executive workshop</span>
+  <h2 id="bk-h8">The first workshop at this bank</h2>
+  <p class="intro">A half-day session on payments resilience and quality, sponsored by the COO. It combines a service blueprint of one payment flow with a value against feasibility scoring, two formats from the <a href="workshops.html">Workshops</a> page. Select a block for its purpose, who leads it and what it produces.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Half-day agenda, 210 minutes</h3><p>The service blueprint takes the largest block, because it produces the scope. Select a block.</p></div>
+    <div id="bk-ag" class="bk-ag"></div>
+    <div id="bk-agd" class="bk-det" aria-live="polite"></div>
+  </div>
+  <div class="grid3">
+    <div class="panel rv"><h3>Who attends</h3><ul><li>COO as sponsor</li><li>Head of Payments</li><li>Head of Quality Engineering</li><li>CIO or a delegate from engineering</li><li>Head of operational resilience or third-party risk</li><li>Irish subsidiary technology lead, remotely if needed</li><li>Wipro: Client Partner, me, a QE practice lead, a payments architect, and Capco if the bank wants a regulatory view</li></ul></div>
+    <div class="panel rv"><h3>Pre-reads</h3><ul><li>A two-page outside-in brief with the dated events above</li><li>The bank's own request: 12 months of payment incidents, rejected payments since November 2026, release frequency and regression cycle time</li><li>One page on how GenAI test design works and how scripts are reviewed</li></ul></div>
+    <div class="panel rv"><h3>What it produces</h3><ul><li>A blueprint of one payment flow with test and evidence points marked</li><li>Baseline measures the bank agrees with</li><li>The top two scopes for a six-week proof</li><li>A named sponsor, a data access route and a decision date, which update the MEDDPICC readings</li></ul></div>
+  </div>
+  <div class="callout rv"><p><b>Draft message to test, invitation from the Client Partner.</b> "Between now and November 2027 your payment systems take two CHAPS changes, new incident and third-party reporting, and for your Irish bank DORA testing and supervision of ICT change. We would like to spend a morning with you and your payments, engineering and resilience leads, map one payment flow end to end, and agree where better testing evidence would cut risk and release time. You would leave with a scoped six-week proof and a view of what it would cost."</p></div>
+  <div class="callout rv"><p><b>How I run sessions like this.</b> At SOM in New York I presented to executives at major Wall Street banks. At Atlas Learn I have run board-level AI training for a FinTech and trained more than 250 senior professionals on Claude Code, Cowork and other AI tools. I would run the AI segment hands-on, with the bank's own payment requirement as the input.</p></div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li>FCA, Operational resilience (PS21/3 transition to 31 March 2025) and insights. fca.org.uk/firms/operational-resilience. Primary.</li>
+    <li>FCA, PS26/2 Operational incident and third-party reporting, 18 March 2026. fca.org.uk/publications/policy-statements/ps26-2-operational-incident-third-party-reporting. Primary.</li>
+    <li>Bank of England, Mandating ISO 20022 enhanced data in CHAPS (2024) and Expanding mandatory enhanced data from 2027 (2025). bankofengland.co.uk. Primary.</li>
+    <li>Bank of England, RTGS Renewal Programme and RTGS/CHAPS Annual Report 2024/25. bankofengland.co.uk. Primary.</li>
+    <li>Swift, ISO 20022 completion release, 25 November 2025, and ISO 20022 FAQs. swift.com. Primary.</li>
+    <li>HM Treasury, A streamlined approach to payment systems regulation: consultation response, April 2026. gov.uk. Primary.</li>
+    <li>HM Treasury, Payments Forward Plan. assets.publishing.service.gov.uk. Primary.</li>
+    <li>Hogan Lovells, APP fraud reimbursement cap; FStech reporting PSR first-year data; Bratby Law on the Frontier Economics evaluation, July 2026; A&amp;O Shearman on the PSR consolidation. Press.</li>
+    <li>UK Finance, Annual Fraud Report 2026, June 2026. ukfinance.org.uk. Primary.</li>
+    <li>Financial Ombudsman Service, Annual complaints data and insight 2025/26. financial-ombudsman.org.uk. Primary.</li>
+    <li>Payment Expert and Financial Institutions News, Treasury Committee bank outage data, 6 March 2025. Press.</li>
+    <li>Covington, Consumer Duty closed products deadline, May 2024. cov.com. Press.</li>
+    <li>ICO, Consultation on draft guidance on automated decision-making, March 2026. ico.org.uk. Primary.</li>
+    <li>FCA, Mills Review launch, January 2026, and second AI Live Testing cohort, 21 April 2026. fca.org.uk. Primary.</li>
+    <li>EBA and ESAs, DORA register of information timeline and FAQ; ESMA, ESAs designate critical ICT third-party providers, 18 November 2025, with list. eba.europa.eu, esma.europa.eu. Primary.</li>
+    <li>EBA, 2026 Work Programme. eba.europa.eu. Primary.</li>
+    <li>Central Bank of Ireland, Regulatory and Supervisory Outlook 2026, 26 February 2026, and DORA FAQ. centralbank.ie. Primary.</li>
+    <li>ECB, Instant Payments Regulation page; European Commission, new rules on instant euro payments, 10 October 2025. ecb.europa.eu, finance.ec.europa.eu. Primary.</li>
+    <li>Regulation (EU) 2026/1744 (Digital Omnibus on AI), EUR-Lex, and the Commission AI Act timeline. Primary.</li>
+    <li>Council of the EU, PSD3 and PSR agreement, 27 November 2025, and statement of reasons, 21 October 2026; Regulation Tomorrow, 23 October 2026; ClearingPost, 3 September 2026. Primary and press.</li>
+    <li>Wipro, Wipro wins 4 awards at The European Software Testing Awards (TESTA) 2023. wipro.com. Primary.</li>
+    <li>Software Testing News, TESTA Winners 2021; TESTA Winners 2025. Press.</li>
+    <li>Swift, Swift Compatible Application Payments Technical Validation Guide 2022. swift.com. Primary.</li>
+    <li>Iliad Solutions, Teaming agreement with Wipro, 10 March 2026; Finextra. iliad-solutions.com. Primary (partner) and press.</li>
+    <li>Wipro, Tricentis partnership page and 2017 release. wipro.com. Primary.</li>
+    <li>Wipro and Harness, strategic collaboration release, 17 March 2026. wipro.com, harness.io. Primary.</li>
+    <li>Wipro, GenAI-enabled Quality Engineering services; Managed Testing Services; IntelliAssure. wipro.com. Primary.</li>
+    <li>Wipro, Everest Group Enterprise QE Services PEAK Matrix 2025 Leader; Q2 FY27 press release (QE for AI and AMS PEAK Matrix 2026). wipro.com. Primary.</li>
+    <li>Wipro, Core Banking Transformation and Payment Transformation pages; blogs on core modernisation (June 2022) and payments strategy (March 2022). wipro.com. Primary.</li>
+    <li>Wipro, Finastra Services and Global PayPlus pages; Finastra partner page for Wipro. wipro.com, finastra.com. Primary.</li>
+    <li>Temenos, Temenos and Wipro global strategic partnership, 27 July 2022. temenos.com. Primary.</li>
+    <li>Intellect Design Arena, global partnership with Wipro for eMACH.ai, 29 August 2024; Intellect and HCLTech release, September 2024. intellectdesign.com. Primary.</li>
+    <li>Wipro, Applied AI Centre of Excellence for Claude, 16 June 2026; Wipro and Google Cloud expanded partnership, 27 August 2026; Wipro Intelligence, WEGA and WINGS pages. wipro.com. Primary.</li>
+    <li>Wipro, Close Brothers release, 28 May 2024; Q2 FY26, Q2 FY27 press releases and earnings call transcripts; Wipro appoints Omkar Nisal as CEO for Europe, 25 November 2024. wipro.com. Primary.</li>
+    <li>Wipro, Whitelane UK&amp;I 2026 Exceptional Performer; Microsoft Switzerland Partner of the Year 2025. wipro.com. Primary.</li>
+    <li>Wipro, Form 20-F FY2026, sec.gov; Wipro Q2 FY27 datasheet. Primary.</li>
+    <li>Brynjolfsson, Li and Raymond, Generative AI at Work, NBER w31161. nber.org. Primary.</li>
+    <li>Accenture, Q4 and FY26 results; Anthropic, Accenture partnership, 9 December 2025. Primary.</li>
+    <li>TCS, Q4 FY26 fact sheet; Anthropic, TCS partnership, 12 June 2026. Primary.</li>
+    <li>Capgemini, Full-year 2025 results and Anthropic partner page. capgemini.com. Primary.</li>
+    <li>Cognizant, Anthropic partnership release, 27 July 2026, and Q2 2026 filing. Primary.</li>
+    <li>Infosys, Anthropic partnership release, 17 February 2026, and Form 20-F FY2026. Primary.</li>
+    <li>Kyndryl, FY26 results and services-as-software materials; Techstrong, IBM and Anthropic, October 2025. Primary and press.</li>
+    <li>ITJobsWatch contract day rates; G-Cloud 15 and 14 supplier rate cards; offshore rate benchmarks (vendor blogs). Primary and unverified, as on the Deals page.</li>
+  </ol>
+</section>
+
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+function wOf(h){return Math.max(290,h.clientWidth||700)}
+function act(g,fn){g.setAttribute("tabindex","0");if(!g.getAttribute("role"))g.setAttribute("role","button");g.addEventListener("click",fn);g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();fn()}})}
+function li(a){return "<ul>"+a.map(function(t){return "<li>"+t+"</li>"}).join("")+"</ul>"}
+
+/* ---------- 1. forcing events ---------- */
+var LN=[["UK resilience","uk"],["UK payments","uk"],["UK fraud and conduct","uk"],["UK AI and data","uk"],["EU resilience and AI","eu"],["EU payments","eu"]];
+var LC=["var(--s1)","var(--s2)","var(--s8)","var(--s7)","var(--s3)","var(--s4)"];
+var EV=[
+ {d:"2024-07-31",dl:"31 Jul 2024",s:"Duty: closed books",l:2,f:"secondary",t:"Consumer Duty applies to closed books",w:"The FCA Consumer Duty applied to open products from 31 Jul 2023 and to closed books from 31 Jul 2024. A product is closed if customers bought it before 31 Jul 2023 and it has not been sold or renewed since.",m:"Products on older platforms must still deliver good outcomes. Closed books on legacy systems carry conduct risk as well as run cost.",o:"Customer journey work and AI-assisted complaint handling in phase three, built on test data and evidence from phase one.",src:"Covington summary of FCA Dear CEO letters"},
+ {d:"2024-10-07",dl:"7 Oct 2024",s:"APP reimbursement",l:2,f:"secondary",t:"APP scam reimbursement starts",w:"The PSR's mandatory reimbursement regime for authorised push payment scams started on 7 Oct 2024, with a cap of £85,000 per claim.",m:"Every scam reimbursed is a direct cost, so fraud controls and payee checks now carry a figure the CFO can see.",o:"Testing of fraud rules and payee checks before each release in phase one. Agent assist for scam conversations in phase three.",src:"Hogan Lovells"},
+ {d:"2025-03-06",dl:"6 Mar 2025",s:"803 outage hours",l:0,f:"secondary",t:"Treasury Committee outage data",w:"Nine major banks and building societies had at least 158 IT failures and 803 hours of unplanned outages between Jan 2023 and Feb 2025. Banks blamed third parties, system changes and software faults. Barclays' outage of 31 Jan to 2 Feb 2025 sat outside that total, and Barclays expected to pay £5m to £7.5m in compensation.",m:"System changes and software faults are testing problems. The board sees outage hours and compensation in the same report.",o:"Quality engineering on every change to the payment systems, with release evidence tied to each important business service.",src:"Payment Expert and Financial Institutions News, reporting the Treasury Committee"},
+ {d:"2025-03-31",dl:"31 Mar 2025",s:"Op res deadline",l:0,f:"verified",t:"Operational resilience transition ends",w:"In-scope firms had until 31 Mar 2025 to remain within impact tolerances for their important business services, including services that third parties deliver (FCA and PRA, PS21/3).",m:"In my judgement making a payment is one of the bank's important business services. Each change to it has to be shown to keep the service within tolerance.",o:"Scenario tests against impact tolerances, chaos tests on third-party dependencies and evidence packs.",src:"FCA, operational resilience"},
+ {d:"2025-05-01",dl:"1 May 2025",s:"CHAPS codes (FI)",l:1,f:"verified",t:"CHAPS enhanced data, first mandate",w:"Purpose codes and LEIs became mandatory for financial institution to financial institution CHAPS payments, and purpose codes for property payments, from 1 May 2025.",m:"The bank has already changed its CHAPS messages once. The next two changes can reuse the same test assets if they were kept.",o:"ISO 20022 regression packs and message validation.",src:"Bank of England policy statements, 2024 and 2025"},
+ {d:"2025-09-30",dl:"Sep 2025",s:"APP year one",l:2,f:"secondary",t:"APP reimbursement, first year",w:"From 7 Oct 2024 to 30 Sep 2025, £173m was reimbursed and 88% of money lost to in-scope APP scams was returned. About 188,000 claims were in scope, and 82% were closed within five business days.",m:"Reimbursement is now routine and fast, so the cost falls on prevention upstream.",o:"Testing of payee checks and fraud rules in the release pipeline.",src:"FStech, reporting PSR data"},
+ {d:"2026-02-05",dl:"5 Feb 2026",s:"ADM regime",l:3,f:"verified",t:"Automated decision-making rules",w:"The Data (Use and Access) Act 2025 replaced UK GDPR Article 22 with a new automated decision-making regime from 5 Feb 2026. The ICO consulted on guidance until 29 May 2026. Token human review does not count as meaningful human involvement.",m:"Any AI that decides a customer's case needs real human review. Agent assist, where a colleague makes the decision, fits this rule more easily.",o:"Phase three design with a colleague in the loop.",src:"ICO consultation; Burges Salmon"},
+ {d:"2026-04-15",dl:"Apr 2026",s:"PSR into FCA",l:2,f:"to confirm",t:"PSR functions move into the FCA",w:"The government confirmed in April 2026 that the Payment Systems Regulator's functions will move entirely into the FCA. The Financial Services and Markets Bill 2026 to 27 carries the abolition clause, and APP rules are preserved by transitional legislation. In October 2026 the PSR consulted on a single payment-systems access regime ahead of the transfer.",m:"Payments conduct and Consumer Duty will sit with one regulator. The decision is confirmed. The transfer date depends on the bill, so I mark it to confirm.",o:"Fraud and payments controls evidenced in one set for one regulator.",src:"HM Treasury consultation response; PSR CP26/3"},
+ {d:"2026-06-15",dl:"Jun 2026",s:"APP losses £576m",l:2,f:"verified",t:"UK Finance Annual Fraud Report 2026",w:"Fraud losses in 2025 were about £1.28bn. APP losses were £576.4m, up 19%, and 66% of APP cases started online. The FOS received 18,900 current account complaints about fraud and scams in 2025/26.",m:"Losses are rising while reimbursement is mandatory. Fraud and scam conversations are a large share of contact-centre work.",o:"Agent assist for fraud and scam conversations in phase three.",src:"UK Finance; Financial Ombudsman Service"},
+ {d:"2026-07-06",dl:"6 Jul 2026",s:"Mills Review",l:3,f:"verified",t:"FCA Mills Review on AI in retail financial services",w:"Published on 6 Jul 2026 with seven recommendations, including scaling the FCA AI Lab and laying foundations for agentic finance. The FCA estimates about 11m UK adults are likely to use autonomous AI.",m:"The FCA expects firms to use AI under its existing rules: Consumer Duty, SM&amp;CR and operational resilience.",o:"AI-led customer service in phase three, with outcome and oversight evidence.",src:"FCA; Freshfields"},
+ {d:"2026-11-15",dl:"Nov 2026",s:"Addresses rejected",l:1,f:"verified",t:"Unstructured addresses rejected",w:"Fully unstructured addresses are rejected in CHAPS from November 2026. Swift's one-year grace period for hybrid addresses in cross-border CBPR+ messages ends in the same month.",m:"Address data must be structured in every channel that feeds a CHAPS or cross-border payment. Any failure shows up as a rejected payment and a manual repair.",o:"Data checks and end-to-end payment testing across channels. This is the most likely first signal.",src:"Bank of England; Swift"},
+ {d:"2027-03-18",dl:"18 Mar 2027",s:"PS26/2 applies",l:0,f:"verified",t:"Incident and third-party reporting",w:"FCA PS26/2 (18 Mar 2026) creates a single FCA, PRA and Bank of England regime for operational incident reporting and material third-party arrangement reporting, with an annual register. It applies from 18 March 2027.",m:"The bank must report incidents in a set format and register its material third-party arrangements, including IT services suppliers. Supplier evidence becomes an input to regulatory reporting.",o:"Incident evidence and test records from QE, and a supplier that can feed the register with clean data.",src:"FCA PS26/2"},
+ {d:"2027-11-15",dl:"Nov 2027",s:"Purpose codes (all)",l:1,f:"verified",t:"Purpose codes for all CHAPS payments",w:"From November 2027 purpose codes are mandatory for all CHAPS payments, and LEIs for pacs.004 and pacs.009 COV messages. The Bank of England rescinded the planned structured remittance mandate in summer 2026.",m:"Every channel that originates CHAPS must capture a purpose code, including corporate and branch channels. Customer-facing screens change as well as the payment engine.",o:"Payments modernisation scope in phase two, with phase one QE carrying the regression.",src:"Bank of England, 2025 policy statement"},
+ {d:"2025-01-17",dl:"17 Jan 2025",s:"DORA applies",l:4,f:"verified",t:"DORA applies",w:"DORA has applied since 17 Jan 2025. Registers of information on ICT third-party contracts went to supervisors in April 2025 (the Central Bank of Ireland set 4 Apr 2025). From 2026 they are due by 31 March each year.",m:"The Irish subsidiary must list every ICT supplier contract and show exit plans and resilience testing. Its suppliers have to support that.",o:"DORA-ready test evidence and exit documentation from the first QE contract.",src:"EBA and ESAs; Central Bank of Ireland DORA FAQ"},
+ {d:"2025-11-18",dl:"18 Nov 2025",s:"19 CTPPs named",l:4,f:"verified",t:"Critical ICT third-party providers designated",w:"The ESAs designated 19 critical ICT third-party providers. They include Accenture, AWS, Capgemini, Google Cloud, IBM, Kyndryl, Microsoft, NTT DATA, Oracle, SAP and Tata Consultancy Services. Wipro is not on the list. In 2026 the ESAs are reviewing contracts and SLAs between these providers and EU financial entities.",m:"The subsidiary's reliance on designated providers is visible to supervisors, and supplier concentration is a board risk topic.",o:"A point for the competitor section, tested first with the third-party risk lead.",src:"ESMA and ESAs; EBA Work Programme 2026"},
+ {d:"2026-02-26",dl:"26 Feb 2026",s:"CBI outlook",l:4,f:"verified",t:"Central Bank of Ireland outlook 2026",w:"The CBI puts significant focus on operational resilience. For significant banks it plans DORA cyber and third-party inspections, threat-led penetration testing, a targeted review of ICT change management and a review of cloud dependency. It reports more DDoS attacks on banks than in 2024.",m:"ICT change management is a named supervisory topic in Ireland, and test and release evidence is what such a review examines.",o:"QE and DevOps for the Irish change pipeline, with Harness and WEGA.",src:"Central Bank of Ireland; William Fry"},
+ {d:"2026-08-02",dl:"2 Aug 2026",s:"AI Act Art. 50",l:4,f:"verified",t:"AI Act transparency duties",w:"Article 50 duties, such as telling users they are talking to an AI system, have applied since 2 Aug 2026.",m:"Any customer-facing assistant at the Irish subsidiary must disclose that it is AI.",o:"Phase three design for EU customers.",src:"EUR-Lex and the Commission AI Act timeline"},
+ {d:"2027-12-02",dl:"2 Dec 2027",s:"AI Act credit scoring",l:4,f:"verified",t:"High-risk AI duties, including credit scoring",w:"After the Digital Omnibus on AI (Regulation (EU) 2026/1744, in force 27 Jul 2026), Annex III high-risk obligations apply from 2 Dec 2027. Credit scoring that decides access to loans is a listed high-risk use. Duties include risk management, data quality, logging, documentation and human oversight.",m:"Credit models used for EU customers need test evidence, logs and oversight records by December 2027.",o:"QE for AI: bias and performance testing and documentation. Wipro is a Leader in Everest Group's QE Services for AI PEAK Matrix 2026.",src:"EUR-Lex 2026/1744; Wipro Q2 FY27 release"},
+ {d:"2025-10-09",dl:"9 Oct 2025",s:"Euro instant + VoP",l:5,f:"verified",t:"Euro instant payments and Verification of Payee",w:"Under the Instant Payments Regulation, payment providers in the euro area, which includes Ireland, had to receive instant euro payments by 9 Jan 2025, and send them and offer Verification of Payee by 9 Oct 2025.",m:"The Irish subsidiary is already live. The task now is to keep instant payments and payee checks available at all hours while the estate changes.",o:"Regression and performance testing for 24/7 payment flows. Wipro advertises European test roles for Wero payment flows.",src:"ECB; European Commission; Wipro careers"},
+ {d:"2027-01-09",dl:"9 Jan 2027",s:"Non-euro receive",l:5,f:"verified",t:"Instant payments in non-euro member states",w:"Payment providers in member states outside the euro area must receive instant euro payments by 9 Jan 2027. Payment and e-money institutions have later dates, 9 Apr 2027 and 9 Jul 2027.",m:"This applies if the group also has a subsidiary in a non-euro EU state.",o:"Payments testing, with Iliad Solutions under the teaming agreement.",src:"ECB Instant Payments Regulation page"},
+ {d:"2027-07-09",dl:"9 Jul 2027",s:"Non-euro send + VoP",l:5,f:"verified",t:"Non-euro sending and Verification of Payee",w:"Providers in non-euro member states must send instant euro payments and offer Verification of Payee by 9 Jul 2027. Out-of-hours sending from national-currency accounts follows by 9 Jun 2028.",m:"A second wave of instant payment change for any non-euro subsidiary.",o:"Reuse of the phase one regression assets.",src:"ECB Instant Payments Regulation page"},
+ {d:"2028-06-30",dl:"About mid-2028",s:"EU PSR liability",l:5,f:"to confirm",t:"EU Payment Services Regulation",w:"PSD3 and the PSR reached political agreement on 27 Nov 2025, and the Council published its first-reading position in October 2026. Parliament's plenary is indicatively set for 14 Dec 2026. The PSR adds payee verification for all credit transfers and provider liability for impersonation fraud. It applies 18 months after entry into force, which points to about mid-2028.",m:"Fraud liability rules close to the UK's arrive in the EU. The date depends on adoption and publication.",o:"Fraud rule testing and agent assist, carried over from the UK bank.",src:"Council of the EU; Regulation Tomorrow; ClearingPost"}
+];
+EV.forEach(function(e,i){e.i=i;e.t0=Date.parse(e.d);e.j=LN[e.l][1]});
+var jur="all",evSel=11;
+var T0=Date.parse("2024-07-01"),T1=Date.parse("2028-10-01"),NOW=Date.parse("2026-10-27");
+function mark(g,e,cx,cy,r,sel){var col=LC[e.l],tc=e.f==="to confirm",past=e.t0<NOW;
+ var a={fill:tc?"var(--chart-bg)":col,stroke:tc?col:"var(--chart-bg)","stroke-width":tc?2:1.5,opacity:past&&!sel?.6:1,"class":"ring"};
+ if(tc)a["stroke-dasharray"]="2.5 2";
+ if(sel){VZ.el("circle",{cx:cx,cy:cy,r:r+6,fill:"none",stroke:col,"stroke-width":2,opacity:.55},g)}
+ if(e.j==="eu"){a.d="M"+cx+","+(cy-r-1.5)+"L"+(cx+r+1.5)+","+cy+"L"+cx+","+(cy+r+1.5)+"L"+(cx-r-1.5)+","+cy+"Z";VZ.el("path",a,g)}
+ else{a.cx=cx;a.cy=cy;a.r=r;VZ.el("circle",a,g)}}
+function drawTL(){var h=$("bk-tl");h.innerHTML="";var W=wOf(h),nar=W<640;
+ var lanes=LN.map(function(l,i){return i}).filter(function(i){return jur==="all"||LN[i][1]===jur});
+ var ev=EV.filter(function(e){return lanes.indexOf(e.l)>=0});
+ if(ev.every(function(e){return e.i!==evSel}))evSel=ev[0].i;
+ if(nar){
+  ev=ev.slice().sort(function(a,b){return a.t0-b.t0});
+  var rh=40,top=8,H=top+ev.length*rh+6,s=VZ.svg(h,W,H,"Vertical timeline of forcing events");s.setAttribute("role","group");
+  var ax=84;VZ.el("line",{x1:ax,x2:ax,y1:top,y2:H-6,"class":"axis"},s);
+  var nowDone=false;
+  ev.forEach(function(e,k){var y=top+k*rh+rh/2;
+   if(!nowDone&&e.t0>NOW){nowDone=true;var ny=y-rh/2;VZ.el("line",{x1:0,x2:W,y1:ny,y2:ny,stroke:"var(--accent)","stroke-width":1.5,"stroke-dasharray":"4 3"},s);VZ.el("text",{x:W-2,y:ny-4,"text-anchor":"end",style:"fill:var(--accent);font-weight:600;font-size:11px"},s).textContent="Today"}
+   var g=VZ.el("g",{"class":"bk-hit","aria-label":e.dl+": "+e.t+(e.f==="to confirm"?", to confirm":""),"aria-pressed":e.i===evSel},s);
+   VZ.el("rect",{x:0,y:y-rh/2+1,width:W,height:rh-2,rx:4,fill:e.i===evSel?"var(--accent-soft)":"transparent"},g);
+   VZ.el("text",{x:ax-12,y:y+4,"text-anchor":"end","class":"t-muted"},g).textContent=e.dl.replace("About ","c. ");
+   mark(g,e,ax,y,6,e.i===evSel);
+   VZ.el("text",{x:ax+16,y:y-1,"class":e.i===evSel?"t-strong":"",style:"font-size:12.5px;fill:var(--ink1)"},g).textContent=e.s+(e.f==="to confirm"?" (to confirm)":"");
+   VZ.el("text",{x:ax+16,y:y+13,"class":"t-muted",style:"font-size:10.5px"},g).textContent=LN[e.l][0];
+   act(g,function(){evSel=e.i;drawTL();showEv()})});
+  return}
+ var LW=150,top=34,lh=58,H=top+lanes.length*lh+8,s=VZ.svg(h,W,H,"Timeline of forcing events from mid-2024 to 2028 in six themes");s.setAttribute("role","group");
+ var x=VZ.lin(T0,T1,LW+10,W-12);
+ [2025,2026,2027,2028].forEach(function(y){var xx=x(Date.parse(y+"-01-01"));VZ.el("line",{x1:xx,x2:xx,y1:top-6,y2:H-4,"class":"grid"},s);VZ.el("text",{x:xx+4,y:14,"class":"t-strong",style:"font-size:12.5px"},s).textContent=y});
+ lanes.forEach(function(li,k){var y=top+k*lh;VZ.el("rect",{x:LW+10,y:y+4,width:W-LW-22,height:lh-8,rx:4,fill:k%2?"transparent":"var(--grid)",opacity:.35},s);
+  VZ.el("circle",{cx:6,cy:y+lh/2,r:5,fill:LC[li]},s);
+  VZ.el("text",{x:16,y:y+lh/2+4,style:"font-size:12.5px;fill:var(--ink1)"},s).textContent=LN[li][0]});
+ var nx=x(NOW);VZ.el("line",{x1:nx,x2:nx,y1:20,y2:H-4,stroke:"var(--accent)","stroke-width":1.5,"stroke-dasharray":"4 3"},s);
+ VZ.el("text",{x:nx+4,y:28,style:"fill:var(--accent);font-weight:600;font-size:11px"},s).textContent="Today";
+ lanes.forEach(function(li,k){var y=top+k*lh+lh/2;var le=ev.filter(function(e){return e.l===li}).sort(function(a,b){return a.t0-b.t0});
+  le.forEach(function(e,n){var cx=x(e.t0),up=n%2===0,sel=e.i===evSel;
+   var g=VZ.el("g",{"class":"bk-hit","aria-label":e.dl+": "+e.t+(e.f==="to confirm"?", to confirm":""),"aria-pressed":sel},s);
+   VZ.el("rect",{x:cx-48,y:y-24,width:96,height:48,fill:"transparent"},g);
+   mark(g,e,cx,y,sel?8:6.5,sel);
+   var anc=cx<LW+60?"start":cx>W-60?"end":"middle",tx=anc==="start"?cx-8:anc==="end"?cx+8:cx;
+   VZ.el("text",{x:tx,y:up?y-12:y+21,"text-anchor":anc,"class":sel?"t-strong":"bk-lab",style:"font-size:11.5px"+(sel?"":";fill:var(--ink2)")},g).textContent=e.s;
+   VZ.tip(g,function(){return "<b>"+e.dl+": "+e.t+"</b><span class='m'>Select to pin the detail below.</span>"});
+   act(g,function(){evSel=e.i;drawTL();showEv()})})});
+}
+function showEv(){var e=EV[evSel];var fl=e.f==="to confirm"?'<span class="tag w">To confirm</span>':e.f==="verified"?'<span class="tag a">Primary source</span>':'<span class="tag">Press or law-firm source</span>';
+ $("bk-tld").innerHTML='<div class="bk-dh"><span class="d">'+e.dl+'</span><h3>'+e.t+'</h3>'+fl+'<span class="tag">'+LN[e.l][0]+'</span></div><div class="bk-det"><div><h4>What happens</h4><p>'+e.w+'</p></div><div><h4>What it means for this bank</h4><p>'+e.m+'</p></div><div><h4>Where IC&amp;D fits</h4><p>'+e.o+'</p></div></div><p class="bk-foot">Source: '+e.src+'.</p>'}
+var jb=$("bk-jur");[].forEach.call(jb.children,function(b){b.addEventListener("click",function(){jur=b.dataset.j;[].forEach.call(jb.children,function(x){x.setAttribute("aria-pressed",x===b)});drawTL();showEv()})});
+
+/* ---------- 2. proof ---------- */
+var PT=[["all","All"],["pay","Payments"],["bank","UK banking QE"],["ai","AI in testing"],["scale","Scale and tools"]];
+var PR=[
+ {y:"2023 · primary",h:"TESTA 2023, four wins",p:"Best Test Automation Project (Functional): Lloyds Banking Group in partnership with Wipro, Payment Services Platform. Best Agile Project: Lloyds Banking Group with Wipro. Best Overall Testing Project, Finance: RSA with Wipro. Most Innovative Project: IntelliAssure Virtual Automation Engineer, powered by GenAI.",t:["pay","bank","ai"]},
+ {y:"2021 · press",h:"TESTA 2021",p:"Leading Vendor: Wipro. Best Use of AI in Testing: Zurich Insurance in partnership with Wipro (organiser's media).",t:["bank","ai"]},
+ {y:"2022 guide · to confirm",h:"Swift validation provider",p:"Swift engaged Wipro to perform technical validation for the Swift Compatible Application (Payments) programme, covering MT and ISO 20022 messages and Alliance Access connectivity. The current status needs confirming.",t:["pay"]},
+ {y:"10 Mar 2026 · partner release",h:"Iliad Solutions teaming",p:"Teaming agreement with a UK payment-testing specialist for functional, integration and end-to-end testing across real-time payments, ISO 20022, card schemes and regulatory change. It sits with Wipro Engineering, so I would bring both teams in.",t:["pay"]},
+ {y:"Current · primary",h:"Tricentis Global Platinum",p:"Wipro is a Global Platinum Partner, the highest tier, with more than 3,000 Tosca specialists, a joint centre of excellence (8+ years, 100+ engagements) and Tricentis Global Delivery Partner of the Year 2023.",t:["scale"]},
+ {y:"17 Mar 2026 · primary",h:"Harness with WEGA",p:"Strategic collaboration combining WEGA with Harness's AI software delivery platform for build, test, deploy, release, feature management, cloud cost and incident response.",t:["scale","ai"]},
+ {y:"Current · Wipro's claim",h:"GenAI-enabled QE",p:"An accelerator that automates more than 35 QE use cases. Wipro claims 40% less effort, three times the automation throughput and 25% faster time to market. I would treat these as Wipro's claims and measure them in the proof.",t:["ai"]},
+ {y:"2025 and 2026 · primary",h:"Everest Group Leader",p:"Leader in Everest Group's Enterprise QE Services PEAK Matrix 2025 and its QE Services for AI Applications and Systems PEAK Matrix 2026.",t:["scale","ai"]}
+];
+var pf="all",pfb=$("bk-pf");
+PT.forEach(function(p){var b=document.createElement("button");b.type="button";b.textContent=p[1];b.setAttribute("aria-pressed",p[0]==="all");b.addEventListener("click",function(){pf=p[0];[].forEach.call(pfb.children,function(x){x.setAttribute("aria-pressed",x===b)});paintPR()});pfb.appendChild(b)});
+$("bk-proof").innerHTML=PR.map(function(p,i){return '<div class="panel" data-i="'+i+'"><span class="yr">'+p.y+'</span><h3>'+p.h+'</h3><p>'+p.p+'</p><div class="tags">'+p.t.map(function(t){return '<span class="tag a">'+PT.filter(function(x){return x[0]===t})[0][1]+'</span>'}).join("")+'</div></div>'}).join("");
+function paintPR(){[].forEach.call($("bk-proof").children,function(c,i){c.classList.toggle("dim",pf!=="all"&&PR[i].t.indexOf(pf)<0)})}
+
+/* ---------- 3. land and expand ---------- */
+var PH=[
+ {n:"QE and payments testing",sh:"QE and payments",c:"var(--s1)",
+  off:"Managed quality engineering for payments: ISO 20022 regression, impact tolerance tests, release evidence, and test automation with Tosca and IntelliAssure.",
+  buy:"Head of Payments with the Head of Quality Engineering. The CIO signs and the COO sponsors.",
+  par:"Tricentis (Global Platinum), Iliad Solutions (teaming, through Wipro Engineering), Harness with WEGA.",
+  pr:"TESTA 2023 award for Lloyds Banking Group's Payment Services Platform with Wipro. Swift validation provider (2022 guide, to confirm).",
+  ev:"CHAPS addresses (Nov 2026), PS26/2 (Mar 2027), CHAPS purpose codes (Nov 2027).",
+  band:"£2m to £5m",dur:"12 to 18 months"},
+ {n:"Core and payments modernisation",sh:"Core and payments",c:"var(--s2)",
+  off:"Extend the Core first: digital and API layers over the existing core with minimal disruption. Payment hub modernisation for ISO 20022. Enable the Core where the bank has chosen a platform, with Wipro's Core Processing Transformation team giving an independent view of platform choice.",
+  buy:"CIO or CTO and COO, with the CFO on the business case. A core decision goes to the board, so the CEO joins here.",
+  par:"Finastra (Wipro is a Global Premier Elite Partner, with a Fusion Global PayPlus practice that has delivered for major banks in Europe), Temenos (global strategic partnership from 2022, with the UK as a target market), Intellect eMACH.ai (global strategic partnership from August 2024). Capco for strategy.",
+  pr:"Wipro estimates 18 to 36 months of execution for a big-bang core replacement, which is why I would sequence it. Hamburg Commercial Bank renewed a five-year agreement from 2025 covering cloud migration and regulatory compliance.",
+  ev:"CHAPS purpose codes in every channel (Nov 2027), CBI ICT change review, mainframe run cost.",
+  band:"£15m to £40m",dur:"3 to 5 years"},
+ {n:"AI-led CX and agent assist",sh:"AI-led CX",c:"var(--s3)",
+  off:"Agent assist for fraud and scam conversations, complaint triage and colleague knowledge search, built on Claude or Gemini with a colleague making each decision.",
+  buy:"Chief Customer Officer or Head of Contact Centres, with the CRO on model risk and the DPO on automated decisions.",
+  par:"Anthropic (Wipro's Applied AI Centre of Excellence for Claude, 10,000 certifications planned in 18 months) or Google Cloud (Gemini Enterprise, LIFT with WINGS and WEGA, 1,500 forward deployed engineers). Designit for service design.",
+  pr:"In a study of 5,179 support agents, AI assistance raised issues resolved per hour by 14%, and by 34% for novices. Wipro won agentic AI work on payments data for a leading UK financial services group (Q2 FY26).",
+  ev:"APP losses up 19% in 2025, ADM rules from Feb 2026, Mills Review (Jul 2026), AI Act for EU customers.",
+  band:"£5m to £12m",dur:"18 to 30 months"},
+ {n:"Managed run on WINGS",sh:"Managed run",c:"var(--s4)",
+  off:"Application management and payment operations run on WINGS, Wipro's AI-powered delivery platform for IT and business operations, with SRE and AIOps on the payment estate.",
+  buy:"COO and CIO, with the CFO and procurement on price, step-downs and exit terms.",
+  par:"Hyperscaler partners where the estate runs. ServiceNow for workflow if the bank already uses it.",
+  pr:"Close Brothers chose Wipro for service desk, end-user computing, application development and maintenance, cloud operations and infrastructure (May 2024, value undisclosed). Leader in Everest Group's AMS PEAK Matrix 2026. 83% satisfaction in Whitelane UK&amp;I 2026.",
+  ev:"PS26/2 annual register, DORA exit plans, productivity step-downs at renewal.",
+  band:"£20m to £50m",dur:"5 years"}
+];
+var phSel=0;
+function drawPH(){var h=$("bk-ph");h.innerHTML="";var W=wOf(h),nar=W<640,H=nar?4*48+4:92,s=VZ.svg(h,W,H,"Four phases from QE to managed run");s.setAttribute("role","group");
+ PH.forEach(function(p,i){var sel=i===phSel,g=VZ.el("g",{"class":"bk-hit","aria-label":"Phase "+(i+1)+": "+p.n,"aria-pressed":sel},s);
+  if(nar){var y=i*48+2;VZ.el("rect",{x:0,y:y,width:W,height:42,rx:5,fill:sel?p.c:"var(--panel)","class":"ring",stroke:sel?"var(--ink1)":"var(--line)"},g);
+   VZ.el("text",{x:14,y:y+26,style:"font-weight:600;font-size:13px;fill:"+(sel?"var(--chart-bg)":"var(--ink1)")},g).textContent=(i+1)+". "+p.n;
+   VZ.el("text",{x:W-12,y:y+26,"text-anchor":"end",style:"font-size:11.5px;fill:"+(sel?"var(--chart-bg)":"var(--ink2)")},g).textContent=p.band}
+  else{var cw=W/4,x0=i*cw,a=16,y=10,hh=60,d="M"+x0+","+y+"h"+(cw-a)+"l"+a+","+hh/2+"l-"+a+","+hh/2+"h-"+(cw-a)+(i?"l"+a+",-"+hh/2+"z":"z");
+   VZ.el("path",{d:d,fill:sel?p.c:"var(--panel)",stroke:sel?"var(--ink1)":"var(--line)","stroke-width":sel?2:1,"class":"ring"},g);
+   var tc=sel?"var(--chart-bg)":"var(--ink1)";
+   VZ.el("text",{x:x0+(i?a+12:12),y:y+25,style:"font-weight:600;font-size:13px;fill:"+tc},g).textContent=(i+1)+". "+(cw>250?p.n:p.sh);
+   VZ.el("text",{x:x0+(i?a+12:12),y:y+44,style:"font-size:11.5px;fill:"+(sel?"var(--chart-bg)":"var(--ink2)")},g).textContent=p.band+" · "+p.dur;
+   VZ.el("text",{x:x0+cw/2,y:88,"text-anchor":"middle","class":"t-muted"},s).textContent=["Land","Expand to the core","Expand to customers","Expand to run"][i]}
+  act(g,function(){phSel=i;drawPH();showPH();drawOB()})});
+}
+function showPH(){var p=PH[phSel];
+ $("bk-phd").innerHTML='<div class="bk-dh"><h3>'+(phSel+1)+'. '+p.n+'</h3><span class="bk-ph">Placeholder</span><span class="mini">'+p.band+' TCV, '+p.dur+'</span></div><div class="bk-det"><div><h4>Offering</h4><p>'+p.off+'</p><h4 style="margin-top:12px">Forcing events</h4><p>'+p.ev+'</p></div><div><h4>Buyer</h4><p>'+p.buy+'</p><h4 style="margin-top:12px">Partners</h4><p>'+p.par+'</p></div><div><h4>Proof</h4><p>'+p.pr+'</p><h4 style="margin-top:12px">Size and duration</h4><p>'+p.band+' total contract value over '+p.dur+'. Placeholder bands, my estimate.</p></div></div>'}
+var HY=["H1 2027","H2 2027","H1 2028","H2 2028","H1 2029","H2 2029","H1 2030","H2 2030"];
+var OBD=[[4,0],[25,2],[8,3],[30,4]],OB=OBD.map(function(r){return r.slice()});
+var obin=$("bk-obin");
+function buildOBin(){obin.innerHTML=PH.map(function(p,i){return '<div class="bk-obrow"><label for="bk-tcv'+i+'"><i style="background:'+p.c+'"></i>'+(i+1)+". "+p.sh+'</label><input type="number" min="0" max="500" step="1" id="bk-tcv'+i+'" value="'+OB[i][0]+'"><select id="bk-hy'+i+'" aria-label="Phase '+(i+1)+' signs in">'+HY.map(function(y,k){return '<option value="'+k+'"'+(k===OB[i][1]?" selected":"")+'>'+y+'</option>'}).join("")+'</select></div>'}).join("");
+ PH.forEach(function(p,i){$("bk-tcv"+i).addEventListener("input",function(){var v=parseFloat(this.value);OB[i][0]=isFinite(v)&&v>=0?v:0;drawOB();calcMG()});$("bk-hy"+i).addEventListener("change",function(){OB[i][1]=+this.value;drawOB()})})}
+$("bk-obrs").addEventListener("click",function(){OB=OBD.map(function(r){return r.slice()});buildOBin();drawOB();calcMG()});
+$("bk-obl").innerHTML=PH.map(function(p){return '<span><i style="background:'+p.c+'"></i>'+p.sh+'</span>'}).join("");
+function fm(v){return "£"+(v>=10||v===0?v.toFixed(0):v.toFixed(1))+"m"}
+function drawOB(){var h=$("bk-obc");h.innerHTML="";var W=wOf(h),nar=W<520,H=nar?240:280,L=42,R=8,T=18,B=nar?40:28;
+ var tot=OB.reduce(function(a,b){return a+b[0]},0),mx=Math.max(10,Math.ceil(tot/10)*10);
+ var s=VZ.svg(h,W,H,"Stacked bars of cumulative order book by half-year, placeholder");s.setAttribute("role","group");
+ var y=VZ.lin(0,mx,H-B,T),bw=(W-L-R)/HY.length;
+ var step=mx<=40?10:mx<=100?20:mx<=200?50:100;for(var v=0;v<=mx;v+=step){VZ.el("line",{x1:L,x2:W-R,y1:y(v),y2:y(v),"class":"grid"},s);VZ.el("text",{x:L-6,y:y(v)+4,"text-anchor":"end","class":"t-muted"},s).textContent="£"+v+"m"}
+ HY.forEach(function(hy,k){var x0=L+k*bw+bw*.18,w=bw*.64,acc=0,g=VZ.el("g",{"class":"bk-hit","aria-label":hy},s);
+  VZ.el("rect",{x:L+k*bw,y:T,width:bw,height:H-B-T,fill:"transparent"},g);
+  var parts=[];PH.forEach(function(p,i){if(OB[i][1]<=k&&OB[i][0]>0){var hh=y(0)-y(OB[i][0]);var r=VZ.el("rect",{x:x0,y:y(acc+OB[i][0]),width:w,height:Math.max(0,hh-1),fill:p.c,opacity:i===phSel?1:.78},g);acc+=OB[i][0];parts.push(p.sh+" "+fm(OB[i][0]))}});
+  if(acc>0)VZ.el("text",{x:x0+w/2,y:y(acc)-5,"text-anchor":"middle","class":"t-strong",style:"font-size:"+(nar?10.5:12)+"px"},g).textContent=fm(acc);
+  var lt=VZ.el("text",{x:x0+w/2,y:H-B+16,"text-anchor":"middle","class":"t-muted",style:nar?"font-size:10px":""},s);
+  if(nar){lt.textContent=hy.slice(0,2);var l2=VZ.el("text",{x:x0+w/2,y:H-B+29,"text-anchor":"middle","class":"t-muted",style:"font-size:10px"},s);l2.textContent="'"+hy.slice(-2)}else lt.textContent=hy;
+  g.setAttribute("aria-label",hy+": cumulative order book "+fm(acc));
+  VZ.tip(g,function(){return "<b>"+hy+": "+fm(acc)+" signed to date</b><span class='m'>"+(parts.length?parts.join(", "):"Nothing signed yet")+". Placeholder figures.</span>"})});
+ var first=Math.min.apply(null,OB.map(function(r){return r[0]>0?r[1]:99})),last=Math.max.apply(null,OB.map(function(r){return r[0]>0?r[1]:-1}));
+ $("bk-obr").textContent=tot>0?"With these placeholders the order book reaches "+fm(tot)+" by "+HY[last]+", "+Math.round(OB[0][0]/tot*100)+"% of it from the first contract.":"Enter a value for at least one phase.";
+}
+
+/* ---------- 4. buying committee ---------- */
+var STG=["Signal","Qualify","Workshop and shape","Solution and price","Proposal and contract"];
+var LEAD=["pay","cio","coo","cfo","proc"];
+var STN=["The Head of Payments sees the rejected payments and the incident reports first. I would reach them through the Client Partner with the outside-in brief.","The CIO decides whether the problem is worth a supplier conversation, and controls engineering access for discovery.","The COO sponsors the executive workshop because operational resilience and the important business services sit with them.","The CFO decides the commercial model and whether the proof's results justify the price. Third-party risk tests the supplier in parallel.","Procurement runs the contract, including material outsourcing classification, DORA terms for the Irish subsidiary and exit provisions."];
+var RO=[
+ {k:"ceo",n:"CEO",v:[0,0,1,0,1],c:"Outage hours, fraud losses and regulator findings that reach the board.",fe:"Treasury Committee outage data; APP losses",w:"Client Partner, with a Wipro Europe executive sponsor for phase two. Wipro's Europe CEO, Omkar Nisal, previously ran Banking-EMEA.",me:"A two-page brief on dated pressures, used later when the core decision reaches the board."},
+ {k:"coo",n:"COO",v:[2,2,3,2,2],c:"Staying within impact tolerances and reporting incidents cleanly from March 2027.",fe:"Operational resilience; PS26/2",w:"Client Partner and me",me:"The workshop framed around the 'make a payment' service and its evidence."},
+ {k:"cio",n:"CIO or CTO",v:[2,3,3,3,2],c:"Change failure rate, release frequency and run cost on the payment estate.",fe:"CHAPS changes; CBI ICT change review",w:"Me with a payments architect and the QE practice lead",me:"Tooling and pipeline detail: Tosca, Harness with WEGA, and how GenAI test design is reviewed."},
+ {k:"pay",n:"Head of Payments",sn:"Payments",v:[3,3,3,2,1],c:"Rejected payments, scheme compliance dates and manual repair queues.",fe:"Addresses rejected (Nov 2026); purpose codes (Nov 2027)",w:"Me and a payments architect, with Iliad Solutions",me:"An ISO 20022 regression plan for the next two CHAPS changes."},
+ {k:"qe",n:"Head of Quality Engineering",sn:"Head of QE",v:[1,2,3,3,2],c:"Automation coverage, regression cycle time and defect leakage into production.",fe:"Operational resilience; PS26/2",w:"QE practice lead and Tricentis",me:"A six-week proof on one payment flow with measured cycle time and defects. Likely champion."},
+ {k:"cx",n:"Chief Customer Officer",sn:"Customer chief",v:[0,0,1,0,0],c:"Fraud and scam complaints and Consumer Duty outcomes.",fe:"APP losses; FOS complaints",w:"Client Partner, later Designit",me:"An early view of phase three, kept light until phase one delivers."},
+ {k:"risk",n:"CRO and third-party risk",sn:"CRO and risk",v:[1,1,2,2,3],c:"Material third-party arrangements, DORA registers and supplier concentration.",fe:"PS26/2 register; DORA; CTPP designation",w:"Me with Wipro's security and risk leads",me:"Early sight of the supplier evidence pack and exit approach, so the review is not a late surprise."},
+ {k:"cfo",n:"CFO",v:[0,1,1,3,3],c:"Cost per release, compensation and reimbursement costs, and price certainty.",fe:"Outage compensation; APP reimbursement",w:"Client Partner with Wipro deal pricing",me:"A baseline agreed before the proposal and a price tied to measured results."},
+ {k:"proc",n:"Procurement",v:[0,0,1,2,3],c:"Route to contract, terms, liability and outsourcing classification.",fe:"PS26/2; DORA contract reviews",w:"Client Partner with Wipro legal and commercial",me:"Contract terms that fit DORA and PS26/2 from the start."}
+];
+var hmRole=4,hmStg=2;
+function drawHM(){var h=$("bk-hm");h.innerHTML="";var W=wOf(h),nar=W<640,LW=nar?104:200,top=nar?30:40,rh=nar?30:32,H=top+RO.length*rh+4;
+ $("bk-hmk").hidden=!nar;var s=VZ.svg(h,W,H,"Heatmap of buyer involvement by stage");s.setAttribute("role","group");var cw=(W-LW)/STG.length;
+ STG.forEach(function(st,j){var g=VZ.el("g",{"class":"colh bk-hit","aria-label":"Stage "+(j+1)+": "+st,"aria-pressed":j===hmStg},s);
+  VZ.el("rect",{x:LW+j*cw+2,y:0,width:cw-4,height:top-6,rx:4,fill:j===hmStg?"var(--accent-soft)":"transparent","class":"ring"},g);
+  var t=VZ.el("text",{x:LW+j*cw+cw/2,y:nar?19:16,"text-anchor":"middle","class":j===hmStg?"t-strong":"",style:"font-size:"+(nar?12:11.5)+"px"},g);
+  if(nar)t.textContent=(j+1);else{var p=st.split(" ");if(p.length>2&&cw<190){var a=VZ.el("tspan",{x:LW+j*cw+cw/2,dy:0},t);a.textContent=p.slice(0,Math.ceil(p.length/2)).join(" ");var b=VZ.el("tspan",{x:LW+j*cw+cw/2,dy:14},t);b.textContent=p.slice(Math.ceil(p.length/2)).join(" ")}else t.textContent=st}
+  act(g,function(){hmStg=j;hmRole=RO.map(function(r){return r.k}).indexOf(LEAD[j]);drawHM();showHM()})});
+ var sq=["transparent","var(--seq-2)","var(--seq-3)","var(--seq-4)"];
+ RO.forEach(function(r,i){var y=top+i*rh;
+  VZ.el("text",{x:LW-8,y:y+rh/2+4,"text-anchor":"end","class":i===hmRole?"t-strong":"",style:"font-size:"+(nar?11:12.5)+"px;fill:var(--ink1)"},s).textContent=nar?(r.sn||r.n):r.n;
+  r.v.forEach(function(v,j){var lead=LEAD[j]===r.k,g=VZ.el("g",{"class":"cell","role":"button","aria-label":r.n+", "+STG[j]+": "+(lead?"leads":["not involved","informed","involved","decides on part"][v])},s);
+   VZ.el("rect",{x:LW+j*cw+2,y:y+2,width:cw-4,height:rh-4,rx:3,fill:lead?"var(--seq-5)":sq[v],stroke:i===hmRole&&j===hmStg?"var(--ink1)":v?"none":"var(--grid)","stroke-width":i===hmRole&&j===hmStg?2:1},g);
+   if(lead)VZ.el("text",{x:LW+j*cw+cw/2,y:y+rh/2+4,"text-anchor":"middle",style:"fill:var(--on-accent);font-weight:600;font-size:11.5px"},g).textContent="Lead";
+   act(g,function(){hmRole=i;hmStg=j;drawHM();showHM()})})});
+}
+function showHM(){var r=RO[hmRole],j=hmStg,lead=RO.filter(function(x){return x.k===LEAD[j]})[0];
+ $("bk-hmd").innerHTML='<div><p class="bk-k">Stage '+(j+1)+': '+STG[j]+'</p><p><b>'+lead.n+' leads.</b> '+STN[j]+'</p></div><div><p class="bk-k">'+r.n+'</p><ul><li><b>Cares about:</b> '+r.c+'</li><li><b>Forcing event:</b> '+r.fe+'</li><li><b>Wipro side:</b> '+r.w+'</li><li><b>What I bring:</b> '+r.me+'</li></ul></div>'}
+
+/* ---------- 5. MEDDPICC ---------- */
+var MD=[
+ {k:"M",n:"Metrics",wt:1,f:["Rejected and repaired CHAPS payments since November 2026","Release frequency and change failure rate on the payment systems","Regression cycle time and share of tests automated","Outage minutes against the impact tolerance for making a payment"],h:"Ask the Head of Payments and Head of QE for 12 months of data in discovery, then agree the baseline in the workshop."},
+ {k:"E",n:"Economic buyer",wt:1.5,f:["Whether payments testing is funded by the COO's resilience budget or the CIO's change budget","Who signed the last testing or payments contract, and at what value"],h:"The Client Partner maps the budget line. I ask the champion who approved the last comparable spend."},
+ {k:"D",n:"Decision criteria",wt:1,f:["Evidence for PS26/2 and DORA, tool fit, UK payments references, and the pricing model","Whether the bank already licenses Tosca or another tool"],h:"Shape them in the workshop so evidence packs and ISO 20022 regression coverage become explicit criteria."},
+ {k:"D",n:"Decision process",wt:1,f:["Steps and dates: supplier risk assessment, security review, outsourcing classification, Irish subsidiary sign-off","Which committee approves and when it meets"],h:"Map the steps and dates with the champion and test them with procurement before the proposal."},
+ {k:"P",n:"Paper process",wt:1,f:["Whether an existing framework or master agreement applies","Whether the contract counts as a material third-party arrangement under PS26/2","DORA contract terms for the Irish subsidiary, liability caps and service credits"],h:"Ask procurement early and bring Wipro legal in at the shape stage."},
+ {k:"I",n:"Identified pain",wt:1,f:["Cost of manual repair for rejected payments","Compensation and reimbursement after incidents","Releases delayed by slow regression"],h:"Put a figure on each in the workshop's 'where change breaks' block, using the bank's own data."},
+ {k:"C",n:"Champion",wt:1.5,f:["Whether the Head of QE or the Head of Payments will sell the proof internally","What they need: a one-page case and a reference call"],h:"Equip them with the TESTA 2023 reference and the proof results, and agree what they will take to the COO."},
+ {k:"C",n:"Competition",wt:1,f:["The incumbent testing supplier and whether it is a designated CTPP","Whether an in-house team or captive is the real alternative","The cost of doing nothing until the next incident"],h:"Ask the champion directly, check public contract news, and run a Black Hat review before pricing."}
+];
+var LV=["Unknown","Weak","Partial","Strong"];
+var MP=[["At first signal",[2,1,1,1,1,2,1,2]],["After the workshop",[2,2,2,1,1,3,2,2]],["Before the proposal",[3,3,3,2,2,3,3,2]],["If the sponsor moves on",[1,0,1,1,1,2,0,1]]];
+var MV=MP[1][1].slice(),mSel=1,mpSel=1;
+var mpb=$("bk-mps");MP.forEach(function(p,i){var b=document.createElement("button");b.type="button";b.textContent=p[0];b.setAttribute("aria-pressed",i===mpSel);b.addEventListener("click",function(){mpSel=i;MV=p[1].slice();paintMD()});mpb.appendChild(b)});
+$("bk-let").innerHTML=MD.map(function(m,i){return '<button type="button" data-i="'+i+'" aria-pressed="false"><b>'+m.k+'</b><span>'+m.n+'</span><i></i></button>'}).join("");
+[].forEach.call($("bk-let").children,function(b,i){b.addEventListener("click",function(){mSel=i;paintMD()})});
+var LVC=["var(--grid)","var(--seq-2)","var(--seq-3)","var(--seq-5)"];
+function score(){var t=0,m=0;MD.forEach(function(d,i){t+=MV[i]*d.wt;m+=3*d.wt});return Math.round(t/m*100)}
+function paintMD(){[].forEach.call(mpb.children,function(b,i){b.setAttribute("aria-pressed",i===mpSel)});
+ [].forEach.call($("bk-let").children,function(b,i){b.setAttribute("aria-pressed",i===mSel);b.querySelector("i").style.background=LVC[MV[i]];b.setAttribute("aria-label",MD[i].n+": "+LV[MV[i]])});
+ var d=MD[mSel];
+ $("bk-mdd").innerHTML='<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline"><h3>'+d.k+' · '+d.n+'</h3><span class="mini">Reading: '+LV[MV[mSel]]+(d.wt>1?' · counts 1.5 times':'')+'</span></div><p class="bk-k" style="margin-top:12px">What I would find out</p>'+li(d.f)+'<p class="bk-k" style="margin-top:12px">How</p><p>'+d.h+'</p><div class="bk-lvl" role="group" aria-label="Set the reading for '+d.n+'">'+LV.map(function(l,k){return '<button type="button" data-k="'+k+'" aria-pressed="'+(MV[mSel]===k)+'">'+l+'</button>'}).join("")+'</div>';
+ [].forEach.call($("bk-mdd").querySelectorAll(".bk-lvl button"),function(b){b.addEventListener("click",function(){MV[mSel]=+b.dataset.k;mpSel=-1;paintMD();var nb=$("bk-mdd").querySelector('.bk-lvl button[data-k="'+b.dataset.k+'"]');if(nb)nb.focus()})});
+ var sc=score(),E=MV[1],C=MV[6],v=(sc<40||(E===0&&C===0))?2:(sc<70||E<=1)?1:0;
+ $("bk-v").textContent=["Go","Shape","Walk"][v];$("bk-vs").textContent="Score "+sc+" of 100";
+ var why=[];
+ if(v===0)why.push("The economic buyer and champion are confirmed and the score is "+sc+". I would move to the bid gate and write the proposal with the proof results.");
+ else if(v===1)why.push("A real opportunity with a score of "+sc+(E<=1?", but the economic buyer is "+LV[E].toLowerCase():"")+". I would keep shaping and hold bid effort until the weakest items improve.");
+ else why.push("With a score of "+sc+(E===0&&C===0?" and no economic buyer or champion":"")+", bid effort would come out of better-qualified deals. I would stay in touch through the Client Partner.");
+ MD.map(function(d,i){return i}).filter(function(i){return MV[i]<=1}).sort(function(a,b){return MV[a]-MV[b]||MD[b].wt-MD[a].wt}).slice(0,2).forEach(function(i){why.push("<b>"+MD[i].n+"</b> ("+LV[MV[i]].toLowerCase()+"): "+MD[i].h)});
+ $("bk-vw").innerHTML=why.map(function(t){return "<li>"+t+"</li>"}).join("");
+ drawGauge(sc,v)}
+function drawGauge(sc,v){var h=$("bk-gauge");h.innerHTML="";var W=wOf(h),H=58,s=VZ.svg(h,W,H,"Score "+sc+" on a scale with walk below 40, shape 40 to 69 and go from 70");var x=VZ.lin(0,100,4,W-4);
+ [[0,40,"Walk",2],[40,70,"Shape",1],[70,100,"Go",0]].forEach(function(z){VZ.el("rect",{x:x(z[0])+1,y:8,width:x(z[1])-x(z[0])-2,height:18,rx:3,fill:z[3]===v?"var(--accent-soft)":"var(--panel)",stroke:z[3]===v?"var(--accent)":"none"},s);VZ.el("text",{x:(x(z[0])+x(z[1]))/2,y:21,"text-anchor":"middle",style:"font-size:11.5px;font-weight:"+(z[3]===v?600:400)+";fill:var(--ink1)"},s).textContent=z[2]});
+ VZ.el("path",{d:"M"+x(sc)+",30l-6,9h12z",fill:"var(--accent)"},s);
+ VZ.el("text",{x:Math.min(W-14,Math.max(14,x(sc))),y:53,"text-anchor":"middle","class":"t-strong"},s).textContent=sc}
+
+/* ---------- 6. margin ---------- */
+var RC={p:{on:[1100,850,600],off:[420,320,240]},c:{on:[625,507,350],off:[280,200,140]}},NP=[2,6,8],UT=.85,DI=.05,CO=.10;
+var CM=[{n:"T&M",kc:0,rk:0},{n:"Fixed price",kc:1,rk:1},{n:"Managed capacity",kc:.5,rk:.5},{n:"Outcome",kc:1.5,rk:1.5}];
+var MGD=[{pm:1,on:20,ai:20,sh:50},{pm:1,on:25,ai:15,sh:50},{pm:3,on:35,ai:10,sh:40},{pm:2,on:15,ai:20,sh:60}],MG=JSON.parse(JSON.stringify(MGD));
+function mgModel(q){var o=q.on/100,p=q.ai/100,sh=q.pm===0?1:q.sh/100,cm=CM[q.pm],L=0,C=0;
+ for(var i=0;i<3;i++){L+=NP[i]*(o*RC.p.on[i]+(1-o)*RC.p.off[i]);C+=NP[i]*(1-p)*(o*RC.c.on[i]+(1-o)*RC.c.off[i])}
+ var LD=L*(1-DI),P=LD-sh*LD*p+cm.kc*CO*LD,bench=C*(1/UT-1),cost=C+bench,M=P-cost,risk=cm.rk*CO*cost;
+ return {mp:M/P*100,mr:(M-risk)/P*100}}
+var mgh=$("bk-mg");
+mgh.innerHTML=PH.map(function(p,i){return '<div class="panel"><h3><i style="background:'+p.c+'"></i>'+(i+1)+'. '+p.sh+'</h3>'+
+ '<div class="ctl"><label for="bk-pm'+i+'">Pricing model</label><select id="bk-pm'+i+'">'+CM.map(function(c,k){return '<option value="'+k+'">'+c.n+'</option>'}).join("")+'</select></div>'+
+ '<div class="ctl"><label for="bk-on'+i+'">Onshore share <output id="bk-ono'+i+'"></output></label><input type="range" id="bk-on'+i+'" min="0" max="100" step="5"></div>'+
+ '<div class="ctl"><label for="bk-ai'+i+'">AI productivity on effort <output id="bk-aio'+i+'"></output></label><input type="range" id="bk-ai'+i+'" min="-20" max="50" step="5"></div>'+
+ '<div class="ctl"><label for="bk-sh'+i+'">Gain passed to the bank <output id="bk-sho'+i+'"></output></label><input type="range" id="bk-sh'+i+'" min="0" max="100" step="5"><span class="hint" id="bk-shh'+i+'"></span></div></div>'}).join("")+
+ '<div class="btnrow" style="grid-column:1/-1;margin-top:0"><button type="button" id="bk-mgrs">Reset placeholders</button><span class="bk-ph" style="align-self:center">Placeholder figures</span></div>';
+PH.forEach(function(p,i){["pm","on","ai","sh"].forEach(function(k){$("bk-"+k+i).addEventListener("input",function(){MG[i][k]=+this.value;calcMG()})})});
+$("bk-mgrs").addEventListener("click",function(){MG=JSON.parse(JSON.stringify(MGD));calcMG()});
+var MR=[];
+function calcMG(){PH.forEach(function(p,i){var q=MG[i];$("bk-pm"+i).value=q.pm;$("bk-on"+i).value=q.on;$("bk-ai"+i).value=q.ai;$("bk-sh"+i).value=q.sh;$("bk-sh"+i).disabled=q.pm===0;
+  $("bk-ono"+i).textContent=q.on+"%";$("bk-aio"+i).textContent=(q.ai>0?"+":"")+q.ai+"%";$("bk-sho"+i).textContent=(q.pm===0?100:q.sh)+"%";$("bk-shh"+i).textContent=q.pm===0?"Under T&M the whole gain reaches the bank":"";});
+ MR=MG.map(mgModel);var tw=OB.reduce(function(a,b){return a+b[0]},0),bl=0,blr=0;
+ MR.forEach(function(r,i){var w=tw?OB[i][0]/tw:.25;bl+=r.mp*w;blr+=r.mr*w});MR.blend={mp:bl,mr:blr};
+ var hi=0,lo=0;MR.forEach(function(r,i){if(r.mp>MR[hi].mp)hi=i;if(r.mp<MR[lo].mp)lo=i});
+ $("bk-mgr").textContent="Blended contribution margin "+bl.toFixed(1)+"% across the order book. "+PH[hi].sh+" is highest at "+MR[hi].mp.toFixed(1)+"% and "+PH[lo].sh.toLowerCase()+" lowest at "+MR[lo].mp.toFixed(1)+"%.";
+ drawMG()}
+function drawMG(){var h=$("bk-mgc");h.innerHTML="";var W=wOf(h),nar=W<560,LW=nar?96:180,rh=nar?40:38,top=24,rows=PH.map(function(p,i){return [p.sh,MR[i],p.c]}).concat([["Blended",MR.blend,"var(--accent)"]]),H=top+rows.length*rh+26;
+ var mn=Math.min(0,Math.min.apply(null,rows.map(function(r){return r[1].mr}))),mx=Math.max(50,Math.ceil(Math.max.apply(null,rows.map(function(r){return r[1].mp}))/10)*10);
+ var s=VZ.svg(h,W,H,"Bar chart of contribution margin by phase, placeholder");s.setAttribute("role","group");var x=VZ.lin(mn,mx,LW,W-50);
+ for(var v=Math.ceil(mn/10)*10;v<=mx;v+=10){VZ.el("line",{x1:x(v),x2:x(v),y1:top,y2:H-20,"class":v===0?"axis":"grid"},s);VZ.el("text",{x:x(v),y:H-6,"text-anchor":"middle","class":"t-muted"},s).textContent=v+"%"}
+ var rx=x(16.5);VZ.el("line",{x1:rx,x2:rx,y1:top,y2:H-20,stroke:"var(--s2)","stroke-width":1.5,"stroke-dasharray":"4 3"},s);
+ rows.forEach(function(r,i){var y=top+i*rh,g=VZ.el("g",{"class":"bk-hit","aria-label":r[0]+": "+r[1].mp.toFixed(1)+"% contribution margin"},s);
+  if(i===rows.length-1)VZ.el("line",{x1:0,x2:W,y1:y+1,y2:y+1,"class":"grid"},s);
+  VZ.el("rect",{x:0,y:y+2,width:W,height:rh-4,fill:"transparent"},g);
+  VZ.el("text",{x:LW-8,y:y+rh/2+4,"text-anchor":"end","class":i===rows.length-1?"t-strong":"",style:"font-size:"+(nar?11.5:12.5)+"px;fill:var(--ink1)"},g).textContent=r[0];
+  var x0=x(Math.min(0,r[1].mp)),x1=x(Math.max(0,r[1].mp));VZ.el("rect",{x:x0,y:y+8,width:Math.max(2,x1-x0),height:rh-16,rx:3,fill:r[2]},g);
+  var xr=x(r[1].mr);VZ.el("rect",{x:xr-1.5,y:y+4,width:3,height:rh-8,rx:1,fill:"var(--seq-2)",stroke:"var(--ink2)","stroke-width":.75},g);
+  VZ.el("text",{x:Math.max(x1,xr)+6,y:y+rh/2+4,"class":"t-strong"},g).textContent=r[1].mp.toFixed(1)+"%";
+  VZ.tip(g,function(){var q=i<4?MG[i]:null;return "<b>"+r[0]+": "+r[1].mp.toFixed(1)+"%</b><span class='m'>"+(q?CM[q.pm].n+", "+q.on+"% onshore, AI "+(q.ai>0?"+":"")+q.ai+"% on effort. ":"Weighted by the placeholder order book. ")+"If the contingency is used up: "+r[1].mr.toFixed(1)+"%.</span>"})});
+ VZ.el("text",{x:rx+4,y:top-8,style:"fill:var(--s2);font-size:10.5px;font-weight:600"},s).textContent=nar?"16.5%":"16.5% Wipro operating margin";
+}
+
+/* ---------- 7. competitors ---------- */
+var CP=[
+ {n:"Accenture",ct:1,qe:1,f:"Technical delivery partner for the Bank of England's RTGS renewal (RT2 live 28 Apr 2025, a £431m programme). Accenture Anthropic Business Group from Dec 2025, with financial services as a target.",r:[4,5,1],s:"Large programmes and a consulting front end. A designated CTPP under DORA.",p:"I would lead with a fixed-price proof on one payment flow and named payments test assets, and keep phase one small enough to approve inside the COO's budget. Draft message to test: \"Start with evidence on one flow in six weeks, then decide the programme.\""},
+ {n:"TCS",ct:1,qe:0,f:"UK was 17.4% of TCS revenue in FY26. Claude for 50,000 employees from Jun 2026. MasterCraft for legacy modernisation.",r:[4,4,4],s:"UK scale and price. A designated CTPP under DORA.",p:"Compete on evidence and productivity commitments, and on Wipro's payments test credentials. For the Irish subsidiary, I would let the third-party risk lead raise concentration on designated providers."},
+ {n:"Capgemini",ct:1,qe:0,f:"UK and Ireland revenue €3,008m in 2025, up 10.5%, with Q4 growth led by public sector, financial services and TMT. Anthropic Global Premier Partner.",r:[4,5,3],s:"UK financial services growth and AI partnerships. A designated CTPP under DORA.",p:"Match on AI with Wipro's Claude CoE and Gemini Enterprise, and differentiate on payments QE assets and the Iliad teaming."},
+ {n:"IBM Consulting",ct:1,qe:0,f:"IBM is a designated CTPP. IBM and Anthropic agreed in Oct 2025 to integrate Claude into IBM's developer tools, including for code modernisation.",r:[5,3,2],s:"Mainframe and core modernisation depth.",p:"Avoid a mainframe-first contest in phase one. Win the testing work, then bring Extend the Core and platform partners to phase two."},
+ {n:"Kyndryl",ct:1,qe:0,f:"A designated CTPP. Markets agentic mainframe modernisation as services-as-software. Its 2025 survey found 94% of leaders say regulation shapes modernisation plans.",r:[4,2,3],s:"Mainframe operations, often the infrastructure incumbent.",p:"Position QE as independent assurance of change on a Kyndryl-run estate, and work alongside where the bank keeps Kyndryl for infrastructure."},
+ {n:"NTT DATA",ct:1,qe:1,f:"A designated CTPP. Overall winner of the European Software Testing Awards 2025 with Virgin Media O2.",r:null,s:"Recent testing award profile in the UK.",p:"Answer with the TESTA 2023 payments award, Tricentis Platinum scale and the proof's measured results."},
+ {n:"Cognizant",ct:2,qe:1,f:"Won several TESTA 2025 categories. Anthropic Global Premier Partner with Claude Code in Flowsource. UK revenue grew 1.5% in constant currency in Q2 2026.",r:[4,5,4],s:"Testing awards and price.",p:"Lead with payments-specific assets (Swift validation, Iliad, ISO 20022 regression) over general QE claims."},
+ {n:"Infosys",ct:2,qe:0,f:"Anthropic partnership from Feb 2026, with financial services in a later phase. Fixed-price contracts were 54% of revenue in FY26.",r:[4,4,4],s:"Fixed-price discipline and Topaz.",p:"Offer a fixed-price phase one with a clear productivity commitment so the commercial comparison is like for like."},
+ {n:"HCLTech",ct:2,qe:0,f:"Intellect's Sept 2024 alliance with HCLTech names eMACH.ai and Purple Fabric. Wipro's Aug 2024 Intellect alliance covers eMACH.ai.",r:[4,3,4],s:"A competing route to the same platform in phase two.",p:"If the bank shortlists eMACH.ai, lean on Wipro's alliance and the testing knowledge of the estate built in phase one."},
+ {n:"In-house team or captive",ct:3,qe:1,f:"Wipro's CEO said in Q2 FY27 that a BFSI Europe customer had moved part of its work to a captive.",r:null,s:"Control and cost.",p:"Propose that the bank keeps ownership of test assets and tooling while Wipro runs the automation factory, with a transfer option written in."},
+ {n:"Do nothing",ct:3,qe:0,f:"Barclays expected £5m to £7.5m in compensation after its Jan to Feb 2025 outage. APP reimbursement and rejected payments carry their own costs.",r:null,s:"No procurement effort and no change risk this year.",p:"Price the cost of the next incident and of manual repair against the six-week proof."}
+];
+var cf="all",cSel=0;
+function drawCT(){var rows=CP.map(function(c,i){return i}).filter(function(i){var c=CP[i];return cf==="all"||(cf==="ctpp"&&c.ct===1)||(cf==="qe"&&c.qe)});
+ if(rows.indexOf(cSel)<0)cSel=rows[0];
+ $("bk-ctb").innerHTML=rows.map(function(i){var c=CP[i];return '<tr class="bk-ct'+(i===cSel?' sel':'')+'" tabindex="0" data-i="'+i+'" aria-selected="'+(i===cSel)+'"><th scope="row">'+c.n+'</th><td>'+["","Designated, 18 Nov 2025","Check against the full list",""][c.ct]+'</td><td>'+c.f+'</td>'+(c.r?c.r.map(function(v){return '<td class="bk-r h'+Math.max(0,v-1)+'">'+v+'</td>'}).join(""):'<td class="bk-r" colspan="3">Not rated</td>')+'</tr>'}).join("");
+ [].forEach.call($("bk-ctb").children,function(tr){var f=function(){cSel=+tr.dataset.i;drawCT();var n=$("bk-ctb").querySelector('[data-i="'+cSel+'"]');if(n)n.focus()};tr.addEventListener("click",f);tr.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();f()}})});
+ var c=CP[cSel];$("bk-cpd").innerHTML='<div><p class="bk-k">'+c.n+': where they are strong</p><p>'+c.s+'</p></div><div><p class="bk-k">How I would position</p><p>'+c.p+'</p></div>'}
+var cfb=$("bk-cf");[].forEach.call(cfb.children,function(b){b.addEventListener("click",function(){cf=b.dataset.f;[].forEach.call(cfb.children,function(x){x.setAttribute("aria-pressed",x===b)});drawCT()})});
+
+/* ---------- 8. workshop ---------- */
+var AG=[
+ {n:"Dated changes",sh:"Dated changes",m:25,c:"var(--s1)",who:"Me, with Capco if the bank wants a regulatory view",p:"Walk through the forcing events on this page for this bank and agree which dates matter most.",o:"An agreed list of dated changes and owners."},
+ {n:"Make a payment, end to end",sh:"Make a payment",m:60,c:"var(--s2)",who:"Wipro payments architect with the Head of Payments",p:"A service blueprint of one payment flow: customer actions, front-stage channels, back-stage systems, third parties and evidence. Mark where tests and evidence exist today.",o:"A blueprint of one flow with test and evidence points marked."},
+ {n:"Where change breaks",sh:"Where change breaks",m:35,c:"var(--s8)",who:"Head of QE, with the Wipro QE practice lead",p:"Review 12 months of incidents, rejected payments and release data against the blueprint.",o:"Baseline measures the bank agrees with."},
+ {n:"Break",sh:"Break",m:15,c:"var(--ink3)",who:"",p:"",o:""},
+ {n:"AI in testing, live",sh:"AI in testing",m:30,c:"var(--s3)",who:"Me, with a QE engineer",p:"Generate test cases from one of the bank's own payment requirements with GenAI, then review them as a tester would. Show where a person signs off.",o:"A shared view of how AI test design works and what controls it needs."},
+ {n:"Value against feasibility",sh:"Scoring",m:30,c:"var(--s4)",who:"Me, facilitating",p:"Score candidate scopes: address remediation tests, purpose-code regression, impact tolerance scenarios, Irish instant payment regression, a DORA evidence pack and fraud rule testing.",o:"The top two scopes for the proof."},
+ {n:"Next six weeks",sh:"Next steps",m:15,c:"var(--s7)",who:"COO with the Client Partner",p:"Agree the proof scope, data access, the sponsor and the decision date.",o:"A proof plan and decision date, which update the MEDDPICC readings."}
+];
+var agSel=1;
+function drawAG(){var h=$("bk-ag");h.innerHTML="";var W=wOf(h),nar=W<640,tot=AG.reduce(function(a,b){return a+b.m},0);
+ if(nar){var rh=34,H=AG.length*rh+4,s=VZ.svg(h,W,H,"Agenda blocks by minutes");s.setAttribute("role","group");var x=VZ.lin(0,60,128,W-44),t=0;
+  AG.forEach(function(a,i){var y=i*rh,st=t;t+=a.m;var g=VZ.el("g",{"class":"blk"+(i===agSel?" sel":""),"aria-label":a.n+", "+a.m+" minutes","aria-pressed":i===agSel},s);
+   VZ.el("text",{x:120,y:y+21,"text-anchor":"end",style:"font-size:11.5px;fill:var(--ink1)"+(i===agSel?";font-weight:600":"")},g).textContent=a.sh;
+   VZ.el("rect",{x:128,y:y+7,width:x(a.m)-128,height:20,rx:3,fill:a.c},g);
+   VZ.el("text",{x:x(a.m)+6,y:y+21,"class":"t-muted"},g).textContent=a.m+" min";
+   if(a.who)act(g,function(){agSel=i;drawAG();showAG()})});return}
+ var H=96,s=VZ.svg(h,W,H,"Half-day agenda as blocks proportional to minutes");s.setAttribute("role","group");var x0=0,t=0;
+ AG.forEach(function(a,i){var w=a.m/tot*W,g=VZ.el("g",{"class":"blk"+(i===agSel?" sel":""),"aria-label":a.n+", "+a.m+" minutes","aria-pressed":i===agSel},s);
+  VZ.el("rect",{x:x0+1,y:24,width:w-2,height:40,rx:3,fill:a.c,opacity:a.who?1:.45},g);
+  VZ.el("text",{x:x0+w/2,y:49,"text-anchor":"middle",style:"fill:var(--chart-bg);font-weight:600;font-size:12px"},g).textContent=a.m+"'";
+  var lbl=w>150?a.n:a.sh;VZ.el("text",{x:x0+w/2,y:i%2?84:16,"text-anchor":"middle","class":i===agSel?"t-strong":"",style:"font-size:11.5px"},g).textContent=lbl;
+  VZ.el("text",{x:x0+3,y:i%2?16:84,"class":"t-muted",style:"font-size:10px"},s).textContent=(9+Math.floor(t/60))+":"+("0"+t%60).slice(-2);
+  t+=a.m;x0+=w;
+  if(a.who){act(g,function(){agSel=i;drawAG();showAG()});VZ.tip(g,function(){return "<b>"+a.n+", "+a.m+" minutes</b><span class='m'>"+a.o+"</span>"})}});
+}
+function showAG(){var a=AG[agSel];$("bk-agd").innerHTML='<div><h4>'+a.n+' · '+a.m+' minutes</h4><p>'+a.p+'</p></div><div><h4>Who leads</h4><p>'+a.who+'</p></div><div><h4>Output</h4><p>'+a.o+'</p></div>'}
+
+function all(){drawTL();showEv();drawPH();showPH();drawOB();drawHM();showHM();paintMD();calcMG();drawCT();drawAG();showAG()}
+buildOBin();all();
+var rt,lw=innerWidth;addEventListener("resize",function(){if(innerWidth===lw)return;lw=innerWidth;clearTimeout(rt);rt=setTimeout(all,150)});
+VZ.onTheme(all);
+})();
+</script>

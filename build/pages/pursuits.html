@@ -372,7 +372,7 @@ function drawCS(){var host=$("pu-cs"),W=host.clientWidth;if(!W)return;host.inner
  CP.forEach(function(p,i){var y=hh+i*rh,g=VZ.el("g",{"class":"row"+(i===cpSel?" sel":""),tabindex:0,role:"button","aria-pressed":i===cpSel,"aria-label":p.n},s);
   VZ.el("rect",{"class":"hit",x:0,y:y+2,width:W,height:rh-4,rx:4},g);
   var t=VZ.el("text",{x:6,y:y+rh/2+4,"class":"t-strong"},g);t.textContent=p.n;
-  p.lv.forEach(function(v,j){var cx=lw+cw*j+cw/2,cy=y+rh/2;if(v)VZ.el("circle",{cx:cx,cy:cy,r:[0,4,7,10][v],style:"fill:"+(v===3?"var(--accent)":"var(--seq-"+(v+1)+")")},g);else VZ.el("circle",{cx:cx,cy:cy,r:2,style:"fill:var(--ink3)"},g)});
+  p.lv.forEach(function(v,j){var cx=lw+cw*j+cw/2,cy=y+rh/2;if(v)VZ.el("circle",{cx:cx,cy:cy,r:[0,4.5,7,10][v],style:"fill:var(--accent);fill-opacity:"+[0,.45,.7,1][v]},g);else VZ.el("circle",{cx:cx,cy:cy,r:2,style:"fill:var(--ink3)"},g)});
   function go(){cpSel=i;drawCS();showCS();var f=host.querySelector('[aria-pressed="true"]');if(f)f.focus()}
   g.addEventListener("click",go);g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}})});
  if(nar)CSS.forEach(function(c,j){var t=VZ.el("text",{x:6,y:hh+CP.length*rh+16+j*18,"class":"t-muted"},s);t.textContent=(j+1)+". "+c})}
