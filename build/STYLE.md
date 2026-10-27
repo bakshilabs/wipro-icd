@@ -28,6 +28,11 @@ The site is shown on Arpan's screen in a panel interview for the ICD Practitione
 - Absolute claims about Wipro's internals, people, revenue or strategy beyond what a cited source says.
 - Information about named individuals other than chief executives, or anything taken from personal LinkedIn profiles.
 
+## Presenting my experience
+- Never show gaps, weaknesses or missing experience, on any page. No "gap", "where I am lighter", "to build" or "what I would learn" sections about me.
+- Map each responsibility to the experience and work that answers it, stated plainly and accurately. Do not invent experience.
+- Where a responsibility rests on technology I have not delivered myself (mainframe, Java/.NET, QE, DevOps), show how I sell and shape it with Wipro's practices, delivery teams and alliance partners.
+
 ## Message lines
 Example messaging (value propositions, workshop invitations, objection replies) is part of the work and may stay persuasive. Label it as a draft to test: "Draft message to test".
 
