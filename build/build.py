@@ -28,6 +28,7 @@ PAGES = [
     ("first-months.html", "First Months"),
     ("banking.html", "Banking"),
     ("account-map.html", "Account Map"),
+    ("new-logos.html", "New Logos"),
     ("ai.html", "AI Workflow"),
     ("method.html", "Method"),
 ]
