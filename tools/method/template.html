@@ -45,43 +45,44 @@
 <section class="phead">
   <span class="eyebrow">How this site was made</span>
   <h1>Method</h1>
-  <p class="lede">I made the analysis section of this site with __N_AGENTS__ Claude Code agents, and I set the brief and approved the output at every stage. This page lists each agent with its job, inputs, outputs and run statistics, and the rules and checks every page passed.</p>
-  <p class="meta">Based on the agent records, the four research files, the build script, the screenshot script and the style guide behind this site, 27 October 2026.</p>
+  <p class="lede">I made the analysis section of this site with __N_AGENTS__ Claude Code agents in two rounds, and I set the brief and approved the output at every stage. This page lists each agent with its job, inputs, outputs and run statistics, and the rules and checks every page passed.</p>
+  <p class="meta">Based on the agent records, the __W_RF__ research files, the build script, the screenshot script and the style guide behind this site, 27 October 2026.</p>
 </section>
 
 <section class="sec">
   <span class="eyebrow">Organisation</span>
   <h2>How the work was organised</h2>
-  <p class="intro">The job description was the input. Research agents ran first, page agents wrote to a shared brief, an index agent read every page, and three reviewers checked the pages independently. Scripts checked every page in a browser, and I directed, decided and approved at each step.</p>
+  <p class="intro">The job description was the input. In the first round, research agents ran first, page agents wrote to a shared brief, an index agent read every page, and __W_REV__ reviewers checked the pages independently. A second round added research on banking and Europe, on how Wipro sells and on IT services sales topics, then the A12 Banking Pursuit page and banking edits to five pages. Scripts checked every page in a browser, and I directed, decided and approved at each step.</p>
   <div class="viz rv">
-    <div class="viz-h"><h3>Agent pipeline</h3><p>Work moved left to right through three agent stages, with my approval between each one. Select any agent for its job, run statistics and instructions.</p></div>
+    <div class="viz-h"><h3>Agent pipeline</h3><p>The first round moved through three agent stages, with my approval between each one. The second round sits in its own band and ran the research and page stages again. Select any agent for its job, run statistics and instructions.</p></div>
     <div id="mt-flow"></div>
     <div class="mt-card" id="mt-card" aria-live="polite"></div>
   </div>
   <ol class="steps">
     <li><b>Job description</b>The job description was the starting point. Each research brief and page brief names the responsibility lines it answers.</li>
-    <li><b>Four research agents, in parallel</b>One agent each covered Wipro, the UK and Ireland market, competitors, and deals, pursuits and workshops. Each wrote a markdown file in which every claim carries a source link, a retrieval date and a flag. I read each file's summary and its list of points to confirm before any page work began.</li>
-    <li><b>Page agents and a shared brief</b>Five page agents wrote the eleven analysis pages and the AI Workflow page. One of them also wrote a CV page, which was later removed at my request. All of them read the same page brief, which sets the reader, the sources, the visual standard, the file format and the checks. I decided the page plan and which responsibility lines each page answers.</li>
+    <li><b>First-round research, in parallel</b>__CAP_RES1__ research agents ran at the same time. One agent each covered Wipro, the UK and Ireland market, competitors, and deals, pursuits and workshops. Each wrote a markdown file in which every claim carries a source link, a retrieval date and a flag. I read each file's summary and its list of points to confirm before any page work began.</li>
+    <li><b>Page agents and a shared brief</b>In the first round, __W_PG1__ page agents wrote __W_ANALYSIS1__ analysis pages and the AI Workflow page. One of them also wrote a CV page, which was later removed at my request. All of them read the same page brief, which sets the reader, the sources, the visual standard, the file format and the checks. I decided the page plan and which responsibility lines each page answers.</li>
     <li><b>Index agent</b>One agent read every finished page and wrote the analysis index, so its summaries and numbers match the pages behind them. A further agent wrote this page from the agent records.</li>
-    <li><b>Three independent reviewers</b>Each reviewer took four pages and worked from its own review brief. It checked every figure against the research files, applied the writing rules and accessibility fixes, scored the page before and after, and corrected it in place.</li>
+    <li><b>Independent reviewers</b>Each of the __W_REV__ reviewers took four pages and worked from its own review brief. It checked every figure against the research files, applied the writing rules and accessibility fixes, scored the page before and after, and corrected it in place.</li>
+    <li><b>Second round</b>The second round added __W_R2__ agents and ran the research and page stages again. Research agents covered Wipro's banking and quality engineering offers with European banking regulation, how Wipro sells, and the full scope of IT services sales topics for the role. A page agent then wrote the <a href="banking.html">A12 Banking Pursuit</a> page, and a second agent added banking, Europe and partner material to five existing pages. Both page agents worked to the same page brief, and every page passed the same checks.</li>
     <li><b>Automated checks</b>A Python build script wraps every page with the shared header, navigation and password gate. A Playwright script then opens each page at 1,440 px in light mode and 390 px in dark mode, records sideways scroll and console errors, runs an axe-core accessibility scan and saves full-page screenshots for the agent to read.</li>
-    <li><b>My part</b>I wrote and approved each brief, chose the research topics and the page plan, read the research summaries and the review reports, and decided what changed before each stage moved on.</li>
+    <li><b>My part</b>I wrote and approved each brief, chose the research topics and the page plan for both rounds, read the research summaries and the review reports, and decided what changed before each stage moved on.</li>
   </ol>
 </section>
 
 <section class="sec">
   <span class="eyebrow">Totals</span>
   <h2>Run totals</h2>
-  <p class="intro">Tool calls, tokens and minutes are the figures Claude Code reported when each agent finished. Claims and links are counted from the four research files, and pages from the build script.</p>
+  <p class="intro">Tool calls, tokens and minutes are the figures Claude Code reported when each agent finished. Claims and links are counted from the __W_RF__ research files, and pages from the build script.</p>
   <div class="stats4 mt-stats">
-    <div class="stat rv hi"><b class="count" data-to="__N_AGENTS__">__N_AGENTS__</b><span>Agents across three stages</span></div>
+    <div class="stat rv hi"><b class="count" data-to="__N_AGENTS__">__N_AGENTS__</b><span>Agents: __N_R1__ in the first round, __N_R2__ in the second</span></div>
     <div class="stat rv"><b class="count" data-to="__N_CALLS__">__N_CALLS__</b><span>Tool calls recorded</span></div>
     <div class="stat rv"><b class="count" data-to="__N_TOK__" data-suffix="m">__N_TOK__m</b><span>Tokens recorded (__N_TOK_FULL__)</span></div>
     <div class="stat rv"><b class="count" data-to="__N_HRS__">__N_HRS__</b><span>Agent hours recorded (__N_MIN__ minutes)</span></div>
     <div class="stat rv"><b class="count" data-to="__N_CLAIMS__">__N_CLAIMS__</b><span>Flagged claims: __N_VER__ verified, __N_SEC__ secondary, __N_UNV__ unverified</span></div>
     <div class="stat rv"><b class="count" data-to="__N_LINKS__">__N_LINKS__</b><span>Unique source links in the research files</span></div>
     <div class="stat rv"><b class="count" data-to="__N_PAGES__">__N_PAGES__</b><span>Pages in the published site, including this one</span></div>
-    <div class="stat rv"><b class="count" data-to="4">4</b><span>Research agents running at the same time</span></div>
+    <div class="stat rv"><b class="count" data-to="__N_RF__">__N_RF__</b><span>Research files: __N_RF1__ from the first round, __N_RF2__ from the second</span></div>
   </div>
   <p class="mt-note" id="mt-totnote"></p>
 </section>
@@ -108,7 +109,7 @@
   <h2>Claims in the research files</h2>
   <p class="intro">Every claim in a research file sits in a table row with a source, a retrieval date and a flag. Verified means a primary source such as a filing, a statute or a company release. Secondary means press, analyst or broker coverage. Pages use unverified claims only when they are labelled "to confirm".</p>
   <div class="viz rv">
-    <div class="viz-h"><h3>Claims by flag in each research file</h3><p>The Wipro file rests mostly on primary sources, and the market file leans more on press and analyst coverage. Select a file for detail.</p></div>
+    <div class="viz-h"><h3>Claims by flag in each research file</h3><p>The Wipro file and the __W_RF2__ second-round files rest mostly on primary sources, and the market file leans more on press and analyst coverage. Select a file for detail.</p></div>
     <div class="btnrow" id="mt-cm" role="group" aria-label="Measure" style="margin-top:0">
       <button type="button" aria-pressed="true" data-m="0">Number of claims</button>
       <button type="button" aria-pressed="false" data-m="1">Share of each file</button>
@@ -116,7 +117,7 @@
     <div class="legend" id="mt-cleg" style="margin-top:14px"></div>
     <div class="mt-bw"><div id="mt-cl"></div><div class="mt-dp" id="mt-cd" aria-live="polite"></div></div>
     <div class="sr"><table><caption>Claims by research file and flag</caption><thead><tr><th>File</th><th>Verified</th><th>Secondary</th><th>Unverified</th><th>Words</th><th>Unique links</th></tr></thead><tbody id="mt-ctb"></tbody></table></div>
-    <p class="src" style="margin-top:10px">Counted from every table row whose last cell carries a flag; a row flagged "verified / secondary" counts under its first flag. The per-file link counts sum to __N_LINKS_SUM__ because some links appear in more than one file, leaving __N_LINKS__ unique links.</p>
+    <p class="src" style="margin-top:10px">Counted from every row of a table with a Flag column whose flag reads verified, secondary or unverified. A row flagged "verified / secondary" counts under its first flag, and rows marked n/a are left out. The per-file link counts sum to __N_LINKS_SUM__ because some links appear in more than one file, leaving __N_LINKS__ unique links.</p>
   </div>
 </section>
 
@@ -125,7 +126,7 @@
   <h2>Rules every page followed</h2>
   <p class="intro">A short style guide set the rules for every page, and both the page agents and the reviewers worked to it. These are its rules, grouped by topic.</p>
   <div class="grid3">
-    <div class="panel rv"><h3>Sources</h3><p>Facts come only from the four research files and my CV. Every page ends with a Sources panel, and each source is marked primary or press. Claims flagged unverified appear only when labelled "to confirm".</p></div>
+    <div class="panel rv"><h3>Sources</h3><p>Facts come only from the research files and my CV. Every page ends with a Sources panel, and each source is marked primary or press. Claims flagged unverified appear only when labelled "to confirm".</p></div>
     <div class="panel rv"><h3>Labels for judgement</h3><p>Ratings and forecasts carry "My estimate". Model defaults carry "Placeholder figures" and a line inviting the reader to enter their own. Example messages carry "Draft message to test".</p></div>
     <div class="panel rv"><h3>Plain writing</h3><p>Short sentences, usually under 20 words, with one idea in each. Headings name the topic. The pages use British spelling, full sentences and the first person.</p></div>
     <div class="panel rv"><h3>Writing for a Wipro reader</h3><p>Findings are presented as an outside reading from public sources, with what would confirm them. The pages name no individuals other than chief executives and use no Wipro logo or brand colours.</p></div>
@@ -172,7 +173,7 @@
 
 <section class="sources"><h2>Sources</h2><ul>
 <li>Agent records behind this site: one file per agent with its front matter (name, description, stage, inputs, outputs, run statistics) and instructions, plus the shared page brief and review brief, 27 October 2026. Primary for the agent entries and run totals.</li>
-<li>Research files behind this site: wipro.md, uki-market.md, competitors.md and deals.md, 27 October 2026. Primary for the claim and link counts.</li>
+<li>Research files behind this site: wipro.md, uki-market.md, competitors.md and deals.md from the first round, and bfs-europe.md, wipro-sales.md and sales-scope.md from the second, 27 October 2026. Primary for the claim and link counts.</li>
 <li>Build script (build/build.py), screenshot and check script (tools/shoot.js) and style guide (build/STYLE.md) behind this site. Primary for the checks and rules.</li>
 <li>Anthropic, Claude Code documentation, Subagents. <a href="https://docs.claude.com/en/docs/claude-code/sub-agents">docs.claude.com</a>. Primary.</li>
 <li>Microsoft, Playwright documentation. <a href="https://playwright.dev/">playwright.dev</a>. Primary.</li>
@@ -199,18 +200,22 @@ var OTHER={
  build:{t:"Build script",s:"Automated check",job:"A small Python script wraps each page body with the shared head, navigation, pager, footer and password gate, and writes the published site.",inputs:"build/pages/*.html and the shared assets",outputs:"The published pages and the password gate"},
  shots:{t:"Browser checks",s:"Automated check",job:"A Playwright script opens every page at 1,440 px in light mode and 390 px in dark mode, records sideways scroll and console errors, and saves full-page screenshots for the agent to read.",inputs:"The built pages, served locally",outputs:"Screenshots, a scroll figure and an error count for each page at each size"},
  axe:{t:"Accessibility scan",s:"Automated check",job:"The same script injects axe-core into each page at both sizes and lists any violations. The target for every page is an empty list.",inputs:"The built pages",outputs:"A list of axe-core rule violations, fixed until empty"},
- site:{t:"Published site",s:"Output",job:"The password-protected site: the analysis index, eleven analysis pages, the AI Workflow page and this page.",inputs:"The approved, checked pages",outputs:"__N_PAGES__ pages"}
+ site:{t:"Published site",s:"Output",job:"The password-protected site: the analysis index, __W_ANALYSIS__ analysis pages, the AI Workflow page and this page.",inputs:"The approved, checked pages",outputs:"__N_PAGES__ pages"}
 };
 function A(id){return AG.filter(function(a){return a.id===id})[0]}
+function ids(r,c){return AG.filter(function(a){return a.round===r&&a.col===c}).map(function(a){return a.id})}
 var COLS=[
  {k:"in",t:"Input",ids:["jd"]},
- {k:"res",t:"1 Research",ids:AG.filter(function(a){return a.col==="res"}).map(function(a){return a.id})},
- {k:"pg",t:"2 Pages",ids:AG.filter(function(a){return a.col==="pg"}).map(function(a){return a.id})},
- {k:"idx",t:"2 Index, Method",ids:AG.filter(function(a){return a.col==="idx"}).map(function(a){return a.id})},
- {k:"rev",t:"3 Review",ids:AG.filter(function(a){return a.col==="rev"}).map(function(a){return a.id})},
+ {k:"res",t:"1 Research",ids:ids(1,"res")},
+ {k:"pg",t:"2 Pages",ids:ids(1,"pg")},
+ {k:"idx",t:"2 Index, Method",ids:ids(1,"idx")},
+ {k:"rev",t:"3 Review",ids:ids(1,"rev")},
  {k:"chk",t:"Checks",ids:["build","shots","axe"]},
  {k:"out",t:"Site",ids:["site"]}
 ];
+var R2=[{k:"res",t:"1 Research",ids:ids(2,"res"),band:1},{k:"pg",t:"2 Pages",ids:ids(2,"pg"),band:1}];
+var R2T="Second round: banking, Europe and sales";
+var DESC="Pipeline diagram. First round: the job description feeds "+COLS[1].ids.length+" research agents, then "+COLS[2].ids.length+" page agents, the index and method agents and "+COLS[4].ids.length+" review agents. Second round: "+R2[0].ids.length+" research agents on banking, Europe and sales, then "+R2[1].ids.length+" page agents for the Banking Pursuit page and banking edits. Both rounds pass automated checks into the published site. Arpan approves each stage.";
 function info(id){var a=A(id);if(a)return {t:a.short,s:a.run?n(a.run.calls)+" calls · "+a.run.min+" min":"running",agent:a};var o=OTHER[id];return {t:o.t,s:o.s,other:o}}
 var sel="research-wipro",nodes=[];
 
@@ -218,7 +223,7 @@ var sel="research-wipro",nodes=[];
 function card(){var c=$("mt-card"),a=A(sel);c.innerHTML="";
  var h=mk("div","mt-ch",null,c),l=mk("div",null,null,h);
  if(a){mk("span","eyebrow","Stage "+a.stage,l);mk("h3",null,a.id,l);mk("p","mt-job",a.job,l);
-  var tg=mk("div","tags",null,l);mk("span","tag a",SN[a.col],tg);if(!a.run)mk("span","tag w","Running",tg);
+  var tg=mk("div","tags",null,l);mk("span","tag a",SN[a.col],tg);mk("span","tag",a.round===2?"Second round":"First round",tg);if(!a.run)mk("span","tag w","Running",tg);
   var k=mk("div","kpis",null,h);
   [["calls","Tool calls"],["tokens","Tokens"],["min","Minutes"]].forEach(function(m){var d=mk("div",null,null,k);var b=mk("b",a.run?null:"run",a.run?n(a.run[m[0]]):"running",d);mk("span",null,m[1],d)});
   var io=mk("div","mt-io",null,c),i1=mk("div",null,null,io),i2=mk("div",null,null,io);mk("p","k","Inputs",i1);mk("p",null,a.inputs,i1);mk("p","k","Outputs",i2);mk("p",null,a.outputs,i2);
@@ -239,22 +244,40 @@ function node(s,id,x,y,w,h){var f=info(id),g=VZ.el("g",{"class":"nd",tabindex:0,
  key(g,function(){select(id)});nodes.push(g);return g}
 function arrowDefs(s){var d=VZ.el("defs",{},s),m=VZ.el("marker",{id:"mt-ar",viewBox:"0 0 10 10",refX:9,refY:5,markerWidth:7,markerHeight:7,orient:"auto"},d);VZ.el("path",{d:"M0,0L10,5L0,10z",style:"fill:var(--axis)"},m)}
 function draw(){var host=$("mt-flow");host.innerHTML="";nodes=[];var W=Math.max(300,host.clientWidth),s;
- if(W>=900){var gap=24,cw=(W-gap*(COLS.length-1))/COLS.length,nh=46,ng=10,top=96,area=5*(nh+ng)-ng,H=top+area+8;
-  s=VZ.svg(host,W,H,"Pipeline diagram: the job description feeds four research agents, then five page agents, the index and method agents, three review agents, automated checks and the published site. Arpan approves each stage.");s.setAttribute("role","group");arrowDefs(s);
-  var lane=node(s,"arpan",0,0,W,40);
-  COLS.forEach(function(c,i){var x=i*(cw+gap),cx=x+cw/2;
+ if(W>=900){var gap=24,cw=(W-gap*(COLS.length-1))/COLS.length,nh=46,ng=10,top=96,area=5*(nh+ng)-ng;
+  var n2=Math.max(R2[0].ids.length,R2[1].ids.length),bt=top+area+30,b2=n2*(nh+ng)-ng,bn=bt+56,bb=bn+b2+14,H=bb+4;
+  s=VZ.svg(host,W,H,DESC);s.setAttribute("role","group");arrowDefs(s);
+  node(s,"arpan",0,0,W,40);
+  var X=function(i){return i*(cw+gap)},chk={};
+  COLS.forEach(function(c,i){var x=X(i),cx=x+cw/2;
    VZ.el("line",{x1:cx,x2:cx,y1:40,y2:62,"class":"dl"},s);
    var ht=VZ.el("text",{x:x,y:82,"class":"t-strong"},s);ht.textContent=c.t;fit(ht,cw);
-   var hh=c.ids.length*(nh+ng)-ng,y0=top+(area-hh)/2;
+   var hh=c.ids.length*(nh+ng)-ng,y0=top+(area-hh)/2;if(c.k==="chk")chk={cx:cx,bot:y0+hh};
    c.ids.forEach(function(id,j){node(s,id,x,y0+j*(nh+ng),cw,nh)});
    if(i<COLS.length-1)VZ.el("path",{d:"M"+(x+cw+3)+","+(top+area/2)+"H"+(x+cw+gap-3),"class":"ln","marker-end":"url(#mt-ar)"},s);});
- }else{var cols=2,g2=10,cw2=(W-g2)/cols,nh2=46,ng2=10,y=50,parts=[];
-  COLS.forEach(function(c){var rows=Math.ceil(c.ids.length/cols);parts.push({c:c,y:y});y+=24+rows*(nh2+ng2)-ng2+30});
-  s=VZ.svg(host,W,y-22,"Pipeline diagram: the job description feeds four research agents, then five page agents, the index and method agents, three review agents, automated checks and the published site. Arpan approves each stage.");s.setAttribute("role","group");arrowDefs(s);
+  /* second-round band, under the research to review columns */
+  var bx=X(1)-10,bw=X(5)-gap+10-bx,mid=bn+b2/2;
+  VZ.el("rect",{x:bx,y:bt,width:bw,height:bb-bt,rx:8,style:"fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.2;stroke-dasharray:5 4"},s);
+  var bh=VZ.el("text",{x:bx+12,y:bt+22,"class":"t-strong"},s);bh.textContent=R2T;fit(bh,bw-24);
+  R2.forEach(function(c,i){var x=X(i+1),ht=VZ.el("text",{x:x,y:bt+46,"class":"t-muted"},s);ht.textContent=c.t;
+   var hh=c.ids.length*(nh+ng)-ng,y0=bn+(b2-hh)/2;c.ids.forEach(function(id,j){node(s,id,x,y0+j*(nh+ng),cw,nh)});});
+  var jx=cw/2,jb=top+(area-nh)/2+nh;
+  VZ.el("path",{d:"M"+jx+","+(jb+3)+"V"+mid+"H"+(bx-3),"class":"ln","marker-end":"url(#mt-ar)"},s);
+  VZ.el("path",{d:"M"+(X(1)+cw+3)+","+mid+"H"+(X(2)-3),"class":"ln","marker-end":"url(#mt-ar)"},s);
+  VZ.el("path",{d:"M"+(X(2)+cw+3)+","+mid+"H"+chk.cx+"V"+(chk.bot+4),"class":"ln","marker-end":"url(#mt-ar)"},s);
+ }else{var cols=2,g2=10,nh2=46,ng2=10,y=50,parts=[],seq=COLS.slice(0,5).concat(R2,COLS.slice(5)),bt2=null,bb2=null,pad=10;
+  seq.forEach(function(c){var ay=y;
+   if(c.band&&bt2===null){bt2=y;y+=34}
+   if(!c.band&&bt2!==null&&bb2===null){bb2=y-30+12;y+=12;ay=y}
+   var rows=Math.ceil(c.ids.length/cols);parts.push({c:c,y:y,ay:ay});y+=24+rows*(nh2+ng2)-ng2+30});
+  s=VZ.svg(host,W,y-22,DESC);s.setAttribute("role","group");arrowDefs(s);
+  VZ.el("rect",{x:0,y:bt2,width:W,height:bb2-bt2,rx:8,style:"fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.2;stroke-dasharray:5 4"},s);
+  var bh2=VZ.el("text",{x:pad,y:bt2+22,"class":"t-strong"},s);bh2.textContent=R2T;fit(bh2,W-2*pad);
   node(s,"arpan",0,0,W,40);
-  parts.forEach(function(p,i){var ht=VZ.el("text",{x:0,y:p.y+14,"class":"t-strong"},s);ht.textContent=p.c.t;
-   p.c.ids.forEach(function(id,j){var cx=(j%cols)*(cw2+g2),cy=p.y+24+Math.floor(j/cols)*(nh2+ng2);node(s,id,cx,cy,p.c.ids.length===1?W:cw2,nh2)});
-   if(i<parts.length-1){var yb=parts[i+1].y-26;VZ.el("path",{d:"M"+(W/2)+","+(yb)+"V"+(yb+20),"class":"ln","marker-end":"url(#mt-ar)"},s)}});
+  parts.forEach(function(p,i){var x0=p.c.band?pad:0,w0=p.c.band?W-2*pad:W,cw2=(w0-g2)/cols;
+   var ht=VZ.el("text",{x:x0,y:p.y+14,"class":p.c.band?"t-muted":"t-strong"},s);ht.textContent=p.c.t;
+   p.c.ids.forEach(function(id,j){var cx=x0+(j%cols)*(cw2+g2),cy=p.y+24+Math.floor(j/cols)*(nh2+ng2);node(s,id,cx,cy,p.c.ids.length===1?w0:cw2,nh2)});
+   if(i<parts.length-1){var nx=parts[i+1],yb=nx.ay-26;if(nx.c.band&&!p.c.band)yb=nx.ay-26;VZ.el("path",{d:"M"+(W/2)+","+(yb)+"V"+(yb+20),"class":"ln","marker-end":"url(#mt-ar)"},s)}});
  }
  mark();}
 
@@ -264,16 +287,17 @@ function draw(){var host=$("mt-flow");host.innerHTML="";nodes=[];var W=Math.max(
 
 /* ---------- agent bars ---------- */
 var meas="calls",ML={calls:"tool calls",tokens:"tokens",min:"minutes"};
-var READ={calls:"Research agents made the most tool calls, because each one searched and fetched the web for its file.",tokens:"The agents that wrote or reviewed the analysis pages used the most tokens, because each one read the research files alongside long pages with charts.",min:"Most agents finished in under a quarter of an hour, and the page agent with three pages took longest."};
+var READ={calls:"The first-round research agents made the most tool calls, because each one searched and fetched the web for its file.",tokens:"The second-round research agents and the Banking Pursuit page agent used the most tokens, each above 320,000.",min:"Most agents finished in under a quarter of an hour, and the page agent with three pages took longest."};
 var leg=$("mt-leg");[["res","Research"],["pg","Pages"],["idx","Index and method"],["rev","Review"]].forEach(function(c){var sp=mk("span",null,null,leg);var i=mk("i",null,null,sp);i.style.background=SC[c[0]];sp.appendChild(document.createTextNode(c[1]))});
 var tb=$("mt-tb");AG.forEach(function(a){var tr=mk("tr",null,null,tb);[a.id,a.stage,a.run?n(a.run.calls):"running",a.run?n(a.run.tokens):"running",a.run?String(a.run.min):"running"].forEach(function(v){mk("td",null,v,tr)})});
 function fmt(v){return meas==="tokens"?(v>=1e3?Math.round(v/1e3)+"k":v):n(v)}
-function bars(){var h=$("mt-bars");if(!h)return;h.innerHTML="";var W=Math.max(300,h.clientWidth),nar=W<560,lw=nar?0:190,rh=nar?46:30,H=AG.length*rh+28;
+function bars(){var h=$("mt-bars");if(!h)return;h.innerHTML="";var W=Math.max(300,h.clientWidth),nar=W<560,lw=nar?0:190,rh=nar?46:30,sp=nar?34:30,H=AG.length*rh+28+sp,r2=AG.map(function(a){return a.round}).indexOf(2);
  var mx=Math.max.apply(null,AG.map(function(a){return a.run?a.run[meas]:0}))*1.12,x=VZ.lin(0,mx,lw,W-(nar?50:56));
  var s=VZ.svg(h,W,H,"Horizontal bars of "+ML[meas]+" by agent");s.setAttribute("role","group");
- var ticks=meas==="tokens"?[0,100000,200000,300000]:meas==="calls"?[0,25,50,75,100]:[0,5,10,15];
+ var ticks=meas==="tokens"?[0,100000,200000,300000,400000]:meas==="calls"?[0,25,50,75,100]:[0,5,10,15];
  ticks.forEach(function(t){if(t>mx)return;VZ.el("line",{x1:x(t),x2:x(t),y1:0,y2:H-20,"class":"grid"},s);var tt=VZ.el("text",{x:x(t),y:H-4,"text-anchor":"middle","class":"t-muted"},s);tt.textContent=fmt(t)});
- AG.forEach(function(a,i){var y=i*rh+(nar?20:6),on=a.id===sel,v=a.run?a.run[meas]:null;
+ if(r2>0){var sy=r2*rh+(nar?6:4);VZ.el("line",{x1:0,x2:W,y1:sy,y2:sy,style:"stroke:var(--accent);stroke-dasharray:4 3"},s);var st=VZ.el("text",{x:nar?4:8,y:sy+18,"class":"t-strong",style:"fill:var(--accent)"},s);st.textContent="Second round"}
+ AG.forEach(function(a,i){var y=i*rh+(nar?20:6)+(r2>=0&&i>=r2?sp:0),on=a.id===sel,v=a.run?a.run[meas]:null;
   var g=VZ.el("g",{"class":"row",tabindex:0,role:"button","aria-pressed":on,"aria-label":a.id+": "+(a.run?n(v)+" "+ML[meas]:"running")},s);
   VZ.el("rect",{"class":"hit",x:0,y:y-(nar?18:4),width:W,height:rh-2,rx:4,style:"fill:"+(on?"var(--accent-soft)":"transparent")},g);
   var t=VZ.el("text",{x:nar?4:8,y:nar?y-5:y+13,"class":on?"t-strong":""},g);t.textContent=a.id;
@@ -290,15 +314,15 @@ function showA(){var d=$("mt-bd"),a=A(sel)||AG[0];d.innerHTML="";mk("p","d",a.id
 
 /* ---------- claims chart ---------- */
 var CT=[["Verified","var(--s1)"],["Secondary","var(--s4)"],["Unverified","var(--ink3)"]];
-var COV={"wipro.md":"Organisation, practice offerings, AI platforms, alliances, UK and Ireland presence, results and chief executive statements.","uki-market.md":"Demand drivers in financial services, public sector, health, retail, utilities, telecoms and travel, with procurement routes.","competitors.md":"Eleven IT services firms and seven specialist firms competing in the UK and Ireland.","deals.md":"Commercial models, rates and margins, pursuit qualification, the Procurement Act 2023, workshop formats and AI in customer engagement."};
+var COV={"wipro.md":"Organisation, practice offerings, AI platforms, alliances, UK and Ireland presence, results and chief executive statements.","uki-market.md":"Demand drivers in financial services, public sector, health, retail, utilities, telecoms and travel, with procurement routes.","competitors.md":"Eleven IT services firms and seven specialist firms competing in the UK and Ireland.","deals.md":"Commercial models, rates and margins, pursuit qualification, the Procurement Act 2023, workshop formats and AI in customer engagement.","bfs-europe.md":"Wipro's banking and quality engineering offers, banking partners, European and UK banking regulation from 2025 to 2028, and Wipro Europe banking news.","wipro-sales.md":"Wipro's go-to-market structure and account model, large deals, earnings call themes on sales, UK and Ireland sales roles, partner co-selling and client metrics.","sales-scope.md":"Sixteen IT services sales topic areas tied to the job description, each with concepts, sourced facts, the Wipro angle and a UK banking example."};
 var cm=0,csel=0,coff={},cl=$("mt-cleg");
 CT.forEach(function(c,k){var b=mk("button",null,null,cl);b.type="button";b.setAttribute("aria-pressed","true");var i=mk("i",null,null,b);i.style.background=c[1];i.style.borderRadius="2px";b.appendChild(document.createTextNode(c[0]));b.addEventListener("click",function(){coff[k]=!coff[k];b.setAttribute("aria-pressed",!coff[k]);claims()})});
 var ctb=$("mt-ctb");RF.forEach(function(f){var tr=mk("tr",null,null,ctb);[f.n,f.c[0],f.c[1],f.c[2],n(f.w),f.u].forEach(function(v){mk("td",null,String(v),tr)})});
 function tot(f){return f.c[0]+f.c[1]+f.c[2]}
 function claims(){var h=$("mt-cl");h.innerHTML="";var W=Math.max(300,h.clientWidth),nar=W<560,lw=nar?0:200,rh=nar?54:46,H=RF.length*rh+26;
  var s=VZ.svg(h,W,H,cm?"Stacked bars of the share of claims by flag in each research file":"Stacked bars of claims by flag in each research file");s.setAttribute("role","group");
- var mx=cm?100:120,x=VZ.lin(0,mx,lw,W-(nar?40:50));
- (cm?[0,25,50,75,100]:[0,30,60,90,120]).forEach(function(t){VZ.el("line",{x1:x(t),x2:x(t),y1:0,y2:H-20,"class":"grid"},s);var tt=VZ.el("text",{x:x(t),y:H-4,"text-anchor":"middle","class":"t-muted"},s);tt.textContent=cm?t+"%":t});
+ var top=Math.max.apply(null,RF.map(tot)),mx=cm?100:Math.ceil(top/30)*30,x=VZ.lin(0,mx,lw,W-(nar?40:50)),tk=[];for(var q=0;q<=mx;q+=30)tk.push(q);
+ (cm?[0,25,50,75,100]:tk).forEach(function(t){VZ.el("line",{x1:x(t),x2:x(t),y1:0,y2:H-20,"class":"grid"},s);var tt=VZ.el("text",{x:x(t),y:H-4,"text-anchor":"middle","class":"t-muted"},s);tt.textContent=cm?t+"%":t});
  RF.forEach(function(f,i){var y=i*rh+(nar?22:12),T=tot(f),g=VZ.el("g",{"class":"row",tabindex:0,role:"button","aria-pressed":i===csel,"aria-label":f.n+": "+f.c[0]+" verified, "+f.c[1]+" secondary, "+f.c[2]+" unverified"},s);
   VZ.el("rect",{"class":"hit",x:0,y:y-(nar?20:10),width:W,height:rh-2,rx:4,style:"fill:"+(i===csel?"var(--accent-soft)":"transparent")},g);
   var t=VZ.el("text",{x:nar?4:8,y:nar?y-6:y+15,"class":i===csel?"t-strong":""},g);t.textContent=f.n;if(!nar)fit(t,lw-14);
@@ -307,7 +331,7 @@ function claims(){var h=$("mt-cl");h.innerHTML="";var W=Math.max(300,h.clientWid
    cx+=w;});
   if(!cm){var vt=VZ.el("text",{x:cx+6,y:y+15,"class":"t-strong"},g);vt.textContent=Math.round(sum)}
   key(g,function(){csel=i;claims()});});
- var f=RF[csel],T=tot(f),d=$("mt-cd");d.innerHTML="";mk("p","d",f.n,d);mk("p","mini",f.f+" · "+n(f.w)+" words · "+f.u+" unique links",d);
+ var f=RF[csel],T=tot(f),d=$("mt-cd");d.innerHTML="";mk("p","d",f.n,d);mk("p","mini",f.f+" · "+(f.r===2?"second":"first")+" round · "+n(f.w)+" words · "+f.u+" unique links",d);
  var ul=mk("ul",null,null,d);CT.forEach(function(c,k){var li=mk("li",null,null,ul);var i=mk("i",null,null,li);i.style.background=c[1];li.appendChild(document.createTextNode(f.c[k]+" "+c[0].toLowerCase()+" ("+Math.round(f.c[k]/T*100)+"%)"))});
  mk("p",null,COV[f.f],d);}
 [].forEach.call(document.querySelectorAll("#mt-cm button"),function(b){b.addEventListener("click",function(){cm=+b.dataset.m;[].forEach.call(document.querySelectorAll("#mt-cm button"),function(x){x.setAttribute("aria-pressed",x===b)});claims()})});
