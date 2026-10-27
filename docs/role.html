@@ -310,7 +310,7 @@ function showH(){var L=cnt(hsel[0],hsel[1]),tot=R.filter(function(r){return r.g=
 function drawH(){hh.innerHTML="";var W=Math.max(300,hh.clientWidth),nar=W<520,lw=nar?84:110,top=44,rh=nar?46:52,H=top+GR.length*rh+4,cw=(W-lw)/5;
  var s=VZ.svg(hh,W,H,"Heatmap of six responsibility groups against five experience strands, showing how many responsibilities in each group draw on each strand.");s.setAttribute("role","group");
  var mx=0;GR.forEach(function(g,gi){ST.forEach(function(st,k){mx=Math.max(mx,cnt(gi,k).length)})});
- ST.forEach(function(st,k){ST_SHORT[k].split(" ").forEach(function(wd,j){var t=VZ.el("text",{x:lw+cw*(k+.5),y:14+j*14,"text-anchor":"middle","class":"t-muted"},s);t.textContent=wd})});
+ var NL=[["Sales"],["Execs"],["AI"],["Digital"],["Work-","shops"]];ST.forEach(function(st,k){(nar?NL[k]:ST_SHORT[k].split(" ")).forEach(function(wd,j){var t=VZ.el("text",{x:lw+cw*(k+.5),y:14+j*14,"text-anchor":"middle","class":"t-muted"},s);t.textContent=wd})});
  GR.forEach(function(g,gi){var y=top+gi*rh;var t=VZ.el("text",{x:0,y:y+rh/2+4,"class":"t-strong"},s);t.textContent=g;
   ST.forEach(function(st,k){var n=cnt(gi,k).length,lv=n===0?0:Math.min(5,Math.ceil(n/mx*5)),on=hsel[0]===gi&&hsel[1]===k;
    var c=VZ.el("g",{"class":"cell",tabindex:0,role:"button","aria-pressed":on,"aria-label":g+" and "+st[0]+": "+n},s);

@@ -401,7 +401,7 @@ function levers(r){var base=r.mp,L=[];
  tr(S.pm===1?"Move from fixed price to T&M":"Move to fixed price",function(s){s.pm=S.pm===1?0:1},"Same team, rates and assumptions.");
  tr("Contingency up 5 points",function(s){s.co=s.co+5},S.pm===0?"No effect under T&M.":"Priced into the deal; margin if unused.");
  L.sort(function(a,b){return b[1]-a[1]});
- var best=L[0];$("dl-lr").textContent="On these settings the largest single lever is “"+best[0].toLowerCase()+"”, worth "+(best[1]>=0?"+":"")+best[1].toFixed(1)+" margin points.";
+ var best=L[0];$("dl-lr").textContent="On these settings the largest single lever is “"+(/^AI/.test(best[0])?best[0]:best[0].charAt(0).toLowerCase()+best[0].slice(1))+"”, worth "+(best[1]>=0?"+":"")+best[1].toFixed(1)+" margin points.";
  var host=$("dl-lv");host.innerHTML="";var w=Math.max(300,host.clientWidth),m=w<560,lab=m?0:230,rh=m?44:30,h=L.length*rh+26,rr=m?54:60;
  var ext=Math.max(2,Math.max.apply(null,L.map(function(q){return Math.abs(q[1])})));var X=VZ.lin(-ext,ext,lab+(m?0:0),w-rr);
  var svg=VZ.svg(host,w,h,"Diverging bar chart of margin effect per lever");svg.setAttribute("role","group");

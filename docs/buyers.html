@@ -100,7 +100,7 @@
 .by-xp .big{font-size:clamp(28px,3vw,38px)}
 @media (max-width:980px){.by-map,.by-ox{grid-template-columns:minmax(0,1fr)}.by-od{position:static}.by-ol{max-height:none}}
 @media (max-width:760px){.by-pg,.by-evl,.by-pd{grid-template-columns:minmax(0,1fr)}
- .by-plan{grid-template-columns:repeat(4,minmax(0,1fr))}.by-plan .hd.r0{display:none}.by-plan .rl{grid-column:1/-1;margin-top:8px}.by-plan .cl{padding:7px 6px;font-size:11.5px;hyphens:auto;overflow-wrap:anywhere;min-width:0}.by-plan .cl small{font-size:9.5px}}
+ .by-plan{grid-template-columns:repeat(2,minmax(0,1fr))}.by-plan .hd{display:none}.by-plan .rl{grid-column:1/-1;margin-top:8px}.by-plan .cl{padding:8px 10px;font-size:13px;min-width:0}}
 </style>
 
 <section class="phead">
@@ -432,7 +432,7 @@ var plan=document.getElementById("by-plan"),pd=document.getElementById("by-pd"),
 document.getElementById("by-pl-lg").innerHTML=TY.map(function(t){return'<span><i style="background:'+t[1]+'"></i>'+t[0]+'</span>'}).join("");
 function drawPlan(){var h='<div class="hd r0">Executive</div>'+[1,2,3,4].map(function(q){return'<div class="hd">Quarter '+q+'</div>'}).join("");
  R.forEach(function(r){h+='<button type="button" class="rl" data-k="'+r.k+'" aria-pressed="'+(pR===r.k)+'">'+esc(r.s)+'</button>';
-  P[r.k].forEach(function(c,q){var on=pR===r.k,sel=pC[0]===r.k&&pC[1]===q;h+='<button type="button" class="cl'+(on?" on":"")+'" style="--c:'+TY[q][1]+'" data-k="'+r.k+'" data-q="'+q+'" aria-pressed="'+sel+'" aria-label="'+esc(r.s)+', quarter '+(q+1)+': '+c[0]+'"><small>'+TY[q][0]+'</small>'+c[0]+'</button>'})});
+  P[r.k].forEach(function(c,q){var on=pR===r.k,sel=pC[0]===r.k&&pC[1]===q;h+='<button type="button" class="cl'+(on?" on":"")+'" style="--c:'+TY[q][1]+'" data-k="'+r.k+'" data-q="'+q+'" aria-pressed="'+sel+'" aria-label="'+esc(r.s)+', quarter '+(q+1)+': '+c[0]+'"><small>Q'+(q+1)+' · '+TY[q][0]+'</small>'+c[0]+'</button>'})});
  plan.innerHTML=h;plan.classList.toggle("dim",!!pR);
  [].forEach.call(plan.querySelectorAll(".rl"),function(b){b.onclick=function(){pR=pR===b.dataset.k?null:b.dataset.k;if(pR)pC=[pR,pC[0]===pR?pC[1]:0];drawPlan();drawPD()}});
  [].forEach.call(plan.querySelectorAll(".cl"),function(b){b.onclick=function(){pC=[b.dataset.k,+b.dataset.q];if(pR&&pR!==pC[0])pR=pC[0];drawPlan();drawPD()}})}
