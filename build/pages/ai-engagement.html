@@ -99,7 +99,7 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
 <section class="sec" aria-labelledby="ae-h2">
   <span class="eyebrow">Engagement model</span>
   <h2 id="ae-h2">Engagement model across channels</h2>
-  <p class="intro">Five customer and colleague channels share one orchestration layer, a choice of models, a knowledge base and a guardrail layer. Select a channel to see the AI pattern, where Claude or Gemini fits, the guardrails and the measures. The shared layers can be selected too.</p>
+  <p class="intro">Five customer and colleague channels share one orchestration layer, a choice of models, a knowledge and data layer and a guardrail layer. No channel goes live until the data it relies on passes a readiness check. Select a channel to see the AI pattern, where Claude or Gemini fits, the guardrails and the measures. The shared layers can be selected too.</p>
   <div class="viz rv">
     <div class="viz-h"><h3>AI-enabled engagement model</h3><p>Every channel draws on the same knowledge and guardrails, so answers stay consistent. Select a box.</p></div>
     <div id="ae-em" class="ae-em"></div>
@@ -167,16 +167,16 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
 <section class="sec" aria-labelledby="ae-h7">
   <span class="eyebrow">Programme</span>
   <h2 id="ae-h7">Adoption programme</h2>
-  <p class="intro">A twelve-month programme in four phases, following the pattern of DSIT's Scan, Pilot, Scale approach. It starts with agent assist, where the evidence is strongest, and widens self-service once measures hold. Select a phase for its work and the gate to the next one.</p>
+  <p class="intro">A twelve-month programme in five phases, following the pattern of DSIT's Scan, Pilot, Scale approach. It starts with agent assist, where the evidence is strongest, and widens self-service once measures hold. Data readiness is its own phase, running alongside design: in October 2026 Wipro's CEO said banking clients are focused on "creating AI-ready data foundation" as well as core and data modernisation (Q2 FY27 earnings call). Select a phase for its work and the gate to the next one.</p>
   <div class="viz rv">
-    <div class="viz-h"><h3>Programme phases, months 0 to 12</h3><p>Automation for customers starts only after the agent assist pilot passes its gate. Select a phase.</p></div>
+    <div class="viz-h"><h3>Programme phases, months 0 to 12</h3><p>Data readiness overlaps design, and automation for customers starts only after the agent assist pilot passes its gate. Select a phase.</p></div>
     <div id="ae-pl" class="ae-pl"></div>
     <div id="ae-pd" class="ae-pd" aria-live="polite"></div>
   </div>
   <div class="ae-ms">
     <div class="ae-in" id="ae-in"><h3 style="font-size:16px">Measures</h3><p class="mini">Placeholder figures. Enter your own baseline and target.</p><div class="r h"><span>Measure</span><span>Baseline</span><span>Target</span></div></div>
     <div class="viz" style="margin-top:0">
-      <div class="viz-h"><h3 id="ae-mt">Glide path</h3><p>Most of the gain comes in phases three and four, once self-service scales.</p></div>
+      <div class="viz-h"><h3 id="ae-mt">Glide path</h3><p>Most of the gain comes in phases four and five, once self-service scales.</p></div>
       <div class="tabs" role="tablist" aria-label="Measure" id="ae-mtabs" style="margin:0 0 10px"></div>
       <div id="ae-gp"></div>
       <p class="src" style="margin-top:8px">The shape of the curve is my estimate. Placeholder baselines and targets are for illustration.</p>
@@ -200,7 +200,9 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
     <li>Wipro, Wipro and Google Cloud expand partnership, press release, 27 August 2026; Wipro and Google Cloud agentic AI solutions, 13 August 2025. wipro.com/newsroom. Primary.</li>
     <li>FCA, FCA announces second cohort of AI Live Testing, 21 April 2026. fca.org.uk. Primary.</li>
     <li>ICO, Consultation on draft guidance about automated decision-making, March 2026. ico.org.uk. Primary. Burges Salmon commentary. Press.</li>
-    <li>Future of Privacy Forum, DLA Piper and Gibson Dunn on the EU AI Omnibus, Regulation (EU) 2026/1744, 2026. Press (to confirm on EUR-Lex).</li>
+    <li>Future of Privacy Forum, DLA Piper and Gibson Dunn on the EU AI Omnibus, Regulation (EU) 2026/1744, 2026. Press. EUR-Lex, Regulation (EU) 2026/1744, Official Journal 24 July 2026. eur-lex.europa.eu. Primary.</li>
+    <li>Wipro, Q2 FY27 earnings call transcript, 15 October 2026. wipro.com/investors. Primary.</li>
+    <li>Wipro, Form 20-F for FY2026 (Data, Analytics and AI unit) and Wipro Intelligence page (Databricks partnership). wipro.com and sec.gov. Primary.</li>
   </ol>
 </section>
 
@@ -238,7 +240,7 @@ var N={
  orc:{n:"Orchestration",row:1,p:["Routes each request to the right agent, model and tool","Keeps context across channels"],m:["Wipro positions Gemini Enterprise as its central agentic orchestration platform, linked to WINGS and WEGA through LIFT","Claude is integrated across the Wipro Intelligence stack"],g:["Logging of every agent action","Limits on what each agent can do"],k:["Hand-off success","Latency","Cost per conversation"],e:"Wipro press releases, 16 June and 27 August 2026.",l:["app","web","cc","br","ag","cl","ge"]},
  cl:{n:"Claude",row:2,p:["Long, multi-turn conversations","Drafting and summarising","Tool use for account actions"],m:["Wipro's Applied AI Centre of Excellence for Claude and Claude-trained forward-deployed engineers"],g:["System rules and tool permissions set per use case","Tested on a set of real conversations before launch"],k:["Resolution quality","Escalation accuracy"],e:"Intercom Fin and Anthropic's GOV.UK assistant pilot both run on Claude.",l:["orc"]},
  ge:{n:"Gemini",row:2,p:["Native to Google Cloud contact-centre products","Multimodal and voice"],m:["Gemini Enterprise rolled out to more than 10,000 AI-certified Wipro staff, including 1,500 forward-deployed engineers"],g:["Deployment region agreed with the client's data team","Tested on the same conversation set for comparison"],k:["Containment","Latency"],e:"Google Customer Engagement Suite; Lloyds' Vertex AI platform; Commerzbank's chatbot.",l:["orc"]},
- kn:{n:"Knowledge and data",row:3,p:["Approved content, product rules and policies","Customer record and interaction history"],m:["Shared by every channel and both models"],g:["Content owners and review dates","Personal data minimised"],k:["Content freshness","Answer accuracy"],e:"Lloyds' Athena shows the value of a single knowledge hub for colleagues.",l:["app","web","cc","br","ag"]},
+ kn:{n:"Knowledge and data",row:3,p:["Approved content, product rules and policies","Customer record and interaction history","A data readiness check before each use case goes live"],m:["Shared by every channel and both models","Wipro's Data, Analytics and AI unit and the Databricks partnership for data modernisation where the client's data is not yet ready"],g:["Content owners and review dates","Personal data minimised","A readiness score per use case: owner, freshness, quality and permitted use"],k:["Content freshness","Answer accuracy","Use cases passing the readiness check"],e:"Lloyds' Athena shows the value of a single knowledge hub for colleagues. Wipro's CEO listed \"creating AI-ready data foundation\" among banking clients' priorities on the Q2 FY27 earnings call (15 October 2026).",l:["app","web","cc","br","ag"]},
  gr:{n:"Guardrails and oversight",row:3,p:["Policy checks on inputs and outputs","Human review rules by task","Monitoring and incident response"],m:["Applies to every model and channel"],g:["FCA Consumer Duty and SM&CR","UK automated decision safeguards from 5 February 2026","EU AI Act Article 50 for EU users"],k:["Policy breaches","Complaints linked to AI","Review sample pass rate"],e:"Gartner expects more than 40% of agentic AI projects to be cancelled by the end of 2027, partly because of weak risk controls.",l:["app","web","cc","br","ag"]}
 };
 var esel="ag";
@@ -356,11 +358,12 @@ function showTl(){var e=TL[tsel],d=new Date(e[0]);$("ae-tld").innerHTML="<b>"+(t
 /* programme */
 var PH=[
  {n:"Baseline and design",a:0,b:2,w:["Measure current containment, CSAT, handling time and digital adoption","Customer journey maps and service blueprints for two priority customer journeys","Choose models and platforms, and set guardrails"],o:["Baseline report","Target engagement model","Risk and oversight rules"],g:"Sponsor signs off the baseline, targets and guardrails."},
+ {n:"Data readiness",a:1,b:4,w:["Audit the knowledge base for owners, review dates and conflicting content","Map the customer data each use case needs, its quality and where it may be processed","Fix the gaps that would block the pilot and set data access rules by role"],o:["Data readiness score for each use case","Content clean-up plan","Data access and retention rules"],g:"Content for the pilot use cases is owned, current and approved, and the data owner has signed off access."},
  {n:"Pilot agent assist",a:2,b:5,w:["Knowledge search and reply suggestions for one agent team","Call and chat summaries","Train agents and team leaders"],o:["Pilot results against baseline","Agent feedback","Content fixes"],g:"Resolutions per hour up and quality scores stable for eight weeks."},
  {n:"Scale self-service",a:5,b:9,w:["Launch web and app assistants on likely-win use cases","Warm hand-off to agents with context","Extend agent assist to all teams"],o:["Containment and CSAT by use case","Hand-off quality report"],g:"Containment rising with CSAT and complaints within agreed limits."},
  {n:"Extend and optimise",a:9,b:12,w:["Voice agent for routine calls","Proactive notifications","Monthly review of oversight levels by task"],o:["Annual benefits case","Next-year backlog"],g:"Benefits confirmed by Finance. Plan for year two agreed."}
 ];
-var psel=1;
+var psel=1;/* phase 2 is data readiness */
 function drawPl(){var h=$("ae-pl");h.innerHTML="";var W=wOf(h),nar=W<640,rh=nar?40:44,top=22,H=top+PH.length*rh+6,LW=nar?0:170;
  var s=VZ.svg(h,W,H,"Gantt chart of four programme phases over twelve months"),x=VZ.lin(0,12,LW,W-6);s.setAttribute("role","group");
  for(var m=0;m<=12;m+=3){VZ.el("line",{x1:x(m),x2:x(m),y1:top-4,y2:H,"class":"grid"},s);VZ.el("text",{x:x(m),y:12,"text-anchor":m===12?"end":"middle","class":"t-muted"},s).textContent="M"+m}

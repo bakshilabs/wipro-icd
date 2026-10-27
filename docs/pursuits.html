@@ -71,6 +71,18 @@
 .pu-rec{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
 .pu-rec .panel b.big{font-size:clamp(28px,3vw,38px)}
 main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;stroke-linejoin:round}
+.pu-cs .row{cursor:pointer}
+.pu-cs .row:focus{outline:none}
+.pu-cs .row .hit{fill:transparent}
+.pu-cs .row:hover .hit,.pu-cs .row:focus-visible .hit{fill:var(--grid)}
+.pu-cs .row.sel .hit{fill:var(--accent-soft)}
+.pu-cd{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.pu-cd>div{background:var(--panel);border-radius:6px;padding:14px 16px;font-size:14px}
+.pu-cd h4{font:500 12px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.pu-cd p+p{margin-top:8px}
+.pu-tag{display:inline-block;font:600 11px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;background:var(--accent-soft);color:var(--accent);border-radius:3px;padding:3px 8px}
+@media (max-width:980px){.pu-cd{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.pu-cd{grid-template-columns:1fr}}
 @media (max-width:980px){.pu-sc{grid-template-columns:1fr}.pu-res{position:static}.pu-law{grid-template-columns:1fr 1fr}.pu-rec{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.pu-det,.pu-pd,.pu-law,.pu-rec{grid-template-columns:1fr}.pu-verdict{grid-template-columns:1fr}main .viz{padding:16px 12px 12px}}
 </style>
@@ -163,6 +175,23 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
   </div>
 </section>
 
+<section class="sec" aria-labelledby="pu-h6">
+  <span class="eyebrow">Partners</span>
+  <h2 id="pu-h6">Co-selling with partners</h2>
+  <p class="intro"><span class="pu-tag">My approach</span> In banking pursuits I would bring one platform or tooling partner in at qualification, agree with them who funds which part of the pursuit, and track the pipeline they source. The partner facts below come from Wipro and partner releases. Funding splits and timing are my approach, to confirm with Wipro's alliance teams.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>When each partner joins a pursuit, my approach</h3><p>Testing and delivery partners join at the proof stage, while core banking and payments platform partners join from the first account map. Select a partner for the facts, funding and pipeline approach.</p></div>
+    <div id="pu-cs" class="pu-cs"></div>
+    <div id="pu-cd" class="pu-cd" aria-live="polite"></div>
+    <p class="src" style="margin-top:10px">Dot size shows how much the partner carries at each step, from light to lead. It is my approach and would be agreed with the alliance team and the partner for each pursuit.</p>
+  </div>
+  <div class="grid3">
+    <div class="panel rv"><h3>Who funds what</h3><p>I would ask each partner what it can fund before the client is asked to pay: proofs of concept, specialist engineers, licences for a pilot or a joint executive briefing. Wipro would fund pursuit effort and solution design. The client funds the paid assessment or first phase. The split is agreed in writing at the bid gate (my approach).</p></div>
+    <div class="panel rv"><h3>Partner-sourced pipeline</h3><p>I would log partner-sourced and partner-influenced opportunities as separate fields in the CRM, register deals with the partner where its programme allows, and review the list with each partner's UK account team every month. Partner-sourced pipeline then becomes a measure I report alongside my own (my approach).</p></div>
+    <div class="panel rv"><h3>One story for the client</h3><p>The client should see one proposal with one accountable lead. I would agree with the partner which parts carry its name, who presents what in the orals, and how its references sit next to Wipro's, such as the Lloyds Banking Group Payment Services Platform award for QE.</p></div>
+  </div>
+</section>
+
 <section class="sec" aria-labelledby="pu-h5">
   <span class="eyebrow">My record</span>
   <h2 id="pu-h5">Pitches and bids I have led</h2>
@@ -188,6 +217,13 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
     <li>Cabinet Office, PPN 017: Improving transparency of AI use in procurement, updated 17 February 2025. gov.uk. Primary.</li>
     <li>Bradford Council, Procurement Act 2023 guidance for suppliers. bradford.gov.uk. Primary.</li>
     <li>Bird &amp; Bird and Trowers &amp; Hamlins, new UK procurement thresholds from 1 January 2026, December 2025. Press.</li>
+    <li>Wipro, Tricentis partner page; "Wipro partners with and invests in Tricentis", 2 August 2017. wipro.com/partners/tricentis/. Primary.</li>
+    <li>Wipro, "Wipro and Harness announce strategic collaboration to accelerate AI-native software delivery for global enterprises", 17 March 2026. wipro.com/newsroom/press-releases/2026/. Primary.</li>
+    <li>Wipro, AWS partnership page and re:Invent 2025 event page; Q3 FY26 results release (ISG Provider Lens AWS Ecosystem Partners 2025). wipro.com. Primary.</li>
+    <li>Intellect Design Arena, global partnership with Wipro for eMACH.ai, 29 August 2024, and stock-exchange intimation. intellectdesign.com. Primary (partner).</li>
+    <li>Wipro, Finastra Services and Fusion Global PayPlus implementation pages; Finastra, Wipro partner page. wipro.com/banking/; finastra.com/partners/wipro. Primary.</li>
+    <li>Temenos, "Temenos and Wipro announce global strategic partnership to accelerate digital transformation in banking", 27 July 2022; Temenos partner page. temenos.com. Primary (partner).</li>
+    <li>Wipro, "Wipro wins 4 awards at the European Software Testing Awards (TESTA) 2023". wipro.com/about-us/awards-and-recognitions/2023/. Primary.</li>
     <li>Arpan Bakshi, CV (Foster + Partners, SOM, WSP and Atlas Learn roles). Primary.</li>
   </ol>
 </section>
@@ -341,7 +377,30 @@ function showProp(){var p=PS[psel],tot=PS.reduce(function(a,b){return a+b.p[ptyp
  $("pu-pd").innerHTML='<div><h4>'+p.n+' · '+Math.round(p.p[ptype]/tot*100)+'% of pages</h4>'+li(p.c)+'</div><div><h4>Who writes it</h4><p>'+p.o+'</p><h4 style="margin-top:12px">Review</h4><p>'+p.r+'</p></div>'}
 VZ.tabs($("pu-ptype"),function(t){ptype=+t.dataset.t;if($("pu-prop").childNodes.length){drawProp();showProp()}});
 
-function all(){drawWR();drawLane();showStage();drawBars();drawProp();showProp()}
+/* ---------- partner co-selling ---------- */
+var CSS=["Map the account","Qualify together","Shape the solution","Fund a proof","Propose and close"];
+var CP=[
+ {n:"Tricentis",lv:[0,1,2,3,2],f:["Partner since 2017, when Wipro Ventures also invested in Tricentis.","Wipro is a Global Platinum Partner with 3,000+ Tosca specialists and a joint centre of excellence with 100+ engagements.","Tricentis named Wipro Global Delivery Partner of the Year 2023."],fu:"I would ask Tricentis for tool licences and specialists for a time-boxed automation proof on one payment or core banking release. Wipro funds the test strategy and the pursuit team.",pi:"QE leads from Tricentis's own bank accounts, logged as partner-sourced and taken to the QE practice."},
+ {n:"Harness",lv:[0,1,2,3,2],f:["Strategic collaboration announced on 17 March 2026.","It combines WEGA with the Harness AI Software Delivery Platform for build, test, deploy, release, feature management, cloud cost and incident response."],fu:"I would ask Harness to support a pipeline proof on one application, with Wipro bringing WEGA and the delivery engineers.",pi:"Banks already using Harness that want to speed releases, logged as partner-influenced unless Harness introduces the opportunity."},
+ {n:"AWS",lv:[2,2,2,3,2],f:["Wipro is an AWS Premier Consulting Partner with a Financial Services Competency.","Wipro was a Leader in ISG Provider Lens AWS Ecosystem Partners 2025 for the US and UK.","Joint offers include Pega Blueprint with vFunction and AWS Transform, listed on AWS Marketplace."],fu:"I would ask the AWS account team what migration or proof-of-concept support the bank qualifies for (to confirm with Wipro's AWS alliance team). Wipro funds assessment and solution design.",pi:"Joint account planning with the AWS UK financial services team, with partner-sourced deals registered where the AWS programme allows."},
+ {n:"Intellect",lv:[3,3,3,2,2],f:["Global strategic partnership for eMACH.ai announced on 29 August 2024 by Wipro FullStride Cloud.","It covers joint pursuit of client opportunities, project management, cloud services and Intellect training for Wipro teams.","eMACH.ai offers 329 microservices, 535 events and 1,757+ APIs."],fu:"Intellect brings product specialists and demonstrations; Wipro funds implementation design and the business case with Capco. I would agree the split per pursuit.",pi:"Joint pursuit is part of the agreement, so I would build a shared target list of UK and European banks with Intellect's team and review it monthly."},
+ {n:"Finastra",lv:[3,3,3,1,2],f:["Wipro describes itself as Finastra's Global Premier Elite Partner, with 200+ people, 20 countries and 80+ projects.","Its Fusion Global PayPlus payments-hub practice (40+ consultants) has delivered for major banks in Europe.","Finastra's partner page names Lloyds Bank among joint clients and Europe as a joint delivery region."],fu:"Finastra brings product expertise and roadmap briefings; Wipro funds the payment-hub assessment and QE approach.",pi:"Payment-hub upgrades and ISO 20022 work at Finastra's existing UK and European bank clients, logged as partner-sourced."},
+ {n:"Temenos",lv:[3,3,3,1,2],f:["Expanded global strategic partnership under the Temenos IMPACT programme, announced on 27 July 2022.","It targets the US, UK and Australia, and Wipro will design, test, implement and extend Temenos technology.","Current tier to confirm, as the announcement dates from 2022."],fu:"Temenos brings product and architecture specialists; Wipro funds implementation and test design.",pi:"Core replacement programmes where Temenos is selected or shortlisted, with QE and data migration offered as Wipro scope."}
+];
+var cpSel=0;
+function drawCS(){var host=$("pu-cs"),W=host.clientWidth;if(!W)return;host.innerHTML="";var nar=W<640,lw=nar?84:150,hh=nar?28:40,rh=nar?40:42,cw=(W-lw)/CSS.length,H=hh+CP.length*rh+(nar?CSS.length*18+8:4);
+ var s=VZ.svg(host,W,H,"Partner involvement by co-selling step");s.setAttribute("role","group");
+ CSS.forEach(function(c,j){var cx=lw+cw*j+cw/2;if(nar){var t=VZ.el("text",{x:cx,y:hh-10,"text-anchor":"middle","class":"t-strong"},s);t.textContent=String(j+1)}else{var w=c.split(" "),a=VZ.el("text",{x:cx,y:hh-22,"text-anchor":"middle","class":"t-strong"},s);a.textContent=w[0];var b=VZ.el("text",{x:cx,y:hh-7,"text-anchor":"middle","class":"t-strong"},s);b.textContent=w.slice(1).join(" ")}});
+ CP.forEach(function(p,i){var y=hh+i*rh,g=VZ.el("g",{"class":"row"+(i===cpSel?" sel":""),tabindex:0,role:"button","aria-pressed":i===cpSel,"aria-label":p.n},s);
+  VZ.el("rect",{"class":"hit",x:0,y:y+2,width:W,height:rh-4,rx:4},g);
+  var t=VZ.el("text",{x:6,y:y+rh/2+4,"class":"t-strong"},g);t.textContent=p.n;
+  p.lv.forEach(function(v,j){var cx=lw+cw*j+cw/2,cy=y+rh/2;if(v)VZ.el("circle",{cx:cx,cy:cy,r:[0,4,7,10][v],style:"fill:"+(v===3?"var(--accent)":"var(--seq-"+(v+1)+")")},g);else VZ.el("circle",{cx:cx,cy:cy,r:2,style:"fill:var(--ink3)"},g)});
+  function go(){cpSel=i;drawCS();showCS();var f=host.querySelector('[aria-pressed="true"]');if(f)f.focus()}
+  g.addEventListener("click",go);g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();go()}})});
+ if(nar)CSS.forEach(function(c,j){var t=VZ.el("text",{x:6,y:hh+CP.length*rh+16+j*18,"class":"t-muted"},s);t.textContent=(j+1)+". "+c})}
+function showCS(){var p=CP[cpSel];$("pu-cd").innerHTML='<div><h4>'+p.n+': sourced facts</h4>'+li(p.f)+'</div><div><h4>Who funds what (my approach)</h4><p>'+p.fu+'</p></div><div><h4>Partner-sourced pipeline (my approach)</h4><p>'+p.pi+'</p></div>'}
+
+function all(){drawWR();drawLane();showStage();drawBars();drawProp();showProp();drawCS();showCS()}
 pbs[0].click();all();
 var rt;addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(all,150)});
 VZ.onTheme(all);

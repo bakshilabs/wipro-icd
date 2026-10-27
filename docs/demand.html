@@ -440,7 +440,7 @@ responsive(document.getElementById("dm-tl"),function(W){var host=document.getEle
  SECT.forEach(function(sc,i){var yy=i*rh+rh/2;txt(s,0,yy+4,narrow?sc[1].replace(" and media","").replace("Financial services","Financial").replace("Public sector","Public").replace(" and EU",", EU"):sc[1],"t-strong").setAttribute("style","font-size:"+(narrow?11.5:12.5)+"px");VZ.el("line",{x1:lw,x2:W-8,y1:yy,y2:yy,"class":"axis"},s)});
  var tx=X(tm("2026-10-27"));VZ.el("line",{x1:tx,x2:tx,y1:-4,y2:SECT.length*rh+24,stroke:"var(--ink1)","stroke-dasharray":"3 3"},s);txt(s,tx+4,SECT.length*rh+36,"Today","t-muted");
  var placed={},rr=narrow?6:7.5;
- EV.forEach(function(e){e.ss.forEach(function(k){var li=SECT.map(function(x){return x[0]}).indexOf(k),cx0=X(tm(e[0])),pl=placed[k]=placed[k]||[],near=pl.filter(function(px){return Math.abs(px-cx0)<rr*2}).length,yy=li*rh+rh/2+[0,-rr,rr,-rr*1.6,rr*1.6][Math.min(near,4)];pl.push(cx0);var g=VZ.el("g",{"class":"dm-ev","data-i":e.i,"aria-label":dl(e)+": "+e[1]},s);
+ EV.forEach(function(e){e.ss.forEach(function(k){var li=SECT.map(function(x){return x[0]}).indexOf(k),cx0=X(tm(e[0])),pl=placed[k]=placed[k]||[],OFF=[0,-rr,rr,-rr*1.7,rr*1.7],slot=0;while(slot<4&&pl.some(function(p){return p[1]===slot&&Math.abs(p[0]-cx0)<rr*2.1}))slot++;pl.push([cx0,slot]);var yy=li*rh+rh/2+OFF[slot];var g=VZ.el("g",{"class":"dm-ev","data-i":e.i,"aria-label":dl(e)+": "+e[1]},s);
   VZ.el("circle",{cx:cx0,cy:yy,r:rr,fill:"var(--s"+SN[k][2]+")",stroke:"var(--chart-bg)","stroke-width":1.5},g);
   VZ.tip(g,function(){return "<b>"+esc(e[1])+"</b><span class='m'>"+esc(dl(e))+"</span>"});
   key(g,function(){eSel=e.i;apply()})})});
