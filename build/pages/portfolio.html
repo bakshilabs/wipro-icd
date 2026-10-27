@@ -63,6 +63,15 @@
 @media (max-width:640px){.pf-bk,.pf-pt{grid-template-columns:1fr}}
 @media (max-width:980px){.pf-lay,.pf-build{grid-template-columns:minmax(0,1fr)}.pf-offs{grid-template-columns:1fr}}
 @media (max-width:640px){.pf-who{grid-template-columns:1fr}.pf-evd{grid-template-columns:1fr}.pf-off dl{grid-template-columns:1fr;gap:2px}.pf-off dd{margin-bottom:6px}}
+.pf-mode{display:grid;grid-template-columns:1fr;gap:6px;margin:10px 0 14px}
+.pf-mode button{appearance:none;text-align:left;border:1px solid var(--line);border-left:5px solid var(--accent);background:var(--bg);color:var(--ink);border-radius:3px;padding:9px 11px;font:500 13px/1.3 var(--sans);cursor:pointer}
+.pf-mode button.b{border-left-color:var(--s2)}
+.pf-mode button[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);border-left-color:var(--accent);font-weight:600}
+.pf-mode button.b[aria-pressed="true"]{border-color:var(--s2);border-left-color:var(--s2)}
+.pf-mode button small{display:block;font-weight:400;color:var(--ink2);font-size:12px;margin-top:2px}
+.pf-msg{border-left:5px solid var(--accent)}
+.pf-msg.b{border-left-color:var(--s2)}
+.pf-mtag{display:inline-block;font:600 11px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--ink2);margin-left:8px}
 </style>
 
 <section class="phead">
@@ -136,11 +145,15 @@
 <section class="sec">
   <span class="eyebrow">Combined propositions</span>
   <h2>Combining offerings for one account</h2>
-  <p class="intro">Large UK deals tend to combine several offerings under one outcome. Choose an account type and the offerings to combine. The page lists the buyers, Wipro units and partners to involve and drafts an opening message. The phasing is a placeholder for discussion with delivery.</p>
+  <p class="intro">Large UK deals tend to combine several offerings under one outcome. Choose the move first: an existing Wipro account where I attach new scope to a run contract (Move 1: expand), or a new logo where I open with a smaller entry offer (Move 2: new logos). Then choose an account type and the offerings to combine. The page lists the buyers, Wipro units and partners to involve and drafts an opening message. The phasing is a placeholder for discussion with delivery.</p>
   <div class="pf-build">
     <div class="pf-ctl">
-      <h3>Account and offerings</h3>
-      <p>Start from a preset or switch offerings on and off.</p>
+      <h3>Move, account and offerings</h3>
+      <p>Each move suggests its own offerings, message and team. Start from the suggestion or a preset, or switch offerings on and off.</p>
+      <div class="pf-mode" role="group" aria-label="Move" id="pf-mode">
+        <button type="button" data-m="1" aria-pressed="true">Existing account: attach to a run contract (Move 1)<small>Add QE, modernisation and AI at renewal or through a change request</small></button>
+        <button type="button" class="b" data-m="2" aria-pressed="false">New logo: entry offer (Move 2)<small>A fixed-scope first project on a dated forcing event</small></button>
+      </div>
       <div class="ctl"><label for="pf-acct">Account type</label><select id="pf-acct"></select></div>
       <p class="k" style="margin-top:16px;font-weight:600">Presets</p><div class="btnrow" role="group" aria-label="Presets" id="pf-pre" style="margin-top:6px"></div><p style="margin-top:14px;font-weight:600">Offerings</p>
       <div class="pf-chips" role="group" aria-label="Offerings" id="pf-chips"></div>
@@ -150,7 +163,7 @@
         <div class="viz-h"><h3>Placeholder phasing</h3><p id="pf-gread">Each selected offering appears in the phases where I would expect it to do most of its work.</p></div>
         <div id="pf-gantt"></div>
       </div>
-      <div class="pf-msg" aria-live="polite"><span class="pf-tag">Draft message to test</span><div id="pf-msgt"></div></div>
+      <div class="pf-msg" id="pf-msg" aria-live="polite"><span class="pf-tag">Draft message to test</span><span class="pf-mtag" id="pf-mtag"></span><div id="pf-msgt"></div></div>
       <div class="pf-who" id="pf-who"></div>
     </div>
   </div>
@@ -404,13 +417,20 @@ var PHR={appmod:"modernise the applications your customers and staff depend on",
 var UNIT={appmod:"IC&D modernisation practice",apr:"IC&D modernisation practice",mf:"Capco and IC&D modernisation",integ:"IC&D integration practice",qe:"IC&D quality engineering",devops:"IC&D engineering with WEGA",digapps:"IC&D digital applications",dxc:"Designit",ai:"AI-Native unit forward-deployed engineers",adopt:"AI-Native unit and partner teams"};
 var PART={appmod:["AWS","Microsoft Azure","Google Cloud"],apr:[],mf:["Capco"],integ:["ServiceNow","Salesforce","SAP"],qe:["Tricentis","Iliad Solutions"],devops:["Google Antigravity","GitHub Copilot","Harness"],digapps:["AWS","Microsoft Azure","Google Cloud"],dxc:["Adobe","Salesforce"],ai:["Google Gemini Enterprise","Anthropic Claude"],adopt:["Microsoft 365 Copilot","Gemini Enterprise","Claude"]};
 var PRE=[["AI-led CX, modernisation and QE",["dxc","ai","appmod","qe"]],["Legacy core and resilience",["mf","qe","devops","integ"]],["AI adoption at scale",["adopt","ai","integ"]],["Payments resilience in banking",["qe","devops","integ","mf"]]];
-var on={dxc:1,ai:1,appmod:1,qe:1};
+var MODE=1;
+var SUG={1:{ins:["mf","qe","ai"],bank:["qe","ai","appmod","devops"],nrg:["qe","appmod","ai"],ret:["dxc","ai","qe"],gov:["appmod","qe","ai"]},
+ 2:{ins:["apr","ai"],bank:["qe","integ"],nrg:["qe","integ"],ret:["dxc","ai"],gov:["apr","appmod"]}};
+var on={};
 var sel=document.getElementById("pf-acct");sel.innerHTML=ACCT.map(function(a){return '<option value="'+a.id+'">'+esc(a.n)+'</option>'}).join("");
-var pre=document.getElementById("pf-pre");pre.innerHTML=PRE.map(function(p,i){return '<button type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'">'+esc(p[0])+'</button>'}).join("");
+var pre=document.getElementById("pf-pre");pre.innerHTML='<button type="button" data-i="s" aria-pressed="true">Suggested for this move</button>'+PRE.map(function(p,i){return '<button type="button" data-i="'+i+'" aria-pressed="false">'+esc(p[0])+'</button>'}).join("");
+function applySug(){on={};SUG[MODE][sel.value].forEach(function(k){on[k]=1});[].forEach.call(pre.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x.dataset.i==="s")})}
+function sugOn(){return pre.querySelector('[data-i="s"]').getAttribute("aria-pressed")==="true"}
+applySug();
+[].forEach.call(document.querySelectorAll("#pf-mode button"),function(b){b.addEventListener("click",function(){MODE=+b.dataset.m;[].forEach.call(document.querySelectorAll("#pf-mode button"),function(x){x.setAttribute("aria-pressed",x===b)});applySug();sync()})});
 var chips=document.getElementById("pf-chips");chips.innerHTML=O.map(function(o){return '<button type="button" data-id="'+o.id+'" aria-pressed="'+(!!on[o.id])+'">'+esc(o.n.replace(" across products and stacks",""))+'</button>'}).join("");
-[].forEach.call(pre.querySelectorAll("button"),function(b){b.addEventListener("click",function(){on={};PRE[+b.dataset.i][1].forEach(function(k){on[k]=1});[].forEach.call(pre.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b)});sync()})});
+[].forEach.call(pre.querySelectorAll("button"),function(b){b.addEventListener("click",function(){if(b.dataset.i==="s"){applySug();sync();return}on={};PRE[+b.dataset.i][1].forEach(function(k){on[k]=1});[].forEach.call(pre.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b)});sync()})});
 [].forEach.call(chips.querySelectorAll("button"),function(b){b.addEventListener("click",function(){var k=b.dataset.id;if(on[k])delete on[k];else on[k]=1;[].forEach.call(pre.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed","false")});sync()})});
-sel.addEventListener("change",sync);
+sel.addEventListener("change",function(){if(sugOn())applySug();sync()});
 var gw=0;
 function drawGantt(){var host=document.getElementById("pf-gantt"),W=host.clientWidth;if(!W)return;gw=W;host.innerHTML="";
  var ids=O.filter(function(o){return on[o.id]}).map(function(o){return o.id});
@@ -427,10 +447,17 @@ function sync(){var a=ACCT.filter(function(x){return x.id===sel.value})[0];
  var ids=O.filter(function(o){return on[o.id]}).map(function(o){return o.id});
  drawGantt();
  var ORD=["dxc","ai","adopt","apr","appmod","mf","digapps","integ","devops","qe"];var ph=ORD.filter(function(k){return on[k]}).map(function(k){return PHR[k]});var list=ph.length>1?ph.slice(0,-1).join(", ")+" and "+ph[ph.length-1]:ph[0]||"";
- document.getElementById("pf-msgt").innerHTML=ids.length?esc(a.dr)+" We propose one programme with one set of outcomes. In it we would "+esc(list)+". Wipro, its design studio and its partners would work as one team, with progress measured against the outcomes you choose in the first workshop.":"Select at least one offering to draft a message.";
+ var m1=MODE===1;document.getElementById("pf-msg").className="pf-msg"+(m1?"":" b");txt0(document.getElementById("pf-mtag"),m1?"Move 1: expand":"Move 2: new logos");
+ document.getElementById("pf-msgt").innerHTML=!ids.length?"Select at least one offering to draft a message.":m1?
+  esc(a.dr)+" Wipro already runs part of your estate, so we can start inside the current contract. At the next renewal or through a change request we would "+esc(list)+". The first phase is sized to start this contract year, and we would measure it against the outcomes you choose in the first workshop.":
+  esc(a.dr)+" We propose a fixed-scope entry project of about twelve weeks. In it we would "+esc(list)+". It builds on work Wipro has delivered for comparable UK clients, and we can introduce references. If it meets the outcomes you set, we agree the next phase together.";
  var units=[],parts=[];ids.forEach(function(k){if(units.indexOf(UNIT[k])<0)units.push(UNIT[k]);PART[k].forEach(function(p){if(parts.indexOf(p)<0)parts.push(p)})});
  if(a.id==="ins"||a.id==="bank"){if(units.indexOf("Capco and IC&D modernisation")<0)units.push("Capco for the business case")}
- document.getElementById("pf-who").innerHTML='<div><small>Buyers to meet (my judgement)</small>'+esc(a.buy)+'.</div><div><small>Wipro units to involve</small>'+esc(units.join(", ")||"None selected")+'.</div><div><small>Partners and proof</small>'+esc(parts.join(", ")||"Partner-neutral")+'. '+esc(a.ref)+'</div>'}
+ var buy=m1?a.buy+", met with the Wipro client partner who holds the relationship":a.buy+", reached through a forcing-event briefing or a partner introduction";
+ var un=(m1?["Wipro client partner and account delivery lead"]:["Europe market unit sales lead for the target account"]).concat(units);
+ var pr=m1?(parts.join(", ")||"Partner-neutral")+". Proof from the current contract's delivery record. "+a.ref:(parts.length?"Partner account teams for introductions: "+parts.join(", "):"Partner-neutral")+". References from Move 1 expansions. "+a.ref;
+ document.getElementById("pf-who").innerHTML='<div><small>Buyers to meet (my judgement)</small>'+esc(buy)+'.</div><div><small>Wipro teams to involve</small>'+esc(un.join(", "))+'.</div><div><small>Partners and proof</small>'+esc(pr)+'</div>'}
+function txt0(el,t){el.textContent=t}
 var rt;addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){if(document.getElementById("pf-gantt").clientWidth!==gw)drawGantt()},120)});
 sync();
 })();

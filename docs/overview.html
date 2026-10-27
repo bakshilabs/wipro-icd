@@ -84,12 +84,62 @@
 .ov-read .ic{display:block;width:26px;height:26px;margin-bottom:10px;fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 @media (max-width:900px){.ov-read{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.ov-read{grid-template-columns:1fr}}
+.ov-st{margin-top:56px}
+.ov-st .sline{font:600 clamp(20px,2.2vw,28px)/1.3 var(--sans);letter-spacing:-.01em;max-width:46ch;margin-top:10px}
+.ov-st .sline .m1{box-shadow:inset 0 -4px 0 var(--accent)}
+.ov-st .sline .m2{box-shadow:inset 0 -4px 0 var(--s2)}
+.ov-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.ov-stat{background:var(--panel);border-radius:6px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.ov-stat b{font:600 28px/1 var(--sans);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.ov-stat p{font-size:13.5px;line-height:1.4}
+.ov-stat .src{font-size:12px;color:var(--muted);margin-top:auto}
+.ov-stat svg{display:block;width:100%;height:auto}
+.ov-stat svg text{font-family:var(--sans);font-size:11px;fill:var(--ink2)}
+.ov-stat svg .tv{fill:var(--ink1);font-weight:600}
+.ov-mv .btnrow{margin-top:22px}
+.ov-mv .btnrow i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.ov-dia{display:grid;grid-template-columns:1fr 56px 1fr;gap:0;margin-top:14px;align-items:stretch}
+.ov-col{background:var(--panel);border-radius:6px;padding:16px 18px 18px;border-top:5px solid var(--accent);transition:opacity .2s}
+.ov-col.m2{border-top-color:var(--s2)}
+.ov-col.off{opacity:.38}
+.ov-col h3{font-size:18px}
+.ov-col .when{font-size:12.5px;color:var(--muted);margin-top:2px}
+.ov-col ol{margin:12px 0 0;padding:0;list-style:none;counter-reset:m;display:grid;gap:8px}
+.ov-col ol li{counter-increment:m;position:relative;padding-left:30px;font-size:14px;line-height:1.4}
+.ov-col ol li::before{content:counter(m);position:absolute;left:0;top:0;width:21px;height:21px;border-radius:50%;border:2px solid var(--accent);font:600 11.5px/17px var(--sans);text-align:center;color:var(--ink)}
+.ov-col.m2 ol li::before{border-color:var(--s2)}
+.ov-col .k{font:500 12px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+.ov-pl{display:grid;gap:6px}
+.ov-pl a{display:grid;grid-template-columns:38px 1fr;gap:8px;align-items:baseline;background:var(--bg);border-radius:4px;padding:7px 10px;color:var(--ink);text-decoration:none;font-size:13px;line-height:1.35;border-left:3px solid var(--accent)}
+.ov-col.m2 .ov-pl a{border-left-color:var(--s2)}
+.ov-pl a:hover,.ov-pl a:focus-visible{background:var(--accent-soft)}
+.ov-pl a b{font-weight:600}
+.ov-pl a span{color:var(--muted)}
+.ov-arr{display:flex;align-items:center;justify-content:center}
+.ov-arr svg{width:56px;height:120px}
+.ov-arr .v{display:none;width:160px;height:48px}
+.ov-arr svg text{font-family:var(--sans);font-size:11px;fill:var(--ink2)}
+.ov-en{display:grid;grid-template-columns:auto 1fr;gap:10px 16px;align-items:center;background:var(--panel);border-radius:6px;padding:14px 18px;margin-top:12px;border-top:5px solid var(--ink3)}
+.ov-en h3{font-size:16px}
+.ov-en .ov-pl{grid-template-columns:repeat(3,1fr)}
+.ov-en .ov-pl a{border-left-color:var(--ink3)}
+.ov-meas{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;font-size:13.5px}
+.ov-meas b{font-weight:600}
+.ov-note{font-size:13px;color:var(--muted);margin-top:10px}
+.ov-q{margin-top:14px;font-size:14px;border-left:3px solid var(--s2);padding:4px 0 4px 12px}
+.ov-c.hm1{outline:2px solid var(--accent);outline-offset:-2px}
+.ov-c.hm2{outline:2px solid var(--s2);outline-offset:-2px}
+.ov-c .mv{display:flex;gap:4px}
+.ov-c .mv i{font:600 10.5px/1 var(--sans);font-style:normal;padding:3px 6px;border-radius:3px;background:var(--bg);color:var(--ink);border-left:3px solid var(--accent)}
+.ov-c .mv i.b{border-left-color:var(--s2)}
+.ov-c .mv i.e{border-left-color:var(--ink3)}
+@media (max-width:900px){.ov-stats{grid-template-columns:1fr}.ov-dia{grid-template-columns:1fr;grid-template-rows:auto 48px auto}.ov-arr .h{display:none}.ov-arr .v{display:block}.ov-en{grid-template-columns:1fr}.ov-en .ov-pl{grid-template-columns:1fr}}
 </style>
 
 <section class="ov-hero">
   <div class="ov-hl">
     <h1>Analysis</h1>
-    <p class="lede">Twelve pages of research, models and plans for the ICD Practitioner role in Wipro's Industry Cloud &amp; Digital portfolio, UK and Ireland, plus my AI workflow and how this site was made. All of it comes from public sources, and each page lists its own.</p>
+    <p class="lede">My plan for the ICD Practitioner role is to grow share of wallet in Wipro's existing UK and Ireland accounts first, and use that proof to open new ones. Twelve pages of research, models and plans from public sources show how I would run both moves, and each page lists its own sources.</p>
     <p class="meta">Arpan Bakshi, London. Research date 27 October 2026. Independent work from public sources.</p>
     <div class="ov-cap" id="ov-cap" aria-live="polite"></div>
   </div>
@@ -99,6 +149,94 @@
     <div id="ov-chart"></div>
     <div class="ov-pin" id="ov-pin" aria-live="polite"></div>
     <details class="more"><summary>All dates in the chart</summary><div class="tw" tabindex="0" role="region" aria-label="Scrollable table"><table class="t" id="ov-table"><thead><tr><th>Date</th><th>Event</th><th>Sectors</th></tr></thead><tbody></tbody></table></div></details>
+  </div>
+</section>
+
+<section class="block ov-st" id="strategy">
+  <span class="eyebrow">My strategy</span>
+  <h2>Strategy</h2>
+  <p class="sline">Grow share of wallet in Wipro's existing UK and Ireland accounts first <span class="m1">(Move 1: expand)</span>, and use that proof to open new ones <span class="m2">(Move 2: new logos)</span>.</p>
+  <p class="kicker">Three of Wipro's own figures set the order. The two moves run together from the first quarter, and proof from Move 1 feeds Move 2.</p>
+  <div class="ov-stats">
+    <div class="ov-stat rv">
+      <b><span class="count" data-to="98" data-suffix="%">98%</span></b>
+      <svg viewBox="0 0 260 22" role="img" aria-label="98 percent of revenue from existing clients, 2 percent from new clients"><rect x="0" y="2" width="255" height="12" rx="3" style="fill:var(--accent)"/><rect x="255" y="2" width="5" height="12" rx="1" style="fill:var(--s2)"/></svg>
+      <p>of Wipro's revenue came from existing clients in Q2 FY27. Wipro added 33 new clients in the quarter.</p>
+      <span class="src">Wipro, Datasheet Q2 FY27, October 2026 (primary)</span>
+    </div>
+    <div class="ov-stat rv">
+      <b>22 to 16 to <span class="count" data-to="18">18</span></b>
+      <svg viewBox="0 0 260 40" role="img" aria-label="Clients above 100 million US dollars: 22 in FY24, 16 in FY26, 18 in Q2 FY27" id="ov-st100"></svg>
+      <p>clients above US$100m a year: 22 in FY24, 16 in FY26 and 18 in Q2 FY27. Rebuilding large accounts is the fastest order book lever.</p>
+      <span class="src">Wipro, Datasheets Q4 FY25 and Q2 FY27 (primary)</span>
+    </div>
+    <div class="ov-stat rv">
+      <b><span class="count" data-to="5.1" data-suffix="%">5.1%</span></b>
+      <p>year-on-year constant currency growth in Europe in Q2 FY27, "led by BFSI", where Wipro has long relationships, European testing awards and partners such as Tricentis.</p>
+      <span class="src">Wipro, Q2 FY27 earnings call, 15 October 2026 (primary)</span>
+    </div>
+  </div>
+
+  <div class="ov-mv">
+    <div class="btnrow" id="ov-mvsel" role="group" aria-label="Select a move">
+      <button type="button" data-m="all" aria-pressed="true">Both moves</button>
+      <button type="button" data-m="m1" aria-pressed="false"><i style="background:var(--accent)"></i>Move 1: expand</button>
+      <button type="button" data-m="m2" aria-pressed="false"><i style="background:var(--s2)"></i>Move 2: new logos</button>
+    </div>
+    <div class="ov-dia">
+      <div class="ov-col m1" id="ov-col-m1">
+        <h3>Move 1: expand</h3>
+        <p class="when">Existing accounts, from the first quarter</p>
+        <ol>
+          <li>Map IC&amp;D white space in the top UK and Ireland accounts with the client partners.</li>
+          <li>Attach QE, modernisation and AI to run contracts and renewals.</li>
+          <li>Run executive workshops on dated forcing events that produce proactive proposals.</li>
+          <li>Phase first scopes so order book lands early.</li>
+        </ol>
+        <p class="k">Pages behind it</p>
+        <div class="ov-pl">
+          <a href="accounts.html"><b>A5</b><span><b>Accounts.</b> Scoring model, white space and order book build.</span></a>
+          <a href="workshops.html"><b>A9</b><span><b>Workshops.</b> Executive formats that end in a proposal.</span></a>
+          <a href="pursuits.html"><b>A8</b><span><b>Pursuits.</b> Scorecard and stage plan for proactive bids.</span></a>
+          <a href="deal-shaping.html"><b>A7</b><span><b>Deals.</b> Pricing and renewal step-downs to fund new scope.</span></a>
+          <a href="portfolio.html"><b>A2</b><span><b>Portfolio.</b> Offerings to attach to a run contract.</span></a>
+          <a href="banking.html"><b>A12</b><span><b>Banking Pursuit.</b> Land and expand at an illustrative bank.</span></a>
+        </div>
+      </div>
+      <div class="ov-arr" aria-hidden="true">
+        <svg class="v" viewBox="0 0 160 48"><path d="M80 4V40" style="stroke:var(--ink2)" stroke-width="2"/><path d="M73 34L80 42L87 34" style="fill:none;stroke:var(--ink2)" stroke-width="2"/><text x="90" y="26">proof</text></svg>
+        <svg class="h" viewBox="0 0 56 120"><path d="M6 60H46" style="stroke:var(--ink2)" stroke-width="2"/><path d="M40 53L48 60L40 67" style="fill:none;stroke:var(--ink2)" stroke-width="2"/><text x="28" y="44" text-anchor="middle">proof</text></svg>
+      </div>
+      <div class="ov-col m2" id="ov-col-m2">
+        <h3>Move 2: new logos</h3>
+        <p class="when">New accounts, hunting from the first quarter</p>
+        <ol>
+          <li>Use references from the expansions in Move 1.</li>
+          <li>Hunt on forcing events, banking first: operational resilience, ISO 20022 and DORA.</li>
+          <li>Build partner-sourced pipeline with Tricentis, AWS, Google and Anthropic.</li>
+          <li>Run hunting as a standing motion from the first quarter.</li>
+        </ol>
+        <p class="k">Pages behind it</p>
+        <div class="ov-pl">
+          <a href="demand.html"><b>A3</b><span><b>Demand.</b> Forcing events that give a reason to call.</span></a>
+          <a href="buyers.html"><b>A4</b><span><b>Buyers.</b> The buying committee and its objections.</span></a>
+          <a href="alternatives.html"><b>A6</b><span><b>Competitors.</b> Positioning against the incumbent.</span></a>
+          <a href="banking.html"><b>A12</b><span><b>Banking Pursuit.</b> An entry offer for a bank.</span></a>
+          <a href="portfolio.html"><b>A2</b><span><b>Portfolio.</b> Entry offers for a new logo.</span></a>
+        </div>
+        <p class="ov-q">Wipro's CFO, Aparna Iyer, said in January 2025 that "hunting remains a very, very key lever" (Q3 FY25 earnings call).</p>
+      </div>
+    </div>
+    <div class="ov-en">
+      <h3>Enablers for both moves</h3>
+      <div class="ov-pl">
+        <a href="role.html"><b>A1</b><span><b>The Role.</b> The 17 responsibilities by move.</span></a>
+        <a href="ai-engagement.html"><b>A10</b><span><b>AI Engagement.</b> The AI offer in both moves.</span></a>
+        <a href="first-months.html"><b>A11</b><span><b>First Months.</b> The first year in phases.</span></a>
+      </div>
+    </div>
+    <p class="ov-meas"><b>Measures</b><span>Share of wallet per account</span><span>Pipeline created and coverage</span><span>Win rate</span><span>Order book booked</span></p>
+    <p class="ov-note" id="ov-mvnote" aria-live="polite"></p>
   </div>
 </section>
 
@@ -174,9 +312,11 @@
 <section class="block">
   <span class="eyebrow">Explore</span>
   <h2>Pages</h2>
-  <p class="kicker">Each code matches the bar at the top of every analysis page. Filter by theme, then select a card to open the page.</p>
+  <p class="kicker">Each code matches the bar at the top of every analysis page. Filter by move or theme, then select a card to open the page.</p>
   <div class="btnrow ov-filter" id="ov-filter" role="group" aria-label="Filter pages by theme">
     <button type="button" data-f="all" aria-pressed="true">All</button>
+    <button type="button" data-f="m1" aria-pressed="false">Move 1</button>
+    <button type="button" data-f="m2" aria-pressed="false">Move 2</button>
     <button type="button" data-f="market" aria-pressed="false">Market</button>
     <button type="button" data-f="clients" aria-pressed="false">Clients</button>
     <button type="button" data-f="commercial" aria-pressed="false">Commercial</button>
@@ -361,34 +501,44 @@ var TH={
  method:'<circle cx="8" cy="18" r="5" class="a"/><circle cx="26" cy="8" r="4"/><circle cx="26" cy="18" r="4"/><circle cx="26" cy="28" r="4"/><circle cx="44" cy="18" r="4"/><circle cx="58" cy="18" r="4" class="a"/><path class="l" d="M13 18L22 8M13 18H22M13 18L22 28M30 8L40 18M30 18H40M30 28L40 18M48 18H54"/>',
 };
 var C=[
- ["role","A1","The Role","plan","Each of the 17 responsibility lines in the job description mapped to the page that answers it and to my experience, with where the role sits in Wipro.",["17 responsibilities","5 strands"],1],
- ["portfolio","A2","Portfolio","market","The ten offerings in the role mapped to buyer problems, buyers, partners and proof points, with the 2025 and 2026 alliances and an offering combiner.",["10 offerings","Alliances"]],
- ["demand","A3","Demand","market","UK and Ireland demand by sector, a sector by offering heat grid and the forcing dates from 2024 to 2028.",["8 sectors","48 dates"]],
- ["buyers","A4","Buyers","clients","The buying committee for an IC&D deal: what makes each executive act, their objections with draft replies, and a four-quarter relationship plan.",["Objection explorer","4 quarters"]],
- ["accounts","A5","Accounts","clients commercial","An account scoring model with editable weights, hunting and farming, offering adjacency and a placeholder order book build.",["Scoring model","Order book"]],
- ["alternatives","A6","Competitors","market","Thirteen competitors rated on six dimensions, their AI partnerships and UK contracts, and how I would position Wipro against each.",["13 firms","AI partnerships"]],
- ["deal-shaping","A7","Deals","commercial","Pricing models, UK and offshore rates, AI productivity evidence, renewal step-downs and a deal margin calculator with placeholder figures.",["5 pricing models","Margin calculator"]],
- ["pursuits","A8","Pursuits","commercial clients","A bid or no-bid scorecard on MEDDPICC, a seven-stage plan with Shipley gates, Procurement Act rules and a proposal structure.",["Scorecard","7 stages"]],
- ["workshops","A9","Workshops","clients ai","Executive workshop formats, a builder that returns an agenda, a value against feasibility grid and a checklist to a qualified opportunity.",["5 formats","Workshop builder"]],
- ["ai-engagement","A10","AI Engagement","ai clients","An AI customer engagement model with Claude and Gemini, a value against feasibility chart of 14 CX use cases and a human oversight slider.",["Claude and Gemini","14 use cases"]],
- ["first-months","A11","First Months","plan","My first year in three phases, listen, decide and deliver: who I meet, how I review accounts and how pipeline builds into order book.",["3 phases","12 months"]],
- ["banking","A12","Banking Pursuit","clients commercial","A worked pursuit at an illustrative UK bank: forcing events, quality engineering and payments resilience as the entry offer, land and expand, MEDDPICC and a margin sketch.",["22 dates","4 phases"]],
+ ["role","A1","The Role","plan en","Each of the 17 responsibility lines in the job description mapped to the page that answers it and to my experience, with where the role sits in Wipro.",["17 responsibilities","5 strands"],1],
+ ["portfolio","A2","Portfolio","market m1 m2","The ten offerings in the role mapped to buyer problems, buyers, partners and proof points, with the 2025 and 2026 alliances and an offering combiner.",["10 offerings","Alliances"]],
+ ["demand","A3","Demand","market m2","UK and Ireland demand by sector, a sector by offering heat grid and the forcing dates from 2024 to 2028.",["8 sectors","48 dates"]],
+ ["buyers","A4","Buyers","clients m2","The buying committee for an IC&D deal: what makes each executive act, their objections with draft replies, and a four-quarter relationship plan.",["Objection explorer","4 quarters"]],
+ ["accounts","A5","Accounts","clients commercial m1","An account scoring model with editable weights, hunting and farming, offering adjacency and a placeholder order book build.",["Scoring model","Order book"]],
+ ["alternatives","A6","Competitors","market m2","Thirteen competitors rated on six dimensions, their AI partnerships and UK contracts, and how I would position Wipro against each.",["13 firms","AI partnerships"]],
+ ["deal-shaping","A7","Deals","commercial m1","Pricing models, UK and offshore rates, AI productivity evidence, renewal step-downs and a deal margin calculator with placeholder figures.",["5 pricing models","Margin calculator"]],
+ ["pursuits","A8","Pursuits","commercial clients m1","A bid or no-bid scorecard on MEDDPICC, a seven-stage plan with Shipley gates, Procurement Act rules and a proposal structure.",["Scorecard","7 stages"]],
+ ["workshops","A9","Workshops","clients ai m1","Executive workshop formats, a builder that returns an agenda, a value against feasibility grid and a checklist to a qualified opportunity.",["5 formats","Workshop builder"]],
+ ["ai-engagement","A10","AI Engagement","ai clients en","An AI customer engagement model with Claude and Gemini, a value against feasibility chart of 14 CX use cases and a human oversight slider.",["Claude and Gemini","14 use cases"]],
+ ["first-months","A11","First Months","plan en","My first year in three phases, listen, decide and deliver: who I meet, how I review accounts and how pipeline builds into order book.",["3 phases","12 months"]],
+ ["banking","A12","Banking Pursuit","clients commercial m1 m2","A worked pursuit at an illustrative UK bank: forcing events, quality engineering and payments resilience as the entry offer, land and expand, MEDDPICC and a margin sketch.",["22 dates","4 phases"]],
  ["ai","","AI Workflow","ai about","The AI routines I would bring to a pursuit team: account research, RFP drafting, competitor watch and workshop preparation.",["Claude","Gemini"]],
  ["method","","Method","ai about","How this analysis was made: the research, page and review agents, what each was given and produced, and the checks every page passed.",["Agents","391 claims"]],
 ];
 var ch=document.getElementById("ov-cards");
 C.forEach(function(c){
  var a=document.createElement("a");a.className="ov-c rv"+(c[6]?" feat":"");a.href=c[0]+".html";a.dataset.g=c[3];
- a.innerHTML='<svg class="th" viewBox="0 0 64 36" aria-hidden="true">'+TH[c[0]]+'</svg>'+(c[1]?'<span class="cd">'+c[1]+'</span>':'<span class="cd">About me</span>')+'<h3></h3><p class="sm"></p><div class="chips"></div>';
+ var gs=c[3].split(" "),mv=(gs.indexOf("m1")>=0?'<i>Move 1</i>':'')+(gs.indexOf("m2")>=0?'<i class="b">Move 2</i>':'')+(gs.indexOf("en")>=0?'<i class="e">Enabler</i>':'');
+ a.innerHTML='<svg class="th" viewBox="0 0 64 36" aria-hidden="true">'+TH[c[0]]+'</svg>'+(c[1]?'<span class="cd">'+c[1]+'</span>':'<span class="cd">About me</span>')+'<h3></h3><p class="sm"></p>'+(mv?'<span class="mv">'+mv+'</span>':'')+'<div class="chips"></div>';
  a.querySelector("h3").textContent=c[2];a.querySelector(".sm").textContent=c[4];a.setAttribute("aria-label",(c[1]?c[1]+" ":"")+c[2]+": "+c[4]);
  c[5].forEach(function(t){var s=document.createElement("span");s.className="chip";s.textContent=t;a.querySelector(".chips").appendChild(s)});
  ch.appendChild(a);
 });
 var cn=document.getElementById("ov-count");
-function filt(f){var n=0;[].forEach.call(ch.children,function(a){var on=f==="all"||a.dataset.g.split(" ").indexOf(f)>=0;a.hidden=!on;if(on)n++});cn.textContent="Showing "+n+" of "+C.length+" pages."}
-[].forEach.call(document.querySelectorAll("#ov-filter button"),function(b){b.addEventListener("click",function(){
- [].forEach.call(document.querySelectorAll("#ov-filter button"),function(x){x.setAttribute("aria-pressed",x===b)});filt(b.dataset.f)})});
-filt("all");
+var MVN={m1:"Move 1: expand",m2:"Move 2: new logos"};
+function filt(f){var n=0;[].forEach.call(ch.children,function(a){var on=f==="all"||a.dataset.g.split(" ").indexOf(f)>=0;a.hidden=!on;a.classList.toggle("hm1",f==="m1");a.classList.toggle("hm2",f==="m2");if(on)n++});cn.textContent="Showing "+n+" of "+C.length+" pages"+(MVN[f]?" that support "+MVN[f]:"")+"."}
+function setF(f){[].forEach.call(document.querySelectorAll("#ov-filter button"),function(x){x.setAttribute("aria-pressed",x.dataset.f===f)});filt(f)}
+function setM(m){[].forEach.call(document.querySelectorAll("#ov-mvsel button"),function(x){x.setAttribute("aria-pressed",x.dataset.m===m)});
+ document.getElementById("ov-col-m1").classList.toggle("off",m==="m2");document.getElementById("ov-col-m2").classList.toggle("off",m==="m1");
+ document.getElementById("ov-mvnote").innerHTML=MVN[m]?'The page grid below now shows the pages behind '+MVN[m]+'. <a href="#ov-filter">Go to the pages</a>':'Select a move to highlight its pages in the page grid below.'}
+[].forEach.call(document.querySelectorAll("#ov-filter button"),function(b){b.addEventListener("click",function(){var f=b.dataset.f;setF(f);setM(MVN[f]?f:"all")})});
+[].forEach.call(document.querySelectorAll("#ov-mvsel button"),function(b){b.addEventListener("click",function(){setM(b.dataset.m);setF(b.dataset.m)})});
+setF("all");setM("all");
+/* mini: clients above US$100m */
+var cs=document.getElementById("ov-st100"),CV=[["FY24",22],["FY25",17],["FY26",16],["Q2 FY27",18]];
+CV.forEach(function(d,i){var x=4+i*66,h=d[1]*1.1,last=i===CV.length-1;VZ.el("rect",{x:x,y:28-h,width:30,height:h,rx:2,style:"fill:"+(last?"var(--accent)":"var(--ink3)")},cs);
+ var t=VZ.el("text",{x:x+36,y:26,"class":"tv"},cs);t.textContent=d[1];var l=VZ.el("text",{x:x,y:39},cs);l.textContent=d[0]});
 })();
 </script>
 
