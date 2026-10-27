@@ -102,10 +102,10 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
   <div class="viz rv">
     <div class="viz-h"><h3>Pursuit stages and who carries them</h3><p>My involvement peaks in shaping and solution design. Select a stage.</p></div>
     <div class="tabs" role="tablist" aria-label="Client sector" id="pu-sect" style="margin:0 0 12px">
-      <button role="tab" aria-selected="true" aria-controls="pu-lanehost" data-s="pri">Private sector</button>
-      <button role="tab" aria-selected="false" aria-controls="pu-lanehost" data-s="pub">UK public sector</button>
+      <button role="tab" aria-selected="true" data-s="pri">Private sector</button>
+      <button role="tab" aria-selected="false" data-s="pub">UK public sector</button>
     </div>
-    <div id="pu-lanehost" role="tabpanel"><div id="pu-lane" class="pu-lane"></div></div>
+    <div id="pu-lanehost"><div id="pu-lane" class="pu-lane"></div></div>
     <div id="pu-sd" aria-live="polite"></div>
     <p class="src" style="margin-top:10px">Gates from Shipley (Pursuit, Bid and Bid validation). Colour reviews from Shipley practice guides. Involvement levels are my estimate.</p>
   </div>
@@ -132,10 +132,10 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
   <div class="viz rv">
     <div class="viz-h"><h3>Share of proposal pages by section</h3><p>Solution and delivery take about half the pages in both cases. Select a section for its contents.</p></div>
     <div class="tabs" role="tablist" aria-label="Proposal type" id="pu-ptype" style="margin:0 0 12px">
-      <button role="tab" aria-selected="true" aria-controls="pu-prophost" data-t="0">Private-sector RFP</button>
-      <button role="tab" aria-selected="false" aria-controls="pu-prophost" data-t="1">UK public tender</button>
+      <button role="tab" aria-selected="true" data-t="0">Private-sector RFP</button>
+      <button role="tab" aria-selected="false" data-t="1">UK public tender</button>
     </div>
-    <div id="pu-prophost" role="tabpanel"><div id="pu-prop" class="pu-prop"></div></div>
+    <div id="pu-prophost"><div id="pu-prop" class="pu-prop"></div></div>
     <div id="pu-pd" class="pu-pd" aria-live="polite"></div>
     <p class="src" style="margin-top:10px">Page shares are my estimate for a 40 to 60 page response. In a public tender the real split comes from the published criteria and weightings (s.19).</p>
   </div>
@@ -144,14 +144,14 @@ main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;st
 <section class="sec" aria-labelledby="pu-h5">
   <span class="eyebrow">My record</span>
   <h2 id="pu-h5">Pitches and bids I have led</h2>
-  <p class="intro">I have led business development, pitches and bids for 16 years, at Foster + Partners, SOM and WSP, and now run sales and commercial operations at Atlas Learn.</p>
+  <p class="intro">I have won work through outreach, pitches and bids since 2010, at Foster + Partners, SOM and WSP. I now run sales, marketing and commercial operations at Atlas Learn.</p>
   <div class="pu-rec">
     <div class="panel rv"><b class="big">£10m+</b><h3>Foster + Partners</h3><p>As Associate Partner I led pitches, bids and competition entries that won more than £10 million a year in fees. I co-created and launched a strategic advisory service line covering corporate environmental strategy, digital transformation and spatial consulting.</p></div>
     <div class="panel rv"><b class="big">Multi-year</b><h3>Global pharma contract</h3><p>I pitched, negotiated and won a multi-year contract with a global pharmaceutical company. My presentations to Fortune 500 chief executives helped the design studios win contracts worth more than £10 million.</p></div>
     <div class="panel rv"><b class="big">$3m+</b><h3>SOM, New York</h3><p>I led business development for my department, presented to executives at major Wall Street banks and won more than $3 million a year in fees.</p></div>
     <div class="panel rv"><b class="big">$2m+</b><h3>WSP, New York</h3><p>I won more than $2 million a year in fees through cold and warm outreach, pitches and bids for public and private clients.</p></div>
   </div>
-  <div class="callout rv"><p><b>How this carries over to IC&amp;D.</b> In each role I qualified hard, shaped the scope with the client before the formal request, and built the bid around the client's own measures. In IC&amp;D pursuits I would do the same with the account team, the Wipro practices and alliance partners such as Google Cloud and Anthropic.</p></div>
+  <div class="callout rv"><p><b>How this carries over to IC&amp;D.</b> At each firm I won fees through outreach, pitches and bids, and presented to senior client executives. In IC&amp;D pursuits I would bring the same work to the account team, alongside the Wipro practices and alliance partners such as Google Cloud and Anthropic.</p></div>
 </section>
 
 <section class="sources">
@@ -264,7 +264,7 @@ var ST=[
  {n:"Close and handover",me:1,ac:3,pt:1,my:["Hand over the solution, assumptions and KPIs to delivery","Run the win or loss review"],at:["Own the contract signature and account growth plan","Plan the next opportunity in the account"],out:["Handover pack and KPI baseline","Win or loss lessons"],pri:"Agree the first quarterly business review and the measures it will report.",pub:"An eight working day standstill follows the award notice (s.51). KPI performance is published at least every 12 months."}
 ];
 var sector="pri",sel=2;
-function drawLane(){var h=$("pu-lane");h.innerHTML="";var W=wOf(h),nar=W<640,LW=nar?0:118,top=nar?40:34,rh=nar?34:38,H=top+3*rh+12;
+function drawLane(){var h=$("pu-lane");h.innerHTML="";var W=wOf(h),nar=W<640,LW=nar?0:118,top=nar?40:34,rh=nar?46:38,H=top+3*rh+26;
  var s=VZ.svg(h,W,H,"Seven pursuit stages with involvement of me, the account team and the pursuit team");s.setAttribute("role","group");
  var cw=(W-LW)/ST.length;var lanes=[["Me","me","var(--accent)"],["Account team","ac","var(--s2)"],["Pursuit team","pt","var(--s3)"]];
  if(!nar)lanes.forEach(function(l,j){VZ.el("text",{x:0,y:top+j*rh+rh/2+4,"class":"t-strong"},s).textContent=l[0]});
@@ -272,12 +272,13 @@ function drawLane(){var h=$("pu-lane");h.innerHTML="";var W=wOf(h),nar=W<640,LW=
   VZ.el("rect",{x:x0+2,y:0,width:cw-4,height:H,rx:5,"class":"hit"},g);
   var lab=nar?String(i+1):st.n;var t=VZ.el("text",{x:x0+cw/2,y:nar?22:20,"text-anchor":"middle","class":i===sel?"t-strong":"",style:"font-size:"+(nar?13:12.5)+"px"},g);
   if(!nar&&st.n.indexOf(" ")>0&&cw<120){var p=st.n.split(" ");t.setAttribute("y",12);var a=VZ.el("tspan",{x:x0+cw/2,dy:0},t);a.textContent=p[0];var b=VZ.el("tspan",{x:x0+cw/2,dy:13},t);b.textContent=p.slice(1).join(" ")}else t.textContent=lab;
-  lanes.forEach(function(l,j){var v=st[l[1]],cy=top+j*rh+rh/2;VZ.el("line",{x1:x0,x2:x0+cw,y1:cy,y2:cy,"class":"grid"},g);
-   if(v>0)VZ.el("circle",{cx:x0+cw/2,cy:cy,r:[0,5,9,13][v]*(nar?.85:1),fill:l[2],opacity:[0,.45,.75,1][v]},g);
-   if(nar&&i===0)VZ.el("text",{x:2,y:cy-rh/2+10,"class":"t-muted",style:"font-size:10px"},s).textContent=l[0]});
-  if(st.g){var gx=x0+cw,gy=top-12;VZ.el("path",{d:"M"+gx+","+(gy-6)+"l6,6l-6,6l-6,-6z",fill:"var(--accent)"},s)}
+  lanes.forEach(function(l,j){var v=st[l[1]],cy=top+j*rh+rh/2;VZ.el("line",{x1:x0,x2:x0+cw,y1:cy+(nar?6:0),y2:cy+(nar?6:0),"class":"grid"},g);
+   if(v>0)VZ.el("circle",{cx:x0+cw/2,cy:cy,r:[0,5,9,13][v]*(nar?.7:1),cy:cy+(nar?6:0),fill:l[2],opacity:[0,.45,.75,1][v]},g);
+   });
   g.addEventListener("click",function(){sel=i;drawLane();showStage()});
   g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();sel=i;drawLane();showStage();h.querySelectorAll(".col")[i].focus()}else if(e.key==="ArrowRight"||e.key==="ArrowLeft"){e.preventDefault();sel=(i+(e.key==="ArrowRight"?1:-1)+ST.length)%ST.length;drawLane();showStage();h.querySelectorAll(".col")[sel].focus()}})});
+ ST.forEach(function(st,i){var x0=LW+i*cw;if(st.g){var gx=x0+cw,gy=H-8;VZ.el("line",{x1:gx,x2:gx,y1:top-4,y2:gy-8,stroke:"var(--accent)","stroke-dasharray":"3 3"},s);VZ.el("path",{d:"M"+gx+","+(gy-6)+"l6,6l-6,6l-6,-6z",fill:"var(--accent)"},s);if(!nar)VZ.el("text",{x:gx+9,y:gy+4,"class":"t-muted"},s).textContent=["","Pursuit gate","Bid gate","","Bid validation"][i]}});
+ if(nar)lanes.forEach(function(l,j){VZ.el("text",{x:2,y:top+j*rh+rh/2-10,"class":"t-muted",style:"font-size:11px;paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px"},s).textContent=l[0]});
 }
 function li(a){return "<ul>"+a.map(function(t){return "<li>"+t+"</li>"}).join("")+"</ul>"}
 function showStage(){var st=ST[sel];

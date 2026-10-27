@@ -1,0 +1,317 @@
+<!--meta title="Workshops" desc="Executive workshop formats for AI, customer experience and modernisation, a workshop builder that returns an agenda, a sample value against feasibility output and a checklist that leads to a qualified opportunity."-->
+<style>
+.ws-fmt .row{cursor:pointer}
+.ws-fmt .row:focus{outline:none}
+.ws-fmt .row .hit{fill:transparent}
+.ws-fmt .row:hover .hit,.ws-fmt .row:focus-visible .hit{fill:var(--grid)}
+.ws-fmt .row.sel .hit{fill:var(--accent-soft)}
+.ws-fd{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:12px;margin-top:12px}
+.ws-fd>div{background:var(--panel);border-radius:6px;padding:14px 16px;font-size:14px}
+.ws-fd h4,.ws-k{font:500 12px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.ws-fd ol,.ws-fd ul{margin:0;padding-left:18px}.ws-fd li{margin-top:3px}
+.ws-flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:18px;font-size:14px}
+.ws-flow span{background:var(--accent-soft);color:var(--accent);border-radius:3px;padding:6px 10px;font-weight:500}
+.ws-flow i{font-style:normal;color:var(--ink3)}
+.ws-b{display:grid;grid-template-columns:300px minmax(0,1fr);gap:20px;margin-top:28px;align-items:start}
+.ws-ctl{background:var(--panel);border-radius:6px;padding:18px 20px 20px;position:sticky;top:120px}
+.ws-ctl fieldset{border:0;margin:0;padding:10px 0 0;min-width:0}
+.ws-ctl fieldset+fieldset{border-top:1px solid var(--line);margin-top:12px}
+.ws-ctl legend{font-size:14px;font-weight:500;padding:0;margin-bottom:8px}
+.ws-ch{display:grid;gap:6px}
+.ws-ch label{cursor:pointer;position:relative}
+.ws-ch input{position:absolute;opacity:0;width:1px;height:1px}
+.ws-ch span{display:block;border:1px solid var(--line);background:var(--bg);border-radius:4px;padding:8px 10px;font-size:13.5px;line-height:1.3}
+.ws-ch span em{display:block;font-style:normal;font-size:12px;color:var(--muted);margin-top:2px}
+.ws-ch input:checked+span{background:var(--accent-soft);border-color:var(--accent);font-weight:500}
+.ws-ch input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.ws-out{min-width:0}
+.ws-sum{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline}
+.ws-sum .big{margin:0}
+.ws-ag .blk{cursor:pointer}
+.ws-ag .blk:focus{outline:none}
+.ws-ag .blk:focus-visible rect.b,.ws-ag .blk:hover rect.b{stroke:var(--ink1);stroke-width:1.5}
+.ws-ag .blk.sel rect.b{stroke:var(--ink1);stroke-width:2.5}
+.ws-sd{margin-top:12px;background:var(--accent-soft);border-radius:6px;padding:12px 16px;font-size:14px;min-height:48px}
+.ws-tb td,.ws-tb th{font-size:13.5px}
+.ws-mo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.ws-mo>div{background:var(--panel);border-radius:6px;padding:14px 16px;font-size:14px}
+.ws-mo ul{margin:0;padding-left:18px}.ws-mo li{margin-top:3px}
+.ws-gr{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start}
+.ws-grid .uc{cursor:grab;touch-action:none}
+.ws-grid .uc:focus{outline:none}
+.ws-grid .uc.sel circle.d{stroke:var(--ink1);stroke-width:2.5}
+.ws-grid .uc:focus-visible circle.d{stroke:var(--ink1);stroke-width:2.5}
+.ws-grid .uc.drag{cursor:grabbing}
+.ws-rank{list-style:none;padding:0;margin:0;counter-reset:r}
+.ws-rank li{counter-increment:r;display:grid;grid-template-columns:22px 1fr auto;gap:8px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--line);font-size:13.5px;cursor:pointer}
+.ws-rank li::before{content:counter(r);color:var(--muted);font-variant-numeric:tabular-nums}
+.ws-rank li.sel{font-weight:600}
+.ws-rank .tag{font-size:11px;padding:2px 7px}
+.ws-cl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+.ws-cl>div{background:var(--panel);border-radius:6px;padding:16px 18px}
+.ws-cl h3{font-size:16px;margin-bottom:4px}
+.ws-cl label{display:grid;grid-template-columns:20px 1fr auto;gap:8px;align-items:start;padding:7px 0;border-top:1px solid var(--line);font-size:14px;cursor:pointer}
+.ws-cl label:first-of-type{border-top:0}
+.ws-cl input{accent-color:var(--accent);margin-top:3px;width:16px;height:16px}
+.ws-cl b.l{font:600 11px/1 var(--sans);color:var(--accent);background:var(--accent-soft);border-radius:3px;padding:4px 5px;margin-top:2px}
+.ws-cl label.done span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--ink3)}
+.ws-meter{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px;margin-top:14px}
+.ws-meter div{border-radius:5px;padding:10px 6px;text-align:center;background:var(--panel);border:1px solid var(--line);font-size:11.5px;color:var(--muted);transition:background .2s}
+.ws-meter div b{display:block;font:600 18px/1.1 var(--sans);color:var(--ink3)}
+.ws-meter div.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.ws-meter div.on b{color:var(--on-accent)}
+.ws-state{margin-top:12px;font-size:15px}
+.ws-exp{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:28px}
+main svg .t-strong{paint-order:stroke;stroke:var(--chart-bg);stroke-width:3px;stroke-linejoin:round}
+@media (max-width:980px){.ws-b{grid-template-columns:1fr}.ws-ctl{position:static}.ws-gr{grid-template-columns:1fr}.ws-cl{grid-template-columns:1fr}.ws-exp{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.ws-fd,.ws-mo,.ws-exp{grid-template-columns:1fr}.ws-meter{grid-template-columns:repeat(4,minmax(0,1fr))}main .viz{padding:16px 12px 12px}}
+</style>
+
+<section class="phead">
+  <span class="eyebrow">Executive alignment</span>
+  <h1>Workshops</h1>
+  <p class="lede">This page shows how I would run executive workshops that align business, technology and customer experience priorities. It covers the formats I would draw on, a builder that returns an agenda for a client goal and audience, a sample output and the steps before and after that lead to a qualified opportunity.</p>
+  <p class="meta">Formats from GV, Nielsen Norman Group, Gartner and Wardley mapping sources. Agendas, timings and use-case placements are my judgement, drawn from executive and board training I run at Atlas Learn.</p>
+</section>
+
+<section class="sec" aria-labelledby="ws-h1">
+  <span class="eyebrow">Formats</span>
+  <h2 id="ws-h1">Workshop formats</h2>
+  <p class="intro">Five published formats cover most executive sessions on AI and customer experience. They range from a half-day prioritisation to a five-day design sprint. Select a format for its steps and outputs.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Typical length of each format, in days</h3><p>Only the design sprint needs a full week. The other four fit in one or two days.</p></div>
+    <div id="ws-fmt" class="ws-fmt"></div>
+    <div id="ws-fd" class="ws-fd" aria-live="polite"></div>
+  </div>
+  <p class="kicker" style="margin-top:22px">The sequence I would follow for an executive client, with each step feeding the solution and the price:</p>
+  <div class="ws-flow"><span>Customer journey map</span><i>&rarr;</i><span>Service blueprint</span><i>&rarr;</i><span>Use-case prioritisation</span><i>&rarr;</i><span>Wardley map</span><i>&rarr;</i><span>Design sprint on the top use case</span></div>
+</section>
+
+<section class="sec" aria-labelledby="ws-h2">
+  <span class="eyebrow">Builder</span>
+  <h2 id="ws-h2">Workshop builder</h2>
+  <p class="intro">Choose the client goal and the audience. The builder returns an agenda with sessions, timings, materials and outputs. Board sessions are short and decision-led. Working sessions go further into mapping and scoring.</p>
+  <div class="ws-b">
+    <div class="ws-ctl" id="ws-ctl"></div>
+    <div class="ws-out">
+      <div class="ws-sum" aria-live="polite"><span class="big" id="ws-len"></span><span class="mini" id="ws-meta"></span></div>
+      <div class="viz" style="margin-top:12px">
+        <div class="viz-h"><h3 id="ws-agt">Agenda</h3><p>Each block is a session, sized by its length and numbered as in the table. Select one for detail.</p></div>
+        <div class="legend" id="ws-lg"></div><div id="ws-ag" class="ws-ag"></div>
+        <div id="ws-sd" class="ws-sd" aria-live="polite"></div>
+      </div>
+      <div class="tw"><table class="t ws-tb"><thead><tr><th>Time</th><th>Session</th><th>Format</th><th>Output</th></tr></thead><tbody id="ws-tb"></tbody></table></div>
+      <div class="ws-mo"><div><p class="ws-k">Materials to prepare</p><ul id="ws-mat"></ul></div><div><p class="ws-k">Outputs the client keeps</p><ul id="ws-outl"></ul></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="ws-h3">
+  <span class="eyebrow">Sample output</span>
+  <h2 id="ws-h3">Value against feasibility</h2>
+  <p class="intro">This is the grid an executive team fills in during use-case prioritisation, using the four zones of Gartner's use-case prism. The use cases are an example set for a UK insurer's customer service. Drag a use case, or select it and use the arrow keys, and the backlog re-ranks.</p>
+  <div class="ws-gr">
+    <div class="viz rv" style="margin-top:20px">
+      <div class="viz-h"><h3>Customer service use cases, example placement</h3><p>Agent assist and summaries sit in likely wins. Automated decisions score high on value and low on feasibility.</p></div>
+      <div id="ws-grid" class="ws-grid"></div>
+      <div class="btnrow"><button type="button" id="ws-reset">Reset positions</button></div>
+      <p class="src" style="margin-top:8px">Placements are my judgement for illustration. Zone names from Gartner's use-case prism.</p>
+    </div>
+    <div class="panel rv" style="margin-top:20px">
+      <h3>Backlog after the workshop</h3>
+      <p class="mini">Ranked by value times feasibility.</p>
+      <ol class="ws-rank" id="ws-rank"></ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="ws-h4">
+  <span class="eyebrow">Before and after</span>
+  <h2 id="ws-h4">From workshop to qualified opportunity</h2>
+  <p class="intro">A workshop is worth running when it moves the opportunity forward. Each task below confirms one of the eight MEDDPICC elements. Tick tasks as they are done and the meter shows how close the opportunity is to the pursuit gate.</p>
+  <div class="ws-meter" id="ws-meter" aria-live="polite"></div>
+  <p class="ws-state" id="ws-state"></p>
+  <div class="ws-cl" id="ws-cl"></div>
+</section>
+
+<section class="sec" aria-labelledby="ws-h5">
+  <span class="eyebrow">My experience</span>
+  <h2 id="ws-h5">Executive sessions I have run</h2>
+  <p class="intro">I design and deliver AI training for executive teams and boards at Atlas Learn. At Foster + Partners I presented to Fortune 500 chief executives and was the main technical contact for international developers and institutional clients.</p>
+  <div class="ws-exp">
+    <div class="panel rv"><b class="big"><b class="count" data-to="250" data-suffix="+">250+</b></b><h3>Senior professionals trained</h3><p>I have trained more than 250 senior professionals to use Claude Code, Cowork and other AI tools in workshops in Central London.</p></div>
+    <div class="panel rv"><b class="big">Board</b><h3>FinTech board training</h3><p>I designed and delivered AI training for the board of directors of a FinTech company, and for another client's chief executive and its heads of HR, marketing and IT.</p></div>
+    <div class="panel rv"><b class="big">CEO</b><h3>Fortune 500 presentations</h3><p>My presentations to Fortune 500 chief executives helped the Foster + Partners design studios win contracts worth more than £10 million. Clients included Roche, Genentech, Apple, Oracle and JPMorgan Chase.</p></div>
+    <div class="panel rv"><b class="big">Teaching</b><h3>Imperial College London</h3><p>I teach as an Industry Partner Instructor in Civil and Environmental Engineering, and I hold Anthropic credentials in AI Fluency, Claude Code, Cowork and the Claude Platform.</p></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Sources</h2>
+  <ol>
+    <li>GV, The Design Sprint. gv.com/sprint. Primary.</li>
+    <li>UXPin, Design sprints guide (team size and roles). uxpin.com/studio/blog/design-sprints. Press.</li>
+    <li>Gartner, Use-Case Prism: Generative AI for Government Contact Centers, 2024 (abstract). gartner.com/en/doc/797822. Press (paywalled, abstract only).</li>
+    <li>Nielsen Norman Group, Journey Mapping 101 (Gibbons, December 2018, reviewed July 2026). nngroup.com/articles/journey-mapping-101. Primary.</li>
+    <li>Nielsen Norman Group, Service Blueprints: Definition (Gibbons, August 2017, reviewed July 2026). nngroup.com/articles/service-blueprints-definition. Primary.</li>
+    <li>WardleyMaps, What is Wardley mapping (FAQ); Cynefin wiki, Wardley mapping. wardleymaps.com; cynefin.io. Press.</li>
+    <li>Arpan Bakshi, CV (Atlas Learn, Foster + Partners and teaching roles). Primary.</li>
+  </ol>
+</section>
+
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+function wOf(h){return Math.max(290,h.clientWidth||700)}
+function li(a){return a.map(function(t){return "<li>"+t+"</li>"}).join("")}
+
+/* formats */
+var F=[
+ {n:"GV design sprint",a:4,b:5,st:["Map the problem and pick a target","Sketch solutions","Decide and storyboard","Build a realistic prototype","Test with five customers"],o:["Agreed long-term goal and target","Storyboard and prototype","Findings from five customer interviews","Go, stop or iterate decision"],s:"GV; team of about seven with a facilitator and a decider (UXPin)"},
+ {n:"AI use-case prioritisation",a:.5,b:2,st:["Long-list use cases","Score value and feasibility","Plot on a two by two grid"],o:["Prioritised backlog in four zones: likely wins, calculated risks, marginal gains and selective exceptions"],s:"Gartner use-case prism"},
+ {n:"Customer journey mapping",a:1,b:2,st:["Define the actor and scenario","Set out the phases","Record actions, thoughts and emotions","Mark opportunities"],o:["Shared customer journey map","Opportunities with owners and measures"],s:"Nielsen Norman Group"},
+ {n:"Service blueprinting",a:1,b:2,st:["Customer actions","Front-stage contact","Back-stage work","Support processes","Evidence"],o:["Blueprint showing where AI agents or assist tools sit behind each touchpoint, and the dependencies"],s:"Nielsen Norman Group"},
+ {n:"Wardley mapping",a:.5,b:1,st:["Start from the user need","Lay out the value chain","Place each component on the evolution axis"],o:["Build, buy or partner decisions","What to treat as a commodity, such as foundation models, and where to differentiate"],s:"WardleyMaps and Cynefin wiki"}
+];
+var fsel=1;
+function drawF(){var h=$("ws-fmt");h.innerHTML="";var W=wOf(h),nar=W<560,LW=nar?0:190,rh=nar?50:36,top=4,H=top+F.length*rh+24;
+ var s=VZ.svg(h,W,H,"Range bars of typical workshop length in days for five formats");var x=VZ.lin(0,5,LW+4,W-16);
+ for(var d=0;d<=5;d++){VZ.el("line",{x1:x(d),x2:x(d),y1:top,y2:H-20,"class":"grid"},s);VZ.el("text",{x:x(d),y:H-4,"text-anchor":"middle","class":"t-muted"},s).textContent=d+(d===1?" day":d?" days":"")}
+ F.forEach(function(f,i){var y=top+i*rh,g=VZ.el("g",{"class":"row"+(i===fsel?" sel":""),role:"button",tabindex:0,"aria-pressed":i===fsel,"aria-label":f.n+", "+f.a+" to "+f.b+" days"},s);
+  VZ.el("rect",{x:0,y:y,width:W,height:rh,rx:4,"class":"hit"},g);
+  var by=nar?y+24:y+9,bh=nar?16:rh-18;
+  VZ.el("text",{x:nar?4:LW-10,y:nar?y+17:y+rh/2+4,"text-anchor":nar?"start":"end","class":i===fsel?"t-strong":""},g).textContent=f.n;
+  VZ.el("rect",{x:x(f.a),y:by,width:Math.max(6,x(f.b)-x(f.a)),height:bh,rx:bh/2,fill:"var(--s"+(i+1)+")"},g);
+  VZ.el("text",{x:x(f.b)+8,y:by+bh/2+4,"class":"t-muted"},g).textContent=(f.a===f.b?f.a:(f.a===.5?"½":f.a)+" to "+f.b)+(f.b>1?" days":" day");
+  if(x(f.b)+70>W)g.lastChild.setAttribute("x",x(f.a)-8),g.lastChild.setAttribute("text-anchor","end");
+  g.addEventListener("click",function(){fsel=i;drawF();showF()});
+  g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();fsel=i;drawF();showF();$("ws-fmt").querySelectorAll(".row")[i].focus()}})});
+}
+function showF(){var f=F[fsel];$("ws-fd").innerHTML='<div><h4>'+f.n+': steps</h4><ol>'+li(f.st)+'</ol></div><div><h4>Outputs</h4><ul>'+li(f.o)+'</ul><p class="src" style="margin-top:8px">Source: '+f.s+'</p></div>'}
+
+/* builder */
+var G={
+ cx:{n:"AI-led customer experience",d:"Where AI should change how customers are served",s:[
+  ["Goals and measures","f",[15,20,30],"Sponsor framing and round-table","Interview summary and current measures","Agreed goal and three success measures"],
+  ["What AI does in customer service","e",[20,25,30],"Evidence briefing","Evidence pack: NBER, Klarna, Gartner and UK bank cases","Shared view of gains and risks"],
+  ["Customer journey walk-through","m",[25,40,70],"Customer journey map of one priority journey","Draft customer journey map, contact volumes and complaint data","Pain points and opportunities"],
+  ["Service blueprint","m",[0,30,60],"Front-stage and back-stage mapping","Blueprint template and process owners","Where agent assist or AI agents fit"],
+  ["Use-case scoring","p",[30,40,70],"Value against feasibility grid","Use-case cards and scoring sheet","Prioritised backlog"],
+  ["Guardrails and regulation","e",[15,20,30],"Briefing and discussion","Consumer Duty, ICO automated decision and EU AI Act notes","Risk tolerances and human-in-the-loop rules"],
+  ["Build, buy or partner","p",[0,0,45],"Wardley map","Component list including Gemini, Claude and current contact-centre platform","Platform choices"],
+  ["Decision and next steps","d",[15,20,30],"Decider confirms the pilot","Draft pilot charter","Pilot choice, sponsor and 30-day plan"]]},
+ mod:{n:"Modernisation business case",d:"Which applications to modernise, retire or keep, and why",s:[
+  ["Goals and measures","f",[15,20,30],"Sponsor framing","Interview summary","Agreed drivers: cost, risk and speed of change"],
+  ["Cost of the current estate","e",[20,30,40],"Briefing on run cost and risk","Application inventory, run cost and incident data","Baseline for the business case"],
+  ["Portfolio review","m",[30,45,75],"Application portfolio rationalisation","Portfolio heat map by business value and technical health","Retain, modernise, replace and retire groups"],
+  ["Customer and colleague impact","m",[0,25,45],"Customer journey map of one affected service","Draft customer journey map","Where modernisation changes the experience"],
+  ["Modernisation options","p",[20,30,50],"Options comparison","Rehost, re-platform, refactor and re-architect patterns, AI-assisted code analysis","Preferred option per group"],
+  ["Platform map","p",[0,0,45],"Wardley map","Component list","What to buy as a commodity and what to build"],
+  ["Decision and next steps","d",[15,20,30],"Decider confirms scope","Draft business case outline","Scope for a funded assessment"]]},
+ ado:{n:"AI adoption across the business",d:"How leaders and teams start using AI safely at scale",s:[
+  ["Goals and measures","f",[15,20,30],"Sponsor framing","Interview summary and current tool use","Agreed adoption goals"],
+  ["Hands-on with Claude and Gemini","e",[30,45,75],"Guided exercises on real tasks","Prepared prompts, sample documents and accounts","Leaders who have used the tools on their own work"],
+  ["Where the time goes","m",[0,30,60],"Task mapping by function","Task lists from each function","Tasks AI can assist, draft or automate"],
+  ["Use-case scoring","p",[25,35,60],"Value against feasibility grid","Use-case cards and scoring sheet","Prioritised list of team use cases"],
+  ["Policy and guardrails","e",[15,25,30],"Briefing and discussion","Data, privacy and model-use policy draft","Rules for data, review and disclosure"],
+  ["Adoption plan","p",[0,25,45],"Planning in groups","Training tiers and champion model","Training plan, champions and measures"],
+  ["Decision and next steps","d",[15,20,30],"Decider confirms the programme","Draft programme outline","First cohort, owners and dates"]]}
+};
+var A={board:{n:"Board or executive committee",d:"About two and a half hours",i:0,st:14*60},exec:{n:"Executive leadership team",d:"Half a day",i:1,st:9*60},work:{n:"Business and technology leads",d:"A full day",i:2,st:9*60}};
+var TY={f:["Framing","var(--s1)"],e:["Briefing","var(--s4)"],m:["Mapping","var(--s3)"],p:["Prioritising","var(--s2)"],d:["Decision","var(--s7)"],b:["Break","var(--grid)"]};
+var ctl=$("ws-ctl");
+ctl.innerHTML='<h3 style="font-size:16px">Set up the workshop</h3><fieldset><legend>Client goal</legend><div class="ws-ch">'+Object.keys(G).map(function(k,i){return '<label><input type="radio" name="ws-g" value="'+k+'"'+(i===0?' checked':'')+'><span>'+G[k].n+'<em>'+G[k].d+'</em></span></label>'}).join("")+'</div></fieldset><fieldset><legend>Audience</legend><div class="ws-ch">'+Object.keys(A).map(function(k,i){return '<label><input type="radio" name="ws-a" value="'+k+'"'+(i===1?' checked':'')+'><span>'+A[k].n+'<em>'+A[k].d+'</em></span></label>'}).join("")+'</div></fieldset>';
+var agenda=[],asel=0;
+function fmt(m){var h=Math.floor(m/60),mm=m%60;return (h<10?"0":"")+h+":"+(mm<10?"0":"")+mm}
+function build(){var g=G[ctl.querySelector('[name=ws-g]:checked').value],a=A[ctl.querySelector('[name=ws-a]:checked').value];
+ var t=a.st,run=0,list=[];
+ g.s.forEach(function(x){var m=x[2][a.i];if(!m)return;
+  if(a.i===2&&run>=150&&!list.some(function(z){return z.lunch})){list.push({n:"Lunch",ty:"b",m:45,lunch:1,t:t});t+=45;run=0}
+  else if(run>=90&&a.i>0){list.push({n:"Break",ty:"b",m:15,t:t});t+=15;run=0}
+  else if(run>=75&&a.i===0){list.push({n:"Break",ty:"b",m:10,t:t});t+=10;run=0}
+  list.push({n:x[0],ty:x[1],m:m,f:x[3],mat:x[4],o:x[5],t:t});t+=m;run+=m});
+ var no=0;list.forEach(function(z){if(z.ty!=="b")z.no=++no});agenda=list;asel=list.findIndex(function(z){return z.ty==="p"});if(asel<0)asel=0;
+ var tot=t-a.st;$("ws-len").textContent=Math.floor(tot/60)+" h "+(tot%60?tot%60+" min":"");
+ $("ws-meta").textContent=g.n+" for the "+a.n.toLowerCase()+", "+fmt(a.st)+" to "+fmt(t)+". "+list.filter(function(z){return z.ty!=="b"}).length+" sessions.";
+ $("ws-agt").textContent="Agenda: "+g.n;
+ $("ws-tb").innerHTML=list.map(function(z){return '<tr'+(z.ty==="b"?' style="color:var(--muted)"':'')+'><td class="n">'+fmt(z.t)+'</td><th>'+z.n+'<span class="sub">'+z.m+' min</span></th><td>'+(z.f||"")+'</td><td>'+(z.o||"")+'</td></tr>'}).join("");
+ var real=list.filter(function(z){return z.ty!=="b"});
+ $("ws-mat").innerHTML=li(real.map(function(z){return z.mat}));$("ws-outl").innerHTML=li(real.map(function(z){return z.o}));
+ drawAg();showAg()}
+function drawAg(){var h=$("ws-ag");h.innerHTML="";var W=wOf(h),nar=W<560;var tot=agenda.reduce(function(a,b){return a+b.m},0);
+ if(nar){var rh=34,H=agenda.length*rh+4,s=VZ.svg(h,W,H,"Agenda as a list of session blocks");var x=VZ.lin(0,80,92,W-8);
+  agenda.forEach(function(z,i){var y=i*rh,g=VZ.el("g",{"class":"blk"+(i===asel?" sel":""),role:"button",tabindex:0,"aria-label":fmt(z.t)+" "+z.n+", "+z.m+" minutes"},s);
+   VZ.el("text",{x:0,y:y+21,"class":"t-muted"},g).textContent=fmt(z.t);
+   VZ.el("rect",{x:44,y:y+4,width:44,height:rh-8,rx:3,fill:TY[z.ty][1],"class":"b"},g);
+   VZ.el("text",{x:66,y:y+21,"text-anchor":"middle",style:"font-size:11px;font-weight:600;fill:"+(z.ty==="b"?"var(--ink2)":"var(--chart-bg)")},g).textContent=z.m+"m";
+   VZ.el("text",{x:96,y:y+21,"class":i===asel?"t-strong":""},g).textContent=(z.no?z.no+". ":"")+z.n;bindAg(g,i)});return}
+ var H=112,s=VZ.svg(h,W,H,"Agenda as a timeline of session blocks"),x=VZ.lin(0,tot,0,W),c=0;
+ agenda.forEach(function(z,i){var x0=x(c),w=x(c+z.m)-x0,g=VZ.el("g",{"class":"blk"+(i===asel?" sel":""),role:"button",tabindex:0,"aria-label":fmt(z.t)+" "+z.n+", "+z.m+" minutes"},s);
+  VZ.el("rect",{x:x0+1,y:34,width:Math.max(2,w-2),height:50,rx:3,fill:TY[z.ty][1],"class":"b"},g);
+  if(w>30)VZ.el("text",{x:x0+w/2,y:63,"text-anchor":"middle",style:"font-size:11.5px;font-weight:600;fill:"+(z.ty==="b"?"var(--ink2)":"var(--chart-bg)")},g).textContent=z.m+(w>46?" min":"");
+  VZ.el("text",{x:x0+3,y:26,"class":"t-muted"},g).textContent=w>34?fmt(z.t):"";
+  if(z.ty!=="b"){VZ.el("text",{x:x0+w/2,y:104,"text-anchor":"middle","class":i===asel?"t-strong":"t-muted"},g).textContent=z.no}
+  c+=z.m;bindAg(g,i)});
+ VZ.el("text",{x:W,y:26,"text-anchor":"end","class":"t-muted"},s).textContent=fmt(agenda[agenda.length-1].t+agenda[agenda.length-1].m);
+}
+function bindAg(g,i){g.addEventListener("click",function(){asel=i;drawAg();showAg()});g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();asel=i;drawAg();showAg();$("ws-ag").querySelectorAll(".blk")[i].focus()}})}
+function showAg(){var z=agenda[asel];if(!z)return;
+ $("ws-sd").innerHTML=z.ty==="b"?"<b>"+fmt(z.t)+" "+z.n+"</b>, "+z.m+" minutes.":"<b>"+fmt(z.t)+" "+z.n+"</b> ("+z.m+" min, "+TY[z.ty][0].toLowerCase()+"). Format: "+z.f+". Materials: "+z.mat+". Output: "+z.o+"."}
+ctl.addEventListener("change",build);
+$("ws-lg").innerHTML=Object.keys(TY).map(function(k){return '<span><i style="background:'+TY[k][1]+'"></i>'+TY[k][0]+'</span>'}).join("");
+
+/* grid */
+var U0=[["Agent knowledge assistant",8.6,8.4],["Call summaries and wrap-up",6,9.2],["Claims status chatbot",7,7.6],["Complaint triage and routing",7.8,5.6],["Personalised renewal offers",6.4,2.6],["Fraud signal triage",8.4,3.2],["Automated claims decisions",9.3,1.8],["Voice authentication",3.2,4.2],["Multilingual web chat",4.4,7.2],["Sentiment dashboards",2.4,8.4],["Proactive delay notices",5.2,6.4]];
+var SH=["Knowledge","Summaries","Claims chat","Complaints","Renewal offers","Fraud triage","Auto decisions","Voice ID","Web chat","Sentiment","Delay notices"];
+var U=U0.map(function(u){return u.slice()}),usel=0;
+function zone(v,f){return v>=5?(f>=5?["Likely win","a"]:["Calculated risk","w"]):(f>=5?["Marginal gain",""]:["Selective exception","b"])}
+var gs,gx,gy,GW,GH,PL=46,PB=40,PT=10,PR=10;
+function drawGrid(){var h=$("ws-grid");h.innerHTML="";GW=wOf(h);var nar=GW<560;GH=nar?440:470;
+ gs=VZ.svg(h,GW,GH,"Value against feasibility grid with eleven draggable use cases");gs.setAttribute("role","group");
+ gx=VZ.lin(0,10,PL,GW-PR);gy=VZ.lin(0,10,GH-PB,PT);
+ VZ.el("rect",{x:gx(5),y:gy(10),width:gx(10)-gx(5),height:gy(5)-gy(10),fill:"var(--accent-soft)"},gs);
+ [[2.5,9.6,"Calculated risks"],[7.5,9.6,"Likely wins"],[2.5,.5,"Selective exceptions"],[7.5,.5,"Marginal gains"]].forEach(function(q){VZ.el("text",{x:gx(q[0]),y:gy(q[1])+4,"text-anchor":"middle","class":"t-muted",style:"text-transform:uppercase;letter-spacing:.05em;font-size:10.5px"},gs).textContent=q[2]});
+ VZ.el("line",{x1:gx(5),x2:gx(5),y1:gy(0),y2:gy(10),"class":"axis"},gs);VZ.el("line",{x1:gx(0),x2:gx(10),y1:gy(5),y2:gy(5),"class":"axis"},gs);
+ VZ.el("rect",{x:gx(0),y:gy(10),width:gx(10)-gx(0),height:gy(0)-gy(10),fill:"none",stroke:"var(--axis)"},gs);
+ VZ.el("text",{x:(gx(0)+gx(10))/2,y:GH-8,"text-anchor":"middle"},gs).textContent="Feasibility (data, technology, risk) →";
+ var yl=VZ.el("text",{x:14,y:(gy(0)+gy(10))/2,"text-anchor":"middle",transform:"rotate(-90 14 "+(gy(0)+gy(10))/2+")"},gs);yl.textContent="Business value →";
+ U.forEach(function(u,i){var g=VZ.el("g",{"class":"uc"+(i===usel?" sel":""),role:"button",tabindex:0,"aria-label":u[0]+", value "+u[1].toFixed(1)+", feasibility "+u[2].toFixed(1)},gs);
+  var cx=gx(u[2]),cy=gy(u[1]);VZ.el("circle",{cx:cx,cy:cy,r:16,fill:"transparent"},g);
+  VZ.el("circle",{"class":"d",cx:cx,cy:cy,r:7,fill:i===usel?"var(--accent)":"var(--s1)",stroke:"var(--chart-bg)","stroke-width":2},g);
+  var right=u[2]<6.8;var t=VZ.el("text",{x:cx+(right?11:-11),y:cy+4,"text-anchor":right?"start":"end","class":"t-strong",style:"font-size:"+(nar?10.5:12)+"px"},g);t.textContent=nar?SH[i]:u[0];
+  dragable(g,i)});
+}
+function dragable(g,i){var on=false;
+ g.addEventListener("pointerdown",function(e){on=true;usel=i;g.setPointerCapture(e.pointerId);g.classList.add("drag");e.preventDefault()});
+ g.addEventListener("pointermove",function(e){if(!on)return;var p=gs.createSVGPoint();p.x=e.clientX;p.y=e.clientY;var q=p.matrixTransform(gs.getScreenCTM().inverse());
+  U[i][2]=Math.max(0,Math.min(10,(q.x-PL)/(GW-PR-PL)*10));U[i][1]=Math.max(0,Math.min(10,(GH-PB-q.y)/(GH-PB-PT)*10));
+  var c=g.querySelectorAll("circle"),t=g.querySelector("text"),cx=gx(U[i][2]),cy=gy(U[i][1]);c[0].setAttribute("cx",cx);c[0].setAttribute("cy",cy);c[1].setAttribute("cx",cx);c[1].setAttribute("cy",cy);var right=U[i][2]<6.8;t.setAttribute("x",cx+(right?11:-11));t.setAttribute("y",cy+4);t.setAttribute("text-anchor",right?"start":"end");rank()});
+ g.addEventListener("pointerup",function(){if(!on)return;on=false;drawGrid();rank();var n=$("ws-grid").querySelectorAll(".uc")[i];if(n)n.focus({preventScroll:true})});
+ g.addEventListener("keydown",function(e){var d={ArrowUp:[.5,0],ArrowDown:[-.5,0],ArrowRight:[0,.5],ArrowLeft:[0,-.5]}[e.key];if(!d)return;e.preventDefault();usel=i;U[i][1]=Math.max(0,Math.min(10,U[i][1]+d[0]));U[i][2]=Math.max(0,Math.min(10,U[i][2]+d[1]));drawGrid();rank();$("ws-grid").querySelectorAll(".uc")[i].focus()});
+ g.addEventListener("focus",function(){if(usel!==i){usel=i;[].forEach.call($("ws-grid").querySelectorAll(".uc"),function(n,k){n.classList.toggle("sel",k===i);n.querySelector("circle.d").setAttribute("fill",k===i?"var(--accent)":"var(--s1)")});rank()}});
+}
+function rank(){var o=U.map(function(u,i){return i}).sort(function(a,b){return U[b][1]*U[b][2]-U[a][1]*U[a][2]});
+ $("ws-rank").innerHTML=o.map(function(i){var z=zone(U[i][1],U[i][2]);return '<li data-i="'+i+'"'+(i===usel?' class="sel"':'')+'><span>'+U[i][0]+'</span><span class="tag '+z[1]+'">'+z[0]+'</span></li>'}).join("")}
+$("ws-rank").addEventListener("click",function(e){var l=e.target.closest("li");if(!l)return;usel=+l.dataset.i;drawGrid();rank()});
+$("ws-reset").addEventListener("click",function(){U=U0.map(function(u){return u.slice()});usel=0;drawGrid();rank()});
+
+/* checklist */
+var M=[["M","Metrics"],["E","Economic buyer"],["D","Decision criteria"],["D","Decision process"],["P","Paper process"],["I","Identified pain"],["C","Champion"],["C","Competition"]];
+var CL=[
+ ["Pre-work, three weeks before",[[0,"Agree the business question and success measures with the sponsor"],[1,"Confirm who owns the budget and that they will attend the decision session"],[5,"Interview four to six stakeholders across business, technology and customer experience"],[0,"Collect contact volumes, CSAT, handling time and run-cost data"],[6,"Ask an internal champion to co-host and present the problem"]]],
+ ["On the day",[[2,"Record the priorities the decider chooses and the criteria behind them"],[7,"Capture rival options, in-house plans and the cost of doing nothing"],[3,"Agree the decision steps and dates for a pilot or assessment"]]],
+ ["Follow-up, within two weeks",[[5,"Send the output pack within 48 hours, with the grid and the customer journey map"],[4,"Confirm the procurement route, framework and contract terms"],[1,"Book the decision meeting with the economic buyer"],[0,"Turn the top use case into a scoped proposal with outcome measures"]]]
+];
+$("ws-cl").innerHTML=CL.map(function(p,pi){return '<div><h3>'+p[0]+'</h3>'+p[1].map(function(it,k){return '<label><input type="checkbox" data-m="'+it[0]+'"><span>'+it[1]+'</span><b class="l" title="'+M[it[0]][1]+'">'+M[it[0]][0]+'</b></label>'}).join("")+'</div>'}).join("");
+function meter(){var boxes=[].slice.call($("ws-cl").querySelectorAll("input")),hit={};boxes.forEach(function(b){b.parentNode.classList.toggle("done",b.checked);if(b.checked)hit[b.dataset.m]=1});
+ var n=Object.keys(hit).length,done=boxes.filter(function(b){return b.checked}).length;
+ $("ws-meter").innerHTML=M.map(function(m,i){return '<div class="'+(hit[i]?"on":"")+'"><b>'+m[0]+'</b>'+m[1]+'</div>'}).join("");
+ $("ws-state").innerHTML=n===8?"<b>All eight elements confirmed.</b> The opportunity is ready for the pursuit gate and the bid/no-bid scorecard on the <a href=\"pursuits.html\">Pursuits</a> page.":"<b>"+n+" of 8</b> MEDDPICC elements confirmed, "+done+" of "+boxes.length+" tasks done."}
+$("ws-cl").addEventListener("change",meter);
+
+function all(){drawF();showF();drawAg();showAg();drawGrid();rank()}
+build();meter();all();
+var rt;addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(all,150)});
+VZ.onTheme(all);
+})();
+</script>

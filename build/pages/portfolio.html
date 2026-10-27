@@ -1,0 +1,359 @@
+<!--meta title="Portfolio" desc="Where Industry Cloud & Digital sits in Wipro, each practice offering mapped to a buyer problem, buyer, partner and proof point, the alliances of 2025 and 2026, and how I would combine offerings for one account."-->
+<style>
+.pf-lay{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;align-items:start}
+.pf-card{background:var(--panel);border-radius:6px;padding:18px 20px;font-size:14.5px;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.pf-card h4,.pf-card .src{grid-column:1/-1}
+@media (max-width:760px){.pf-card{grid-template-columns:1fr}}
+.pf-card h4{font:600 17px/1.25 var(--sans);margin:0 0 6px;color:var(--ink1)}
+.pf-card .k{font:600 11px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);margin:12px 0 4px}
+.pf-card p{margin:0}
+.pf-card .src{margin-top:10px}
+.pf-node{cursor:pointer}
+.pf-node rect{transition:fill .2s,stroke .2s}
+.pf-node:focus-visible{outline:none}
+.pf-node:focus-visible rect{stroke:var(--accent);stroke-width:3}
+.pf-node.sel rect{stroke:var(--ink1);stroke-width:2.5}
+.pf-node.rel rect{stroke:var(--accent);stroke-width:2;stroke-dasharray:4 3}
+.pf-mx .row{cursor:pointer}
+.pf-mx .row:focus-visible{outline:none}
+.pf-mx .row:focus-visible .bgr{stroke:var(--accent);stroke-width:2}
+.pf-mx .row.dim{opacity:.38}
+.pf-offs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pf-off{background:var(--panel);border-radius:6px;padding:18px 20px;font-size:14.5px;border:2px solid transparent;transition:border-color .2s}
+.pf-off.sel{border-color:var(--accent)}
+.pf-off h4{font:600 17px/1.25 var(--sans);margin:0 0 4px;color:var(--ink1)}
+.pf-off dl{display:grid;grid-template-columns:118px 1fr;gap:6px 12px;margin:10px 0 0}
+.pf-off dt{font:600 11px/1.5 var(--sans);text-transform:uppercase;letter-spacing:.04em;color:var(--ink2);padding-top:2px}
+.pf-off dd{margin:0}
+.pf-off .me{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:14px}
+.pf-off .me b{font-weight:600}
+.pf-tl{margin-top:6px}
+.pf-ev{cursor:pointer}
+.pf-ev:focus-visible{outline:none}
+.pf-ev:focus-visible circle,.pf-ev.sel circle{stroke:var(--ink1);stroke-width:2.5}
+.pf-evd{display:grid;grid-template-columns:150px 1fr;gap:4px 18px;background:var(--panel);border-radius:6px;padding:16px 20px;margin-top:14px;font-size:14.5px}
+.pf-evd .d{font:600 20px/1.15 var(--sans);letter-spacing:-.02em;color:var(--ink1)}
+.pf-evd .p{font-size:13px;color:var(--ink2);margin-top:4px}
+.pf-evd .w{margin-top:8px}
+.pf-evd .w b{font-weight:600}
+.pf-build{display:grid;grid-template-columns:320px minmax(0,1fr);gap:20px;align-items:start;margin-top:28px}
+.pf-ctl{background:var(--panel);border-radius:6px;padding:20px 22px}
+.pf-ctl h3{font-size:16px;margin-bottom:4px}
+.pf-ctl p{font-size:13px;color:var(--ink2)}
+.pf-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.pf-chips button{appearance:none;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:3px;padding:7px 10px;font:500 12.5px/1.2 var(--sans);cursor:pointer;text-align:left}
+.pf-chips button[aria-pressed="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.pf-out{display:grid;gap:14px}
+.pf-msg{border:1px solid var(--line);border-radius:6px;padding:16px 18px;font-size:15.5px;background:var(--surface)}
+.pf-msg small,.pf-who small{display:block;font:600 11px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);margin-bottom:6px}
+.pf-who{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pf-who div{background:var(--panel);border-radius:6px;padding:14px 16px;font-size:14px}
+.pf-tag{display:inline-block;font:600 11px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;background:var(--accent-soft);color:var(--accent);border-radius:3px;padding:3px 8px;margin-bottom:8px}
+@media (max-width:980px){.pf-lay,.pf-build{grid-template-columns:minmax(0,1fr)}.pf-offs{grid-template-columns:1fr}}
+@media (max-width:640px){.pf-who{grid-template-columns:1fr}.pf-evd{grid-template-columns:1fr}.pf-off dl{grid-template-columns:1fr;gap:2px}.pf-off dd{margin-bottom:6px}}
+</style>
+
+<section class="phead">
+  <span class="eyebrow">Offerings and alliances</span>
+  <h1>Portfolio</h1>
+  <p class="lede">This page places Industry Cloud &amp; Digital inside Wipro's structure and maps each practice offering in the role to a buyer problem, a UK and Ireland buyer, the partners involved and public proof points. It is an outside reading of Wipro's FY2026 Form 20-F, its results releases and its 2025 and 2026 partner announcements.</p>
+  <p class="meta">Read from Wipro's filings, press releases and web pages on 27 October 2026. Buyer roles, fit ratings and phasing are my judgement and are labelled where they appear.</p>
+</section>
+
+<section class="viz lead-viz rv" aria-labelledby="pf-org-h">
+  <div class="viz-h"><h3 id="pf-org-h">Wipro's structure as the filings describe it</h3><p>IC&amp;D is one of five units in the Technology Services business line, and UK and Ireland clients sit in the Europe market unit. Select a box to read what the sources say and how I would work with it.</p></div>
+  <div class="legend"><span><i style="background:var(--accent)"></i>Industry Cloud &amp; Digital</span><span><i style="background:var(--seq-2)"></i>Client-facing market units</span><span><i style="background:var(--panel);box-shadow:inset 0 0 0 1px var(--axis)"></i>Business lines and units</span><span><i style="background:transparent;box-shadow:inset 0 0 0 2px var(--accent)"></i>Units IC&amp;D works with on a pursuit (my reading)</span></div>
+  <div class="pf-lay">
+    <div id="pf-org"></div>
+    <aside class="pf-card" id="pf-orgcard" aria-live="polite"></aside>
+  </div>
+</section>
+
+<section class="sec">
+  <span class="eyebrow">Practice offerings</span>
+  <h2>Offerings mapped to buyer problems</h2>
+  <p class="intro">The role names ten offerings. For each one I set out the problem it solves, the UK and Ireland buyer who usually owns that problem, the partners involved and the proof points I found in public sources. Where an offering rests on engineering I would sell alongside the practice, I say how I would do that.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Fit between offerings and six buyer problems</h3><p>AI Solutions and Integration touch all six problems, while most offerings have one or two main problems where their lead message should start. My judgement.</p></div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Main problem it solves</span><span><i style="background:transparent;box-shadow:inset 0 0 0 2px var(--accent)"></i>Contributes</span><span>Select a row to open that offering below.</span></div>
+    <div id="pf-mx" class="pf-mx"></div>
+  </div>
+  <div class="tabs" role="tablist" aria-label="Offering families" id="pf-tabs">
+    <button role="tab" id="pf-t-mod" aria-controls="pf-p-mod" aria-selected="true">Modernisation</button>
+    <button role="tab" id="pf-t-eng" aria-controls="pf-p-eng" aria-selected="false">Engineering and quality</button>
+    <button role="tab" id="pf-t-cx" aria-controls="pf-p-cx" aria-selected="false">Experience</button>
+    <button role="tab" id="pf-t-ai" aria-controls="pf-p-ai" aria-selected="false">AI</button>
+  </div>
+  <div role="tabpanel" id="pf-p-mod" aria-labelledby="pf-t-mod"><div class="pf-offs" data-fam="mod"></div></div>
+  <div role="tabpanel" id="pf-p-eng" aria-labelledby="pf-t-eng" hidden><div class="pf-offs" data-fam="eng"></div></div>
+  <div role="tabpanel" id="pf-p-cx" aria-labelledby="pf-t-cx" hidden><div class="pf-offs" data-fam="cx"></div></div>
+  <div role="tabpanel" id="pf-p-ai" aria-labelledby="pf-t-ai" hidden><div class="pf-offs" data-fam="ai"></div></div>
+</section>
+
+<section class="sec">
+  <span class="eyebrow">Alliances</span>
+  <h2>Partner announcements, 2025 to 2026</h2>
+  <p class="intro">Wipro's FY2026 20-F names AWS, Google, Microsoft, Salesforce and SAP as strategic partnerships. The chart adds the dated announcements I found for those and for Anthropic, ServiceNow and Pega, with Wipro's own moves on the bottom row.</p>
+  <div class="viz rv">
+    <div class="viz-h"><h3>Dated partner and company announcements</h3><p>The AI announcements cluster in 2026, with Microsoft in December 2025, then ServiceNow, Anthropic and Google within three months of each other. Select a marker to pin its detail.</p></div>
+    <div class="legend" id="pf-tleg"></div>
+    <div id="pf-tl" class="pf-tl"></div>
+    <div class="pf-evd" id="pf-evd" aria-live="polite"></div>
+    <p class="mini" style="margin-top:10px">Standing partnerships without a dated 2025 or 2026 announcement in my research: Adobe (Platinum Global SI partner, Adobe practice of 860+ accredited consultants) and AWS (Generative AI Services Partner Competency, 2024). Databricks and Harness appear in 2026 releases listed on the Wipro Intelligence page.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <span class="eyebrow">Combined propositions</span>
+  <h2>Combining offerings for one account</h2>
+  <p class="intro">Large UK deals tend to combine several offerings under one outcome. Choose an account type and the offerings to combine. The page lists the buyers, Wipro units and partners to involve and drafts an opening message. The phasing is a placeholder for discussion with delivery.</p>
+  <div class="pf-build">
+    <div class="pf-ctl">
+      <h3>Account and offerings</h3>
+      <p>Start from a preset or switch offerings on and off.</p>
+      <div class="ctl"><label for="pf-acct">Account type</label><select id="pf-acct"></select></div>
+      <p class="k" style="margin-top:16px;font-weight:600">Presets</p><div class="btnrow" role="group" aria-label="Presets" id="pf-pre" style="margin-top:6px"></div><p style="margin-top:14px;font-weight:600">Offerings</p>
+      <div class="pf-chips" role="group" aria-label="Offerings" id="pf-chips"></div>
+    </div>
+    <div class="pf-out">
+      <div class="viz" style="margin-top:0">
+        <div class="viz-h"><h3>Placeholder phasing</h3><p id="pf-gread">Each selected offering appears in the phases where I would expect it to do most of its work.</p></div>
+        <div id="pf-gantt"></div>
+      </div>
+      <div class="pf-msg" aria-live="polite"><span class="pf-tag">Draft message to test</span><div id="pf-msgt"></div></div>
+      <div class="pf-who" id="pf-who"></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <span class="eyebrow">Working with practices and partners</span>
+  <h2>How I would run a joint pursuit</h2>
+  <p class="intro">A combined proposition needs the market unit, several practices and at least one partner to agree one story. This is the sequence I would use, based on how I co-created and sold a new advisory service line at Foster + Partners.</p>
+  <ol class="steps">
+    <li><b>Agree the account view with the client partner</b>Start from the client's dated pressures on the Demand page and the client partner's knowledge of the account. Agree which two or three outcomes the proposition is for.</li>
+    <li><b>Bring the practices into one discovery</b>Invite the IC&amp;D practice specialist, Designit for experience work, Capco for financial services business cases and the AI-Native unit's forward-deployed engineers where agents are in scope.</li>
+    <li><b>Give the partner a named role</b>Ask the Google, Anthropic, Microsoft or package partner's UK account team what they can fund or bring, such as a proof of concept, engineers or a joint executive briefing.</li>
+    <li><b>Test the message in an executive workshop</b>Use the draft message above as a starting point and change it after the client's leaders have reacted to it.</li>
+    <li><b>Shape scope and price with delivery and finance</b>Agree which platform gains, such as WEGA's lab-stated velocity figures, go into the estimate and how much of that benefit is shared with the client in price.</li>
+  </ol>
+  <div class="grid2">
+    <div class="panel"><h3>Building and selling a service line</h3><p>At Foster + Partners I co-created and launched a strategic advisory service line covering corporate environmental strategy, digital transformation and spatial consulting. I led pitches and bids that won more than £10m a year in fees, and presented to Fortune 500 chief executives.</p><p>Earlier, at SOM in New York and at WSP, I ran business development that brought in more than $3m and more than £2m a year through outreach, pitches and bids.</p></div>
+    <div class="panel"><h3>Selling Claude, Gemini and Copilot work</h3><p>As co-founder of Atlas Learn I train executive teams to use AI tools. I have trained more than 250 senior professionals on Claude Code, Cowork and other tools, and delivered board-level training for a FinTech.</p><p>I hold Anthropic credentials in AI Fluency, Claude Code in Action, Claude Cowork and the Claude Platform, and a Microsoft Copilot Studio credential. I use Claude Code, Gemini, NotebookLM, Python and C# in my own work.</p></div>
+  </div>
+</section>
+
+<section class="sources"><details class="more"><summary>Sources</summary><ul>
+<li>Wipro Limited, Form 20-F for the fiscal year ended 31 March 2026, filed 2 June 2026. sec.gov/Archives/edgar/data/1123799/000119312526253514/wit-20260331.htm (primary)</li>
+<li>Wipro Limited, Form 20-F for the fiscal year ended 31 March 2025. sec.gov/Archives/edgar/data/1123799/000095017025076303/wit-20250331.htm (primary)</li>
+<li>Wipro, results press releases Q2 FY26 (Oct 2025), Q3 FY26 (16 Jan 2026), Q4 FY26 (16 Apr 2026), Q1 FY27 (16 Jul 2026), Q2 FY27 (15 Oct 2026). wipro.com/investors (primary)</li>
+<li>Wipro, "Wipro announces AI-Native Business and Platforms Unit", 1 April 2026. wipro.com/newsroom/press-releases/2026/ (primary)</li>
+<li>Wipro, "Wipro wins a £500m strategic deal with UK insurance giant Phoenix Group", 26 March 2025. wipro.com/newsroom/press-releases/2025/wipro-wins-a-pound500m-strategic-deal-with-uk-insurance-giant-phoenix-group/ (primary)</li>
+<li>Wipro, "Wipro advances enterprise AI leadership with an Applied AI Center of Excellence for Claude models powered by Anthropic", 16 June 2026. wipro.com/newsroom/press-releases/2026/ (primary); IT Brief UK coverage, June 2026 (press)</li>
+<li>Wipro, "Wipro and Google Cloud expand partnership to scale AI into core enterprise operations", 27 August 2026; "Wipro partners with Google Cloud to launch agentic AI solutions", 13 August 2025. wipro.com/newsroom (primary)</li>
+<li>Wipro, "Wipro and Microsoft to empower enterprises to transform as Frontier Firms", 12 December 2025. wipro.com/newsroom/press-releases/2025/ (primary)</li>
+<li>Wipro, "Wipro expands ServiceNow partnership to embed agentic AI workflows across core enterprise functions", 28 May 2026. wipro.com/newsroom/press-releases/2026/ (primary)</li>
+<li>Wipro, Agentforce healthcare agents release, March 2025; Agentforce Partner Network recognition, 2025; Salesforce offering page. wipro.com (primary)</li>
+<li>Wipro, RISE with SAP Validated Partner (2025) and Pega Global Elite partner (2025) award pages; Silicon UK, Wipro, Microsoft and SAP RISE migration release, October 2024. wipro.com/about-us/awards-and-recognitions/2025/ (primary); silicon.co.uk (press)</li>
+<li>Wipro, Adobe partner page. wipro.com/partners/adobe/ (primary)</li>
+<li>Wipro, Application Modernization, Migration and Modernization, GenAI Powering Mainframe Modernization, Cloud Assurance, Cloud Native pages. wipro.com/cloud/ (primary)</li>
+<li>Wipro, Wipro Intelligence and WEGA pages. wipro.com/wipro-intelligence/ (primary)</li>
+<li>Designit, About page. designit.com/about (primary)</li>
+<li>Wipro, HM Treasury SIAM press release (2022) and success story. wipro.com/newsroom/press-releases/2022/ (primary)</li>
+<li>PL Capital, Wipro Q2 FY27 results report, 16 October 2026. plindia.com/ResReport/WPRO-16-10-26-PL.pdf (press, broker)</li>
+<li>Bank of England and FCA, "Artificial intelligence in UK financial services 2024", 21 November 2024. bankofengland.co.uk (primary)</li>
+<li>Office for National Statistics, "Artificial intelligence in UK businesses: 2023 to 2026", June 2026. ons.gov.uk (primary)</li>
+<li>GOV.UK, State of Digital Government Review, 21 January 2025. gov.uk/government/publications/state-of-digital-government-review (primary)</li>
+<li>Account-type drivers in the builder are taken from the Demand page; see its sources.</li>
+</ul></details></section>
+
+<script>
+(function(){
+var VZ=window.VZ;
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function responsive(host,draw){var w=-1;function go(){var n=host.clientWidth;if(n&&n!==w){w=n;host.innerHTML="";draw(n)}}go();var t;addEventListener("resize",function(){clearTimeout(t);t=setTimeout(go,120)})}
+function key(el,fn){el.setAttribute("tabindex","0");el.setAttribute("role","button");el.addEventListener("click",fn);el.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();fn()}})}
+function txt(p,x,y,s,cls,anchor){var t=VZ.el("text",{x:x,y:y,"text-anchor":anchor||"start"},p);if(cls)t.setAttribute("class",cls);t.textContent=s;return t}
+
+/* ---------- structure diagram ---------- */
+var N={
+ root:{l:["Wipro IT Services"],k:"top",d:"The IT Services segment is organised two ways: four strategic market units that face clients and four global business lines that own offerings. Wipro reported more than 240,000 employees at 31 March 2026.",w:"I would expect every IC&D pursuit to involve both sides: the market unit that owns the client and the business line that owns the offering.",s:"Form 20-F FY2026"},
+ smu:{l:["Strategic market units"],p:"root",k:"mkt",d:"The four SMUs are Wipro's primary go-to-market teams and aim to scale local strategic clients and win large deals. Revenue is attributed to the SMU of the client's primary buying centre.",w:"The SMU owns the client relationship, so IC&D growth in the UK depends on being useful to its account teams.",s:"Form 20-F FY2026"},
+ am1:{l:["Americas 1"],p:"smu",k:"mkt",d:"Organised by industry sector. From 1 April 2026 Latin America and Canada clients are aligned to the sectors in Americas 1 and 2.",w:"Useful for reference cases in sectors where UK proof is thin.",s:"Q1 FY27 press release"},
+ am2:{l:["Americas 2"],p:"smu",k:"mkt",d:"Organised by industry sector, like Americas 1.",w:"A source of sector reference cases.",s:"Q1 FY27 press release"},
+ eu:{l:["Europe"],p:"smu",k:"mkt",d:"Covers the UK and Ireland, Switzerland, Germany and Western Europe, organised by country and responsible for all sectors. Europe was 27.4% of IT Services revenue in Q2 FY27 and grew 0.6% quarter on quarter in constant currency (broker figure). Its segment margin was about 16.7%, up from about 11.7% a year earlier (my arithmetic on Wipro's segment table).",w:"A region with rising margin and modest growth needs large deals converted from pipeline. That is where a practitioner adds most.",s:"Q2 FY27 press release; PL Capital, 16 Oct 2026"},
+ apmea:{l:["APMEA"],p:"smu",k:"mkt",d:"Organised by country, like Europe.",w:"Less relevant to UK pursuits.",s:"Form 20-F FY2026"},
+ uki:{l:["UK and","Ireland"],p:"eu",k:"mkt",d:"A named sub-unit of Europe in every release I read. Offices include London, Reading and Dublin. Public UK work includes Phoenix Group (£500m over 10 years, March 2025) and HM Treasury service integration (from 2022).",w:"The account managers and client partners I would support sit here. I would agree with them which accounts each offering should be tested in first.",s:"Wipro UKI contact page; press releases 2022 and 2025"},
+ gbl:{l:["Global business lines"],p:"root",k:"bl",d:"Realigned from 1 April 2025 into Technology Services, Business Process Services, Consulting Services and Engineering. Wipro says the model is meant to speed time to market, simplify decisions and channel investment under One Wipro.",w:"Offerings, practices and delivery capacity sit in the business lines.",s:"Form 20-F FY2026"},
+ ts:{l:["Technology","Services"],p:"gbl",k:"bl",d:"Contains five units: Cloud, Infrastructure and Security Services; Industry Cloud & Digital; Enterprise Applications; Data, Analytics and AI; and Designit.",w:"Most of the units I would bring into a combined proposition sit in this one business line.",s:"Form 20-F FY2026"},
+ bps:{l:["Business Process","Services"],p:"gbl",k:"bl",d:"Runs process operations for clients. The Phoenix Group deal combines life and pensions administration, delivered through Wipro's FCA-regulated subsidiary, with modernisation of the ALPHA policy platform.",w:"Deals that join operations and modernisation are where IC&D and process services meet (my reading).",s:"Phoenix Group press release, 26 Mar 2025"},
+ cons:{l:["Consulting","incl. Capco"],p:"gbl",k:"bl",d:"Capco covers banking and payments, capital markets, energy, insurance, and wealth and asset management. It co-delivers the GenAI mainframe modernisation offer with Wipro Cloud Services.",w:"In UK financial services I would bring Capco in early for the business case and IC&D for the build.",s:"Capco About; Wipro GenAI mainframe page"},
+ eng:{l:["Engineering"],p:"gbl",k:"bl",d:"Includes Cloud Products and Platforms, which offers reliability and DevOps engineering, and Connected Services from the Harman DTS acquisition (1 December 2025).",w:"A partner for DevOps and reliability work with software-led clients.",s:"Form 20-F FY2026"},
+ ciss:{l:["CISS"],p:"ts",k:"bl",d:"Cloud, Infrastructure and Security Services. With IC&D it appears to inherit the former Wipro FullStride Cloud business line (my inference from the FY2025 and FY2026 filings).",w:"Landing zones, hosting and security come with most modernisation work, so I would bring CISS into migration proposals.",s:"Form 20-F FY2025 and FY2026"},
+ icd:{l:["Industry Cloud","& Digital"],p:"ts",k:"icd",rel:["uki","dit","cons","wega","ciss"],d:"In Wipro's words, IC&D \"partners with organizations to integrate strategy, design, and technology, providing digital transformation services\" and offers \"enterprise transformation, application modernization, quality engineering, testing, and cloud-native platform services using AI and industry expertise\".",w:"This is the portfolio the role sells. The dashed outlines show the units I would expect to work with most on a UK pursuit (my reading).",s:"Form 20-F FY2026, Item 4"},
+ ea:{l:["Enterprise","Applications"],p:"ts",k:"bl",d:"Covers SAP, Oracle, Salesforce, ServiceNow and Microsoft Dynamics. IC&D covers custom and digital applications.",w:"Integration between packages and custom applications sits on the boundary, so I would agree the split with EA before a proposal goes out.",s:"Form 20-F FY2026"},
+ daai:{l:["Data, Analytics","and AI"],p:"ts",k:"bl",d:"The data and AI services unit. Wipro announced a Databricks partnership in 2026 for data modernisation and AI at scale.",w:"AI propositions depend on data readiness, so DAAI joins any pursuit with AI in production as the goal.",s:"Form 20-F FY2026; Wipro Intelligence page"},
+ dit:{l:["Designit"],p:"ts",k:"bl",d:"Experience design across product, customer, employee and marketing, with studios including London, Copenhagen, Madrid, Munich and Oslo.",w:"AI-led CX work starts with customer research and service design, so I would bring Designit into the first workshop.",s:"Form 20-F FY2026; Designit About"},
+ ain:{l:["AI-Native Business","& Platforms Unit"],p:"root",k:"bl",d:"Created on 1 April 2026 alongside the services business. It owns the Wipro Intelligence platforms, uses forward-deployed engineering teams and an invest-build-partner model with Wipro Ventures. The CEO described it as a pivot to a services-as-a-software model. The Claude Applied AI Centre of Excellence sits under it.",w:"Its forward-deployed engineers are the people I would ask to build a first agent inside a client's environment.",s:"Press release, 1 Apr 2026; Q4 FY26 release"},
+ wings:{l:["WINGS","Run AI"],p:"ain",k:"bl",d:"The Run AI pillar of Wipro Intelligence: an AI-powered delivery platform for IT and business operations. The Google Cloud LIFT framework connects Gemini Enterprise with WINGS and WEGA.",w:"Relevant when a proposition includes running the modernised estate after go-live.",s:"Form 20-F FY2026; press release, 27 Aug 2026"},
+ wega:{l:["WEGA","Build AI"],p:"ain",k:"bl",d:"The Build AI pillar: an agent-native platform across design, development, testing, infrastructure, release and security. Wipro quotes up to 60% velocity improvement and up to 40% cost advantage as preliminary lab results. It runs on the NVIDIA AI Enterprise stack.",w:"In a modernisation or QE bid I would ask delivery how WEGA changes the effort estimate and how much of that gain to share in price.",s:"Wipro WEGA page"},
+ ind:{l:["Industry","platforms"],p:"ain",k:"bl",d:"The Reimagine AI pillar: NetOxygen, CROAMIS, IHS/HPS and Enterprise Telco AI, plus solutions such as WealthAI and PayerAI.",w:"Worth checking for a UK fit in wealth, mortgages and telecoms.",s:"Wipro Intelligence page; press release, 1 Apr 2026"}
+};
+/* wide layout positions: x,y,w,h in a 1080 x 410 box */
+var POS={root:[440,8,200,40],smu:[10,92,350,40],gbl:[380,92,420,40],ain:[820,92,250,48],
+ am1:[10,172,80,40],am2:[100,172,80,40],eu:[190,172,80,40],apmea:[280,172,80,40],
+ ts:[380,172,98,48],bps:[487,172,98,48],cons:[594,172,98,48],eng:[701,172,99,48],
+ wings:[820,172,76,48],wega:[907,172,76,48],ind:[994,172,76,48],
+ uki:[170,268,120,48],ciss:[330,268,92,48],icd:[432,268,112,48],ea:[554,268,96,48],daai:[660,268,110,48],dit:[780,268,90,48]};
+var orgSel="icd";
+function fillFor(k){return k==="icd"?"var(--accent)":k==="mkt"?"var(--seq-2)":"var(--panel)"}
+function inkFor(k){return k==="icd"?"var(--on-accent)":"var(--ink1)"}
+function orgCard(){var n=N[orgSel];document.getElementById("pf-orgcard").innerHTML='<h4>'+esc(n.l.join(" "))+'</h4><div><div class="k">What the sources say</div><p>'+esc(n.d)+'</p></div><div><div class="k">How I would work with it</div><p>'+esc(n.w)+'</p></div><p class="src">Source: '+esc(n.s)+'</p>'}
+function orgMark(){[].forEach.call(document.querySelectorAll("#pf-org .pf-node"),function(g){var id=g.getAttribute("data-id");g.classList.toggle("sel",id===orgSel);g.classList.toggle("rel",(N[orgSel].rel||[]).indexOf(id)>=0);g.setAttribute("aria-pressed",id===orgSel)})}
+function nodeG(s,id,x,y,w,h,fs){var n=N[id],g=VZ.el("g",{"class":"pf-node","data-id":id,"aria-label":n.l.join(" ")},s);
+ VZ.el("rect",{x:x,y:y,width:w,height:h,rx:5,fill:fillFor(n.k),stroke:n.k==="bl"?"var(--axis)":"none","stroke-width":1},g);
+ var L=n.l,lh=fs+3,y0=y+h/2-(L.length-1)*lh/2+fs*.35;
+ L.forEach(function(s2,i){var t=txt(g,x+w/2,y0+i*lh,s2,i===0?"t-strong":"","middle");t.setAttribute("style","fill:"+(i===0?inkFor(n.k):(n.k==="icd"?"var(--on-accent)":"var(--ink2)"))+";font-size:"+(i===0?fs:fs-1)+"px")});
+ key(g,function(){orgSel=id;orgMark();orgCard()});return g}
+responsive(document.getElementById("pf-org"),function(W){var host=document.getElementById("pf-org");
+ if(W>=640){var s=VZ.svg(host,1080,330,"Wipro structure diagram");
+  Object.keys(POS).forEach(function(id){var n=N[id];if(!n.p)return;var a=POS[n.p],b=POS[id];var x1=a[0]+a[2]/2,y1=a[1]+a[3],x2=b[0]+b[2]/2,y2=b[1],my=(y1+y2)/2;
+   VZ.el("path",{d:"M"+x1+","+y1+"V"+my+"H"+x2+"V"+y2,fill:"none","class":"axis"},s)});
+  Object.keys(POS).forEach(function(id){var p=POS[id];nodeG(s,id,p[0],p[1],p[2],p[3],12.5)});
+ }else{
+  var order=[["root",0],["smu",1],["am1",2],["am2",2],["eu",2],["uki",3],["apmea",2],["gbl",1],["ts",2],["ciss",3],["icd",3],["ea",3],["daai",3],["dit",3],["bps",2],["cons",2],["eng",2],["ain",1],["wings",2],["wega",2],["ind",2]];
+  var rh=36,s2=VZ.svg(host,W,order.length*rh+4,"Wipro structure diagram");
+  order.forEach(function(o,i){var id=o[0],lv=o[1],x=lv*18,y=i*rh+2;
+   if(lv>0)VZ.el("path",{d:"M"+(x-10)+","+(y-6)+"V"+(y+15)+"H"+x,fill:"none","class":"axis"},s2);
+   var n=N[id],save=n.l;n.l=[save.join(" ")];nodeG(s2,id,x,y,W-x-2,rh-6,13);n.l=save});
+ }
+ orgMark()});
+orgCard();
+
+/* ---------- offerings ---------- */
+var PROB=["Legacy cost and risk","Resilience and regulation","Customer experience","Speed of change","AI in production","Connected systems"];
+var O=[
+ {id:"appmod",f:"mod",n:"Application and Cloud Modernisation",fit:[2,1,0,2,1,1],pr:"Ageing custom applications cost too much to run and are slow to change, and cloud moves stall after rehosting.",by:"CIO or CTO, with the head of applications.",pa:"AWS, Microsoft Azure and Google Cloud.",pp:"Modernize, Transform and Software Engineering Excellence offers; ModerniZ platform; Wipro cites 75,000+ application modernisation experts and 25,000+ cloud-certified staff; Leader in the Forrester Wave for Application Modernization and Migration Services, Q1 2024.",sg:"Banking clients are prioritising legacy modernisation (Q2 FY27 call notes, broker). 28% of central government systems were legacy in 2024.",me:"I would lead the business case and the executive conversation, with the modernisation practice setting the technical approach."},
+ {id:"apr",f:"mod",n:"Application Portfolio Rationalisation (APR)",fit:[2,0,0,1,0,1],pr:"Years of tactical buying or a merger leave overlapping applications, with no agreed view of what to retire.",by:"CIO and enterprise architect, with the CFO for the run-cost case.",pa:"Partner-neutral; the result feeds AWS, Azure or Google Cloud migration cases.",pp:"I found no standalone APR page. The nearest public offers are the cloud Advisory and Consulting offering, the assessment stage of Modernize and Transform, and retiring within legacy modernisation.",sg:"The VodafoneThree merger completed on 31 May 2025 with £700m a year of synergies targeted by year five. NHS England folds into DHSC from April 2027.",me:"APR is a strong door-opener. I would run it as a short paid assessment that leads into modernisation scope."},
+ {id:"mf",f:"mod",n:"Mainframe and legacy Java/.NET modernisation",fit:[2,2,0,1,1,0],pr:"Core systems on COBOL or older Java and .NET stacks hold business rules few people still understand, so every change carries risk.",by:"CIO and COO, with the chief risk officer for resilience.",pa:"Capco co-delivers. The offer is LLM-agnostic, so Claude or Gemini can support code and rule extraction.",pp:"GenAI: Powering Mainframe Modernization with Capco: COBOL knowledge portals, business-rule extraction, reverse engineering into user stories, synthetic test data. Phoenix Group ALPHA platform modernisation within a £500m, 10-year deal (March 2025).",sg:"HMRC and DWP still run Fujitsu VME mainframes. 94% of leaders in Kyndryl's 2025 global survey say regulation shapes their modernisation plans.",me:"I would frame the risk and value story for the COO and CFO, with Capco and the modernisation engineers presenting the method."},
+ {id:"integ",f:"mod",n:"Integration across products and stacks",fit:[1,1,1,1,1,2],pr:"Point-to-point interfaces slow every change, and new channels and AI agents struggle to reach the data they need.",by:"Enterprise architect and CTO, with the head of integration.",pa:"iPaaS vendors, with ServiceNow, Salesforce and SAP for package integration.",pp:"Integration Modernization moves integration to modern architecture, open source and iPaaS.",sg:"The NHS Single Patient Record is due to be viewable in the NHS App by 2028. Energy suppliers must complete half-hourly settlement migration by 7 May 2027.",me:"I would position integration as the condition for AI agents to work, which brings it into AI conversations early."},
+ {id:"qe",f:"eng",n:"Quality Engineering and Testing",fit:[1,2,1,2,1,0],pr:"Releases are slow and risky because testing is manual, and regulators expect firms to prove resilience.",by:"Head of quality engineering and CIO, with the operational resilience lead.",pa:"Works across partner platforms, including QE for AI applications.",pp:"Leader in Everest Group's Next-Gen QE PEAK Matrix 2023 and its QE Services for AI Applications and Systems PEAK Matrix 2026. Uniper: 15% shorter test cycle, 68% regression automation, 28% cost reduction. Vodafone Qatar: 25% cost reduction.",sg:"The FCA and PRA operational resilience transition ended on 31 March 2025. Nine major UK banks had 803 hours of unplanned outages from January 2023 to February 2025.",me:"I would sell QE through the resilience and release-speed case, with the QE practice lead owning the test strategy."},
+ {id:"devops",f:"eng",n:"DevOps and CI/CD",fit:[1,1,0,2,1,0],pr:"Code takes weeks to reach production, environments drift and security checks come late.",by:"CTO and head of engineering, with the head of platform.",pa:"Google (Antigravity CLI, integrated August 2026), Microsoft (GitHub Copilot) and Harness (2026 collaboration).",pp:"DevSecOps within Application Modernisation; WEGA orchestrates the lifecycle from design to release and security; reliability and DevOps engineering in Wipro Engineering.",sg:"Banks told the Treasury Committee that system changes and software faults were among the causes of outages (2025).",me:"I would pair DevOps with QE in one release-speed proposition and bring the engineering lead to scope it."},
+ {id:"digapps",f:"eng",n:"Digital Applications",fit:[0,0,2,2,1,1],pr:"New products and channels are needed quickly and must scale and be observable from day one.",by:"Chief digital officer and product director.",pa:"AWS, Microsoft Azure and Google Cloud.",pp:"Cloud Native offer: microservices, containers, serverless, observability and multi-cloud orchestration. Leader in the Gartner Magic Quadrant for Public Cloud IT Transformation Services, 2024.",sg:"The NHS App had about 80m logins in July 2026, up 42% on a year earlier. Great British Railways plans a single app with no booking fees.",me:"I would sell digital applications as the build stage of a CX proposition designed with Designit."},
+ {id:"dxc",f:"cx",n:"Digital Experience and Commerce",fit:[0,1,2,1,1,1],pr:"Customer journeys break across channels, conversion is weak, and conduct rules ask firms to evidence good outcomes.",by:"Chief customer officer, chief marketing officer, chief digital officer or ecommerce director.",pa:"Adobe (Platinum Global SI partner) and Salesforce (Summit partner), with Designit for design.",pp:"Designit London studio; Adobe practice with 860+ accredited consultants, 2,000+ Adobe consultants and 450+ engagements; member of the Salesforce Agentforce Partner Network.",sg:"The UK Customer Satisfaction Index was 78.3 in July 2026, with growth slowing. Consumer Duty applies to all products, and the CMA can fine up to 10% of global turnover under the DMCC Act.",me:"This is closest to my advisory work. I would lead the executive workshop and the customer outcome case."},
+ {id:"ai",f:"ai",n:"AI Solutions with Gemini and Claude",fit:[1,1,2,1,2,1],pr:"AI pilots work in a demo and then stall before production because of data, controls and integration.",by:"Chief data or AI officer and COO, with the chief customer officer for service use cases.",pa:"Google Cloud (Gemini Enterprise, LIFT), Anthropic (Claude), Microsoft (Azure AI Foundry), ServiceNow and Salesforce Agentforce.",pp:"Gemini Enterprise rolled out to 10,000+ AI-certified specialists, including 1,500 forward-deployed engineers, with the LIFT framework (27 August 2026). Applied AI Centre of Excellence for Claude, with 10,000 delivery experts to be certified within 18 months (16 June 2026). 200 Gemini and Vertex AI agents (August 2025).",sg:"75% of UK financial firms used AI in 2024, and the median number of use cases is expected to rise from 9 to 21. The FCA's Mills Review (July 2026) sets foundations for agentic finance.",me:"I train executives on Claude and other AI tools, so I can run the use-case workshop myself and bring forward-deployed engineers in to build."},
+ {id:"adopt",f:"ai",n:"AI Adoption",fit:[0,0,1,1,2,0],pr:"Licences are bought but few staff use AI tools well, so the expected productivity does little to show up in results.",by:"COO and CHRO, with the CIO and transformation director.",pa:"Microsoft (Microsoft 365 Copilot, GitHub Copilot), Google (Gemini Enterprise) and Anthropic (Claude).",pp:"Microsoft partnership (12 December 2025) with 50,000+ Copilot licences deployed inside Wipro and 25,000+ staff upskilled. More than 212,663 associates completed GenAI training under ai360. Claude is used internally in Finance, HR and Sales.",sg:"35% of UK firms with 10 or more staff used an AI technology in June 2026, and only 10% of those used it extensively (ONS).",me:"This is the work I do at Atlas Learn: training senior teams and measuring whether they keep using the tools."}
+];
+var famOf={},offSel="appmod",tabSet;
+O.forEach(function(o){famOf[o.id]=o.f});
+function card(o){return '<article class="pf-off" id="pf-o-'+o.id+'"><h4>'+esc(o.n)+'</h4><dl><dt>Buyer problem</dt><dd>'+esc(o.pr)+'</dd><dt>UKI buyer</dt><dd>'+esc(o.by)+' <span class="src">(my judgement)</span></dd><dt>Partners</dt><dd>'+esc(o.pa)+'</dd><dt>Proof points</dt><dd>'+esc(o.pp)+'</dd><dt>UKI demand</dt><dd>'+esc(o.sg)+'</dd></dl><p class="me"><b>How I would sell it.</b> '+esc(o.me)+'</p></article>'}
+[].forEach.call(document.querySelectorAll(".pf-offs"),function(h){var f=h.getAttribute("data-fam");h.innerHTML=O.filter(function(o){return o.f===f}).map(card).join("")});
+function mark(){[].forEach.call(document.querySelectorAll(".pf-off"),function(c){c.classList.toggle("sel",c.id==="pf-o-"+offSel)});
+ var fam=famOf[offSel];[].forEach.call(document.querySelectorAll("#pf-mx .row"),function(r){var id=r.getAttribute("data-id");r.classList.toggle("dim",famOf[id]!==fam);r.setAttribute("aria-pressed",id===offSel)})}
+VZ.tabs(document.getElementById("pf-tabs"),function(t){var f=t.id.replace("pf-t-","");if(famOf[offSel]!==f){offSel=O.filter(function(o){return o.f===f})[0].id}mark()});
+responsive(document.getElementById("pf-mx"),function(W){var host=document.getElementById("pf-mx"),narrow=W<640;
+ var lw=narrow?Math.min(170,W*.46):300,cw=(W-lw)/6,hh=narrow?34:52,rh=narrow?40:34,H=hh+O.length*rh+(narrow?96:4);
+ var s=VZ.svg(host,W,H,"Fit matrix of offerings and buyer problems");
+ PROB.forEach(function(p,j){var cx=lw+cw*j+cw/2;
+  if(narrow){txt(s,cx,hh-10,String(j+1),"t-strong","middle")}
+  else{var words=p.split(" "),half=Math.ceil(words.length/2);txt(s,cx,hh-24,words.slice(0,half).join(" "),"t-strong","middle");txt(s,cx,hh-9,words.slice(half).join(" "),"t-strong","middle")}});
+ O.forEach(function(o,i){var y=hh+i*rh,g=VZ.el("g",{"class":"row","data-id":o.id,"aria-label":o.n},s);
+  VZ.el("rect",{"class":"bgr",x:0,y:y+2,width:W,height:rh-4,rx:4,fill:i%2?"transparent":"var(--panel)"},g);
+  var nm=o.n;if(narrow){nm=nm.replace("Application and Cloud Modernisation","App modernisation").replace("Application Portfolio Rationalisation (APR)","APR").replace("Mainframe and legacy Java/.NET modernisation","Mainframe, Java/.NET").replace("Integration across products and stacks","Integration").replace("Quality Engineering and Testing","Quality engineering").replace("Digital Experience and Commerce","Digital experience").replace("AI Solutions with Gemini and Claude","AI with Gemini, Claude")}
+  else{nm=nm.replace("Integration across products and stacks","Integration")}
+  var t=txt(g,8,y+rh/2+4,nm,"");t.setAttribute("style","fill:var(--ink1);font-size:"+(narrow?11.5:13)+"px");
+  o.fit.forEach(function(v,j){var cx=lw+cw*j+cw/2,cy=y+rh/2,r=narrow?7:8;
+   if(v===2)VZ.el("circle",{cx:cx,cy:cy,r:r,fill:"var(--accent)"},g);
+   else if(v===1)VZ.el("circle",{cx:cx,cy:cy,r:r-1,fill:"none",stroke:"var(--accent)","stroke-width":2},g);
+   else VZ.el("circle",{cx:cx,cy:cy,r:2,fill:"var(--ink3)"},g)});
+  key(g,function(){offSel=o.id;var tab=document.getElementById("pf-t-"+o.f);tab.click();mark();var c=document.getElementById("pf-o-"+o.id);if(c&&c.scrollIntoView)c.scrollIntoView({behavior:"smooth",block:"nearest"})})});
+ if(narrow){PROB.forEach(function(p,j){var col=j%2,row=Math.floor(j/2);txt(s,8+col*(W/2),hh+O.length*rh+22+row*22,(j+1)+". "+p,"").setAttribute("style","fill:var(--ink2);font-size:12px")})}
+ mark()});
+
+/* ---------- alliances timeline ---------- */
+var LANES=[["Google Cloud",1],["Anthropic",2],["Microsoft",3],["ServiceNow",4],["Salesforce",5],["SAP",6],["Pega",7],["Wipro",8]];
+var EV=[
+ {l:4,d:"2025-03-15",ds:"March 2025",t:"Agentforce healthcare agents",x:"Wipro launched AI agent solutions for healthcare built on Salesforce Agentforce. Wipro is a Salesforce Summit partner and a member of the Agentforce Partner Network.",w:"An Agentforce reference for service and CX propositions, which I would check for a UK health or insurance fit.",s:"Wipro press release, March 2025"},
+ {l:7,d:"2025-03-26",ds:"26 March 2025",t:"Phoenix Group, £500m",x:"A 10-year, £500m deal with Phoenix Group for ReAssure life and pensions administration through Wipro's FCA-regulated subsidiary, including modernisation of the ALPHA policy platform with AI, automation and cloud, and new UK hubs.",w:"The flagship UK reference for combining operations with platform modernisation.",s:"Wipro press release, 26 Mar 2025"},
+ {l:5,d:"2025-06-30",ds:"2025, month unstated",t:"RISE with SAP Validated Partner",span:["2025-01-01","2025-12-31"],x:"Wipro became a RISE with SAP Validated Partner in 2025, one of the top 12. A UK-based publishing group is using Wipro for RISE with SAP. Wipro, Microsoft and SAP announced near-zero-cost RISE migration incentives in October 2024.",w:"SAP moves create integration and testing scope that IC&D can add to an Enterprise Applications pursuit.",s:"Wipro award page, 2025; Silicon UK, Oct 2024"},
+ {l:6,d:"2025-06-30",ds:"2025, month unstated",t:"Pega Global Elite partner",span:["2025-01-01","2025-12-31"],x:"Wipro was recognised as a Pega Global Elite partner, Pega's highest tier, among its 2025 awards.",w:"Pega is common in UK banking and insurance case management, so this supports CX and workflow propositions.",s:"Wipro award page, 2025"},
+ {l:0,d:"2025-08-13",ds:"13 August 2025",t:"200 Gemini agents",x:"Wipro launched 200 production-ready agents on Gemini and Vertex AI for healthcare, banking, insurance, retail, manufacturing and IT, on Google Cloud Marketplace, plus a Gemini Experience Zone.",w:"A catalogue to show in a first AI workshop.",s:"Wipro press release, 13 Aug 2025"},
+ {l:7,d:"2025-10-16",ds:"October 2025",t:"Wipro Intelligence",x:"The Q2 FY26 release brands Wipro Intelligence, the suite of AI platforms grouped as Run AI (WINGS), Build AI (WEGA) and Reimagine AI (industry platforms).",w:"The platform names I would use in proposals.",s:"Q2 FY26 press release"},
+ {l:2,d:"2025-12-12",ds:"12 December 2025",t:"Microsoft Frontier Firms",x:"A three-year strategic partnership covering Azure, Microsoft 365 Copilot, GitHub Copilot and Azure AI Foundry. Wipro has deployed 50,000+ Copilot licences internally and upskilled 25,000+ staff, and opened a Microsoft Innovation Hub in Bengaluru with an Agent Marketplace.",w:"Many UK clients already hold Microsoft licences, so Copilot adoption is a low-friction first offer.",s:"Wipro press release, 12 Dec 2025"},
+ {l:7,d:"2026-04-01",ds:"1 April 2026",t:"AI-Native unit",x:"Wipro created the AI-Native Business & Platforms Unit, owning the Wipro Intelligence platforms, with forward-deployed engineering teams and an invest-build-partner model.",w:"The home of the engineers who build agents inside client environments.",s:"Wipro press release, 1 Apr 2026"},
+ {l:3,d:"2026-05-28",ds:"28 May 2026",t:"ServiceNow agentic workflows",x:"An expanded partnership to embed agentic AI workflows across IT, HR, procurement and cybersecurity, integrating Wipro Intelligence with the ServiceNow AI Platform. Offers include SmartProcure, Telco Autonomous Networks and Cyber Transform.",w:"Useful where the buyer owns internal service for staff, such as IT, HR or procurement.",s:"Wipro press release, 28 May 2026"},
+ {l:1,d:"2026-06-16",ds:"16 June 2026",t:"Claude Applied AI CoE",x:"An Applied AI Centre of Excellence for Claude models at the Bengaluru innovation hub, under the AI-Native unit. Wipro plans to certify 10,000 front-line delivery experts on Claude within 18 months, and Claude-trained forward-deployed engineers work inside client environments. Focus industries include mortgages, healthcare, airlines, manufacturing and consumer.",w:"I train senior teams on Claude, so I can open these conversations with executives and hand over to the CoE for build.",s:"Wipro press release, 16 Jun 2026; IT Brief UK"},
+ {l:0,d:"2026-08-27",ds:"27 August 2026",t:"Gemini Enterprise and LIFT",x:"Gemini Enterprise becomes Wipro's central agentic orchestration platform, rolled out to 10,000+ AI-certified specialists including 1,500 certified forward-deployed engineers. The LIFT framework links Gemini Enterprise with WINGS and WEGA, and Google's Antigravity CLI joins the engineering toolset.",w:"LIFT gives a staged structure for a first AI proposal.",s:"Wipro press release, 27 Aug 2026"},
+ {l:7,d:"2026-10-15",ds:"15 October 2026",t:"Q2 FY27 recognitions",x:"The Q2 FY27 release reports Leader positions in Everest Group's QE Services for AI Applications and Systems PEAK Matrix 2026 and in the ISG Provider Lens study for Microsoft AI and cloud services (US, 2026).",w:"Fresh proof points for QE and Microsoft propositions.",s:"Q2 FY27 press release"}
+];
+var evSel=9;
+var leg=document.getElementById("pf-tleg");leg.innerHTML=LANES.map(function(l){return '<span><i style="background:var(--s'+l[1]+')"></i>'+esc(l[0])+'</span>'}).join("");
+function evCard(){var e=EV[evSel],ln=LANES[e.l];document.getElementById("pf-evd").innerHTML='<div><div class="d">'+esc(e.ds)+'</div><div class="p">'+esc(ln[0])+'</div></div><div><b>'+esc(e.t)+'.</b> '+esc(e.x)+'<p class="w"><b>For a UK pursuit:</b> '+esc(e.w)+'</p><p class="src">Source: '+esc(e.s)+'</p></div>';
+ [].forEach.call(document.querySelectorAll("#pf-tl .pf-ev"),function(g){g.classList.toggle("sel",+g.getAttribute("data-i")===evSel)})}
+function tm(s){return new Date(s+"T00:00:00Z").getTime()}
+function evG(s,i,cx,cy,r){var e=EV[i],g=VZ.el("g",{"class":"pf-ev","data-i":i,"aria-label":e.ds+": "+LANES[e.l][0]+", "+e.t},s);
+ VZ.el("circle",{cx:cx,cy:cy,r:r,fill:"var(--s"+LANES[e.l][1]+")",stroke:"var(--chart-bg)","stroke-width":2},g);
+ VZ.tip(g,function(){return "<b>"+esc(e.t)+"</b><span class='m'>"+esc(LANES[e.l][0])+", "+esc(e.ds)+"</span>"});
+ g.addEventListener("click",function(){evSel=i;evCard()});return g}
+responsive(document.getElementById("pf-tl"),function(W){var host=document.getElementById("pf-tl");
+ if(W>=700){var lw=110,rw=W-lw-10,rh=44,H=LANES.length*rh+40,t0=tm("2025-01-01"),t1=tm("2026-12-31"),X=VZ.lin(t0,t1,lw,lw+rw);
+  var s=VZ.svg(host,W,H,"Alliances timeline 2025 to 2026");
+  for(var m=0;m<=24;m+=3){var dt=new Date(Date.UTC(2025,m,1)),x=X(dt.getTime());VZ.el("line",{x1:x,x2:x,y1:0,y2:LANES.length*rh,"class":"grid"},s);
+   txt(s,x,LANES.length*rh+18,dt.toLocaleString("en-GB",{month:"short",timeZone:"UTC"})+(m%12===0?" "+dt.getUTCFullYear():""),m%12===0?"t-strong":"t-muted","middle")}
+  LANES.forEach(function(l,i){var y=i*rh+rh/2;txt(s,0,y+4,l[0],"t-strong");VZ.el("line",{x1:lw,x2:lw+rw,y1:y,y2:y,"class":"axis"},s)});
+  var tx=X(tm("2026-10-27"));VZ.el("line",{x1:tx,x2:tx,y1:-4,y2:LANES.length*rh,stroke:"var(--ink1)","stroke-dasharray":"3 3"},s);txt(s,tx-4,LANES.length*rh+34,"Today, 27 Oct 2026","t-muted","end");
+  EV.forEach(function(e,i){var y=e.l*rh+rh/2,x=X(tm(e.d));
+   if(e.span){VZ.el("rect",{x:X(tm(e.span[0])),y:y-5,width:X(tm(e.span[1]))-X(tm(e.span[0])),height:10,rx:5,fill:"var(--s"+LANES[e.l][1]+")",opacity:.28},s)}
+   evG(s,i,x,y,8);var right=x>lw+rw*.78;var t=txt(s,right?x-13:x+13,right?y+20:y-9,e.t,"",right?"end":"start");t.setAttribute("style","fill:var(--ink1);font-size:12px")});
+ }else{var rows=EV.map(function(e,i){return i}).sort(function(a,b){return tm(EV[a].d)-tm(EV[b].d)}),rh2=50,s2=VZ.svg(host,W,rows.length*rh2+6,"Alliances timeline 2025 to 2026");
+  VZ.el("line",{x1:14,x2:14,y1:8,y2:rows.length*rh2-14,"class":"axis"},s2);
+  rows.forEach(function(i,k){var e=EV[i],y=k*rh2+18;evG(s2,i,14,y,7);
+   var a=txt(s2,32,y-2,e.t,"t-strong");a.setAttribute("style","font-size:13px");txt(s2,32,y+15,LANES[e.l][0]+", "+e.ds,"t-muted")});
+ }
+ evCard()});
+evCard();
+
+/* ---------- proposition builder ---------- */
+var ACCT=[
+ {id:"ins",n:"UK life and pensions insurer",dr:"Consumer Duty has applied to closed books since 31 July 2024, and the pensions dashboards connection backstop is 31 October 2026.",buy:"COO, CIO and chief customer officer",ref:"Phoenix Group: £500m over 10 years, including ALPHA platform modernisation (March 2025)."},
+ {id:"bank",n:"UK retail bank",dr:"Operational resilience rules apply in full from 31 March 2025, nine major banks logged 803 hours of unplanned outages in two years, and APP fraud reimbursement started on 7 October 2024.",buy:"CIO, chief operating officer and operational resilience lead",ref:"Agentic AI payments-data deal for a leading UK-based financial services group (Q2 FY26 release)."},
+ {id:"nrg",n:"Energy supplier",dr:"Half-hourly settlement migration must complete by 7 May 2027, and utilities scored lowest in the UK Customer Satisfaction Index in July 2026 at 73.7.",buy:"CIO, customer operations director and settlement programme lead",ref:"Uniper QE programme: 15% shorter test cycle and 28% cost reduction."},
+ {id:"ret",n:"UK retailer",dr:"About 27% of retail sales are online, the CMA can fine up to 10% of global turnover under the DMCC Act, and retail lost the top UKCSI spot in July 2026 for the first time since 2008.",buy:"Chief digital officer, ecommerce director and CMO",ref:"Adobe practice with 450+ engagements; Designit London studio."},
+ {id:"gov",n:"Central government department",dr:"28% of central government systems were legacy in 2024 and 22% of those were red-rated, and G-Cloud 15 opened in August 2026.",buy:"Chief digital and information officer, service owner and commercial lead",ref:"HM Treasury service integration and AI-in-policy work (from 2022)."}
+];
+var PH={appmod:[0,1,1],apr:[1,1,0],mf:[1,1,1],integ:[0,1,1],qe:[0,1,1],devops:[0,1,1],digapps:[0,1,1],dxc:[1,1,1],ai:[1,1,1],adopt:[1,0,1]};
+var PHR={appmod:"modernise the applications your customers and staff depend on",apr:"agree what to retire before spending on what to keep",mf:"extract the business rules from the core platform before any code changes",integ:"connect channels and agents to core data through managed APIs",qe:"automate testing so each release is safer than the last",devops:"shorten the path from code to production",digapps:"build new digital services on cloud-native foundations",dxc:"redesign the highest-volume customer journeys with Designit",ai:"put Claude or Gemini agents into service and complaint handling with human review",adopt:"train your teams to use AI tools in daily work and measure the effect"};
+var UNIT={appmod:"IC&D modernisation practice",apr:"IC&D modernisation practice",mf:"Capco and IC&D modernisation",integ:"IC&D integration practice",qe:"IC&D quality engineering",devops:"IC&D engineering with WEGA",digapps:"IC&D digital applications",dxc:"Designit",ai:"AI-Native unit forward-deployed engineers",adopt:"AI-Native unit and partner teams"};
+var PART={appmod:["AWS","Microsoft Azure","Google Cloud"],apr:[],mf:["Capco"],integ:["ServiceNow","Salesforce","SAP"],qe:[],devops:["Google Antigravity","GitHub Copilot","Harness"],digapps:["AWS","Microsoft Azure","Google Cloud"],dxc:["Adobe","Salesforce"],ai:["Google Gemini Enterprise","Anthropic Claude"],adopt:["Microsoft 365 Copilot","Gemini Enterprise","Claude"]};
+var PRE=[["AI-led CX, modernisation and QE",["dxc","ai","appmod","qe"]],["Legacy core and resilience",["mf","qe","devops","integ"]],["AI adoption at scale",["adopt","ai","integ"]]];
+var on={dxc:1,ai:1,appmod:1,qe:1};
+var sel=document.getElementById("pf-acct");sel.innerHTML=ACCT.map(function(a){return '<option value="'+a.id+'">'+esc(a.n)+'</option>'}).join("");
+var pre=document.getElementById("pf-pre");pre.innerHTML=PRE.map(function(p,i){return '<button type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'">'+esc(p[0])+'</button>'}).join("");
+var chips=document.getElementById("pf-chips");chips.innerHTML=O.map(function(o){return '<button type="button" data-id="'+o.id+'" aria-pressed="'+(!!on[o.id])+'">'+esc(o.n.replace(" across products and stacks",""))+'</button>'}).join("");
+[].forEach.call(pre.querySelectorAll("button"),function(b){b.addEventListener("click",function(){on={};PRE[+b.dataset.i][1].forEach(function(k){on[k]=1});[].forEach.call(pre.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b)});sync()})});
+[].forEach.call(chips.querySelectorAll("button"),function(b){b.addEventListener("click",function(){var k=b.dataset.id;if(on[k])delete on[k];else on[k]=1;[].forEach.call(pre.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed","false")});sync()})});
+sel.addEventListener("change",sync);
+var gw=0;
+function drawGantt(){var host=document.getElementById("pf-gantt"),W=host.clientWidth;if(!W)return;gw=W;host.innerHTML="";
+ var ids=O.filter(function(o){return on[o.id]}).map(function(o){return o.id});
+ if(!ids.length){host.innerHTML='<p class="mini">Select at least one offering.</p>';return}
+ var narrow=W<520,lw=narrow?0:230,top=narrow?24:28,rh=narrow?44:30,cw=(W-lw)/3,H=top+ids.length*rh+6,s=VZ.svg(host,W,H,"Placeholder phasing chart");
+ ["Discover, weeks 1 to 6","Prove, months 2 to 4","Scale, months 5 to 18"].forEach(function(p,j){var x=lw+cw*j;VZ.el("line",{x1:x,x2:x,y1:0,y2:H,"class":"grid"},s);txt(s,x+6,14,narrow?p.split(",")[0]:p,"t-strong")});
+ var fc={mod:1,eng:3,cx:2,ai:7};
+ ids.forEach(function(id,i){var o=O.filter(function(x){return x.id===id})[0],y=top+i*rh,by=narrow?y+18:y+4,bh=narrow?18:rh-10;
+  var nm=o.n.replace(" across products and stacks","").replace(" (APR)","").replace("AI Solutions with Gemini and Claude","AI Solutions, Gemini and Claude").replace("Mainframe and legacy Java/.NET modernisation","Mainframe, Java/.NET modernisation").replace("Application Portfolio Rationalisation","Portfolio rationalisation");
+  if(narrow)txt(s,4,y+12,nm,"").setAttribute("style","fill:var(--ink1);font-size:12px");else txt(s,0,y+rh/2+4,nm,"").setAttribute("style","fill:var(--ink1);font-size:12.5px");
+  PH[id].forEach(function(v,j){if(!v)return;var x=lw+cw*j+3;VZ.bar(s,x,by,cw-6,bh,"var(--s"+fc[o.f]+")","h")})})}
+function sync(){var a=ACCT.filter(function(x){return x.id===sel.value})[0];
+ [].forEach.call(chips.querySelectorAll("button"),function(b){b.setAttribute("aria-pressed",!!on[b.dataset.id])});
+ var ids=O.filter(function(o){return on[o.id]}).map(function(o){return o.id});
+ drawGantt();
+ var ORD=["dxc","ai","adopt","apr","appmod","mf","digapps","integ","devops","qe"];var ph=ORD.filter(function(k){return on[k]}).map(function(k){return PHR[k]});var list=ph.length>1?ph.slice(0,-1).join(", ")+" and "+ph[ph.length-1]:ph[0]||"";
+ document.getElementById("pf-msgt").innerHTML=ids.length?esc(a.dr)+" We propose one programme with one set of outcomes. In it we would "+esc(list)+". Wipro, its design studio and its partners would work as one team, with progress measured against the outcomes you choose in the first workshop.":"Select at least one offering to draft a message.";
+ var units=[],parts=[];ids.forEach(function(k){if(units.indexOf(UNIT[k])<0)units.push(UNIT[k]);PART[k].forEach(function(p){if(parts.indexOf(p)<0)parts.push(p)})});
+ if(a.id==="ins"||a.id==="bank"){if(units.indexOf("Capco and IC&D modernisation")<0)units.push("Capco for the business case")}
+ document.getElementById("pf-who").innerHTML='<div><small>Buyers to meet (my judgement)</small>'+esc(a.buy)+'.</div><div><small>Wipro units to involve</small>'+esc(units.join(", ")||"None selected")+'.</div><div><small>Partners and proof</small>'+esc(parts.join(", ")||"Partner-neutral")+'. '+esc(a.ref)+'</div>'}
+var rt;addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(function(){if(document.getElementById("pf-gantt").clientWidth!==gw)drawGantt()},120)});
+sync();
+})();
+</script>
