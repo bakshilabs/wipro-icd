@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI Workflow</title>
-<meta name="description" content="How this site was researched and built with Claude Code, and the AI working practices I would bring to a pursuit team.">
+<meta name="description" content="The AI working practices I would bring to a pursuit team, with a library of routines and example prompts, and a short note on how this site was built.">
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/nav.css">
@@ -19,34 +19,10 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="sitenav"><div class="in"><a class="brand" href="overview.html">Arpan Bakshi<span>Wipro ICD Practitioner, UKI</span></a><nav class="links about" aria-label="About me"><a href="ai.html" aria-current="page">AI Workflow</a><a href="method.html">Method</a><a href="cv.html">CV</a></nav><button class="theme" type="button" aria-label="Switch to dark mode">Dark</button></div><nav class="appxbar" aria-label="Analysis pages"><div class="in"><a class="home" href="overview.html">Analysis</a><a href="role.html"><b>A1</b>The Role</a><a href="portfolio.html"><b>A2</b>Portfolio</a><a href="demand.html"><b>A3</b>Demand</a><a href="buyers.html"><b>A4</b>Buyers</a><a href="accounts.html"><b>A5</b>Accounts</a><a href="alternatives.html"><b>A6</b>Competitors</a><a href="deal-shaping.html"><b>A7</b>Deals</a><a href="pursuits.html"><b>A8</b>Pursuits</a><a href="workshops.html"><b>A9</b>Workshops</a><a href="ai-engagement.html"><b>A10</b>AI Engagement</a><a href="first-months.html"><b>A11</b>First Months</a></div></nav></header><script>(function(){var r=document.documentElement,t=document.querySelector('.sitenav .theme');function cur(){return r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}function show(){var d=cur()==='dark';t.textContent=d?'Light':'Dark';t.setAttribute('aria-label','Switch to '+(d?'light':'dark')+' mode')}if(t){t.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}show()});show()}var c=document.querySelector('.appxbar [aria-current]');if(c&&c.scrollIntoView)c.scrollIntoView({block:'nearest',inline:'center'});})();</script>
+<header class="sitenav"><div class="in"><a class="brand" href="overview.html">Arpan Bakshi<span>Wipro ICD Practitioner, UKI</span></a><nav class="links about" aria-label="About me"><a href="ai.html" aria-current="page">AI Workflow</a><a href="method.html">Method</a></nav><button class="theme" type="button" aria-label="Switch to dark mode">Dark</button></div><nav class="appxbar" aria-label="Analysis pages"><div class="in"><a class="home" href="overview.html">Analysis</a><a href="role.html"><b>A1</b>The Role</a><a href="portfolio.html"><b>A2</b>Portfolio</a><a href="demand.html"><b>A3</b>Demand</a><a href="buyers.html"><b>A4</b>Buyers</a><a href="accounts.html"><b>A5</b>Accounts</a><a href="alternatives.html"><b>A6</b>Competitors</a><a href="deal-shaping.html"><b>A7</b>Deals</a><a href="pursuits.html"><b>A8</b>Pursuits</a><a href="workshops.html"><b>A9</b>Workshops</a><a href="ai-engagement.html"><b>A10</b>AI Engagement</a><a href="first-months.html"><b>A11</b>First Months</a></div></nav></header><script>(function(){var r=document.documentElement,t=document.querySelector('.sitenav .theme');function cur(){return r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}function show(){var d=cur()==='dark';t.textContent=d?'Light':'Dark';t.setAttribute('aria-label','Switch to '+(d?'light':'dark')+' mode')}if(t){t.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}show()});show()}var c=document.querySelector('.appxbar [aria-current]');if(c&&c.scrollIntoView)c.scrollIntoView({block:'nearest',inline:'center'});})();</script>
 <main class="wrap page" id="main" tabindex="-1">
 <style>
-#ai-flow .nd{cursor:pointer}
-#ai-flow .nd:focus{outline:none}
-#ai-flow .nd:focus-visible rect{stroke:var(--ink1);stroke-width:2.5}
-#ai-flow .ln{fill:none;stroke:var(--axis);stroke-width:1.5}
-#ai-flow .ln.on{stroke:var(--accent);stroke-width:2.5}
-.ai-det{background:var(--panel);border-radius:6px;padding:16px 20px;margin-top:14px;display:grid;grid-template-columns:220px 1fr;gap:16px}
-.ai-det .d{font:600 18px/1.2 var(--sans)}
-.ai-det p,.ai-det li{font-size:14.5px}
-.ai-det ul{margin:0;padding-left:18px}
-.ai-det li+li{margin-top:4px}
-@media (max-width:700px){.ai-det{grid-template-columns:1fr}}
-.ai-stats{grid-template-columns:repeat(5,1fr)}
-@media (max-width:900px){.ai-stats{grid-template-columns:1fr 1fr}}
-.ai-bw{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:18px;align-items:start}
-@media (max-width:820px){.ai-bw{grid-template-columns:1fr}}
-.ai-bd{background:var(--panel);border-radius:6px;padding:16px 18px}
-.ai-bd .d{font:600 18px/1.2 var(--sans)}
-.ai-bd ul{margin:10px 0 0;padding:0;list-style:none;font-size:14px;display:grid;gap:4px}
-.ai-bd li{display:flex;gap:8px;align-items:center}
-.ai-bd li i{width:10px;height:10px;border-radius:2px;flex:none}
-.ai-bd p{font-size:14px;margin-top:8px}
-#ai-bars .row{cursor:pointer}
-#ai-bars .row:focus{outline:none}
-#ai-bars .row:focus-visible rect.hit{stroke:var(--ink1)}
-.ai-pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:16px}
+@media (max-width:700px){@media (max-width:900px){@media (max-width:820px){.ai-pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:16px}
 .ai-pipe div{background:var(--accent-soft);padding:14px 16px;position:relative;font-size:14px;margin-right:14px;border-radius:6px}
 .ai-pipe div:last-child{margin-right:0}
 .ai-pipe div:not(:last-child)::after{content:"";position:absolute;right:-12px;top:50%;margin-top:-6px;border:6px solid transparent;border-left:8px solid var(--accent)}
@@ -72,39 +48,14 @@
 <section class="phead">
   <span class="eyebrow">Use of AI</span>
   <h1>AI Workflow</h1>
-  <p class="lede">I researched and built this site with Claude Code. Four research agents wrote sourced files, page agents wrote the pages to a shared style guide, and every page went through an independent review and automated browser checks. The second half of the page shows how I would bring the same working practices to a pursuit team.</p>
-  <p class="meta">Counts on this page come from the four research files and the build script behind this site, 27 October 2026.</p>
+  <p class="lede">This page shows the AI working practices I would bring to a pursuit team, with a library of routines and example prompts. I built this site with Claude Code agents in the same way.</p>
+  <p class="meta">Based on Wipro's published AI announcements, the Loopio 2026 RFP benchmark, PPN 017 and my work at Atlas Learn, 27 October 2026.</p>
 </section>
 
-<div class="viz rv">
-  <div class="viz-h"><h3>From brief to published pages</h3><p>The work moved through seven stages, and nothing reached a page without a source and two checks. Select a stage for what happened there.</p></div>
-  <div id="ai-flow"></div>
-  <div class="ai-det" id="ai-det" aria-live="polite"></div>
-</div>
-
-<div class="stats4 ai-stats">
-  <div class="stat rv"><b class="count" data-to="4">4</b><span>Research agents run in parallel</span></div>
-  <div class="stat rv hi"><b class="count" data-to="391">391</b><span>Flagged claims in the research files</span></div>
-  <div class="stat rv"><b class="count" data-to="226">226</b><span>Claims verified against a primary source</span></div>
-  <div class="stat rv"><b class="count" data-to="352">352</b><span>Unique source links across the four files</span></div>
-  <div class="stat rv"><b class="count" data-to="14">14</b><span>Pages generated by one small Python build</span></div>
-</div>
-
 <section class="sec">
-  <span class="eyebrow">The research files</span>
-  <h2>What each agent brought back</h2>
-  <p class="intro">Each claim in a research file carries a source, a retrieval date and a flag. Verified means a primary source such as a Wipro filing or a statute. Secondary means press, analyst or broker coverage. Unverified claims stay out of the pages unless they are labelled "to confirm".</p>
-  <div class="viz rv">
-    <div class="viz-h"><h3>Claims by research file and flag</h3><p>The Wipro file rests mostly on primary sources, and the market file leans more on press and analyst coverage. Select a file for detail.</p></div>
-    <div class="tabs" role="tablist" aria-label="Measure" id="ai-mt" style="margin-top:0">
-      <button role="tab" aria-selected="true" data-m="0">Number of claims</button>
-      <button role="tab" aria-selected="false" data-m="1">Share of each file</button>
-    </div>
-    <div class="legend" id="ai-leg" style="margin-top:14px"></div>
-    <div class="ai-bw"><div id="ai-bars"></div><div class="ai-bd" id="ai-bd" aria-live="polite"></div></div>
-    <div class="sr"><table><caption>Claims by research file</caption><thead><tr><th>File</th><th>Verified</th><th>Secondary</th><th>Unverified</th><th>Words</th><th>Unique links</th></tr></thead><tbody><tr><td>Wipro</td><td>91</td><td>9</td><td>4</td><td>5,757</td><td>64</td></tr><tr><td>UK and Ireland market</td><td>39</td><td>54</td><td>6</td><td>5,924</td><td>132</td></tr><tr><td>Competitors</td><td>50</td><td>44</td><td>10</td><td>5,605</td><td>86</td></tr><tr><td>Deals, pursuits and workshops</td><td>46</td><td>34</td><td>4</td><td>6,050</td><td>85</td></tr></tbody></table></div>
-    <p class="src" style="margin-top:10px">Counted from every table row in the four files that carries a flag. The per-file link counts sum to 367 because some links appear in more than one file, leaving 352 unique links.</p>
-  </div>
+  <span class="eyebrow">This site</span>
+  <h2>How this site was built</h2>
+  <p class="intro">I built this site with Claude Code: four research agents wrote sourced files, page agents wrote the pages to a shared brief, and three independent reviewers checked them. Scripts checked every page in a browser at two sizes and ran an accessibility scan. The <a href="method.html">Method</a> page lists every agent with its brief and run statistics.</p>
 </section>
 
 <section class="sec">
@@ -130,90 +81,19 @@
 </section>
 
 <section class="sources"><h2>Sources</h2><ul>
-<li>Research files behind this site: wipro.md, uki-market.md, competitors.md and deals.md, compiled 27 October 2026. Each claim in them carries its own source. Primary for the counts on this page.</li>
 <li>Wipro, Applied AI Centre of Excellence for Claude, 16 June 2026. <a href="https://www.wipro.com/newsroom/press-releases/2026/wipro-advances-enterprise-ai-leadership-with-an-applied-ai-center-of-excellence-for-claude-models-powered-by-anthropic/">wipro.com</a>. Primary.</li>
 <li>Wipro and Google Cloud expanded partnership, 27 August 2026. <a href="https://www.wipro.com/newsroom/press-releases/2026/wipro-and-google-cloud-expand-partnership-to-scale-ai-into-core-enterprise-operations/">wipro.com</a>. Primary.</li>
 <li>Loopio with APMP, 2026 RFP Trends &amp; Benchmarks Report. <a href="https://link.loopio.com/hubfs/Content%20Pieces/FY26%20Trends%20Report/trends-report-2026-digital-Master.pdf">loopio.com</a>. Primary.</li>
 <li>Cabinet Office, PPN 017: Improving transparency of AI use in procurement, updated 17 February 2025. <a href="https://gov.uk/government/publications/ppn-017-improving-transparency-of-ai-use-in-procurement/ppn-017-improving-transparency-of-ai-use-in-procurement-html">gov.uk</a>. Primary.</li>
 <li>Shipley Associates, Bid Decisions. <a href="https://www.shipleywins.com/blogs/bid-decisions">shipleywins.com</a>. Primary.</li>
 <li>Gartner, use-case prism for generative AI (value against feasibility). <a href="https://www.gartner.com/en/doc/797822-use-case-prism-generative-ai-for-government-contact-centers">gartner.com</a>. Press (abstract only).</li>
-<li>My experience at Atlas Learn: see the <a href="cv.html">CV</a> page.</li>
+<li>My own work as co-founder of Atlas Learn, October 2025 onwards. Primary.</li>
 </ul></section>
 
 <script>
 (function(){
 function txt(el,t){el.textContent=t;return el}
 function key(g,fn){g.addEventListener("click",fn);g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();fn()}})}
-
-/* ---------- build pipeline ---------- */
-var STG=[
- {k:"brief",t:"Brief",s:"one per agent",d:"Briefing the agents",b:["Each research agent got one topic, the sources to prefer, the output format and the flag rules: verified, secondary or unverified.","Every agent had the same rules: name no individuals other than chief executives, use no LinkedIn content and invent nothing."]},
- {k:"res",t:"Research",s:"4 agents in parallel",d:"Four research agents",b:["Wipro: structure, offerings, alliances, UK presence and results (104 claims).","UK and Ireland market: demand by sector (99 claims).","Competitors: eleven firms and specialists (104 claims).","Deals, pursuits and workshops: pricing, qualification, procurement and AI in customer engagement (84 claims)."]},
- {k:"files",t:"Sourced files",s:"391 flagged claims",d:"Four sourced files",b:["391 claims in tables, each with a source link, retrieval date and flag.","226 verified, 141 secondary and 24 unverified. Each file ends with a list of points to confirm."]},
- {k:"pages",t:"Page agents",s:"STYLE.md rules",d:"Page agents write the pages",b:["Page agents wrote each page from the research files only, following a shared style guide: plain words, British spelling, judgement labelled as judgement and a sources panel on every page.","Each page uses shared components and a small chart library, so the site reads as one piece."]},
- {k:"review",t:"Review",s:"independent pass",d:"Independent review",b:["A separate review pass read every page against the research files and the style guide.","It checked each figure against its source, removed unsupported claims and flagged wording that broke the rules."]},
- {k:"checks",t:"Checks",s:"Playwright, 2 widths",d:"Automated checks",b:["A Playwright script opened every page at 1,440 px in light mode and 390 px in dark mode.","It recorded console errors and horizontal scroll and saved full-page screenshots, which were read and fixed until each page was clean."]},
- {k:"site",t:"Site",s:"14 pages",d:"The published site",b:["A small Python build wraps each page with shared navigation, dark mode and a password gate.","Fourteen pages: the analysis index, eleven analysis pages, this page and the CV."]}
-];
-var host=document.getElementById("ai-flow"),det=document.getElementById("ai-det"),sel="files",nodes=[],lines=[];
-function show(k){sel=k;var st=STG.filter(function(x){return x.k===k})[0],idx=STG.indexOf(st);
- det.innerHTML='<div><span class="eyebrow"></span><div class="d" style="margin-top:6px"></div></div><ul></ul>';
- txt(det.querySelector(".eyebrow"),"Stage "+(idx+1)+" of "+STG.length);txt(det.querySelector(".d"),st.d);st.b.forEach(function(x){det.querySelector("ul").appendChild(txt(document.createElement("li"),x))});
- nodes.forEach(function(g){var on=g.dataset.k===k;g.setAttribute("aria-pressed",on);g.querySelector("rect").setAttribute("style",on?"fill:var(--accent);stroke:var(--accent)":"fill:var(--chart-bg);stroke:var(--accent)");[].forEach.call(g.querySelectorAll("text"),function(t){t.style.fill=on?"var(--on-accent)":""})});
- lines.forEach(function(l){l.classList.toggle("on",+l.dataset.i<idx)});}
-function draw(){host.innerHTML="";nodes=[];lines=[];var W=Math.max(300,host.clientWidth),v=W<760,s;
- if(!v){var n=STG.length,gap=18,nw=(W-gap*(n-1))/n,nh=58,H=200,y0=60;
-  s=VZ.svg(host,W,H,"Flow diagram of seven stages: brief, four research agents, sourced files, page agents, independent review, automated checks and the published site.");s.setAttribute("role","group");
-  STG.forEach(function(st,i){var x=i*(nw+gap);
-   if(i<n-1){var l=VZ.el("path",{d:"M"+(x+nw)+","+(y0+nh/2)+"H"+(x+nw+gap),"class":"ln","data-i":i},s);lines.push(l)}
-   if(st.k==="res"){for(var a=0;a<4;a++){VZ.el("rect",{x:x+6+a*(nw-12)/4,y:y0-30,width:(nw-12)/4-4,height:18,rx:3,style:"fill:var(--s"+(a+1)+")"},s)}var tl=VZ.el("text",{x:x+nw/2,y:y0-38,"text-anchor":"middle","class":"t-muted"},s);tl.textContent="Wipro, market, competitors, deals";VZ.el("path",{d:"M"+(x+nw/2)+","+(y0-12)+"V"+y0,"class":"ln"},s)}
-   if(st.k==="checks"){[["1440 light",0],["390 dark",1]].forEach(function(c){var ty=y0+nh+20+c[1]*18;var t=VZ.el("text",{x:x+nw/2,y:ty,"text-anchor":"middle","class":"t-muted"},s);t.textContent=c[0]})}
-   if(st.k==="files"){var t=VZ.el("text",{x:x+nw/2,y:y0+nh+20,"text-anchor":"middle","class":"t-muted"},s);t.textContent="226 · 141 · 24";var t2=VZ.el("text",{x:x+nw/2,y:y0+nh+38,"text-anchor":"middle","class":"t-muted"},s);t2.textContent="verified · secondary · unverified"}
-   var g=VZ.el("g",{"class":"nd",tabindex:0,role:"button","aria-label":st.d,"data-k":st.k},s);
-   VZ.el("rect",{x:x,y:y0,width:nw,height:nh,rx:6,"stroke-width":1.5},g);
-   var a1=VZ.el("text",{x:x+nw/2,y:y0+nh/2-3,"text-anchor":"middle","class":"t-strong"},g);a1.textContent=st.t;
-   var a2=VZ.el("text",{x:x+nw/2,y:y0+nh/2+14,"text-anchor":"middle","class":"t-muted"},g);a2.textContent=st.s;
-   key(g,function(){show(st.k)});nodes.push(g);});
- }else{var nh2=48,gp=16,H2=STG.length*(nh2+gp);
-  s=VZ.svg(host,W,H2,"Flow diagram of seven stages from brief to published site.");s.setAttribute("role","group");
-  STG.forEach(function(st,i){var y=i*(nh2+gp);
-   if(i<STG.length-1){var l=VZ.el("path",{d:"M"+(W/2)+","+(y+nh2)+"V"+(y+nh2+gp),"class":"ln","data-i":i},s);lines.push(l)}
-   var g=VZ.el("g",{"class":"nd",tabindex:0,role:"button","aria-label":st.d,"data-k":st.k},s);
-   VZ.el("rect",{x:1,y:y,width:W-2,height:nh2,rx:6,"stroke-width":1.5},g);
-   var a1=VZ.el("text",{x:14,y:y+nh2/2+4,"class":"t-strong"},g);a1.textContent=(i+1)+". "+st.t;
-   var a2=VZ.el("text",{x:W-14,y:y+nh2/2+4,"text-anchor":"end","class":"t-muted"},g);a2.textContent=st.s;
-   key(g,function(){show(st.k)});nodes.push(g);});}
- show(sel);}
-
-/* ---------- claims bars ---------- */
-var CT=[["Verified","var(--s1)"],["Secondary","var(--s4)"],["Unverified","var(--ink3)"]];
-var F=[{n:"Wipro",f:"wipro.md",c:[91,9,4],w:5757,u:64,cov:"Organisation, IC&D and its sister units, practice offerings, AI platforms, alliances, UK and Ireland presence, results and chief executive statements.",top:"sec.gov, wipro.com, plindia.com"},
- {n:"UK and Ireland market",f:"uki-market.md",c:[39,54,6],w:5924,u:132,cov:"Demand drivers in financial services, public sector, health, retail, utilities, telecoms and travel, with procurement routes.",top:"gov.uk, regulators, trade press"},
- {n:"Competitors",f:"competitors.md",c:[50,44,10],w:5605,u:86,cov:"Accenture, TCS, Infosys, Cognizant, Capgemini, HCLTech, Tech Mahindra, LTM, Deloitte, IBM Consulting, Kyndryl and specialist firms.",top:"company releases, filings, trade press"},
- {n:"Deals, pursuits and workshops",f:"deals.md",c:[46,34,4],w:6050,u:85,cov:"Commercial models, rates and margins, MEDDPICC and bid gates, the Procurement Act 2023, workshop formats and AI in customer engagement.",top:"legislation.gov.uk, Loopio, Gartner, Shipley"}];
-var bh=document.getElementById("ai-bars"),bd=document.getElementById("ai-bd"),meas=0,bsel=0,coff={},lgd=document.getElementById("ai-leg");
-CT.forEach(function(c,k){var b=document.createElement("button");b.type="button";b.setAttribute("aria-pressed","true");b.innerHTML='<i style="background:'+c[1]+';border-radius:2px"></i>';b.appendChild(document.createTextNode(c[0]));b.addEventListener("click",function(){coff[k]=!coff[k];b.setAttribute("aria-pressed",!coff[k]);bars()});lgd.appendChild(b)});
-function tot(f){return f.c.reduce(function(a,v){return a+v},0)}
-function showB(){var f=F[bsel],T=tot(f);bd.innerHTML='<div class="d"></div><p class="mini"></p><ul></ul><p class="cv"></p><p class="mini tp"></p>';
- txt(bd.querySelector(".d"),f.n);txt(bd.querySelector(".mini"),f.f+" · "+f.w.toLocaleString("en-GB")+" words · "+f.u+" unique links");
- CT.forEach(function(c,k){var li=document.createElement("li");li.innerHTML='<i style="background:'+c[1]+'"></i>';li.appendChild(document.createTextNode(f.c[k]+" "+c[0].toLowerCase()+" ("+Math.round(f.c[k]/T*100)+"%)"));bd.querySelector("ul").appendChild(li)});
- txt(bd.querySelector(".cv"),f.cov);txt(bd.querySelector(".tp"),"Main source types: "+f.top+".");}
-function bars(){bh.innerHTML="";var W=Math.max(300,bh.clientWidth),nar=W<560,lw=nar?0:190,rh=nar?54:46,H=F.length*rh+26;
- var s=VZ.svg(bh,W,H,meas?"Stacked bars of the share of claims by flag in each research file":"Stacked bars of claims by flag in each research file");s.setAttribute("role","group");
- var mx=meas?100:110,x=VZ.lin(0,mx,lw,W-(nar?40:50));
- (meas?[0,25,50,75,100]:[0,25,50,75,100]).forEach(function(t){VZ.el("line",{x1:x(t),x2:x(t),y1:0,y2:H-20,"class":"grid"},s);var tt=VZ.el("text",{x:x(t),y:H-4,"text-anchor":"middle","class":"t-muted"},s);tt.textContent=meas?t+"%":t});
- F.forEach(function(f,i){var y=i*rh+(nar?22:12),T=tot(f),g=VZ.el("g",{"class":"row",tabindex:0,role:"button","aria-pressed":i===bsel,"aria-label":f.n+": "+f.c[0]+" verified, "+f.c[1]+" secondary, "+f.c[2]+" unverified"},s);
-  VZ.el("rect",{"class":"hit",x:0,y:y-(nar?20:10),width:W,height:rh-2,rx:4,style:"fill:"+(i===bsel?"var(--accent-soft)":"transparent")},g);
-  var t=VZ.el("text",{x:nar?4:8,y:nar?y-6:y+15,"class":i===bsel?"t-strong":""},g);t.textContent=f.n;
-  var cx=lw,sum=0;f.c.forEach(function(v,k){if(coff[k])return;var val=meas?v/T*100:v,w=x(val)-lw;sum+=val;var p=VZ.el("rect",{x:cx,y:y,width:Math.max(1,w-1.5),height:22,style:"fill:"+CT[k][1]},g);
-   VZ.tip(p,function(){return "<b>"+v+" "+CT[k][0].toLowerCase()+"</b>"+f.n+", "+Math.round(v/T*100)+"% of the file"});
-   if(w>30){var lt=VZ.el("text",{x:cx+w/2,y:y+15,"text-anchor":"middle",style:"font-size:12px;font-weight:600;fill:var(--chart-bg)","pointer-events":"none"},g);lt.textContent=meas?Math.round(val)+"%":v}
-   cx+=w;});
-  if(!meas){var vt=VZ.el("text",{x:cx+6,y:y+15,"class":"t-strong"},g);vt.textContent=Math.round(sum)}
-  key(g,function(){bsel=i;bars()});});
- showB();}
-VZ.tabs(document.getElementById("ai-mt"),function(t){meas=+t.dataset.m;bars()});
-[].forEach.call(document.querySelectorAll("#ai-mt [role=tab]"),function(b){b.removeAttribute("aria-controls")});
 
 /* ---------- routine library ---------- */
 var RT=[
@@ -252,9 +132,9 @@ function hrs(){if(!hh)return;var n=+np.value;document.getElementById("ai-npo").t
   key(g,function(){document.getElementById("ai-rt"+i).click()});});}
 np.addEventListener("input",hrs);
 
-draw();bars();hrs();
-var tm;addEventListener("resize",function(){clearTimeout(tm);tm=setTimeout(function(){draw();bars();hrs()},120)});
-VZ.onTheme(function(){draw();bars();hrs()});
+hrs();
+var tm;addEventListener("resize",function(){clearTimeout(tm);tm=setTimeout(function(){hrs()},120)});
+VZ.onTheme(function(){hrs()});
 })();
 </script>
 

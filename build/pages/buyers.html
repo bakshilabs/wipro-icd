@@ -311,7 +311,7 @@ function drawTL(W){var narrow=W<600,H=narrow?150:132,pl=10,pr=10,top=22;
   tlDots.push([g,c,e,i])});
  paintTL()}
 function paintTL(){var k=R[cur].k;
- if(tlSel<0||E[tlSel][4].indexOf(k)<0){tlSel=-1;for(var j=0;j<E.length;j++){if(E[j][4].indexOf(k)>=0&&new Date(E[j][0]).getTime()>NOW){tlSel=j;break}}if(tlSel<0)tlSel=E.map(function(e){return e[4].indexOf(k)>=0}).lastIndexOf(true)}
+ if(tlSel<0){for(var j=0;j<E.length;j++){if(E[j][4].indexOf(k)>=0&&new Date(E[j][0]).getTime()>NOW){tlSel=j;break}}if(tlSel<0)tlSel=E.map(function(e){return e[4].indexOf(k)>=0}).lastIndexOf(true)}
  tlDots.forEach(function(d){var on=d[2][4].indexOf(k)>=0,sl=d[3]===tlSel;d[1].setAttribute("fill",on?"var(--accent)":"var(--ink3)");d[1].setAttribute("r",sl?9:on?7:4.5);d[1].setAttribute("stroke",sl?"var(--ink1)":"var(--chart-bg)");d[1].setAttribute("stroke-width",sl?2.5:1.5);d[1].style.opacity=on?1:.45;d[0].setAttribute("aria-pressed",sl)});
  var se=E[tlSel];if(se){var who=se[4].map(function(x){return SHORT[x]}).join(", ");document.getElementById("by-tld").innerHTML='<div><b>'+se[1]+'</b></div><div>'+se[2]+'. Moves: '+esc(who)+'. <span class="src">Source: '+se[3]+'</span></div>'}
  var on=E.filter(function(e){return e[4].indexOf(k)>=0});
@@ -417,6 +417,6 @@ function drawPlan(){var h='<div class="hd r0">Executive</div>'+[1,2,3,4].map(fun
 function drawPD(){var r=R[RK[pC[0]]],c=P[pC[0]][pC[1]];
  pd.innerHTML='<div><h4>'+esc(r.s)+', quarter '+(pC[1]+1)+' ('+TY[pC[1]][0].toLowerCase()+')</h4><div class="t">'+c[0]+'</div><p>'+c[1]+'</p></div><div><h4>Across the year</h4><p>'+P[pC[0]].map(function(x,i){return"<b>Q"+(i+1)+"</b> "+x[0]}).join(" &rarr; ")+'</p><p class="mini" style="margin-top:8px">'+r.rel+'</p></div>'}
 drawPlan();drawPD();
-VZ.tabs(tabs,function(t){pp.hidden=false;cur=+t.id.slice(4);drawPersona();paintTL();VZ.hideTip()});
+VZ.tabs(tabs,function(t){pp.hidden=false;cur=+t.id.slice(4);drawPersona();if(tlSel>=0&&E[tlSel][4].indexOf(R[cur].k)<0)tlSel=-1;paintTL();VZ.hideTip()});
 })();
 </script>

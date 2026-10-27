@@ -9,7 +9,7 @@ The pages are shown on screen in a panel interview and then shared with Wipro. W
 
 Analysis pages, numbered in the navigation bar:
 A1 `role.html`, A2 `portfolio.html`, A3 `demand.html`, A4 `buyers.html`, A5 `accounts.html`, A6 `alternatives.html`, A7 `deal-shaping.html`, A8 `pursuits.html`, A9 `workshops.html`, A10 `ai-engagement.html`, A11 `first-months.html`.
-About me, linked in the header: `ai.html` (AI Workflow), `method.html` (Method: how the site was made and the agents that built it) and `cv.html` (CV).
+About me, linked in the header: `ai.html` (AI Workflow) and `method.html` (Method: how the site was made and the agents that built it).
 
 ## Build
 Page bodies live in `build/pages/`. Run `python3 build/build.py` to rebuild `docs/`: it copies `assets/`, wraps each page with the shared head, navigation and footer and writes `docs/index.html` from `build/gate.html`. Do not edit files in `docs/` by hand. Put the password in `build/.password` (ignored by git) to change it; otherwise the stored hash in `build/gate.hash` is reused.
