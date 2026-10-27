@@ -11,27 +11,29 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES_DIR = ROOT / "build" / "pages"
 OUT = ROOT / "docs"  # the published site: pages, index.html and assets only
 
-# nav order: (file, nav label). The first page is the analysis index; analysis pages get a code (A1, A2, ...);
-# the last two pages (about me) sit as plain links in the header.
+# nav order: (file, nav label). The first page is the analysis index; analysis pages get a code (A1, A2, ...)
+# in this order and are grouped in the navigation bar; the last two pages (about me) sit as plain links in the header.
 PAGES = [
     ("overview.html", "Analysis"),
     ("role.html", "The Role"),
     ("portfolio.html", "Portfolio"),
+    ("ai-engagement.html", "AI Engagement"),
     ("demand.html", "Demand"),
+    ("alternatives.html", "Competitors"),
     ("buyers.html", "Buyers"),
     ("accounts.html", "Accounts"),
-    ("alternatives.html", "Competitors"),
-    ("deal-shaping.html", "Deals"),
-    ("pursuits.html", "Pursuits"),
-    ("workshops.html", "Workshops"),
-    ("ai-engagement.html", "AI Engagement"),
-    ("first-months.html", "First Months"),
-    ("banking.html", "Banking"),
     ("account-map.html", "Account Map"),
     ("new-logos.html", "New Logos"),
+    ("workshops.html", "Workshops"),
+    ("pursuits.html", "Pursuits"),
+    ("deal-shaping.html", "Deals"),
+    ("banking.html", "Banking"),
+    ("first-months.html", "First Months"),
     ("ai.html", "AI Workflow"),
     ("method.html", "Method"),
 ]
+# navigation groups: (label, first page of the group)
+GROUPS = [("Context", "role.html"), ("Clients", "buyers.html"), ("Winning work", "workshops.html"), ("Plan", "first-months.html")]
 # unlisted pages: built with the same head and header, but not in the navigation, pager or index
 HIDDEN = [("study-33a04957.html", "Interview Study")]
 INDEX = PAGES[0][0]
@@ -68,7 +70,13 @@ NAV_JS = ("<script>(function(){var r=document.documentElement,t=document.querySe
           "function cur(){return r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')}"
           "function show(){var d=cur()==='dark';t.textContent=d?'Light':'Dark';t.setAttribute('aria-label','Switch to '+(d?'light':'dark')+' mode')}"
           "if(t){t.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}show()});show()}"
-          "var c=document.querySelector('.appxbar [aria-current]');if(c&&c.scrollIntoView)c.scrollIntoView({block:'nearest',inline:'center'});})();</script>")
+          # group dropdowns: one open at a time; Escape or a click elsewhere closes
+          "var B=[].slice.call(document.querySelectorAll('.appxbar .dd>button'));"
+          "function shut(x){B.forEach(function(b){if(b!==x){b.setAttribute('aria-expanded','false');document.getElementById(b.getAttribute('aria-controls')).hidden=true}})}"
+          "B.forEach(function(b){var m=document.getElementById(b.getAttribute('aria-controls'));b.addEventListener('click',function(e){e.stopPropagation();var o=b.getAttribute('aria-expanded')!=='true';shut(b);b.setAttribute('aria-expanded',o);m.hidden=!o;if(o){var a=m.querySelector('a');if(a&&e.detail===0)a.focus()}})});"
+          "document.addEventListener('click',function(e){if(!e.target.closest('.appxbar .dd'))shut()});"
+          "document.addEventListener('keydown',function(e){if(e.key==='Escape'){var o=B.filter(function(b){return b.getAttribute('aria-expanded')==='true'})[0];shut();if(o)o.focus()}});"
+          "})();</script>")
 
 
 def cur(f, current):
@@ -76,7 +84,16 @@ def cur(f, current):
 
 
 def nav(current):
-    items = "".join(f'<a href="{f}"{cur(f, current)}><b>{CODE[f]}</b>{html.escape(LABEL[f])}</a>' for f in APPX)
+    starts = [APPX.index(f) for _, f in GROUPS] + [len(APPX)]
+    items = ""
+    for k, ((g, _), a, b) in enumerate(zip(GROUPS, starts, starts[1:])):
+        pages = APPX[a:b]
+        here = current in pages
+        first, last = CODE[pages[0]], CODE[pages[-1]]
+        links = "".join(f'<li><a href="{f}"{cur(f, current)}><b>{CODE[f]}</b>{html.escape(LABEL[f])}</a></li>' for f in pages)
+        items += (f'<div class="dd{" here" if here else ""}"><button type="button" aria-expanded="false" aria-controls="dd{k}">'
+                  f'{html.escape(g)}<small>{first}{"&ndash;" + last if last != first else ""}</small></button>'
+                  f'<ul id="dd{k}" hidden>{links}</ul></div>')
     bar = (f'<nav class="appxbar" aria-label="Analysis pages"><div class="in">'
            f'<a class="home" href="{INDEX}"{cur(INDEX, current)}>Analysis</a>{items}</div></nav>')
     return ('<header class="sitenav"><div class="in"><a class="brand" href="overview.html">Arpan Bakshi<span>Wipro ICD Practitioner, UKI</span></a>'

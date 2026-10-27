@@ -59,4 +59,19 @@ html:has(.appxbar){scroll-padding-top:112px}
 @media (max-width:360px){.sitenav .brand{display:none}.sitenav .links.about{margin-left:0}.sitenav .theme{margin-left:auto}}
 .appxbar a{padding:9px 6px;font-size:12.5px}.appxbar a b{margin-right:4px}
 .appxbar .in{gap:0}.appxbar a.home{margin-right:4px}@media (min-width:1300px){.appxbar .in{max-width:1240px;padding:0 20px}}
-@media (min-width:900px){.appxbar .in{flex-wrap:wrap;overflow-x:visible;row-gap:0}html:has(.appxbar){scroll-padding-top:140px}body:has(.appxbar) .model .controls{top:140px}}
+/* analysis bar with group dropdowns */
+.appxbar .in{overflow:visible;flex-wrap:nowrap;gap:2px}
+.appxbar .dd{position:relative;flex:none}
+.appxbar .dd>button{appearance:none;border:0;background:none;cursor:pointer;color:var(--muted);font:500 13px/1 var(--sans,"SuisseIntl","Helvetica Neue",Arial,sans-serif);padding:10px 10px 9px;border-bottom:2px solid transparent;display:flex;align-items:baseline;gap:6px;white-space:nowrap}
+.appxbar .dd>button::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-3px) rotate(45deg);margin-left:2px;transition:transform .15s}
+.appxbar .dd>button[aria-expanded="true"]::after{transform:translateY(0) rotate(-135deg)}
+.appxbar .dd>button small{font-size:11px;font-weight:400;color:var(--muted)}
+.appxbar .dd>button:hover,.appxbar .dd>button[aria-expanded="true"]{color:var(--ink)}
+.appxbar .dd.here>button{color:var(--accent);border-bottom-color:var(--accent)}
+.appxbar .dd>ul{position:absolute;top:100%;left:0;z-index:120;min-width:220px;list-style:none;margin:4px 0 0;padding:6px;background:var(--bg);border:1px solid var(--line);border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.appxbar .dd>ul[hidden]{display:none}
+.appxbar .dd>ul a{display:flex;gap:8px;padding:9px 10px;border-radius:4px;border:0;font-size:14px;color:var(--ink);white-space:nowrap}
+.appxbar .dd>ul a b{min-width:30px}
+.appxbar .dd>ul a:hover,.appxbar .dd>ul a:focus-visible{background:var(--panel)}
+.appxbar .dd>ul a[aria-current="page"]{background:var(--accent-soft);color:var(--accent)}
+@media (max-width:640px){.appxbar .in{gap:0;padding:0 10px}.appxbar .dd>button{padding:10px 6px 9px;font-size:12.5px}.appxbar .dd>button small{display:none}.appxbar a.home{margin-right:0;padding-right:6px}.appxbar .dd{position:static}.appxbar .dd>ul{left:10px;right:10px;min-width:0}}

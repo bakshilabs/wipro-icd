@@ -8,7 +8,7 @@ The published site is the `docs/` folder. Open `docs/index.html`, which forwards
 The pages are shown on screen in a panel interview and then shared with Wipro. Writing rules are in `build/STYLE.md`.
 
 Analysis pages, numbered in the navigation bar:
-A1 `role.html`, A2 `portfolio.html`, A3 `demand.html`, A4 `buyers.html`, A5 `accounts.html`, A6 `alternatives.html`, A7 `deal-shaping.html`, A8 `pursuits.html`, A9 `workshops.html`, A10 `ai-engagement.html`, A11 `first-months.html`.
+Context: A1 `role.html`, A2 `portfolio.html`, A3 `ai-engagement.html`, A4 `demand.html`, A5 `alternatives.html`. Clients: A6 `buyers.html`, A7 `accounts.html`, A8 `account-map.html`, A9 `new-logos.html`. Winning work: A10 `workshops.html`, A11 `pursuits.html`, A12 `deal-shaping.html`, A13 `banking.html`. Plan: A14 `first-months.html`. The navigation bar shows the four groups as dropdown menus.
 About me, linked in the header: `ai.html` (AI Workflow) and `method.html` (Method: how the site was made and the agents that built it).
 
 ## Build
