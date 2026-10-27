@@ -1,2 +1,699 @@
-<!--meta title="New Logos" desc="Stub."-->
-<section class="phead"><span class="eyebrow">Stub</span><h1>New Logos</h1></section>
+<!--meta title="New Logos" desc="Move 2: how I would turn proof from expanding existing accounts into new logos in the UK and Ireland, with a target universe, a trigger watchlist to 2027, the public sector pipeline, routes in, entry offers and an outreach sequence."-->
+<style>
+.nl-badge{display:inline-flex;align-items:center;gap:8px;font:600 12px/1.2 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--ink1);background:var(--panel);border-radius:3px;padding:6px 10px;margin-top:18px}
+.nl-badge i{width:10px;height:10px;border-radius:50%;background:var(--s2);display:inline-block}
+.nl-quote{margin-top:28px;border-left:4px solid var(--s2);background:var(--panel);border-radius:0 6px 6px 0;padding:18px 22px;max-width:860px}
+.nl-quote p{font-size:18px;line-height:1.45;color:var(--ink1)}
+.nl-quote .src{display:block;margin-top:8px}
+.nl-flow{margin-top:28px}
+.viz .legend svg{display:inline-block;width:14px;height:14px;flex:none}
+.nl-flow svg a text{text-decoration:underline}
+.nl-flow svg a:focus-visible rect{stroke:var(--ink1);stroke-width:2}
+.nl-flt{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:flex-start;margin-bottom:12px}
+.nl-flt .btnrow{margin-top:6px}
+.nl-flt .lb{display:block;font:600 11px/1.2 var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);width:100%}
+.nl-flt .btnrow button i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:0}
+.nl-grid{display:grid;gap:18px}
+.nl-sg h4{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;font:600 15px/1.3 var(--sans);margin:0 0 8px;color:var(--ink1)}
+.nl-sg h4 span{font:500 12px/1.3 var(--sans);color:var(--ink2)}
+.nl-tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.nl-tile{appearance:none;text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--ink1);border-radius:5px;padding:10px 12px;cursor:pointer;font:400 13px/1.35 var(--sans);display:flex;flex-direction:column;gap:5px;transition:opacity .2s,border-color .2s}
+.nl-tile b{font:600 14px/1.25 var(--sans)}
+.nl-tile .sz{color:var(--ink2);font-size:12.5px}
+.nl-tile .dots{display:flex;flex-wrap:wrap;gap:4px;margin-top:2px}
+.nl-tile .dots i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.nl-tile .sc{font:600 12px/1 var(--sans);color:var(--ink2)}
+.nl-tile.dim{opacity:.28}
+.nl-tile[aria-pressed="true"]{border-color:var(--s2);box-shadow:0 0 0 2px var(--s2)}
+.nl-det{margin-top:16px;background:var(--panel);border-radius:6px;padding:20px 22px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:22px}
+.nl-det h4{font:600 12px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);margin:14px 0 6px}
+.nl-det h4:first-child{margin-top:0}
+.nl-det .nm{font:600 20px/1.25 var(--sans);letter-spacing:-.01em;color:var(--ink1)}
+.nl-det p,.nl-det li{font-size:14px}
+.nl-det ul{margin:4px 0 0;padding-left:18px}
+.nl-det li{margin-top:5px}
+.nl-det .tr{display:grid;grid-template-columns:96px 1fr;gap:8px;font-size:13.5px;padding:6px 0;border-top:1px solid var(--line)}
+.nl-det .tr span:first-child{font-weight:600;color:var(--ink1)}
+.nl-det .tr i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+.nl-det .srcs a{color:var(--ink2);font-size:12.5px}
+.nl-sbar{display:grid;grid-template-columns:150px 1fr 24px;gap:8px;align-items:center;font-size:13px;margin-top:6px}
+.nl-sbar .t{height:8px;background:var(--bg);border-radius:3px;overflow:hidden}
+.nl-sbar .f{height:100%;border-radius:3px}
+.nl-ph{display:inline-block;font:600 11px/1.3 var(--sans);text-transform:uppercase;letter-spacing:.05em;background:var(--warn-soft);color:var(--warn);border-radius:3px;padding:3px 8px}
+.nl-tc{display:inline-block;font:600 10.5px/1.3 var(--sans);text-transform:uppercase;letter-spacing:.04em;background:var(--warn-soft);color:var(--warn);border-radius:3px;padding:2px 6px;margin-left:6px;vertical-align:1px}
+#nl-rank svg .row{cursor:pointer}
+#nl-rank svg .row:focus{outline:none}
+#nl-rank svg .row:focus-visible .hit{stroke:var(--ink1);stroke-width:1.5}
+#nl-rank svg .row.sel .hit{fill:var(--panel)}
+#nl-tl svg .tg{cursor:pointer}
+#nl-tl svg .tg:focus{outline:none}
+#nl-tl svg .tg:focus-visible circle{stroke:var(--ink1);stroke-width:2.5}
+#nl-tl svg .tg.sel circle.d{stroke:var(--ink1);stroke-width:2.5}
+#nl-tl svg .tg.off{opacity:.18}
+.nl-tdet{margin-top:14px;background:var(--panel);border-radius:6px;padding:16px 20px;font-size:14px}
+.nl-tdet .h{font:600 16px/1.3 var(--sans);color:var(--ink1)}
+.nl-tdet .d{font:600 12px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);display:block;margin-bottom:4px}
+.nl-tdet p{margin-top:6px}
+.nl-tdet .cl{margin-top:10px;border-left:3px solid var(--accent);padding:6px 10px;background:var(--bg);border-radius:3px;font-size:13.5px}
+.nl-next{margin-top:14px}
+.nl-next h4{font:600 12px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);margin:0 0 6px}
+.nl-next ol{list-style:none;margin:0;padding:0}
+.nl-next li{display:grid;grid-template-columns:96px 1fr;gap:10px;padding:7px 0;border-top:1px solid var(--line);font-size:13.5px}
+.nl-next li b{font-weight:600}
+.nl-next li i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+.nl-duty{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.nl-duty div{background:var(--panel);border-radius:6px;padding:16px 18px}
+.nl-duty b{display:block;font:600 clamp(26px,3vw,36px)/1 var(--sans);letter-spacing:-.03em;color:var(--ink1)}
+.nl-duty span{display:block;font-size:13px;color:var(--ink2);margin-top:8px;line-height:1.4}
+.nl-pb li{grid-template-columns:minmax(170px,320px) 1fr 74px;cursor:pointer;border-radius:4px;padding-left:6px;padding-right:6px}
+.nl-pb li:hover{background:var(--panel)}
+.nl-pb li.sel{background:var(--accent-soft)}
+.nl-pb button.lbl{appearance:none;border:0;background:none;text-align:left;font:500 13.5px/1.3 var(--sans);color:var(--ink1);cursor:pointer;padding:2px 0}
+.nl-pb button.lbl small{display:block;font-size:12px;color:var(--ink2);font-weight:400}
+.nl-pb .fl{background:var(--s1)}
+.nl-pb .fl.tc{background:repeating-linear-gradient(45deg,var(--s1) 0 6px,color-mix(in srgb,var(--s1) 55%,transparent) 6px 10px)}
+.nl-pb .v{font-size:13px}
+.nl-pdet{margin-top:12px;background:var(--panel);border-radius:6px;padding:14px 18px;font-size:14px}
+.nl-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:24px}
+.nl-cards .panel{padding:18px 20px}
+.nl-cards .panel h3{font-size:16px}
+.nl-cards .panel .w{margin-top:10px;font-size:13.5px;border-top:1px solid var(--line);padding-top:8px;color:var(--ink1)}
+.nl-cards .panel .w b{font-weight:600}
+.nl-rt{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px;align-items:start}
+.nl-why{background:var(--panel);border-radius:6px;padding:16px 18px;font-size:14px}
+.nl-why h4{font:600 12px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);margin:0 0 6px}
+.nl-why ol{margin:6px 0 0;padding-left:20px}
+.nl-why li{margin-top:6px}
+.nl-ev{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.nl-ev div{background:var(--panel);border-radius:6px;padding:14px 16px}
+.nl-ev b{display:block;font:600 26px/1.05 var(--sans);letter-spacing:-.02em;color:var(--ink1)}
+.nl-ev span{display:block;font-size:12.5px;color:var(--ink2);margin-top:6px;line-height:1.4}
+.nl-off{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:18px}
+.nl-off .panel{display:flex;flex-direction:column;gap:8px}
+.nl-off .panel h3{font-size:17px;margin:0}
+.nl-off .k2{font:600 11px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);margin-top:4px}
+.nl-off .msg{background:var(--bg);border-left:3px solid var(--s2);border-radius:3px;padding:10px 12px;font-size:14px}
+.nl-off .msg em{display:block;font-style:normal;font:600 11px/1.2 var(--sans);text-transform:uppercase;letter-spacing:.05em;color:var(--ink2);margin-bottom:4px}
+.nl-off .opens{font-size:14px}
+.nl-off .opens b{font-weight:600}
+#nl-seq svg .st{cursor:pointer}
+#nl-seq svg .st:focus{outline:none}
+#nl-seq svg .st:focus-visible rect.b{stroke:var(--ink1);stroke-width:2}
+#nl-seq svg .st.sel rect.b{stroke:var(--ink1);stroke-width:2}
+.nl-sdet{margin-top:12px;background:var(--panel);border-radius:6px;padding:16px 20px;font-size:14px}
+.nl-sdet .h{font:600 16px/1.3 var(--sans);color:var(--ink1)}
+.nl-sdet p{margin-top:6px}
+.nl-fun table{width:100%;border-collapse:collapse;margin-top:10px;font-size:13px}
+.nl-fun th,.nl-fun td{padding:5px 4px;text-align:left;border-bottom:1px solid var(--line)}
+.nl-fun th{font-weight:500;color:var(--ink2);font-size:12px}
+.nl-fun input[type=number]{width:100%;padding:6px;border-radius:4px;border:1px solid var(--line);background:var(--bg);color:var(--ink1);font:400 14px/1.2 var(--sans)}
+@media (max-width:980px){.nl-rt{grid-template-columns:minmax(0,1fr)}.nl-duty,.nl-ev{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.nl-det{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.nl-pb li{grid-template-columns:1fr 70px}.nl-sbar{grid-template-columns:110px 1fr 22px}.nl-tiles{grid-template-columns:1fr 1fr}.nl-tile{padding:8px 9px}.nl-next li,.nl-det .tr{grid-template-columns:80px 1fr}}
+</style>
+
+<section class="phead">
+  <span class="eyebrow">Move 2: new logos</span>
+  <h1>New Logos</h1>
+  <p class="lede">This page sets out how I would hunt new logos for IC&amp;D in the UK and Ireland. Move 2 converts proof from expanding existing accounts into first contracts at new clients, starting with banking, then insurers, utilities and the public sector, with hunting running from the first quarter.</p>
+  <p class="meta">Based on public sources retrieved on 27 October 2026: company results, regulators, Parliament, Find a Tender, the Government Commercial Agency and partner programme pages. The target list leaves out every organisation the Account Map (A8) names as a Wipro client, current or historical. Scores, weights, routes and durations are my judgement; funnel figures are placeholders.</p>
+  <span class="nl-badge"><i></i>Move 2: new logos</span>
+</section>
+
+<section class="sec" aria-labelledby="nl-h0">
+  <span class="eyebrow">Why hunt now</span>
+  <h2 id="nl-h0">How Move 1 feeds Move 2</h2>
+  <p class="intro">Wipro's book is almost all existing clients, and the CFO has said hunting still matters. My plan grows share of wallet in existing accounts first (Move 1, on the Accounts and Account Map pages) and turns each result into a reference that opens a new logo with a dated reason to talk.</p>
+  <div class="nl-quote"><p>"Hunting remains a very, very key lever for us. And we are very, very focused on winning the must-have accounts."</p><span class="src">Aparna Iyer, CFO, Wipro Q3 FY25 earnings call, 17 Jan 2025 (primary)</span></div>
+  <div class="stats4">
+    <div class="stat"><b class="count" data-to="98.0" data-suffix="%">98.0%</b><span>of Wipro revenue came from existing clients in Q2 FY27</span></div>
+    <div class="stat"><b class="count" data-to="33">33</b><span>new clients added in Q2 FY27, after 216 in FY26</span></div>
+    <div class="stat"><b id="nl-nt">0</b><span>new-logo targets on this page, in six sectors</span></div>
+    <div class="stat"><b id="nl-nw">0</b><span>dated triggers on the watchlist, 2025 to 2027</span></div>
+  </div>
+  <div class="viz nl-flow">
+    <div class="viz-h"><h3>From an expansion to a new logo</h3><p>Each Move 1 expansion produces a reference that I take to a target with a dated trigger, and each new logo becomes a Move 1 account after its first contract.</p></div>
+    <div id="nl-flow"></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="nl-h1">
+  <span class="eyebrow">Target universe</span>
+  <h2 id="nl-h1">Targets by sector</h2>
+  <p class="intro">These organisations have public size, programme and supplier facts, and most carry at least one dated event in 2025 to 2027. Each tile shows the coloured trigger types it carries. Filter by sector or trigger type and select a tile for its programmes, publicly reported suppliers, triggers and sources. A named supplier is a public fact from press or contract records and may be one of several.</p>
+  <div class="viz">
+    <div class="viz-h"><h3>Target universe, UK and Ireland</h3><p>Banking holds the most targets with dated triggers, and mergers and integrations are the most common trigger type across all sectors.</p></div>
+    <div class="nl-flt">
+      <div><span class="lb" id="nl-fs-l">Sector</span><div class="btnrow" id="nl-fs" role="group" aria-labelledby="nl-fs-l"></div></div>
+      <div><span class="lb" id="nl-ft-l">Trigger type</span><div class="btnrow" id="nl-ft" role="group" aria-labelledby="nl-ft-l"></div></div>
+    </div>
+    <p class="mini" id="nl-cnt" aria-live="polite"></p>
+    <div class="nl-grid" id="nl-grid" style="margin-top:10px"></div>
+    <div class="nl-det" id="nl-det" aria-live="polite"></div>
+  </div>
+
+  <div class="model" style="margin-top:28px">
+    <div class="controls">
+      <h3>Scoring weights</h3>
+      <p>The criteria reuse the Accounts (A7) model for new logos. Scores of 1 to 5 per target and these weights are my judgement. Move a slider or pick a preset.</p>
+      <div class="btnrow" id="nl-pre" role="group" aria-label="Weight presets"></div>
+      <div id="nl-sl"></div>
+    </div>
+    <div class="viz" style="margin-top:0">
+      <div class="viz-h"><h3>Target ranking</h3><p id="nl-rr">With the default weights the targets with a merger or migration inside 12 months rank highest. Select a row for its detail above.</p></div>
+      <div class="legend" id="nl-rl"></div>
+      <div id="nl-rank"></div>
+      <p class="mini" style="margin-top:8px">Score out of 100, my judgement. The ranking follows the sector and trigger filters above.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="nl-h2">
+  <span class="eyebrow">Trigger watchlist</span>
+  <h2 id="nl-h2">Dated triggers, 2025 to 2027</h2>
+  <p class="intro">A trigger gives the first meeting a reason. Each dot is a dated incident, fine, merger, leadership change, re-procurement or rule. Dots with a ring also apply to organisations on the Account Map, so the same date can open a Move 1 conversation with the client partner. Select a dot to pin its detail.</p>
+  <div class="viz">
+    <div class="viz-h"><h3>Trigger timeline by type</h3><p>Triggers cluster from October 2026 to January 2027, around the Google Cloud outage follow-up, MHHS, CHAPS and the Coventry transfer.</p></div>
+    <div class="tabs" role="tablist" aria-label="Time window" id="nl-tz" style="margin-top:0;margin-bottom:10px">
+      <button type="button" role="tab" aria-selected="true" data-z="all">2025 to 2027</button>
+      <button type="button" role="tab" aria-selected="false" data-z="next">Next 12 months</button>
+      <button type="button" role="tab" aria-selected="false" data-z="2025">2025</button>
+      <button type="button" role="tab" aria-selected="false" data-z="2026">2026</button>
+      <button type="button" role="tab" aria-selected="false" data-z="2027">2027</button>
+    </div>
+    <div class="legend"><span><svg width="14" height="14" aria-hidden="true"><circle cx="7" cy="7" r="5" style="fill:var(--ink3);stroke:var(--ink1);stroke-width:1.5;stroke-dasharray:2 1.5"/></svg>Ring: also applies to existing clients (A8)</span><span><svg width="14" height="14" aria-hidden="true"><line x1="7" y1="0" x2="7" y2="14" style="stroke:var(--s2);stroke-width:2"/></svg>Today, 27 Oct 2026</span></div>
+    <div id="nl-tl" role="tabpanel" aria-label="Trigger timeline"></div>
+    <div class="nl-tdet" id="nl-tdet" aria-live="polite"></div>
+    <div class="nl-next"><h4>Next 90 days from 27 October 2026</h4><ol id="nl-next"></ol></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="nl-h3">
+  <span class="eyebrow">Public sector pipeline</span>
+  <h2 id="nl-h3">Pipeline notices and frameworks</h2>
+  <p class="intro">Under the Procurement Act 2023 (section 93), large contracting authorities publish what they plan to buy. That turns public sector hunting into a dated list. Crown Commercial Service became the Government Commercial Agency (GCA) on 1 April 2026, and the frameworks below now sit with the GCA.</p>
+  <div class="nl-duty">
+    <div><b>£100m</b><span>An authority that expects to pay more than this under relevant contracts in the coming financial year must publish a pipeline notice.</span></div>
+    <div><b>£2m</b><span>Each contract over this value that it plans to advertise is listed separately.</span></div>
+    <div><b>56 days</b><span>Published within 56 days of 1 April, so by 26 May. The next deadline is 26 May 2027.</span></div>
+    <div><b>18 months</b><span>Each notice covers 18 months from the start of the financial year. Private utilities are encouraged to publish too.</span></div>
+  </div>
+  <p class="mini" style="margin-top:10px">Central departments also publish rolling commercial pipelines under the Sourcing Playbook, refreshed at least every six months. Source: Welsh Government and Cabinet Office guidance on pipeline notices; GOV.UK Sourcing Playbook (30 Sep 2026).</p>
+  <div class="viz">
+    <div class="viz-h"><h3>Named notices and frameworks by estimated value</h3><p>MoD's £750m digital workplace and HMRC's four lines of about £1.3bn lead the named notices, and G-Cloud 15 and DOS7 are the largest routes to market.</p></div>
+    <div class="tabs" role="tablist" aria-label="Pipeline view" id="nl-ptab" style="margin-top:0;margin-bottom:10px">
+      <button type="button" role="tab" aria-selected="true" data-v="n">Pipeline notices and plans (£m)</button>
+      <button type="button" role="tab" aria-selected="false" data-v="f">Frameworks (£bn)</button>
+    </div>
+    <div class="legend"><span><i style="background:var(--s1)"></i>Value from a primary notice or page</span><span><i style="background:color-mix(in srgb,var(--s1) 55%,transparent)"></i>Striped: value from a search extract or press, to confirm</span></div>
+    <div id="nl-pp" role="tabpanel" aria-label="Pipeline values"><ul class="bars nl-pb" id="nl-pb"></ul></div>
+    <div class="nl-pdet" id="nl-pdet" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="nl-h4">
+  <span class="eyebrow">Routes in</span>
+  <h2 id="nl-h4">Routes to a first meeting</h2>
+  <p class="intro">Buyers spend little time with suppliers and avoid irrelevant outreach, so I would arrive through someone they already trust or with a funded offer. Partner programmes now pay for assessments and proofs of concept, and Wipro holds senior status with most of them.</p>
+  <div class="nl-cards" id="nl-pc"></div>
+  <div class="viz">
+    <div class="viz-h"><h3>Which route I would use first, by sector</h3><p id="nl-rtr">In banking I would lead with a Move 1 reference, then an insight brief on the trigger. Pick a sector.</p></div>
+    <div class="btnrow" id="nl-rs" role="group" aria-label="Sector" style="margin-top:0;margin-bottom:12px"></div>
+    <div class="nl-rt">
+      <div id="nl-rtc"></div>
+      <div class="nl-why" id="nl-rtw" aria-live="polite"></div>
+    </div>
+    <p class="mini" style="margin-top:8px">Route strength from 1 to 5 is my judgement of how often each route gets a first meeting in that sector.</p>
+  </div>
+  <div class="nl-ev">
+    <div><b>17%</b><span>of B2B buying time is spent meeting potential suppliers, about 5% each when three are considered. Gartner, 750 buyers.</span></div>
+    <div><b>73%</b><span>of buyers actively avoid suppliers who send irrelevant outreach; 61% prefer a rep-free experience. Gartner, 25 Jun 2025.</span></div>
+    <div><b>67%</b><span>prefer a rep-free experience and 45% used AI in a recent purchase. Gartner, 9 Mar 2026.</span></div>
+    <div><b>1.8x</b><span>more likely to complete a high-quality deal when buyers use supplier digital tools with a sales rep. Gartner.</span></div>
+  </div>
+  <p class="mini" style="margin-top:10px">Gartner also reports that 99% of B2B purchases are driven by organisational change and that buying groups have 5 to 11 stakeholders. Executive briefing benchmarks from association surveys are older and paywalled, so I use the Gartner figures as the main evidence.</p>
+</section>
+
+<section class="sec" aria-labelledby="nl-h5">
+  <span class="eyebrow">Entry offers</span>
+  <h2 id="nl-h5">Fixed-price first scopes by sector</h2>
+  <p class="intro">A new logo buys a bounded first scope with a clear output and price. The examples below are public offers from other firms, which show the market's shape and price points. Each card names the IC&amp;D offer it opens, with a draft message to test. The Portfolio (A2) page sets out the offers and the Banking Pursuit (A13) page works one through.</p>
+  <div class="tabs" role="tablist" aria-label="Sector" id="nl-otab"></div>
+  <div id="nl-op" role="tabpanel" aria-label="Entry offers"><div class="nl-off" id="nl-off"></div></div>
+  <p class="mini" style="margin-top:12px">See <a href="portfolio.html">Portfolio (A2)</a> for the IC&amp;D offers and partners, and <a href="banking.html">Banking Pursuit (A13)</a> for a worked bank pursuit from entry scope to managed run.</p>
+</section>
+
+<section class="sec" aria-labelledby="nl-h6">
+  <span class="eyebrow">Outreach sequence</span>
+  <h2 id="nl-h6">From target list to first order</h2>
+  <p class="intro">The sequence runs from the target list to a first order and then a second contract. Each step has one lead: me, the client partner or sector head, the alliance partner, or the Europe market unit sales team. Durations are my estimate for a mid-sized first scope. Select a step for what happens and who supports it.</p>
+  <div class="viz">
+    <div class="viz-h"><h3>Who leads each step, in weeks</h3><p>A first order lands around week 22 in my estimate, and the second contract is agreed at the entry scope review around week 36.</p></div>
+    <div class="legend"><span><i style="background:var(--s2)"></i>Bar shows the weeks and the lead for each step</span><span>My estimate</span></div>
+    <div id="nl-seq"></div>
+    <div class="nl-sdet" id="nl-sdet" aria-live="polite"></div>
+  </div>
+  <div class="model">
+    <div class="controls nl-fun">
+      <h3>Conversion measures</h3>
+      <p><span class="nl-ph">Placeholder figures</span></p>
+      <p>Enter your own counts for a year of Move 2. The chart and conversion rates update.</p>
+      <table><caption class="sr">Funnel counts, placeholder</caption><thead><tr><th>Measure</th><th>Count</th></tr></thead><tbody id="nl-fin"></tbody></table>
+      <div class="btnrow"><button type="button" id="nl-freset">Reset placeholders</button></div>
+    </div>
+    <div class="viz" style="margin-top:0">
+      <div class="viz-h"><h3>Move 2 funnel</h3><p id="nl-fr">With the placeholder counts, one in ten targets reached becomes a paid entry scope.</p></div>
+      <div id="nl-fun"></div>
+      <p class="mini" style="margin-top:8px">These measures sit beside the plan-level measures on the Accounts page: share of wallet per account, pipeline created and coverage, win rate and order book booked.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sources"><details class="more"><summary>Sources</summary><ul>
+<li>Wipro, Q3 FY25 earnings call transcript, 17 Jan 2025 (CFO on hunting), <a href="https://www.wipro.com/content/dam/nexus/en/investor/quarterly-results/2024-2025/q3fy25/q3fy25-earnings-transcript.pdf">wipro.com</a> (primary)</li>
+<li>Wipro, Datasheet Q2 FY27 (98.0% revenue from existing clients, 33 new clients), Oct 2026, <a href="https://www.wipro.com/content/dam/nexus/en/investor/quarterly-results/2026-2027/q2fy27/datasheet-q2fy27.pdf">wipro.com</a> (primary)</li>
+<li>Wipro partner pages and releases: Microsoft Marketplace launch partner, Google Cloud Partner of the Year 2026, AWS Premier partner, ServiceNow Elite, Salesforce Summit, Applied AI CoE for Claude (16 Jun 2026), Tricentis Global Platinum, wipro.com (primary)</li>
+<li>Lloyds Banking Group, FY2025 6-K; TechRepublic and Banking Exchange on GenAI value; TCS, Broadcom and Oracle releases (secondary, used for the outage and incident context of an existing client)</li>
+<li>Barclays, 20-F FY2025, <a href="https://www.sec.gov/Archives/edgar/data/0000312069/000031206926000004/bcs-20251231.htm">sec.gov</a> (primary); City AM (press)</li>
+<li>HSBC UK Bank plc, Annual Report and Accounts 2025, <a href="https://www.hsbc.com/-/files/hsbc/investors/hsbc-results/2025/annual/pdfs/hsbc-uk-bank-plc/260225-annual-report-and-accounts-2025.pdf">hsbc.com</a> (primary); Parliament, HSBC correspondence, 30 Apr 2025, <a href="https://api.parliament.uk/committees/publications/47793">parliament.uk</a> (primary)</li>
+<li>Santander UK, Quarterly management statement Q2 2026, <a href="https://www.investegate.co.uk/announcement/rns/santander-uk-plc--sanb/quarterly-management-statement-q2-2026/9681435">Investegate</a> (primary); TSB investor site, board profiles, tsb.co.uk (primary); FCA, TSB final notice, 2022 (primary)</li>
+<li>Nationwide Building Society, Virgin Money transfer page, <a href="https://www.nationwide.co.uk/nationwide-and-virgin-money-transfer">nationwide.co.uk</a> (primary); AWS press, 26 Jan 2026; Broadcom customer story, 24 Jun 2026; SBS release, Feb 2026; Microsoft customer story on the Microsoft marketplace (primary); Scottish Financial News (press)</li>
+<li>FCA, Nationwide fined £44m for financial crime control failings, 11 Dec 2025, <a href="https://www.fca.org.uk/news/press-releases/fca-fines-nationwide-44m-failings-financial-crime-controls">fca.org.uk</a> (primary); FCA 2025 and 2026 fines pages (primary)</li>
+<li>Coventry Building Society, 2026 interim results and member update, Aug 2026, <a href="https://www.coventrybuildingsociety.co.uk/member/important-update.html">coventrybuildingsociety.co.uk</a> (primary)</li>
+<li>Bank of Ireland, annual results 31 Dec 2025 RNS, 2 Mar 2026; Bank of Ireland UK annual report 2025 (primary); Central Bank of Ireland, 2021 enforcement against Bank of Ireland (primary)</li>
+<li>Law Society Gazette, BAWAG and PTSB, Apr 2026; S&amp;P Global (press)</li>
+<li>The Intermediary, Leeds Building Society CIO announcement, 28 Sep 2026 (press)</li>
+<li>Legal &amp; General, FY2025 results and Microsoft release, Jun 2026, <a href="https://group.legalandgeneral.com/newsroom/press-releases/2026/6/lg-expands-microsoft-collaboration-to-accelerate-ai-enablement-and-transform-customer-experience/">legalandgeneral.com</a> (primary)</li>
+<li>M&amp;G plc, HY 2025 results, FCA NSM (primary); Aviva, Group CIO announcement, 24 Feb 2026, aviva.com (primary)</li>
+<li>Royal London, Annual Report 2025 (primary); PwC CEO interview; FF News; Business Wire (press)</li>
+<li>Admiral Group, FY2025 results, 5 Mar 2026; Admiral and Google Cloud release (primary)</li>
+<li>OneFamily, merger proposal with Scottish Friendly, 4 Feb 2026, <a href="https://www.onefamily.com/our-story/media-centre/2026/onefamily-and-scottish-friendly-announce-proposal-to-merge-creating-one-of-the-uks-largest-mutual-life-assurers-with-2-3-million-members/">onefamily.com</a> (primary)</li>
+<li>CFC, Markel and The Insurer on insurance-market CIO appointments, 2026 (primary and press)</li>
+<li>Centrica FY2025 coverage (Hargreaves Lansdown, Yahoo Finance); ENSEK release, 2021; TCS case study (press and secondary)</li>
+<li>CMA, E.ON and OVO merger inquiry, <a href="https://www.gov.uk/cma-cases/eon-slash-ovo-merger-inquiry">gov.uk</a> (primary); OVO release; Reuters; Kraken case study (primary and press); City AM and Ofgem decisions on billing redress (press and primary)</li>
+<li>Find a Tender notices 034849-2023, 037099-2025 and 003636-2024 (United Utilities) (primary)</li>
+<li>SGN, new Chief Information Officer, 2 Feb 2026, sgn.co.uk (primary)</li>
+<li>Vodafone Group investor presentation 2026; VodafoneThree update, Nov 2025; TelcoTitans, Oct 2026 (primary and press)</li>
+<li>Tesco interim results 2025/26; Marketing Week; Internet Retailing (primary and press)</li>
+<li>Retail Systems, The Grocer and Retail Gazette on Sainsbury's "Next Level" and partners (press)</li>
+<li>Marks &amp; Spencer, FY26 RNS, May 2026 (primary); Computing and Infosecurity Magazine on the April 2025 incident and service desk (press)</li>
+<li>Teiss and City AM on the Co-op 2025 cyber attack; Southern Co-op, transfer of engagements 2026 (press and primary)</li>
+<li>Computer Weekly, Guardian, Telegraph and SECNEWS on the Google Cloud London outage, 20 Oct 2026 (press)</li>
+<li>House of Commons Treasury Committee, Google Cloud outage letters to the Bank of England and FCA, Oct 2026, <a href="https://committees.parliament.uk/committee/158/treasury-committee/news/218364/google-cloud-outage-bank-of-england-and-fca-letter-published/">parliament.uk</a> (primary)</li>
+<li>Treasury Committee, Lloyds Banking Group data incident correspondence, Mar to Sep 2026 (primary); Guardian, 3 Jun 2026 (press)</li>
+<li>Central Bank of Ireland, enforcement action against Coinbase Ireland, 22 Oct 2026, <a href="https://www.centralbank.ie/news/article/press-release-central-bank-takes-enforcement-action-against-coinbase-ireland-22-october-2026">centralbank.ie</a> (primary); Regulatory and Supervisory Outlook 2026 (primary)</li>
+<li>Bank of England, ISO 20022 enhanced data in CHAPS policy statements, 2024 and 2025 (primary); EBA and ESAs on DORA registers of information (primary); FCA operational resilience insights (primary)</li>
+<li>Elexon, MHHS migration timetable; PEF Consulting, CGI UK and BFY on MHHS readiness (primary and secondary)</li>
+<li>HMRC commercial pipeline, <a href="https://gov.uk/government/publications/hmrcs-commercial-pipeline">gov.uk</a> (primary); The Register on HMRC technology contracts, 28 Jan 2026 (press); Find a Tender 047471-2025 (primary)</li>
+<li>Public Accounts Committee report on DWP, 9 Jan 2026 (primary); PublicTechnology on DWP data platform and Project Zora (press); Find a Tender 052553-2026, 009892-2026, 075784-2025 (primary)</li>
+<li>UKAuthority and HTN on NHS England pipeline notices, Apr 2026 (press); Find a Tender 024415-2025 (primary); Civil Service World on the DHSC merger (press)</li>
+<li>Find a Tender 000372-2026 (MoD Digital Workplace), 020657-2025, 001328-2026, 030255-2025, 031994-2025, 022516-2025, 015185-2025, 015006-2026, 022534-2025 (primary, read through search extracts)</li>
+<li>Welsh Government, Procurement Act 2023 guidance: pipeline notice, <a href="https://www.gov.wales/procurement-act-2023-guidance-pipeline-notice-html">gov.wales</a>; Cabinet Office Procurement Pathway guidance; GOV.UK Sourcing Playbook, 30 Sep 2026 (primary)</li>
+<li>Government Commercial Agency, G-Cloud 15 RM1557.15, <a href="https://www.gca.gov.uk/agreements/RM1557.15">gca.gov.uk</a>; Technology Services 4 launch; DOS7 RM1043.9 (primary); PublicTechnology on G-Cloud 15 (press)</li>
+<li>Anthropic, Claude Partner Network, 12 Mar 2026, and services track, 3 Jun 2026, <a href="https://www.anthropic.com/news/claude-partner-network">anthropic.com</a> (primary); Channel Dive and CRN (press)</li>
+<li>Google Cloud, Partner Network, 16 Dec 2025, and US$750m partner fund, 22 Apr 2026, <a href="https://www.prnewswire.com/news-releases/google-cloud-commits-750-million-to-accelerate-partners-agentic-ai-development-302749239.html">PR Newswire</a> (primary)</li>
+<li>AWS, Co-sell with AWS and AWS Marketplace professional services, <a href="https://aws.amazon.com/partners/co-sell-with-aws/">aws.amazon.com</a> (primary)</li>
+<li>Microsoft Learn, services co-sell; Microsoft Azure Accelerate; Microsoft partner blog, 31 Jul 2025 (primary)</li>
+<li>ServiceNow, partner programme release, 20 Jan 2026; Salesforce FY27 consulting partner programme, 2 Mar 2026 (primary)</li>
+<li>Gartner, B2B buying journey; press releases of 25 Jun 2025 and 9 Mar 2026, <a href="https://www.gartner.com/en/newsroom/press-releases/2026-03-09-gartner-sales-survey-finds-67-percent-of-b2b-buyers-prefer-a-rep-free-experience">gartner.com</a> (primary)</li>
+<li>GOV.UK Service Manual, how the discovery phase works, <a href="https://www.gov.uk/service-manual/agile-delivery/how-the-discovery-phase-works">gov.uk</a> (primary)</li>
+<li>FourthLine, operational resilience diagnostic; AWS Marketplace listings from Ensono, Atos, Astadia, Thoughtworks, Nagarro and Perficient; Microsoft Marketplace listings from Mphasis, Perficient, TEKsystems and Capgemini; Guidewire services catalogue; Cognizant Guidewire overview (secondary and primary listings)</li>
+<li>Account Map research (A8), Wipro UK and Ireland named clients, compiled 27 Oct 2026, used to exclude existing clients from the target list</li>
+</ul></details></section>
+
+<script>
+(function(){
+var VZ=window.VZ;
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function responsive(host,draw){var w=-1;function go(){var n=host.clientWidth;if(n&&n!==w){w=n;host.innerHTML="";draw(n)}}go();var t;addEventListener("resize",function(){clearTimeout(t);t=setTimeout(go,120)});VZ.onTheme(function(){w=-1;go()})}
+function tabs(list,cb){var ts=[].slice.call(list.querySelectorAll("[role=tab]"));function sel(t){ts.forEach(function(x){var on=x===t;x.setAttribute("aria-selected",on);x.tabIndex=on?0:-1});cb(t)}ts.forEach(function(t,i){t.addEventListener("click",function(){sel(t)});t.addEventListener("keydown",function(e){var k=e.key==="ArrowRight"?1:e.key==="ArrowLeft"?-1:0;if(k){var n=ts[(i+k+ts.length)%ts.length];n.focus();sel(n)}})});sel(ts.filter(function(t){return t.getAttribute("aria-selected")==="true"})[0]||ts[0])}
+function grp(host,w,h,label){var s=VZ.el("svg",{viewBox:"0 0 "+w+" "+h,role:"group","aria-label":label});host.appendChild(s);return s}
+function txt(p,x,y,s,a){var t=VZ.el("text",Object.assign({x:x,y:y},a||{}),p);t.textContent=s;return t}
+
+/* trigger types */
+var TT={inc:["Incident","var(--s8)"],fine:["Fine","var(--s4)"],mer:["Merger or integration","var(--s1)"],lead:["New technology leadership","var(--s7)"],con:["Contract expiry or re-procurement","var(--s3)"],reg:["Regulation","var(--s6)"]};
+var TK=["inc","fine","mer","lead","con","reg"];
+/* sectors, in my order of attack */
+var SE=[["bank","Banking","Wave 1, from the first quarter"],["ins","Insurers and pensions","Wave 2"],["util","Utilities and energy","Wave 3"],["pub","Public sector","Wave 3, timed to pipeline notices"],["tel","Telecoms","Opportunistic"],["ret","Retail","Opportunistic"]];
+var SEN={};SE.forEach(function(s){SEN[s[0]]=s[1]});
+
+/* shared rule triggers */
+var R_CTP=["13 Jul 2026","reg","HM Treasury designations of Microsoft, Google Cloud, AWS and Oracle as Critical Third Parties came into force. Firms keep accountability for outsourcing risk and operational resilience."];
+var R_CHAPS=["Nov 2026","reg","CHAPS rejects unstructured addresses (ISO 20022 enhanced data), for firms that send CHAPS payments."];
+var R_GOOG=["20 Oct 2026","inc","Google Cloud London outage (europe-west2) disrupted customer services at several UK banks; Treasury Committee letter to the Bank of England and FCA the same day."];
+var R_DORA=["31 Mar 2027","reg","Annual DORA register of information on ICT third-party contracts due."];
+var R_MHHS=["28 Oct 2026","reg","MHHS M14: suppliers must be able to migrate meters; M15 on 7 May 2027 and M16 on 2 Jul 2027."];
+
+/* targets. sc = [forcing event, programme fit, incumbent exposure, partner route, deal size], 1 to 5, my judgement */
+var T=[
+{id:"barc",n:"Barclays",s:"bank",sz:"Group cost:income ratio 61% (FY2025); investment spend rising from £1.1bn to about £2.3bn a year",pg:["£700m gross efficiency savings in 2025 against a £500m target","More than £2bn of further savings targeted over 2026 to 2028","The CEO credited technology modernisation with \"the bulk of the efficiency gains\""],sup:[],tr:[["14 Jul 2025","fine","FCA fines: Barclays Bank UK £3.09m (risk-management systems for client-money account opening) and Barclays Bank plc £39.31m."],R_CTP,R_GOOG,R_CHAPS],sc:[4,4,3,2,5],src:[["Barclays 20-F FY2025","https://www.sec.gov/Archives/edgar/data/0000312069/000031206926000004/bcs-20251231.htm"],["FCA 2025 fines","https://www.fca.org.uk/news/news-stories/2025-fines"],["Computer Weekly, 20 Oct 2026","https://www.computerweekly.com/news/366652388/MPs-ask-finance-regulators-how-they-will-deal-with-Google-Cloud-after-outage"]]},
+{id:"hsbc",n:"HSBC UK",s:"bank",sz:"15.3m customers, 18,000+ FTE, £10.5bn revenue and £5.6bn profit before tax (2025)",pg:["Operating expenses up 7% to £4.3bn, partly \"planned investment in technology including operational resilience\"","Redesigned personal app (Jan 2025) with 7.1m active customers","Risk section names IT resilience and cloud adoption as priorities"],sup:[],tr:[["26 Feb 2025","inc","February 2025 outage; Treasury Committee letters of 26 Feb and 30 Apr 2025. HSBC attributed it to a \"technical component\" and enhanced alerting and monitoring."],R_CTP,R_GOOG,R_CHAPS],sc:[4,4,3,2,5],src:[["HSBC UK ARA 2025","https://www.hsbc.com/-/files/hsbc/investors/hsbc-results/2025/annual/pdfs/hsbc-uk-bank-plc/260225-annual-report-and-accounts-2025.pdf"],["Parliament, HSBC correspondence","https://api.parliament.uk/committees/publications/47793"]]},
+{id:"sant",n:"Santander UK and TSB",s:"bank",sz:"Third-largest UK bank by personal current accounts after adding TSB's 4m customers and 4,500 colleagues",pg:["TSB integration is management's top priority","At least £400m of pre-tax savings from the combination, about 13% of the combined cost base","Consolidation onto a single platform"],sup:[],tr:[["30 Apr 2026","mer","Santander UK completed the TSB acquisition."],["Oct 2026","lead","TSB lists a new Chief Information Officer, appointed October 2026, with a background in large-scale integration."],["H1 2027","mer","Business transfer targeted for the first half of 2027 (single press source, to confirm)."],R_CTP,R_CHAPS],note:"Context: the FCA and PRA fined TSB £48.65m in December 2022 over its April 2018 IT migration.",sc:[5,5,4,2,5],src:[["Santander UK Q2 2026 statement","https://www.investegate.co.uk/announcement/rns/santander-uk-plc--sanb/quarterly-management-statement-q2-2026/9681435"],["TSB investor site, board profiles",null]]},
+{id:"nbs",n:"Nationwide Building Society",s:"bank",sz:"Statutory profit before tax £1.49bn and underlying £2.03bn (year to 31 Mar 2026); 17m+ customers",pg:["Virgin Money IT migration over the next two to three years","Amazon Connect for contact centre and branch","Private-cloud extension \"following its acquisition of Virgin Money\""],sup:["AWS (agreement 26 Jan 2026)","Broadcom VMware Cloud Foundation (24 Jun 2026)","SBS buy-to-let platform on AWS, IBM in delivery (Feb 2026)","Microsoft, three-year Azure consumption commitment bought partly through the Microsoft marketplace"],tr:[["11 Dec 2025","fine","FCA fine of £44,078,500 for anti-financial-crime systems and controls (Oct 2016 to Jul 2021). Nationwide self-reported the issues."],["2 Apr 2026","mer","Virgin Money's business transferred to Nationwide after High Court approval on 23 Feb 2026."],R_CTP,R_GOOG,R_CHAPS],sc:[5,5,3,5,5],src:[["Nationwide transfer page","https://www.nationwide.co.uk/nationwide-and-virgin-money-transfer"],["FCA release","https://www.fca.org.uk/news/press-releases/fca-fines-nationwide-44m-failings-financial-crime-controls"],["Microsoft customer story","https://www.microsoft.com/en/customers/story/23308-nationwide-building-society-microsoft-commercial-marketplace"]]},
+{id:"cov",n:"Coventry Building Society and The Co-operative Bank",s:"bank",sz:"Underlying costs £350m and underlying profit before tax £183m (2026 interims); bank acquired for £780m on 1 Jan 2025",pg:["Integration \"moves into its final phase\"","Part VII transfer of the Bank, including smile, into the Society"],sup:[],tr:[["2 Dec 2026","mer","Court hearing for the Part VII transfer."],["1 Jan 2027","mer","Transfer of the Bank into the Society expected."]],sc:[5,4,3,1,3],src:[["Coventry member update","https://www.coventrybuildingsociety.co.uk/member/important-update.html"],["Coventry interim results 2026","https://www.coventrybuildingsociety.co.uk/content/dam/cbs/member/pdfs/financial-results/2026/2026-Interim-Financial-Results-News-Release.pdf"]]},
+{id:"boi",n:"Bank of Ireland",s:"bank",sz:"Operating expenses €2.03bn (FY2025); targets statutory RoTE above 16% by 2028",pg:["Efficiency levers include customer journeys, insourcing, organisational redesign and AI","Bank of Ireland UK: £100m three-year plan (Jan 2025) for everyday banking and technology upgrades"],sup:[],tr:[["26 Feb 2026","reg","Central Bank of Ireland 2026 outlook: targeted review of ICT change management and a deep dive into cloud dependency for significant banks."],["22 Oct 2026","fine","Central Bank of Ireland fined Coinbase Ireland €3.25m for outsourcing-governance failings, the precedent for outsourcing oversight in Ireland."],R_DORA],note:"Context: the Central Bank fined Bank of Ireland €24.5m in 2021 for IT service continuity failings.",sc:[3,4,3,2,4],src:[["BOI annual results RNS","https://investorrelations.bankofireland.com/app/uploads/2026.03.02-RNS-Bank-of-Ireland-Annual-Results-31-December-2025-vFF.pdf"],["CBI, 22 Oct 2026","https://www.centralbank.ie/news/article/press-release-central-bank-takes-enforcement-action-against-coinbase-ireland-22-october-2026"]]},
+{id:"ptsb",n:"PTSB",s:"bank",sz:"BAWAG offer of €2.97 a share, about €1.62bn; the Irish state holds about 57.5%",pg:["Takeover by BAWAG agreed in April 2026, subject to shareholder, regulatory and High Court approval"],sup:[],tr:[["Apr 2026","mer","BAWAG agreed an all-cash takeover."],["Q1 2027","mer","Completion expected in Q4 2026 or Q1 2027."],R_DORA],sc:[4,3,3,1,3],src:[["Law Society Gazette","https://www.lawsociety.ie/gazette/top-stories/2026/april/austrian-bank-agrees-1.6-billion-ptsb-deal"]]},
+{id:"lbs",n:"Leeds Building Society",s:"bank",sz:"Size figures to confirm from the Society's results",pg:["The CEO said the Society will \"continue to invest in resilient, secure and straightforward services\""],sup:[],tr:[["Sep 2026","lead","New CIO announced September 2026, joining in December, subject to regulatory approval; the COO leaves at the end of 2026."]],sc:[4,3,3,1,2],src:[["The Intermediary, 28 Sep 2026",null]]},
+{id:"lg",n:"Legal & General",s:"ins",sz:"Core operating profit £1,623m (FY2025)",pg:["Customer service moving to a single AI-enabled Microsoft Dynamics 365 platform, which has supported more than 12m customers","Copilot for all 10,000 employees and wider Azure use"],sup:["Microsoft (three-year agreement, June 2026)"],tr:[],sc:[2,4,2,5,4],src:[["L&G release, Jun 2026","https://group.legalandgeneral.com/newsroom/press-releases/2026/6/lg-expands-microsoft-collaboration-to-accelerate-ai-enablement-and-transform-customer-experience/"]]},
+{id:"mg",n:"M&G plc",s:"ins",sz:"£213m of cost savings by HY 2025 against a £230m target; asset-management cost:income ratio 75%",pg:["PruFund moving onto a digital platform"],sup:[],tr:[["24 Feb 2026","lead","M&G's Group Chief IT Officer was announced as Group CIO at Aviva, a change in M&G's technology leadership."]],sc:[3,4,3,2,4],src:[["M&G HY 2025","https://data.fca.org.uk/artefacts/NSM/RNS/5804852.html"]]},
+{id:"rl",n:"Royal London",s:"ins",sz:"Adjusted operating profit £327m (2025); mutual",pg:["The CEO describes failing to transform as \"an existential risk\""],sup:["TCS (DevOps, platform simplification and migration, resilience; scope from a search extract)","Procentia (bulk-annuity administration)","Seismic (Dec 2025)"],tr:[],sc:[2,4,2,2,3],src:[["Royal London ARA 2025","https://www.royallondon.com/siteassets/site-docs/about-us/annual-reports/annual-report-and-accounts-2025-rl.pdf"]]},
+{id:"adm",n:"Admiral Group",s:"ins",sz:"Nearly 12m customers in four countries (FY2025)",pg:["GenAI centre of excellence with more than 150 initiatives supporting over 4,000 colleagues","Finished integrating More Than"],sup:["Google Cloud (core policy and billing platforms, 2024 partnership)"],tr:[["Early 2026","mer","Agreed to acquire Flock."]],sc:[3,4,3,5,3],src:[["Admiral FY2025 RNS","https://www.lse.co.uk/rns/ADM/admiral-group-plc-full-year-2025-results-w4om98cg6bv5a2f.html"],["Admiral and Google Cloud","https://www.admiralgroup.co.uk/news-releases/news-release-details/admiral-selects-google-cloud-accelerate-innovative-customer/"]]},
+{id:"ofsf",n:"OneFamily and Scottish Friendly",s:"ins",sz:"About £10bn AUM and 2.3m members combined",pg:["Merger of two mutual life assurers keeping three brands"],sup:[],tr:[["4 Feb 2026","mer","Merger proposal announced."],["Early 2027","mer","Merger expected to take effect, subject to regulatory approval."]],sc:[4,3,3,1,2],src:[["OneFamily release","https://www.onefamily.com/our-story/media-centre/2026/onefamily-and-scottish-friendly-announce-proposal-to-merge-creating-one-of-the-uks-largest-mutual-life-assurers-with-2-3-million-members/"]]},
+{id:"hisc",n:"Hiscox",s:"ins",sz:"Size figures to confirm from group results",pg:["Programmes to confirm"],sup:[],tr:[["15 Jul 2026","lead","Group CIO change: the previous Group CIO was announced by CFC as its new CIO, joining in November."]],sc:[3,3,3,1,2],src:[["CFC news release, 15 Jul 2026",null]]},
+{id:"mark",n:"Markel International",s:"ins",sz:"Size figures to confirm",pg:["Programmes to confirm"],sup:[],tr:[["10 Mar 2026","lead","New CIO, International announced."]],sc:[3,3,3,1,2],src:[["Markel news release, 10 Mar 2026",null]]},
+{id:"cent",n:"Centrica (British Gas)",s:"util",sz:"7.96m UK and Ireland household customers; underlying operating profit £814m (FY2025)",pg:["£100m of net transformation benefits in 2025 and a further £500m targeted by 2030, \"driven by technology and AI\""],sup:["ENSEK Ignition SaaS platform (chosen 2021 for 7m+ customers)","TCS (energy-data platform on AWS)","AWS"],tr:[R_MHHS],sc:[4,4,2,4,4],src:[["Hargreaves Lansdown","https://www.hl.co.uk/news/british-gas-profits-tumble-as-household-supply-arm-sees-80m-warm-weather-hit"],["ENSEK release","https://ensek.com/news/centrica-partnership-ensek"]]},
+{id:"eon",n:"E.ON UK and OVO",s:"util",sz:"About 9.6m customers combined (E.ON 5.6m and OVO's 4m)",pg:["E.ON will \"evaluate the potential adoption of Kaluza across the wider E.ON group\"","E.ON Next runs on Kraken"],sup:["Kaluza (billing platform licence)","Kraken (E.ON Next)"],tr:[["11 May 2026","mer","E.ON agreed to buy OVO's UK energy retail business."],["1 Oct 2026","mer","CMA Phase 1 clearance."],["Date to confirm","fine","Ofgem: E.ON Next paid £14.5m in compensation and redress after a billing-system error on prepayment accounts."],R_MHHS],sc:[5,5,3,2,4],src:[["CMA case page","https://www.gov.uk/cma-cases/eon-slash-ovo-merger-inquiry"],["OVO release","https://www.ovoenergy.com/press/ovo-agrees-sale-of-energy-retail-business-to-e-on-and-home-services-business-to-hometree"]]},
+{id:"uu",n:"United Utilities",s:"util",sz:"AMP8 (2025 to 2030) engineering design budget of around £7bn",pg:["AMP8 and AMP9 frameworks for audit, assurance, commercial consultancy and programme management"],sup:["Atamis (direct award across AMP8 and AMP9, 2025 notice)"],tr:[["2025","con","Find a Tender notices for AMP8 and AMP9 frameworks and a direct award."]],sc:[3,3,2,1,3],src:[["FTS 037099-2025","https://www.find-tender.service.gov.uk/Notice/037099-2025/PDF"],["FTS 003636-2024","https://www.find-tender.service.gov.uk/Notice/003636-2024"]]},
+{id:"sgn",n:"SGN",s:"util",sz:"Gas distribution to 6m customers",pg:["New CIO's remit includes cloud transformation, cyber, data and enterprise modernisation"],sup:[],tr:[["2 Feb 2026","lead","New CIO announced, starting in May 2026."]],sc:[3,4,3,1,3],src:[["SGN news, 2 Feb 2026",null]]},
+{id:"vt",n:"VodafoneThree",s:"tel",sz:"About 28.8m customers; integration benefit target of £0.7bn a year",pg:["Published IT migration timeline from Customer Day 1 (Apr 2026) to decommissioning Three's legacy stack (end 2028)"],sup:["Ericsson and Nokia (network)"],tr:[["Sep 2026","mer","Customer Day 2 milestone."],["Autumn 2027","mer","Three consumers move onto Vodafone BSS."],["End 2027","mer","Unified HR, finance and procurement."]],sc:[4,5,3,2,5],src:[["Vodafone investor presentation 2026","https://financialfilings.com/filings/vodafone-group-plc/investor-presentation/2026/68635168/"],["TelcoTitans, Oct 2026","https://www.telcotitans.com/vodafonewatch/vodafonethrees-mega-it-meld-advances-in-critical-year-for-synergy-delivery/10965.article"]]},
+{id:"tes",n:"Tesco",s:"ret",sz:"2026/27 adjusted operating profit guidance £3.0bn to £3.3bn",pg:["\"Save to Invest\": more than £2.2bn over four years and £500m targeted again in 2026/27","AI assistant trial with 280,000 colleagues"],sup:["Mistral AI (co-creation agreement)"],tr:[],sc:[2,3,2,2,4],src:[["Tesco interim results 2025/26","https://www.tescoplc.com/media/owobgr2m/tesco-plc-interim-results-2526-press-release.pdf"]]},
+{id:"sain",n:"Sainsbury's",s:"ret",sz:"Capex £800m to £850m a year",pg:["\"Next Level\" plan to March 2027 with £1bn of structural cost reduction tied to technology"],sup:["SAP (commercial systems)","Accenture (transformation partner)","AWS (cloud)","Microsoft (five-year AI partnership)"],tr:[],sc:[3,3,2,4,4],src:[["The Grocer","https://thegrocer.co.uk/sainsburys/sainsburys-partners-with-sap-accenture-amazon-to-revolutionise-systems/695282.article"]]},
+{id:"ms",n:"Marks & Spencer",s:"ret",sz:"Adjusted profit before tax £671.4m (FY26, from £881.1m)",pg:["About £140m of digital and technology spend in 2026/27","The next phase \"prioritises simplification of the technology estate\"","£600m structural cost-reduction target from 2022/23 to 2027/28"],sup:["TCS (wider technology partnership renewed 9 Apr 2026)"],tr:[["Apr 2025","inc","Cyber incident; adjusted profit fell after it."]],sc:[3,4,2,1,4],src:[["M&S FY26 RNS","https://corporate.marksandspencer.com/sites/marksandspencer/files/2026-05/fy26-rns.pdf"]]},
+{id:"coop",n:"Co-op Group",s:"ret",sz:"2,300 food stores and 7m members",pg:["Integration of Southern Co-op planned after CMA review"],sup:[],tr:[["Apr 2025","inc","Cyber attack; about £285m of revenue impact and a £126m loss for 2025."],["27 Jul 2026","mer","Southern Co-op transferred into a Co-op Group subsidiary."]],sc:[4,4,3,1,3],src:[["City AM","https://www.cityam.com/co-op-digests-80m-profit-hit-from-cyber-attack/"],["Southern Co-op","https://southern.coop/membership/sgm2026"]]},
+{id:"hmrc",n:"HMRC",s:"pub",sz:"About £2bn of technology contracts in its 2024 to 2028 commercial pipeline; the NAO reports £1.6bn extra for IT and data modernisation from 2026-27 to 2028-29",pg:["Legacy Data Warehouse transformation (£410m)","Digital Platforms Run and Change Products (up to £306m)","Legacy Retained HMRC Services (£214m, planned direct award)"],sup:["AWS (public cloud, £350m replacement contract)","Accenture (May 2024 award being replaced)","Capgemini (Core Business Platform support being replaced)"],tr:[["11 Aug 2025","con","Pipeline notice for replacement digital and legacy application services, estimated 1 Sep 2027 to 30 Aug 2031."],["1 Sep 2027","con","Estimated start of the replacement services contract."]],sc:[5,5,4,4,5],src:[["HMRC commercial pipeline","https://gov.uk/government/publications/hmrcs-commercial-pipeline"],["The Register, 28 Jan 2026","https://www.theregister.com/2026/01/28/hmrc_tech_pipeline/"],["FTS 047471-2025","https://www.find-tender.service.gov.uk/Notice/047471-2025/PDF"]]},
+{id:"dwp",n:"DWP",s:"pub",sz:"11-year Service Modernisation Programme of £312.1m (2022-23 to 2032-33)",pg:["Plan to cut legacy IT risk by 58% over three years","Project Zora: decompose the Universal Credit application into microservices","Unified data platform and legacy data warehouse decommissioning"],sup:["Cognizant (strategic data-platform partner, £13.5m, from 5 May 2026)"],tr:[["4 Jun 2026","con","Project Zora preliminary market engagement: £34.5m excluding VAT via DOS7 Lot 2; the call-off closed on 12 Aug 2026 with 11 applications."],["2 Nov 2026","con","Project Zora contract start, running to 1 Nov 2028 (plus one year)."],["7 Sep 2026","con","Pipeline notice: automation of legacy processes with real-time AI assistance, to 6 Dec 2029, aimed at SMEs."]],sc:[5,5,3,2,4],src:[["PAC report","https://publications.parliament.uk/pa/cm5901/cmselect/cmpubacc/1447/report.html"],["FTS 052553-2026","https://www.find-tender.service.gov.uk/Notice/052553-2026"]]},
+{id:"nhse",n:"NHS England",s:"pub",sz:"Three pipeline notices on 21 Apr 2026; being merged into DHSC",pg:["UEC digital services (NHS Pathways, 111 online, interoperability), up to £44.4m over three years","DevOps digital delivery partner, about £19m over two years via RM6345","Digital Primary Care, about £400m (Apr 2026 to Mar 2029)"],sup:["IBM (NHS App, reported up to £160m, May 2026 to Mar 2028; to confirm)"],tr:[["21 Apr 2026","con","Three pipeline notices published."],["Apr 2027","mer","The \"new DHSC\" expected, folding in NHS England."],R_GOOG.slice(0,2).concat(["The 20 Oct 2026 Google Cloud London outage also disrupted NHS England systems."])],sc:[4,4,3,2,4],src:[["UKAuthority","https://www.ukauthority.com/articles/nhs-england-invests-100-million-in-digital-services-contracts"],["FTS 024415-2025","https://www.find-tender.service.gov.uk/Notice/024415-2025"]]},
+{id:"mod",n:"MoD Defence Digital",s:"pub",sz:"Digital Workplace managed service estimated at £750m excluding VAT",pg:["OFFICIAL tier end-user services from 1 May 2028 to 30 Apr 2033, extendable to 2038","Royal Navy web support (£8.71m) and Army IT technical assurance (£3m) pipeline notices"],sup:[],tr:[["5 Jan 2026","con","Early market engagement for the Digital Workplace managed service."],["30 Jun 2026","con","Royal Navy web support re-procurement, to 30 Jun 2028."]],sc:[2,3,4,1,5],src:[["FTS 000372-2026","https://www.find-tender.service.gov.uk/Notice/000372-2026"],["FTS 020657-2025","https://www.find-tender.service.gov.uk/Notice/020657-2025/PDF"]]},
+{id:"ho",n:"Home Office",s:"pub",sz:"Ten-year National ANPR services contract",pg:["National ANPR service re-procurement","Emergency Services Network device logistics"],sup:[],tr:[["1 Jul 2026","con","National ANPR service re-procurement, estimated 1 Jul 2026 to 1 Jul 2036."],["2 Jan 2027","con","ESN device logistics, estimated to 30 Apr 2030."]],sc:[3,3,3,1,3],src:[["FTS 030255-2025","https://www.find-tender.service.gov.uk/Notice/030255-2025"],["FTS 031994-2025","https://www.find-tender.service.gov.uk/Notice/031994-2025"]]},
+{id:"dvsa",n:"DVSA",s:"pub",sz:"MOT Digital Delivery pipeline notice of £16m",pg:["MOT Digital Delivery, 1 Apr 2026 to 31 Mar 2028","Multi Functional Device Replacement 2026 (£2m)"],sup:[],tr:[["1 Apr 2026","con","MOT Digital Delivery pipeline period starts; the notice states there is \"no guarantee that a tender opportunity will result\"."]],sc:[3,4,3,1,2],src:[["FTS 022516-2025","https://www.find-tender.service.gov.uk/Notice/022516-2025"]]}
+];
+T.forEach(function(t){t.types={};t.tr.forEach(function(x){t.types[x[1]]=1})});
+
+/* ---------- flow diagram ---------- */
+(function(){var host=document.getElementById("nl-flow");
+ var N=[["Move 1 expansion","in an existing account","accounts.html","Accounts (A7)","var(--accent)"],["Reference","proof point and client partner","account-map.html","Account Map (A8)","var(--accent)"],["Target with a trigger","dated reason to meet","#nl-h1","Targets below","var(--s2)"],["Entry scope","fixed price, 4 to 12 weeks","#nl-h5","Entry offers","var(--s2)"],["Second contract","becomes a Move 1 account","#nl-h6","Sequence","var(--s2)"]];
+ responsive(host,function(w){var narrow=w<640,n=N.length,bw,bh=narrow?52:78,gap=narrow?14:18,h,s;
+  if(narrow){bw=w-2;h=n*(bh+gap);s=grp(host,w,h,"Flow from a Move 1 expansion to a new logo");
+   N.forEach(function(d,i){var y=i*(bh+gap),a=VZ.el("a",{href:d[2]},s);VZ.el("rect",{x:1,y:y,width:bw,height:bh,rx:5,style:"fill:var(--panel);stroke:"+d[4]+";stroke-width:2"},a);
+    txt(a,14,y+21,d[0],{class:"t-strong"});txt(a,14,y+39,d[1]+" · "+d[3],{style:"font-size:11.5px"});
+    if(i<n-1)VZ.el("path",{d:"M"+(w/2)+","+(y+bh+2)+"v"+(gap-4)+"l-4,-4m4,4l4,-4",style:"stroke:var(--ink3);fill:none;stroke-width:1.5"},s)});
+  }else{bw=(w-(n-1)*gap)/n;h=bh+40;s=grp(host,w,h,"Flow from a Move 1 expansion to a new logo");
+   N.forEach(function(d,i){var x=i*(bw+gap),a=VZ.el("a",{href:d[2]},s);VZ.el("rect",{x:x+1,y:1,width:bw-2,height:bh,rx:5,style:"fill:var(--panel);stroke:"+d[4]+";stroke-width:2"},a);
+    txt(a,x+12,26,d[0],{class:"t-strong"});txt(a,x+12,46,d[1],{style:"font-size:11.5px"});txt(a,x+12,64,d[3],{style:"font-size:11.5px;fill:var(--ink1)"});
+    if(i<n-1)VZ.el("path",{d:"M"+(x+bw-1)+","+(bh/2)+"h"+(gap)+"l-4,-4m4,4l-4,4",style:"stroke:var(--ink3);fill:none;stroke-width:1.5"},s)});
+   VZ.el("path",{d:"M"+(w-bw/2)+","+(bh+3)+"v14H"+(bw/2)+"v-12",style:"stroke:var(--ink3);fill:none;stroke-width:1.2;stroke-dasharray:4 3"},s);
+   VZ.el("path",{d:"M"+(bw/2-4)+","+(bh+9)+"l4,-5l4,5",style:"stroke:var(--ink3);fill:none;stroke-width:1.2"},s);
+   txt(s,w/2,bh+30,"Each new logo joins Move 1 after its first contract",{"text-anchor":"middle",class:"t-muted"});
+  }});
+})();
+
+/* ---------- target grid and scorer ---------- */
+var fS="all",fT="all",selT="nbs";
+var CR=[["Forcing event proximity","A dated trigger inside 12 to 18 months"],["Programme fit with IC&D offers","Modernisation, quality engineering, cloud-native and AI work in stated programmes"],["Incumbent exposure","Higher where a merger, re-procurement or migration opens the estate"],["Partner route","A named hyperscaler or platform relationship that Wipro partners with"],["Deal size","Likely size of the full programme"]];
+var CC=["var(--s2)","var(--s1)","var(--s7)","var(--s3)","var(--s4)"];
+var PRE=[["Trigger first",[5,4,3,2,3]],["Partner-led",[3,3,2,5,3]],["Balanced",[3,3,3,3,3]],["Largest deals",[2,3,3,2,5]]];
+var W=PRE[0][1].slice();
+function score(t){var a=0,m=0;for(var i=0;i<5;i++){a+=W[i]*t.sc[i];m+=W[i]*5}return m?Math.round(a/m*100):0}
+function match(t){return (fS==="all"||t.s===fS)&&(fT==="all"||t.types[fT])}
+function tdate(s){return s}
+
+document.getElementById("nl-nt").textContent=T.length;
+
+var fs=document.getElementById("nl-fs"),ft=document.getElementById("nl-ft");
+[["all","All sectors"]].concat(SE.map(function(s){return [s[0],s[1]]})).forEach(function(s){var b=document.createElement("button");b.type="button";b.textContent=s[1];b.setAttribute("aria-pressed",s[0]===fS);b.onclick=function(){fS=s[0];[].forEach.call(fs.children,function(x){x.setAttribute("aria-pressed",x===b)});upd()};fs.appendChild(b)});
+[["all","All types",null]].concat(TK.map(function(k){return [k,TT[k][0],TT[k][1]]})).forEach(function(s){var b=document.createElement("button");b.type="button";b.innerHTML=(s[2]?'<i style="background:'+s[2]+'"></i>':'')+esc(s[1]);b.setAttribute("aria-pressed",s[0]===fT);b.onclick=function(){fT=s[0];[].forEach.call(ft.children,function(x){x.setAttribute("aria-pressed",x===b)});upd()};ft.appendChild(b)});
+
+var grid=document.getElementById("nl-grid");
+SE.forEach(function(s){var g=document.createElement("div");g.className="nl-sg";g.dataset.s=s[0];g.innerHTML='<h4>'+esc(s[1])+'<span>'+esc(s[2])+' (my plan)</span></h4><div class="nl-tiles"></div>';grid.appendChild(g);
+ T.filter(function(t){return t.s===s[0]}).forEach(function(t){var b=document.createElement("button");b.type="button";b.className="nl-tile";b.dataset.id=t.id;
+  b.innerHTML='<b>'+esc(t.n)+'</b><span class="sz">'+esc(t.sz.split(";")[0])+'</span><span class="dots">'+TK.filter(function(k){return t.types[k]}).map(function(k){return '<i title="'+TT[k][0]+'" style="background:'+TT[k][1]+'"></i>'}).join("")+'</span><span class="sc"></span>';
+  b.onclick=function(){sel(t.id,true)};g.querySelector(".nl-tiles").appendChild(b)})});
+
+function det(){var t=T.filter(function(x){return x.id===selT})[0];if(!t)return;var d=document.getElementById("nl-det");
+ var trs=t.tr.length?t.tr.map(function(x){return '<div class="tr"><span>'+esc(x[0])+'</span><span><i style="background:'+TT[x[1]][1]+'"></i><b style="font-weight:600">'+TT[x[1]][0]+'.</b> '+esc(x[2])+'</span></div>'}).join(""):'<p class="mini">No dated trigger in the research; programme facts only.</p>';
+ d.innerHTML='<div><span class="mini">'+esc(SEN[t.s])+'</span><div class="nm">'+esc(t.n)+'</div><p style="margin-top:6px">'+esc(t.sz)+'.</p>'+
+  '<h4>Stated programmes</h4><ul>'+t.pg.map(function(p){return '<li>'+esc(p)+'</li>'}).join("")+'</ul>'+
+  '<h4>Publicly reported technology suppliers</h4>'+(t.sup.length?'<ul>'+t.sup.map(function(p){return '<li>'+esc(p)+'</li>'}).join("")+'</ul>':'<p class="mini">None named in the sources used.</p>')+
+  (t.note?'<p class="mini" style="margin-top:10px">'+esc(t.note)+'</p>':'')+'</div>'+
+  '<div><h4>Dated triggers</h4>'+trs+'<h4>Score, my judgement: '+score(t)+' of 100</h4>'+
+  CR.map(function(c,i){return '<div class="nl-sbar"><span>'+c[0]+'</span><span class="t"><span class="f" style="display:block;width:'+(t.sc[i]*20)+'%;background:'+CC[i]+'"></span></span><b>'+t.sc[i]+'</b></div>'}).join("")+
+  '<h4>Sources</h4><div class="srcs">'+t.src.map(function(s){return s[1]?'<a href="'+s[1]+'">'+esc(s[0])+'</a>':'<span class="mini">'+esc(s[0])+'</span>'}).join(" · ")+'</div></div>'}
+function sel(id,scroll){selT=id;[].forEach.call(document.querySelectorAll(".nl-tile"),function(b){b.setAttribute("aria-pressed",b.dataset.id===id)});det();drawRank();if(scroll){var d=document.getElementById("nl-det");var r=d.getBoundingClientRect();if(r.top>innerHeight||r.bottom<0)d.scrollIntoView({behavior:"smooth",block:"nearest"})}}
+
+/* sliders */
+var sl=document.getElementById("nl-sl"),pre=document.getElementById("nl-pre");
+CR.forEach(function(c,i){var d=document.createElement("div");d.className="ctl";d.innerHTML='<label for="nl-w'+i+'"><span><i style="display:inline-block;width:9px;height:9px;border-radius:50%;background:'+CC[i]+';margin-right:6px"></i>'+c[0]+'</span><output id="nl-wo'+i+'">'+W[i]+'</output></label><input type="range" id="nl-w'+i+'" min="0" max="5" step="1" value="'+W[i]+'"><span class="hint">'+c[1]+'</span>';sl.appendChild(d);
+ d.querySelector("input").addEventListener("input",function(e){W[i]=+e.target.value;document.getElementById("nl-wo"+i).textContent=W[i];[].forEach.call(pre.children,function(x){x.setAttribute("aria-pressed","false")});upd()})});
+PRE.forEach(function(p,j){var b=document.createElement("button");b.type="button";b.textContent=p[0];b.setAttribute("aria-pressed",j===0);b.onclick=function(){W=p[1].slice();W.forEach(function(v,i){document.getElementById("nl-w"+i).value=v;document.getElementById("nl-wo"+i).textContent=v});[].forEach.call(pre.children,function(x){x.setAttribute("aria-pressed",x===b)});upd()};pre.appendChild(b)});
+document.getElementById("nl-rl").innerHTML=CR.map(function(c,i){return '<span><i style="background:'+CC[i]+'"></i>'+c[0]+'</span>'}).join("");
+
+var rankHost=document.getElementById("nl-rank"),rw=0;
+function drawRank(){var w=rankHost.clientWidth;if(!w)return;rw=w;rankHost.innerHTML="";
+ var L=T.filter(match).map(function(t){return {t:t,v:score(t)}}).sort(function(a,b){return b.v-a.v});
+ var narrow=w<560,lw=narrow?0:220,rh=narrow?40:26,top=4,h=top+L.length*rh+8;
+ if(!L.length){rankHost.innerHTML='<p class="mini">No targets match these filters.</p>';return}
+ var s=grp(rankHost,w,h,"Targets ranked by weighted score"),x0=lw,x1=w-40,sc=VZ.lin(0,100,x0,x1);
+ var tot=W.reduce(function(a,b){return a+b},0)*5||1;
+ L.forEach(function(o,i){var y=top+i*rh,g=VZ.el("g",{class:"row"+(o.t.id===selT?" sel":""),tabindex:0,role:"button","aria-label":(i+1)+". "+o.t.n+", "+o.v+" of 100"},s);
+  VZ.el("rect",{class:"hit",x:0,y:y,width:w,height:rh-2,rx:3,style:"fill:transparent"},g);
+  var by=narrow?y+20:y+6,bh=narrow?12:12;
+  txt(g,4,narrow?y+14:y+17,(i+1)+". "+(!narrow&&o.t.n.length>30?o.t.n.slice(0,29)+"…":o.t.n),{class:o.t.id===selT?"t-strong":"",style:"font-size:12px;fill:var(--ink1)"});
+  var xx=x0;for(var k=0;k<5;k++){var ww=(W[k]*o.t.sc[k])/tot*100*(x1-x0)/100;if(ww>0){VZ.el("rect",{x:xx,y:by,width:Math.max(0,ww-1),height:bh,style:"fill:"+CC[k]},g)}xx+=ww}
+  txt(g,x1+6,by+10,String(o.v),{style:"font-size:12px;font-weight:600;fill:var(--ink1)"});
+  g.addEventListener("click",function(){sel(o.t.id,true)});g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();sel(o.t.id,true)}});
+ });
+ var top3=L.slice(0,3).map(function(o){return o.t.n}).join(", ");
+ document.getElementById("nl-rr").textContent="With these weights the "+(L.length>=3?"top three are ":L.length===1?"only match is ":"matches are ")+top3+". Select a row for its detail above.";
+}
+addEventListener("resize",function(){if(rankHost.clientWidth!==rw)drawRank()});VZ.onTheme(drawRank);
+
+function upd(){var n=0;[].forEach.call(document.querySelectorAll(".nl-tile"),function(b){var t=T.filter(function(x){return x.id===b.dataset.id})[0],m=match(t);b.classList.toggle("dim",!m);if(m)n++;b.querySelector(".sc").textContent="Score "+score(t)});
+ [].forEach.call(document.querySelectorAll(".nl-sg"),function(g){g.hidden=!(fS==="all"||g.dataset.s===fS)});
+ document.getElementById("nl-cnt").textContent=n+" of "+T.length+" targets match"+(fT!=="all"?" with a "+TT[fT][0].toLowerCase()+" trigger":"")+".";
+ drawRank()}
+upd();sel(selT,false);
+
+/* ---------- trigger watchlist ---------- */
+/* d = ISO date for position, l = date label, t = type, h = headline, x = detail, cl = existing-client note, tg = target ids */
+var CLN="This also applies to organisations named on the Account Map. ";
+var WL=[
+{d:"2025-02-26",l:"26 Feb 2025",t:"inc",h:"HSBC UK outage and Treasury Committee letters",x:"Committee letters dated 26 Feb and 30 Apr 2025. HSBC attributed the outage to a fault in a \"technical component\".",tg:["hsbc"]},
+{d:"2025-03-06",l:"6 Mar 2025",t:"inc",h:"Treasury Committee findings on bank IT failures",x:"Nine major banks and building societies had at least 158 IT failures and 803 hours of unplanned outages between Jan 2023 and Feb 2025.",cl:CLN+"The findings cover several of the largest UK banks.",tg:[]},
+{d:"2025-03-31",l:"31 Mar 2025",t:"reg",h:"Operational resilience transition ends (FCA and PRA)",x:"Firms must stay within impact tolerances for important business services, including where third parties deliver them.",cl:CLN+"It applies to every UK bank and insurer.",tg:["barc","hsbc","sant","nbs","cov","lbs"]},
+{d:"2025-04-22",l:"Apr 2025",t:"inc",h:"Cyber incidents at Co-op Group and Marks & Spencer",x:"Co-op reported about £285m of revenue impact; M&S reported a profit hit after the incident.",tg:["coop","ms"]},
+{d:"2025-07-08",l:"8 Jul 2025",t:"fine",h:"FCA fines Monzo £21.09m",x:"PRIN 3 and financial-crime controls. One of several 2025 systems-and-controls fines; FCA fines totalled £124.2m in 2025.",tg:[]},
+{d:"2025-07-14",l:"14 Jul 2025",t:"fine",h:"FCA fines Barclays Bank UK and Barclays Bank plc",x:"£3.09m and £39.31m, including risk-management systems for client-money account opening.",tg:["barc"]},
+{d:"2025-08-11",l:"11 Aug 2025",t:"con",h:"HMRC pipeline notice for digital and legacy application services",x:"Estimated 1 Sep 2027 to 30 Aug 2031, alongside about £2bn of HMRC technology re-procurements.",tg:["hmrc"]},
+{d:"2025-12-11",l:"11 Dec 2025",t:"fine",h:"FCA fines Nationwide £44,078,500",x:"Anti-financial-crime systems and controls, Oct 2016 to Jul 2021. Nationwide self-reported.",tg:["nbs"]},
+{d:"2026-01-05",l:"5 Jan 2026",t:"con",h:"MoD Digital Workplace early market engagement",x:"Estimated £750m excluding VAT, 1 May 2028 to 30 Apr 2033 with extension to 2038.",tg:["mod"]},
+{d:"2026-01-30",l:"30 Jan 2026",t:"con",h:"DOS7 framework starts",x:"Digital Outcomes and Specialists 7 merges DOS6 and Digital Specialists and Programmes. Further competition only.",tg:["dwp","dvsa"]},
+{d:"2026-02-02",l:"2 Feb 2026",t:"lead",h:"SGN announces a new CIO",x:"Starting in May 2026, with a remit covering cloud transformation, cyber, data and enterprise modernisation.",tg:["sgn"]},
+{d:"2026-02-04",l:"4 Feb 2026",t:"mer",h:"OneFamily and Scottish Friendly merger proposal",x:"About £10bn AUM and 2.3m members, effective early 2027 subject to approval.",tg:["ofsf"]},
+{d:"2026-02-24",l:"24 Feb 2026",t:"lead",h:"Technology leadership change at M&G",x:"M&G's Group Chief IT Officer was announced as Group CIO at Aviva.",cl:CLN+"Aviva is on the Account Map, so this is also a Move 1 date.",tg:["mg"]},
+{d:"2026-02-26",l:"26 Feb 2026",t:"reg",h:"Central Bank of Ireland 2026 outlook",x:"DORA third-party inspections, TLPT, a review of ICT change management and a deep dive into cloud dependency for significant banks.",cl:CLN+"It applies to Irish banks on the Account Map.",tg:["boi"]},
+{d:"2026-03-10",l:"10 Mar 2026",t:"lead",h:"Markel International announces a CIO, International",x:"New technology leadership in the London insurance market.",tg:["mark"]},
+{d:"2026-03-12",l:"12 Mar 2026",t:"inc",h:"App data incident at a UK banking group",x:"Up to 447,936 customers affected. The group's final letter (17 Sep 2026) traced it to a software defect in an overnight change and listed changes to categorisation, review, testing and release.",cl:"This concerns an organisation on the Account Map. It informs the change-quality entry offer for other banks.",tg:[]},
+{d:"2026-04-01",l:"1 Apr 2026",t:"con",h:"Crown Commercial Service becomes the Government Commercial Agency",x:"Frameworks such as G-Cloud 15, TS4 and DOS7 now sit with the GCA.",tg:["hmrc","dwp","nhse","mod","ho","dvsa"]},
+{d:"2026-04-02",l:"2 Apr 2026",t:"mer",h:"Virgin Money transfers to Nationwide",x:"IT migration over two to three years; about 600 roles cut.",tg:["nbs"]},
+{d:"2026-04-15",l:"Apr 2026",t:"mer",h:"BAWAG agrees to buy PTSB",x:"About €1.62bn; completion expected Q4 2026 or Q1 2027.",tg:["ptsb"]},
+{d:"2026-04-21",l:"21 Apr 2026",t:"con",h:"NHS England publishes three pipeline notices",x:"UEC digital services up to £44.4m and a DevOps delivery partner of about £19m via RM6345.",tg:["nhse"]},
+{d:"2026-04-30",l:"30 Apr 2026",t:"mer",h:"Santander UK completes the TSB acquisition",x:"At least £400m of pre-tax savings from the combination and a single platform.",tg:["sant"]},
+{d:"2026-05-11",l:"11 May 2026",t:"mer",h:"E.ON agrees to buy OVO's UK energy retail business",x:"About 9.6m customers combined; Kaluza to be evaluated across the E.ON group.",tg:["eon"]},
+{d:"2026-05-26",l:"26 May 2026",t:"con",h:"Annual pipeline notice deadline",x:"Authorities above £100m publish contracts over £2m planned for the next 18 months.",tg:["hmrc","dwp","nhse","mod","ho","dvsa"]},
+{d:"2026-06-04",l:"4 Jun 2026",t:"con",h:"DWP Project Zora market engagement",x:"£34.5m excluding VAT via DOS7 Lot 2; the RFI asked about the effect of AI tooling on pricing.",tg:["dwp"]},
+{d:"2026-07-13",l:"13 Jul 2026",t:"reg",h:"Critical Third Parties designations in force",x:"Microsoft Ireland Operations, Google Cloud EMEA, AWS EMEA and Oracle UK. Firms and boards still own outsourcing risk.",cl:CLN+"Every bank and insurer using these providers is in scope.",tg:["barc","hsbc","sant","nbs"]},
+{d:"2026-07-15",l:"15 Jul 2026",t:"lead",h:"Group CIO change at Hiscox",x:"CFC announced Hiscox's Group CIO as its new CIO, joining in November.",tg:["hisc"]},
+{d:"2026-07-27",l:"27 Jul 2026",t:"mer",h:"Southern Co-op transfers into Co-op Group",x:"Integration planned after CMA review later in 2026.",tg:["coop"]},
+{d:"2026-08-06",l:"6 Aug 2026",t:"con",h:"G-Cloud 15 starts",x:"Four-year open framework, over 4,000 suppliers, reopening at 18 and 36 months.",tg:["hmrc","dwp","nhse"]},
+{d:"2026-09-15",l:"Sep 2026",t:"lead",h:"Leeds Building Society announces a new CIO",x:"Joining in December; the COO leaves at the end of 2026.",tg:["lbs"]},
+{d:"2026-09-20",l:"Sep 2026",t:"mer",h:"VodafoneThree Customer Day 2",x:"Part of the published IT migration timeline to the end of 2028.",tg:["vt"]},
+{d:"2026-10-01",l:"1 Oct 2026",t:"mer",h:"CMA clears E.ON and OVO at Phase 1",x:"Completion and the post-merger platform choice are still to be announced.",tg:["eon"]},
+{d:"2026-10-08",l:"Oct 2026",t:"lead",h:"TSB lists a new CIO",x:"An Executive Committee member with a background in large-scale integration, during the Santander integration.",tg:["sant"]},
+{d:"2026-10-14",l:"14 Oct 2026",t:"con",h:"DALAS 2 planned tender publication",x:"Digital and Legacy Application Services 2, estimated £5.2bn. Publication and lots to confirm.",tg:["hmrc","dwp"]},
+{d:"2026-10-20",l:"20 Oct 2026",t:"inc",h:"Google Cloud London outage",x:"A \"power event\" in europe-west2-b disrupted HSBC, Barclays, Nationwide, Revolut and others, plus HMCTS, NHS England systems, Royal Mail and DPD. europe-west2 is Google's only UK region.",cl:CLN+"Two banking groups on the Account Map were among those disrupted. See A8.",tg:["hsbc","barc","nbs","nhse"]},
+{d:"2026-10-22",l:"22 Oct 2026",t:"fine",h:"Central Bank of Ireland fines Coinbase Ireland €3.25m",x:"Safeguarding and outsourcing-governance failings, including \"excessive reliance\" on its group as outsourced provider.",cl:CLN+"It sets a precedent for every Irish regulated firm that outsources.",tg:["boi","ptsb"]},
+{d:"2026-10-28",l:"28 Oct 2026",t:"reg",h:"MHHS M14",x:"Energy suppliers must be able to migrate meters to market-wide half-hourly settlement.",tg:["cent","eon"]},
+{d:"2026-11-02",l:"2 Nov 2026",t:"con",h:"DWP Project Zora contract starts",x:"Runs to 1 Nov 2028 with a one-year option.",tg:["dwp"]},
+{d:"2026-11-04",l:"4 Nov 2026",t:"reg",h:"Initial regulator reply to the Treasury Committee due",x:"The Committee asked the Bank of England and FCA nine questions on using Critical Third Parties powers after the outage. The full reply is due 20 Jan 2027.",cl:CLN+"The answers apply to every UK bank on the Account Map.",tg:["barc","hsbc","nbs","sant"]},
+{d:"2026-11-16",l:"Nov 2026",t:"reg",h:"CHAPS rejects unstructured addresses",x:"ISO 20022 enhanced data. From Nov 2027 purpose codes become mandatory for all CHAPS payments.",cl:CLN+"It applies to every bank that sends CHAPS payments.",tg:["barc","hsbc","sant","nbs"]},
+{d:"2026-12-02",l:"2 Dec 2026",t:"mer",h:"Coventry Part VII court hearing",x:"For the transfer of The Co-operative Bank into the Society.",tg:["cov"]},
+{d:"2027-01-01",l:"1 Jan 2027",t:"mer",h:"Co-operative Bank transfer into Coventry expected",x:"Integration in its final phase.",tg:["cov"]},
+{d:"2027-01-02",l:"2 Jan 2027",t:"con",h:"Home Office ESN device logistics starts",x:"Estimated to 30 Apr 2030.",tg:["ho"]},
+{d:"2027-01-20",l:"20 Jan 2027",t:"reg",h:"Full regulator reply to the Treasury Committee due",x:"On the use of Critical Third Parties powers after the Google Cloud outage.",cl:CLN+"It applies to every UK bank on the Account Map.",tg:["barc","hsbc","nbs","sant"]},
+{d:"2027-02-15",l:"Q1 2027",t:"mer",h:"PTSB takeover completion expected",x:"Q4 2026 or Q1 2027, subject to approvals.",tg:["ptsb"]},
+{d:"2027-03-01",l:"Early 2027",t:"mer",h:"OneFamily and Scottish Friendly merger expected",x:"Subject to regulatory approval.",tg:["ofsf"]},
+{d:"2027-03-31",l:"31 Mar 2027",t:"reg",h:"DORA register of information due",x:"Annual register of ICT third-party contracts for EU financial entities.",cl:CLN+"It applies to Irish banks on the Account Map.",tg:["boi","ptsb"]},
+{d:"2027-04-01",l:"Apr 2027",t:"mer",h:"New DHSC expected, folding in NHS England",x:"NHS England's central headcount is being cut by 50%.",tg:["nhse"]},
+{d:"2027-05-07",l:"7 May 2027",t:"reg",h:"MHHS M15",x:"Suppliers must complete migration; M16 follows on 2 Jul 2027.",tg:["cent","eon"]},
+{d:"2027-05-26",l:"26 May 2027",t:"con",h:"Next pipeline notice deadline",x:"The next 18-month pipeline from public authorities above £100m.",tg:["hmrc","dwp","nhse","mod","ho","dvsa"]},
+{d:"2027-07-29",l:"29 Jul 2027",t:"con",h:"DOS7 current lots end",x:"A second scheme (RM1043.9.2) is expected in 2027.",tg:["dwp","dvsa"]},
+{d:"2027-09-01",l:"1 Sep 2027",t:"con",h:"HMRC replacement application services and GCA Digital Payments start",x:"HMRC services estimated to 30 Aug 2031; Digital Payments and Associated Data Services estimated at £1.2bn.",tg:["hmrc"]},
+{d:"2027-10-15",l:"Autumn 2027",t:"mer",h:"Three consumers move onto Vodafone BSS",x:"Followed by unified HR, finance and procurement at the end of 2027.",tg:["vt"]},
+{d:"2027-11-15",l:"Nov 2027",t:"reg",h:"CHAPS purpose codes mandatory for all payments",x:"LEIs also required for pacs.004 and pacs.009 COV.",cl:CLN+"It applies to every bank that sends CHAPS payments.",tg:["barc","hsbc","sant","nbs"]}
+];
+document.getElementById("nl-nw").textContent=WL.length;
+var TODAY=new Date("2026-10-27").getTime();
+function ts(d){return new Date(d).getTime()}
+var zone="all",selW=WL.filter(function(x){return x.d==="2026-10-20"})[0];
+var ZR={all:["2025-01-01","2027-12-31"],next:["2026-10-15","2027-10-31"],"2025":["2025-01-01","2025-12-31"],"2026":["2026-01-01","2026-12-31"],"2027":["2027-01-01","2027-12-31"]};
+var tlHost=document.getElementById("nl-tl"),tlw=0;
+function tname(ids){return ids.map(function(i){var t=T.filter(function(x){return x.id===i})[0];return t?t.n:""}).filter(Boolean).join(", ")}
+function wdet(){var o=selW,d=document.getElementById("nl-tdet");if(!o){d.innerHTML='<p class="mini">Select a dot to pin its detail.</p>';return}
+ d.innerHTML='<span class="d">'+esc(o.l)+' · '+TT[o.t][0]+'</span><div class="h">'+esc(o.h)+'</div><p>'+esc(o.x)+'</p>'+(o.tg.length?'<p class="mini">Targets on this page: '+esc(tname(o.tg))+'</p>':'')+(o.cl?'<div class="cl">'+esc(o.cl)+' <a href="account-map.html">Account Map (A8)</a></div>':'')}
+function drawTL(){var w=tlHost.clientWidth;if(!w)return;tlw=w;tlHost.innerHTML="";
+ var narrow=w<620,lw=narrow?0:170,lane=narrow?46:38,top=24,h=top+TK.length*lane+8,r=narrow?6:7;
+ var z=ZR[zone],a=ts(z[0]),b=ts(z[1]),x=VZ.lin(a,b,lw+10,w-10);
+ var s=grp(tlHost,w,h,"Timeline of dated triggers by type");
+ /* months / years axis */
+ var d0=new Date(z[0]);for(var y=d0.getFullYear();y<=2027;y++){for(var m=0;m<12;m++){var t=new Date(y,m,1).getTime();if(t<a||t>b)continue;var xx=x(t),span=(b-a)/86400000;
+   if(m===0||span<400){VZ.el("line",{x1:xx,x2:xx,y1:top-4,y2:h-6,class:"grid"},s);
+    var lab=m===0?String(y):"";if(span<400){lab=["J","F","M","A","M","J","J","A","S","O","N","D"][m]+(m===0?" "+y:"");if(narrow&&m%2&&m)lab=""}
+    if(lab)txt(s,xx+3,top-10,lab,{class:"t-muted"})}}}
+ TK.forEach(function(k,i){var yy=top+i*lane;VZ.el("line",{x1:lw,x2:w,y1:yy+lane/2+(narrow?6:0),y2:yy+lane/2+(narrow?6:0),style:"stroke:var(--grid)"},s);
+  txt(s,narrow?2:0,narrow?yy+10:yy+lane/2+4,TT[k][0],{style:"font-size:"+(narrow?"10.5px":"12px")+";fill:var(--ink2)"})});
+ if(TODAY>=a&&TODAY<=b){var tx=x(TODAY);VZ.el("line",{x1:tx,x2:tx,y1:top-4,y2:h-4,style:"stroke:var(--s2);stroke-width:2"},s)}
+ var last={};
+ WL.forEach(function(o){var t=ts(o.d);if(t<a||t>b)return;var i=TK.indexOf(o.t),xx=x(t),cy=top+i*lane+lane/2+(narrow?6:0);
+  var k=o.t,prev=last[k];var off=0;if(prev&&xx-prev.x<r*2+1){off=prev.off===0?-(r-1):prev.off<0?(r-1):0}last[k]={x:xx,off:off};
+  var g=VZ.el("g",{class:"tg"+(o===selW?" sel":""),tabindex:0,role:"button","aria-label":o.l+", "+TT[o.t][0]+": "+o.h},s);
+  if(o.cl)VZ.el("circle",{cx:xx,cy:cy+off,r:r+3.5,style:"fill:none;stroke:var(--ink1);stroke-width:1.5;stroke-dasharray:2.5 2"},g);
+  VZ.el("circle",{class:"d",cx:xx,cy:cy+off,r:r,style:"fill:"+TT[o.t][1]+";stroke:var(--chart-bg);stroke-width:1.5"},g);
+  VZ.el("circle",{cx:xx,cy:cy+off,r:r+6,style:"fill:transparent"},g);
+  function pick(){selW=o;[].forEach.call(s.querySelectorAll(".tg"),function(e){e.classList.remove("sel")});g.classList.add("sel");wdet()}
+  g.addEventListener("click",pick);g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();pick()}});
+ });
+}
+addEventListener("resize",function(){if(tlHost.clientWidth!==tlw)drawTL()});VZ.onTheme(drawTL);
+tabs(document.getElementById("nl-tz"),function(t){zone=t.dataset.z;drawTL()});
+wdet();
+document.getElementById("nl-next").innerHTML=WL.filter(function(o){var t=ts(o.d);return t>=TODAY&&t<=TODAY+90*86400000}).map(function(o){return '<li><b>'+esc(o.l)+'</b><span><i style="background:'+TT[o.t][1]+'"></i>'+esc(o.h)+(o.tg.length?' <span class="mini">('+esc(tname(o.tg))+')</span>':'')+'</span></li>'}).join("");
+
+/* ---------- public sector pipeline ---------- */
+var PN=[
+["MoD Defence Digital","Digital Workplace managed service",750,1,"Estimated £750m excluding VAT, 1 May 2028 to 30 Apr 2033, extendable to 2038. Early market engagement 5 Jan 2026 (2026/S 000-000372)."],
+["HMRC","Legacy Data Warehouse transformation",410,1,"From HMRC's commercial pipeline as read by The Register (28 Jan 2026). Confirm in the latest HMRC pipeline file."],
+["NHS England","Digital Primary Care (replaces GPIT Futures)",400,0,"Estimated £400m excluding VAT, Apr 2026 to Mar 2029, possible extension to 2030 (FTS 024415-2025)."],
+["HMRC","AWS public cloud (replacement)",350,1,"Replaces an AWS contract of the same value. From The Register's reading of the HMRC pipeline."],
+["HMRC","Digital Platforms Run and Change Products",306,1,"Up to £306m, replacing a May 2024 Accenture award. To confirm in the HMRC pipeline file."],
+["HMRC","Legacy Retained HMRC Services",214,1,"A planned direct award replacing Capgemini's Core Business Platform support. To confirm."],
+["NHS England","Adult digital personalisation",154.8,1,"About £154.8m including VAT, from about Jul 2026 (press report)."],
+["NHS England","UEC digital services",44.4,1,"NHS Pathways, 111 online and interoperability, up to £44.4m over three years. Pipeline notice of 21 Apr 2026 (press report)."],
+["DWP","Project Zora, Universal Credit to microservices",34.5,0,"£34.5m excluding VAT (£41.4m including), 2 Nov 2026 to 1 Nov 2028 via DOS7 Lot 2; 11 applications by 12 Aug 2026."],
+["DWP","RBT&C digital capability services",24.5,1,"£24.5m, Mar 2026 to Mar 2028 (FTS 075784-2025, read through a search extract)."],
+["NHS England","DevOps digital delivery partner",19,1,"About £19m over two years from about Sep 2026, via RM6345 Digital Capability for Health 2 (press report)."],
+["DVSA","MOT Digital Delivery",16,1,"£16m, 1 Apr 2026 to 31 Mar 2028. The notice states there is \"no guarantee that a tender opportunity will result\"."],
+["MoD","Royal Navy web support re-procurement",8.71,1,"£8.71m, 30 Jun 2026 to 30 Jun 2028, likely a framework call-off."],
+["MoD","Army IT technical assurance",3,1,"£3m, 30 Apr 2026 to 29 Apr 2028."]];
+var FW=[
+["GCA","G-Cloud 15 (RM1557.15)",14,0,"Started 6 Aug 2026. Four-year open framework reopening at 18 and 36 months; current lots expire 5 Feb 2028. Five lots, over 4,000 suppliers and 50,000 services. Award with or without competition. Contract notice estimate £14bn excluding VAT."],
+["GCA","Digital Outcomes and Specialists 7 (RM1043.9)",12,1,"Started 30 Jan 2026. Four lots, further competition only; current lots end 29 Jul 2027. Pipeline estimate £12bn; confirm which notice carries which figure."],
+["GCA","Digital and Legacy Application Services 2 (DALAS 2)",5.2,1,"Estimated £5.2bn with planned tender publication on 14 Oct 2026. Publication and lots to confirm."],
+["GCA","Digital Payments and Associated Data Services",1.2,1,"Estimated £1.2bn, 1 Sep 2027 to 30 Aug 2031. To confirm on Find a Tender."],
+["GCA","Technology Services 4 (RM6190)",0,0,"Live since 12 Dec 2025, replacing TS3. Six main lots from consultancy to major transformation programmes plus three lower-value lots, no cap on suppliers, up to 8 years. The GCA page publishes no total value."],
+["NHS","Digital Capability for Health 2 (RM6345)",0,1,"The route named in NHS England's 2026 DevOps pipeline notices. Value to confirm."]];
+var pv="n",pSel=0;
+function drawP(){var L=pv==="n"?PN:FW,mx=Math.max.apply(null,L.map(function(r){return r[2]})),u=pv==="n"?"£m":"£bn",ul=document.getElementById("nl-pb");ul.innerHTML="";
+ L.forEach(function(r,i){var li=document.createElement("li");if(i===pSel)li.className="sel";
+  li.innerHTML='<button type="button" class="lbl">'+esc(r[1])+(r[3]?'<span class="nl-tc">to confirm</span>':'')+'<small>'+esc(r[0])+'</small></button><span class="tr"><span class="fl'+(r[3]?" tc":"")+'" style="display:block;width:'+(r[2]?Math.max(1.5,r[2]/mx*100):0)+'%"></span></span><span class="v">'+(r[2]?(pv==="n"?"£"+r[2]+"m":"£"+r[2]+"bn"):"unpublished")+'</span>';
+  function pick(){pSel=i;[].forEach.call(ul.children,function(x,j){x.classList.toggle("sel",j===i)});pd()}
+  li.addEventListener("click",pick);ul.appendChild(li)});pd()}
+function pd(){var L=pv==="n"?PN:FW,r=L[pSel]||L[0];document.getElementById("nl-pdet").innerHTML='<b style="font-weight:600">'+esc(r[0])+': '+esc(r[1])+'.</b> '+esc(r[4])}
+tabs(document.getElementById("nl-ptab"),function(t){pv=t.dataset.v;pSel=0;drawP()});
+
+/* ---------- routes in ---------- */
+var PC=[
+["Anthropic Claude Partner Network","Launched 12 Mar 2026 with US$100m for 2026 for training, sales enablement and co-marketing; Applied AI engineers on live deals; a Services Partner Directory where buyers find firms; a Code Modernization starter kit.","Wipro opened an Applied AI Centre of Excellence for Claude on 16 Jun 2026 and plans to certify 10,000 delivery experts on Claude within 18 months."],
+["Anthropic services track","Launched 3 Jun 2026. Tiers from Registered to Elite by certified headcount, production deployments and references. New business sent to Anthropic earns referral credit and deal protection.","The tier Wipro holds is to confirm with the alliance team."],
+["Google Cloud partner fund","US$750m (22 Apr 2026) funding AI value assessments, Gemini proofs of concept, agentic prototyping and embedded forward-deployed engineers. The Partner Network rewards co-sell on validated closed deals.","Wipro is a Global System Integrator partner and the 2026 Google Cloud Partner of the Year for Application Modernization."],
+["AWS co-sell and Marketplace","Opportunities shared through ACE raise co-sell recommendation. Professional services can be listed to over 330,000 Marketplace customers, with private offers; an AWS-commissioned study reports 50% faster deal closure.","Wipro is an AWS Premier Consulting Partner and lists a legacy-modernisation offer with AWS Transform, vFunction and Pega on AWS Marketplace."],
+["Microsoft co-sell and Azure Accelerate","Microsoft sellers send co-sell opportunities to services partners with designations; \"proof of concept\" is a named partner role. Azure Accelerate funds migration and modernisation, approved within 45 days of proof of execution.","Wipro was a 2025 launch partner of Microsoft Marketplace with 100+ co-sell ready offers and is an Azure Expert MSP."],
+["ServiceNow","Registered to Elite tiers plus Access. A Market Development Fund reimburses up to 100% for select demand activities, and a Strategic Investment Fund backs high-impact opportunities.","Wipro is listed in ServiceNow's Elite segment."],
+["Salesforce","FY27 programme with Select and Summit tiers and partner-sourced lead payouts; in the UK and Ireland 20% on new business up to US$100K, public sector excluded.","Wipro is a Summit partner and a member of the Agentforce Partner Network."]];
+document.getElementById("nl-pc").innerHTML=PC.map(function(p){return '<div class="panel"><h3>'+esc(p[0])+'</h3><p>'+esc(p[1])+'</p><p class="w"><b>Wipro:</b> '+esc(p[2])+'</p></div>'}).join("");
+var RT=[["Move 1 reference","A result from an existing Wipro account in the same sector"],["Insight brief and executive workshop","An outside-in brief on the trigger, then a half-day workshop"],["Hyperscaler co-sell","AWS, Microsoft or Google field teams and marketplaces"],["AI partner funding","Anthropic and Google funded assessments and proofs of concept"],["Platform partners","ServiceNow, Salesforce, Guidewire, Tricentis"],["Public frameworks","G-Cloud 15, DOS7, TS4 and DALAS 2"]];
+var RS={
+bank:[[5,4,3,3,4,1],"In banking I would lead with a Move 1 reference, then an insight brief on the trigger.",["A quality engineering or resilience reference from a UK bank account on the Account Map, introduced through the client partner.","An insight brief on the 20 Oct 2026 outage, the Critical Third Parties regime and the Treasury Committee replies (4 Nov 2026 and 20 Jan 2027).","Tricentis and Iliad as platform partners for payments and release testing."]],
+ins:[[4,3,3,3,5,1],"For insurers I would lead with platform partners, then a Move 1 reference.",["Guidewire and Microsoft relationships carry the programmes (Microsoft at Legal & General, Guidewire across general insurers).","A life and pensions or quality engineering reference from the Account Map.","Mergers (OneFamily and Scottish Friendly) and CIO changes give the date for the brief."]],
+util:[[4,5,4,2,2,2],"For utilities I would lead with an insight brief on MHHS and the merger, then a reference.",["MHHS milestones (28 Oct 2026, 7 May 2027, 2 Jul 2027) and the E.ON and OVO decision give a dated agenda.","Energy and water references from the Account Map.","AWS at Centrica and Google Cloud where the platform runs there."]],
+pub:[[2,4,3,2,1,5],"In the public sector I would lead with the frameworks, timed to pipeline notices.",["G-Cloud 15, DOS7 Lot 1 and 2, TS4 and DALAS 2 are where the buying happens.","An insight brief on the published pipeline line, before the tender, inside the Sourcing Playbook rules on fair market engagement.","AWS where the department buys public cloud (HMRC's £350m line)."]],
+tel:[[4,3,4,3,2,1],"In telecoms I would lead with a Move 1 reference, then hyperscaler co-sell.",["A telecoms reference from the Account Map, such as GenAI document processing on AWS.","Co-sell with the hyperscaler that hosts the BSS or data platform.","VodafoneThree's published milestones (autumn 2027, end 2027, summer 2028) set the brief."]],
+ret:[[3,3,4,5,3,1],"In retail I would lead with AI partner funding, then hyperscaler co-sell.",["Retailers are running AI programmes (Tesco with Mistral AI, Sainsbury's with Microsoft), so a funded proof of value is a natural entry.","AWS and Microsoft at Sainsbury's.","A retail reference from the Account Map."]]};
+var rsel="bank",rtHost=document.getElementById("nl-rtc"),rtw=0;
+var rsb=document.getElementById("nl-rs");
+SE.forEach(function(s){var b=document.createElement("button");b.type="button";b.textContent=s[1];b.setAttribute("aria-pressed",s[0]===rsel);b.onclick=function(){rsel=s[0];[].forEach.call(rsb.children,function(x){x.setAttribute("aria-pressed",x===b)});drawRT()};rsb.appendChild(b)});
+function drawRT(){var w=rtHost.clientWidth;if(!w)return;rtw=w;rtHost.innerHTML="";var d=RS[rsel],v=d[0];
+ var ord=v.map(function(x,i){return [x,i]}).sort(function(a,b){return b[0]-a[0]||a[1]-b[1]});var rank={};ord.forEach(function(o,j){rank[o[1]]=j+1});
+ var rh=48,h=RT.length*rh+6,s=VZ.svg(rtHost,w,h,"Route strength for "+SEN[rsel]),x0=0,x1=w-36,sc=VZ.lin(0,5,x0,x1);
+ ord.forEach(function(o,j){var i=o[1],y=j*rh;var top=rank[i]<=3;
+  txt(s,0,y+15,(top?rank[i]+". ":"")+RT[i][0],{class:top?"t-strong":"",style:"font-size:12.5px;fill:var(--ink1)"});
+  txt(s,0,y+29,RT[i][1],{class:"t-muted",style:"font-size:11px"});
+  VZ.el("rect",{x:0,y:y+34,width:x1,height:8,rx:3,style:"fill:var(--grid)"},s);
+  VZ.bar(s,0,y+34,sc(o[0]),8,top?"var(--s2)":"var(--ink3)","h");
+  txt(s,x1+6,y+42,String(o[0]),{style:"font-size:12px;font-weight:600;fill:var(--ink1)"})});
+ document.getElementById("nl-rtr").textContent=d[1]+" Pick a sector.";
+ document.getElementById("nl-rtw").innerHTML='<h4>'+esc(SEN[rsel])+': my first three routes</h4><ol>'+d[2].map(function(x,j){return '<li><b style="font-weight:600">'+esc(RT[ord[j][1]][0])+'.</b> '+esc(x)+'</li>'}).join("")+'</ol>';
+}
+addEventListener("resize",function(){if(rtHost.clientWidth!==rtw)drawRT()});VZ.onTheme(drawRT);drawRT();
+
+/* ---------- entry offers ---------- */
+var OF={
+"Banking":[
+["Operational resilience and change-quality diagnostic","4 to 6 weeks, fixed price. One UK specialist sells this as a £15k to £25k diagnostic against PRA SS1/21 and FCA SYSC 15A, with supplier-exit testing for DORA Article 28. Scope items: important business services, change categorisation by customer impact, review, testing, release and oversight.","After 20 October, boards will ask how their important business services hold up when a cloud region or a change goes wrong. In six weeks we map those services, test your change and release controls against them and give you a costed plan for the next Treasury Committee or PRA question.","Quality engineering and resilience testing, DevOps and SRE","banking.html","Banking Pursuit (A13)"],
+["Integration test and cut-over readiness","A fixed-price review before the next migration wave, for banks integrating an acquisition (Santander UK and TSB, Nationwide and Virgin Money, Coventry and The Co-operative Bank).","Your next migration wave has a date. We bring an independent test, environment and cut-over rehearsal plan for that wave, with references from Wipro's UK banking work.","Quality engineering, test environment management, application modernisation","banking.html","Banking Pursuit (A13)"],
+["CHAPS and ISO 20022 data readiness test","A bounded test of payment flows ahead of the November 2026 address change and the November 2027 purpose-code mandate.","Two CHAPS dates are on your calendar. A short test of your payment flows shows which messages will fail and what to fix first.","Payments quality engineering with Iliad and Tricentis","portfolio.html","Portfolio (A2)"]],
+"Insurers":[
+["Guidewire cloud readiness and production operations review","Guidewire's services catalogue lists a codebase upgrade and workflow validation step before cloud migration (released 17 Apr 2026) and a time-boxed production operations review across seven disciplines, including QA and performance. Cognizant leads with a cloud readiness assessment.","Before you move to Guidewire Cloud, a time-boxed review of upgrade readiness, test coverage and performance gives you the risk and the order of work.","Platform modernisation and quality engineering","portfolio.html","Portfolio (A2)"],
+["Merger and platform consolidation assessment","For mutuals and insurers combining books (OneFamily and Scottish Friendly). A fixed-price review of systems, data migration and testing for the first wave.","Your members will judge the merger on day one of the new service. We assess the systems and data you are combining and plan the testing for the first wave.","Application modernisation, data migration testing","portfolio.html","Portfolio (A2)"]],
+"Utilities":[
+["MHHS readiness assessment","CGI UK sells an MHHS business readiness assessment, PEF Consulting a fixed-fee assessment from £2,500 in one to two weeks, and BFY reports finding about £75m of settlement risk at a large supplier with a 156-criteria assessment.","M15 on 7 May 2027 is the completion date. A two-week readiness check shows where settlement, billing and data flows need testing before then.","Settlement integration testing and billing modernisation","portfolio.html","Portfolio (A2)"],
+["Billing platform choice and migration plan","For suppliers combining customer books on different billing platforms (E.ON and OVO on Kraken and Kaluza).","Whichever platform you choose, the migration is the risk. We plan the customer migration waves and the testing that protects billing accuracy.","Application modernisation, quality engineering","portfolio.html","Portfolio (A2)"]],
+"Public sector":[
+["Discovery phase","The GOV.UK Service Manual says a discovery typically takes 4 to 8 weeks and treats stopping after discovery as a valid outcome. Discovery and alpha are the usual first call-offs under DOS7 Lot 1.","Before the full procurement, a four to eight week discovery tells you what to build, what to retire and what it costs, with AI tooling priced in.","Digital transformation, then modernisation via DALAS 2 or TS4","portfolio.html","Portfolio (A2)"],
+["Legacy application assessment","For departments with legacy re-procurements in their pipeline (HMRC, DWP). A fixed-price code and dependency assessment ahead of the tender.","Your pipeline shows the replacement date. An assessment of the code, dependencies and migration path now gives your business case firm numbers.","Application and mainframe modernisation","portfolio.html","Portfolio (A2)"]],
+"Cross-sector":[
+["Fixed-price mainframe assessment","Ensono, Atos and Astadia list fixed-price mainframe assessments on AWS Marketplace: code inventory, dependencies, dead code, migration path and business-case inputs. Thoughtworks sells a 3-day fixed-price workshop with AWS Transform as step one of 3 days, 3 weeks, 3 months.","In three weeks you get an inventory of your code, the dependencies, the dead code and a migration path with a business case, before you commit to a programme.","Mainframe and application modernisation with AWS Transform and Claude","portfolio.html","Portfolio (A2)"],
+["AI proof of value","Microsoft Marketplace examples: a 1-week AI proof of concept at US$13,500 and a 4-week Copilot readiness assessment at US$50,000. Google's partner fund pays for AI value assessments and Gemini proofs of concept.","Pick one process. In four weeks we show it working on your data with Claude or Gemini, with the controls your risk team needs, and partner funding can cover part of the cost.","AI build and run (WEGA, WINGS) with Claude and Gemini","portfolio.html","Portfolio (A2)"]]};
+var otab=document.getElementById("nl-otab"),oKeys=Object.keys(OF);
+oKeys.forEach(function(k,i){var b=document.createElement("button");b.type="button";b.setAttribute("role","tab");b.setAttribute("aria-selected",i===0);b.dataset.k=k;b.textContent=k;otab.appendChild(b)});
+function drawO(k){document.getElementById("nl-off").innerHTML=OF[k].map(function(o){return '<div class="panel"><h3>'+esc(o[0])+'</h3><span class="k2">Market evidence and scope</span><p>'+esc(o[1])+'</p><div class="msg"><em>Draft message to test</em>'+esc(o[2])+'</div><p class="opens"><b>IC&amp;D offer it opens:</b> '+esc(o[3])+'. <a href="'+o[4]+'">'+esc(o[5])+'</a></p></div>'}).join("")}
+tabs(otab,function(t){drawO(t.dataset.k)});
+
+/* ---------- outreach sequence ---------- */
+var LN=["Me","Client partner or sector head","Alliance partner","Europe market unit sales team"];
+var ST=[
+["Build the target list and watch triggers",0,2,0,[3],"I keep this page's list current, add triggers weekly and check each name against the Account Map so every target is a new logo."],
+["Agree ownership and account rules",1,3,3,[0,1],"The Europe market unit sales team confirms the account is open for hunting and who owns it, and names the sector head who will sponsor it."],
+["Write the insight brief",2,4,0,[1],"A two-page outside-in brief on the trigger: what happened, what the regulator or programme now requires and three options. Wipro Consulting or Capco can add depth in banking."],
+["Register the opportunity with the alliance partner",3,7,2,[0],"Register in AWS ACE, Microsoft Partner Center or the Google and Anthropic partner hubs, and apply for assessment or proof-of-concept funding."],
+["First meeting through a reference or partner introduction",5,11,1,[0,2],"The sector head or a client partner opens the door with a Move 1 reference, or the alliance partner's account team introduces us. I run the conversation on the brief."],
+["Executive workshop on the trigger",10,16,0,[1,2],"A half-day workshop with the buying group on one problem, ending in a scoped and priced first step."],
+["Fixed-price entry scope and first order",15,22,1,[0,3],"I shape the scope and price with presales; the sector head signs off and the sales team takes it through contract."],
+["Deliver, review and agree the second contract",22,36,0,[1],"Delivery runs the entry scope; I run the review with the client partner and turn the findings into the next scope. The account then joins Move 1."]];
+var sSel=0,seqHost=document.getElementById("nl-seq"),sqw=0;
+function sdet(){var o=ST[sSel];document.getElementById("nl-sdet").innerHTML='<div class="h">'+(sSel+1)+'. '+esc(o[0])+'</div><p class="mini">Weeks '+o[1]+' to '+o[2]+' (my estimate). Lead: '+esc(LN[o[3]])+'. Supports: '+esc(o[4].map(function(i){return LN[i]}).join(", "))+'.</p><p>'+esc(o[5])+'</p>'}
+function drawSeq(){var w=seqHost.clientWidth;if(!w)return;sqw=w;seqHost.innerHTML="";
+ var narrow=w<620,lw=narrow?0:270,rh=narrow?40:30,top=22,h=top+ST.length*rh+(narrow?0:0)+6;
+ var x=VZ.lin(0,36,lw+4,w-6),s=grp(seqHost,w,h,"Outreach steps by week and lead");
+ for(var k=0;k<=36;k+=4){VZ.el("line",{x1:x(k),x2:x(k),y1:top-4,y2:h-4,class:"grid"},s);txt(s,x(k),top-8,k===0?"Week 0":String(k),{class:"t-muted","text-anchor":k===0?"start":"middle"})}
+ ST.forEach(function(o,i){var y=top+i*rh,g=VZ.el("g",{class:"st"+(i===sSel?" sel":""),tabindex:0,role:"button","aria-label":"Step "+(i+1)+": "+o[0]+", weeks "+o[1]+" to "+o[2]+", led by "+LN[o[3]]},s);
+  VZ.el("rect",{x:0,y:y,width:w,height:rh-2,style:"fill:transparent"},g);
+  var by=narrow?y+16:y+5,bh=narrow?16:18;
+  txt(g,narrow?2:0,narrow?y+11:y+18,(i+1)+". "+(narrow?o[0]:(o[0].length>40?o[0].slice(0,39)+"…":o[0])),{style:"font-size:"+(narrow?"11px":"12px")+";fill:var(--ink1)"});
+  VZ.el("rect",{class:"b",x:x(o[1]),y:by,width:Math.max(4,x(o[2])-x(o[1])),height:bh,rx:3,style:"fill:color-mix(in srgb,var(--s2) 32%,var(--chart-bg))"},g);VZ.el("rect",{x:x(o[1]),y:by,width:4,height:bh,rx:1,style:"fill:var(--s2)"},g);
+  var lab=LN[o[3]].split(" ")[0]==="Client"?"Sector head":LN[o[3]].split(" ")[0]==="Europe"?"Sales team":LN[o[3]].split(" ")[0]==="Alliance"?"Partner":"Me";
+  if(x(o[2])-x(o[1])>70)txt(g,x(o[1])+8,by+bh-4.5,lab,{style:"font-size:11px;font-weight:600;fill:var(--ink1)"});
+  else txt(g,x(o[2])+5,by+bh-4.5,lab,{style:"font-size:11px;fill:var(--ink1)"});
+  function pick(){sSel=i;[].forEach.call(s.querySelectorAll(".st"),function(e,j){e.classList.toggle("sel",j===i)});sdet()}
+  g.addEventListener("click",pick);g.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();pick()}})});
+}
+addEventListener("resize",function(){if(seqHost.clientWidth!==sqw)drawSeq()});VZ.onTheme(drawSeq);drawSeq();sdet();
+
+/* ---------- funnel ---------- */
+var FN=[["Targets reached",30],["First meetings",12],["Executive workshops",6],["Entry scopes won",3],["Converted to a second contract",2]];
+var FV=FN.map(function(f){return f[1]});
+var fin=document.getElementById("nl-fin");
+FN.forEach(function(f,i){var tr=document.createElement("tr");tr.innerHTML='<td><label for="nl-f'+i+'">'+f[0]+'</label></td><td><input type="number" id="nl-f'+i+'" min="0" step="1" value="'+f[1]+'"></td>';fin.appendChild(tr);
+ tr.querySelector("input").addEventListener("input",function(e){FV[i]=Math.max(0,+e.target.value||0);drawF()})});
+document.getElementById("nl-freset").onclick=function(){FN.forEach(function(f,i){FV[i]=f[1];document.getElementById("nl-f"+i).value=f[1]});drawF()};
+var fHost=document.getElementById("nl-fun"),fw=0;
+function drawF(){var w=fHost.clientWidth;if(!w)return;fw=w;fHost.innerHTML="";var mx=Math.max(1,FV[0],Math.max.apply(null,FV)),rh=44,h=FN.length*rh+4;
+ var s=VZ.svg(fHost,w,h,"Move 2 funnel, placeholder counts"),cx=w/2,sc=VZ.lin(0,mx,0,w-4);
+ FN.forEach(function(f,i){var y=i*rh,bw=Math.max(2,sc(FV[i]));VZ.el("rect",{x:cx-bw/2,y:y+2,width:bw,height:22,rx:3,style:"fill:var(--s2);opacity:"+(1-i*0.12)},s);
+  var conv=i?(FV[i-1]?Math.round(FV[i]/FV[i-1]*100)+"% of previous step":"n/a"):"placeholder";
+  txt(s,cx,y+38,f[0]+": "+FV[i]+" ("+conv+")",{"text-anchor":"middle",style:"font-size:12px;fill:var(--ink1)"})});
+ var r=FV[0]?FV[3]/FV[0]:0;document.getElementById("nl-fr").textContent=FV[0]?"With these counts, "+Math.round(r*100)+"% of targets reached become a paid entry scope and "+(FV[3]?Math.round(FV[4]/FV[3]*100):0)+"% of entry scopes lead to a second contract.":"Enter the number of targets reached.";}
+addEventListener("resize",function(){if(fHost.clientWidth!==fw)drawF()});VZ.onTheme(drawF);drawF();
+
+VZ.reveal();
+})();
+</script>
