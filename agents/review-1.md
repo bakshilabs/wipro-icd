@@ -4,7 +4,7 @@ description: Independent review of role.html, portfolio.html, demand.html, buyer
 stage: 3 Review
 inputs: review-brief.md, page-brief.md, research/*.md, axe-core results
 outputs: edits to role.html, portfolio.html, demand.html, buyers.html
-run: to be recorded
+run: 51 tool calls, 309,111 tokens, 8 min
 ---
 
 Read agents/review-brief.md and follow it. Your pages: role.html, portfolio.html, demand.html, buyers.html. Fix facts against the research, the writing rules, tone, accessibility findings from axe-core, and interaction quality. Score each page before and after.
