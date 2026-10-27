@@ -16,6 +16,8 @@ Page bodies live in `build/pages/`. Run `python3 build/build.py` to rebuild `doc
 
 Styles: `assets/site.css`, `nav.css`, `a11y.css`, `viz.css` and `viz.js` (chart helpers) come from the One Click LCA site. `assets/pages.css` holds the page components and the indigo accent.
 
+`tools/method/gen.py` regenerates `build/pages/method.html` from `tools/method/template.html`, `agents/*.md` and `research/*.md`; run it after any agent record changes, then the build.
+
 `tools/shoot.js` screenshots every page at 1440 px light and 390 px dark and reports console errors, sideways scroll and axe-core results. Serve `docs/` on port 8765 first.
 
 ## Research

@@ -4,7 +4,7 @@ description: Writes the Method page describing how the analysis section was made
 stage: 2 Pages
 inputs: page-brief.md, agents/*.md, research/*.md, build.py, shoot.js
 outputs: build/pages/method.html, ai.html (shortened build section)
-run: to be recorded
+run: 42 tool calls, 164,826 tokens, 9 min
 ---
 
 Read agents/page-brief.md first and follow it exactly.
