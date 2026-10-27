@@ -129,7 +129,7 @@
     <div class="panel rv"><h3>Sources</h3><p>Facts come only from the research files and my CV. Every page ends with a Sources panel, and each source is marked primary or press. Claims flagged unverified appear only when labelled "to confirm".</p></div>
     <div class="panel rv"><h3>Labels for judgement</h3><p>Ratings and forecasts carry "My estimate". Model defaults carry "Placeholder figures" and a line inviting the reader to enter their own. Example messages carry "Draft message to test".</p></div>
     <div class="panel rv"><h3>Plain writing</h3><p>Short sentences, usually under 20 words, with one idea in each. Headings name the topic. The pages use British spelling, full sentences and the first person.</p></div>
-    <div class="panel rv"><h3>Writing for a Wipro reader</h3><p>Findings are presented as an outside reading from public sources, with what would confirm them. The pages name no individuals other than chief executives and use no Wipro logo or brand colours.</p></div>
+    <div class="panel rv"><h3>Writing for a Wipro reader</h3><p>Findings are presented as an outside reading from public sources, with what would confirm them. The pages name no individuals beyond Wipro's chief executive, chief financial officer and Europe chief executive, and the Wipro, Capco and Designit leaders the Account Map cites from public sources with their published titles. They use no Wipro logo or brand colours.</p></div>
     <div class="panel rv"><h3>Showing on screen</h3><p>Anything important is visible without hovering, and tooltips only add detail. Each chart has a one-sentence plain reading under its title.</p></div>
     <div class="panel rv"><h3>Accessibility</h3><p>Selectable chart parts take keyboard focus and respond to Enter. Colours come from shared tokens checked in both themes. Each page passes an axe-core scan with no violations and has no sideways scroll at 390 px.</p></div>
   </div>
@@ -200,7 +200,7 @@ var OTHER={
  build:{t:"Build script",s:"Automated check",job:"A small Python script wraps each page body with the shared head, navigation, pager, footer, and writes the published site.",inputs:"build/pages/*.html and the shared assets",outputs:"The published pages"},
  shots:{t:"Browser checks",s:"Automated check",job:"A Playwright script opens every page at 1,440 px in light mode and 390 px in dark mode, records sideways scroll and console errors, and saves full-page screenshots for the agent to read.",inputs:"The built pages, served locally",outputs:"Screenshots, a scroll figure and an error count for each page at each size"},
  axe:{t:"Accessibility scan",s:"Automated check",job:"The same script injects axe-core into each page at both sizes and lists any violations. The target for every page is an empty list.",inputs:"The built pages",outputs:"A list of axe-core rule violations, fixed until empty"},
- site:{t:"Published site",s:"Output",job:"The published site: the analysis index, __W_ANALYSIS__ analysis pages, the AI Workflow page and this page.",inputs:"The approved, checked pages",outputs:"__N_PAGES__ pages"}
+ site:{t:"Published site",s:"Output",job:"The published site: the overview, six meeting pages, __W_ANALYSIS__ appendix pages, the AI Workflow page and this page.",inputs:"The approved, checked pages",outputs:"__N_PAGES__ pages"}
 };
 function A(id){return AG.filter(function(a){return a.id===id})[0]}
 function ids(r,c){return AG.filter(function(a){return a.round===r&&a.col===c}).map(function(a){return a.id})}

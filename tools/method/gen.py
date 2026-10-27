@@ -23,7 +23,7 @@ COL = {'research': 'res', 'review': 'rev'}
 
 agents = []
 files = sorted(p.stem for p in (ROOT / 'agents').glob('*.md'))
-extra = [f for f in files if f not in ORDER and f not in ('README', 'page-brief', 'review-brief', 'strategy-brief')]
+extra = [f for f in files if f not in ORDER and f not in ('README', 'page-brief', 'review-brief', 'strategy-brief', 'meeting-brief')]
 for name in ORDER + extra:
     p = ROOT / 'agents' / (name + '.md')
     if not p.exists():

@@ -11,10 +11,17 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES_DIR = ROOT / "build" / "pages"
 OUT = ROOT / "docs"  # the published site: pages, index.html and assets only
 
-# nav order: (file, nav label). The first page is the analysis index; analysis pages get a code (A1, A2, ...)
-# in this order and are grouped in the navigation bar; the last two pages (about me) sit as plain links in the header.
-PAGES = [
-    ("overview.html", "Analysis"),
+# nav order: (file, nav label). The first page is the overview; meeting pages get codes M1, M2, ...; appendix
+# pages get codes A1, A2, ...; the last two pages (about me) sit as plain links in the header.
+MEETING = [
+    ("situation.html", "Situation"),
+    ("fit.html", "Fit"),
+    ("strategy.html", "Strategy"),
+    ("banking-first.html", "Banking"),
+    ("plan.html", "Plan"),
+    ("vision.html", "Vision"),
+]
+APPENDIX = [
     ("role.html", "The Role"),
     ("portfolio.html", "Portfolio"),
     ("ai-engagement.html", "AI Engagement"),
@@ -27,19 +34,20 @@ PAGES = [
     ("workshops.html", "Workshops"),
     ("pursuits.html", "Pursuits"),
     ("deal-shaping.html", "Deals"),
-    ("banking.html", "Banking"),
+    ("banking.html", "Banking Pursuit"),
     ("first-months.html", "First Months"),
-    ("ai.html", "AI Workflow"),
-    ("method.html", "Method"),
 ]
-# navigation groups: (label, first page of the group)
-GROUPS = [("Context", "role.html"), ("Clients", "buyers.html"), ("Winning work", "workshops.html"), ("Plan", "first-months.html")]
+PAGES = [("overview.html", "Overview")] + MEETING + APPENDIX + [("ai.html", "AI Workflow"), ("method.html", "Method")]
+# navigation groups: (label, pages, code prefix)
+GROUPS = [("Meeting", [f for f, _ in MEETING], "M"), ("Appendix", [f for f, _ in APPENDIX], "A")]
 # unlisted pages: built with the same head and header, but not in the navigation, pager or index
-HIDDEN = [("study-33a04957.html", "Interview Study")]
+HIDDEN = []
 INDEX = PAGES[0][0]
 ABOUT = ["ai.html", "method.html"]
-APPX = [f for f, _ in PAGES[1:] if f not in ABOUT]
-CODE = {f: f"A{i + 1}" for i, f in enumerate(APPX)}
+CODE = {}
+for _, files, pre in GROUPS:
+    for i, f in enumerate(files):
+        CODE[f] = f"{pre}{i + 1}"
 LABEL = dict(PAGES)
 
 GUARD = ""  # the site is open; no password page
@@ -84,18 +92,16 @@ def cur(f, current):
 
 
 def nav(current):
-    starts = [APPX.index(f) for _, f in GROUPS] + [len(APPX)]
     items = ""
-    for k, ((g, _), a, b) in enumerate(zip(GROUPS, starts, starts[1:])):
-        pages = APPX[a:b]
+    for k, (g, pages, _) in enumerate(GROUPS):
         here = current in pages
         first, last = CODE[pages[0]], CODE[pages[-1]]
         links = "".join(f'<li><a href="{f}"{cur(f, current)}><b>{CODE[f]}</b>{html.escape(LABEL[f])}</a></li>' for f in pages)
         items += (f'<div class="dd{" here" if here else ""}"><button type="button" aria-expanded="false" aria-controls="dd{k}">'
                   f'{html.escape(g)}<small>{first}{"&ndash;" + last if last != first else ""}</small></button>'
                   f'<ul id="dd{k}" hidden>{links}</ul></div>')
-    bar = (f'<nav class="appxbar" aria-label="Analysis pages"><div class="in">'
-           f'<a class="home" href="{INDEX}"{cur(INDEX, current)}>Analysis</a>{items}</div></nav>')
+    bar = (f'<nav class="appxbar" aria-label="Site pages"><div class="in">'
+           f'<a class="home" href="{INDEX}"{cur(INDEX, current)}>Overview</a>{items}</div></nav>')
     return ('<header class="sitenav"><div class="in"><a class="brand" href="overview.html">Arpan Bakshi<span>Wipro ICD Practitioner, UKI</span></a>'
             '<nav class="links about" aria-label="About me">'
             + "".join(f'<a href="{f}"{cur(f, current)}>{html.escape(LABEL[f])}</a>' for f in ABOUT) + '</nav>'
@@ -147,11 +153,11 @@ def build_page(i, fname):
 
 
 def build_index():
-    # index.html sends visitors to the analysis index
+    # index.html sends visitors to the overview
     (OUT / "index.html").write_text(
         '<!doctype html>\n<html lang="en-GB"><head><meta charset="utf-8"><meta name="robots" content="noindex">'
-        f'<meta http-equiv="refresh" content="0; url={INDEX}"><title>Analysis</title></head>'
-        f'<body><a href="{INDEX}">Analysis</a></body></html>\n')
+        f'<meta http-equiv="refresh" content="0; url={INDEX}"><title>Overview</title></head>'
+        f'<body><a href="{INDEX}">Overview</a></body></html>\n')
 
 
 if __name__ == "__main__":
