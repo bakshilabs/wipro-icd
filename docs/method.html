@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-<script>try{if(sessionStorage.getItem("pw")!=="ok"){document.documentElement.style.visibility="hidden";location.replace("index.html?next="+encodeURIComponent(location.pathname.split("/").pop()))}}catch(e){location.replace("index.html")}</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Method</title>
@@ -87,7 +87,7 @@
     <li><b>Index agent</b>One agent read every finished page and wrote the analysis index, so its summaries and numbers match the pages behind them. A further agent wrote this page from the agent records.</li>
     <li><b>Independent reviewers</b>Each of the three reviewers took four pages and worked from its own review brief. It checked every figure against the research files, applied the writing rules and accessibility fixes, scored the page before and after, and corrected it in place.</li>
     <li><b>Second round</b>The second round added eight agents and ran the research and page stages again. Research agents covered Wipro's banking and quality engineering offers with European banking regulation, how Wipro sells, and the full scope of IT services sales topics for the role. A page agent then wrote the <a href="banking.html">A12 Banking Pursuit</a> page, and a second agent added banking, Europe and partner material to five existing pages. Both page agents worked to the same page brief, and every page passed the same checks.</li>
-    <li><b>Automated checks</b>A Python build script wraps every page with the shared header, navigation and password gate. A Playwright script then opens each page at 1,440 px in light mode and 390 px in dark mode, records sideways scroll and console errors, runs an axe-core accessibility scan and saves full-page screenshots for the agent to read.</li>
+    <li><b>Automated checks</b>A Python build script wraps every page with the shared header, navigation and footer. A Playwright script then opens each page at 1,440 px in light mode and 390 px in dark mode, records sideways scroll and console errors, runs an axe-core accessibility scan and saves full-page screenshots for the agent to read.</li>
     <li><b>My part</b>I wrote and approved each brief, chose the research topics and the page plan for both rounds, read the research summaries and the review reports, and decided what changed before each stage moved on.</li>
   </ol>
 </section>
@@ -166,7 +166,7 @@
   <div class="tw" tabindex="0" role="region" aria-label="Scrollable table"><table class="t">
     <thead><tr><th>Check</th><th>Tool</th><th>Pass condition</th></tr></thead>
     <tbody>
-      <tr><th>Build</th><td>build/build.py (Python)</td><td>Every page has its title and description, and is wrapped with the shared header, navigation, footer and password gate.</td></tr>
+      <tr><th>Build</th><td>build/build.py (Python)</td><td>Every page has its title and description, and is wrapped with the shared header, navigation and footer.</td></tr>
       <tr><th>Desktop, light theme</th><td>tools/shoot.js (Playwright)</td><td>Opened at 1,440 px wide in light mode, with a full-page screenshot.</td></tr>
       <tr><th>Phone, dark theme</th><td>tools/shoot.js (Playwright)</td><td>Opened at 390 px wide in dark mode, with a full-page screenshot.</td></tr>
       <tr><th>Sideways scroll</th><td>tools/shoot.js</td><td>Page width minus window width equals 0 at both sizes.</td></tr>
@@ -219,10 +219,10 @@ var SN={res:"1 Research",pg:"2 Pages",idx:"2 Pages",rev:"3 Review"};
 var OTHER={
  arpan:{t:"Arpan Bakshi",s:"Direction and approval",job:"I set the brief for every stage, read what came back and approved it before the next stage began.",inputs:"The job description, my CV, agent reports, research summaries, screenshots and review scores",outputs:"Approved briefs, the research topics, the page plan and the decision to move each stage on"},
  jd:{t:"Job description",s:"Input",job:"The ICD Practitioner job description for Wipro's Industry Cloud & Digital portfolio, UK and Ireland. Every research brief and page brief traces back to its responsibility lines.",inputs:"Supplied by me",outputs:"The topics for research and the responsibility lines each page answers"},
- build:{t:"Build script",s:"Automated check",job:"A small Python script wraps each page body with the shared head, navigation, pager, footer and password gate, and writes the published site.",inputs:"build/pages/*.html and the shared assets",outputs:"The published pages and the password gate"},
+ build:{t:"Build script",s:"Automated check",job:"A small Python script wraps each page body with the shared head, navigation, pager, footer, and writes the published site.",inputs:"build/pages/*.html and the shared assets",outputs:"The published pages"},
  shots:{t:"Browser checks",s:"Automated check",job:"A Playwright script opens every page at 1,440 px in light mode and 390 px in dark mode, records sideways scroll and console errors, and saves full-page screenshots for the agent to read.",inputs:"The built pages, served locally",outputs:"Screenshots, a scroll figure and an error count for each page at each size"},
  axe:{t:"Accessibility scan",s:"Automated check",job:"The same script injects axe-core into each page at both sizes and lists any violations. The target for every page is an empty list.",inputs:"The built pages",outputs:"A list of axe-core rule violations, fixed until empty"},
- site:{t:"Published site",s:"Output",job:"The password-protected site: the analysis index, twelve analysis pages, the AI Workflow page and this page.",inputs:"The approved, checked pages",outputs:"15 pages"}
+ site:{t:"Published site",s:"Output",job:"The published site: the analysis index, twelve analysis pages, the AI Workflow page and this page.",inputs:"The approved, checked pages",outputs:"15 pages"}
 };
 function A(id){return AG.filter(function(a){return a.id===id})[0]}
 function ids(r,c){return AG.filter(function(a){return a.round===r&&a.col===c}).map(function(a){return a.id})}

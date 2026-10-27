@@ -5,12 +5,10 @@ Each page body file starts with a metadata comment:
 <!--meta title="..." desc="..."-->
 followed by the HTML that goes inside <main>. Run: python3 build/build.py
 """
-import hashlib, html, pathlib, re, shutil
+import html, pathlib, re, shutil
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES_DIR = ROOT / "build" / "pages"
-SALT = "wipro-icd-2026:"
-PASSWORD_FILE = ROOT / "build" / ".password"  # not committed; see README
 OUT = ROOT / "docs"  # the published site: pages, index.html and assets only
 
 # nav order: (file, nav label). The first page is the analysis index; analysis pages get a code (A1, A2, ...);
@@ -32,7 +30,7 @@ PAGES = [
     ("ai.html", "AI Workflow"),
     ("method.html", "Method"),
 ]
-# unlisted pages: built with the same head, gate and header, but not in the navigation, pager or index
+# unlisted pages: built with the same head and header, but not in the navigation, pager or index
 HIDDEN = [("study-33a04957.html", "Interview Study")]
 INDEX = PAGES[0][0]
 ABOUT = ["ai.html", "method.html"]
@@ -40,9 +38,7 @@ APPX = [f for f, _ in PAGES[1:] if f not in ABOUT]
 CODE = {f: f"A{i + 1}" for i, f in enumerate(APPX)}
 LABEL = dict(PAGES)
 
-GUARD = ('<script>try{if(sessionStorage.getItem("pw")!=="ok"){document.documentElement.style.visibility="hidden";'
-         'location.replace("index.html?next="+encodeURIComponent(location.pathname.split("/").pop()))}}'
-         'catch(e){location.replace("index.html")}</script>')
+GUARD = ""  # the site is open; no password page
 
 HEAD = """<!doctype html>
 <html lang="en-GB">
@@ -131,16 +127,12 @@ def build_page(i, fname):
     (OUT / fname).write_text(out)
 
 
-def build_gate():
-    if PASSWORD_FILE.exists():
-        pw = PASSWORD_FILE.read_text().strip()
-        digest = hashlib.sha256((SALT + pw).encode()).hexdigest()
-    else:
-        digest = (ROOT / "build" / "gate.hash").read_text().strip()
-    (ROOT / "build" / "gate.hash").write_text(digest + "\n")
-    ok = ",".join(f'"{f}"' for f, _ in PAGES)
-    tpl = (ROOT / "build" / "gate.html").read_text()
-    (OUT / "index.html").write_text(tpl.replace("%HASH%", digest).replace("%SALT%", SALT).replace("%OK%", ok))
+def build_index():
+    # index.html sends visitors to the analysis index
+    (OUT / "index.html").write_text(
+        '<!doctype html>\n<html lang="en-GB"><head><meta charset="utf-8"><meta name="robots" content="noindex">'
+        f'<meta http-equiv="refresh" content="0; url={INDEX}"><title>Analysis</title></head>'
+        f'<body><a href="{INDEX}">Analysis</a></body></html>\n')
 
 
 if __name__ == "__main__":
@@ -159,5 +151,5 @@ if __name__ == "__main__":
         if (PAGES_DIR / f).exists():
             build_hidden(f)
             print("wrote", f, "(unlisted)")
-    build_gate()
+    build_index()
     print("wrote index.html")
