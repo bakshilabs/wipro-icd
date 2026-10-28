@@ -12,7 +12,7 @@ Appendix pages, the full analysis, models and sources: A1 `role.html`, A2 `portf
 About me, linked in the header: `ai.html` (AI Workflow) and `method.html` (Method: how the site was made and the agents that built it).
 
 ## Build
-Page bodies live in `build/pages/`. Run `python3 build/build.py` to rebuild `docs/`: it copies `assets/`, wraps each page with the shared head, navigation and footer, and writes `docs/index.html`. Do not edit files in `docs/` by hand. Pages listed in `HIDDEN` in `build/build.py` are built without navigation links; the list is empty. Interview notes live in `private/`, which git ignores and the build does not read.
+Page bodies live in `build/pages/`. Run `python3 build/build.py` to rebuild `docs/`: it copies `assets/`, wraps each page with the shared head, navigation and footer, and writes `docs/index.html`. Do not edit files in `docs/` by hand. Pages listed in `HIDDEN` in `build/build.py` are built without navigation links; the list holds `preparation.html`, a one-page interview preparation dashboard reachable only by its address. Interview notes live in `private/`, which git ignores and the build does not read.
 
 Styles: `assets/site.css`, `nav.css`, `a11y.css`, `viz.css` and `viz.js` (chart helpers) come from the One Click LCA site. `assets/pages.css` holds the page components and the indigo accent.
 

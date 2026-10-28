@@ -16,3 +16,8 @@
 - The index is rebuilt as a brief: situation, argument, strategy, plan, vision, pages.
 - Six meeting pages (M1 to M6) carry the case on screen; the fourteen analysis pages are now the Appendix group. Navigation shows Meeting and Appendix dropdowns.
 - Open points: the £10m fee claim is worded two ways across appendix pages (pitches led against studio-owned pursuits); candidate claims beyond the CV facts on A1 The Role (Citigroup, £5m+ as Associate, Rafael Viñoly technology group, COP Week panels) should be checked against the CV; a personal "why Wipro", one lost-deal story and the pharma contract figures are still to write.
+
+## 28 October 2026
+- `preparation.html`: a one-page interview dashboard built from a ChatGPT research pass ("Interview preparation guide", 28 October 2026). It holds the five responsibilities, the client-problem-to-capability table, the eight questions as tabs with draft answers, the technical checklist and the preparation tasks (saved in the browser), the first 90 days and the questions I ask. Wipro figures checked against `research/wipro.md` (+0.6% YoY CC IT Services growth, 16.5% margin, both verified).
+- The page is unlisted: in `HIDDEN` in `build/build.py`, so it has the site header but no navigation link, pager or index entry. To list it, move it into `MEETING`, `APPENDIX` or `ABOUT`.
+- Left off the page from the research: the interviewer profile (LinkedIn-derived, against `STYLE.md`), the scheduling detail and the email draft.

@@ -1,0 +1,464 @@
+<!--meta title="Preparation" desc="One page for the interview: the five responsibilities in the role, the client problems Wipro's portfolio answers, the eight questions I prepare, the technical areas, the first 90 days and the questions I ask."-->
+<style>
+.pr-head{padding:48px 0 4px;max-width:none}
+.pr-head .lede{max-width:70ch}
+.pr-sec{margin-top:44px}
+.pr-sec>.eyebrow{display:block;margin-bottom:10px}
+.pr-sec>h2{font-size:clamp(24px,2.4vw,32px)}
+.pr-sec>p.intro{color:var(--muted);max-width:72ch;margin-top:10px;font-size:15.5px}
+
+.pr-kpis{margin-top:28px}
+.pr-kpis .stat b>span{display:inline;font-size:inherit;color:inherit;margin:0;line-height:inherit}
+.pr-kpis .stat b small{display:block;font-size:.42em;letter-spacing:0;color:var(--ink2);font-weight:500;margin-top:6px}
+.pr-kpis .stat .src{display:block;font-size:12px;color:var(--ink3);margin-top:8px}
+.pr-kpis .stat.live b{color:var(--accent)}
+
+.pr-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px;align-items:stretch}
+.pr-cols .panel{padding:22px 24px}
+.pr-cols .panel h3{font-size:18px}
+.pr-cols .panel .k{margin-top:0}
+@media (max-width:980px){.pr-cols{grid-template-columns:1fr}}
+.pr-two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px;align-items:stretch}
+.pr-two .panel{padding:22px 24px}
+.pr-two .panel h3{font-size:18px}
+@media (max-width:860px){.pr-two{grid-template-columns:1fr}}
+
+.pr-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:11px}
+.pr-list li{display:grid;grid-template-columns:28px 1fr;gap:12px;font-size:14.5px;line-height:1.45;align-items:start}
+.pr-list li i{width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--on-accent);font:600 13px/26px var(--sans);text-align:center;font-style:normal;margin-top:1px}
+.pr-list li i.s{background:var(--accent-soft);color:var(--accent)}
+.pr-list b{display:block;font-weight:600;color:var(--ink)}
+.pr-list span{color:var(--ink2)}
+.pr-note{font-size:14px;color:var(--ink2);margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.pr-note b{font-weight:600;color:var(--ink)}
+
+.pr-q{border-left:4px solid var(--accent);padding:2px 0 2px 16px;margin-top:12px;font-size:15px;line-height:1.5;color:var(--ink)}
+.pr-q p+p{margin-top:8px}
+.pr-lab{display:inline-block;margin-top:14px;border-radius:3px;padding:3px 9px;font:500 12px/1.4 var(--sans);background:var(--accent-soft);color:var(--accent)}
+
+.pr-tabs{margin-top:18px}
+.pr-tabs .tabs{margin-top:0;gap:6px}
+.pr-tabs .tabs [role=tab]{font-size:13.5px;padding:9px 12px}
+.pr-tabs .tabs [role=tab] b{font-weight:600;margin-right:6px}
+.pr-pan{margin-top:14px;background:var(--panel);border-radius:6px;padding:24px 26px}
+.pr-pan h3{font-size:20px;letter-spacing:-.01em}
+.pr-pan>p{font-size:15px;color:var(--ink2);margin-top:8px;max-width:76ch}
+.pr-pan .pr-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:22px;margin-top:6px;align-items:start}
+@media (max-width:860px){.pr-pan .pr-grid{grid-template-columns:1fr}}
+.pr-pan .tw{margin-top:14px;background:var(--bg)}
+.pr-pan table.t{min-width:0;font-size:14px}
+.pr-pan table.t th,.pr-pan table.t td{padding:9px 12px}
+.pr-pan h4{font:500 12px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:16px 0 6px}
+.pr-pan ul.plain{list-style:disc;margin:6px 0 0;padding-left:18px;font-size:14.5px;line-height:1.45;color:var(--ink2)}
+.pr-pan ul.plain li{margin-top:5px}
+.pr-pan .tags{margin-top:8px}
+.pr-star{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.pr-star div{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:14px 16px;font-size:14px;line-height:1.45;color:var(--ink2)}
+.pr-star b{display:block;font:600 12px/1.3 var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+@media (max-width:860px){.pr-star{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.pr-star{grid-template-columns:1fr}}
+
+.pr-check{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px}
+.pr-check li{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;padding:10px 12px;border-radius:5px;background:var(--bg);border:1px solid var(--line)}
+.pr-check input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--accent)}
+.pr-check label{display:block;font-size:14.5px;line-height:1.4;cursor:pointer}
+.pr-check label b{display:block;font-weight:600;color:var(--ink)}
+.pr-check label span{color:var(--ink2);font-size:13.5px}
+.pr-check li.on label b{color:var(--ink2);text-decoration:line-through;text-decoration-color:var(--accent)}
+.pr-prog{display:flex;align-items:center;gap:12px;margin-top:12px;font-size:13px;color:var(--ink2)}
+.pr-prog .tr{flex:1;height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.pr-prog .fl{height:100%;background:var(--accent);border-radius:3px;transition:width .25s;width:0}
+.pr-prog output{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+.pr-reset{appearance:none;border:1px solid var(--line);background:var(--bg);color:var(--ink2);border-radius:3px;padding:5px 9px;font:500 12px/1 var(--sans);cursor:pointer}
+
+.pr-days{display:grid;gap:10px;margin-top:14px}
+.pr-day{display:grid;grid-template-columns:104px 1fr;gap:14px;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+.pr-day .d{font:600 16px/1.2 var(--sans);letter-spacing:-.01em;color:var(--accent)}
+.pr-day .d small{display:block;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-top:4px}
+.pr-day b{display:block;font-weight:600;font-size:14.5px}
+.pr-day p{font-size:14px;color:var(--ink2);line-height:1.45;margin-top:4px}
+@media (max-width:520px){.pr-day{grid-template-columns:1fr}}
+
+.pr-ask{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+.pr-ask li{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:14px 16px;font-size:14.5px;line-height:1.45}
+.pr-ask li q{display:block;font-weight:600;color:var(--ink);quotes:"\201C" "\201D"}
+.pr-ask li span{display:block;color:var(--ink2);font-size:13.5px;margin-top:6px}
+.pr-links{margin-top:10px;font-size:14px;color:var(--ink2)}
+.pr-links a{color:var(--accent)}
+</style>
+
+<section class="phead pr-head">
+  <span class="eyebrow">Preparation</span>
+  <h1>Preparation</h1>
+  <p class="lede">One page for the interview. It holds the five responsibilities in the role, the client problems Wipro's portfolio answers, the eight questions I prepare, the technical areas I revise, the first 90 days and the questions I ask.</p>
+  <p class="meta">Built from a ChatGPT research pass of 28 October 2026, reviewed and rewritten against the job description and Wipro's Q2 FY27 results. The two checklists save in this browser only.</p>
+</section>
+
+<div class="stats4 pr-kpis">
+  <div class="stat rv">
+    <b><span class="count" data-to="0.6" data-prefix="+" data-suffix="%">+0.6%</span><small>year on year</small></b>
+    <span>IT Services revenue growth in constant currency, Q2 FY27. Flat quarter on quarter.</span>
+    <span class="src">Wipro, Q2 FY27 results, 15 October 2026 (primary)</span>
+  </div>
+  <div class="stat rv">
+    <b><span class="count" data-to="16.5" data-suffix="%">16.5%</span></b>
+    <span>IT Services operating margin, Q2 FY27, up 0.5 points on the quarter. Margin-positive deals are in the job description for a reason.</span>
+    <span class="src">Wipro, Q2 FY27 results, 15 October 2026 (primary)</span>
+  </div>
+  <div class="stat live rv">
+    <b><span id="pr-k-tech">0</span><small>of 6</small></b>
+    <span>technical areas revised. Ticked in the checklist below.</span>
+  </div>
+  <div class="stat live rv">
+    <b><span id="pr-k-task">0</span><small>of 5</small></b>
+    <span>preparation tasks done. Ticked in the list at the end of the page.</span>
+  </div>
+</div>
+
+<section class="sec pr-sec" id="role">
+  <span class="eyebrow">The role</span>
+  <h2>What Wipro is hiring for</h2>
+  <p class="intro">The job description combines five responsibilities. The interview is a senior consultative sales conversation: find the client's business problem, shape a technology-led answer, mobilise Wipro's teams and convert the pursuit into profitable revenue.</p>
+  <div class="pr-cols">
+    <div class="panel rv">
+      <h3>Five responsibilities</h3>
+      <ol class="pr-list">
+        <li><i>1</i><div><b>Generate revenue and order book</b><span>Develop opportunities, expand existing accounts, hunt new business, keep a qualified pipeline and convert pursuits into signed contracts.</span></div></li>
+        <li><i>2</i><div><b>Shape strategic transformation deals</b><span>Understand the client's business challenge and combine cloud, application modernisation, digital experience, AI and software engineering into one proposition.</span></div></li>
+        <li><i>3</i><div><b>Build executive relationships</b><span>Establish credibility with CIOs, CTOs, Chief Digital Officers, customer experience leaders and business executives.</span></div></li>
+        <li><i>4</i><div><b>Protect deal economics</b><span>Build commercially viable proposals, manage scope and pricing, work with Finance and Delivery, and hold margin while staying competitive.</span></div></li>
+        <li><i>5</i><div><b>Orchestrate Wipro's capabilities</b><span>Bring account teams, solution architects, global practices, delivery organisations and technology partners together to win and run engagements.</span></div></li>
+      </ol>
+      <p class="pr-note"><b>My positioning connects all five.</b> Sales ownership, executive engagement and commercial judgement carry the conversation. Enough technical depth to shape a credible solution and challenge an assumption sits behind them.</p>
+    </div>
+    <div class="panel rv">
+      <h3>Themes to expect</h3>
+      <ol class="pr-list">
+        <li><i class="s">1</i><div><b>Business growth</b><span>How I build pipeline and expand strategic client relationships.</span></div></li>
+        <li><i class="s">2</i><div><b>Large-deal leadership</b><span>How I influence qualification, solution design, proposals, pricing and closure.</span></div></li>
+        <li><i class="s">3</i><div><b>Transformation credibility</b><span>How I turn AI, customer experience and modernisation into business outcomes.</span></div></li>
+        <li><i class="s">4</i><div><b>Commercial discipline</b><span>How I avoid underpricing, uncontrolled scope and deals that look attractive and deliver at a loss.</span></div></li>
+        <li><i class="s">5</i><div><b>Leadership without direct authority</b><span>How I align sales, technical teams, partners and delivery leaders.</span></div></li>
+      </ol>
+      <p class="pr-note">The job description asks for an understanding of one or more technologies, so I go deep where I have delivered and sell the rest with Wipro's practices and partners.</p>
+    </div>
+    <div class="panel accent rv">
+      <h3>Wipro's stated position</h3>
+      <p style="margin-top:10px">Wipro describes itself as consulting-led, AI-powered and industry-focused. Its digital proposition covers connected customer journeys, AI-enabled experiences, digital commerce, integration and application simplification. Its cloud portfolio covers advisory, migration and modernisation, cloud-native engineering and AI.</p>
+      <p>The Q2 FY27 release pairs low growth with a stable margin and names larger transformation deals as the priority. Profitable growth, pipeline conversion and differentiated AI-led transformation are the themes to carry.</p>
+      <span class="pr-lab">Draft line to test</span>
+      <div class="pr-q"><p>What interests me about this role is connecting Wipro's established engineering and modernisation capabilities with consulting-led, AI-powered transformation. I would focus on opportunities where we can show business value, differentiate the proposition and build profitable, lasting client relationships.</p></div>
+      <p class="pr-links">Read before the interview: <a href="https://www.wipro.com/en-UKI/">Wipro UK and Ireland</a>, <a href="https://www.wipro.com/digital/">Wipro Digital</a>, <a href="https://www.wipro.com/cloud/">Wipro Cloud</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec pr-sec" id="story">
+  <span class="eyebrow">Wipro's story</span>
+  <h2>Client problems and the Wipro answer</h2>
+  <p class="intro">I lead with the client's problem and the business outcome, and name the technologies that deliver it second. Each row is one conversation I can open.</p>
+  <div class="tw">
+    <table class="t">
+      <thead><tr><th>Client challenge</th><th>Wipro capability to position</th><th>Business outcome to discuss</th></tr></thead>
+      <tbody>
+        <tr><th>Legacy applications are expensive and slow to change</th><td>Application modernisation, Application Portfolio Rationalisation (APR), cloud adoption</td><td>Lower total cost of ownership, less technical debt, faster change</td></tr>
+        <tr><th>Digital channels convert poorly and frustrate customers</th><td>Digital experience, commerce, journey redesign and integration</td><td>Higher conversion, better customer satisfaction, lower abandonment</td></tr>
+        <tr><th>Customer-service costs are rising</th><td>AI-enabled service, conversational interfaces, workflow automation</td><td>Lower cost per interaction, quicker resolution, better service</td></tr>
+        <tr><th>Releases are slow and software quality is inconsistent</th><td>Quality engineering, automated testing, DevOps and CI/CD</td><td>Faster releases, fewer production defects, more reliable services</td></tr>
+        <tr><th>AI experiments produce no measurable value</th><td>AI strategy, use-case prioritisation, engineering and governance</td><td>Productivity, process efficiency, measured business returns</td></tr>
+        <tr><th>Systems and data are fragmented</th><td>API-led integration, application simplification and modern architecture</td><td>More agility, better data access, less duplication</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout rv">
+    <span class="eyebrow">Draft line to test</span>
+    <p style="margin-top:8px"><b>Open with the outcome.</b> "We can reduce the cost and effort of customer servicing, improve resolution rates and make digital journeys work better, using the right combination of application modernisation, AI, integration and experience design." A list of Gemini, Claude, cloud migration, automated testing and APIs comes afterwards, if asked.</p>
+  </div>
+</section>
+
+<section class="sec pr-sec" id="questions">
+  <span class="eyebrow">Eight questions</span>
+  <h2>The questions I prepare first</h2>
+  <p class="intro">Likely questions from the responsibilities in the job description, with the structure of my answer for each. Select a question. Sample answers are drafts to test, and the real examples come from my own work.</p>
+  <div class="pr-tabs">
+    <div class="tabs" role="tablist" aria-label="Interview questions" id="pr-tabs">
+      <button type="button" role="tab" aria-selected="true" aria-controls="pr-q1" id="pr-t1"><b>1</b>About me</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="pr-q2" id="pr-t2"><b>2</b>Growing the business</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="pr-q3" id="pr-t3"><b>3</b>Qualifying</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="pr-q4" id="pr-t4"><b>4</b>Selling AI</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="pr-q5" id="pr-t5"><b>5</b>A large deal</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="pr-q6" id="pr-t6"><b>6</b>Margin</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="pr-q7" id="pr-t7"><b>7</b>Modernisation</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="pr-q8" id="pr-t8"><b>8</b>Working with teams</button>
+    </div>
+
+    <div class="pr-pan" role="tabpanel" id="pr-q1" aria-labelledby="pr-t1">
+      <h3>"Tell me about yourself."</h3>
+      <p>Sixty to ninety seconds that establish commercial credibility. A structure, with no career history recited.</p>
+      <div class="pr-grid">
+        <div>
+          <h4>Structure</h4>
+          <ol class="pr-list">
+            <li><i>1</i><div><b>Core area and clients</b><span>Technology sales and digital transformation, and the industries and stakeholders I work with.</span></div></li>
+            <li><i>2</i><div><b>Current scope</b><span>Business development, account growth, solution shaping and commercial ownership in my recent role.</span></div></li>
+            <li><i>3</i><div><b>One example</b><span>A client challenge, the stakeholders I worked with and the measured result.</span></div></li>
+            <li><i>4</i><div><b>Why this role</b><span>Client engagement, transformation, AI and application modernisation together, with ownership of revenue and order book.</span></div></li>
+            <li><i>5</i><div><b>What I bring</b><span>My two strongest capabilities, and how I work across sales, consulting and delivery.</span></div></li>
+          </ol>
+        </div>
+        <div>
+          <h4>Proof points to include</h4>
+          <ul class="plain">
+            <li>The scale of deals I have influenced.</li>
+            <li>Revenue or pipeline growth with a number.</li>
+            <li>The seniority of the stakeholders I have engaged.</li>
+            <li>One measurable client outcome.</li>
+          </ul>
+          <h4>Rule</h4>
+          <p style="font-size:14.5px;color:var(--ink2);margin:0">I state what I led, what I shaped and what I contributed to, and claim nothing beyond it.</p>
+          <p class="pr-links">Experience mapped to the role: <a href="role.html">A1 The Role</a>, <a href="fit.html">M2 Fit</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-pan" role="tabpanel" id="pr-q2" aria-labelledby="pr-t2" hidden>
+      <h3>"How would you grow Wipro's Industry Cloud &amp; Digital business in the UK and Ireland?"</h3>
+      <p>The most important question to prepare. The answer is a repeatable growth model, with the site's own strategy as the worked example.</p>
+      <div class="pr-grid">
+        <div>
+          <h4>Growth model</h4>
+          <ol class="pr-list">
+            <li><i>1</i><div><b>Segment and prioritise accounts</b><span>Strategic accounts with transformation spend, legacy complexity, AI ambition, weak digital journeys or cost pressure. Start in the sectors where my domain credibility is strongest.</span></div></li>
+            <li><i>2</i><div><b>Build an executive point of view</b><span>Hypotheses on each client's priorities, taken to the right stakeholders with insight and discovery workshops.</span></div></li>
+            <li><i>3</i><div><b>Create qualified opportunities</b><span>Discovery becomes a quantified business case, an agreed problem statement, access to decision-makers, a credible budget and a route to a buying decision.</span></div></li>
+            <li><i>4</i><div><b>Build and win integrated propositions</b><span>The relevant Wipro capabilities, technology partners where they add, a differentiated solution and a viable commercial model.</span></div></li>
+            <li><i>5</i><div><b>Expand through measured outcomes</b><span>Deliver the first commitment, show the value and use the results to open adjacent work across the account.</span></div></li>
+          </ol>
+          <p class="pr-links">The model with Wipro's figures: <a href="strategy.html">M3 Strategy</a>, <a href="banking-first.html">M4 Banking</a>, <a href="plan.html">M5 Plan</a>.</p>
+        </div>
+        <div>
+          <span class="pr-lab" style="margin-top:0">Draft answer to test</span>
+          <div class="pr-q">
+            <p>I would start with Wipro's existing UKI account base, the current pipeline, the strategic relationships and the portfolio's growth priorities. I would segment accounts by addressable opportunity and buying readiness, and find where AI, application modernisation, cloud and digital experience solve a material business problem.</p>
+            <p>I would work with Client Partners to map stakeholders, understand incumbents and find where to displace, complement or expand existing services. Executive workshops would move each account from a first challenge to a quantified business case and a qualified pursuit.</p>
+            <p>I would then run each opportunity through qualification, solution design, commercials and closure, watching win probability and margin. Progress is measured in qualified pipeline, conversion, bookings, revenue, profitability and expansion inside existing accounts.</p>
+          </div>
+          <p class="pr-note">Add one real example from my own career to the second paragraph.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-pan" role="tabpanel" id="pr-q3" aria-labelledby="pr-t3" hidden>
+      <h3>"How would you identify and qualify an opportunity?"</h3>
+      <p>The answer shows the difference between an interesting conversation and a sales opportunity. Six dimensions, each with the question it settles.</p>
+      <div class="tw">
+        <table class="t">
+          <thead><tr><th>Dimension</th><th>What I establish</th></tr></thead>
+          <tbody>
+            <tr><th>Business problem</th><td>Which measurable business outcome is the client trying to improve?</td></tr>
+            <tr><th>Strategic relevance</th><td>Why does this matter now, and what happens if they do nothing?</td></tr>
+            <tr><th>Stakeholders</th><td>Who sponsors the initiative, owns the budget and makes the decision?</td></tr>
+            <tr><th>Commercial viability</th><td>Is funding available, and is there a realistic buying process and timeline?</td></tr>
+            <tr><th>Solution fit</th><td>Does Wipro have differentiated capability, delivery credibility and the right partners?</td></tr>
+            <tr><th>Competitive position</th><td>Who else is competing, what is the incumbent's advantage and how does Wipro differentiate?</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pr-note">Before committing pursuit resources I also test delivery feasibility, margin expectations, procurement requirements, dependencies and risks. Qualification rests on a credible sponsor, a business case and a realistic path to closure. A large contract value on its own counts for none of these. The scored version is on <a href="pursuits.html">A11 Pursuits</a>.</p>
+    </div>
+
+    <div class="pr-pan" role="tabpanel" id="pr-q4" aria-labelledby="pr-t4" hidden>
+      <h3>"How would you sell an AI-led transformation to a client?"</h3>
+      <p>The answer moves from business strategy to a safe, measured implementation. The worked example is a UK bank or insurer improving customer servicing. Which model is most impressive never comes into it.</p>
+      <div class="pr-grid">
+        <div>
+          <h4>Five steps</h4>
+          <ol class="pr-list">
+            <li><i>1</i><div><b>Discover</b><span>Customer-contact drivers, digital journey drop-offs, resolution times and servicing costs.</span></div></li>
+            <li><i>2</i><div><b>Prioritise</b><span>One high-volume, well-understood use case with measurable value and manageable risk.</span></div></li>
+            <li><i>3</i><div><b>Design</b><span>Journey redesign, integration with core systems, retrieval from trusted enterprise information and AI-assisted responses or workflows.</span></div></li>
+            <li><i>4</i><div><b>Pilot</b><span>A baseline, a controlled scope, human escalation, security, data protection and model evaluation criteria agreed up front.</span></div></li>
+            <li><i>5</i><div><b>Scale</b><span>Expansion only after accuracy, service quality, adoption, economics and operational controls are shown.</span></div></li>
+          </ol>
+          <h4>Measures</h4>
+          <div class="tags"><span class="tag">Cost per contact</span><span class="tag">First-contact resolution</span><span class="tag">Customer satisfaction</span><span class="tag">Digital adoption</span><span class="tag">Average handling time</span><span class="tag">Containment rate</span></div>
+        </div>
+        <div>
+          <span class="pr-lab" style="margin-top:0">Draft line to test</span>
+          <div class="pr-q"><p>I start with the business value and the client's operating context. I choose the technology on task performance, data security, integration, governance, cost and enterprise requirements. The objective is to move from AI experiments to measured business outcomes.</p></div>
+          <h4>For regulated clients</h4>
+          <div class="tags"><span class="tag a">Explainability</span><span class="tag a">Access controls</span><span class="tag a">Privacy</span><span class="tag a">Auditability</span><span class="tag a">Human oversight</span><span class="tag a">Ongoing evaluation</span></div>
+          <p class="pr-links">The engagement model and partners: <a href="ai-engagement.html">A3 AI Engagement</a>, <a href="ai.html">AI Workflow</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-pan" role="tabpanel" id="pr-q5" aria-labelledby="pr-t5" hidden>
+      <h3>"Tell me about a large deal you have helped win."</h3>
+      <p>One detailed example from my own experience in the STAR structure, with the weight on my contribution to winning the work. Two examples ready: one sizeable deal and one account I grew.</p>
+      <div class="pr-star">
+        <div><b>Situation</b>What the client was trying to achieve and why it mattered.</div>
+        <div><b>Task</b>What I was accountable for, and the commercial or competitive challenge.</div>
+        <div><b>Action</b>How I qualified the opportunity, engaged executives, shaped the solution, aligned delivery, handled the competition and managed the commercials.</div>
+        <div><b>Result</b>The outcome: contract value or revenue where I can disclose it, the win, the margin, the client benefit and any later expansion.</div>
+      </div>
+      <h4>Follow-up questions to expect</h4>
+      <ul class="plain">
+        <li>How did you get access to the decision-maker?</li>
+        <li>What was your differentiator against the competition?</li>
+        <li>What was your role against the Account Manager and the solution architect?</li>
+        <li>How did you handle pricing pressure?</li>
+        <li>What was the biggest obstacle to closure?</li>
+        <li>What would you do differently?</li>
+      </ul>
+      <p class="pr-links">The deal shapes I use: <a href="deal-shaping.html">A12 Deals</a>.</p>
+    </div>
+
+    <div class="pr-pan" role="tabpanel" id="pr-q6" aria-labelledby="pr-t6" hidden>
+      <h3>"How do you protect margin when a client demands a lower price?"</h3>
+      <p>The job description names margin-positive deals, so the answer has a structure.</p>
+      <div class="pr-grid">
+        <div>
+          <span class="pr-lab" style="margin-top:0">Draft answer to test</span>
+          <div class="pr-q">
+            <p>I would first establish whether the objection is about price, scope, perceived value or budget. I would then look at the solution and delivery model for where we can simplify scope, standardise components, automate work, change the delivery mix or phase the engagement without losing the essential outcomes.</p>
+            <p>I would present options with their cost and value in the open, and discount last. Any concession comes with a matching benefit: a longer commitment, reduced scope, volume certainty or a different allocation of risk.</p>
+            <p>Before committing I would align with Delivery and Finance on the delivery assumptions, the risks, the margin floor and the contractual protections. If the deal cannot be delivered profitably, I challenge the structure instead of booking it at any cost.</p>
+          </div>
+        </div>
+        <div>
+          <h4>Ready to discuss</h4>
+          <div class="tags"><span class="tag">Fixed price against time and materials</span><span class="tag">Scope control</span><span class="tag">Change requests</span><span class="tag">Productivity assumptions</span><span class="tag">Delivery location mix</span><span class="tag">Governance</span><span class="tag">Contractual risk</span></div>
+          <p class="pr-links">Pricing models and the margin floor: <a href="deal-shaping.html">A12 Deals</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-pan" role="tabpanel" id="pr-q7" aria-labelledby="pr-t7" hidden>
+      <h3>"How would you approach a legacy modernisation opportunity?"</h3>
+      <p>The core assessment and delivery approach, which I can explain whatever my strongest specialism is.</p>
+      <div class="pr-grid">
+        <div>
+          <ol class="pr-list">
+            <li><i>1</i><div><b>Discover the estate</b><span>Applications, business criticality, costs, dependencies, technology risks and user pain points.</span></div></li>
+            <li><i>2</i><div><b>Rationalise the portfolio</b><span>Which applications to retain, retire, consolidate or modernise. Wipro offers Application Portfolio Rationalisation inside its cloud economics and modernisation work.</span></div></li>
+            <li><i>3</i><div><b>Set a path for each application</b><span>Rehost, replatform, refactor, rearchitect, replace or retire, on business value and technical grounds.</span></div></li>
+            <li><i>4</i><div><b>Build the business case</b><span>Costs, benefits, risk, migration effort and time to value, compared.</span></div></li>
+            <li><i>5</i><div><b>Phase the roadmap</b><span>Architecture, data, integration, security, quality engineering, DevOps and the operating-model changes.</span></div></li>
+            <li><i>6</i><div><b>Measure the outcome</b><span>Run cost, release speed, reliability, technical debt and business agility.</span></div></li>
+          </ol>
+        </div>
+        <div>
+          <h4>Six paths</h4>
+          <div class="tags"><span class="tag a">Rehost</span><span class="tag a">Replatform</span><span class="tag a">Refactor</span><span class="tag a">Rearchitect</span><span class="tag a">Replace</span><span class="tag a">Retire</span></div>
+          <p class="pr-note">Each application gets its own path from its business value, dependencies, constraints and expected return. A rewrite of the whole estate is never the proposal.</p>
+          <p class="pr-links">Wipro's modernisation practices and partners: <a href="portfolio.html">A2 Portfolio</a>.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pr-pan" role="tabpanel" id="pr-q8" aria-labelledby="pr-t8" hidden>
+      <h3>"How do you work with Account Managers, Delivery and solution teams?"</h3>
+      <p>The answer shows the difference between owning an opportunity and doing everything myself.</p>
+      <div class="pr-grid">
+        <div>
+          <h4>What a good answer contains</h4>
+          <ul class="plain">
+            <li>Shared qualification criteria.</li>
+            <li>Clear roles and accountability for each pursuit.</li>
+            <li>Delivery involved early.</li>
+            <li>A solution developed jointly.</li>
+            <li>Frequent pursuit reviews.</li>
+            <li>Open communication about risks.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Influence without formal authority</h4>
+          <p style="font-size:14.5px;color:var(--ink2);margin:0;line-height:1.5">I resolve disagreements constructively, keep the client proposition coherent and escalate trade-offs early enough that there are no commercial surprises.</p>
+          <p class="pr-links">Who I work with in the first months: <a href="first-months.html">A14 First Months</a>, <a href="workshops.html">A10 Workshops</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec pr-sec" id="technical">
+  <span class="eyebrow">Technical areas and the first 90 days</span>
+  <h2>What I revise and what I would do first</h2>
+  <p class="intro">I pick my strongest one or two areas and can discuss them in depth. For each, I can state a customer problem it solves, the solution approach, the business case, the delivery risks and the measure of success.</p>
+  <div class="pr-two">
+    <div class="panel rv">
+      <h3>Technical areas</h3>
+      <div class="pr-prog"><div class="tr"><div class="fl" id="pr-tech-fl"></div></div><output id="pr-tech-out">0 of 6</output><button type="button" class="pr-reset" data-reset="pr-tech">Clear</button></div>
+      <ul class="pr-check" id="pr-tech">
+        <li><input type="checkbox" id="pr-tech-1"><label for="pr-tech-1"><b>Application and cloud modernisation</b><span>Cloud migration, modernisation patterns, portfolio rationalisation, technical debt, business cases and total cost of ownership.</span></label></li>
+        <li><input type="checkbox" id="pr-tech-2"><label for="pr-tech-2"><b>Digital experience and commerce</b><span>Customer journeys, omnichannel experience, personalisation, conversion, accessibility and integration.</span></label></li>
+        <li><input type="checkbox" id="pr-tech-3"><label for="pr-tech-3"><b>AI solutions with Gemini and Claude</b><span>Business use cases, model selection, enterprise data, retrieval, agents and automation, evaluation, security, cost and governance.</span></label></li>
+        <li><input type="checkbox" id="pr-tech-4"><label for="pr-tech-4"><b>Quality engineering and testing</b><span>Test automation, continuous testing, defect prevention, release confidence and measured quality improvement.</span></label></li>
+        <li><input type="checkbox" id="pr-tech-5"><label for="pr-tech-5"><b>DevOps and CI/CD</b><span>Continuous integration and delivery, deployment automation, infrastructure as code, release frequency and reliability.</span></label></li>
+        <li><input type="checkbox" id="pr-tech-6"><label for="pr-tech-6"><b>Legacy applications and integration</b><span>Java and .NET modernisation, APIs, distributed systems, mainframe considerations and integration across technology stacks.</span></label></li>
+      </ul>
+      <p class="pr-note">If AI is the area, the detailed questions are what I would automate, how enterprise data is reached securely, how outputs are evaluated and how I prove the solution beats the existing process.</p>
+    </div>
+    <div class="panel rv">
+      <h3>First 90 days</h3>
+      <div class="pr-days">
+        <div class="pr-day"><div class="d">Days 1 to 30<small>Understand</small></div><div><b>Learn the business and set priorities</b><p>The IC&amp;D portfolio, revenue and order book commitments, current pipeline, strategic accounts, client stakeholders, delivery capabilities, competitive position and alliances.</p></div></div>
+        <div class="pr-day"><div class="d">Days 31 to 60<small>Mobilise</small></div><div><b>Turn insight into qualified opportunities</b><p>Prioritise target accounts and pursuits, build executive engagement plans, run discovery workshops and align Account Managers, practice specialists, solution teams and delivery on the strongest opportunities.</p></div></div>
+        <div class="pr-day"><div class="d">Days 61 to 90<small>Convert</small></div><div><b>Progress strategic deals and build a repeatable engine</b><p>Advance priority pursuits through business-case validation, solution design, commercial reviews and decision milestones. Set up pipeline reviews, a realistic close plan and account expansion.</p></div></div>
+      </div>
+      <p class="pr-note">The revenue and order book commitments are agreed with the leadership team once I know the baseline. The dated version with placeholder targets is on <a href="first-months.html">A14 First Months</a> and <a href="plan.html">M5 Plan</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec pr-sec" id="ask">
+  <span class="eyebrow">My questions and my tasks</span>
+  <h2>Questions I ask and the preparation left</h2>
+  <p class="intro">Questions that reveal the business mandate, and the five tasks that matter with one day to go.</p>
+  <div class="pr-two">
+    <div class="panel rv">
+      <h3>Questions I ask</h3>
+      <ol class="pr-ask">
+        <li><q>What are the most important outcomes you want this person to deliver in the first six to twelve months: new pipeline, order book, revenue growth, strategic account expansion or a particular portfolio priority?</q><span>Shows that I think in outcomes and accountability.</span></li>
+        <li><q>Where do you see the strongest UKI growth opportunities today across AI transformation, application modernisation and digital experience, and what currently stops Wipro converting more of them?</q><span>Opens a strategic conversation about the real commercial challenge.</span></li>
+        <li><q>How do you expect the IC&amp;D Practitioner to work with Client Partners, global practices and Delivery, particularly when shaping large, commercially complex deals?</q><span>Tests the operating model and shows I understand the cross-functional role.</span></li>
+        <li><q>What sets apart the people who are most successful in your organisation?</q><span>Asks for the standard I would be measured against.</span></li>
+      </ol>
+    </div>
+    <div class="panel rv">
+      <h3>Preparation tasks</h3>
+      <div class="pr-prog"><div class="tr"><div class="fl" id="pr-task-fl"></div></div><output id="pr-task-out">0 of 5</output><button type="button" class="pr-reset" data-reset="pr-task">Clear</button></div>
+      <ul class="pr-check" id="pr-task">
+        <li><input type="checkbox" id="pr-task-1"><label for="pr-task-1"><b>The 90-second introduction</b><span>Positions me as someone who combines client engagement, solution shaping and commercial results.</span></label></li>
+        <li><input type="checkbox" id="pr-task-2"><label for="pr-task-2"><b>Two detailed examples</b><span>One large deal or pursuit, and one account grown or transformation delivered.</span></label></li>
+        <li><input type="checkbox" id="pr-task-3"><label for="pr-task-3"><b>The strongest technical specialism</b><span>The business problems it solves, its solution patterns and how I build its business case.</span></label></li>
+        <li><input type="checkbox" id="pr-task-4"><label for="pr-task-4"><b>Three answers out loud</b><span>The UKI growth question, the margin question and the AI transformation question.</span></label></li>
+        <li><input type="checkbox" id="pr-task-5"><label for="pr-task-5"><b>Questions and logistics</b><span>Two or three questions ready, and the attendees and logistics confirmed.</span></label></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sources"><h2>Sources</h2><ul>
+<li>ChatGPT, "Interview preparation guide", research pass shared by Arpan Bakshi, 28 October 2026. Secondary. Reviewed against the sources below; the interviewer profile and scheduling detail in the original are left off this page.</li>
+<li>ICD Practitioner job description, Industry Cloud &amp; Digital, UK and Ireland, Wipro. Text supplied by Arpan Bakshi, 27 October 2026. Primary.</li>
+<li>Wipro, Q2 FY27 results press release, 15 October 2026 (IT Services revenue growth in constant currency, operating margin, strategy statement). <a href="https://www.wipro.com/content/dam/nexus/en/investor/quarterly-results/2026-2027/q2fy27/press-release-q2fy27.pdf">wipro.com</a>. Primary.</li>
+<li>Wipro, UK and Ireland, Digital and Cloud pages (positioning and portfolio). <a href="https://www.wipro.com/en-UKI/">wipro.com/en-UKI</a>, <a href="https://www.wipro.com/digital/">wipro.com/digital</a>, <a href="https://www.wipro.com/cloud/">wipro.com/cloud</a>. Primary.</li>
+<li>Wipro, cloud economics and application modernisation offerings (Application Portfolio Rationalisation). wipro.com. Primary.</li>
+</ul></section>
+
+<script>
+(function(){
+VZ.tabs(document.getElementById("pr-tabs"));
+function store(k){try{return JSON.parse(localStorage.getItem(k)||"[]")}catch(e){return []}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+function wire(id,kpi){var list=document.getElementById(id),boxes=[].slice.call(list.querySelectorAll("input")),fl=document.getElementById(id+"-fl"),out=document.getElementById(id+"-out"),k=document.getElementById(kpi);
+ function paint(){var n=0;boxes.forEach(function(b){var li=b.closest("li");li.classList.toggle("on",b.checked);if(b.checked)n++});
+  fl.style.width=(n/boxes.length*100)+"%";out.textContent=n+" of "+boxes.length;k.textContent=n}
+ store(id).forEach(function(i){if(boxes[i])boxes[i].checked=true});paint();
+ boxes.forEach(function(b){b.addEventListener("change",function(){var on=[];boxes.forEach(function(x,i){if(x.checked)on.push(i)});save(id,on);paint()})});
+ var r=document.querySelector('[data-reset="'+id+'"]');if(r)r.addEventListener("click",function(){boxes.forEach(function(b){b.checked=false});save(id,[]);paint()})}
+wire("pr-tech","pr-k-tech");wire("pr-task","pr-k-task");
+})();
+</script>

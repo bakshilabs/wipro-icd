@@ -41,7 +41,7 @@ PAGES = [("overview.html", "Overview")] + MEETING + APPENDIX + [("ai.html", "AI 
 # navigation groups: (label, pages, code prefix)
 GROUPS = [("Meeting", [f for f, _ in MEETING], "M"), ("Appendix", [f for f, _ in APPENDIX], "A")]
 # unlisted pages: built with the same head and header, but not in the navigation, pager or index
-HIDDEN = []
+HIDDEN = [("preparation.html", "Preparation")]
 INDEX = PAGES[0][0]
 ABOUT = ["ai.html", "method.html"]
 CODE = {}
