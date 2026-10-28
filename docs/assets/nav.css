@@ -75,3 +75,9 @@ html:has(.appxbar){scroll-padding-top:112px}
 .appxbar .dd>ul a:hover,.appxbar .dd>ul a:focus-visible{background:var(--panel)}
 .appxbar .dd>ul a[aria-current="page"]{background:var(--accent-soft);color:var(--accent)}
 @media (max-width:640px){.appxbar .in{gap:0;padding:0 10px}.appxbar .dd>button{padding:10px 6px 9px;font-size:12.5px}.appxbar .dd>button small{display:none}.appxbar a.home{margin-right:0;padding-right:6px}.appxbar .dd{position:static}.appxbar .dd>ul{left:10px;right:10px;min-width:0}}
+/* one-page group: a plain link styled like a group button */
+.appxbar a.solo{display:flex;align-items:baseline;gap:6px;padding:10px 10px 9px;font:500 13px/1 var(--sans,"SuisseIntl","Helvetica Neue",Arial,sans-serif);color:var(--muted)}
+.appxbar a.solo small{font-size:11px;font-weight:400;color:var(--muted)}
+.appxbar a.solo:hover{color:var(--ink)}
+.appxbar a.solo[aria-current="page"]{color:var(--accent);border-bottom-color:var(--accent)}
+@media (max-width:640px){.appxbar a.solo{padding:10px 6px 9px;font-size:12.5px}.appxbar a.solo small{display:none}}
