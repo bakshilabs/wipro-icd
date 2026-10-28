@@ -1,4 +1,4 @@
-# Wipro ICD Practitioner Site: Report on the Work
+# Wipro ICD Site Report
 
 This report explains what the website at https://bakshilabs.github.io/wipro-icd/ contains, how its parts fit together and what each page argues. It is written so that a reader can understand the whole body of work without opening every page. All facts below are taken from the pages themselves, which were researched on 27 October 2026.
 
